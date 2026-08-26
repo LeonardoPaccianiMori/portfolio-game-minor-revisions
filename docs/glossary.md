@@ -4,6 +4,7 @@
 |---|---|
 | Academic continuation | Any viable route that keeps the protagonist pursuing an academic position after the semester. |
 | Academic terrarium | The compact university research floor whose repeated spaces expose institutional dynamics. |
+| Active sample group | One labelled physical tray and linked digital record that occupies one of the three laboratory slots until final analysis or cancellation. |
 | Aldercroft University | Fictional university that can invite the protagonist to a final-round Assistant Professor interview in Week 13. |
 | Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
@@ -15,12 +16,15 @@
 | Department of Developmental Systems | Fictional Bellwether University department that contains the Cardiac Patterning Group. |
 | Developmental Systems Letters | Third fictional journal in the submission ladder; it rejects the paper because the mechanism remains incomplete. |
 | Evidence strength | Credibility and completeness of support for manuscript claims, not merely the number of positive results. |
+| Evidence card | Player-created record from analysis. It identifies the research question, controls, evidence views, quality, and caveats available for manuscript work. |
 | Experiment family | Laser injury, oxygen deprivation/restoration, or cardiotoxic-drug exposure using shared laboratory systems. |
+| Experiment work queue | Desk display of the plain-language state of active sample groups. It cannot operate equipment remotely. |
 | Fabrication | A narrative choice to alter an existing result or invent one. The game gives no practical method. It can remain undiscovered. |
 | Implementation-ready | Explicitly approved state in which every blocking design decision and acceptance criterion required for coding is resolved. |
 | Industry contact | The company scientist or recruiter interested in the preprint and protagonist's assay-development skills. |
 | Knowledge | Second fictional journal in the submission ladder; a parody of decisive-proof prestige publishing. |
 | Minor request | A PI, editor, or reviewer demand described as small despite meaningful time, evidence, or ethical cost. |
+| Monitoring window | A stated point at which the player can continue, spend attention, or stop an active experiment before deliberately advancing game time. |
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
 | Modular epilogue | Short ending scene selected from accumulated career, paper, integrity, energy, and relationship state. |
 | Morrow Biotech | Fictional assay-development company that contacts the protagonist after reading the preprint. |
@@ -31,6 +35,8 @@
 | Repair state | The fictional temporary state linked to recovery after limited controlled damage. It is not proven to cause recovery. |
 | Repatterning index | Fictional combined view of boundary organization, rhythm synchrony, and stress decline. It supports, but does not prove, the repair-state idea. |
 | Research integrity | Defensibility of methods, controls, analysis, and claims. It is not a simplistic virtue score. |
+| Revision commit | Player action that makes a manuscript-board arrangement permanent and creates a version snapshot. |
+| Revision snapshot | Visible historical manuscript version used for comparison. It cannot undo the consequences of a committed revision. |
 | Safe stopping point | A point at which an active experiment can pause without an important message interrupting or disappearing. |
 | Semester time | Finite campaign clock compressed from one academic semester into the target playtime. |
 | Stylized institutional realism | Plausible, simplified research-world art direction with institutional palette and environmental satire. |

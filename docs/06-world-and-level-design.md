@@ -1,6 +1,6 @@
 # World and Level Design
 
-Status: **approved for B02; B07 floor plan pending**
+Status: **approved through B04; B07 floor plan pending**
 
 ## Confirmed world structure
 
@@ -26,6 +26,24 @@ acquire new narrative meaning.
   storytelling.
 - **Building exit:** mundane at first and increasingly meaningful and inviting
   as the industry route develops.
+
+## B04 functional interaction locations
+
+B04 fixes six functional locations. B07 decides their room placement,
+dimensions, adjacency, and visual form.
+
+| Location | Player use |
+|---|---|
+| Sample bench | Select, label, and configure a sample group. |
+| Experiment setup station | Start a laser, oxygen-loss, or drug-exposure experiment. |
+| Active sample rack | Read the physical label and current state of each active group. |
+| Imaging and monitoring bay | Inspect evidence views and make a monitoring decision. |
+| Analysis workstation | Interpret results and create evidence cards. |
+| Manuscript desk | Arrange paper cards, respond to requests, and commit revisions. |
+
+The desk work queue can show status from elsewhere on the floor, but it cannot
+operate equipment. This supports repeated movement through a compact laboratory
+without requiring a general item inventory.
 
 ## Recurring character presence
 
@@ -75,7 +93,8 @@ protagonist or reframe a relationship scene.
 
 - Scaled floor plan, adjacency, dimensions, sightlines, doors, and shortcuts.
 - Player spawn, navigation tutorial, act-based locks, and event staging.
-- Exact interactable and decorative object inventory per room.
+- Detailed placement of the six functional locations and the complete
+  interactable and decorative object inventory per room.
 - Lighting states, time-of-day representation, and semester transitions.
 - Exact NPC navigation, schedules, collision, and crowd implication.
 - Environmental-storytelling catalogue and persistence rules.

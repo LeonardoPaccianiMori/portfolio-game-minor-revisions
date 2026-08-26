@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **B01 approved; detailed interaction and balance work deferred**
+Status: **approved through B04; balance and authored content work deferred**
 
 ## Scientific field and model
 
@@ -78,6 +78,40 @@ several days. It does not show real laboratory timings.
 The families should reuse organoid culture, imaging, monitoring, and analysis
 systems rather than act as unrelated minigames.
 
+## B04 interaction contract
+
+Every family uses the same five-stage experiment loop: select a sample group,
+configure the goal and controls, start the work, monitor a meaningful point,
+and analyse and interpret the result. The player can manage at most three
+active groups. A group is a labelled physical tray and a linked digital record,
+not an inventory item.
+
+Preparation offers no more than three main choices: experiment goal, control
+quality, and observation focus. Each family can add one authored fictional
+choice without giving a real protocol:
+
+| Family | Family-specific gameplay focus |
+|---|---|
+| Laser injury | Compare controlled damage with sham work. |
+| Oxygen loss and restoration | Compare recovery conditions after the challenge. |
+| Cardiotoxic-drug exposure | Compare exposure results and monitoring coverage. |
+
+The family-specific choice must stay qualitative. It must not show operational
+quantities, timings, concentrations, equipment settings, or instructions.
+
+During a run, the active sample rack and desk work queue show a clear state.
+The player must visit the station for meaningful monitoring or intervention.
+At a monitoring point, the player can continue, spend attention on a quality
+check or stabilizing action, or stop. A stopped group is lost; a finally
+analysed group frees its active slot. Neither action removes its raw laboratory
+record.
+
+Analysis creates an evidence card. It records the research question, controls,
+available evidence views, evidence quality, and caveats. A later manuscript
+choice may use, omit, reinterpret, change the reported reading of, or add an
+unsupported reading beside this raw record. The game gives no practical method
+for falsification.
+
 ## Results and claims
 
 Each experiment has a biological result and a separate evidence-quality result.
@@ -135,7 +169,9 @@ before public release.
 
 ## Deferred details
 
-Later blocks must define the exact interaction steps, player choices, balance,
-content counts, and manuscript thresholds. They must not add real laboratory
-quantities, executable protocols, or a claim that the repair state is proven to
-cause recovery.
+B05 defines time costs, outcome formulas, variability, repeat cost, and
+manuscript thresholds. B07 defines station placement and spatial navigation.
+B08 defines full input and accessibility design. B09 defines the data and save
+model. B10 defines exact experiment instances and content counts. No later
+block may add real laboratory quantities, executable protocols, or a claim that
+the repair state is proven to cause recovery.

@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **direction confirmed; stack and schemas unresolved**
+Status: **B04 interaction and continuity constraints added; stack and schemas unresolved**
 
 ## Confirmed platform
 
@@ -24,6 +24,12 @@ Save checkpoints must be safe around cutscenes and major choices. A connection
 interruption or browser close must not erase meaningful progress. Schema
 versioning and migrations are required before implementation but not yet
 designed.
+
+The player experience requires saves at experiment-stage changes, monitoring
+choices, analysis archiving, manuscript commits, and scene boundaries. Closing
+or pausing the game must not advance game time or cause an experiment check to
+be missed. B09 must implement this rule without relying on real-world elapsed
+time.
 
 ## Required architectural capabilities
 

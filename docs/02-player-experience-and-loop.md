@@ -1,17 +1,23 @@
 # Player Experience and Core Loop
 
-Status: **seeded**
+Status: **approved through B04; numerical balance and full UI work deferred**
 
 ## Perspective and interaction
 
-The player explores in first person. Persistent animated hands are not
-required. Equipment should initially respond through object animation, sound,
-and interface feedback. Selective hand animation is a later playtest-driven
-option, not a dependency.
+The player explores freely in first person. Persistent animated hands are not
+required. Equipment responds through object animation, sound, and interface
+feedback. Selective hand animation is a later playtest-driven option, not a
+dependency.
+
+The player uses one context-sensitive interaction action. When a relevant
+object is nearby and targeted, it receives a small visual highlight and a
+short label. The player can then enter a focused station view. The game does
+not put permanent arrows or labels on every object.
 
 Laboratory play uses medium abstraction. The player physically moves among
 samples, equipment, the desk, and characters, but the meaningful challenge is
-choosing what to do, what evidence to trust, and what cost to accept.
+choosing what to do, what evidence to trust, and what cost to accept. Focused
+work uses clear selections rather than physical simulation of laboratory tools.
 
 ## Campaign time and continuity
 
@@ -24,28 +30,32 @@ show the passing day and night.
 Work, story events, and controlled time passages advance the compressed
 calendar. A player may later use a short local break, but it cannot function as
 a full recovery or a substitute for sleep. B05 owns the exact time costs,
-energy effects, pause behaviour, and scheduling rules.
+energy effects, detailed pause behaviour, and scheduling rules.
 
 Important messages wait until an active experiment reaches a safe stopping
 point. They do not interrupt the player without warning or disappear because
 the player is using equipment.
 
-## Recurring six-stage loop
+## Recurring five-stage experiment loop
 
-1. **Choose:** interpret the PI request; select hypothesis, controls, samples,
-   and conditions.
-2. **Prepare:** gather materials, configure equipment, label samples, set
-   damage or stimulation parameters, and select quality checks.
-3. **Incubate:** start the experiment and allocate compressed time among other
-   experiments, manuscript work, administration, relationships, or the
-   industry contact.
-4. **Monitor:** inspect rhythm traces, imaging, environment, contamination, and
-   tissue health; intervene, continue, or abandon.
-5. **Analyse:** compare structure and contraction before damage, after damage,
-   and during recovery; classify the result as usable, inconclusive,
-   suspicious, or worth repeating.
-6. **Update evidence:** add results, figures, or controls to the manuscript
-   board, report to the PI, and receive another supposedly minor request.
+1. **Select sample group:** choose one labelled sample group for an approved
+   research goal. At most three groups can be active at one time.
+2. **Configure:** select the goal, control quality, and observation focus:
+   structure, rhythm, or both. An authored experiment can add one
+   family-specific fictional choice.
+3. **Start and run:** start the work at the setup station. The group becomes
+   active while the player performs other work.
+4. **Monitor:** travel to the relevant station at a meaningful monitoring
+   point. Continue as planned, spend attention on a quality check or
+   stabilizing action, or stop the experiment.
+5. **Analyse and interpret:** use the analysis workstation to compare the
+   evidence views, classify the result, record caveats, and create an evidence
+   card for later manuscript work.
+
+The player does not discover a real laboratory protocol. The first
+laser-and-sham task is guided by Elena or Gabriel. Later tasks can use an
+in-world project notebook that explains the current request, known evidence,
+and open scientific question. The notebook is not a quest-marker system.
 
 ## Confirmed outcome principles
 
@@ -75,7 +85,51 @@ reading raw biological data.
 
 The manuscript board offers careful, strong, and inflated claims about the
 repair state. Claim choice changes integrity, PI confidence, and later reviewer
-pressure. Exact controls and interactions remain B04 work.
+pressure.
+
+## Station, sample, and feedback rules
+
+The laboratory has six functional locations: a sample bench, experiment setup
+station, active sample rack, imaging and monitoring bay, analysis workstation,
+and manuscript desk. B07 decides their exact rooms and layout.
+
+The active rack gives each group a physical label and a simple state signal.
+The desk work queue repeats the state in words, such as running, check ready,
+attention needed, or ready for analysis. The queue informs the player but
+cannot control equipment remotely. Meaningful inspection and intervention
+require a visit to the station.
+
+An active group occupies one of the three slots from preparation through final
+analysis. Final archiving frees the slot. The raw result remains in the
+laboratory record, but the physical group cannot be reused for a different
+experiment. Cancelling an active experiment loses that group and the game time
+already spent.
+
+Before a meaningful action, the game gives a short plain-language forecast of
+the likely trade-off. After the result, it records what is observed separately
+from what is inferred. An action-caused effect is explained when the evidence
+supports that explanation. Poor results always provide useful information, a
+clear reason to repeat, or a lower-quality route forward. Mandatory progress
+never requires a perfect result.
+
+Equipment queues, faults, and access limits are authored situations. They give
+clear choices to wait, negotiate, ask Gabriel for help, use a limited
+alternative, or change the experiment plan. They are not random barriers.
+
+## Interruptions, recovery, and continuity
+
+Important messages first appear as world signals, then as safe queue
+notifications, then as an optional response or scene. Non-critical messages
+can be deferred. A scene never begins while an equipment action needs player
+attention, and every deadline is stated clearly.
+
+A monitoring window remains available until the player deliberately advances
+game time after a clear warning. Advancing past it can produce a weaker or less
+reliable result. Menus, pause, and browser closure never cause a missed check.
+The game saves at safe states, including experiment-stage changes, monitoring
+choices, analysis archiving, manuscript commits, and scene boundaries. Game
+time does not pass while the game is closed. B05 owns time costs and B09 owns
+the persistence implementation.
 
 ## Other play modes
 
@@ -91,14 +145,14 @@ pressure. Exact controls and interactions remain B04 work.
   minute target and a 22-minute maximum for all non-interactive scenes. They
   remain skippable, captioned, and safe around checkpoints.
 
-## Open decisions
+## Deferred decisions
 
-- Exact movement, interaction, targeting, inventory, and equipment controls.
-- Exact semester-to-real-time conversion, pausing, time costs, short-break
-  effects, and scheduling UI.
-- Number of concurrent samples and experiments.
-- Exact experiment preparation, monitoring, analysis, and manuscript-board
-  interactions.
-- Tutorialization, difficulty modes, optional content, and replay variation.
-- Conditions for interruption, abandonment, recovery, and irreversible loss.
-- How much causal information is surfaced before and after an outcome.
+- Exact movement bindings, interaction range, HUD composition, and detailed
+  control map belong to B08.
+- Semester-to-real-time conversion, pausing rules, time costs, short-break
+  effects, difficulty, and scheduling values belong to B05.
+- Exact room placement, layout, and navigation paths belong to B07.
+- Outcome formulas, variability, and repeat costs belong to B05.
+- Save schema, corruption recovery, and browser support belong to B09.
+- Exact tutorial text, authored experiment instances, and replay content
+  belong to B10.

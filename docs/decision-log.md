@@ -55,6 +55,14 @@ belongs in the numbered design documents.
 | 2026-08-26 | Let the player report honestly, selectively exclude valid evidence, alter a result, or fabricate a result without a practical falsification method. Fabrication can remain undiscovered. | Confirmed |
 | 2026-08-26 | Use Week 14 defensible response, stronger response, journal withdrawal, and public-record withdrawal choices; retain the Week 16 Aldercroft, Morrow, leave, or neither-route conclusion. | Confirmed |
 | 2026-08-26 | Use careful, strong, and inflated title forms; make the protagonist first author, Elena senior author, and credit for Haoran and Samira a meaningful integrity choice. | Confirmed |
+| 2026-08-26 | Use first-person exploration with one context-sensitive interaction action, focused station views, no general item inventory, and no permanent objective arrows. | Confirmed |
+| 2026-08-26 | Use six functional laboratory locations and a maximum of three active labelled sample groups. | Confirmed |
+| 2026-08-26 | Use a five-stage experiment loop with qualitative preparation choices, authored equipment problems, physical monitoring, permanent raw records, and constructive poor-result routes. | Confirmed |
+| 2026-08-26 | Use plain-language causal forecasts and observation-versus-interpretation feedback. Monitoring windows require deliberate game-time advancement to miss. | Confirmed |
+| 2026-08-26 | Use a physical card-based manuscript desk with evidence tags, requirements warnings, revision commits, and visible snapshots that are not free undo. | Confirmed |
+| 2026-08-26 | Make evidence omission, changed reported readings, and unsupported readings explicit confirmed integrity actions; keep raw records locked and provide no practical falsification method. | Confirmed |
+| 2026-08-26 | Save at safe experiment, manuscript, and scene states. Closing the game does not advance game time. Use mouse, keyboard, and controller alternatives without drag-only, timed, colour-only, or precision-motor requirements. | Confirmed |
+| 2026-08-26 | Replace the earlier six-stage laboratory-loop shorthand with the approved five-stage experiment loop. Manuscript work is a linked separate activity. | Confirmed; supersedes 2026-08-25 six-stage loop |
 
 ## Rules for future entries
 

@@ -9,16 +9,16 @@ gaps. It does not mean that the domain is finished.
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved for B03 | Exact interactions, time model, and tuning remain in B04–B05 |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B04 | Time model and numerical tuning remain in B05; complete UI specification remains in B08 |
 | `03-narrative-and-campaign.md` | Five-act story | Approved for B03 | Ending modules and line-level content remain in B06 and B10 |
-| `04-science-and-experiments.md` | Fictional science | Approved for B01 | Interaction, balance, and content details remain in later blocks |
+| `04-science-and-experiments.md` | Fictional science | Approved through B04 | Balance and exact authored experiment content remain in B05 and B10 |
 | `05-characters-and-dialogue.md` | Cast and voice | Approved for B03 | Relationship thresholds, exact content, visual and audio production details |
-| `06-world-and-level-design.md` | University research floor | Approved for B02 | Layout, traversal, schedules, unlocks, room specifications remain in B07 |
-| `07-systems-and-balance.md` | State and rules | Seeded | Formulas, visibility, thresholds, balance |
+| `06-world-and-level-design.md` | University research floor | Approved through B04 | Layout, traversal, schedules, unlocks, room specifications remain in B07 |
+| `07-systems-and-balance.md` | State and rules | Approved through B04 | Formulas, visibility, thresholds, and balance remain in B05 |
 | `08-endings-and-state-matrix.md` | Outcomes | Approved for B03 | Unlock rules, combinations, and epilogue content remain in B05–B06 |
 | `09-art-audio-and-assets.md` | Presentation | Seeded | Audio direction, budgets, concrete asset inventory |
-| `10-ui-ux-accessibility.md` | Interface and access | Seeded | Control scheme, HUD, accessibility baseline |
-| `11-technical-architecture.md` | Runtime design | Seeded | Stack, modules, save schema, performance budget |
+| `10-ui-ux-accessibility.md` | Interface and access | Approved through B04 | Control scheme, HUD, and full accessibility baseline remain in B08 |
+| `11-technical-architecture.md` | Runtime design | Approved through B04 | Stack, modules, save schema, and performance budget remain in B09 |
 | `12-content-specification.md` | Content inventory | Approved for B03 | Full identifiers, line counts, and authored content remain in B10 |
 | `13-testing-and-evaluation.md` | Quality evidence | Seeded | Targets, playtest protocol, acceptance thresholds |
 | `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
@@ -51,9 +51,10 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B04 — Laboratory and manuscript gameplay**
-- Last documented block: **B03 — Campaign beat sheet and branching**
-- Next action: define the repeated laboratory and manuscript actions.
+- Current block: **B05 — Time, resources, relationships, and balance**
+- Last documented block: **B04 — Laboratory and manuscript gameplay**
+- Next action: define the semester clock, resource representation, variability,
+  and relationship and route rules.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -166,16 +167,33 @@ status, and the next place to resume.
 
 ### B04 — Laboratory and manuscript gameplay
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B01 and B03.
 - **Primary documents:** `02-player-experience-and-loop.md`,
-  `04-science-and-experiments.md`, and `07-systems-and-balance.md`.
-- **Must resolve:** movement and interaction grammar; targeting, inventory, and
-  equipment use; concurrent samples; exact preparation, incubation, monitoring,
-  analysis, and interpretation actions; manuscript-board mechanics; causal
-  feedback; interruption and recovery; abandonment; and irreversible loss.
+  `04-science-and-experiments.md`, and `07-systems-and-balance.md`, with
+  linked constraints in `06-world-and-level-design.md`,
+  `10-ui-ux-accessibility.md`, and `11-technical-architecture.md`.
+- **Approved decision set:** first-person play uses one context-sensitive
+  interaction action and focused station views. The laboratory has six
+  functional locations, no general item inventory, and at most three active
+  labelled sample groups. Each group uses a five-stage qualitative loop:
+  select, configure, start, monitor, then analyse and interpret. The player
+  receives physical and desk-queue signals, must visit equipment for meaningful
+  intervention, and faces authored equipment problems rather than random
+  barriers. Analysis makes permanent raw records and tagged evidence cards.
+  The manuscript desk uses cards, requirements warnings, revision commits, and
+  visible snapshots without free undo. The player can make explicit integrity
+  choices without a practical falsification method. Safe notification,
+  monitoring, abandonment, checkpoint, offline-time, and accessible-input
+  rules are approved.
+- **Deferred outside B04:** B05 owns time costs, values, formulas, variability,
+  difficulty, and route thresholds. B07 owns the floor plan. B08 owns detailed
+  controls, UI, and accessibility settings. B09 owns save schemas and runtime
+  architecture. B10 owns exact tutorial text and authored experiment content.
 - **Complete when:** each repeated player action, outcome, feedback signal, and
   transition can be described without inventing mechanics during implementation.
+- **Completion record:** `Complete Minor Revisions B04 laboratory and
+  manuscript gameplay`.
 
 ### B05 — Time, resources, relationships, and balance
 
