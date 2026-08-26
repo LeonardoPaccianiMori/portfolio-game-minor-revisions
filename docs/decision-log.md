@@ -24,6 +24,8 @@ belongs in the numbered design documents.
 | 2026-08-26 | Use stylized institutional realism and licence-verified asset sourcing with a manifest and custom fallback. | Confirmed |
 | 2026-08-26 | Approve *Minor Revisions* as the working title. | Confirmed |
 | 2026-08-26 | Initialize the local design repository now with genuine current timestamps, superseding the earlier September 5 deferral. | Confirmed; supersedes deferral |
+| 2026-08-26 | Use an 11-block, one-block-at-a-time design workshop; track status, dependencies, completion criteria, and the next block in the design index. | Confirmed |
+| 2026-08-26 | Treat the project as both a personal creative outlet and a transparent showcase of Leonardo's ability to direct LLM agents through a complex game build despite limited prior familiarity with the Three.js development stack. | Confirmed |
 
 ## Rules for future entries
 

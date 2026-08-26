@@ -51,6 +51,20 @@ possible revision of their career.
 - Fictional people and institutions; emotional inspiration may be personal,
   but literal reproduction is prohibited.
 
+## Creative and portfolio purpose
+
+The project is both a personal creative outlet and a portfolio demonstration of
+Leonardo's ability to direct LLM agents effectively through a complex game
+development process despite limited prior familiarity with the Three.js
+development stack. Its evidence should emphasize Leonardo's creative judgment,
+requirements, decomposition, orchestration, review, validation, and final
+accountability while describing agent contributions transparently.
+
+AI assistance is not a substitute success criterion: the resulting game must
+still be coherent, playable, technically credible, and independently reviewable.
+The exact contribution record, evaluation evidence, and eventual public wording
+remain decisions for the vision and implementation-handoff blocks.
+
 ## Explicit non-goals already confirmed
 
 - Expert wet-lab simulation or actionable biological protocol.
@@ -68,3 +82,4 @@ possible revision of their career.
 - Final public positioning, title-collision review, and release promise.
 - Detailed scope exclusions and measurable experience-success criteria.
 - Final content rating and treatment of mental-health or workplace themes.
+- Exact agent-contribution evidence and transparent public attribution model.

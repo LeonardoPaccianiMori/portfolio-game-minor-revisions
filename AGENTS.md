@@ -28,6 +28,13 @@ Before non-trivial work, read `README.md`, `docs/00-design-index.md`,
 
 ## Change discipline
 
+- Before every design discussion, consult the discussion roadmap in
+  `docs/00-design-index.md` and resume its recorded current block unless
+  Leonardo explicitly changes the order.
+- Keep each roadmap block's status, unresolved work, and next-block pointer
+  current. A block is complete only when its approved decisions are written in
+  the authoritative domain documents, checked for contradictions, and
+  committed with the roadmap update.
 - Update the design index and decision log when a decision changes document
   readiness or supersedes an earlier choice.
 - Do not silently resolve contradictions. Record them and ask Leonardo.
