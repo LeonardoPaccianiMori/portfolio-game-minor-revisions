@@ -1,6 +1,6 @@
 # Vision and Design Pillars
 
-Status: **seeded**
+Status: **B00 approved; later release work deferred**
 
 ## Confirmed vision
 
@@ -72,6 +72,22 @@ Characters and relationships continue to matter. Small acts of solidarity can
 have value even when they do not change the institution. Leaving academia is
 not total defeat, and an industry choice is not perfect salvation.
 
+## Experience success criteria
+
+The game must meet these qualitative criteria:
+
+- A player without academic experience can explain the main objective.
+- A player can understand why each main experiment matters.
+- A player can see how important choices change the game state and later events.
+- The first part can make the player laugh.
+- The later parts create pressure and discomfort.
+- The ending shows that publication does not solve academic precarity.
+- The industry route is attractive but imperfect.
+- At least one choice or ending gives the player a reason for discussion.
+
+Later testing work must define the sample sizes and numeric pass thresholds for
+these criteria.
+
 ## Creative and portfolio purpose
 
 The project is both a personal creative outlet and a portfolio demonstration of
@@ -89,8 +105,26 @@ and a later public case study.
 
 AI assistance is not a substitute success criterion: the resulting game must
 still be coherent, playable, technically credible, and independently reviewable.
-The exact contribution record, evaluation evidence, and eventual public wording
-remain decisions for the vision and implementation-handoff blocks.
+The public case-study selection, numeric evaluation thresholds, and exact public
+wording remain decisions for later production and implementation-handoff work.
+
+## Public position
+
+Public material must present *Minor Revisions* first as a complete narrative
+game. Agent use is a second layer of the project. Public material must not call
+the game “made by AI.” It must not present the game as a simple Three.js
+learning exercise.
+
+Public material must describe Leonardo's design, requirements, direction,
+review, testing, and final decisions. It must also state that agents did a
+material part of the implementation.
+
+## Content boundary
+
+The target content level is similar to `Teen` or `12+`. The game can show
+burnout, anxiety, insecure work, manipulation, and ethical pressure. It must not
+show graphic injury, self-harm, sexual content, or extreme abuse. Organoid
+damage must look scientific and stylized. It must not use body horror.
 
 ## Explicit non-goals already confirmed
 
@@ -101,10 +135,25 @@ remain decisions for the vision and implementation-handoff blocks.
 - A blank avatar with no authored perspective.
 - A literal autobiography or depiction of real colleagues and institutions.
 - A claim that current science supports the game's regenerative result.
+- Combat.
+- Horror or chase systems.
+- Multiplayer.
+- Hunger or thirst simulation.
+- A large crafting system.
+- A full romance system.
+- An endless procedural campaign.
+- An attempt to explain all of academia.
 
-## Open decisions
+## Release rules
 
-- Final public positioning, title-collision review, and release promise.
-- Detailed scope exclusions and measurable experience-success criteria.
-- Final content rating and treatment of mental-health or workplace themes.
-- Exact agent-contribution evidence and transparent public attribution model.
+- Do not announce a release date before the vertical slice passes its tests.
+- Do not promise the three-hour game before the 90-minute game works.
+- Check for title conflicts before a public remote is created.
+- Select licences before public release.
+- Release only after the quality, accessibility, performance, science, and
+  asset checks pass.
+
+## Deferred release work
+
+B10 must define the exact public text, complete the title check, select
+licences, set any release date, and approve the final agent-attribution format.

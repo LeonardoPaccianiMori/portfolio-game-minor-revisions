@@ -35,13 +35,26 @@ answer merely because one option is easier to code.
 
 Every worker assignment must state:
 
+- date, model, and reasoning effort;
 - owned files and subsystem;
 - requirements and content IDs implemented;
+- task instructions;
 - inputs and outputs;
 - forbidden scope and unresolved decisions;
 - tests and evidence required;
 - integration dependencies;
 - privacy, licensing, and performance constraints.
+
+## Agent contribution record
+
+Each completed work package must also record the agent output, tests and review
+results, Leonardo's decisions and corrections, and the final commit. Full
+private conversations must stay private. Selected task examples can be used in
+a later public case study after a separate review.
+
+Public evidence must clearly separate Leonardo's creative direction,
+requirements, review, testing, and final decisions from the material
+implementation work done by agents.
 
 Workers are not alone in the repository. They must not revert others' work,
 must adapt to compatible concurrent changes, and must report conflicts instead
@@ -61,7 +74,8 @@ The exact scheme is open. Expected domains include `VISION`, `LOOP`, `EXP`,
 
 ## Open decisions
 
-- Final requirement format, traceability matrix, and approval workflow.
+- Final requirement format, traceability matrix, contribution-record template,
+  and approval workflow.
 - Branching, review, commit, and integration conventions.
 - Work-package boundaries and agent sequence.
 - CI gates and definition of done per subsystem.

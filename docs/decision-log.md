@@ -29,6 +29,12 @@ belongs in the numbered design documents.
 | 2026-08-26 | Design first for players who enjoy narrative exploration and systemic satire without requiring academic or scientific knowledge; treat academic recognition as an extra layer and portfolio reviewers as a secondary audience. | Confirmed |
 | 2026-08-26 | Use an emotional arc from amusing recognition through pressure and complicity to a bitter but human ending; avoid nihilism and keep solidarity meaningful. | Confirmed |
 | 2026-08-26 | Keep AI-assisted production outside the game fiction and show agent direction through transparent repository, traceability, evaluation, and case-study evidence. | Confirmed |
+| 2026-08-26 | Use eight qualitative experience criteria for comprehension, visible choice effects, the comic-to-pressured emotional arc, the meaning of publication and industry, and post-play discussion. | Confirmed |
+| 2026-08-26 | Target content similar to `Teen` or `12+`; allow non-graphic workplace pressure and anxiety, but exclude graphic injury, self-harm, sexual content, extreme abuse, and body horror. | Confirmed |
+| 2026-08-26 | Exclude combat, horror or chase systems, multiplayer, open-world scope, hunger or thirst, large crafting, full romance, endless procedural play, exact wet-lab training, and an attempt to explain all of academia. | Confirmed |
+| 2026-08-26 | Present the work first as a complete narrative game and agent use as a transparent second layer; do not call it “made by AI” or a simple Three.js learning exercise. | Confirmed |
+| 2026-08-26 | Record each agent work package with requirements, model settings, instructions, ownership, output, review, Leonardo's corrections, and final commit; keep full private conversations private. | Confirmed |
+| 2026-08-26 | Do not announce a date before the vertical slice passes or promise the full game before the fallback works; complete title, licence, and quality checks before public release. | Confirmed |
 
 ## Rules for future entries
 

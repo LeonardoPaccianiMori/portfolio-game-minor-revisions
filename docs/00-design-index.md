@@ -8,7 +8,7 @@ gaps. It does not mean that the domain is finished.
 
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
-| `01-vision-and-pillars.md` | Thesis, tone, scope | Seeded | Audience, detailed non-goals, success criteria |
+| `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
 | `02-player-experience-and-loop.md` | Moment-to-moment play | Seeded | Exact interactions, time model, tuning |
 | `03-narrative-and-campaign.md` | Five-act story | Seeded | Beat sheet, event order, branching details |
 | `04-science-and-experiments.md` | Fictional science | Seeded | Origin, mechanism, controls, exact experiment chain |
@@ -51,20 +51,20 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B00 — Vision, audience, success, and boundaries**
-- Last documented block: **none**
-- Next action: resolve the remaining B00 success criteria, content boundaries,
-  content rating, and treatment of sensitive themes.
+- Current block: **B01 — Fictional science and experiment progression**
+- Last documented block: **B00 — Vision, audience, success, and boundaries**
+- Next action: begin B01 with the organoid origin, composition, and fictional
+  recovery mechanism.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
 ### B00 — Vision, audience, success, and boundaries
 
-- **Status:** In discussion.
+- **Status:** Documented.
 - **Depends on:** No earlier block.
 - **Primary documents:** `01-vision-and-pillars.md`,
   `13-testing-and-evaluation.md`, and `14-production-plan.md`.
-- **Confirmed so far:** the primary audience is people who enjoy narrative
+- **Approved decision set:** the primary audience is people who enjoy narrative
   exploration and systemic satire, with no academic or scientific knowledge
   required; academics can find an additional layer of recognition, and
   portfolio reviewers are a secondary audience. The emotional arc moves from
@@ -73,14 +73,16 @@ status, and the next place to resume.
   solidarity remain meaningful, and leaving academia is not total defeat. The
   game fiction does not refer to its AI-assisted production. Agent direction is
   shown through repository evidence, requirement traceability, evaluation, and
-  a later case study.
-- **Must still resolve:** measurable experience-success criteria; content
-  rating; handling of burnout, exploitation, mental-health, and workplace
-  themes; detailed creative and simulation non-goals; and the exact public
-  evidence and attribution model for agent contributions.
+  a later case study. The target content level is similar to `Teen` or `12+`.
+  The approved success criteria, content limits, non-goals, public position,
+  agent-evidence fields, and release rules are in the primary documents.
+- **Deferred outside B00:** B10 owns numeric playtest thresholds, exact public
+  text, the actual title-conflict check, licence selection, release date, and
+  the final work-package template and agent assignments.
 - **Complete when:** the game has an approved audience, experience promise,
   safety boundary, non-goal set, and qualitative success definition that later
   blocks can test against.
+- **Completion record:** `Complete Minor Revisions B00 vision block`.
 
 ### B01 — Fictional science and experiment progression
 

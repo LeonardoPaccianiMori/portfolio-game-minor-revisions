@@ -56,6 +56,21 @@ Status: **strategy seeded; thresholds unresolved**
 - Every distributed asset and dependency has compatible provenance and
   attribution.
 
+## Approved experience criteria
+
+Playtests must check these B00 requirements:
+
+- A player without academic experience can explain the main objective.
+- A player can understand why each main experiment matters.
+- A player can identify visible effects from important choices.
+- The first part can cause laughter.
+- The later parts create pressure and discomfort.
+- The ending communicates that publication does not solve academic precarity.
+- The industry route is attractive but imperfect.
+- At least one choice or ending gives the player a reason for discussion.
+
+B10 must set the playtest method, sample sizes, and numeric pass thresholds.
+
 ## Evidence to retain
 
 - Automated test output and coverage appropriate to the chosen architecture.
@@ -67,7 +82,7 @@ Status: **strategy seeded; thresholds unresolved**
 
 ## Open decisions
 
-- Success criteria for the vertical slice and full game.
+- Numeric success thresholds for the vertical slice and full game.
 - Playtest audience, sample size, tasks, consent, and feedback instruments.
 - Supported platforms and quantitative performance targets.
 - Automated-test stack, coverage expectations, browser automation, and CI.

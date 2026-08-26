@@ -45,6 +45,34 @@ creative decisions during coding.
 - Career Center tracks project status and evidence; this repository owns
   detailed design and later implementation.
 
+## Agent contribution evidence
+
+Each agent work package must record:
+
+- date;
+- requirement IDs;
+- model and reasoning effort;
+- task instructions;
+- assigned files or systems;
+- agent output;
+- tests and review results;
+- Leonardo's decisions and corrections;
+- final commit.
+
+Full private conversations stay private. A later public case study can use
+selected task examples. It must clearly separate Leonardo's work from agent
+work.
+
+## Public release controls
+
+- Present the project first as a complete narrative game.
+- Present agent use as a second project layer.
+- Do not announce a release date before the vertical slice passes.
+- Do not promise the three-hour game before the 90-minute game works.
+- Check for title conflicts before a public remote is created.
+- Select licences before public release.
+- Release only after all approved quality gates pass.
+
 ## Open decisions
 
 - Leonardo's time budget, desired cadence, cost ceiling, and maintenance
@@ -53,5 +81,7 @@ creative decisions during coding.
 - Milestone targets, dependencies, implementation sequencing, and staffing.
 - Stop, pause, or reframe criteria for design, slice, minimum game, and full
   target.
-- Remote visibility, public licensing, release packaging, and portfolio date.
-- Agent work packages and review ownership after implementation approval.
+- Remote visibility, exact public licences, release packaging, and portfolio
+  date.
+- Exact agent work-package format, assignments, and review ownership after
+  implementation approval.
