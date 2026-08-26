@@ -26,6 +26,9 @@ belongs in the numbered design documents.
 | 2026-08-26 | Initialize the local design repository now with genuine current timestamps, superseding the earlier September 5 deferral. | Confirmed; supersedes deferral |
 | 2026-08-26 | Use an 11-block, one-block-at-a-time design workshop; track status, dependencies, completion criteria, and the next block in the design index. | Confirmed |
 | 2026-08-26 | Treat the project as both a personal creative outlet and a transparent showcase of Leonardo's ability to direct LLM agents through a complex game build despite limited prior familiarity with the Three.js development stack. | Confirmed |
+| 2026-08-26 | Design first for players who enjoy narrative exploration and systemic satire without requiring academic or scientific knowledge; treat academic recognition as an extra layer and portfolio reviewers as a secondary audience. | Confirmed |
+| 2026-08-26 | Use an emotional arc from amusing recognition through pressure and complicity to a bitter but human ending; avoid nihilism and keep solidarity meaningful. | Confirmed |
+| 2026-08-26 | Keep AI-assisted production outside the game fiction and show agent direction through transparent repository, traceability, evaluation, and case-study evidence. | Confirmed |
 
 ## Rules for future entries
 

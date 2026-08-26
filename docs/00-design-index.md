@@ -53,21 +53,31 @@ status, and the next place to resume.
 
 - Current block: **B00 — Vision, audience, success, and boundaries**
 - Last documented block: **none**
-- Next action: begin the B00 workshop.
+- Next action: resolve the remaining B00 success criteria, content boundaries,
+  content rating, and treatment of sensitive themes.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
 ### B00 — Vision, audience, success, and boundaries
 
-- **Status:** Not started.
+- **Status:** In discussion.
 - **Depends on:** No earlier block.
 - **Primary documents:** `01-vision-and-pillars.md`,
   `13-testing-and-evaluation.md`, and `14-production-plan.md`.
-- **Must resolve:** primary audience; intended emotional and satirical effect;
-  measurable experience-success criteria; content rating; handling of burnout,
-  exploitation, mental-health, and workplace themes; explicit creative and
-  simulation non-goals; and how the project should demonstrate effective,
-  transparently attributed LLM-agent direction as portfolio evidence.
+- **Confirmed so far:** the primary audience is people who enjoy narrative
+  exploration and systemic satire, with no academic or scientific knowledge
+  required; academics can find an additional layer of recognition, and
+  portfolio reviewers are a secondary audience. The emotional arc moves from
+  amusing recognition through pressure and uncomfortable complicity to a
+  bitter but human ending. The game must not become nihilistic. Small acts of
+  solidarity remain meaningful, and leaving academia is not total defeat. The
+  game fiction does not refer to its AI-assisted production. Agent direction is
+  shown through repository evidence, requirement traceability, evaluation, and
+  a later case study.
+- **Must still resolve:** measurable experience-success criteria; content
+  rating; handling of burnout, exploitation, mental-health, and workplace
+  themes; detailed creative and simulation non-goals; and the exact public
+  evidence and attribution model for agent contributions.
 - **Complete when:** the game has an approved audience, experience promise,
   safety boundary, non-goal set, and qualitative success definition that later
   blocks can test against.
