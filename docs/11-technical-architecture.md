@@ -6,7 +6,7 @@ Status: **direction confirmed; stack and schemas unresolved**
 
 - Browser game built with Three.js.
 - Eventual deployment on Leonardo's portfolio website alongside *Wanderer*.
-- First-person exploration in a compact institute floor.
+- First-person exploration on a compact university research floor.
 - No user account required.
 - Real-time in-engine cutscenes.
 

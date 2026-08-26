@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **seeded**
+Status: **approved for B02; B03 campaign detail pending**
 
 ## Premise
 
@@ -13,6 +13,35 @@ The discovery is real within the fiction. The satire comes from the expanding
 definition of sufficient evidence, contradictory incentives, and the mismatch
 between the paper's felt urgency and its eventual effect on the protagonist's
 life.
+
+## Fictional world frame
+
+The campaign takes place at **Bellwether University**, in the **Department of
+Developmental Systems**. The protagonist works in the **Cardiac Patterning
+Group**. These names are fictional. The world must not reproduce a real
+university, department, research group, or person.
+
+The group uses **The Common Archive** to publish the preprint. **Morrow
+Biotech** reads the preprint and contacts the protagonist about assay
+development. The company is interested in a credible research result and the
+protagonist's experimental judgement. It is not interested in a proven
+regenerative treatment.
+
+## Submission ladder
+
+The manuscript moves through four fictional journals in a fixed narrative
+order. B03 will define exact timing, rejection messages, and any variation.
+
+| Order | Journal | Narrative function |
+|---:|---|---|
+| 1 | *Cosmos* | Broad-interest target. It rejects the paper because the result does not establish a sufficiently general principle. |
+| 2 | *Knowledge* | Decisive-proof target. It rejects the paper because the evidence does not settle the central claim. |
+| 3 | *Developmental Systems Letters* | Specialist target. It rejects the paper because the mechanism remains incomplete. |
+| 4 | *Proceedings of the International Institute of Morphodynamics* (`PIIM`) | It sends the paper to peer review and begins the main review conflict. |
+
+The names parody academic status and journal escalation. Later presentation
+must not copy a real journal's logo, page design, or other protected brand
+features. B10 owns the public-release name and conflict checks.
 
 ## Five-act spine
 
@@ -33,9 +62,9 @@ the manuscript resembles its original version.
 
 ### Act III — Submission
 
-The player posts a preprint to a fictional public repository and submits to a
-journal. Several journals reject rapidly. One eventually sends the manuscript
-for peer review.
+The player posts a preprint to The Common Archive. *Cosmos*, *Knowledge*, and
+*Developmental Systems Letters* reject the manuscript in sequence. `PIIM`
+eventually sends it to peer review.
 
 ### Act IV — Competing futures
 
@@ -45,11 +74,10 @@ paper response. Drug exposure is optional and can strengthen industry interest.
 Two reviewers may be enthusiastic while one is scathing; apparently minor
 revisions may require major new experiments.
 
-After reading the public preprint, a cardiac organoid or tissue-chip company
-contacts the protagonist about a translational R&D or assay-development role.
-The industry contact becomes politely more persistent and the offer more
-concrete while the PI frames publication as the gateway to another academic
-position.
+After reading the public preprint, Morrow Biotech contacts the protagonist
+about an assay-development role. Dr. Camila Torres becomes politely more
+persistent and the offer more concrete while Professor Elena Markovic frames
+publication as the gateway to another academic position.
 
 ### Act V — Decision and epilogue
 
@@ -77,7 +105,6 @@ comic epilogue responds to paper state, integrity, energy, and relationships.
 ## Open decisions
 
 - Exact week-by-week beat sheet, triggers, mandatory and optional scenes.
-- Fictional institution, journals, preprint service, company, and terminology.
 - Detailed rejection and review sequence and the degree of procedural
   variability between runs.
 - How failures reshape later acts without breaking the campaign.

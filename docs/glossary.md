@@ -3,17 +3,26 @@
 | Term | Working meaning |
 |---|---|
 | Academic continuation | Any viable route that keeps the protagonist pursuing an academic position after the semester. |
-| Academic terrarium | The compact institute floor whose repeated spaces expose institutional dynamics. |
+| Academic terrarium | The compact university research floor whose repeated spaces expose institutional dynamics. |
+| Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
+| Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
+| Common Archive, The | Fictional public preprint service used to release the manuscript. |
 | Controlled cardiac tissue model | The standardized lab-grown human cardiac tissue model. It has no patient identity or donor story. |
+| Cosmos | First fictional journal in the submission ladder; a parody of broad-interest prestige publishing. |
 | Career route | Academia, industry, or neither, as determined by accumulated state and final choice. |
+| Department of Developmental Systems | Fictional Bellwether University department that contains the Cardiac Patterning Group. |
+| Developmental Systems Letters | Third fictional journal in the submission ladder; it rejects the paper because the mechanism remains incomplete. |
 | Evidence strength | Credibility and completeness of support for manuscript claims, not merely the number of positive results. |
 | Experiment family | Laser injury, oxygen deprivation/restoration, or cardiotoxic-drug exposure using shared laboratory systems. |
 | Implementation-ready | Explicitly approved state in which every blocking design decision and acceptance criterion required for coding is resolved. |
 | Industry contact | The company scientist or recruiter interested in the preprint and protagonist's assay-development skills. |
+| Knowledge | Second fictional journal in the submission ladder; a parody of decisive-proof prestige publishing. |
 | Minor request | A PI, editor, or reviewer demand described as small despite meaningful time, evidence, or ethical cost. |
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
 | Modular epilogue | Short ending scene selected from accumulated career, paper, integrity, energy, and relationship state. |
+| Morrow Biotech | Fictional assay-development company that contacts the protagonist after reading the preprint. |
+| PIIM | Short form of *Proceedings of the International Institute of Morphodynamics*, the fictional journal that sends the paper to peer review. |
 | PI confidence | The PI's approval and willingness to support submission or continuation; it is not scientific truth. |
 | Preprint | Public manuscript version that can attract industry interest before journal publication. |
 | Reconstructive rhythmogenesis | The PI's deliberately inflated term for the fictional recovery result. It is not a proven mechanism. |

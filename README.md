@@ -20,7 +20,7 @@ configuration. The specification is not implementation-ready until the gate in
 
 Target experience:
 
-- first-person 3D exploration in a compact fictional research institute;
+- first-person 3D exploration on a compact fictional university research floor;
 - one semester compressed into an approximately three-hour first playthrough;
 - a 90-minute minimum-complete fallback if production must contract;
 - a 20–30-minute vertical slice before full production;

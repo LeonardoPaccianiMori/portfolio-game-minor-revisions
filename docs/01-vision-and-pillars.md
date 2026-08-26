@@ -34,7 +34,7 @@ possible revision of their career.
    buy little security. Failure may still produce insight or a defensible exit.
 4. **The exit is meaningful, not utopian:** industry can break the academic
    loop but brings real trade-offs and is not presented as moral perfection.
-5. **Compact depth:** one evolving institute floor and reusable experiment
+5. **Compact depth:** one evolving university research floor and reusable experiment
    systems should support dense consequences without pretending to be a vast
    campus simulation.
 6. **Bitter comedy through recognition:** humour should come from euphemism,

@@ -28,7 +28,7 @@ creative decisions during coding.
 
 ## Scope controls
 
-- Compact institute floor instead of open campus.
+- Compact university research floor instead of open campus.
 - Five recurring supporting characters; most institutional roles remain
   remote or environmental.
 - Reused experiment and analysis systems across laser, oxygen, and drug work.

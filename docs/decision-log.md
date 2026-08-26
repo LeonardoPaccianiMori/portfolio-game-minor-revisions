@@ -16,7 +16,7 @@ belongs in the numbered design documents.
 | 2026-08-25 | Track semester time, energy, evidence strength, PI confidence, and research integrity at high level. | Confirmed |
 | 2026-08-25 | Use laser injury as the original discovery, then replication, mechanism, oxygen-deprivation, and cardiotoxic-drug escalation. | Confirmed |
 | 2026-08-25 | Target approximately three hours, retain a 90-minute fallback, and prove a 20–30-minute vertical slice. | Confirmed |
-| 2026-08-25 | Use one compact, evolving institute floor. | Confirmed |
+| 2026-08-25 | Use one compact, evolving university research floor. | Confirmed |
 | 2026-08-25 | Use a lightly authored protagonist with player-selected name and pronouns. | Confirmed |
 | 2026-08-25 | Use five recurring supporting roles; keep reviewers, editors, and most administrators remote or environmental. | Confirmed |
 | 2026-08-26 | Generate modular endings from career choice, paper state, integrity, energy, and relationships; neither route may remain viable. | Confirmed |
@@ -41,6 +41,12 @@ belongs in the numbered design documents.
 | 2026-08-26 | Use laser replication and sham, damage and recovery range, batch check, repair-state evidence, required oxygen loss, and optional drug exposure as the experiment chain. | Confirmed |
 | 2026-08-26 | Separate complete, partial, failed, and unreliable biological results from usable, inconclusive, suspicious, and worth-repeating evidence quality. | Confirmed |
 | 2026-08-26 | Use careful, strong, and inflated repair-state claims. The PI's inflated term is “reconstructive rhythmogenesis.” | Confirmed |
+| 2026-08-26 | Set the game at Bellwether University in the Department of Developmental Systems and the Cardiac Patterning Group. | Confirmed |
+| 2026-08-26 | Give the protagonist an observant, dry, controlled internal voice; use two to four stance-based choices without moral labels or a moral score. | Confirmed |
+| 2026-08-26 | Name the recurring cast Professor Elena Markovic, Haoran Zhao, Dr. Samira El-Masri, Dr. Gabriel da Silva, and Dr. Camila Torres, with the approved roles, pressures, and relationship arcs. | Confirmed |
+| 2026-08-26 | Keep Camila, the editor, and the reviewers remote during the playable semester; reserve exact schedules and visual and audio presentation for later blocks. | Confirmed |
+| 2026-08-26 | Use The Common Archive for the preprint and Morrow Biotech for the industry approach. | Confirmed |
+| 2026-08-26 | Submit in order to *Cosmos*, *Knowledge*, *Developmental Systems Letters*, and *Proceedings of the International Institute of Morphodynamics* (`PIIM`); the first three reject and `PIIM` sends the paper to review. | Confirmed |
 
 ## Rules for future entries
 

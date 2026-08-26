@@ -10,10 +10,10 @@ gaps. It does not mean that the domain is finished.
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
 | `02-player-experience-and-loop.md` | Moment-to-moment play | Seeded | Exact interactions, time model, tuning |
-| `03-narrative-and-campaign.md` | Five-act story | Seeded | Beat sheet, event order, branching details |
+| `03-narrative-and-campaign.md` | Five-act story | Approved for B02 | Beat sheet, event order, branching details remain in B03 |
 | `04-science-and-experiments.md` | Fictional science | Approved for B01 | Interaction, balance, and content details remain in later blocks |
-| `05-characters-and-dialogue.md` | Cast and voice | Seeded | Names, identities, arcs, dialogue system |
-| `06-world-and-level-design.md` | Institute floor | Seeded | Layout, traversal, unlocks, room specifications |
+| `05-characters-and-dialogue.md` | Cast and voice | Approved for B02 | Relationship thresholds, exact content, visual and audio production details |
+| `06-world-and-level-design.md` | University research floor | Approved for B02 | Layout, traversal, schedules, unlocks, room specifications remain in B07 |
 | `07-systems-and-balance.md` | State and rules | Seeded | Formulas, visibility, thresholds, balance |
 | `08-endings-and-state-matrix.md` | Outcomes | Seeded | Unlock rules, combinations, epilogue content |
 | `09-art-audio-and-assets.md` | Presentation | Seeded | Audio direction, budgets, concrete asset inventory |
@@ -51,10 +51,9 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B02 — Institution, protagonist, and characters**
-- Last documented block: **B01 — Fictional science and experiment progression**
-- Next action: begin B02 with the fictional institution and the protagonist's
-  narrative voice.
+- Current block: **B03 — Campaign beat sheet and branching**
+- Last documented block: **B02 — Institution, protagonist, and characters**
+- Next action: define the semester calendar and the mandatory campaign beats.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -111,19 +110,31 @@ status, and the next place to resume.
 
 ### B02 — Institution, protagonist, and characters
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B00 and the scientific vocabulary established in B01.
 - **Primary documents:** `03-narrative-and-campaign.md`,
   `05-characters-and-dialogue.md`, `06-world-and-level-design.md`, and
   `glossary.md`.
-- **Must resolve:** fictional institution, laboratory, journals, preprint
-  service, company, and institutional terminology; protagonist narrative voice
-  and dialogue grammar; character names, identities, appearances, voices, and
-  silhouettes; supporting-character motivations and arcs; relationships,
-  conflicts, reconciliation, and betrayal possibilities; schedules; and whether
-  any remote role appears physically.
+- **Approved decision set:** Bellwether University contains the Department of
+  Developmental Systems and the Cardiac Patterning Group. The protagonist has
+  an observant, dry, controlled internal voice and stance-based dialogue. The
+  recurring cast is Professor Elena Markovic, Haoran Zhao, Dr. Samira
+  El-Masri, Dr. Gabriel da Silva, and Dr. Camila Torres. Each has a distinct
+  institutional pressure and a relationship arc that can support help,
+  conflict, or both. The Common Archive hosts the preprint. Morrow Biotech is
+  the interested company. The journal sequence is *Cosmos*, *Knowledge*,
+  *Developmental Systems Letters*, and *Proceedings of the International
+  Institute of Morphodynamics*. The first three reject the paper; the fourth
+  sends it to peer review.
+- **Deferred outside B02:** B03 owns exact scene order, rejection text,
+  reviewer reports, personal-history reveals, and character reactions. B05
+  owns relationship state and thresholds. B07 owns exact schedules and
+  navigation. B08 owns faces, clothing, colour, animation, performed voices,
+  and other production presentation. During the playable semester, Camila,
+  the editor, and the reviewers remain remote.
 - **Complete when:** the fictional world and recurring cast can support every
   campaign act without reproducing real people or institutions literally.
+- **Completion record:** `Complete Minor Revisions B02 institution and characters block`.
 
 ### B03 — Campaign beat sheet and branching
 

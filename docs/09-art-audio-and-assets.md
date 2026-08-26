@@ -4,7 +4,7 @@ Status: **visual direction confirmed; audio and inventory unresolved**
 
 ## Stylized institutional realism
 
-The institute is plausible but simplified. Use clean readable geometry instead
+The university research floor is plausible but simplified. Use clean readable geometry instead
 of photorealistic detail. The dominant palette is muted beige, grey, blue, and
 institutional green under fluorescent lighting.
 

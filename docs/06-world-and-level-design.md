@@ -1,11 +1,13 @@
 # World and Level Design
 
-Status: **seeded; floor plan unresolved**
+Status: **approved for B02; B07 floor plan pending**
 
 ## Confirmed world structure
 
-The game takes place primarily on one compact, densely designed institute floor
-rather than a multi-building campus. The floor is an evolving "academic
+The game takes place primarily on one compact, densely designed research floor
+at Bellwether University rather than across a multi-building campus. The
+Department of Developmental Systems contains the Cardiac Patterning Group and
+the shared facilities used by the group. The floor is an evolving "academic
 terrarium": small enough for asset reuse, dense enough for repeated spaces to
 acquire new narrative meaning.
 
@@ -14,18 +16,38 @@ acquire new narrative meaning.
 - **Main laboratory:** preparation and shared equipment.
 - **Tissue-culture room:** organoid maintenance and sample health.
 - **Imaging room:** laser injury, microscopy, rhythm and contraction analysis.
-- **Player desk:** email, data analysis, calendar, and manuscript board.
+- **Shared desk area:** the protagonist's email, data analysis, calendar, and
+  manuscript board, plus workspaces for Haoran and Samira.
 - **PI office:** meetings and real-time cutscenes; mysteriously warmer and
   better lit than the rest of the floor.
+- **Facility station:** Gabriel's operational base near the imaging and shared
+  equipment areas.
 - **Break room and corridor:** colleagues, gossip, notices, and environmental
   storytelling.
 - **Building exit:** mundane at first and increasingly meaningful and inviting
   as the industry route develops.
 
-## Implied wider institution
+## Recurring character presence
+
+These are location contracts, not exact schedules:
+
+| Character | Main physical or communication locations |
+|---|---|
+| Elena Markovic | PI office, main laboratory, and planned walk-throughs |
+| Haoran Zhao | Tissue-culture room, main laboratory bench, and shared desk area |
+| Samira El-Masri | Imaging room, shared desk area, and break room |
+| Gabriel da Silva | Facility station, imaging room, and shared equipment areas |
+| Camila Torres | Email and video calls at the protagonist's desk |
+| Editor and reviewers | Messages and reports only |
+
+Camila, the editor, and the reviewers do not need physical navigation or 3D
+models during the playable semester. B07 owns exact schedules, routes, event
+staging, and crowd implication.
+
+## Implied wider university
 
 Inaccessible doors, windows, announcements, posters, email, booking systems,
-and characters who are always elsewhere imply a larger institute without
+and characters who are always elsewhere imply a larger university without
 requiring it to be modelled. Inaccessible spaces must feel intentional rather
 than like missing content.
 
@@ -55,6 +77,6 @@ protagonist or reframe a relationship scene.
 - Player spawn, navigation tutorial, act-based locks, and event staging.
 - Exact interactable and decorative object inventory per room.
 - Lighting states, time-of-day representation, and semester transitions.
-- NPC navigation, schedules, collision, and crowd implication.
+- Exact NPC navigation, schedules, collision, and crowd implication.
 - Environmental-storytelling catalogue and persistence rules.
 - Loading strategy, occlusion, level-of-detail, and performance constraints.
