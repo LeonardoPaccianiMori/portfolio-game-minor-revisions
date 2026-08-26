@@ -35,6 +35,12 @@ belongs in the numbered design documents.
 | 2026-08-26 | Present the work first as a complete narrative game and agent use as a transparent second layer; do not call it “made by AI” or a simple Three.js learning exercise. | Confirmed |
 | 2026-08-26 | Record each agent work package with requirements, model settings, instructions, ownership, output, review, Leonardo's corrections, and final commit; keep full private conversations private. | Confirmed |
 | 2026-08-26 | Do not announce a date before the vertical slice passes or promise the full game before the fallback works; complete title, licence, and quality checks before public release. | Confirmed |
+| 2026-08-26 | Use a standardized lab-grown human cardiac tissue model with beating muscle cells, support cells, simple internal structure, and no patient or donor story. | Confirmed |
+| 2026-08-26 | Use a fictional temporary repair state after limited damage. It is linked to spatial-rhythmic recovery but is not proven to cause recovery. | Confirmed |
+| 2026-08-26 | Show structure, rhythm, and a fictional repatterning index as the three evidence views. | Confirmed |
+| 2026-08-26 | Use laser replication and sham, damage and recovery range, batch check, repair-state evidence, required oxygen loss, and optional drug exposure as the experiment chain. | Confirmed |
+| 2026-08-26 | Separate complete, partial, failed, and unreliable biological results from usable, inconclusive, suspicious, and worth-repeating evidence quality. | Confirmed |
+| 2026-08-26 | Use careful, strong, and inflated repair-state claims. The PI's inflated term is “reconstructive rhythmogenesis.” | Confirmed |
 
 ## Rules for future entries
 

@@ -43,6 +43,23 @@ choosing what to do, what evidence to trust, and what cost to accept.
   relationship, or advance the narrative rather than only erase progress.
 - A successful result can create additional demands rather than simple relief.
 
+## Scientific feedback model
+
+Each experiment reports two separate layers:
+
+- **Biological result:** complete recovery, partial recovery, failed recovery,
+  or unreliable result.
+- **Evidence quality:** usable, inconclusive, suspicious, or worth repeating.
+
+The player reads three simple evidence views: tissue structure, rhythm, and the
+repatterning index. These views show clear states such as strong, unclear,
+mixed, or failed. The player can learn causal patterns from these views without
+reading raw biological data.
+
+The manuscript board offers careful, strong, and inflated claims about the
+repair state. Claim choice changes integrity, PI confidence, and later reviewer
+pressure. Exact controls and interactions remain B04 work.
+
 ## Other play modes
 
 - The manuscript is managed through an interactive revision board, not a

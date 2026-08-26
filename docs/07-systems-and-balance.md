@@ -23,15 +23,15 @@ on sample health/history, preparation, equipment condition, monitoring,
 intervention, biological variability, and control quality. Randomness may
 model variability but cannot dominate or conceal the causal model.
 
-Result classifications are:
+Each experiment has two result layers.
 
-- usable;
-- inconclusive;
-- suspicious; or
-- worth repeating.
+- **Biological result:** complete recovery, partial recovery, failed recovery,
+  or unreliable result.
+- **Evidence quality:** usable, inconclusive, suspicious, or worth repeating.
 
-These classifications may be player judgements, system assessments, or both;
-the exact presentation is open.
+Partial and failed recovery can give useful information. An unreliable result
+can require a repeat or a different control. The exact presentation remains
+open, but the player must be able to distinguish the two layers.
 
 ## Pressure and trade-offs
 
@@ -44,6 +44,9 @@ the exact presentation is open.
 - PI confidence can rise while integrity falls, and vice versa.
 - Failure should alter knowledge or opportunity rather than function as a pure
   time tax.
+- A careful manuscript claim can protect integrity but reduce PI confidence. A
+  strong claim can increase PI confidence. An inflated claim can increase PI
+  confidence, harm integrity, and cause harder reviewer demands.
 
 ## Manuscript system
 
@@ -51,6 +54,9 @@ The revision board contains sections, figures, claims, controls, and
 supplementary items. PI and reviewer requests can conflict across versions.
 Player actions trade time, coherence, PI confidence, evidence alignment, and
 integrity. Version history should make circular revision visible.
+
+The repair-state claim has careful, strong, and inflated levels. The exact
+numeric effects and thresholds remain open.
 
 ## Career-route readiness
 

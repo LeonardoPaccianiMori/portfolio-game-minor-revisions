@@ -11,7 +11,7 @@ gaps. It does not mean that the domain is finished.
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
 | `02-player-experience-and-loop.md` | Moment-to-moment play | Seeded | Exact interactions, time model, tuning |
 | `03-narrative-and-campaign.md` | Five-act story | Seeded | Beat sheet, event order, branching details |
-| `04-science-and-experiments.md` | Fictional science | Seeded | Origin, mechanism, controls, exact experiment chain |
+| `04-science-and-experiments.md` | Fictional science | Approved for B01 | Interaction, balance, and content details remain in later blocks |
 | `05-characters-and-dialogue.md` | Cast and voice | Seeded | Names, identities, arcs, dialogue system |
 | `06-world-and-level-design.md` | Institute floor | Seeded | Layout, traversal, unlocks, room specifications |
 | `07-systems-and-balance.md` | State and rules | Seeded | Formulas, visibility, thresholds, balance |
@@ -51,10 +51,10 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B01 — Fictional science and experiment progression**
-- Last documented block: **B00 — Vision, audience, success, and boundaries**
-- Next action: begin B01 with the organoid origin, composition, and fictional
-  recovery mechanism.
+- Current block: **B02 — Institution, protagonist, and characters**
+- Last documented block: **B01 — Fictional science and experiment progression**
+- Next action: begin B02 with the fictional institution and the protagonist's
+  narrative voice.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -86,18 +86,28 @@ status, and the next place to resume.
 
 ### B01 — Fictional science and experiment progression
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B00.
 - **Primary documents:** `04-science-and-experiments.md`, with consequences for
   `02-player-experience-and-loop.md`, `03-narrative-and-campaign.md`, and
   `07-systems-and-balance.md`.
-- **Must resolve:** organoid origin and composition; fictional recovery
-  mechanism; pathways, markers, controls, sham and batch design; experiment
-  families, order, duration, dependencies, failure modes, and readable outputs;
-  paper claims at different evidence strengths; and fictional scientific names.
+- **Approved decision set:** the model is a standardized lab-grown human
+  cardiac tissue model with beating muscle cells, support cells, and simple
+  internal structure. Limited damage starts a fictional repair state that is
+  linked to, but does not prove cause of, spatial-rhythmic recovery. The player
+  reads structure, rhythm, and repatterning-index evidence. The experiment
+  chain is laser replication and sham, damage and recovery range, batch check,
+  repair-state evidence, required oxygen-loss challenge, and optional drug
+  challenge. Results have separate biological-result and evidence-quality
+  layers. Manuscript claims have careful, strong, and inflated levels.
+- **Deferred outside B01:** B04 and B05 own exact controls, interactions,
+  player choices, numerical balance, and thresholds. B03 owns exact narrative
+  use. No later work may add an actionable protocol, treatment claim, or proof
+  that the repair state causes recovery.
 - **Complete when:** the whole experiment chain is scientifically legible,
   narratively useful, safe from actionable wet-lab detail, and specific enough
   to design gameplay and reviewer requests.
+- **Completion record:** `Complete Minor Revisions B01 science block`.
 
 ### B02 — Institution, protagonist, and characters
 

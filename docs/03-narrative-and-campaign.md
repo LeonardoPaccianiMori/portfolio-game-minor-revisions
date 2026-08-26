@@ -18,9 +18,11 @@ life.
 
 ### Act I — Supplementary data
 
-The player attempts clean replication, sham controls, and better imaging. Some
-experiments succeed, others fail, and equipment, samples, schedules, and new PI
-requests make the supposedly small task expand.
+The player repeats the laser-damage result, performs sham controls, compares
+damage and recovery ranges, and checks different tissue batches. The player
+then collects repair-state evidence without proving cause. Some experiments
+succeed, others fail, and equipment, samples, schedules, and new PI requests
+make the supposedly small task expand.
 
 ### Act II — Manuscript hell
 
@@ -38,8 +40,10 @@ for peer review.
 ### Act IV — Competing futures
 
 Reviewers and the editor generate further demands, including physiologically
-relevant injury experiments. Two reviewers may be enthusiastic while one is
-scathing; apparently minor revisions may require major new experiments.
+relevant injury experiments. The oxygen-loss challenge is required for the
+paper response. Drug exposure is optional and can strengthen industry interest.
+Two reviewers may be enthusiastic while one is scathing; apparently minor
+revisions may require major new experiments.
 
 After reading the public preprint, a cardiac organoid or tissue-chip company
 contacts the protagonist about a translational R&D or assay-development role.
@@ -65,6 +69,10 @@ comic epilogue responds to paper state, integrity, energy, and relationships.
   checkpoints.
 - Earlier history may be communicated through the world, dialogue, and
   accumulated consequences rather than a long prologue.
+- The PI can pressure the player to use the inflated term “reconstructive
+  rhythmogenesis” and to make a stronger claim than the evidence supports.
+- The protagonist can use careful, strong, or inflated manuscript language.
+  This choice changes PI confidence, integrity, and later reviewer pressure.
 
 ## Open decisions
 
