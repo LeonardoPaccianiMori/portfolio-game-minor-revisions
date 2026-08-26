@@ -47,6 +47,14 @@ belongs in the numbered design documents.
 | 2026-08-26 | Keep Camila, the editor, and the reviewers remote during the playable semester; reserve exact schedules and visual and audio presentation for later blocks. | Confirmed |
 | 2026-08-26 | Use The Common Archive for the preprint and Morrow Biotech for the industry approach. | Confirmed |
 | 2026-08-26 | Submit in order to *Cosmos*, *Knowledge*, *Developmental Systems Letters*, and *Proceedings of the International Institute of Morphodynamics* (`PIIM`); the first three reject and `PIIM` sends the paper to review. | Confirmed |
+| 2026-08-26 | Use a 16-week campaign that begins and ends at 06:42. Keep the player in a continuous day-and-night work loop without a home scene, sleep action, or automatic daily reset. | Confirmed |
+| 2026-08-26 | Use seven mandatory scenes and ten optional character scenes. Keep total non-interactive scene time at 15–20 minutes, with a 22-minute maximum. | Confirmed |
+| 2026-08-26 | Use the approved Week 1–16 beat sheet, safe message delivery, no quest markers, and a fixed campaign backbone with state-based scene variation. | Confirmed |
+| 2026-08-26 | Set `PIIM` editor Dr. Leila Haddad and three fixed reviewer positions. Use one major-revision round, then a Week 15 published, accepted-pending-final-work, under-review, or rejected/withdrawn state. | Confirmed |
+| 2026-08-26 | Set Morrow's possible role as Research Scientist, Cardiac Assay Development, and Aldercroft's possible route as a final-round Assistant Professor of Developmental Cardiac Systems interview. | Confirmed |
+| 2026-08-26 | Let the player report honestly, selectively exclude valid evidence, alter a result, or fabricate a result without a practical falsification method. Fabrication can remain undiscovered. | Confirmed |
+| 2026-08-26 | Use Week 14 defensible response, stronger response, journal withdrawal, and public-record withdrawal choices; retain the Week 16 Aldercroft, Morrow, leave, or neither-route conclusion. | Confirmed |
+| 2026-08-26 | Use careful, strong, and inflated title forms; make the protagonist first author, Elena senior author, and credit for Haoran and Samira a meaningful integrity choice. | Confirmed |
 
 ## Rules for future entries
 

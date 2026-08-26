@@ -13,14 +13,31 @@ Laboratory play uses medium abstraction. The player physically moves among
 samples, equipment, the desk, and characters, but the meaningful challenge is
 choosing what to do, what evidence to trust, and what cost to accept.
 
+## Campaign time and continuity
+
+The narrative covers a 16-week final semester. The player stays on the
+Bellwether University research floor through a continuous day-and-night work
+loop. There is no home scene, sleep action, or automatic daily reset. The
+changing light, empty rooms, instrument runs, messages, and character presence
+show the passing day and night.
+
+Work, story events, and controlled time passages advance the compressed
+calendar. A player may later use a short local break, but it cannot function as
+a full recovery or a substitute for sleep. B05 owns the exact time costs,
+energy effects, pause behaviour, and scheduling rules.
+
+Important messages wait until an active experiment reaches a safe stopping
+point. They do not interrupt the player without warning or disappear because
+the player is using equipment.
+
 ## Recurring six-stage loop
 
 1. **Choose:** interpret the PI request; select hypothesis, controls, samples,
    and conditions.
 2. **Prepare:** gather materials, configure equipment, label samples, set
    damage or stimulation parameters, and select quality checks.
-3. **Incubate:** start the experiment and allocate compressed days among other
-   experiments, manuscript work, administration, relationships, rest, or the
+3. **Incubate:** start the experiment and allocate compressed time among other
+   experiments, manuscript work, administration, relationships, or the
    industry contact.
 4. **Monitor:** inspect rhythm traces, imaging, environment, contamination, and
    tissue health; intervene, continue, or abandon.
@@ -70,11 +87,15 @@ pressure. Exact controls and interactions remain B04 work.
 - Email, notices, and environmental changes convey the wider institution.
 - Real-time in-engine cutscenes may temporarily control input and camera, then
   restore play or present a choice.
+- Mandatory and optional narrative scenes use the B03 time budget: a 15–20
+  minute target and a 22-minute maximum for all non-interactive scenes. They
+  remain skippable, captioned, and safe around checkpoints.
 
 ## Open decisions
 
 - Exact movement, interaction, targeting, inventory, and equipment controls.
-- Semester-to-real-time conversion, pausing, day boundaries, and scheduling UI.
+- Exact semester-to-real-time conversion, pausing, time costs, short-break
+  effects, and scheduling UI.
 - Number of concurrent samples and experiments.
 - Exact experiment preparation, monitoring, analysis, and manuscript-board
   interactions.

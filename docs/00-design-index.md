@@ -9,17 +9,17 @@ gaps. It does not mean that the domain is finished.
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Seeded | Exact interactions, time model, tuning |
-| `03-narrative-and-campaign.md` | Five-act story | Approved for B02 | Beat sheet, event order, branching details remain in B03 |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved for B03 | Exact interactions, time model, and tuning remain in B04–B05 |
+| `03-narrative-and-campaign.md` | Five-act story | Approved for B03 | Ending modules and line-level content remain in B06 and B10 |
 | `04-science-and-experiments.md` | Fictional science | Approved for B01 | Interaction, balance, and content details remain in later blocks |
-| `05-characters-and-dialogue.md` | Cast and voice | Approved for B02 | Relationship thresholds, exact content, visual and audio production details |
+| `05-characters-and-dialogue.md` | Cast and voice | Approved for B03 | Relationship thresholds, exact content, visual and audio production details |
 | `06-world-and-level-design.md` | University research floor | Approved for B02 | Layout, traversal, schedules, unlocks, room specifications remain in B07 |
 | `07-systems-and-balance.md` | State and rules | Seeded | Formulas, visibility, thresholds, balance |
-| `08-endings-and-state-matrix.md` | Outcomes | Seeded | Unlock rules, combinations, epilogue content |
+| `08-endings-and-state-matrix.md` | Outcomes | Approved for B03 | Unlock rules, combinations, and epilogue content remain in B05–B06 |
 | `09-art-audio-and-assets.md` | Presentation | Seeded | Audio direction, budgets, concrete asset inventory |
 | `10-ui-ux-accessibility.md` | Interface and access | Seeded | Control scheme, HUD, accessibility baseline |
 | `11-technical-architecture.md` | Runtime design | Seeded | Stack, modules, save schema, performance budget |
-| `12-content-specification.md` | Content inventory | Seeded | Exact counts and all authored content |
+| `12-content-specification.md` | Content inventory | Approved for B03 | Full identifiers, line counts, and authored content remain in B10 |
 | `13-testing-and-evaluation.md` | Quality evidence | Seeded | Targets, playtest protocol, acceptance thresholds |
 | `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
 | `15-implementation-contract.md` | Agent handoff | Seeded | Requirement IDs and approved work packages |
@@ -51,9 +51,9 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B03 — Campaign beat sheet and branching**
-- Last documented block: **B02 — Institution, protagonist, and characters**
-- Next action: define the semester calendar and the mandatory campaign beats.
+- Current block: **B04 — Laboratory and manuscript gameplay**
+- Last documented block: **B03 — Campaign beat sheet and branching**
+- Next action: define the repeated laboratory and manuscript actions.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -138,17 +138,31 @@ status, and the next place to resume.
 
 ### B03 — Campaign beat sheet and branching
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B01 and B02.
 - **Primary documents:** `03-narrative-and-campaign.md`, with mappings to
   `05-characters-and-dialogue.md`, `08-endings-and-state-matrix.md`, and
   `12-content-specification.md`.
-- **Must resolve:** exact semester and act timeline; mandatory and optional
-  scenes; triggers; emails, meetings, journal rejections, peer review, industry
-  contact, final choice, and cutscenes; variation between runs; and how failure
-  or compromised work changes later acts without breaking the campaign.
+- **Approved decision set:** the campaign covers a 16-week final semester in
+  five acts. It begins and ends at 06:42. The player remains in a continuous
+  day-and-night work loop without a home or sleep action. Seven mandatory
+  scenes and ten optional character scenes provide the fixed campaign backbone.
+  *Cosmos*, *Knowledge*, and *Developmental Systems Letters* reject the paper;
+  `PIIM`, edited by Dr. Leila Haddad, gives one major-revision round with three
+  fixed reviewer positions. Morrow Biotech and Aldercroft University provide
+  competing, uncertain career routes. The player can make defensible,
+  selective, altered, or fabricated research claims without receiving a
+  practical falsification method. Fabrication can remain undiscovered. All
+  mandatory scenes occur in every run; state changes their content and the
+  final routes, but never ends the campaign before Week 16.
+- **Deferred outside B03:** B04 owns laboratory and manuscript interactions.
+  B05 owns state values, event thresholds, time costs, and route formulas. B06
+  owns ending modules, precedence, and final scenes. B07–B08 own scene staging,
+  camera, audio, and presentation. B10 owns exact authored text, localization,
+  identifiers, and full content inventory.
 - **Complete when:** every major story beat, branch, prerequisite, consequence,
   and transition has an approved place in the campaign.
+- **Completion record:** `Complete Minor Revisions B03 campaign block`.
 
 ### B04 — Laboratory and manuscript gameplay
 

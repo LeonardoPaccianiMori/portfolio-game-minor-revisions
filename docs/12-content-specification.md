@@ -1,20 +1,39 @@
 # Content Specification
 
-Status: **structure seeded; authored inventory incomplete**
+Status: **B03 campaign inventory approved; full authored inventory incomplete**
 
 This document will become the exhaustive inventory of content required for the
-approved game. It currently records confirmed categories and explicitly avoids
-inventing final counts.
+approved game. It records the B03 campaign minimum. B10 will assign stable IDs,
+line counts, dependencies, ownership, and final completion state.
 
 ## Campaign content categories
 
-| Act | Required content families | Exact inventory |
+| Act | Required content families | Approved B03 minimum |
 |---|---|---|
-| Supplementary data | Opening PI scene, laboratory onboarding, laser replication, controls, failures, equipment and relationship events | Open |
-| Manuscript hell | Revision-board requests, contradictory edit chains, figures, claims, version callbacks, PI meetings | Open |
-| Submission | Preprint flow, journal submissions, rejection messages, resubmission transitions | Open |
-| Competing futures | Review reports, editor decisions, oxygen/drug demands, industry emails/calls, interviews, PI pressure | Open |
-| Decision and epilogue | Route choice, neither-route handling, modular paper/integrity/energy/relationship scenes | Open |
+| Supplementary data | Opening PI scene, laboratory onboarding, laser replication, controls, failures, equipment and relationship events | Weeks 1–5; **Clarified** and **A Complete Narrative**; early Haoran, Samira, and Gabriel opportunities |
+| Manuscript hell | Revision-board requests, contradictory edit chains, figures, claims, version callbacks, PI meetings | Weeks 6–7; **What We Had**; three required contradictory revision cycles |
+| Submission | Preprint flow, journal submissions, rejection messages, resubmission transitions | Weeks 8–9; **Public Record**; The Common Archive, three rejection messages, and `PIIM` receipt |
+| Competing futures | Review reports, editor decisions, oxygen/drug demands, industry emails/calls, interviews, PI pressure | Weeks 10–15; **Helpful Comments**, **A Reasonable Response**, three reviewer reports, one editor, Morrow, Aldercroft, and late character scenes |
+| Decision and epilogue | Route choice, neither-route handling, modular paper/integrity/energy/relationship scenes | Week 16; **06:42** plus B06 epilogue modules |
+
+## Approved B03 campaign inventory
+
+- One 16-week narrative calendar with five acts.
+- Seven mandatory real-time scenes: **Clarified**, **A Complete Narrative**,
+  **What We Had**, **Public Record**, **Helpful Comments**, **A Reasonable
+  Response**, and **06:42**.
+- Ten optional character scenes: two for Haoran, two for Samira, two for
+  Gabriel, one for Elena, and three Morrow contacts with Camila.
+- One public-preprint event, three early journal rejections, one `PIIM` editor,
+  and three `PIIM` reviewer reports.
+- One Week 13 Aldercroft invitation-or-rejection message.
+- Four Week 14 paper-response forms: defensible resubmission, Elena's stronger
+  response, journal withdrawal, and public-record withdrawal.
+- One Week 15 cascade: `PIIM` state, conditional Morrow offer, and Elena's
+  private response.
+- One Week 16 career-choice scene. Its B06 epilogue uses career, paper,
+  integrity, energy, and relationship state.
+- A 15–20-minute target and 22-minute maximum for all non-interactive scenes.
 
 ## Required authored inventories
 
@@ -54,7 +73,8 @@ stable once implementation begins and must map to requirements and tests.
 ## Open decisions
 
 - Exact item counts, IDs, ownership, dependencies, and completion state.
-- Mandatory versus optional content and the 90-minute fallback cut line.
+- The 90-minute fallback cut line and any later mandatory-versus-optional
+  changes.
 - Randomized/conditional content pools and repeat-prevention rules.
 - Localization and voice-production inventory.
 - Content authoring formats and validation tooling.

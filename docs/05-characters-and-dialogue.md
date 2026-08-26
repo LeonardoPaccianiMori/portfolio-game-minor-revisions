@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved for B02; later content and presentation details pending**
+Status: **approved for B03; later content and presentation details pending**
 
 ## Protagonist
 
@@ -76,11 +76,35 @@ good. Her offer has real trade-offs.
 - Camila responds to clear and honest professional communication.
 - The game has no romance system.
 
-Each supporting character can have one or two personal facts. The player
-learns them through optional dialogue and environment details. The game must
-not use culture as a costume, nationality as a plot device, trauma as background
-decoration, or long biography scenes. B03 will define the exact facts and their
-reveals.
+## Personal details and B03 scene contract
+
+The player learns the following small details through optional dialogue or
+environment details. They are not biography scenes:
+
+| Character | Approved detail | Related optional scenes |
+|---|---|---|
+| Elena | A grant-renewal calendar is hidden under a stack of papers. | **The Future** in Weeks 6–9 |
+| Haoran | He keeps a private thesis-milestone list that he keeps moving forward. | **Borrowed Time** in Weeks 1–4; **The Missing Replicate** in Weeks 9–14 |
+| Samira | She keeps a sketchbook of tissue patterns that are “too subjective” for a paper. | **Shared Instrument** in Weeks 2–5; **Not in My Figure** in Weeks 6–12 |
+| Gabriel | He has a binder of old equipment failures and repairs. | **The Queue** in Weeks 1–4; **The Archive** in Weeks 10–14 |
+| Camila | She keeps the first rejection letter from her academic career as a reminder, not a wound. | Initial email and video call in Weeks 8–10; formal offer conversation in Week 15 |
+
+The game must not use culture as a costume, nationality as a plot device,
+trauma as background decoration, or long biography scenes. Detailed dialogue,
+choice text, and each scene's branch content remain B10 work.
+
+## Authorship and integrity encounters
+
+The protagonist is first author and Elena is senior author. Haoran can earn,
+lose, or be denied co-authorship through the player's choices. Samira must
+receive co-authorship if the player uses her useful evidence.
+
+Haoran and Gabriel can notice a mismatch only where the player's visible
+evidence record supports it. They can question, confront, or distance
+themselves from the player. They do not automatically report the player.
+Camila judges only what the player tells her. A confession of fabrication closes
+the Morrow offer. No character has hidden, omniscient knowledge of player
+actions.
 
 ## Remote and environmental roles
 
@@ -119,9 +143,8 @@ direction.
 
 ## Open decisions
 
-- Exact personal facts, dialogue content, conflicts, reconciliations, and
-  ending reactions.
+- Exact dialogue content, conflicts, reconciliations, and ending reactions.
 - Relationship state, thresholds, and systemic effects.
-- Character locations and schedules across the semester.
+- Exact character schedules, navigation, and event staging across the semester.
 - Exact visual designs, voice acting versus text-only delivery, performance
   direction, and localization.
