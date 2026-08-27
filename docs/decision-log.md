@@ -70,6 +70,11 @@ belongs in the numbered design documents.
 | 2026-08-27 | Use stored campaign seeds, authored experiment outcome bands, bounded variation, and diminishing returns on repeats. | Confirmed |
 | 2026-08-27 | Use fixed core requests, small state-selected authored request sets, stated soft failure, and no emergency catch-up resource or unlimited procedural pressure. | Confirmed |
 | 2026-08-27 | Approve Aldercroft, Morrow, PIIM reviewer-card, route-closure, and route-feedback rules. | Confirmed |
+| 2026-08-27 | Keep the game fun and absurdist throughout through institutional language, physical environment, and responsive systems, while science and character stakes remain grounded. | Confirmed |
+| 2026-08-27 | Use a six-month, 60–90-second modular epilogue inside the 22-minute non-interactive-scene maximum; use career scene, paper-aftershock, relationship afterbeat, final image, and summary. | Confirmed |
+| 2026-08-27 | Use *Pending Appointment*, *Transferable Skills*, *Out of Scope*, and *End of Contract* as the four career-ending labels, with approved route-precedence and paper-compatibility rules. | Confirmed |
+| 2026-08-27 | Keep paper outcomes deterministic after Week 16. Use the approved integrity, fatigue, and relationship-afterbeat rules to change epilogue consequence without a moral ranking. | Confirmed |
+| 2026-08-27 | Use a three-part ending summary and a local archive of twelve diegetic Institutional Citations. New campaigns use separate saves and seeds with no gameplay carry-over or chapter rewind. | Confirmed |
 
 ## Rules for future entries
 

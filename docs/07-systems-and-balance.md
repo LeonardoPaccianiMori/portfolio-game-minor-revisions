@@ -1,6 +1,6 @@
 # Systems and Balance
 
-Status: **approved through B05; ending modules and implementation tuning deferred**
+Status: **approved through B06; implementation tuning deferred**
 
 ## State model and player visibility
 
@@ -339,6 +339,42 @@ Before a route deadline, Research Status gives clear non-spoiling feedback,
 such as Aldercroft needs a stronger research case or Morrow needs a reply. It
 does not reveal the full formula or hidden flags.
 
+## B06 final-state resolution
+
+The Week 16 result first checks route closure. Public-record withdrawal closes
+both routes and therefore creates **End of Contract**. Otherwise, a player can
+choose **Pending Appointment** only when Aldercroft is available, or
+**Transferable Skills** only when Morrow is available. **Out of Scope** is the
+separate deliberate-departure choice when at least one route is available.
+**End of Contract** is used only when no route remains. When both routes are
+available, the summary records the unchosen route as an alternative declined.
+
+Morrow can coexist with journal rejection or journal withdrawal, but not with
+public-record withdrawal. Aldercroft can coexist with every paper state except
+public-record withdrawal.
+
+The paper state has no new random result after Week 16. Published remains
+published; accepted pending final work becomes published through routine final
+processing; under review remains unresolved; and rejected or withdrawn remains
+rejected or withdrawn. Evidence has no separate epilogue module because its
+effects already appear through paper state and route readiness. The ending
+summary still shows the final evidence-packet label.
+
+| Integrity state | Ending rule |
+|---|---|
+| Defensible | Honest reporting, or a corrected omission, with no changed reported reading or unsupported result. |
+| Compromised | An unresolved omission, with no changed reported reading or unsupported result. |
+| Seriously undermined | Any changed reported reading or unsupported result, whether or not another character discovers it. |
+
+An undiscovered seriously undermined record produces private unease, a fragile
+record, or future risk. A visible mismatch produces a direct professional or
+relationship consequence. A compromised record is an unresolved limitation,
+not an automatic scandal.
+
+Fatigue has an epilogue module only if the player crashed or ends Week 16 with
+zero or one energy segment. It changes the career scene tone, visual detail,
+and relationship afterbeat; it cannot change paper state or route availability.
+
 ## Balance principles
 
 - No universally optimal schedule should trivialize the campaign.
@@ -351,7 +387,6 @@ does not reveal the full formula or hidden flags.
 
 ## Deferred decisions
 
-- B06 owns epilogue combinations, ending labels, and final-state presentation.
 - B07 owns exact schedule, room, and event staging for each period.
 - B08 owns final HUD layout, profile-selection flow, and accessibility settings.
 - B09 owns data schemas, seed serialization, save migration, and runtime

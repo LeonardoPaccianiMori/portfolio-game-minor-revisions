@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B05; full UI work deferred**
+Status: **approved through B06; full UI work deferred**
 
 ## Perspective and interaction
 
@@ -202,9 +202,10 @@ implementation.
 - Email, notices, and environmental changes convey the wider institution.
 - Real-time in-engine cutscenes may temporarily control input and camera, then
   restore play or present a choice.
-- Mandatory and optional narrative scenes use the B03 time budget: a 15–20
-  minute target and a 22-minute maximum for all non-interactive scenes. They
-  remain skippable, captioned, and safe around checkpoints.
+- Mandatory and optional narrative scenes plus the ending epilogue use the
+  22-minute maximum for all non-interactive scenes. Main scenes target 14–18
+  minutes; each ending uses a 60–90-second epilogue. They remain skippable,
+  captioned, and safe around checkpoints.
 
 ## Deferred decisions
 

@@ -17,22 +17,26 @@
 | Crash | Consequential involuntary loss of one work period after a zero-energy push-through. It restores two energy segments and can miss monitoring or lose opportunities. |
 | Department of Developmental Systems | Fictional Bellwether University department that contains the Cardiac Patterning Group. |
 | Developmental Systems Letters | Third fictional journal in the submission ladder; it rejects the paper because the mechanism remains incomplete. |
+| Ending card | Local post-campaign record of the career label, paper, evidence, integrity, fatigue, and citations. |
 | Evidence strength | Credibility and completeness of support for manuscript claims, not merely the number of positive results. |
 | Evidence card | Player-created record from analysis. It identifies the research question, controls, evidence views, quality, and caveats available for manuscript work. |
 | Evidence packet | Current support label for the paper: Thin, Developing, Coherent, or Substantial. It reflects raw evidence support, not the current manuscript selection alone. |
 | Experiment family | Laser injury, oxygen deprivation/restoration, or cardiotoxic-drug exposure using shared laboratory systems. |
 | Experiment work queue | Desk display of the plain-language state of active sample groups. It cannot operate equipment remotely. |
 | Fabrication | A narrative choice to alter an existing result or invent one. The game gives no practical method. It can remain undiscovered. |
+| Fatigue module | Ending treatment used only after a crash or an ending energy value of zero or one. It changes tone but not paper or career outcome. |
 | Implementation-ready | Explicitly approved state in which every blocking design decision and acceptance criterion required for coding is resolved. |
 | Industry contact | The company scientist or recruiter interested in the preprint and protagonist's assay-development skills. |
+| Institutional Citation | Satirical diegetic stamp earned for research, relationship, integrity, career, or ending state. Twelve exist, and their local archive persists between campaigns. |
 | Knowledge | Second fictional journal in the submission ladder; a parody of decisive-proof prestige publishing. |
 | Minor request | A PI, editor, or reviewer demand described as small despite meaningful time, evidence, or ethical cost. |
 | Monitoring window | A stated point at which the player can continue, spend attention, or stop an active experiment before deliberately advancing game time. |
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
-| Modular epilogue | Short ending scene selected from accumulated career, paper, integrity, energy, and relationship state. |
+| Modular epilogue | A 60–90-second six-month ending sequence: career scene, paper-aftershock, relationship afterbeat, final image, and summary. |
 | Morrow Biotech | Fictional assay-development company that contacts the protagonist after reading the preprint. |
 | PIIM | Short form of *Proceedings of the International Institute of Morphodynamics*, the fictional journal that sends the paper to peer review. |
 | PIIM response card | Visible status for batch evidence, oxygen-loss work, or claim scope in the PIIM response. Each is met, partly met, or not met. |
+| Paper-aftershock | One short post-career-scene object, message, or line that shows what the paper state means six months later. |
 | PI confidence | The PI's approval and willingness to support submission or continuation; it is not scientific truth. |
 | Pressure profile | Standard or Supported balance setting. Both keep the same calendar, narrative, routes, and ending content. |
 | Preprint | Public manuscript version that can attract industry interest before journal publication. |

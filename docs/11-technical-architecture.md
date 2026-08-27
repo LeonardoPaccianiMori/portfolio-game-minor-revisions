@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **approved through B05; stack and schemas unresolved**
+Status: **approved through B06; stack and schemas unresolved**
 
 ## Confirmed platform
 
@@ -36,6 +36,12 @@ small variation inside an earned experiment or PIIM response band. Reloading,
 closing the browser, or resuming a save must not reroll that variation. B09
 owns the exact seed, state-transition, serialization, and migration schema.
 
+A completed campaign must create a local ending card and update the local
+Institutional Citation archive. A new campaign uses a separate save record and
+seed, with no gameplay state carried from an earlier campaign. The archive is
+preserved across campaigns. B09 owns the exact data schema, archive recovery,
+save-slot policy, and user-controlled data clearing.
+
 ## Required architectural capabilities
 
 - Deterministic or inspectable game-state transitions and campaign-seed use.
@@ -47,6 +53,7 @@ owns the exact seed, state-transition, serialization, and migration schema.
 - Modular epilogue composition.
 - Asset provenance and runtime asset inventory.
 - Local save serialization, validation, migration, and recovery.
+- Local ending-card and Institutional Citation archive persistence.
 - Test hooks for state combinations and time progression.
 
 ## Relationship to Unpaid

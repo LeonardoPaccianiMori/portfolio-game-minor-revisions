@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved through B05; later content and presentation details pending**
+Status: **approved through B06; later content and presentation details pending**
 
 ## Protagonist
 
@@ -108,6 +108,22 @@ scene. At 20 or below, they can withhold help, confront the player, or distance
 themselves. A later high value cannot erase denied credit, a fabrication
 concern, or a closed route stored as a permanent flag. Camila needs at least
 41 working trust for a Morrow offer.
+
+## B06 relationship afterbeats
+
+Each epilogue has one relationship afterbeat. It selects a character in this
+order: a permanent consequence first, then the largest change from that
+character's starting working trust, then the most recent consequential scene
+when there is a tie. Other relationships appear only in the ending summary.
+
+| Condition for the selected character | Afterbeat mode |
+|---|---|
+| Working trust 61 or above, with no permanent breach | Support or solidarity |
+| Working trust 21–60 | Ambiguous recognition |
+| Working trust 20 or below, or any permanent breach | Distance or confrontation |
+
+A permanent breach overrides a later high working-trust bar. Exact lines and
+character-specific variations remain B10 work.
 
 ## Personal details and B03 scene contract
 

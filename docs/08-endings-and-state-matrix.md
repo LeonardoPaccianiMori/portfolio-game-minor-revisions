@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **approved through B05; epilogue modules unresolved**
+Status: **approved through B06; exact authored content pending**
 
 ## Confirmed architecture
 
@@ -41,7 +41,8 @@ defines the route-unlock thresholds.
 
 Fabrication can remain undiscovered. A disclosure to Camila closes the Morrow
 offer. Haoran and Gabriel can react to a supported mismatch but do not
-automatically report the player. B06 will determine every epilogue reaction.
+automatically report the player. B06 determines the final-state and epilogue
+rules without making hidden misconduct automatically public.
 
 ## B05 route-unlock contract
 
@@ -90,45 +91,96 @@ response band. It cannot turn strong work into rejection or weak work into
 publication. An altered or invented report can appear to meet a card if no
 visible record contradicts it, but does not restore integrity.
 
-## Confirmed representative outcomes
+## B06 final-state and compatibility contract
 
-- Published plus academia: publication buys only a short extension or another
-  request for preliminary data.
-- Published plus industry: the semester-defining paper is mentioned during
-  onboarding and then becomes largely irrelevant.
-- Journal rejection or withdrawal plus industry: a public defensible preprint
-  and sound judgement can still support an offer.
-- Under review plus academia: pursuing the Aldercroft interview can require a
-  precarious bridge contract for supposedly minor revisions.
-- Compromised evidence plus either path: weaknesses follow the protagonist
-  after the decision.
-- Neither route: the fixed term ends without a viable continuation because of
-  accumulated choices, not a single arbitrary roll.
+The final resolver first checks closure and availability, then player choice.
+Public-record withdrawal closes both career routes and produces **End of
+Contract**. With at least one available route, the player may choose the
+available Aldercroft or Morrow route, or deliberately leave through **Out of
+Scope**. **End of Contract** is not a voluntary choice: it occurs only when no
+route remains. If both routes are available, the summary records the one not
+chosen as an alternative declined.
+
+| Career result | Ending label | Valid paper condition | Six-month consequence |
+|---|---|---|---|
+| Aldercroft chosen | **Pending Appointment** | Any except public-record withdrawal | A temporary bridge appointment and further committee delay; the interview is not proof of a permanent job. |
+| Morrow chosen | **Transferable Skills** | Any except public-record withdrawal | Employment at Morrow with stability and product pressure. |
+| Deliberate departure | **Out of Scope** | Any except public-record withdrawal | Uncertainty, relief, and an open future. |
+| No viable route | **End of Contract** | Any | The fixed term ends, but the protagonist still has agency beyond the university. |
+
+Morrow can coexist with journal rejection or journal withdrawal, because the
+public preprint can remain. Aldercroft can coexist with every paper state
+except public-record withdrawal.
 
 ## Modular epilogue structure
 
-A limited library of short scenes should combine career choice, paper state,
-integrity, energy, and relationship reactions. This limits cinematic production
-while preserving consequence. The exact ordering and compatibility rules are
-not decided.
+Every ending is a 60–90-second real-time, skippable, captioned, save-safe
+epilogue set six months after Week 16. It has this order:
 
-Industry is an exit from the academic survival loop, not a perfect-life ending.
-Academic continuation is not automatic punishment, but even its strongest form
-shows how little structural security the publication bought.
+1. Career scene in a compact, non-explorable setting.
+2. Paper-aftershock through one object, message, or spoken line.
+3. One relationship afterbeat.
+4. A 4–6-second external wide final image, with the protagonist only from
+   behind or as a silhouette.
+5. Ending card and summary.
 
-## State-matrix skeleton
+The four career scenes use the Bellwether desk or PI office, a small Morrow
+assay room, the university exit with a short outward view, or a cleared
+Bellwether desk followed by the exit. They do not create a second explorable
+map. B08 owns their exact visual and camera treatment.
 
-| Career state | Paper state | Integrity | Human state | Required epilogue response |
-|---|---|---|---|---|
-| Aldercroft available/chosen | Any | Any | Any | Interview commitment plus paper and relationship modules |
-| Morrow available/chosen | Any | Any | Any | Industry entry plus paper and relationship modules |
-| Leave deliberately | Any | Any | Any | Uncertain departure plus paper and relationship modules |
-| Neither available | Any | Any | Any | Fixed-term conclusion explaining lost routes |
+The paper-aftershock never creates a new random outcome. Published remains
+published; accepted pending final work becomes published through routine final
+processing; under review remains unresolved; and rejected or withdrawn work
+remains rejected or withdrawn. Published work becomes an item in another
+request or meeting; accepted work remains in an administrative loop; and a
+withdrawn public record has a clear cost.
 
-This is a structural skeleton, not an exhaustive approved matrix.
+| Integrity state | Epilogue response |
+|---|---|
+| Defensible | No altered or unsupported report; honest work, including a corrected omission, remains defensible. |
+| Compromised | An unresolved omission remains an explicit limitation. |
+| Seriously undermined, undiscovered | Private unease, a fragile record, or future risk. |
+| Seriously undermined, visible | Direct professional or relationship consequence. |
 
-## Open decisions
+Fatigue appears only after a crash or an ending energy value of zero or one.
+It changes scene tone, visual detail, and the relationship afterbeat, but not
+the paper or career result. Evidence has no separate scene because it already
+affects paper and career state; its final packet label appears in the summary.
 
-- Valid and invalid module combinations and precedence rules.
-- Every epilogue scene, line, location, duration, and final image.
-- Ending labels, achievements, replay summary, and new-game behaviour.
+The relationship afterbeat selects a permanent consequence first, then the
+largest change from starting working trust, then the most recent consequential
+scene in a tie. It uses support or solidarity at 61 or above without a
+permanent breach, ambiguous recognition at 21–60, and distance or confrontation
+at 20 or below or after a permanent breach. A breach always overrides a later
+high bar.
+
+## Ending summary, citations, and replay
+
+The ending label comes from career result. Paper, integrity, and human-state
+modules provide subtitle context without creating a moral ranking of endings.
+The summary has three parts:
+
+1. **Record:** career label, paper state, evidence-packet label, integrity
+   state, and fatigue state.
+2. **People:** the five final working-trust bars and short status lines.
+3. **Institutional Citations:** the citations unlocked in that run and the
+   complete local archive.
+
+The summary shows labels and bars, not hidden flags, raw formulas, or a
+completion percentage. It has twelve **Institutional Citations**: four for
+research and manuscript work, four for relationships and integrity choices,
+and four for career and ending states. They use short diegetic institutional
+stamp notifications during play, then persist in the local ending archive.
+They can respond to unethical choices, but none requires an unethical choice.
+
+A new campaign creates a separate save record and campaign seed. It carries no
+gameplay advantage, route, or state from earlier campaigns, but keeps the
+local ending and citation archive. There is no chapter rewind or free return
+to an earlier decision.
+
+## Deferred content work
+
+B08 owns final summary layout, presentation, and accessibility. B09 owns the
+archive and save schema. B10 owns exact epilogue lines, status text, citation
+names and triggers, and later content tuning.

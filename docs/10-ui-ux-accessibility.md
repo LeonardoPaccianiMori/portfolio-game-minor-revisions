@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **approved through B05; full B08 specification unresolved**
+Status: **approved through B06; full B08 specification unresolved**
 
 ## Confirmed interface surfaces
 
@@ -14,8 +14,7 @@ Status: **approved through B05; full B08 specification unresolved**
 - Research Status with evidence, PI confidence, integrity, working trust, and
   route feedback.
 
-The full visual layout, detailed interaction grammar, and final state
-presentation are not confirmed.
+The full visual layout and detailed interaction grammar are not confirmed.
 
 ## Approved B04 interaction baseline
 
@@ -60,6 +59,24 @@ Real-time cutscenes must be skippable, captioned, and safe around save
 checkpoints. Input control must be restored reliably after completion, skip,
 reload, or interruption.
 
+## Approved B06 ending and replay surfaces
+
+- The ending epilogue is real-time, skippable, captioned, and safe around a
+  final checkpoint. It lasts 60–90 seconds inside the 22-minute total
+  non-interactive-scene maximum.
+- The ending card uses the career label as its heading. Paper, integrity, and
+  human-state modules provide context without a moral ranking.
+- The ending summary has **Record**, **People**, and **Institutional
+  Citations** sections. Record shows career, paper, evidence, integrity, and
+  fatigue labels. People shows five working-trust bars and short status lines.
+- The summary does not show hidden flags, raw formulas, or a completion
+  percentage.
+- Institutional Citations use short diegetic institutional-stamp notifications
+  when earned. The ending summary shows citations earned in the run and the
+  local archive.
+- A new campaign has no gameplay carry-over or chapter rewind. Its archive
+  remains available through local save data.
+
 ## UX principles derived from confirmed design
 
 - The player must distinguish usable, inconclusive, suspicious, and repeatable
@@ -94,5 +111,5 @@ These are proposed minimums, not yet an approved accessibility specification.
 - HUD composition, state visibility, menus, tutorial, and onboarding.
 - Desktop versus mobile/tablet support; mobile is not currently promised.
 - Accessibility baseline, settings, defaults, and test criteria.
-- Save-slot, continue, restart, chapter, and replay UX.
+- Exact save-slot, continue, restart, archive, and replay layout.
 - Localization, text volume, reading level, and content warnings.

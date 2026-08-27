@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **approved through B05; ending modules and exact text pending**
+Status: **approved through B06; exact text pending**
 
 ## Premise
 
@@ -80,9 +80,10 @@ regenerative treatment.
 | **A Reasonable Response** | 14 | Player desk and PI office | The player chooses a defensible response, Elena's stronger response, or withdrawal. |
 | **06:42** | 16 | Research floor and building exit | The player confirms Aldercroft, accepts Morrow, or leaves without either route. |
 
-Scenes are real-time, skippable, captioned, and safe around checkpoints. The
-target total non-interactive duration is 15–20 minutes. It must not exceed 22
-minutes. Messages, reports, and manuscript work remain player-controlled.
+Scenes are real-time, skippable, captioned, and safe around checkpoints. Main
+scenes target 14–18 minutes. The ending epilogue adds 60–90 seconds inside the
+22-minute maximum for all non-interactive scenes. Messages, reports, and
+manuscript work remain player-controlled.
 
 ## Submission ladder and peer review
 
@@ -232,13 +233,36 @@ Aldercroft interview, accept Morrow's offer, or leave without either. Leaving
 is a deliberate uncertain choice, not a hidden best ending. A poor run can
 leave neither route viable.
 
-A short modular epilogue follows the confirmation. B06 owns all epilogue
-modules, ending labels, compatibility rules, and final images.
+A short approved modular epilogue follows the confirmation.
+
+## B06 epilogue contract
+
+Each ending takes place six months after the Week 16 choice. It lasts 60–90
+seconds and follows one fixed order: career scene, paper-aftershock, one
+relationship afterbeat, 4–6-second final image, then the ending summary. The
+epilogue is real-time, skippable, captioned, and safe around checkpoints.
+
+| Career ending | Label | Compact non-explorable setting | Central consequence |
+|---|---|---|---|
+| Aldercroft chosen | **Pending Appointment** | Bellwether desk or PI office | A temporary bridge appointment and another committee delay; the interview does not prove a permanent job. |
+| Morrow chosen | **Transferable Skills** | Small Morrow assay room | The player has stability and product pressure, not perfect rescue. |
+| Deliberate departure | **Out of Scope** | University exit with a short outward view | The player has uncertainty, relief, and an open future. |
+| No viable route | **End of Contract** | Cleared Bellwether desk, then exit | The fixed term ends, but the player retains agency beyond the university. |
+
+The final image is an external wide shot. It shows the protagonist only from
+behind or as a silhouette, then fades to the ending card. B08 owns the final
+camera and visual treatment.
+
+The paper-aftershock uses one short object, message, or spoken line, rather
+than another scene. A published paper becomes an item in another request or
+meeting; accepted final work continues through routine administration; an
+under-review paper remains unresolved; and rejected or withdrawn work either
+remains available as a preprint or has a clear cost when its public record is
+removed. It adds no new random paper result.
 
 ## Deferred narrative work
 
 - B04 owns exact laboratory and revision-board interactions.
-- B06 owns detailed ending and epilogue content.
 - B07 and B08 own staging, camera, animation, audio, and room-state detail.
 - B10 owns exact messages, reports, dialogue lines, localization, identifiers,
-  and the complete content inventory.
+  epilogue writing, and the complete content inventory.

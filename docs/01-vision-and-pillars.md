@@ -37,9 +37,20 @@ possible revision of their career.
 5. **Compact depth:** one evolving university research floor and reusable experiment
    systems should support dense consequences without pretending to be a vast
    campus simulation.
-6. **Bitter comedy through recognition:** humour should come from euphemism,
-   contradictions, signs, emails, repetition, and human incentives—not random
-   nonsense or cruelty alone.
+6. **Bitter comedy through active play:** the game must remain fun and
+   absurdist throughout. Humour comes from institutional language, physical
+   environment, and responsive systems, as well as euphemism, contradiction,
+   signs, emails, repetition, and human incentives. Science and character
+   stakes remain grounded; the game does not rely on random dream logic or
+   cruelty alone.
+
+## Humour execution rule
+
+Every serious game system must allow comic, satirical, or strange feedback
+without hiding its real stakes. Institutional Citations, contradictory
+requests, environment details, and player-facing records are part of the
+comedy, not only dialogue delivery. Exact jokes, citations, and text remain
+B10 work.
 
 ## Confirmed format
 
