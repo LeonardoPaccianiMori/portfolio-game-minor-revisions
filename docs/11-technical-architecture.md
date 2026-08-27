@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **approved through B06; stack and schemas unresolved**
+Status: **approved through B07; stack and schemas unresolved**
 
 ## Confirmed platform
 
@@ -55,6 +55,18 @@ save-slot policy, and user-controlled data clearing.
 - Local save serialization, validation, migration, and recovery.
 - Local ending-card and Institutional Citation archive persistence.
 - Test hooks for state combinations and time progression.
+
+## B07 continuous-floor constraint
+
+The research floor is one continuous level. Room loading screens, gameplay
+portals, and streaming transitions are not allowed. Doors, glass partitions,
+and corridor bends limit sightlines. At most two or three nearby rooms need
+full visual detail at one time. Distant rooms may use lower-detail geometry,
+lighting, sound, silhouettes, and message signals.
+
+B09 selects the rendering, collision, navigation, occlusion, level-of-detail,
+and loading implementation. It must preserve the B07 room sizes, clear paths,
+automatic core doors, and the rule that characters cannot trap the player.
 
 ## Relationship to Unpaid
 

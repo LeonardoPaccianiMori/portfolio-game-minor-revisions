@@ -4,6 +4,7 @@
 |---|---|
 | Academic continuation | Any viable route that keeps the protagonist pursuing an academic position after the semester. |
 | Academic terrarium | The compact university research floor whose repeated spaces expose institutional dynamics. |
+| Act state | One of five persistent floor conditions that changes room function and environmental story without changing the floor plan. |
 | Active sample group | One labelled physical tray and linked digital record that occupies one of the three laboratory slots until final analysis or cancellation. |
 | Aldercroft University | Fictional university that can invite the protagonist to a final-round Assistant Professor interview in Week 13. |
 | Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
@@ -23,7 +24,9 @@
 | Evidence packet | Current support label for the paper: Thin, Developing, Coherent, or Substantial. It reflects raw evidence support, not the current manuscript selection alone. |
 | Experiment family | Laser injury, oxygen deprivation/restoration, or cardiotoxic-drug exposure using shared laboratory systems. |
 | Experiment work queue | Desk display of the plain-language state of active sample groups. It cannot operate equipment remotely. |
+| Exit vestibule | Small glass space at the building boundary. It is visible before Week 16 and becomes the final decision location in Week 16. |
 | Fabrication | A narrative choice to alter an existing result or invent one. The game gives no practical method. It can remain undiscovered. |
+| Facility station | Gabriel's operational base directly beside the imaging room. It supports booking, queue, and service scenes. |
 | Fatigue module | Ending treatment used only after a crash or an ending energy value of zero or one. It changes tone but not paper or career outcome. |
 | Implementation-ready | Explicitly approved state in which every blocking design decision and acceptance criterion required for coding is resolved. |
 | Industry contact | The company scientist or recruiter interested in the preprint and protagonist's assay-development skills. |
@@ -49,6 +52,7 @@
 | Revision commit | Player action that makes a manuscript-board arrangement permanent and creates a version snapshot. |
 | Revision snapshot | Visible historical manuscript version used for comparison. It cannot undo the consequences of a committed revision. |
 | Safe stopping point | A point at which an active experiment can pause without an important message interrupting or disappearing. |
+| Service pass-through | Optional Gabriel-linked short route between shared desks and imaging. It opens at 61 Gabriel working trust and is never required. |
 | Semester time | Finite campaign clock compressed from one academic semester into the target playtime. |
 | Stylized institutional realism | Plausible, simplified research-world art direction with institutional palette and environmental satire. |
 | Spatial-rhythmic recovery | Paper-facing term for restored tissue pattern and coordinated rhythm after limited damage. |

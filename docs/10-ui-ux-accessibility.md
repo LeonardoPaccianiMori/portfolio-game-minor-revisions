@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **approved through B06; full B08 specification unresolved**
+Status: **approved through B07; full B08 specification unresolved**
 
 ## Confirmed interface surfaces
 
@@ -88,6 +88,20 @@ reload, or interruption.
 - First-person targeting must be comfortable in compact rooms.
 - UI should support the institutional visual language without sacrificing
   clarity for satire.
+
+## B07 compact-floor constraints
+
+The complete playable area is one continuous first-person floor. Required
+paths have clear walking space, and each core station has enough room for a
+comfortable approach and focused view. Furniture can block movement, but no
+character, scene, or decorative object can trap the player or create a
+precision movement task. Core doors open automatically.
+
+Room signs, the tissue-culture glow, the warm PI office, and the exit light
+give orientation. The game still uses no permanent objective arrow or minimap.
+When a required scene is due, an in-world cue and the existing task state give
+direction without a teleport. B08 must turn these constraints into the final
+control, prompt, motion, contrast, and accessibility design.
 
 ## Accessibility candidates requiring explicit approval
 

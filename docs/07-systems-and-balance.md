@@ -1,6 +1,6 @@
 # Systems and Balance
 
-Status: **approved through B06; implementation tuning deferred**
+Status: **approved through B07; implementation tuning deferred**
 
 ## State model and player visibility
 
@@ -39,7 +39,8 @@ authored action.
 
 Early and late are normal work periods. Night and after-hours add one energy
 segment to focused or intense work in Standard profile and reduce access to
-people and shared services. Exact schedules belong to B07.
+people and shared services. Exact schedules are in
+`06-world-and-level-design.md`.
 
 Standard profile starts with four energy segments. Supported starts with five,
 removes the late-work energy surcharge, restores three segments through each
@@ -60,6 +61,32 @@ repeat, relationship work, or recovery needs about 52–56. A high-evidence
 paper path can use 58–62. No viable route requires a crash. A player risks a
 crash by trying to maximize evidence, PI confidence, relationships, and both
 career routes in one run.
+
+## B07 period schedule and spatial event rules
+
+The following normal anchors apply to every named work period unless an
+authored campaign beat, optional scene, equipment event, or relationship result
+overrides them. They are location rules, not simulated crowd behaviour.
+
+| Character | Early | Late | Night | After-hours |
+|---|---|---|---|---|
+| Elena | PI office | Main laboratory or PI office | Scene only | Absent except **The Future** |
+| Haoran | Tissue culture | Main laboratory or shared desks | Rare desk scene | Absent |
+| Samira | Shared desks or break room | Imaging room | Scene only | Absent |
+| Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
+| Camila | Remote only | Remote only | Remote only | Remote only |
+
+Early and late retain full normal service. Night and after-hours retain
+laboratory and desk work, but reduce access to people and shared services.
+Equipment can run at every period. A room or station may have a visible queue,
+fault, booking limit, or repair state when an authored event requires it.
+
+A mandatory weekly beat becomes due at the first safe point in its stated
+week. The game gives an in-world cue and does not let the player begin another
+time-costing action first. This preserves the fixed calendar without a
+teleport, a physical room lock, or an unsafe interruption. Optional scenes
+remain available through their stated deadline. `06-world-and-level-design.md`
+defines their spatial positions and the exact floor access rules.
 
 ## Experiment resolution
 
@@ -387,7 +414,8 @@ and relationship afterbeat; it cannot change paper state or route availability.
 
 ## Deferred decisions
 
-- B07 owns exact schedule, room, and event staging for each period.
+- B07 schedule, room, and event staging rules are documented in
+  `06-world-and-level-design.md` and `05-characters-and-dialogue.md`.
 - B08 owns final HUD layout, profile-selection flow, and accessibility settings.
 - B09 owns data schemas, seed serialization, save migration, and runtime
   implementation.

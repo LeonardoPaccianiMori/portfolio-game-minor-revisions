@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B06; full UI work deferred**
+Status: **approved through B07; full UI work deferred**
 
 ## Perspective and interaction
 
@@ -41,7 +41,8 @@ player cannot spend additional time after that point.
 
 Early and late periods are normal work time. Night and after-hours periods
 allow laboratory and desk work, but increase energy cost and reduce access to
-people and shared services. B07 owns exact character and facility schedules.
+people and shared services. Exact character and facility schedules are in
+`06-world-and-level-design.md`.
 
 Important messages wait until an active experiment reaches a safe stopping
 point. They do not interrupt the player without warning or disappear because
@@ -140,6 +141,16 @@ The laboratory has six functional locations: a sample bench, experiment setup
 station, active sample rack, imaging and monitoring bay, analysis workstation,
 and manuscript desk. B07 decides their exact rooms and layout.
 
+B07 places the sample bench and experiment setup station in the main
+laboratory, the active sample rack in tissue culture, the imaging and
+monitoring bay in the imaging room, and the analysis workstation and manuscript
+desk in shared desks. The player can read status at the desk but must visit the
+physical room for meaningful monitoring or equipment work. The shortest work
+loop is PI office, shared desks, main laboratory, tissue culture, then PI
+office. Its stations are close enough to support repeated first-person travel,
+but far enough apart that a queue, a colleague, or a changed room state can
+become meaningful.
+
 The active rack gives each group a physical label and a simple state signal.
 The desk work queue repeats the state in words, such as running, check ready,
 attention needed, or ready for analysis. The queue informs the player but
@@ -213,7 +224,8 @@ implementation.
   control map belong to B08.
 - Exact visual presentation of time costs, energy, and pressure profiles
   belongs to B08.
-- Exact room placement, layout, and navigation paths belong to B07.
+- B07 room placement, layout, and navigation paths are documented in
+  `06-world-and-level-design.md`.
 - Exact authored experiment baselines and content counts belong to B10.
 - Save schema, corruption recovery, and browser support belong to B09.
 - Exact tutorial text, authored experiment instances, and replay content

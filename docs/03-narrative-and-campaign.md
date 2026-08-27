@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **approved through B06; exact text pending**
+Status: **approved through B07; exact text pending**
 
 ## Premise
 
@@ -84,6 +84,25 @@ Scenes are real-time, skippable, captioned, and safe around checkpoints. Main
 scenes target 14–18 minutes. The ending epilogue adds 60–90 seconds inside the
 22-minute maximum for all non-interactive scenes. Messages, reports, and
 manuscript work remain player-controlled.
+
+## B07 spatial scene staging
+
+Every required scene becomes due at a safe point in its stated week. A lit
+office, open door, desk message, voice, or character presence gives an
+in-world cue. The player can continue to walk, inspect, and read, but cannot
+start another time-costing task before the due scene occurs. This is a time
+gate, not a room lock or teleport. B08 owns the camera, animation, audio, and
+visual execution.
+
+| Scene | Spatial sequence and cue |
+|---|---|
+| **Clarified** | The player starts at the tissue-culture rack, sees the recovery state, walks to the main laboratory, then follows Elena to the PI office. Control returns at shared desks. |
+| **A Complete Narrative** | A warm lit PI office and revision stack call the player from the work loop. |
+| **What We Had** | A changed manuscript at shared desks calls the player to the desk, then Elena's office. |
+| **Public Record** | A desk message and the manuscript station contain the complete scene. |
+| **Helpful Comments** | The editor letter arrives at shared desks. Elena is available in the PI office after the report is read. |
+| **A Reasonable Response** | The response board at shared desks leads to the PI-office decision. |
+| **06:42** | The dark floor remains walkable. The player follows the now-bright exit route to the glass vestibule. |
 
 ## Submission ladder and peer review
 
@@ -170,18 +189,18 @@ benefit or relationship change; it does not end the campaign. The Morrow
 email rule is the only exception. The game signals availability through normal
 desk messages, room changes, and character presence. It uses no quest markers.
 
-| Character | Scene | Window | Narrative purpose |
-|---|---|---|---|
-| Haoran | **Borrowed Time** | Weeks 1–4 | He asks for help with work that is at risk. |
-| Haoran | **The Missing Replicate** | Weeks 9–14 | He questions missing or altered evidence where the record supports concern. |
-| Samira | **Shared Instrument** | Weeks 2–5 | The player shares, negotiates for, or takes imaging time. |
-| Samira | **Not in My Figure** | Weeks 6–12 | She offers useful evidence and asks for proper credit. |
-| Gabriel | **The Queue** | Weeks 1–4 | He asks the player to accept a facility delay or limit. |
-| Gabriel | **The Archive** | Weeks 10–14 | He notices a supported mismatch in the evidence record and can warn the player. |
-| Elena | **The Future** | Weeks 6–9 | An after-hours conversation shows grant-renewal pressure and fear. |
-| Camila | Initial email | Weeks 8–10 | The player can reply to Morrow's first approach. |
-| Camila | Video call | Week 10 | The player explains the work carefully, strongly, or dishonestly. |
-| Camila | Formal offer conversation | Week 15 | The player receives or loses the Morrow offer. |
+| Character | Scene | Window | Spatial anchor | Narrative purpose |
+|---|---|---|---|---|
+| Haoran | **Borrowed Time** | Weeks 1–4 | Tissue-culture room | He asks for help with work that is at risk. |
+| Haoran | **The Missing Replicate** | Weeks 9–14 | Shared desks | He questions missing or altered evidence where the record supports concern. |
+| Samira | **Shared Instrument** | Weeks 2–5 | Imaging booking board | The player shares, negotiates for, or takes imaging time. |
+| Samira | **Not in My Figure** | Weeks 6–12 | Shared desks or break room | She offers useful evidence and asks for proper credit. |
+| Gabriel | **The Queue** | Weeks 1–4 | Facility station | He asks the player to accept a facility delay or limit. |
+| Gabriel | **The Archive** | Weeks 10–14 | Imaging service alcove | He notices a supported mismatch in the evidence record and can warn the player. |
+| Elena | **The Future** | Weeks 6–9 | PI office after-hours | An after-hours conversation shows grant-renewal pressure and fear. |
+| Camila | Initial email | Weeks 8–10 | Protagonist desk | The player can reply to Morrow's first approach. |
+| Camila | Video call | Week 10 | Protagonist desk | The player explains the work carefully, strongly, or dishonestly. |
+| Camila | Formal offer conversation | Week 15 | Protagonist desk | The player receives or loses the Morrow offer. |
 
 ## Manuscript, credit, and integrity choices
 
@@ -263,6 +282,7 @@ removed. It adds no new random paper result.
 ## Deferred narrative work
 
 - B04 owns exact laboratory and revision-board interactions.
-- B07 and B08 own staging, camera, animation, audio, and room-state detail.
+- B07 owns spatial and event staging, location schedules, and room-state
+  detail. B08 owns camera, animation, audio, and visual execution.
 - B10 owns exact messages, reports, dialogue lines, localization, identifiers,
   epilogue writing, and the complete content inventory.

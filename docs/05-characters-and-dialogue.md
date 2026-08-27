@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved through B06; later content and presentation details pending**
+Status: **approved through B07; later content and presentation details pending**
 
 ## Protagonist
 
@@ -164,6 +164,25 @@ communication and environmental storytelling rather than full 3D characters.
 Camila also remains remote during the playable semester. B06 can decide whether
 an epilogue shows her in person.
 
+## B07 presence and schedule contract
+
+Characters use authored location anchors. They do not use free simulated
+roaming. A short authored walk can support a scene, but a scene always
+overrides the normal schedule. Camila remains remote at the protagonist desk.
+
+| Character | Early | Late | Night | After-hours |
+|---|---|---|---|---|
+| Elena | PI office | Main laboratory or PI office | Scene only | Absent except **The Future** |
+| Haoran | Tissue culture | Main laboratory or shared desks | Rare desk scene | Absent |
+| Samira | Shared desks or break room | Imaging room | Scene only | Absent |
+| Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
+| Camila | Remote only | Remote only | Remote only | Remote only |
+
+The normal table applies in every week unless the campaign beat, an optional
+scene, a visible equipment situation, or a relationship result overrides it.
+It is exact enough for player expectation, but avoids a full crowd simulation.
+The fixed optional-scene anchors are in `03-narrative-and-campaign.md`.
+
 ## Dialogue principles
 
 - Bitter comedy should arise from plausible language, euphemism,
@@ -193,6 +212,5 @@ direction.
 ## Open decisions
 
 - Exact dialogue content, conflicts, reconciliations, and ending reactions.
-- Exact character schedules, navigation, and event staging across the semester.
 - Exact visual designs, voice acting versus text-only delivery, performance
   direction, and localization.

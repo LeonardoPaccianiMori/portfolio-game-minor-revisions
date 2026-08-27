@@ -75,6 +75,13 @@ belongs in the numbered design documents.
 | 2026-08-27 | Use *Pending Appointment*, *Transferable Skills*, *Out of Scope*, and *End of Contract* as the four career-ending labels, with approved route-precedence and paper-compatibility rules. | Confirmed |
 | 2026-08-27 | Keep paper outcomes deterministic after Week 16. Use the approved integrity, fatigue, and relationship-afterbeat rules to change epilogue consequence without a moral ranking. | Confirmed |
 | 2026-08-27 | Use a three-part ending summary and a local archive of twelve diegetic Institutional Citations. New campaigns use separate saves and seeds with no gameplay carry-over or chapter rewind. | Confirmed |
+| 2026-08-27 | Use one approximately 400 m² Bellwether research floor with the approved compact topology, room sizes, 75–90 m walking loop, and 5–20 m core station spacing. | Confirmed |
+| 2026-08-27 | Place sample and setup work in the main laboratory, active samples in tissue culture, monitoring in imaging, and analysis and manuscript work at shared desks. Use no loose pickups or general item inventory. | Confirmed |
+| 2026-08-27 | Keep all core rooms accessible from Week 1. Use automatic core doors, non-playable service doors, an optional Gabriel pass-through at 61 working trust, and a visible exit that becomes a final boundary only in Week 16. | Confirmed |
+| 2026-08-27 | Start at the tissue-culture rack at 06:42. Stage required scenes with in-world cues and safe time gates, not teleports or artificial room locks. | Confirmed |
+| 2026-08-27 | Use authored character location anchors instead of free NPC roaming. Use the approved early, late, night, and after-hours schedule and fixed optional-scene room anchors. | Confirmed |
+| 2026-08-27 | Use five persistent floor act states, four functional time-of-day layers, bounded persistent environmental changes, a warm PI office, and an increasingly inviting exit from Week 8. | Confirmed |
+| 2026-08-27 | Use one continuous floor with no room loading screens, no crowd simulation, fixed brisk walking, simple collision, and bounded nearby full detail. | Confirmed |
 
 ## Rules for future entries
 

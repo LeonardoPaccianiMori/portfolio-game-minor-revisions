@@ -1,6 +1,6 @@
 # Art, Audio, and Assets
 
-Status: **visual direction confirmed; audio and inventory unresolved**
+Status: **approved through B07; audio and inventory unresolved**
 
 ## Stylized institutional realism
 
@@ -26,6 +26,32 @@ everything-is-a-cartoon treatment.
 - the PI office remains unusually warm and comfortable;
 - the exit becomes more inviting;
 - organoids remain among the liveliest objects as the protagonist tires.
+
+## B07 environment constraints
+
+The floor uses a compact reusable room kit: main laboratory, tissue culture,
+imaging and facility, shared desks, PI office, break room, corridor, and exit
+vestibule. Each room has one main functional station cluster and no more than
+two optional inspectable or social objects. There are no loose pickups, hidden
+object hunts, or general item inventory.
+
+The five act states change function and story meaning, not the floor plan.
+Across the whole floor, each phase permits at most one major and two minor
+visible room changes. A change appears only when the player enters a room,
+never as an object appearing in front of the player. The exact prop text,
+models, materials, palette, lighting technology, and final asset list remain
+B08 or B10 work.
+
+| Time layer | Functional presentation requirement |
+|---|---|
+| Early | Blue-grey exterior light and normal service. |
+| Late | Flat daylight and full fluorescent activity. |
+| Night | Dark windows, quiet rooms, and equipment light pools. |
+| After-hours | Reduced light, emptier corridors, and limited shared services. |
+
+The PI office remains comparatively warm in every layer. From Week 8, the exit
+light and outside view become more inviting for every player. This visual
+change does not depend on Morrow eligibility or imply a preferred ending.
 
 ## Animation boundary
 

@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **approved through B05; authored content work deferred**
+Status: **approved through B07; authored content work deferred**
 
 ## Scientific field and model
 
@@ -112,6 +112,12 @@ choice may use, omit, reinterpret, change the reported reading of, or add an
 unsupported reading beside this raw record. The game gives no practical method
 for falsification.
 
+The B07 floor places sample selection and experiment setup in the main
+laboratory, active sample groups in tissue culture, monitoring in the imaging
+room, and analysis and manuscript work at shared desks. This requires a short
+walk for every meaningful equipment action. It does not create a real-world
+laboratory protocol.
+
 ## B05 result and evidence contract
 
 Each experiment resolves two separate results. Biological result starts from
@@ -190,8 +196,9 @@ before public release.
 
 ## Deferred details
 
-B07 defines station placement and spatial navigation. B08 defines full input
-and accessibility design. B09 defines the data and save model. B10 defines
-exact experiment baselines, instances, and content counts. No later block may
-add real laboratory quantities, executable protocols, or a claim that the
-repair state is proven to cause recovery.
+B07 station placement and spatial navigation are documented in
+`06-world-and-level-design.md`. B08 defines full input and accessibility
+design. B09 defines the data and save model. B10 defines exact experiment
+baselines, instances, and content counts. No later block may add real
+laboratory quantities, executable protocols, or a claim that the repair state
+is proven to cause recovery.
