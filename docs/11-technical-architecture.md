@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **B04 interaction and continuity constraints added; stack and schemas unresolved**
+Status: **approved through B05; stack and schemas unresolved**
 
 ## Confirmed platform
 
@@ -31,9 +31,14 @@ or pausing the game must not advance game time or cause an experiment check to
 be missed. B09 must implement this rule without relying on real-world elapsed
 time.
 
+A new game must create and persist a campaign seed. The seed determines only
+small variation inside an earned experiment or PIIM response band. Reloading,
+closing the browser, or resuming a save must not reroll that variation. B09
+owns the exact seed, state-transition, serialization, and migration schema.
+
 ## Required architectural capabilities
 
-- Deterministic or inspectable game-state transitions.
+- Deterministic or inspectable game-state transitions and campaign-seed use.
 - Asynchronous experiment scheduling and monitoring.
 - Data-driven authored events and conditional narrative triggers.
 - Manuscript version history and contradictory request tracking.

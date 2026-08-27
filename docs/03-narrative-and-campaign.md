@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **approved for B03; ending modules and exact text pending**
+Status: **approved through B05; ending modules and exact text pending**
 
 ## Premise
 
@@ -39,6 +39,9 @@ regenerative treatment.
 - No early failure ends the game. Weak evidence, compromised work, damaged
   relationships, and closed career routes change later content and the final
   choice.
+- The fixed weekly gates do not wait for unfinished work. At a gate, the player
+  takes a lower-evidence route, narrows the claim, or loses a stated optional
+  opportunity.
 - Important messages wait until an active experiment reaches a safe stopping
   point. They cannot disappear or interrupt the player without warning.
 - The fixed calendar, submission order, and final week do not change between
@@ -113,6 +116,11 @@ accepted pending final work, still under review, or rejected/withdrawn. The
 outcome is not a moral reward: defensible work can fail, and undetected
 fabricated work can publish.
 
+The response uses visible batch-evidence, oxygen-loss, and claim-scope cards.
+The three cards set an earned response band. The stored campaign seed chooses
+only between adjacent outcomes in that band. Exact card rules are in
+08-endings-and-state-matrix.md and 07-systems-and-balance.md.
+
 ## Morrow and Aldercroft
 
 ### Morrow Biotech
@@ -123,6 +131,11 @@ polite follow-up. Ignoring both messages closes the industry route. A reply
 can lead to a Week 10 video call and, for an eligible and professionally
 reliable player, a Week 15 formal offer for **Research Scientist, Cardiac Assay
 Development**.
+
+Eligibility requires the reply, video call, public preprint, at least a
+Developing evidence packet, at least 41 Camila working trust, and no
+fabrication confession to Camila. The optional drug experiment can strengthen
+this route but is never required. A visible conflict can also close the offer.
 
 The Morrow role has multi-year security, clear pay, and better working
 conditions. Its trade-offs are product deadlines, client priorities, and less
@@ -136,6 +149,12 @@ In Week 13, Aldercroft sends either a final-round interview invitation or a
 polite rejection. The role is **Assistant Professor of Developmental Cardiac
 Systems**. Its application asks for a five-year research plan and evidence of
 independent scientific direction. Elena treats the paper as proof of both.
+
+The player must complete the one-period research plan before Week 12. The
+invitation also needs two of the following: Coherent or Substantial evidence,
+Supportive or Invested PI confidence, and at least 41 Elena working trust. A
+serious evidence concern visible to Aldercroft or Elena blocks the route. A
+hidden integrity problem alone does not.
 
 The `PIIM` result does not automatically create or remove an Aldercroft
 invitation. Publication does not secure the job, and a late journal rejection
@@ -202,8 +221,8 @@ routes react to evidence and disclosed actions, not random punishment.
 | Journal withdrawal | `PIIM` records the withdrawal. The public preprint can remain available. |
 | Public-record withdrawal | The player also removes the preprint. This can remove both career routes. |
 
-Exact thresholds and state formulas belong to B05. The narrative calendar does
-not change after any Week 14 choice.
+The B05 response-band and route rules determine the Week 15 state. The
+narrative calendar does not change after any Week 14 choice.
 
 ## Final choice and ending boundary
 
@@ -219,8 +238,6 @@ modules, ending labels, compatibility rules, and final images.
 ## Deferred narrative work
 
 - B04 owns exact laboratory and revision-board interactions.
-- B05 owns time costs, state values, event thresholds, route formulas, and
-  relationship effects.
 - B06 owns detailed ending and epilogue content.
 - B07 and B08 own staging, camera, animation, audio, and room-state detail.
 - B10 owns exact messages, reports, dialogue lines, localization, identifiers,

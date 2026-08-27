@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **B04 interaction baseline approved; full B08 specification unresolved**
+Status: **approved through B05; full B08 specification unresolved**
 
 ## Confirmed interface surfaces
 
@@ -11,9 +11,11 @@ Status: **B04 interaction baseline approved; full B08 specification unresolved**
   tissue health.
 - Dialogue choices, notifications, and route decisions.
 - Automatic local save and resume without an account.
+- Research Status with evidence, PI confidence, integrity, working trust, and
+  route feedback.
 
-The full HUD, screen layout, detailed interaction grammar, and visibility of
-state are not confirmed.
+The full visual layout, detailed interaction grammar, and final state
+presentation are not confirmed.
 
 ## Approved B04 interaction baseline
 
@@ -34,6 +36,23 @@ state are not confirmed.
 
 The full control map, prompt wording, UI layout, visual treatment, settings,
 and accessibility test criteria remain B08 work.
+
+## Approved B05 state and pressure feedback
+
+- The permanent HUD shows the current week and named work period, plus the
+  five-segment energy bar.
+- Research Status shows the evidence-packet label, PI-confidence label,
+  five-segment integrity bar, and one five-segment working-trust bar for each
+  recurring character.
+- A material state change gives a short stated reason. Integrity warnings are
+  factual and do not apply moral labels.
+- Before a route deadline, Research Status gives a clear non-spoiling message,
+  but does not disclose a full formula or hidden flags.
+- Standard is the intended pressure profile. Supported keeps the same calendar,
+  narrative, routes, and ending content, but provides clearer warnings and
+  more energy tolerance. It has no content penalty.
+- The game has no global game-over screen before Week 16. A crash or lost route
+  produces stated consequences and continues toward the final state.
 
 ## Confirmed cutscene requirements
 
@@ -63,7 +82,7 @@ reload, or interruption.
   plain-language-label rule.
 - Scalable text, readable fonts, UI safe areas, and adjustable dialogue speed.
 - Pause during most planning and reading interactions.
-- Reduced time pressure or narrative-focused difficulty option.
+- Further accessibility adjustments beyond the approved Supported profile.
 - Save recovery, cutscene replay or summary, and warning before irreversible
   choices.
 

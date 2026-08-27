@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **approved for B03; conditions and epilogues unresolved**
+Status: **approved through B05; epilogue modules unresolved**
 
 ## Confirmed architecture
 
@@ -36,12 +36,59 @@ The Week 16 scene always occurs at 06:42 at the building exit. It can present:
 The `PIIM` decision arrives in Week 15 after one major-revision round. It can
 publish a defensible paper, accept it pending final work, leave it under review,
 reject it, or publish an undetected compromised paper. A journal result does
-not automatically create or remove an existing Aldercroft invitation. Exact
-route thresholds remain B05 work.
+not automatically create or remove an existing Aldercroft invitation. B05
+defines the route-unlock thresholds.
 
 Fabrication can remain undiscovered. A disclosure to Camila closes the Morrow
 offer. Haoran and Gabriel can react to a supported mismatch but do not
 automatically report the player. B06 will determine every epilogue reaction.
+
+## B05 route-unlock contract
+
+An Aldercroft invitation needs all of the following:
+
+- the one-period five-year research plan completed before Week 12;
+- two of these three conditions: Coherent or Substantial evidence, Supportive
+  or Invested PI confidence, and at least 41 Elena working trust;
+- no serious evidence concern visible to Aldercroft or Elena.
+
+A hidden integrity problem alone does not block Aldercroft. A Week 15 PIIM
+result cannot remove an invitation already received.
+
+A Morrow offer needs all of the following:
+
+- reply to Camila and attendance at her video call;
+- a public preprint still available;
+- at least Developing evidence;
+- at least 41 Camila working trust;
+- no confession of fabrication to Camila.
+
+The optional drug experiment can strengthen Morrow interest but is not
+required. A hidden integrity problem alone does not close Morrow. A visible
+conflict or fabrication confession can.
+
+Public-record withdrawal closes both routes. Ignoring both Camila messages or
+confessing fabrication closes Morrow. Aldercroft's Week 13 rejection closes
+the academic route. Research Status gives a clear, non-spoiling warning before
+each relevant route deadline.
+
+## B05 PIIM response contract
+
+PIIM has three visible response cards: batch evidence, oxygen-loss challenge,
+and claim scope and reviewer response. Each is met, partly met, or not met.
+The manuscript board explains the current state.
+
+| Response band | Possible Week 15 state |
+|---|---|
+| All cards met with no visible evidence contradiction | Published or accepted pending final work |
+| Mixed cards | Accepted pending final work or under review |
+| Weak or mismatched cards | Under review or rejected |
+| Journal or public-record withdrawal | Rejected or withdrawn |
+
+The stored campaign seed selects only between adjacent outcomes in the earned
+response band. It cannot turn strong work into rejection or weak work into
+publication. An altered or invented report can appear to meet a card if no
+visible record contradicts it, but does not restore integrity.
 
 ## Confirmed representative outcomes
 
@@ -82,8 +129,6 @@ This is a structural skeleton, not an exhaustive approved matrix.
 
 ## Open decisions
 
-- Exact thresholds and route-unlock rules.
 - Valid and invalid module combinations and precedence rules.
 - Every epilogue scene, line, location, duration, and final image.
-- How low energy, damaged relationships, or compromised evidence alter offers.
 - Ending labels, achievements, replay summary, and new-game behaviour.

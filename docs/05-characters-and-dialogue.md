@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved for B03; later content and presentation details pending**
+Status: **approved through B05; later content and presentation details pending**
 
 ## Protagonist
 
@@ -76,6 +76,39 @@ good. Her offer has real trade-offs.
 - Camila responds to clear and honest professional communication.
 - The game has no romance system.
 
+## B05 working-trust contract
+
+Each recurring character has a visible 0–100 working-trust bar. It represents
+willingness to help, speak openly, or support the player; it does not measure
+friendship or moral worth. Camila's bar represents professional trust at
+Morrow.
+
+| Value | Status |
+|---:|---|
+| 0–20 | Damaged |
+| 21–40 | Strained |
+| 41–60 | Working |
+| 61–80 | Trusted |
+| 81–100 | Strong |
+
+| Character | Starting value |
+|---|---:|
+| Elena | 60 |
+| Haoran | 60 |
+| Samira | 40 |
+| Gabriel | 60 |
+| Camila | 40 when she first writes in Week 8 |
+
+A minor authored action changes a bar by 10 points; a major action changes it
+by 20. Values do not drift without a stated event. Ignoring a direct request
+counts as an authored action when its deadline expires.
+
+At 61 or above, a character can offer one bounded support action in the related
+scene. At 20 or below, they can withhold help, confront the player, or distance
+themselves. A later high value cannot erase denied credit, a fabrication
+concern, or a closed route stored as a permanent flag. Camila needs at least
+41 working trust for a Morrow offer.
+
 ## Personal details and B03 scene contract
 
 The player learns the following small details through optional dialogue or
@@ -144,7 +177,6 @@ direction.
 ## Open decisions
 
 - Exact dialogue content, conflicts, reconciliations, and ending reactions.
-- Relationship state, thresholds, and systemic effects.
 - Exact character schedules, navigation, and event staging across the semester.
 - Exact visual designs, voice acting versus text-only delivery, performance
   direction, and localization.

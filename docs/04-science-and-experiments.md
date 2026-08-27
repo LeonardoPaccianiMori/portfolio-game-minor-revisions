@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **approved through B04; balance and authored content work deferred**
+Status: **approved through B05; authored content work deferred**
 
 ## Scientific field and model
 
@@ -112,6 +112,27 @@ choice may use, omit, reinterpret, change the reported reading of, or add an
 unsupported reading beside this raw record. The game gives no practical method
 for falsification.
 
+## B05 result and evidence contract
+
+Each experiment resolves two separate results. Biological result starts from
+the authored experiment baseline and responds to sample state, selected
+approach, equipment condition, and small saved variation. Evidence quality
+responds to controls, monitoring, quality checks, missed windows, fatigue, and
+record handling. The saved campaign seed can move only within the earned
+adjacent result range; it cannot conceal a major player-caused problem.
+
+A new usable result with appropriate controls gives two evidence-support
+points. A useful partial result or first repeat gives one. An inconclusive
+result gives no support points, but can still answer a reviewer or show the
+next useful experiment. Later repeats have diminishing returns. The player is
+told when a further repeat is unlikely to strengthen the paper.
+
+Raw evidence remains in the laboratory record after analysis. Omitting it can
+weaken a manuscript or reviewer response, but cannot erase the scientific
+record. A limited control does not reduce research integrity when it is
+reported honestly. Integrity changes only when the player misrepresents, omits,
+changes, or invents reported evidence.
+
 ## Results and claims
 
 Each experiment has a biological result and a separate evidence-quality result.
@@ -169,9 +190,8 @@ before public release.
 
 ## Deferred details
 
-B05 defines time costs, outcome formulas, variability, repeat cost, and
-manuscript thresholds. B07 defines station placement and spatial navigation.
-B08 defines full input and accessibility design. B09 defines the data and save
-model. B10 defines exact experiment instances and content counts. No later
-block may add real laboratory quantities, executable protocols, or a claim that
-the repair state is proven to cause recovery.
+B07 defines station placement and spatial navigation. B08 defines full input
+and accessibility design. B09 defines the data and save model. B10 defines
+exact experiment baselines, instances, and content counts. No later block may
+add real laboratory quantities, executable protocols, or a claim that the
+repair state is proven to cause recovery.

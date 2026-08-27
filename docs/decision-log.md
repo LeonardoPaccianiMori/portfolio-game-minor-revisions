@@ -63,6 +63,13 @@ belongs in the numbered design documents.
 | 2026-08-26 | Make evidence omission, changed reported readings, and unsupported readings explicit confirmed integrity actions; keep raw records locked and provide no practical falsification method. | Confirmed |
 | 2026-08-26 | Save at safe experiment, manuscript, and scene states. Closing the game does not advance game time. Use mouse, keyboard, and controller alternatives without drag-only, timed, colour-only, or precision-motor requirements. | Confirmed |
 | 2026-08-26 | Replace the earlier six-stage laboratory-loop shorthand with the approved five-stage experiment loop. Manuscript work is a linked separate activity. | Confirmed; supersedes 2026-08-25 six-stage loop |
+| 2026-08-27 | Use a 64-period semester with early, late, night, and after-hours periods, stated one-to-three-period action costs, fixed weekly gates, and Standard and Supported pressure profiles. | Confirmed |
+| 2026-08-27 | Use a five-segment energy system with protected breaks, late-work pressure, and a consequential involuntary crash after a zero-energy push-through. No global game-over occurs before Week 16. | Confirmed |
+| 2026-08-27 | Use qualitative player feedback for time, evidence, and PI confidence, plus visible integrity and working-trust bars with stated change reasons and permanent history flags. | Confirmed |
+| 2026-08-27 | Approve the initial values, ranges, costs, recovery rules, and effect thresholds for energy, evidence, PI confidence, integrity, and working trust. | Confirmed |
+| 2026-08-27 | Use stored campaign seeds, authored experiment outcome bands, bounded variation, and diminishing returns on repeats. | Confirmed |
+| 2026-08-27 | Use fixed core requests, small state-selected authored request sets, stated soft failure, and no emergency catch-up resource or unlimited procedural pressure. | Confirmed |
+| 2026-08-27 | Approve Aldercroft, Morrow, PIIM reviewer-card, route-closure, and route-feedback rules. | Confirmed |
 
 ## Rules for future entries
 

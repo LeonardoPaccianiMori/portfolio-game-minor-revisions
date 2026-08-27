@@ -9,16 +9,16 @@ gaps. It does not mean that the domain is finished.
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved for B00 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B04 | Time model and numerical tuning remain in B05; complete UI specification remains in B08 |
-| `03-narrative-and-campaign.md` | Five-act story | Approved for B03 | Ending modules and line-level content remain in B06 and B10 |
-| `04-science-and-experiments.md` | Fictional science | Approved through B04 | Balance and exact authored experiment content remain in B05 and B10 |
-| `05-characters-and-dialogue.md` | Cast and voice | Approved for B03 | Relationship thresholds, exact content, visual and audio production details |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B05 | Complete UI specification remains in B08 |
+| `03-narrative-and-campaign.md` | Five-act story | Approved through B05 | Ending modules and line-level content remain in B06 and B10 |
+| `04-science-and-experiments.md` | Fictional science | Approved through B05 | Exact authored experiment content remains in B10 |
+| `05-characters-and-dialogue.md` | Cast and voice | Approved through B05 | Exact content and visual and audio production details remain in B08 and B10 |
 | `06-world-and-level-design.md` | University research floor | Approved through B04 | Layout, traversal, schedules, unlocks, room specifications remain in B07 |
-| `07-systems-and-balance.md` | State and rules | Approved through B04 | Formulas, visibility, thresholds, and balance remain in B05 |
-| `08-endings-and-state-matrix.md` | Outcomes | Approved for B03 | Unlock rules, combinations, and epilogue content remain in B05–B06 |
+| `07-systems-and-balance.md` | State and rules | Approved through B05 | Ending modules, runtime schemas, and tuned values remain in B06, B09, and B10 |
+| `08-endings-and-state-matrix.md` | Outcomes | Approved through B05 | Module combinations and epilogue content remain in B06 |
 | `09-art-audio-and-assets.md` | Presentation | Seeded | Audio direction, budgets, concrete asset inventory |
-| `10-ui-ux-accessibility.md` | Interface and access | Approved through B04 | Control scheme, HUD, and full accessibility baseline remain in B08 |
-| `11-technical-architecture.md` | Runtime design | Approved through B04 | Stack, modules, save schema, and performance budget remain in B09 |
+| `10-ui-ux-accessibility.md` | Interface and access | Approved through B05 | Control scheme, full HUD, and accessibility baseline remain in B08 |
+| `11-technical-architecture.md` | Runtime design | Approved through B05 | Stack, modules, save schema, and performance budget remain in B09 |
 | `12-content-specification.md` | Content inventory | Approved for B03 | Full identifiers, line counts, and authored content remain in B10 |
 | `13-testing-and-evaluation.md` | Quality evidence | Seeded | Targets, playtest protocol, acceptance thresholds |
 | `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
@@ -51,10 +51,10 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B05 — Time, resources, relationships, and balance**
-- Last documented block: **B04 — Laboratory and manuscript gameplay**
-- Next action: define the semester clock, resource representation, variability,
-  and relationship and route rules.
+- Current block: **B06 — Endings and epilogues**
+- Last documented block: **B05 — Time, resources, relationships, and balance**
+- Next action: define ending modules, compatibility, final images, replay
+  summary, and new-game behaviour.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -197,19 +197,32 @@ status, and the next place to resume.
 
 ### B05 — Time, resources, relationships, and balance
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B03 and B04.
 - **Primary documents:** `02-player-experience-and-loop.md` and
   `07-systems-and-balance.md`, with ending dependencies in
-  `08-endings-and-state-matrix.md`.
-- **Must resolve:** semester-to-real-time conversion; day boundaries, pausing,
-  scheduling, and difficulty; representation, initial values, caps, costs,
-  recovery, and formulas for every state; experiment variability and seed
-  policy; relationship and industry flags; request generation; loss and soft
-  failure; catch-up rules; and the anti-save-scumming stance.
+  `08-endings-and-state-matrix.md` and linked constraints in
+  `03-narrative-and-campaign.md`, `04-science-and-experiments.md`,
+  `05-characters-and-dialogue.md`, `10-ui-ux-accessibility.md`, and
+  `11-technical-architecture.md`.
+- **Approved decision set:** the fixed semester has 64 named work periods and
+  Standard and Supported pressure profiles. Energy, evidence, PI confidence,
+  integrity, and five working-trust relationships have approved values,
+  visibility, starting states, bands, costs, recovery, and permanent-flag
+  rules. A zero-energy push-through causes a consequential involuntary crash,
+  not a pre-Week-16 game-over. A stored campaign seed limits variation inside
+  earned experiment and PIIM outcome bands. Requests are fixed or selected from
+  small authored conditional sets, with stated lower-evidence routes instead
+  of calendar delay or unlimited catch-up. Aldercroft, Morrow, PIIM, route
+  closure, reviewer-card, and player-feedback rules are approved.
+- **Deferred outside B05:** B06 owns epilogue combinations and presentation.
+  B07 owns period schedules and staging. B08 owns detailed visual interface,
+  controls, and accessibility. B09 owns schemas and persistence. B10 owns
+  exact authored experiments, requests, dialogue, and post-playtest tuning.
 - **Complete when:** the state model and pacing rules are consistent, tunable,
   explainable to the player where appropriate, and connected to narrative and
   experiment outcomes.
+- **Completion record:** `Complete Minor Revisions B05 time and balance block`.
 
 ### B06 — Endings and epilogues
 
@@ -218,11 +231,11 @@ status, and the next place to resume.
 - **Primary documents:** `08-endings-and-state-matrix.md`, with narrative and
   character content in `03-narrative-and-campaign.md` and
   `05-characters-and-dialogue.md`.
-- **Must resolve:** route-unlock and paper-state thresholds; effects of
-  integrity, energy, evidence, and relationships; whether both viable routes
-  may be rejected; valid module combinations and precedence; every epilogue
+- **Must resolve:** final effects of integrity, energy, evidence, and
+  relationships; valid module combinations and precedence; every epilogue
   module and final image; ending labels; achievements; replay summary; and new
-  game behaviour.
+  game behaviour. B05 route-unlock and paper-state rules remain fixed unless
+  Leonardo explicitly reopens them.
 - **Complete when:** every reachable final state maps deterministically to a
   coherent choice or failure state and an approved modular epilogue.
 

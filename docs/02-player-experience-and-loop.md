@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B04; numerical balance and full UI work deferred**
+Status: **approved through B05; full UI work deferred**
 
 ## Perspective and interaction
 
@@ -27,14 +27,61 @@ loop. There is no home scene, sleep action, or automatic daily reset. The
 changing light, empty rooms, instrument runs, messages, and character presence
 show the passing day and night.
 
-Work, story events, and controlled time passages advance the compressed
-calendar. A player may later use a short local break, but it cannot function as
-a full recovery or a substitute for sleep. B05 owns the exact time costs,
-energy effects, detailed pause behaviour, and scheduling rules.
+The semester has 64 work periods: four in each of the 16 weeks. The named
+periods are early, late, night, and after-hours. A period represents compressed
+working time, not a literal calendar day. Work, story events, and controlled
+time passages advance this calendar. Walking, reading, and ordinary dialogue
+use no period. A meaningful action costs one, two, or three periods, and shows
+that cost before the player commits.
+
+Experiments update first when an action enters a new period. A due message or
+scene then waits for the next safe stopping point. In the final Week 16
+after-hours period, the clock returns to 06:42 and the exit scene begins. The
+player cannot spend additional time after that point.
+
+Early and late periods are normal work time. Night and after-hours periods
+allow laboratory and desk work, but increase energy cost and reduce access to
+people and shared services. B07 owns exact character and facility schedules.
 
 Important messages wait until an active experiment reaches a safe stopping
 point. They do not interrupt the player without warning or disappear because
 the player is using equipment.
+
+## Energy, pressure, and recovery
+
+Energy has five visible segments. Standard profile starts at four segments;
+Supported profile starts at five. It represents work capacity, not literal
+sleep deprivation.
+
+| Action class | Time cost | Standard energy cost |
+|---|---:|---:|
+| Light work | 1 period | 0 |
+| Focused work | 1 period | 1 |
+| Intense work | 2 periods | 2 |
+| Rare major commitment | 3 periods | 2 |
+
+Normal experiment, analysis, manuscript, and communication work normally use
+the focused class. Demanding work, repeats, difficult revisions, and sample or
+equipment recovery use the intense class. B10 assigns the exact class to each
+authored action.
+
+Night and after-hours add one energy segment to focused or intense work in the
+Standard profile. A protected break costs one period. The first protected break
+in a week restores two segments; later breaks restore one. In Supported
+profile, protected breaks restore three segments and late work has no added
+energy cost.
+
+At zero energy, the player can push through one focused or intense task. At
+its next safe point, the protagonist has an involuntary crash at the desk,
+break room, or laboratory. The crash advances one further work period, restores
+two energy segments, and resolves any monitoring window passed during it as
+missed. It can damage evidence, lose an optional opportunity, or close a route.
+It cannot begin during a manual equipment action or cutscene. There is no home
+scene, voluntary sleep action, or global game-over screen before Week 16.
+
+Standard is the intended survival-game profile. Supported keeps the calendar,
+narrative, routes, and ending content unchanged, but adds clearer warnings and
+more time tolerance. It has no stigma or content penalty.
 
 ## Recurring five-stage experiment loop
 
@@ -116,6 +163,20 @@ Equipment queues, faults, and access limits are authored situations. They give
 clear choices to wait, negotiate, ask Gabriel for help, use a limited
 alternative, or change the experiment plan. They are not random barriers.
 
+## Workload and soft failure
+
+The desk shows at most two high-priority required requests and three optional
+requests at one time. Active sample groups use their separate work queue.
+Mandatory beats use the fixed weekly calendar. Weak work changes the available
+paper path; it does not delay the calendar.
+
+There is no free emergency catch-up resource. At a fixed gate, unfinished work
+opens a stated lower-evidence route: repeat later, narrow the claim, accept a
+weak packet, or withdraw. Optional work can expire, but the game records the
+lost opportunity clearly. Serious setbacks, including a crash, weak evidence,
+damaged relationships, or a closed route, never stop the campaign before the
+Week 16 conclusion.
+
 ## Interruptions, recovery, and continuity
 
 Important messages first appear as world signals, then as safe queue
@@ -128,8 +189,8 @@ game time after a clear warning. Advancing past it can produce a weaker or less
 reliable result. Menus, pause, and browser closure never cause a missed check.
 The game saves at safe states, including experiment-stage changes, monitoring
 choices, analysis archiving, manuscript commits, and scene boundaries. Game
-time does not pass while the game is closed. B05 owns time costs and B09 owns
-the persistence implementation.
+time does not pass while the game is closed. B09 owns the persistence
+implementation.
 
 ## Other play modes
 
@@ -149,10 +210,10 @@ the persistence implementation.
 
 - Exact movement bindings, interaction range, HUD composition, and detailed
   control map belong to B08.
-- Semester-to-real-time conversion, pausing rules, time costs, short-break
-  effects, difficulty, and scheduling values belong to B05.
+- Exact visual presentation of time costs, energy, and pressure profiles
+  belongs to B08.
 - Exact room placement, layout, and navigation paths belong to B07.
-- Outcome formulas, variability, and repeat costs belong to B05.
+- Exact authored experiment baselines and content counts belong to B10.
 - Save schema, corruption recovery, and browser support belong to B09.
 - Exact tutorial text, authored experiment instances, and replay content
   belong to B10.

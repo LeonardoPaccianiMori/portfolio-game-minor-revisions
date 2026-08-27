@@ -1,20 +1,65 @@
 # Systems and Balance
 
-Status: **B04 interaction rules approved; B05 formulas and tuning unresolved**
+Status: **approved through B05; ending modules and implementation tuning deferred**
 
-## Confirmed high-level state
+## State model and player visibility
 
-- **Semester time:** finite campaign resource and event clock.
-- **Personal energy:** capacity to work, monitor, communicate, and recover.
-- **Evidence strength:** credibility, completeness, and support for manuscript
-  claims; not merely a count of successful experiments.
-- **PI confidence:** the PI's willingness to approve choices, writing, and
-  submission; distinct from scientific truth.
-- **Research integrity:** defensibility of methods, controls, interpretation,
-  and claims.
+| State | Internal representation | Player-facing feedback |
+|---|---|---|
+| Semester time | 64 work periods across 16 weeks | Current week and early, late, night, or after-hours period on the permanent HUD |
+| Energy | 0–5 segments | Five-segment bar on the permanent HUD |
+| Evidence | 0–12 support points | Thin, Developing, Coherent, or Substantial packet label in Research Status |
+| PI confidence | 0–100 | Cautious, Conditional, Supportive, or Invested desk label and Elena's response |
+| Research integrity | 0–100 plus permanent history flags | Five-segment bar and factual warnings in Research Status |
+| Working trust | 0–100 for each main character plus permanent flags | One five-segment bar for Elena, Haoran, Samira, Gabriel, and Camila |
 
-Relationships and industry interest may remain narrative, qualitative, or
-partly hidden rather than becoming visible bars.
+The player can open Research Status at any time. It contains evidence, PI
+confidence, integrity, working trust, current route feedback, and the reason
+for each material state change. These displays show the current system state,
+not moral worth or friendship.
+
+## Time, pacing, and pressure profiles
+
+The fixed semester has 64 work periods: early, late, night, and after-hours in
+each of 16 weeks. Walking, reading, and ordinary dialogue cost no period.
+Meaningful actions cost one, two, or three periods, and state the cost before
+commitment.
+
+| Action class | Time cost | Standard energy cost |
+|---|---:|---:|
+| Light work | 1 period | 0 |
+| Focused work | 1 period | 1 |
+| Intense work | 2 periods | 2 |
+| Rare major commitment | 3 periods | 2 |
+
+Normal experiment, analysis, manuscript, and communication work normally use
+the focused class. Demanding work, repeats, difficult revisions, and sample or
+equipment recovery use the intense class. B10 assigns the exact class to each
+authored action.
+
+Early and late are normal work periods. Night and after-hours add one energy
+segment to focused or intense work in Standard profile and reduce access to
+people and shared services. Exact schedules belong to B07.
+
+Standard profile starts with four energy segments. Supported starts with five,
+removes the late-work energy surcharge, restores three segments through each
+protected break, and gives an extra clear warning before a gate or irreversible
+choice. Both profiles have the same calendar, narrative, routes, and endings.
+Supported has no stigma or content penalty.
+
+In Standard profile, the first protected break in a week costs one period and
+restores two segments. Later protected breaks cost one period and restore one.
+At zero energy, the player can push through one focused or intense task. At its
+next safe point, the protagonist crashes, loses one further work period,
+restores two segments, and misses any monitoring window that passed during the
+crash. A crash can damage evidence, lose optional content, or close a route. It
+cannot begin during manual equipment interaction or a cutscene.
+
+A defensible route needs about 48–52 productive periods. A normal run with a
+repeat, relationship work, or recovery needs about 52–56. A high-evidence
+paper path can use 58–62. No viable route requires a crash. A player risks a
+crash by trying to maximize evidence, PI confidence, relationships, and both
+career routes in one run.
 
 ## Experiment resolution
 
@@ -22,6 +67,11 @@ Outcomes must be reproducible enough for players to learn. Resolution depends
 on sample health/history, preparation, equipment condition, monitoring,
 intervention, biological variability, and control quality. Randomness may
 model variability but cannot dominate or conceal the causal model.
+
+A new game creates a stored campaign seed. When an experiment starts, the
+system records its earned outcome range. Reloading or closing the game cannot
+reroll it. A new game can use a different seed. A different setup, control
+choice, or sample state can produce a different result for a stated reason.
 
 Each experiment has two result layers.
 
@@ -33,6 +83,94 @@ Partial and failed recovery can give useful information. An unreliable result
 can require a repeat or a different control. The player must be able to
 distinguish the two layers through the structure, rhythm, and repatterning-index
 views plus plain-language result labels.
+
+Biological result begins with the authored experiment baseline, then responds
+to sample state, selected approach, equipment condition, and small saved
+variation. Evidence quality responds to control quality, monitoring, quality
+checks, missed windows, fatigue, and record handling. Saved variation can move
+the biological result by one adjacent category only. It cannot make an expected
+failure complete recovery or hide a major player-caused evidence problem. B10
+defines each experiment's authored baseline.
+
+## Evidence, PI confidence, integrity, and trust
+
+Evidence has 12 maximum support points.
+
+| Support | Packet label |
+|---:|---|
+| 0–2 | Thin |
+| 3–5 | Developing |
+| 6–8 | Coherent |
+| 9–12 | Substantial |
+
+The game starts at three points, Developing. A new usable result with
+appropriate controls gives two points. A useful partial result or first repeat
+gives one. An inconclusive result gives zero, but can answer a reviewer or
+show the next useful action. Later repeats have diminishing returns. The game
+states when another repeat is unlikely to improve support. Raw evidence remains
+available after analysis and never decreases. Omitting a card does not erase
+raw support; it weakens the paper response instead.
+
+PI confidence starts at 45, Conditional.
+
+| Value | Desk state |
+|---:|---|
+| 0–24 | Cautious |
+| 25–49 | Conditional |
+| 50–74 | Supportive |
+| 75–100 | Invested |
+
+Fully answering an active PI request with useful work gives 10 points; partly
+answering it gives five. Deferring, refusing, or missing it removes 10.
+Committing a careful, strong, or inflated claim changes PI confidence by minus
+five, plus five, or plus 10. Revealing a clear weakness in the current packet
+removes 10. Each request or committed revision changes PI confidence once.
+Values remain between zero and 100.
+
+Research integrity starts at 100. Honest reporting of weak work causes no
+loss. Omitting valid evidence removes 10 points, changing a reported reading
+removes 25, and adding an unsupported reading removes 45. Restoring valid
+omitted evidence or correcting a current draft can recover at most 10 total
+points in one run. A permanent alteration or fabrication record remains even
+if the visible value partly recovers.
+
+| Value | Visible segments |
+|---:|---:|
+| 81–100 | 5 |
+| 61–80 | 4 |
+| 41–60 | 3 |
+| 21–40 | 2 |
+| 1–20 | 1 |
+| 0 | 0 |
+
+Integrity displays factual warnings where needed. It does not display a moral
+label.
+
+Each recurring character has working trust on the same 0–100 scale.
+
+| Value | Working-trust status |
+|---:|---|
+| 0–20 | Damaged |
+| 21–40 | Strained |
+| 41–60 | Working |
+| 61–80 | Trusted |
+| 81–100 | Strong |
+
+| Character | Initial value |
+|---|---:|
+| Elena | 60 |
+| Haoran | 60 |
+| Samira | 40 |
+| Gabriel | 60 |
+| Camila | 40 when her Week 8 bar appears |
+
+A minor authored choice changes working trust by 10 points and a major action
+by 20. Values do not drift without a clear event. Ignoring a direct request
+counts as an authored action when its deadline expires. At 61 or above, a
+character can offer one bounded support action in the related scene. At 20 or
+below, they can withhold help, confront the player, or distance themselves.
+Permanent flags retain denied credit, fabrication concerns, and closed routes
+even after the visible bar later improves.
 
 ## Experiment interaction state
 
@@ -67,8 +205,8 @@ enough evidence to support that statement.
 Poor results must always give useful information, a clear repeat reason, or a
 lower-quality route forward. Mandatory progress cannot require a perfect
 result. The player can repeat work, change controls, revise a claim, omit
-evidence, or use a more limited paper route. Exact costs and outcome weights
-belong to B05.
+evidence, or use a more limited paper route. B10 owns exact authored outcome
+weights and post-playtest tuning.
 
 ## Pressure and trade-offs
 
@@ -84,6 +222,31 @@ belong to B05.
 - A careful manuscript claim can protect integrity but reduce PI confidence. A
   strong claim can increase PI confidence. An inflated claim can increase PI
   confidence, harm integrity, and cause harder reviewer demands.
+
+## Requests, gates, and soft failure
+
+The request system is hybrid. Mandatory weekly beats and core PI requests are
+authored and fixed. Optional requests, character scenes, equipment problems,
+and wording changes come from small authored sets selected by current state.
+The game has no unlimited procedural requests.
+
+The desk shows at most two high-priority required requests and three optional
+requests at one time. Active sample groups use their separate queue. Week 5
+manuscript work, Week 8 preprint, Week 10 peer review, Week 14 response, and
+Week 16 conclusion happen in every run. Weak work changes the available paper
+path, not the calendar.
+
+There is no free emergency catch-up resource. At a gate, unfinished required
+work opens a lower-evidence route: repeat later, narrow the claim, accept a
+weak packet, or withdraw. Optional work can expire. The game states this
+expiry clearly rather than silently removing it.
+
+The campaign never gives a global game-over screen before Week 16. A forced
+crash, weak packet, missed opportunity, damaged relationship, or lost route is
+a serious consequence but still leads to a final state. Only stated conditions
+close a route immediately: public-record withdrawal closes both routes;
+ignoring both Camila messages or confessing fabrication closes Morrow; and an
+Aldercroft rejection closes academia.
 
 ## Manuscript system
 
@@ -130,14 +293,51 @@ while equipment needs attention, and a deadline must be explicit.
 Safe checkpoints occur at experiment-stage changes, monitoring decisions,
 analysis archiving, manuscript commits, and scene boundaries. Menus, pause,
 and browser closure do not advance game time or cause a missed monitoring
-window. B05 defines pause and time progression; B09 defines persistence.
+window. The B05 time and progression rules apply; B09 defines persistence.
+
+## PIIM response band
+
+PIIM has three visible response cards: batch evidence, oxygen-loss challenge,
+and claim scope and reviewer response. Each card is met, partly met, or not
+met. The manuscript board shows the current reason. A strong but overstated
+claim can weaken the claim-scope card even where the result looks impressive.
+
+| Earned response band | Week 15 paper state |
+|---|---|
+| All three cards met and no visible evidence contradiction | Published or accepted pending final work |
+| Mixed cards | Accepted pending final work or under review |
+| Weak or mismatched cards | Under review or rejected |
+| Journal or public-record withdrawal | Rejected or withdrawn |
+
+The stored seed chooses only between the adjacent outcomes in the earned band.
+It cannot turn a strong response into rejection or a weak response into
+publication. An altered or invented reported result can appear to meet a card
+where no visible record contradicts it. It does not repair integrity.
 
 ## Career-route readiness
 
-Academic viability should depend on paper state, evidence, PI support, time,
-and possibly relationships. Industry viability should depend on at least a
-credible public preprint, defensible work, communication with the contact, and
-the relevance of the assay. Exact rules remain open.
+The player can receive an Aldercroft invitation in Week 13 only if they
+complete the one-period five-year research-plan task before Week 12, have at
+least two of the following three conditions, and have no serious evidence
+concern visible to Aldercroft or Elena:
+
+- Coherent or Substantial evidence packet;
+- Supportive or Invested PI confidence;
+- at least 41 Elena working trust.
+
+A hidden integrity problem alone does not block an Aldercroft route. A late
+PIIM result does not change an existing invitation.
+
+The player can receive the Week 15 Morrow offer only if they reply to Camila,
+attend the video call, keep the public preprint available, have at least a
+Developing evidence packet, have at least 41 Camila working trust, and do not
+confess fabrication to Camila. The optional drug experiment improves this
+route but is never required. Hidden integrity alone does not close it; a
+visible conflict or confession can.
+
+Before a route deadline, Research Status gives clear non-spoiling feedback,
+such as Aldercroft needs a stronger research case or Morrow needs a reply. It
+does not reveal the full formula or hidden flags.
 
 ## Balance principles
 
@@ -149,13 +349,12 @@ the relevance of the assay. Exact rules remain open.
 - Recovery and constructive failure must remain possible.
 - Approximately three hours should contain escalation, not repetitive grinding.
 
-## Open decisions
+## Deferred decisions
 
-- Numeric versus qualitative representation of every state.
-- Starting values, caps, costs, recovery rates, formulas, and difficulty modes.
-- Experiment outcome model and random-seed policy.
-- Relationship and industry flags and their visibility.
-- Request generation: authored, conditional, procedural, or hybrid.
-- Loss conditions, soft failure, catch-up systems, and anti-save-scumming
-  stance.
-- Route-unlock thresholds and the exact numeric effects of manuscript choices.
+- B06 owns epilogue combinations, ending labels, and final-state presentation.
+- B07 owns exact schedule, room, and event staging for each period.
+- B08 owns final HUD layout, profile-selection flow, and accessibility settings.
+- B09 owns data schemas, seed serialization, save migration, and runtime
+  implementation.
+- B10 owns exact experiment baselines, request content, dialogue, and tuned
+  values after playtests.
