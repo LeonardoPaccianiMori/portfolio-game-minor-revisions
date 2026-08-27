@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **approved through B07; authored content work deferred**
+Status: **approved through B08; authored content work deferred**
 
 ## Scientific field and model
 
@@ -182,6 +182,21 @@ recognizable conceptual stages, visual states, and quality-control logic, but
 must not provide operational biological-engineering instructions, real
 quantities, or executable protocols.
 
+## B08 science presentation and access contract
+
+Science displays use fictional tissue images, rhythm traces, data panels,
+plain-English summaries, icons, and labels. They do not use real microscopy,
+raw operational data, laboratory images, or a real protocol. Structure, rhythm,
+and repatterning-index results must remain readable through text and object
+state as well as colour.
+
+At a station, the player sees one action and its time and energy cost before
+commitment. Focused scientific choices use ordinary selection and confirmation
+through keyboard-mouse or controller input. They do not require dragging,
+holding, timed presses, or precise motor input. Captions, speaker names,
+scalable text, high contrast, reduced motion, and Interaction Assist apply to
+all required experiment information.
+
 ## Grounding sources retained for design
 
 - NCATS Tissue Chip program: <https://ncats.nih.gov/research/research-activities/tissue-chip>
@@ -197,8 +212,8 @@ before public release.
 ## Deferred details
 
 B07 station placement and spatial navigation are documented in
-`06-world-and-level-design.md`. B08 defines full input and accessibility
-design. B09 defines the data and save model. B10 defines exact experiment
+`06-world-and-level-design.md`. B08 defines the full input and accessibility
+baseline. B09 defines the data and save model. B10 defines exact experiment
 baselines, instances, and content counts. No later block may add real
 laboratory quantities, executable protocols, or a claim that the repair state
 is proven to cause recovery.

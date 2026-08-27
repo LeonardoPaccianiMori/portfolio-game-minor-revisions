@@ -1,6 +1,6 @@
 # Testing and Evaluation
 
-Status: **strategy seeded; thresholds unresolved**
+Status: **approved through B08; later evaluation thresholds unresolved**
 
 ## Evaluation sequence
 
@@ -38,14 +38,23 @@ Status: **strategy seeded; thresholds unresolved**
 
 ### Accessibility and UX
 
-- Controls, first-person motion, text, captions, contrast, timing, and
-  irreversible choices meet the eventual approved baseline.
+- Keyboard-mouse and controller controls, first-person motion, text, captions,
+  contrast, timing, and irreversible choices meet the approved B08 baseline.
 - Players can understand experimental evidence without wet-lab expertise.
+- At 150% text and UI scale, required controls, captions, prompts, and state
+  information remain usable at 1280 × 720.
+- Reduced motion removes non-essential motion and flashes without hiding
+  information or blocking play. Interaction Assist highlights only usable
+  objects in the current room and never becomes a path or objective arrow.
+- A small browser view pauses safely and gives resize advice. Required UI
+  remains usable in 16:9, wider, and 4:3 desktop windows.
 
 ### Performance and compatibility
 
-- Supported browser/device matrix meets approved frame-time, memory, loading,
-  and bundle targets.
+- The B09 browser/device matrix must measure the B08 target of 60 fps at
+  1920 × 1080 Standard and 30 fps at 1280 × 720 Low on its approved baseline.
+- The initial compressed download is no more than 75 MB and does not exceed
+  100 MB without renewed approval.
 - Long sessions and repeated act transitions do not leak material resources.
 
 ### Science, privacy, and licensing
@@ -55,6 +64,23 @@ Status: **strategy seeded; thresholds unresolved**
   present.
 - Every distributed asset and dependency has compatible provenance and
   attribution.
+- Each third-party or generated asset appears in the asset manifest before
+  integration, has public-repository and deployed-game redistribution rights,
+  permits required modification, and has an attribution path in the repository
+  and Credits/Licences page.
+
+## B08 acceptance checks
+
+- Verify that every important cue has a text, icon, or visible-state duplicate;
+  colour and sound never carry required information alone.
+- Verify captions and speaker names default on, and that muted dialogue sounds
+  do not remove required dialogue meaning.
+- Verify New Game, fixed pressure profile, one-active-save confirmation,
+  completion archive, Clear Saved Data, and cutscene-recap behaviour.
+- Verify that no account, server save, uploaded player data, save cookie, or
+  automatic unfinished-save expiration is present.
+- Verify that the first New Game shows the approved content note and that the
+  release does not imply mobile, tablet, or localization support.
 
 ## Approved experience criteria
 
@@ -84,7 +110,8 @@ B10 must set the playtest method, sample sizes, and numeric pass thresholds.
 
 - Numeric success thresholds for the vertical slice and full game.
 - Playtest audience, sample size, tasks, consent, and feedback instruments.
-- Supported platforms and quantitative performance targets.
+- Exact supported-browser matrix, baseline hardware, memory/loading targets,
+  and measured performance method.
 - Automated-test stack, coverage expectations, browser automation, and CI.
 - Scientific and narrative review process before publication.
 - Stop/reframe thresholds after the vertical slice.

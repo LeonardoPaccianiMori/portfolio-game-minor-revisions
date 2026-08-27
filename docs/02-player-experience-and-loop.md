@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B07; full UI work deferred**
+Status: **approved through B08; authored content and runtime work deferred**
 
 ## Perspective and interaction
 
@@ -218,15 +218,43 @@ implementation.
   minutes; each ending uses a 60–90-second epilogue. They remain skippable,
   captioned, and safe around checkpoints.
 
+## B08 interaction and access contract
+
+The release targets desktop and laptop browsers with keyboard-mouse and
+standard-controller support. The default keyboard map uses WASD or arrows to
+move, mouse to look, E to interact, Tab for Research Status, and Escape to
+pause or go back. The controller has equivalent move, look, confirm, view, and
+menu roles. Core actions support both input systems, and settings provide
+remapping, look sensitivity, inversion, field of view, and reduced motion.
+
+The quiet permanent HUD shows week, work period, and energy at upper left; a
+valid interaction prompt at lower centre; and quiet safe-message indicators at
+upper right. Research Status is a readable quick panel for state, trust bars,
+route feedback, and stated changes. It does not expose hidden formulas or
+cover required subtitles or confirmations. The player sees an action, its time
+cost, and its energy cost before commitment. A station view stops movement but
+only a confirmed task advances time.
+
+Captions and speaker names default on. Required state and science information
+uses text, icons, colour, sound, or object state in at least two ways.
+Focused views never require dragging, holding, timed input, or precise motor
+actions. Interaction Assist can briefly highlight usable objects in the current
+room, without adding a path, objective arrow, or minimap. The Week-1 opening
+uses dismissible contextual prompts; Help and Controls remain available at no
+game-time cost.
+
+One active local IndexedDB save preserves progress at approved safe points.
+The game uses no account, server save, save cookie, or automatic unfinished-save
+expiration. Completion removes the full active state and adds a compact ending
+card to the local Archive. The archive keeps the 12 most recent ending cards
+and the persistent Institutional Citation record.
+
 ## Deferred decisions
 
-- Exact movement bindings, interaction range, HUD composition, and detailed
-  control map belong to B08.
-- Exact visual presentation of time costs, energy, and pressure profiles
-  belongs to B08.
 - B07 room placement, layout, and navigation paths are documented in
-  `06-world-and-level-design.md`.
+  docs/06-world-and-level-design.md.
 - Exact authored experiment baselines and content counts belong to B10.
-- Save schema, corruption recovery, and browser support belong to B09.
+- Save schema, corruption recovery, exact browser matrix, and UI runtime
+  implementation belong to B09.
 - Exact tutorial text, authored experiment instances, and replay content
   belong to B10.

@@ -9,18 +9,18 @@ gaps. It does not mean that the domain is finished.
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved through B06 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B07 | Complete UI specification remains in B08 |
-| `03-narrative-and-campaign.md` | Five-act story | Approved through B07 | Line-level content remains in B10 |
-| `04-science-and-experiments.md` | Fictional science | Approved through B07 | Exact authored experiment content remains in B10 |
-| `05-characters-and-dialogue.md` | Cast and voice | Approved through B07 | Exact content and visual and audio production details remain in B08 and B10 |
-| `06-world-and-level-design.md` | University research floor | Approved through B07 | Presentation execution remains in B08; exact props and content remain in B10 |
-| `07-systems-and-balance.md` | State and rules | Approved through B07 | Runtime schemas and tuned values remain in B09 and B10 |
-| `08-endings-and-state-matrix.md` | Outcomes | Approved through B06 | Exact authored ending content remains in B10 |
-| `09-art-audio-and-assets.md` | Presentation | Approved through B07 | Audio direction, budgets, concrete asset inventory |
-| `10-ui-ux-accessibility.md` | Interface and access | Approved through B07 | Control scheme, full HUD, and accessibility baseline remain in B08 |
-| `11-technical-architecture.md` | Runtime design | Approved through B07 | Stack, modules, save schema, and performance budget remain in B09 |
-| `12-content-specification.md` | Content inventory | Approved for B03 | Full identifiers, line counts, and authored content remain in B10 |
-| `13-testing-and-evaluation.md` | Quality evidence | Seeded | Targets, playtest protocol, acceptance thresholds |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B08 | Runtime behaviour and authored content remain in B09 and B10 |
+| `03-narrative-and-campaign.md` | Five-act story | Approved through B08 | Line-level content remains in B10 |
+| `04-science-and-experiments.md` | Fictional science | Approved through B08 | Exact authored experiment content remains in B10 |
+| `05-characters-and-dialogue.md` | Cast and voice | Approved through B08 | Exact dialogue and scene content remain in B10 |
+| `06-world-and-level-design.md` | University research floor | Approved through B08 | Technical implementation and exact props remain in B09 and B10 |
+| `07-systems-and-balance.md` | State and rules | Approved through B08 | Runtime schemas and tuned values remain in B09 and B10 |
+| `08-endings-and-state-matrix.md` | Outcomes | Approved through B08 | Exact authored ending content remains in B10 |
+| `09-art-audio-and-assets.md` | Presentation | Approved through B08 | Exact asset selection and content remain in B10 |
+| `10-ui-ux-accessibility.md` | Interface and access | Approved through B08 | Runtime implementation and authored text remain in B09 and B10 |
+| `11-technical-architecture.md` | Runtime design | Approved through B08 | Stack, modules, save schema, and measured performance remain in B09 |
+| `12-content-specification.md` | Content inventory | Approved through B08 (partial) | Full identifiers, line counts, and authored content remain in B10 |
+| `13-testing-and-evaluation.md` | Quality evidence | Approved through B08 | Targets, playtest protocol, acceptance thresholds |
 | `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
 | `15-implementation-contract.md` | Agent handoff | Seeded | Requirement IDs and approved work packages |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
@@ -51,10 +51,11 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B08 — Art, audio, UI, and accessibility**
-- Last documented block: **B07 — World and level design**
-- Next action: define the visual, audio, control, UI, accessibility, and asset
-  requirements that build on the approved floor.
+- Current block: **B09 — Technical architecture**
+- Last documented block: **B08 — Art, audio, UI, and accessibility**
+- Next action: define the implementation stack, runtime modules, data and save
+  schemas, browser support, loading, collision, rendering, and technical test
+  plan that implement the approved design.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -133,8 +134,8 @@ status, and the next place to resume.
 - **Deferred outside B02:** B03 owns exact scene order, rejection text,
   reviewer reports, personal-history reveals, and character reactions. B05
   owns relationship state and thresholds. B07 owns exact schedules and
-  navigation. B08 owns faces, clothing, colour, animation, performed voices,
-  and other production presentation. During the playable semester, Camila,
+  navigation. B08 documents the character-presentation limits; B10 owns exact
+  variants and authored content. During the playable semester, Camila,
   the editor, and the reviewers remain remote.
 - **Complete when:** the fictional world and recurring cast can support every
   campaign act without reproducing real people or institutions literally.
@@ -161,9 +162,9 @@ status, and the next place to resume.
   final routes, but never ends the campaign before Week 16.
 - **Deferred outside B03:** B04 owns laboratory and manuscript interactions.
   B05 owns state values, event thresholds, time costs, and route formulas. B06
-  owns ending modules, precedence, and final scenes. B07–B08 own scene staging,
-  camera, audio, and presentation. B10 owns exact authored text, localization,
-  identifiers, and full content inventory.
+  owns ending modules, precedence, and final scenes. B07 owns scene staging;
+  B08 documents camera, audio, and presentation. B10 owns exact authored
+  English text, identifiers, and full content inventory.
 - **Complete when:** every major story beat, branch, prerequisite, consequence,
   and transition has an approved place in the campaign.
 - **Completion record:** `Complete Minor Revisions B03 campaign block`.
@@ -190,9 +191,10 @@ status, and the next place to resume.
   monitoring, abandonment, checkpoint, offline-time, and accessible-input
   rules are approved.
 - **Deferred outside B04:** B05 owns time costs, values, formulas, variability,
-  difficulty, and route thresholds. B07 owns the floor plan. B08 owns detailed
-  controls, UI, and accessibility settings. B09 owns save schemas and runtime
-  architecture. B10 owns exact tutorial text and authored experiment content.
+  difficulty, and route thresholds. B07 owns the floor plan. B08 documents
+  detailed controls, UI, and accessibility settings. B09 owns save schemas and
+  runtime architecture. B10 owns exact tutorial text and authored experiment
+  content.
 - **Complete when:** each repeated player action, outcome, feedback signal, and
   transition can be described without inventing mechanics during implementation.
 - **Completion record:** `Complete Minor Revisions B04 laboratory and
@@ -218,10 +220,10 @@ status, and the next place to resume.
   small authored conditional sets, with stated lower-evidence routes instead
   of calendar delay or unlimited catch-up. Aldercroft, Morrow, PIIM, route
   closure, reviewer-card, and player-feedback rules are approved.
-- **Deferred outside B05:** B07 owns period schedules and staging. B08 owns
-  detailed visual interface, controls, and accessibility. B09 owns schemas and
-  persistence. B10 owns exact authored experiments, requests, dialogue, and
-  post-playtest tuning.
+- **Deferred outside B05:** B07 owns period schedules and staging. B08
+  documents detailed visual interface, controls, and accessibility. B09 owns
+  schemas and persistence. B10 owns exact authored experiments, requests,
+  dialogue, and post-playtest tuning.
 - **Complete when:** the state model and pacing rules are consistent, tunable,
   explainable to the player where appropriate, and connected to narrative and
   experiment outcomes.
@@ -248,8 +250,8 @@ status, and the next place to resume.
   B05 route-unlock and paper-state rules remain fixed unless Leonardo
   explicitly reopens them.
 - **Deferred outside B06:** B07 owns exact spatial placement and staging. B08
-  owns visual, camera, control, summary-layout, and accessibility production.
-  B09 owns archive and save schemas. B10 owns exact ending lines, citation
+  documents visual, camera, control, summary-layout, and accessibility
+  production. B09 owns archive and save schemas. B10 owns exact ending lines, citation
   names and triggers, content identifiers, and later tuning.
 - **Complete when:** every reachable final state maps deterministically to a
   coherent choice or failure state and an approved modular epilogue.
@@ -269,10 +271,11 @@ status, and the next place to resume.
   environmental persistence, and continuous-floor limits are documented in
   the primary documents. Core rooms are accessible from Week 1. The exit stays
   a visible Week-16 boundary, rather than a false early escape route. B07 owns
-  spatial and event placement. B08 owns camera, audio, and visual execution.
-- **Deferred outside B07:** B08 owns the final palette, lighting technology,
-  camera, audio, controls, UI, and accessibility settings. B09 owns the
-  collision implementation, navigation data, loading code, and performance
+  spatial and event placement. B08 documents camera, audio, and visual
+  execution.
+- **Deferred outside B07:** B08 documents final palette roles, lighting
+  boundary, camera, audio, controls, UI, and accessibility settings. B09 owns
+  the collision implementation, navigation data, loading code, and performance
   measurements. B10 owns exact prop text, scene lines, and content identifiers.
 - **Complete when:** the complete playable floor supports all approved actions,
   scenes, routes, and performance needs with a bounded asset burden.
@@ -280,20 +283,41 @@ status, and the next place to resume.
 
 ### B08 — Art, audio, UI, and accessibility
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B02, B04, and B07.
 - **Primary documents:** `09-art-audio-and-assets.md` and
   `10-ui-ux-accessibility.md`, with the asset register in
   `../assets/ASSET_MANIFEST.md`.
-- **Must resolve:** visual references, palette, materials, scale, lighting,
-  characters, animation, VFX, cinematics, typography, and asset inventory;
-  music, ambience, voice strategy, mix, and audio cues; input devices, control
-  map, HUD, menus, tutorial, save and replay UX; accessibility settings and
-  defaults; localization, reading level, text volume, and content warnings;
-  performance formats; and licensing direction for every asset category.
+- **Approved decision set:** stylized institutional realism uses a near-present,
+  slightly dated university with low-to-mid-poly modular geometry, restrained
+  materials, approved palette roles, authored act and work-period lighting,
+  readable fictional science displays, and limited effects. Four physical NPCs
+  use role-based stylized silhouettes, a small shared animation set, text-led
+  dialogue, and original non-lexical supporting-character sounds; Camila stays
+  remote. In-engine scenes use clear framing, slow movement, few cuts, and
+  restore first-person control correctly. IBM Plex Sans and Mono have approved
+  roles. The audio plan uses room identity sound, three redundant cue classes,
+  six modular music stems, and no full voice production. The visual inventory,
+  GLB/glTF, texture, live-text, audio, graphics-preset, download, provenance,
+  public-repository licence, and attribution boundaries are approved.
+
+  The desktop/laptop release supports keyboard-mouse and standard controller
+  input, the specified controls, quiet HUD, Research Status, diegetic desk
+  hub, menus, Week-1 tutorial, content note, English-only scope, and fixed
+  pressure profile. One active local IndexedDB save, its completion archive,
+  no-account privacy boundary, cutscene recap, and data-clear behaviour are
+  approved. Captions and speaker names default on, with the approved scaling,
+  contrast, motion, cue, Interaction Assist, and browser-view requirements.
+- **Deferred outside B08:** B09 owns the exact stack, browser matrix and
+  baseline device, renderer/loading/audio pipeline, concrete controller
+  mapping, UI and save runtime architecture, save schema/migrations, collision,
+  navigation, and measured performance. B10 owns exact asset IDs and sources,
+  colour values after contrast checks, notice and dialogue text, audio file
+  names, content inventory, playtests, production plan, and release licence.
 - **Complete when:** presentation and interaction have bounded inventories,
   accessibility acceptance criteria, performance budgets, and viable creation
   or licensed-sourcing paths.
+- **Completion record:** `Complete Minor Revisions B08 art audio UI and accessibility`.
 
 ### B09 — Technical architecture
 

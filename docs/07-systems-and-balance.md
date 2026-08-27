@@ -1,6 +1,6 @@
 # Systems and Balance
 
-Status: **approved through B07; implementation tuning deferred**
+Status: **approved through B08; runtime implementation and tuning deferred**
 
 ## State model and player visibility
 
@@ -17,6 +17,21 @@ The player can open Research Status at any time. It contains evidence, PI
 confidence, integrity, working trust, current route feedback, and the reason
 for each material state change. These displays show the current system state,
 not moral worth or friendship.
+
+## B08 feedback and access contract
+
+The permanent HUD keeps time and energy at upper left, valid interaction
+prompts at lower centre, and quiet safe-message indicators at upper right.
+Research Status is a large readable quick panel. It cannot cover a required
+subtitle or confirmation, and it does not show hidden formulas, raw flags, or
+a completion percentage.
+
+Every material state change gives a short stated reason. Integrity warnings are
+factual and do not give a moral label. Before an action, the player sees its
+time and energy cost. State and science feedback use at least two of text,
+icon, colour, sound, and object state. Captions and speaker names default on;
+high contrast, scale, reduced motion, and Interaction Assist must not hide or
+change a route, value, or consequence.
 
 ## Time, pacing, and pressure profiles
 
@@ -320,7 +335,10 @@ while equipment needs attention, and a deadline must be explicit.
 Safe checkpoints occur at experiment-stage changes, monitoring decisions,
 analysis archiving, manuscript commits, and scene boundaries. Menus, pause,
 and browser closure do not advance game time or cause a missed monitoring
-window. The B05 time and progression rules apply; B09 defines persistence.
+window. The B05 time and progression rules apply. B08 fixes one active local
+IndexedDB save per browser profile, no automatic unfinished-save expiration,
+and a completion Archive with 12 ending cards plus persistent Institutional
+Citations. B09 defines persistence schemas and recovery.
 
 ## PIIM response band
 
@@ -416,8 +434,7 @@ and relationship afterbeat; it cannot change paper state or route availability.
 
 - B07 schedule, room, and event staging rules are documented in
   `06-world-and-level-design.md` and `05-characters-and-dialogue.md`.
-- B08 owns final HUD layout, profile-selection flow, and accessibility settings.
-- B09 owns data schemas, seed serialization, save migration, and runtime
-  implementation.
+- B09 owns data schemas, seed serialization, save migration, browser support,
+  and runtime implementation.
 - B10 owns exact experiment baselines, request content, dialogue, and tuned
   values after playtests.

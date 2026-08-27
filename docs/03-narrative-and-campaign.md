@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **approved through B07; exact text pending**
+Status: **approved through B08; exact text pending**
 
 ## Premise
 
@@ -91,8 +91,8 @@ Every required scene becomes due at a safe point in its stated week. A lit
 office, open door, desk message, voice, or character presence gives an
 in-world cue. The player can continue to walk, inspect, and read, but cannot
 start another time-costing task before the due scene occurs. This is a time
-gate, not a room lock or teleport. B08 owns the camera, animation, audio, and
-visual execution.
+gate, not a room lock or teleport. The B08 presentation contract controls
+camera, animation, audio, and visual execution.
 
 | Scene | Spatial sequence and cue |
 |---|---|
@@ -103,6 +103,25 @@ visual execution.
 | **Helpful Comments** | The editor letter arrives at shared desks. Elena is available in the PI office after the report is read. |
 | **A Reasonable Response** | The response board at shared desks leads to the PI-office decision. |
 | **06:42** | The dark floor remains walkable. The player follows the now-bright exit route to the glass vestibule. |
+
+## B08 scene presentation and access contract
+
+Scenes use in-engine cinematics with clear framing, slow movement, and few
+cuts. External cameras appear only when they add meaning. The camera always
+returns control at the correct physical location. Four on-floor characters use
+the shared small animation set. Camila, the editor, and reviewers remain remote
+during the playable semester.
+
+Dialogue remains text-led. Supporting characters can use original non-lexical
+sounds, but they never carry required information or form real words. The
+protagonist has no spoken performance. Captions and speaker names are on by
+default. Dialogue advances manually, and important choices remain untimed.
+
+Every scene is skippable and safe around a checkpoint. A skip writes a concise
+recap of the choice and immediate result into the inbox or Research Status.
+Normal scenes do not replay during an active save. The seven main scenes remain
+inside the approved 14-18-minute target, and the modular epilogue remains
+inside the 22-minute total non-interactive-scene maximum.
 
 ## Submission ladder and peer review
 
@@ -269,8 +288,8 @@ epilogue is real-time, skippable, captioned, and safe around checkpoints.
 | No viable route | **End of Contract** | Cleared Bellwether desk, then exit | The fixed term ends, but the player retains agency beyond the university. |
 
 The final image is an external wide shot. It shows the protagonist only from
-behind or as a silhouette, then fades to the ending card. B08 owns the final
-camera and visual treatment.
+behind or as a silhouette, then fades to the ending card. B08 fixes the final
+camera and visual-treatment boundary.
 
 The paper-aftershock uses one short object, message, or spoken line, rather
 than another scene. A published paper becomes an item in another request or
@@ -283,6 +302,6 @@ removed. It adds no new random paper result.
 
 - B04 owns exact laboratory and revision-board interactions.
 - B07 owns spatial and event staging, location schedules, and room-state
-  detail. B08 owns camera, animation, audio, and visual execution.
-- B10 owns exact messages, reports, dialogue lines, localization, identifiers,
+  detail. B08 documents camera, animation, audio, and visual execution.
+- B10 owns exact English messages, reports, dialogue lines, identifiers,
   epilogue writing, and the complete content inventory.

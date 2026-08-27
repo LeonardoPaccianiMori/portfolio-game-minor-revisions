@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved through B07; later content and presentation details pending**
+Status: **approved through B08; authored content details pending**
 
 ## Protagonist
 
@@ -161,8 +161,9 @@ The editor and anonymous reviewers appear through messages and reports. They do
 not appear physically during the playable semester. Administrators, committee
 members, distant collaborators, and most of the wider university appear through
 communication and environmental storytelling rather than full 3D characters.
-Camila also remains remote during the playable semester. B06 can decide whether
-an epilogue shows her in person.
+Camila also remains remote during the playable semester. B08 limits physical
+character production to the four on-floor NPCs, so an epilogue must not require
+a Camila model or in-person appearance.
 
 ## B07 presence and schedule contract
 
@@ -202,15 +203,30 @@ The fixed optional-scene anchors are in `03-narrative-and-campaign.md`.
 - The game does not show a moral score.
 - No character may reproduce an identifiable real individual.
 
-## Presentation boundary
+## B08 presentation contract
 
-Each recurring character needs a clear silhouette that communicates role and
-pressure. Culture must not become a visual costume. B08 owns exact faces,
-clothing, colours, body shapes, animation, performed voices, and audio
-direction.
+Elena, Haoran, Samira, and Gabriel are the only physical NPC models needed on
+the floor during the playable semester. Camila remains remote. The protagonist
+appears only as a simple partial figure or silhouette in selected external
+shots. All characters use realistic stylized proportions and clear
+role-based silhouettes. Culture must not become visual costume, and no model
+may use a real-person likeness.
+
+The four physical characters use a small shared animation set: idle, walk,
+turn, sit or lean, station work, and a few conversation gestures. Do not use
+lip sync, performance capture, detailed facial rigs, full voice acting, cloned
+voices, or a real person's voice. Dialogue is text-led. Each supporting
+character, including Camila, can use a small original non-lexical vocal palette
+with controlled pitch and rhythm variation. The sounds do not form real words,
+carry required information, or imitate a real person or another game.
+
+Dialogue uses a lower-screen text panel with the speaker name, manual advance,
+and captions on by default. Internal thought has a distinct simple text style.
+There are no 2D portrait panels or timed dialogue choices. B10 owns exact
+faces, clothing, colours, line text, sound variants, and scene performance.
 
 ## Open decisions
 
 - Exact dialogue content, conflicts, reconciliations, and ending reactions.
-- Exact visual designs, voice acting versus text-only delivery, performance
-  direction, and localization.
+- Exact visual variations, non-lexical sound variants, and scene direction.
+- Exact authored English text. The first release does not plan localization.

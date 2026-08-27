@@ -1,6 +1,6 @@
 # World and Level Design
 
-Status: **approved through B07; presentation execution deferred**
+Status: **approved through B08; technical execution and authored content deferred**
 
 ## Confirmed world structure
 
@@ -89,6 +89,28 @@ Rooms and corridors must avoid third-person camera concerns but still support
 comfortable first-person navigation, readable interaction distances, and
 clear landmarks. Occasional external cinematic cameras may show the
 protagonist or reframe a relationship scene.
+
+## B08 floor presentation contract
+
+The floor uses stylized institutional realism: a near-present, slightly dated
+university with low-to-mid-poly modular geometry, soft bevels, matte painted
+metal, off-white plastic, frosted glass, paper, and light wear. It does not use
+cyberpunk, glossy science fiction, photorealism, distorted architecture,
+cartoon slapstick, heavy grime, body horror, or glitch horror.
+
+Warm paper beige, cool blue-grey, institutional green, and charcoal form the
+base palette. Soft amber marks PI-office warmth and careful caution;
+coral-pink marks organoid activity; cyan or teal marks data; amber marks
+attention; and muted red marks serious faults. Text, icons, sound, or object
+state repeat every important colour meaning. Exact values follow contrast
+checks.
+
+Lighting uses authored presets for the five act states and four work periods,
+not continuous time simulation. Most room lights are static. Organoids,
+monitors, warnings, and exit lights can use limited dynamic lighting. Room
+ambience gives the laboratory, tissue culture, imaging, desk, office, corridor,
+break-room, and exit spaces distinct quiet identities. The PI office remains
+warm, and the exit becomes more inviting from Week 8 for every player.
 
 ## B07 scaled floor plan
 
@@ -321,9 +343,9 @@ B07 is complete only if all of the following are true:
 
 ## Deferred work
 
-B08 owns final palette, materials, lighting technology, character appearance,
-camera, animation, audio, controls, UI, accessibility settings, and asset
-inventory. B09 owns the technical implementation and measured performance
-budget. B10 owns exact scene text, notice text, prop identifiers, and full
-content counts. No B07 decision authorizes implementation code or production
-assets.
+The B08 presentation, camera, audio, controls, UI, accessibility, and asset
+boundaries are documented in docs/09-art-audio-and-assets.md and
+docs/10-ui-ux-accessibility.md. B09 owns technical implementation and measured
+performance. B10 owns exact scene text, notice text, prop identifiers, and full
+content counts. No B07 or B08 decision authorizes implementation code or
+production assets.

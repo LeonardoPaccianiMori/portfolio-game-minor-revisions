@@ -8,7 +8,7 @@ belongs in the numbered design documents.
 | 2026-08-23 | Retain a witty, sarcastic, bitterly comic academic-survival concept inspired emotionally, not literally, by Leonardo's experience. | Confirmed |
 | 2026-08-23 | Core objective: finish and publish one decisive research result before a deadline; industry can break the academic survival loop. | Confirmed |
 | 2026-08-23 | Use one compressed final semester; publication may fail and need not be a happy ending. | Confirmed |
-| 2026-08-23 | Use IndexedDB for account-free save state; a small first-party cookie is optional only for a marker or preferences. | Confirmed |
+| 2026-08-23 | Use IndexedDB for account-free save state; a small first-party cookie is optional only for a marker or preferences. | Confirmed; save-marker part superseded on 2026-08-28 |
 | 2026-08-23 | Use real-time in-engine, skippable, captioned, save-safe cutscenes. | Confirmed |
 | 2026-08-25 | Select developmental biology and a beating cardiac organoid. | Confirmed |
 | 2026-08-25 | Fictional result: structural reconstruction and coordinated rhythmic recovery after damage. | Confirmed |
@@ -82,6 +82,15 @@ belongs in the numbered design documents.
 | 2026-08-27 | Use authored character location anchors instead of free NPC roaming. Use the approved early, late, night, and after-hours schedule and fixed optional-scene room anchors. | Confirmed |
 | 2026-08-27 | Use five persistent floor act states, four functional time-of-day layers, bounded persistent environmental changes, a warm PI office, and an increasingly inviting exit from Week 8. | Confirmed |
 | 2026-08-27 | Use one continuous floor with no room loading screens, no crowd simulation, fixed brisk walking, simple collision, and bounded nearby full detail. | Confirmed |
+| 2026-08-28 | Use stylized institutional realism: a near-present, slightly dated university with modular low-to-mid-poly geometry, restrained institutional materials and palette roles, authored lighting presets, readable fictional science displays, and limited effects. | Confirmed |
+| 2026-08-28 | Bound physical character production to Elena, Haoran, Samira, and Gabriel plus a protagonist silhouette; use role-based stylized silhouettes and a small shared animation set, with no real-person likeness, cultural costume, lip sync, performance capture, detailed face rig, or full voice acting. | Confirmed |
+| 2026-08-28 | Use IBM Plex Sans and Mono in their approved roles; use text-led dialogue, original non-lexical supporting-character sounds, quiet room ambience, three redundant cue classes, six modular music stems, and separate audio volume controls. | Confirmed |
+| 2026-08-28 | Limit the visual inventory to one modular floor kit, at most 24 reusable core prop families, four physical NPCs, reusable 2D templates, original identity assets, GLB/glTF models, mostly 1K textures, live text or SVG, and compressed browser-ready audio. | Confirmed |
+| 2026-08-28 | Require public-repository-compatible redistribution, modification, attribution, manifest, and Credits/Licences paths for all third-party or generated assets; prefer original, CC0, CC-BY, OFL, MIT, Apache, or equally clear paid rights, and exclude NC/ND or uncertain assets by default. | Confirmed |
+| 2026-08-28 | Target desktop and laptop browsers with keyboard-mouse and standard-controller support; use the approved control roles, quiet HUD, Research Status, diegetic desk hub, menus, Week-1 contextual tutorial, and fixed per-save pressure profile. | Confirmed |
+| 2026-08-28 | Use one active local IndexedDB save per browser profile, no save cookies, account, server data, uploaded data, or automatic expiration; completion creates a compact ending card, Archive keeps the 12 most recent cards and persistent Institutional Citations, and players can clear local data. | Confirmed |
+| 2026-08-28 | Default captions and speaker names on; require scalable readable UI, high contrast, colour-independent signals, remapping, sensitivity, inversion, FOV, reduced motion, Interaction Assist, English-only scope, content note, and safe browser-view behaviour. | Confirmed |
+| 2026-08-28 | Use Low, Standard, and High visual-cost presets; target 60 fps at 1920 × 1080 Standard and 30 fps at 1280 × 720 Low on a later B09 baseline; target an initial compressed download at or below 75 MB and require renewed approval above 100 MB. | Confirmed |
 
 ## Rules for future entries
 

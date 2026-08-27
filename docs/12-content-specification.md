@@ -1,6 +1,6 @@
 # Content Specification
 
-Status: **B03 campaign inventory approved; full authored inventory incomplete**
+Status: **B03 campaign inventory and B08 presentation boundaries approved; full authored inventory incomplete**
 
 This document will become the exhaustive inventory of content required for the
 approved game. It records the B03 campaign minimum. B10 will assign stable IDs,
@@ -53,7 +53,16 @@ The final specification must enumerate, identify, and cross-reference:
 - every ending module and valid combination;
 - every sound, music cue, visual effect, animation, model, texture, font, and
   attribution;
-- every save flag, event flag, content identifier, and localization key.
+- every save flag, event flag, content identifier, and English text key.
+
+## B08 language and voice boundary
+
+The first release uses English only. It does not plan localization. Dialogue is
+text-led. Supporting characters can use small original non-lexical vocal
+palettes, but the game has no full voice acting, lip sync, cloned voice, or
+required information carried only by sound. B10 must inventory the exact
+English strings, captions, non-lexical sound variants, music cues, and
+attribution records.
 
 ## Content-ID convention
 
@@ -76,5 +85,5 @@ stable once implementation begins and must map to requirements and tests.
 - The 90-minute fallback cut line and any later mandatory-versus-optional
   changes.
 - Randomized/conditional content pools and repeat-prevention rules.
-- Localization and voice-production inventory.
+- Exact English text, caption, non-lexical sound, and music inventory.
 - Content authoring formats and validation tooling.

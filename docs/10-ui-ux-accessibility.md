@@ -1,129 +1,177 @@
 # UI, UX, and Accessibility
 
-Status: **approved through B07; full B08 specification unresolved**
+Status: **approved through B08; runtime implementation and authored text deferred**
 
-## Confirmed interface surfaces
+## Interaction principles
 
-- First-person interaction prompts and equipment feedback.
-- Semester scheduling and experiment status.
-- Player desk with email, data analysis, and manuscript revision board.
-- Result inspection for structure, rhythm, contamination, environment, and
-  tissue health.
-- Dialogue choices, notifications, and route decisions.
-- Automatic local save and resume without an account.
-- Research Status with evidence, PI confidence, integrity, working trust, and
-  route feedback.
+The interface supports first-person exploration without turning the floor into
+a checklist. It must make costs, consequences, science, and available help
+clear before the player commits. It must not use permanent task lists, minimaps,
+objective arrows, or a stream of alerts that hides the world.
 
-The full visual layout and detailed interaction grammar are not confirmed.
+All required information has at least two channels: text, icon, colour, sound,
+or visible object state. Colour and sound are never the only channel. The game
+uses clear English and sentence case. It does not depend on expert science
+knowledge, fast reading, drag actions, timed button presses, holds, or precise
+motor actions.
 
-## Approved B04 interaction baseline
+## Supported devices and controls
 
-- A nearby relevant object has a small visual highlight and short
-  context-sensitive label. The game does not place permanent objective arrows
-  or labels on every object.
-- A focused station view uses clear selection rather than a drag-only or
-  precision-motor action. It supports mouse, keyboard, and controller input.
-- The active sample rack uses a physical state signal. The desk work queue
-  repeats that state in words, so colour is never the only status signal.
-- A meaningful action gives a plain-language forecast of its likely trade-off.
-  An irreversible dishonest report or revision commit requires clear
-  confirmation.
-- Messages use a world signal, safe queue notification, then optional response
-  or scene. Deadlines must be explicit.
-- Pause, menus, and browser closure do not advance game time or create a missed
-  monitoring check. Safe checkpoints support exit and resume.
+The first release targets desktop and laptop browsers only. Mobile and tablet
+play are outside this release scope. The game supports keyboard and mouse and
+a standard controller. Every core action has an option on both input systems.
 
-The full control map, prompt wording, UI layout, visual treatment, settings,
-and accessibility test criteria remain B08 work.
+| Function | Keyboard and mouse | Controller |
+|---|---|---|
+| Move | \`WASD\` or arrow keys | Left stick |
+| Look | Mouse | Right stick |
+| Interact or confirm | \`E\` | Normal confirm button |
+| Research Status | \`Tab\` | Normal view button |
+| Pause or go back | \`Escape\` | Normal menu button |
 
-## Approved B05 state and pressure feedback
+The exact controller-button labels can adapt to the detected controller, but
+the move, look, confirm, view, and menu roles must remain consistent. Settings
+must provide remapping, look sensitivity, look inversion, field of view, and
+reduced-motion controls.
 
-- The permanent HUD shows the current week and named work period, plus the
-  five-segment energy bar.
-- Research Status shows the evidence-packet label, PI-confidence label,
-  five-segment integrity bar, and one five-segment working-trust bar for each
-  recurring character.
-- A material state change gives a short stated reason. Integrity warnings are
-  factual and do not apply moral labels.
-- Before a route deadline, Research Status gives a clear non-spoiling message,
-  but does not disclose a full formula or hidden flags.
-- Standard is the intended pressure profile. Supported keeps the same calendar,
-  narrative, routes, and ending content, but provides clearer warnings and
-  more energy tolerance. It has no content penalty.
-- The game has no global game-over screen before Week 16. A crash or lost route
-  produces stated consequences and continues toward the final state.
+The default camera has no head bob, motion blur, or camera shake. Optional
+camera effects remain off unless the player enables them. A centre reticle is
+optional. A valid object shows its short label, one available action, and its
+time and energy cost before commitment. The player can leave a focused view
+before confirmation at no cost.
 
-## Confirmed cutscene requirements
+Entering a station view stops player movement. It does not advance campaign
+time by itself. Time advances only when the player confirms a time-costing
+task. Focused views use clear selections and ordinary confirm actions, not
+drag-only, hold-only, timed, or precision-motor input.
 
-Real-time cutscenes must be skippable, captioned, and safe around save
-checkpoints. Input control must be restored reliably after completion, skip,
-reload, or interruption.
+## Gameplay interface
 
-## Approved B06 ending and replay surfaces
+The permanent HUD is quiet and has three fixed areas:
 
-- The ending epilogue is real-time, skippable, captioned, and safe around a
-  final checkpoint. It lasts 60–90 seconds inside the 22-minute total
-  non-interactive-scene maximum.
-- The ending card uses the career label as its heading. Paper, integrity, and
-  human-state modules provide context without a moral ranking.
-- The ending summary has **Record**, **People**, and **Institutional
-  Citations** sections. Record shows career, paper, evidence, integrity, and
-  fatigue labels. People shows five working-trust bars and short status lines.
-- The summary does not show hidden flags, raw formulas, or a completion
-  percentage.
-- Institutional Citations use short diegetic institutional-stamp notifications
-  when earned. The ending summary shows citations earned in the run and the
-  local archive.
-- A new campaign has no gameplay carry-over or chapter rewind. Its archive
-  remains available through local save data.
+| Area | Content | Rule |
+|---|---|---|
+| Upper left | Current week, named work period, and five-segment energy bar. | Always readable; it does not show hidden formulas. |
+| Lower centre | Current interaction prompt. | Shows only for a valid nearby target. |
+| Upper right | Quiet new-message and safe-notification indicators. | An indicator does not force an immediate response. |
 
-## UX principles derived from confirmed design
+The player opens **Research Status** with its assigned control. It is a large,
+readable quick-menu panel for evidence, PI confidence, integrity, five working
+trust bars, route feedback, and stated reasons for material changes. It cannot
+cover a required subtitle or confirmation. It gives clear non-spoiling route
+feedback but does not reveal hidden flags, raw formulas, or a completion
+percentage.
 
-- The player must distinguish usable, inconclusive, suspicious, and repeatable
-  results without expert biological knowledge.
-- Causes and consequences should be learnable without exposing every hidden
-  flag.
-- Waiting must expose meaningful choices, not force idle real time.
-- Emails, signs, and manuscript content must remain readable in a browser.
-- First-person targeting must be comfortable in compact rooms.
-- UI should support the institutional visual language without sacrificing
-  clarity for satire.
+The shared desk is the diegetic hub for email, calendar, work queue, analysis,
+and manuscript work. It can report remote status but cannot operate laboratory
+equipment remotely. Every received message remains in a readable inbox.
+Important messages state their deadline and time cost. The notebook, inbox,
+and Research Status give context, not a permanent quest-arrow system.
 
-## B07 compact-floor constraints
+Science views use labelled structure, rhythm, and repatterning-index panels
+with plain-English summaries, icons, and visible state. A graph or tissue image
+must not require colour alone for interpretation. An irreversible report or
+revision commit requires a clear confirmation that states the immediate cost or
+record consequence.
 
-The complete playable area is one continuous first-person floor. Required
-paths have clear walking space, and each core station has enough room for a
-comfortable approach and focused view. Furniture can block movement, but no
-character, scene, or decorative object can trap the player or create a
-precision movement task. Core doors open automatically.
+## Dialogue, reading, and tutorial
 
-Room signs, the tissue-culture glow, the warm PI office, and the exit light
-give orientation. The game still uses no permanent objective arrow or minimap.
-When a required scene is due, an in-world cue and the existing task state give
-direction without a teleport. B08 must turn these constraints into the final
-control, prompt, motion, contrast, and accessibility design.
+Dialogue appears in a lower-screen panel with the speaker name. It has no 2D
+portrait panel. Internal thought uses a simple distinct text treatment.
+Dialogue advances manually. Required dialogue stays short. Reports use
+headings, cards, and bullets. Important choices offer two to four clear options
+with no timed response.
 
-## Accessibility candidates requiring explicit approval
+Week 1 uses the tissue-culture opening and Elena's first request as the
+tutorial. It has no separate training room or test puzzle. Dismissible
+contextual prompts introduce movement, interaction, focused views, costs,
+Research Status, and local saving. Help and Controls remain available from the
+pause menu at no game-time cost.
 
-- Full captions and speaker labels for every voiced or meaningful audio event.
-- Keyboard and mouse remapping plus an alternative to hold interactions.
-- Adjustable look sensitivity, field of view, head-bob, camera shake, and
-  motion effects.
-- High-contrast theme and detailed cue design beyond the approved
-  plain-language-label rule.
-- Scalable text, readable fonts, UI safe areas, and adjustable dialogue speed.
-- Pause during most planning and reading interactions.
-- Further accessibility adjustments beyond the approved Supported profile.
-- Save recovery, cutscene replay or summary, and warning before irreversible
-  choices.
+## Menus, onboarding, and pressure profile
 
-These are proposed minimums, not yet an approved accessibility specification.
+The main menu has **Continue**, **New Game**, **Archive**, **Settings**,
+**Accessibility**, and **Credits/Licences**. The pause menu has **Resume**,
+**Research Status**, **Settings**, **Accessibility**, **Save and Quit**, and
+**Main Menu**.
 
-## Open decisions
+Settings has Audio, Display, Controls, Accessibility, and Local Data
+categories. Changes apply immediately and persist locally. Audio provides
+Master, Music, Ambience/Effects, and Dialogue Sounds controls.
 
-- Supported input devices and complete control map.
-- HUD composition, state visibility, menus, tutorial, and onboarding.
-- Desktop versus mobile/tablet support; mobile is not currently promised.
-- Accessibility baseline, settings, defaults, and test criteria.
-- Exact save-slot, continue, restart, archive, and replay layout.
-- Localization, text volume, reading level, and content warnings.
+New Game asks for the protagonist's name, pronouns, and pressure profile.
+Standard is the default. Supported is equal in story and content; it is not
+called easy. The selected profile is fixed for the whole save. A player must
+start a New Game to use another profile. If an active save exists, New Game
+requires confirmation before replacement.
+
+The first New Game displays a short content note about academic pressure,
+burnout, insecure work, and ethical pressure around research records. It does
+not spoil routes or endings.
+
+## Local save, archive, and replay
+
+The game stores one active local save per browser profile in IndexedDB only.
+It does not use cookies for save state, ownership, or save discovery. It has
+no account, server-side save, uploaded player data, or automatic expiration of
+an unfinished save. Browser closure and a lost connection do not advance game
+time.
+
+Safe saves occur at approved experiment, manuscript, and scene boundaries.
+Save and Quit gives a clear confirmation at the last safe state. On campaign
+completion, the game removes the full active state and retains a compact ending
+card. Archive keeps the 12 most recent ending cards and the persistent
+Institutional Citation record. It does not retain full earlier saves or every
+previous cinematic. Settings includes **Clear Saved Data** with a clear
+confirmation.
+
+Skipping a cutscene adds a concise recap, including its choice and immediate
+result, to the inbox or Research Status. Normal cutscenes do not replay during
+an active save. The Archive provides ending cards, citations, and ending
+summaries only. B09 owns save schemas, migrations, data validation, corruption
+recovery, and the exact storage implementation.
+
+## Accessibility baseline
+
+Captions and speaker names are on by default. Accessibility settings must
+include text and UI scale, high contrast, colour-independent signals, look
+sensitivity, inversion, field of view, reduced head bob, reduced camera shake,
+reduced flashes, reduced motion, and Interaction Assist.
+
+Interaction Assist briefly highlights usable objects in the current room only.
+It does not draw a path, arrow, or minimap. Reduced-motion mode removes
+non-essential camera motion, flashes, and screen effects while retaining all
+needed information and full playability.
+
+At 150% text and UI scale, required controls, captions, prompts, and state
+information must remain usable at 1280 × 720. The game is designed first for
+16:9 browser windows, but required UI must remain usable in wider and 4:3
+desktop windows. Fullscreen is optional. If the view becomes too small, the
+game pauses safely and gives resize advice.
+
+The game uses English only. It does not plan later localization. This is a
+scope decision, not a claim that English is accessible to every player.
+
+## B08 acceptance criteria
+
+- Desktop/laptop keyboard-mouse and controller play both support every core
+  action, with the approved defaults and remapping.
+- The HUD, Research Status, inbox, dialogue, focused views, and menus follow
+  the stated visibility, cost, and no-objective-arrow rules.
+- New Game, pressure-profile lock, local save, completion archive, data
+  clearing, and cutscene-recap behaviour follow the local-only contract.
+- Captions, speaker names, reading controls, motion controls, Interaction
+  Assist, and multi-channel information support are present by default or in
+  the approved settings.
+- Required UI remains usable at 150% scale and 1280 × 720, and a small browser
+  view pauses safely rather than hiding required choices.
+- The game contains the content note, English-only boundary, and no mobile or
+  tablet first-release commitment.
+
+## Deferred work
+
+B09 owns browser support details, concrete controller mapping, UI runtime
+architecture, save schema, migrations, validation, corruption recovery, and
+measured performance. B10 owns exact tutorial wording, message and report
+text, final content counts, playtest protocol, and changes supported by tests.
+This document does not authorize implementation code or production assets.

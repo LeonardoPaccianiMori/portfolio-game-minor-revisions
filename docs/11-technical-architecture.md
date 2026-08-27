@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **approved through B07; stack and schemas unresolved**
+Status: **approved through B08; stack and schemas unresolved**
 
 ## Confirmed platform
 
@@ -9,16 +9,20 @@ Status: **approved through B07; stack and schemas unresolved**
 - First-person exploration on a compact university research floor.
 - No user account required.
 - Real-time in-engine cutscenes.
+- Desktop and laptop browser release only; no mobile or tablet first release.
+- Keyboard-mouse and standard-controller support.
+- English-only release scope.
 
 No framework, bundler, language variant, physics library, animation library,
 audio library, testing stack, or hosting integration is selected yet.
 
 ## Save direction
 
-Real save state should use IndexedDB. A small first-party cookie may be used
-only for a save/version marker or preferences if useful; it must not hold the
-primary save. Saves are browser- and device-specific unless a later approved
-export/import feature adds portability.
+Real save state uses IndexedDB. Do not use cookies for save state, ownership,
+or save discovery. Saves are browser- and device-specific unless a later
+approved export/import feature adds portability. There is no account,
+server-side save, uploaded player data, or automatic expiration of an
+unfinished save.
 
 Save checkpoints must be safe around cutscenes and major choices. A connection
 interruption or browser close must not erase meaningful progress. Schema
@@ -36,11 +40,28 @@ small variation inside an earned experiment or PIIM response band. Reloading,
 closing the browser, or resuming a save must not reroll that variation. B09
 owns the exact seed, state-transition, serialization, and migration schema.
 
-A completed campaign must create a local ending card and update the local
-Institutional Citation archive. A new campaign uses a separate save record and
-seed, with no gameplay state carried from an earlier campaign. The archive is
-preserved across campaigns. B09 owns the exact data schema, archive recovery,
-save-slot policy, and user-controlled data clearing.
+A completed campaign must create a compact local ending card and update the
+local Institutional Citation archive. The game has one active local save per
+browser profile. On completion it removes the full active state; Archive keeps
+the 12 most recent ending cards and the persistent citation record. A New Game
+uses a new seed and no gameplay state from an earlier campaign. It requires
+confirmation when it replaces an active save. B09 owns the exact data schema,
+archive recovery, migration, validation, and user-controlled data clearing.
+
+## B08 presentation and performance boundary
+
+Runtime art uses GLB/glTF models, shared geometry and materials where practical,
+mostly 1K textures, rare 2K major assets, no 4K textures, live text or SVG for
+readable UI, and compressed browser-ready audio. The game has Low, Standard,
+and High graphics presets. Standard is the default. Presets change visual cost
+only: shadows, render scale, and cosmetic effects.
+
+The target is 60 fps at 1920 × 1080 in Standard on B09 baseline hardware, and
+30 fps at 1280 × 720 in Low. The initial compressed download target is no more
+than 75 MB and must not exceed 100 MB without renewed approval. Normal browser
+cache holds runtime assets; IndexedDB is for local game data. B09 must select
+the exact baseline hardware and browser matrix, implement loading and codecs,
+and measure these targets.
 
 ## Required architectural capabilities
 
@@ -55,6 +76,8 @@ save-slot policy, and user-controlled data clearing.
 - Local save serialization, validation, migration, and recovery.
 - Local ending-card and Institutional Citation archive persistence.
 - Test hooks for state combinations and time progression.
+- Settings, captions, scale, contrast, motion, input, and local-data controls
+  that satisfy the approved B08 user interface contract.
 
 ## B07 continuous-floor constraint
 
@@ -91,7 +114,7 @@ features require separate approval, privacy review, and failure handling.
   integration.
 - State model, event schema, experiment model, save schema, migrations, and
   corruption recovery.
-- Browser/device support, resolution, frame-time, memory, bundle, and loading
-  budgets.
+- Exact browser matrix, baseline device, memory budget, loading budget,
+  render scale, and measured frame-time validation.
 - Deployment boundary with the portfolio and offline/interruption behaviour.
 - Testing layers, CI, error reporting, observability, and dependency updates.

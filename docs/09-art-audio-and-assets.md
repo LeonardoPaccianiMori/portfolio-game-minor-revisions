@@ -1,94 +1,232 @@
 # Art, Audio, and Assets
 
-Status: **approved through B07; audio and inventory unresolved**
+Status: **approved through B08; exact asset selection deferred**
 
-## Stylized institutional realism
+## Presentation thesis
 
-The university research floor is plausible but simplified. Use clean readable geometry instead
-of photorealistic detail. The dominant palette is muted beige, grey, blue, and
-institutional green under fluorescent lighting.
+*Minor Revisions* uses **stylized institutional realism**. Bellwether
+University is a near-present, slightly dated university research floor. It is
+recognizable and plausible, not photorealistic. Its comedy comes from
+institutional language, bad policy, contradictory labels, temporary repairs,
+and accumulated clutter. It does not use cyberpunk, retro-futurist, glossy
+science-fiction, distorted architecture, giant props, cartoon slapstick, body
+horror, or glitch horror.
 
-Characters use distinctive silhouettes and limited facial animation.
-Equipment is scientifically legible without recreating every real component.
-Organoids, imaging, rhythm traces, warning lights, and scientific signals
-provide the principal vivid colour and motion.
+The cardiac model and its data displays are the only visibly advanced parts of
+the world. Laboratory furniture and equipment remain recognizable. Science and
+character stakes remain grounded even when the institution becomes absurd.
 
-Satire comes from writing, signs, clutter, repetition, repair, booking labels,
-contradictory instructions, and institutional behaviour rather than an
-everything-is-a-cartoon treatment.
+## Environment style, materials, and palette
 
-## Act progression
+Use clean, low-to-mid-poly geometry with soft bevels and readable silhouettes.
+The floor uses one modular building kit across its eight spaces. Detail comes
+from text, screens, labels, notices, paper, lighting, and small state changes,
+not from many unique high-detail models.
 
-- notices accumulate over older notices;
-- temporary repairs become permanent;
-- equipment labels and instructions conflict;
-- lighting becomes colder under manuscript and review pressure;
-- the PI office remains unusually warm and comfortable;
-- the exit becomes more inviting;
-- organoids remain among the liveliest objects as the protagonist tires.
+Materials are matte painted metal, off-white plastic, frosted glass, paper,
+and light wear. Do not use photoreal textures, heavy grime, or elaborate
+surface damage. Each phase can use only the B07 allowance of one major and two
+minor visible room changes across the whole floor.
 
-## B07 environment constraints
-
-The floor uses a compact reusable room kit: main laboratory, tissue culture,
-imaging and facility, shared desks, PI office, break room, corridor, and exit
-vestibule. Each room has one main functional station cluster and no more than
-two optional inspectable or social objects. There are no loose pickups, hidden
-object hunts, or general item inventory.
-
-The five act states change function and story meaning, not the floor plan.
-Across the whole floor, each phase permits at most one major and two minor
-visible room changes. A change appears only when the player enters a room,
-never as an object appearing in front of the player. The exact prop text,
-models, materials, palette, lighting technology, and final asset list remain
-B08 or B10 work.
-
-| Time layer | Functional presentation requirement |
+| Colour role | Approved use |
 |---|---|
-| Early | Blue-grey exterior light and normal service. |
-| Late | Flat daylight and full fluorescent activity. |
-| Night | Dark windows, quiet rooms, and equipment light pools. |
-| After-hours | Reduced light, emptier corridors, and limited shared services. |
+| Warm paper beige | Main institutional surfaces and documents. |
+| Cool blue-grey | Architecture, windows, and neutral technical surfaces. |
+| Institutional green | Secondary furniture, signs, and restrained institutional detail. |
+| Charcoal | Text, frames, and high-contrast structure. |
+| Soft amber | PI-office warmth and careful caution states. |
+| Coral-pink | Living organoids and recovery activity. |
+| Cyan or teal | Data, analysis, and readable scientific signals. |
+| Amber | Warning and attention-needed signals. |
+| Muted red | Serious faults only. |
 
-The PI office remains comparatively warm in every layer. From Week 8, the exit
-light and outside view become more inviting for every player. This visual
-change does not depend on Morrow eligibility or imply a preferred ending.
+Important status never depends on colour alone. Text, icons, object state, or
+sound repeats each meaning. Exact colour values are selected only after a
+contrast check. The PI office remains warmer than the rest of the floor. From
+Week 8, the exit becomes more inviting for every player, independent of Morrow
+eligibility or ending route.
 
-## Animation boundary
+## Lighting, science displays, and effects
 
-Persistent first-person hands are not required. Begin with object response,
-sound, and UI feedback. Add selective hands only if testing shows their absence
-materially harms presence. External cameras may be used selectively in
-cutscenes. Character animation should be scoped around readable silhouette,
-gesture, gaze, and limited facial cues.
+Lighting uses authored presets for the five act states and four work periods.
+It does not simulate a continuous real-time day. Most room lighting is static.
+Organoids, monitors, warnings, and the exit can use small dynamic lights.
 
-## Asset sourcing policy
+Scientific presentation uses clean fictional tissue images, rhythm traces, and
+data panels. It must show readable qualitative states, not real microscopy
+data, laboratory images, raw operational data, or a real protocol. Each key
+result has plain-English text, icons, and labels in addition to its visual
+form.
 
-A dedicated preproduction pass will research online 3D models, textures, audio,
-fonts, and related assets. Attribution and noncommercial licences are
-acceptable only when they permit intended public web use, modification when
-needed, and the repository/deployment redistribution model.
+Effects are restrained: organoid beating, imaging sweeps, monitor glow, and
+status pulses. The game has no gore, sudden flash, body horror, hallucination,
+or glitch effect. Reduced-motion settings remove non-essential motion and
+flashes without removing needed information.
 
-Public availability is not permission. Every integrated external asset must be
-recorded in `../assets/ASSET_MANIFEST.md` with source, creator, licence/version,
-attribution, modifications, and redistribution constraints.
+## Characters, animation, and cinematics
 
-Licensed assets may be simplified, recoloured, or adapted when permitted.
-Missing assets may be created specifically for the game, including through
-generation tools whose terms and provenance are compatible with release.
+Only Elena, Haoran, Samira, and Gabriel need on-floor character models during
+the playable semester. Camila remains remote. The protagonist appears only as
+a simple partial figure or silhouette in selected external shots. Other people
+remain remote, off-screen, or environmental.
 
-## Audio direction
+Characters have realistic stylized proportions, clear role-based silhouettes,
+and no cultural costume or real-person likeness. Use a small shared animation
+set: idle, walk, turn, sit or lean, station work, and several conversation
+gestures. Do not use lip sync, performance capture, or detailed facial rigs.
+Original non-lexical dialogue sounds can time simple head and hand motion.
 
-No detailed audio direction is confirmed. Candidate functions requiring later
-approval include equipment rhythm, fluorescent hum, ventilation, distant
-announcements, notification pressure, organoid beating, room identity,
-character voice, music, silence, and adaptive escalation.
+In-engine cinematics use clear framing, slow movement, and few cuts. External
+cameras appear only when they add meaning. A scene always restores first-person
+control at the correct location. B03 and B06 keep their existing skip,
+caption, checkpoint, and time limits.
 
-## Open decisions
+## Typography and interface art
 
-- Final palette, materials, scale rules, lighting model, and reference board.
-- Character modelling, rigging, facial system, and animation budget.
-- Complete environment, prop, UI, VFX, typography, and cinematic asset list.
-- Music style, diegetic/non-diegetic balance, voice acting, audio mix, and
-  accessibility cues.
-- Asset performance budgets and file formats.
-- Code, original-content, generated-asset, and third-party licensing model.
+Use **IBM Plex Sans** for dialogue, menus, notices, and headers, and **IBM Plex
+Mono** only for data, timestamps, figures, and system labels. The verified
+open-licence font files must be self-hosted in the public repository before
+integration. If a verified licence cannot be obtained, use a compatible
+open-licence replacement with the same two roles.
+
+Use sentence case for normal labels and choices. All caps appear only for rare
+formal warnings or institutional stamps. Do not add a decorative display font,
+retro pixel font, or tiny all-caps text. Layout, colour, paper, and wording
+create the visual identity.
+
+## Bounded visual asset inventory
+
+The following are B08 limits. B10 owns exact asset IDs, variations, and final
+content counts.
+
+| Asset group | B08 limit or rule |
+|---|---|
+| Building | One modular kit for the eight B07 floor spaces. |
+| Props | No more than 24 core reusable 3D prop families. |
+| Narrative room detail | Reusable notices, labels, paper, screen, and decal templates; no unique model for each beat. |
+| People | Four physical NPCs plus one simple protagonist silhouette. |
+| Science | Original organoids, main laboratory stations, data views, and science VFX. |
+| Interface | Reusable 2D templates for email, manuscript cards, notices, data screens, and menus. |
+| Identity assets | Original character designs, fictional notices, main stations, and interface layouts. |
+
+Licensed generic assets can support chairs, desks, storage, cables, basic
+shelves, and minor equipment. Adapt them to the visual language when the
+licence permits it. Do not use a complete pre-built laboratory scene or an
+unmodified character pack.
+
+Runtime models use GLB/glTF. Share geometry and materials where practical.
+Most 3D texture maps are limited to 1K. A rare major object may use 2K. Do not
+use 4K textures. UI, data, and readable notices use live text or SVG rather
+than baked image text. Audio uses compressed browser-ready formats. B09 selects
+the exact compression and runtime pipeline after browser tests.
+
+## Performance and download boundary
+
+The game has Low, Standard, and High graphics presets. Standard is the default.
+The presets change visual cost only, such as shadows, render scale, and
+cosmetic effects. They do not change game rules, route access, information, or
+accessibility content.
+
+The design target is 60 fps at 1920 × 1080 in Standard on the B09 baseline
+hardware, and 30 fps at 1280 × 720 in Low. The initial compressed download
+target is no more than 75 MB. It must not exceed 100 MB without Leonardo's
+renewed approval. Runtime game assets use normal browser cache; IndexedDB is
+reserved for local game data rather than the general asset cache.
+
+B09 must select the baseline hardware and browser matrix, implement the
+presets, choose codecs and loading behaviour, and measure these targets. These
+are content and player-experience limits, not proof of measured performance.
+
+## Dialogue sound and voice boundary
+
+Dialogue is text-led. Supporting characters, including Camila, use small
+original non-lexical vocal palettes with controlled pitch and rhythm variation.
+The sounds never form real words, carry required information, imitate a real
+person, or imitate another game. The protagonist's spoken dialogue remains
+text-only to preserve player projection after name and pronoun selection.
+
+Do not use voice acting, lip sync, performance capture, cloned voices, or a
+real person's voice. Captions and speaker names carry all required dialogue
+meaning.
+
+## Ambience, cues, music, and mix
+
+Each room has a quiet identity sound. Use ventilation and instruments in the
+laboratories, soft organoid rhythm in tissue culture, scanner activity near
+imaging, work sounds at desks, a warmer quiet PI office, and sparse corridor,
+break-room, and exit ambience. One base ambience layer per space and work
+period changes with the act state. Do not create separate room audio for every
+week.
+
+| Cue | Use | Required duplicate channel |
+|---|---|---|
+| Routine message | Normal inbox or queue update. | Queue text and icon. |
+| Experiment attention | A group needs monitoring or a visible state changed. | Work-queue text and station state. |
+| Required safe scene | A due scene can begin at the next safe point. | In-world cue and task state. |
+
+Important sounds become clearer near their source. The player never has to
+find a task by sound alone. The mix must avoid hostile alarms, constant noise,
+or horror music.
+
+Use six short modular music loops or stems. Their style is dry electronic
+pulse, soft laboratory tone, and occasional over-formal institutional melody.
+They become colder and thinner later in the semester. They support menus,
+important scenes, and state changes; routine play does not have a constant
+score.
+
+The settings menu provides separate master, music, ambience/effects, and
+dialogue-sound volume controls. Captions remain the source of required
+information when a sound channel is muted.
+
+## Public asset, licence, and attribution policy
+
+The game and its code will later be published in a public GitHub repository.
+Every third-party asset must permit public redistribution in both that
+repository and the deployed web game, modification where required, and clear
+attribution. Permission only to display an asset on a web page is insufficient.
+
+Prefer original assets, CC0, CC-BY, Open Font License, MIT, Apache, or paid
+assets with equally clear public redistribution and modification rights. Do
+not use non-commercial or no-derivatives assets by default. A public portfolio
+can have promotional value, so those licences create avoidable uncertainty.
+
+Reusable online visual and audio assets are allowed when they meet these rules.
+If an asset cannot be redistributed, modified, and attributed correctly,
+recreate it or exclude it. Do not copy real university, journal, company, or
+game branding. Use fictional signs and original layouts.
+
+Every external or generated asset must be entered in
+`../assets/ASSET_MANIFEST.md` before integration. The manifest records source,
+creator, licence/version, attribution, modification, redistribution limits,
+and verification. The public repository and game Credits and Licences page
+must provide clear attribution.
+
+Generated assets are allowed only when the relevant terms permit public reuse.
+Their manifest record also names the tool or service, date, source inputs,
+human changes, and any release uncertainty. Do not use real people's
+likenesses, voices, or private source material.
+
+## B08 presentation and asset acceptance criteria
+
+- The world uses the approved near-present institutional style, modular asset
+  limits, palette roles, and no prohibited visual treatment.
+- Four physical NPCs, the protagonist silhouette boundary, the shared animation
+  set, and the cinematic rules bound character production.
+- Every key science, status, and audio cue has non-colour and non-audio
+  information support.
+- The audio plan has five supporting-character vocal palettes, room ambience,
+  three cue types, and six modular music stems without full voice production.
+- Runtime asset formats follow the GLB/glTF, texture-size, live-text, and
+  compressed-audio and graphics-preset rules.
+- The initial download target, graphics-preset boundary, and B09 measurement
+  responsibility remain explicit.
+- No asset is integrated without a public-repository-compatible licence,
+  manifest record, and attribution path.
+
+## Deferred work
+
+B09 owns rendering, asset loading, codecs, browser tests, performance
+measurement, and technical quality-preset implementation. B10 owns exact
+asset IDs, source selection, colour values after contrast checks, notice text,
+music and sound file names, cue variations, and final inventory counts. This
+document does not authorize asset import or production implementation.

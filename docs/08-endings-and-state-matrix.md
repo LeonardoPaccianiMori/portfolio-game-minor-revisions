@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **approved through B06; exact authored content pending**
+Status: **approved through B08; exact authored content pending**
 
 ## Confirmed architecture
 
@@ -127,7 +127,7 @@ epilogue set six months after Week 16. It has this order:
 The four career scenes use the Bellwether desk or PI office, a small Morrow
 assay room, the university exit with a short outward view, or a cleared
 Bellwether desk followed by the exit. They do not create a second explorable
-map. B08 owns their exact visual and camera treatment.
+map. B08 defines their visual and camera-treatment boundary.
 
 The paper-aftershock never creates a new random outcome. Published remains
 published; accepted pending final work becomes published through routine final
@@ -174,13 +174,28 @@ and four for career and ending states. They use short diegetic institutional
 stamp notifications during play, then persist in the local ending archive.
 They can respond to unethical choices, but none requires an unethical choice.
 
-A new campaign creates a separate save record and campaign seed. It carries no
-gameplay advantage, route, or state from earlier campaigns, but keeps the
-local ending and citation archive. There is no chapter rewind or free return
-to an earlier decision.
+## B08 ending presentation and local-data contract
+
+The ending card uses the career label as its heading. Record, People, and
+Institutional Citations sections provide context without a moral ranking.
+It shows the approved labels and trust bars, never hidden flags, raw formulas,
+or a completion percentage. Captions and speaker names are on by default.
+Text scale, high contrast, colour-independent state signals, reduced motion,
+and the required 1280 × 720 browser-view support also apply to the epilogue
+and ending summary.
+
+One active local IndexedDB save exists per browser profile. A New Game creates
+a new campaign seed but does not keep a second active campaign. If an active
+save exists, the player must confirm its replacement. On completion, the game
+removes the full active state and adds a compact ending card to the local
+Archive. The Archive keeps the 12 most recent ending cards and the persistent
+Institutional Citation record. It carries no gameplay advantage, route, or
+state into a new campaign. There is no chapter rewind or free return to an
+earlier decision.
 
 ## Deferred content work
 
-B08 owns final summary layout, presentation, and accessibility. B09 owns the
-archive and save schema. B10 owns exact epilogue lines, status text, citation
-names and triggers, and later content tuning.
+B08 final summary presentation and accessibility are documented. B09 owns the
+archive and save schema, migration, data validation, and recovery. B10 owns
+exact epilogue lines, status text, citation names and triggers, and later
+content tuning.
