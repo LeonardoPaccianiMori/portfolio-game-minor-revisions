@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B09; authored content and implementation evidence deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## Perspective and interaction
 
@@ -214,8 +214,8 @@ defined in `11-technical-architecture.md`.
 - Real-time in-engine cutscenes may temporarily control input and camera, then
   restore play or present a choice.
 - Mandatory and optional narrative scenes plus the ending epilogue use the
-  22-minute maximum for all non-interactive scenes. Main scenes target 14–18
-  minutes; each ending uses a 60–90-second epilogue. They remain skippable,
+  22-minute maximum for all non-interactive scenes. The seven main scenes
+  together target 14–18 minutes; each ending uses a 60–90-second epilogue. They remain skippable,
   captioned, and safe around checkpoints.
 
 ## B08 interaction and access contract
@@ -249,13 +249,38 @@ expiration. Completion removes the full active state and adds a compact ending
 card to the local Archive. The archive keeps the 12 most recent ending cards
 and the persistent Institutional Citation record.
 
-## Deferred decisions
+## B10 authored action-cost contract
 
-- B07 room placement, layout, and navigation paths are documented in
-  docs/06-world-and-level-design.md.
-- Exact authored experiment baselines and content counts belong to B10.
-- `11-technical-architecture.md` defines the save schema boundary, corruption
-  recovery, browser scope, and UI runtime boundary. B10 owns implementation
-  verification and measured evidence.
-- Exact tutorial text, authored experiment instances, and replay content
-  belong to B10.
+The following costs apply in Standard profile. Supported keeps the same period
+costs and uses its approved energy adjustments.
+
+| Authored action | Periods | Standard energy | Notes |
+|---|---:|---:|---|
+| Select and configure a sample group | 1 | 1 | One focused setup action. |
+| Start laser/sham, repair-state, or drug work | 1 | 1 | One focused start action. |
+| Start range, batch, oxygen-loss, or repeat work | 2 | 2 | One intense start action. |
+| Routine monitor or stop | 1 | 0 | A light deliberate check. |
+| Quality-check or stabilizing monitor | 1 | 1 | A focused monitoring choice. |
+| Analyse and create an evidence card | 1 | 1 | One focused analysis action. |
+| Report a completed request to Elena | 1 | 0 | A light desk action. |
+| Initial manuscript draft | 3 | 2 | The single rare major commitment. |
+| PI revision or preprint commit | 1 | 1 | One focused board action. |
+| `PIIM` response commit | 3 | 2 | A rare major commitment. |
+| Five-year research plan or Morrow video call | 1 | 1 | One focused career action. |
+| Morrow reply or optional local character scene | 1 | 0 | A light relationship action. |
+
+The five middle mandatory scenes—**A Complete Narrative**, **What We Had**,
+**Public Record**, **Helpful Comments**, and **A Reasonable Response**—advance
+one work period when they end, but cost no energy. **Clarified** and **06:42**
+have no separate period cost. This lets the fixed calendar advance through
+story events without charging dialogue as ordinary work.
+
+The content catalogue assigns these costs to every authored action. No later
+agent may add a new time-costing action class without a requirement change.
+
+## B10 content and implementation boundary
+
+`12-content-specification.md` contains the exact tutorial, experiment,
+manuscript, and replay content. `11-technical-architecture.md` contains the
+save and browser boundary. Measured implementation evidence remains future
+evidence and does not alter this approved loop without a recorded decision.

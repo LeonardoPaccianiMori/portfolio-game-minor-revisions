@@ -11,12 +11,14 @@ the academic survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **design and evaluation**.
+Status: **design and evaluation; B10 documented; implementation still blocked**.
 
-This initial repository contains design documentation only. It contains no
-game implementation, production assets, package configuration, or deployment
-configuration. The specification is not implementation-ready until the gate in
-[`docs/00-design-index.md`](docs/00-design-index.md) is explicitly approved.
+This repository contains design documentation only. It contains no game
+implementation, production assets, package configuration, or deployment
+configuration. B10 now records the bounded content, evaluation, production,
+and handoff plan. The specification is still not implementation-ready until
+Leonardo separately approves the gate in
+[`docs/00-design-index.md`](docs/00-design-index.md).
 
 Target experience:
 
@@ -39,7 +41,7 @@ This repository owns detailed game design, future source code, tests, assets,
 and runtime configuration. Leonardo's private Career Center remains canonical
 for project status, career evidence, and portfolio-readiness decisions.
 
-No GitHub remote or public licence has been selected. In the absence of a
-licence, no permission to copy, modify, or redistribute original repository
-content is granted. Code, original creative material, and third-party assets
-will receive separate compatible licensing decisions before publication.
+No GitHub remote exists. Leonardo alone decides when to create and push a
+remote. A future public release is planned to use MIT for code and CC BY 4.0
+for Leonardo's original non-code work. No public licence file is added now.
+Every third-party asset keeps its own verified licence and attribution path.

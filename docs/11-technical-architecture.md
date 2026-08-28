@@ -1,13 +1,13 @@
 # Technical Architecture
 
-Status: **B09 documented; implementation prohibited**
+Status: **B10 documented; implementation approval pending**
 
 ## Scope and boundary
 
 This document defines the approved technical direction for the first release.
 It does not authorize game code, package files, production assets, a remote,
-or deployment work. The implementation gate in `00-design-index.md` remains
-blocked until B10 is complete and Leonardo gives separate approval.
+or deployment work. B10 is documented, but the implementation gate remains
+blocked until Leonardo gives separate approval.
 
 The game is a self-contained static browser game. It has no account, server
 data, uploaded player data, analytics, telemetry, runtime API, runtime CDN, or
@@ -92,6 +92,24 @@ Every event, experiment, manuscript revision, scene, ending module, and
 permanent consequence has a stable identifier. Authored data is validated by
 Zod before use. Invalid authored data is a development error, not a fallback
 random event.
+
+### Content and strings contract
+
+The source catalogue in 12-content-specification.md is the design authority.
+Implementation must split authored data into validated JSON objects and one
+English strings.en.json file. JSON stores IDs, conditions, effects, action
+cost IDs, dependencies, windows, expiry, and test links. The English file
+stores all player-facing text keys and values.
+
+CampaignState stores a content version, selected content variants, completed
+and expired one-time content IDs, and citation unlock IDs. It stores no copied
+dialogue or report text. A content migration must preserve an existing
+selection or replace it only with an explicitly mapped compatible item.
+
+The rules module may select a saved approved variant. It must not assemble
+sentences, use a language model, fill an arbitrary template, or create a new
+event. The validator must reject duplicate IDs, missing string keys, invalid
+dependencies, invalid effect targets, and a count outside the B10 catalogue.
 
 ### Safe-point scheduler
 
@@ -242,8 +260,9 @@ Use these quality tools after implementation is authorized:
 
 The local quality commands will be `npm run check` for type, lint, format, and
 unit checks; `npm run test:e2e` for browser tests; `npm run build` for the
-production build; and `npm run verify` for the complete local gate. The exact
-coverage percentage and performance pass threshold remain B10 decisions.
+production build; and `npm run verify` for the complete local gate. The B10
+coverage targets, private evaluation method, and performance pass evidence are
+defined in 13-testing-and-evaluation.md.
 
 After Leonardo approves a public GitHub remote, a GitHub Actions workflow may
 run the same checks on pushes and pull requests. It does not deploy the game,
@@ -253,12 +272,11 @@ status. Do not use an automatic dependency-update bot. Every asset and
 dependency must continue to meet the public redistribution, modification, and
 attribution boundary.
 
-## Deliberate deferrals
+## Deliberate later verification
 
 - Exact Node and package versions are fixed only when implementation begins.
-- B10 owns exact content identifiers, authored data instances, coverage and
-  playtest thresholds, implementation work packages, release licence, and
-  measured performance evidence.
+- Exact source assets, audio codecs, source file hashes, and measured
+  performance are verified before their integration or public claim.
 - A future external Safari test service could provide direct Safari evidence,
   but it is not part of the approved first-release plan.
 

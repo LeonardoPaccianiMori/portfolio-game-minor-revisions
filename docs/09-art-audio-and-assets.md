@@ -1,6 +1,6 @@
 # Art, Audio, and Assets
 
-Status: **approved through B09; exact asset selection deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## Presentation thesis
 
@@ -96,8 +96,9 @@ create the visual identity.
 
 ## Bounded visual asset inventory
 
-The following are B08 limits. B10 owns exact asset IDs, variations, and final
-content counts.
+The following are approved limits. B10 fixes the required asset roles and
+content counts. It does not select a source asset, file, codec, or final asset
+identifier before its rights and technical facts are verified.
 
 | Asset group | B08 limit or rule |
 |---|---|
@@ -119,7 +120,9 @@ Most 3D texture maps are limited to 1K. A rare major object may use 2K. Do not
 use 4K textures. UI, data, and readable notices use live text or SVG rather
 than baked image text. Audio uses compressed browser-ready formats.
 `11-technical-architecture.md` defines the local bundle and resource boundary.
-B10 selects exact codecs and records actual asset metadata after browser tests.
+Exact codecs, source files, metadata, and browser results are deliberate
+implementation-stage verified facts. They are not selected in this repository
+now.
 
 ## Performance and download boundary
 
@@ -136,8 +139,9 @@ reserved for local game data rather than the general asset cache.
 
 `11-technical-architecture.md` defines the reference hardware class, browser
 scope, graphics-profile boundary, loading behaviour, and build-size audit.
-B10 must measure these targets and select actual asset codecs. These are
-content and player-experience limits, not proof of measured performance.
+Implementation must measure these targets and select actual asset codecs after
+assets are verified. These are content and player-experience limits, not proof
+of measured performance.
 
 ## Dialogue sound and voice boundary
 
@@ -208,6 +212,42 @@ Their manifest record also names the tool or service, date, source inputs,
 human changes, and any release uncertainty. Do not use real people's
 likenesses, voices, or private source material.
 
+## B10 asset planning and sourcing gate
+
+The B10 asset plan defines roles, not selected source files. The design
+requires one modular floor kit, twenty reusable prop families, six functional
+station kits, four physical NPCs, one protagonist silhouette, reusable
+interface templates, eight room-ambience roles, three system-cue roles, five
+eight-sound dialogue palettes, six music-stem roles, and twenty lighting
+presets. The twenty lighting presets are the five act states by the four work
+periods.
+
+The twenty prop families are: desk, chair, storage unit, shelf, laboratory
+bench, stool, glass partition, automatic door, generic monitor, keyboard,
+paper stack, notice rail, clipboard, cable or tray, generic equipment housing,
+coffee machine, break-room table, corridor sign, service panel, and exit
+fixture. These are visual roles. They do not identify a model source.
+
+Before any external or generated asset enters even a prototype, use this
+sequence:
+
+1. Identify a candidate and its exact source page or original-work record.
+2. Check public redistribution, modification, attribution, and deployed-web
+   use against the future public-source boundary.
+3. Record the candidate in ASSET_MANIFEST.md with its exact licence version,
+   creator, attribution, modifications, and verification date.
+4. Check style, technical format, texture size, and browser suitability.
+5. Integrate the asset only after the record is complete and verified.
+
+Do not add an unverified asset to a temporary folder, prototype, or source
+branch. A candidate found during research is not an asset selection. Do not
+use a source with unclear public redistribution rights merely because it has a
+free download.
+
+Verified sources, exact codecs, source file hashes, final file names, colour
+values, browser measurements, and final attribution text are deliberate later
+facts. They must be recorded before integration, not guessed in B10.
+
 ## B08 presentation and asset acceptance criteria
 
 - The world uses the approved near-present institutional style, modular asset
@@ -225,11 +265,12 @@ likenesses, voices, or private source material.
 - No asset is integrated without a public-repository-compatible licence,
   manifest record, and attribution path.
 
-## Deferred work
+## Deliberate later verification
 
-The B09 rendering, asset-loading, browser-scope, resource, and
-quality-preset architecture is documented in `11-technical-architecture.md`.
-B10 owns exact asset IDs, source selection, colour values after contrast
-checks, actual codecs, notice text, music and sound file names, cue variations,
-final inventory counts, and measured performance evidence. This document does
-not authorize asset import or production implementation.
+The rendering, asset-loading, browser-scope, resource, and quality-preset
+architecture is documented in 11-technical-architecture.md. The content
+catalogue owns notice text, cue roles, and music roles. Exact source selection,
+colour values after contrast checks, codecs, final asset identifiers, file
+names, dependency choices, and measured performance remain later verified
+facts. This document does not authorize asset import or production
+implementation.

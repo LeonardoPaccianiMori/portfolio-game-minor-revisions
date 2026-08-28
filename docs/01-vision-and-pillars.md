@@ -1,6 +1,6 @@
 # Vision and Design Pillars
 
-Status: **B00 approved; later release work deferred**
+Status: **B00 and B10 documented; implementation approval pending**
 
 ## Confirmed vision
 
@@ -96,8 +96,8 @@ The game must meet these qualitative criteria:
 - The industry route is attractive but imperfect.
 - At least one choice or ending gives the player a reason for discussion.
 
-Later testing work must define the sample sizes and numeric pass thresholds for
-these criteria.
+Private evaluation in 13-testing-and-evaluation.md defines the acceptance
+method and automated thresholds. It does not use external sample sizes.
 
 ## Creative and portfolio purpose
 
@@ -116,8 +116,9 @@ and a later public case study.
 
 AI assistance is not a substitute success criterion: the resulting game must
 still be coherent, playable, technically credible, and independently reviewable.
-The public case-study selection, numeric evaluation thresholds, and exact public
-wording remain decisions for later production and implementation-handoff work.
+The public case-study selection and exact public wording remain later release
+decisions. The private evaluation thresholds are approved in
+13-testing-and-evaluation.md.
 
 ## Public position
 
@@ -164,7 +165,20 @@ damage must look scientific and stylized. It must not use body horror.
 - Release only after the quality, accessibility, performance, science, and
   asset checks pass.
 
-## Deferred release work
+## B10 release and content boundary
 
-B10 must define the exact public text, complete the title check, select
-licences, set any release date, and approve the final agent-attribution format.
+The first release has no more than 6,000 unique English words. It uses a
+complete authored English draft in `12-content-specification.md`; no runtime
+system writes free-form dialogue. The game keeps its comic institutional voice
+without making required information unclear.
+
+Leonardo alone decides when to create and push a public remote. Before that
+action, a title-conflict and brand check must occur. A later public release
+uses MIT for code and CC BY 4.0 for Leonardo's original non-code work.
+Third-party material keeps its verified licence and attribution. The repository
+does not add a public licence file before Leonardo directs the public-release
+work.
+
+Public material can include a curated agent-contribution record, but not raw
+private conversations, credentials, or private data. No public release date,
+remote, or portfolio deployment is authorized by this document.

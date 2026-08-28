@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **approved through B08; authored content details pending**
+Status: **B10 documented; implementation approval pending**
 
 ## Protagonist
 
@@ -222,11 +222,24 @@ carry required information, or imitate a real person or another game.
 
 Dialogue uses a lower-screen text panel with the speaker name, manual advance,
 and captions on by default. Internal thought has a distinct simple text style.
-There are no 2D portrait panels or timed dialogue choices. B10 owns exact
-faces, clothing, colours, line text, sound variants, and scene performance.
+There are no 2D portrait panels or timed dialogue choices. The B10 content
+draft fixes dialogue, text keys, sound-role IDs, and scene choices. Exact
+faces, clothing, colours, source assets, and rendered performance remain
+later verified implementation facts.
 
-## Open decisions
+## B10 dialogue and content boundary
 
-- Exact dialogue content, conflicts, reconciliations, and ending reactions.
-- Exact visual variations, non-lexical sound variants, and scene direction.
-- Exact authored English text. The first release does not plan localization.
+`12-content-specification.md` contains the complete initial English draft for
+mandatory scenes, optional scenes, messages, reports, choices, captions,
+internal thoughts, and ending reactions. It uses text keys in the approved
+`MR-...` catalogue. `strings.en.json` will later be its runtime source.
+
+Dialogue remains English only. A main scene has no more than two state
+variants. Each optional scene has two to four player choices, one main
+working-trust effect, and at most one permanent consequence. It does not use
+free-form generated dialogue or unbounded contextual barks.
+
+The five supporting-character non-lexical palettes each contain eight short
+original sounds. They never form words or carry required meaning. Exact audio
+cue IDs and wording are in the content catalogue; implementation still needs
+verified original or reusable sound assets.

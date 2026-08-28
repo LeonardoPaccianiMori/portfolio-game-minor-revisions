@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **B09 documented; B10 incomplete; not implementation-ready**
+Status: **B10 documented; implementation approval pending; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -8,24 +8,24 @@ gaps. It does not mean that the domain is finished.
 
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
-| `01-vision-and-pillars.md` | Thesis, tone, scope | Approved through B06 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B09 | Authored content and tuning remain in B10 |
-| `03-narrative-and-campaign.md` | Five-act story | Approved through B08 | Line-level content remains in B10 |
-| `04-science-and-experiments.md` | Fictional science | Approved through B09 | Exact authored experiment content remains in B10 |
-| `05-characters-and-dialogue.md` | Cast and voice | Approved through B08 | Exact dialogue and scene content remain in B10 |
-| `06-world-and-level-design.md` | University research floor | Approved through B09 | Exact props and measurement evidence remain in B10 |
-| `07-systems-and-balance.md` | State and rules | Approved through B09 | Tuned values and authored data remain in B10 |
-| `08-endings-and-state-matrix.md` | Outcomes | Approved through B09 | Exact authored ending content remains in B10 |
-| `09-art-audio-and-assets.md` | Presentation | Approved through B09 | Exact asset selection and measurement evidence remain in B10 |
-| `10-ui-ux-accessibility.md` | Interface and access | Approved through B09 | Authored text and implementation verification remain in B10 |
-| `11-technical-architecture.md` | Runtime design | Documented in B09 | Exact versions and measured implementation evidence remain in B10 |
-| `12-content-specification.md` | Content inventory | Approved through B08 (partial) | Full identifiers, line counts, and authored content remain in B10 |
-| `13-testing-and-evaluation.md` | Quality evidence | Approved through B09 | Playtest targets, protocol, and acceptance thresholds remain in B10 |
-| `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
-| `15-implementation-contract.md` | Agent handoff | Approved through B09 (partial) | Requirement IDs and approved work packages remain in B10 |
+| `01-vision-and-pillars.md` | Thesis, tone, scope | B10 documented | Later public wording and release execution require separate approval. |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | B10 documented | Implementation evidence and later tuning only. |
+| `03-narrative-and-campaign.md` | Five-act story | B10 documented | Authored draft is ready for later specification review. |
+| `04-science-and-experiments.md` | Fictional science | B10 documented | Asset production and later implementation evidence only. |
+| `05-characters-and-dialogue.md` | Cast and voice | B10 documented | Authored draft is ready for later specification review. |
+| `06-world-and-level-design.md` | University research floor | B10 documented | Asset production and performance evidence only. |
+| `07-systems-and-balance.md` | State and rules | B10 documented | Bounded post-slice tuning only. |
+| `08-endings-and-state-matrix.md` | Outcomes | B10 documented | Authored draft is ready for later specification review. |
+| `09-art-audio-and-assets.md` | Presentation | B10 documented | Verified asset selection and measurements occur before integration. |
+| `10-ui-ux-accessibility.md` | Interface and access | B10 documented | Implementation verification only. |
+| `11-technical-architecture.md` | Runtime design | B10 documented | Exact versions and measurements are deliberate implementation-stage facts. |
+| `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
+| `13-testing-and-evaluation.md` | Quality evidence | B10 documented | Test results are future evidence, not current claims. |
+| `14-production-plan.md` | Delivery strategy | B10 documented | Leonardo may later revise capacity or release timing. |
+| `15-implementation-contract.md` | Agent handoff | B10 documented | Work begins only after the separate gate approval. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
-| `glossary.md` | Shared terminology | Seeded | Expand as systems receive final names |
-| `../assets/ASSET_MANIFEST.md` | Asset provenance | Ready for use | No assets selected yet |
+| `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
+| `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
 
 ## Discussion roadmap
 
@@ -51,13 +51,13 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B10 — Content, evaluation, production, and implementation handoff**
-- Last documented block: **B09 — Technical architecture**
-- Next action: define the exact content inventory, evaluation and playtest
-  method, production limits, release boundary, requirement traceability, and
-  agent work packages. Do not start implementation work.
-- Implementation gate: **blocked**; completing discussion blocks does not by
-  itself authorize implementation.
+- Current block: **Post-workshop specification review**
+- Last documented block: **B10 — Content, evaluation, production, and implementation handoff**
+- Next action: Leonardo reviews the complete specification and separately
+  decides whether to approve implementation planning. Do not start
+  implementation work.
+- Implementation gate: **blocked**; B10 documentation does not authorize
+  implementation.
 
 ### B00 — Vision, audience, success, and boundaries
 
@@ -80,9 +80,10 @@ status, and the next place to resume.
   and character stakes remain grounded.
   The approved success criteria, content limits, non-goals, public position,
   agent-evidence fields, and release rules are in the primary documents.
-- **Deferred outside B00:** B10 owns numeric playtest thresholds, exact public
-  text, the actual title-conflict check, licence selection, release date, and
-  the final work-package template and agent assignments.
+- **Deferred outside B00:** B10 now records private evaluation targets,
+  requirements, work packages, and the future licence plan. Exact public text,
+  the actual title-conflict check, public licence files, a release date, and
+  public agent assignments remain later release or implementation work.
 - **Complete when:** the game has an approved audience, experience promise,
   safety boundary, non-goal set, and qualitative success definition that later
   blocks can test against.
@@ -134,8 +135,8 @@ status, and the next place to resume.
 - **Deferred outside B02:** B03 owns exact scene order, rejection text,
   reviewer reports, personal-history reveals, and character reactions. B05
   owns relationship state and thresholds. B07 owns exact schedules and
-  navigation. B08 documents the character-presentation limits; B10 owns exact
-  variants and authored content. During the playable semester, Camila,
+  navigation. B08 documents the character-presentation limits; B10 now
+  provides exact variants and authored content. During the playable semester, Camila,
   the editor, and the reviewers remain remote.
 - **Complete when:** the fictional world and recurring cast can support every
   campaign act without reproducing real people or institutions literally.
@@ -163,8 +164,8 @@ status, and the next place to resume.
 - **Deferred outside B03:** B04 owns laboratory and manuscript interactions.
   B05 owns state values, event thresholds, time costs, and route formulas. B06
   owns ending modules, precedence, and final scenes. B07 owns scene staging;
-  B08 documents camera, audio, and presentation. B10 owns exact authored
-  English text, identifiers, and full content inventory.
+  B08 documents camera, audio, and presentation. B10 now provides exact
+  authored English text, identifiers, and full content inventory.
 - **Complete when:** every major story beat, branch, prerequisite, consequence,
   and transition has an approved place in the campaign.
 - **Completion record:** `Complete Minor Revisions B03 campaign block`.
@@ -223,8 +224,8 @@ status, and the next place to resume.
 - **Deferred outside B05:** B07 owns period schedules and staging. B08
   documents detailed visual interface, controls, and accessibility. B09
   schemas and persistence are documented in `11-technical-architecture.md`.
-  B10 owns exact authored experiments, requests, dialogue, and post-playtest
-  tuning.
+  B10 now provides exact authored experiments, requests, dialogue, and
+  bounded post-slice band tuning.
 - **Complete when:** the state model and pacing rules are consistent, tunable,
   explainable to the player where appropriate, and connected to narrative and
   experiment outcomes.
@@ -253,8 +254,8 @@ status, and the next place to resume.
 - **Deferred outside B06:** B07 owns exact spatial placement and staging. B08
   documents visual, camera, control, summary-layout, and accessibility
   production. B09 archive and save schemas are documented in
-  `11-technical-architecture.md`. B10 owns exact ending lines, citation names
-  and triggers, content identifiers, and later tuning.
+  `11-technical-architecture.md`. B10 now provides exact ending lines,
+  citation names and triggers, content identifiers, and bounded later tuning.
 - **Complete when:** every reachable final state maps deterministically to a
   coherent choice or failure state and an approved modular epilogue.
 - **Completion record:** `Complete Minor Revisions B06 endings and epilogues`.
@@ -278,8 +279,9 @@ status, and the next place to resume.
 - **Deferred outside B07:** B08 documents final palette roles, lighting
   boundary, camera, audio, controls, UI, and accessibility settings. B09
   defines the collision, authored-character navigation, loading, and
-  performance boundary in `11-technical-architecture.md`. B10 owns exact prop
-  text, scene lines, content identifiers, and measured performance evidence.
+  performance boundary in `11-technical-architecture.md`. B10 now provides
+  exact prop text, scene lines, and content identifiers. Measured performance
+  remains a later implementation fact.
 - **Complete when:** the complete playable floor supports all approved actions,
   scenes, routes, and performance needs with a bounded asset burden.
 - **Completion record:** `Complete Minor Revisions B07 world and level design`.
@@ -314,10 +316,10 @@ status, and the next place to resume.
 - **Deferred outside B08:** B09 defines the stack, browser scope and baseline
   class, renderer/loading/audio pipeline, controller roles, UI and save runtime
   architecture, save schema/migrations, collision, and authored-character
-  navigation in `11-technical-architecture.md`. B10 owns exact asset IDs and
-  sources, colour values after contrast checks, notice and dialogue text, audio
-  file names, content inventory, playtests, production plan, release licence,
-  and measured performance evidence.
+  navigation in `11-technical-architecture.md`. The B10 record defines the
+  bounded content, evaluation, production, and asset-role plan. Exact asset sources, final
+  asset IDs, colour values after contrast checks, audio codecs and file names,
+  package versions, and measured performance are later verified facts.
 - **Complete when:** presentation and interaction have bounded inventories,
   accessibility acceptance criteria, performance budgets, and viable creation
   or licensed-sourcing paths.
@@ -361,33 +363,51 @@ status, and the next place to resume.
   Use Vitest, Playwright, ESLint, Prettier, local quality commands, a future
   non-deploying GitHub Actions workflow after remote approval, a build-size
   audit, manual performance evidence, and intentional dependency review.
-- **Deferred outside B09:** B10 owns exact Node and package versions, authored
-  data instances and content identifiers, coverage and playtest thresholds,
-  measured performance evidence, release licence, requirement traceability,
-  and implementation work packages. Direct Safari testing is outside the
-  approved first-release plan.
+- **Deferred outside B09:** B10 resolves content identifiers, data instances,
+  private evaluation targets, licence plan, requirement traceability, and
+  implementation work packages. Exact Node and package versions, verified
+  asset sources and codecs, and measured performance remain later facts.
+  Direct Safari testing is outside the approved first-release plan.
 - **Complete when:** every required system has an owned interface, data model,
   failure behaviour, performance target, and validation path.
 - **Completion record:** `Complete Minor Revisions B09 technical architecture`.
 
 ### B10 — Content, evaluation, production, and implementation handoff
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B00 through B09.
 - **Primary documents:** `12-content-specification.md`,
   `13-testing-and-evaluation.md`, `14-production-plan.md`, and
   `15-implementation-contract.md`.
-- **Must resolve:** exact content counts, identifiers, dependencies, mandatory
-  and optional content, fallback cut line, and authoring formats; playtest
-  audience, protocol, success thresholds, scientific and narrative review, and
-  automation targets; time and cost budgets, milestones, sequencing, staffing,
-  maintenance, and stop or reframe criteria; repository visibility, licensing,
-  release packaging, and portfolio timing; and requirement IDs, traceability,
-  work-package ownership, agent-contribution evidence, integration rules, CI
-  gates, and definitions of done.
-- **Complete when:** the vertical slice, 90-minute fallback, and full game each
-  have bounded content, evidence, budget, stop criteria, and agent-owned work
+- **Approved decision set:** content uses stable `MR-...` identifiers,
+  validated JSON data, one English string set, saved conditional selections,
+  and no free-form generated dialogue. The full game has six experiment
+  templates, seven mandatory scenes, ten optional character scenes, twenty
+  primary records, twenty-nine ending modules, twelve Institutional Citations,
+  thirty environmental text items, and no more than 6,000 unique English
+  words. The Week-1 vertical slice and coherent 90-minute fallback have fixed
+  content boundaries. Action costs, qualitative baselines, and saved outcome
+  bands are specified in the authoritative domain documents.
+
+  Evaluation is private to Leonardo and Codex. It uses the approved internal
+  checkpoints, automated test targets, build-size audit, and evidence records;
+  it does not recruit participants or require external scientific or narrative
+  review. Production has a capacity-based schedule, a EUR 150 exceptional-cost
+  ceiling, stop rules, and a 90-day private critical-fix period. Leonardo alone
+  decides when to create and push a remote. A later public source release uses
+  MIT for code, CC BY 4.0 for Leonardo's original non-code work, verified
+  third-party rights, and the approved release package.
+
+  Requirements use `MR-REQ-<DOMAIN>-<NUMBER>`. The approved work packages,
+  branch rules, contribution records, integration rules, and definition of done
+  are in `15-implementation-contract.md`. Exact package versions, verified
+  asset sources and codecs, and measured performance are deliberate future
+  implementation facts. They do not authorize code now.
+- **Complete when:** the vertical slice, 90-minute fallback, and full game have
+  bounded content, evidence, budget, stop criteria, and agent-owned work
   packages traceable to approved requirements.
+- **Completion record:** `Complete Minor Revisions B10 content, evaluation,
+  and handoff`.
 
 ### Progress protocol
 
@@ -429,5 +449,5 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current gate: **blocked by unresolved design decisions; no implementation
-authorized**.
+Current gate: **blocked pending Leonardo's separate implementation-readiness
+approval; no implementation authorized**.

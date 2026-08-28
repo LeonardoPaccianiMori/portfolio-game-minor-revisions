@@ -1,6 +1,6 @@
 # World and Level Design
 
-Status: **approved through B09; technical execution and authored content deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## Confirmed world structure
 
@@ -342,12 +342,21 @@ B07 is complete only if all of the following are true:
 - the level can be implemented as one continuous floor with bounded visible
   detail and no simulated crowd.
 
-## Deferred work
+## B10 environmental content boundary
 
-The B08 presentation, camera, audio, controls, UI, accessibility, and asset
-boundaries are documented in docs/09-art-audio-and-assets.md and
-docs/10-ui-ux-accessibility.md. The B09 technical architecture is documented
-in docs/11-technical-architecture.md. B10 owns exact scene text, notice text,
-prop identifiers, full content counts, and measured implementation evidence.
-No B07, B08, or B09 decision authorizes implementation code or production
-assets.
+The floor uses thirty authored environmental text items: six each for
+bureaucracy, publication and career, personal traces, repairs and warnings,
+and exit-facing material. Each item has a stable `MR-ENV-...` ID, a room,
+an act-state window, a one-time display rule, and text in
+`12-content-specification.md`.
+
+An environmental item must reveal an institutional contradiction, pressure, or
+human response. It must not mock nationality, disability, precarious workers,
+or scientific ignorance. Required information never depends on an inspectable
+environment item alone.
+
+The asset plan uses one modular floor kit, twenty reusable prop families, six
+main station kits, four physical NPCs, one protagonist silhouette, and twenty
+lighting presets. Asset roles and their later provenance path are in
+`09-art-audio-and-assets.md` and `assets/ASSET_MANIFEST.md`. No B07, B08, B09,
+or B10 decision authorizes implementation code or production assets.

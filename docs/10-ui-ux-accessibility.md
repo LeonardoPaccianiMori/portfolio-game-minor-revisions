@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **approved through B09; runtime implementation and authored text deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## Interaction principles
 
@@ -168,11 +168,31 @@ scope decision, not a claim that English is accessible to every player.
 - The game contains the content note, English-only boundary, and no mobile or
   tablet first-release commitment.
 
-## Deferred work
+## B10 content and test boundary
 
-`11-technical-architecture.md` defines browser scope, controller roles, UI
+The exact English text for tutorial prompts, menus, confirmations, save
+recovery, compatibility messages, ending-card headings, and the content note
+is authoritative in 12-content-specification.md. A later UI implementation
+must use those text keys. It must not add a second source of player-facing
+English text or use generated wording.
+
+MR-TEST-UI-001 must verify the New Game flow, fixed pressure profile,
+replacement confirmation, Save and Quit, local-data clear confirmation, and
+Archive headings. MR-TEST-A11Y-001 must verify the 150 percent scale,
+1280 by 720 view, keyboard and controller core actions, captions, reduced
+motion, contrast, and Interaction Assist rules. These checks are private to
+Leonardo and Codex.
+
+The UI must continue to use IndexedDB only for local game data. It must not
+use a cookie for saves, ownership, discovery, or expiry. The active save has
+no automatic expiration. Browser closure and connection loss must not advance
+game time.
+
+## Deliberate later verification
+
+11-technical-architecture.md defines browser scope, controller roles, UI
 runtime architecture, pointer-lock behaviour, save schemas, migrations,
-validation, corruption recovery, and the performance boundary. B10 owns exact
-tutorial wording, message and report text, final content counts, playtest
-protocol, and measured implementation evidence. This document does not
-authorize implementation code or production assets.
+validation, corruption recovery, and the performance boundary. Exact rendered
+layout measurements, browser results, and implementation evidence remain
+future facts. This document does not authorize implementation code or
+production assets.

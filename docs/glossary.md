@@ -10,11 +10,15 @@
 | Aldercroft University | Fictional university that can invite the protagonist to a final-round Assistant Professor interview in Week 13. |
 | Archive | Local menu collection of the 12 most recent compact ending cards and the persistent Institutional Citation record. It does not keep full earlier saves or normal cutscenes. |
 | Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
+| B10 | The documented content, evaluation, production, and implementation-handoff block. It does not authorize implementation. |
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
 | Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
 | Campaign seed | Stored value created for a new game. It selects small variation only inside the outcome range the player has earned. |
 | CampaignState | Serializable active-campaign source of truth. It stores campaign progress and permanent consequences but no Three.js, DOM, audio, function, or real-time browser object. |
 | Common Archive, The | Fictional public preprint service used to release the manuscript. |
+| Content catalogue | The authoritative set of stable IDs, conditions, effects, text keys, and initial English draft in 12-content-specification.md. |
+| Content ID | A stable MR-prefixed identifier for one content object. It must not change after implementation begins without a migration and approved decision. |
+| Content text key | A stable key that links a content object to exactly one English string in strings.en.json. |
 | Controlled cardiac tissue model | The standardized lab-grown human cardiac tissue model. It has no patient identity or donor story. |
 | Cosmos | First fictional journal in the submission ladder; a parody of broad-interest prestige publishing. |
 | Career route | Academia, industry, or neither, as determined by accumulated state and final choice. |
@@ -30,6 +34,7 @@
 | Experiment family | Laser injury, oxygen deprivation/restoration, or cardiotoxic-drug exposure using shared laboratory systems. |
 | Experiment work queue | Desk display of the plain-language state of active sample groups. It cannot operate equipment remotely. |
 | Exit vestibule | Small glass space at the building boundary. It is visible before Week 16 and becomes the final decision location in Week 16. |
+| Fallback | The coherent 90-minute content set. It keeps all mandatory scenes, four local optional scenes, and three Camila contacts while removing the stated full-game content. |
 | Fabrication | A narrative choice to alter an existing result or invent one. The game gives no practical method. It can remain undiscovered. |
 | Facility station | Gabriel's operational base directly beside the imaging room. It supports booking, queue, and service scenes. |
 | Fatigue module | Ending treatment used only after a crash or an ending energy value of zero or one. It changes tone but not paper or career outcome. |
@@ -51,6 +56,7 @@
 | Paper-aftershock | One short post-career-scene object, message, or line that shows what the paper state means six months later. |
 | PI confidence | The PI's approval and willingness to support submission or continuation; it is not scientific truth. |
 | Pressure profile | Standard or Supported balance setting selected for a new campaign. Both keep the same calendar, narrative, routes, and ending content; it cannot change during that save. |
+| Primary record | One of the twenty main readable records that moves the story or explains a main experiment. A repeat adds a note to its source record rather than a new primary-record ID. |
 | Presentation effect | Typed request from a game rule for non-rule work, such as a message, cue, cutscene, save, UI refresh, or sound. It does not itself change campaign state. |
 | Preprint | Public manuscript version that can attract industry interest before journal publication. |
 | Protected break | One-period recovery action. It restores energy but does not act as a home scene or voluntary sleep action. |
@@ -59,6 +65,7 @@
 | Repatterning index | Fictional combined view of boundary organization, rhythm synchrony, and stress decline. It supports, but does not prove, the repair-state idea. |
 | Research integrity | Defensibility of methods, controls, analysis, and claims. It is not a simplistic virtue score. |
 | Research Status | Player-opened panel for evidence, PI confidence, integrity, working trust, route feedback, and reasons for material state changes. |
+| Requirement ID | A stable MR-REQ-DOMAIN-NUMBER identifier for an approved implementation requirement. |
 | Revision commit | Player action that makes a manuscript-board arrangement permanent and creates a version snapshot. |
 | Revision snapshot | Visible historical manuscript version used for comparison. It cannot undo the consequences of a committed revision. |
 | Safe stopping point | A point at which an active experiment can pause without an important message interrupting or disappearing. |
@@ -72,4 +79,6 @@
 | Unbroken work loop | The continuous day-and-night campaign structure. The player does not go home or use a sleep action. |
 | Vertical slice | A polished 20–30-minute segment proving one complete loop, narrative consequence, save behaviour, and technical feasibility. |
 | Work period | One of 64 compressed time units: early, late, night, or after-hours within a campaign week. |
+| Work package | A bounded future implementation assignment with owned paths, requirements, tests, integration rules, and a contribution record. |
 | Working trust | Visible character-specific willingness to help, speak openly, or support the player. It is not friendship or moral worth. |
+| Verified asset | An external, generated, or original asset with a complete manifest record, verified rights, technical check, and attribution path before integration. |

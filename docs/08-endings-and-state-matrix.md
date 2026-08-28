@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **approved through B09; exact authored content pending**
+Status: **B10 documented; implementation approval pending**
 
 ## Confirmed architecture
 
@@ -193,9 +193,33 @@ Institutional Citation record. It carries no gameplay advantage, route, or
 state into a new campaign. There is no chapter rewind or free return to an
 earlier decision.
 
-## Deferred content work
+## B10 ending-content inventory
 
-B08 final summary presentation and accessibility are documented.
-`11-technical-architecture.md` defines the Archive and save-schema,
-migration, data-validation, and recovery boundary. B10 owns exact epilogue
-lines, status text, citation names and triggers, and later content tuning.
+The ending system has twenty-nine text modules:
+
+- four career scenes;
+- four paper-aftershock items;
+- fifteen character-and-mode relationship afterbeats;
+- four integrity treatments; and
+- two fatigue treatments.
+
+The twelve Institutional Citations are:
+
+1. Supplementary Stabilization
+2. Narrative Convergence
+3. Contextual Completeness
+4. Public Dissemination Compliance
+5. Collegial Load-Bearing Recognition
+6. Authorship Harmonization Notice
+7. Selective Transparency Distinction
+8. Archival Continuity Citation
+9. Provisional Appointment Readiness
+10. Translational Availability Recognition
+11. Scope Realignment Certificate
+12. Contractual Closure Commendation
+
+Each citation has a stable ID, trigger set, one-sentence institutional reason,
+and Archive description in `12-content-specification.md`. No citation requires
+unethical play. The exact ending lines, status text, and citation wording are
+in that same authoritative content draft. B08 presentation and
+`11-technical-architecture.md` save rules remain unchanged.

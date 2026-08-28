@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **approved through B08; exact text pending**
+Status: **B10 documented; implementation approval pending**
 
 ## Premise
 
@@ -80,8 +80,8 @@ regenerative treatment.
 | **A Reasonable Response** | 14 | Player desk and PI office | The player chooses a defensible response, Elena's stronger response, or withdrawal. |
 | **06:42** | 16 | Research floor and building exit | The player confirms Aldercroft, accepts Morrow, or leaves without either route. |
 
-Scenes are real-time, skippable, captioned, and safe around checkpoints. Main
-scenes target 14–18 minutes. The ending epilogue adds 60–90 seconds inside the
+Scenes are real-time, skippable, captioned, and safe around checkpoints. The
+seven main scenes together target 14–18 minutes. The ending epilogue adds 60–90 seconds inside the
 22-minute maximum for all non-interactive scenes. Messages, reports, and
 manuscript work remain player-controlled.
 
@@ -119,8 +119,8 @@ default. Dialogue advances manually, and important choices remain untimed.
 
 Every scene is skippable and safe around a checkpoint. A skip writes a concise
 recap of the choice and immediate result into the inbox or Research Status.
-Normal scenes do not replay during an active save. The seven main scenes remain
-inside the approved 14-18-minute target, and the modular epilogue remains
+Normal scenes do not replay during an active save. The seven main scenes
+together remain inside the approved 14-18-minute target, and the modular epilogue remains
 inside the 22-minute total non-interactive-scene maximum.
 
 ## Submission ladder and peer review
@@ -137,7 +137,8 @@ The manuscript moves through four fictional journals in a fixed order.
 
 The names parody academic status and journal escalation. Later presentation
 must not copy a real journal's logo, page design, or other protected brand
-features. B10 owns public-release name and conflict checks.
+features. Before a public remote, the B10 release plan requires a title and
+brand check. No check has occurred yet.
 
 Dr. Leila Haddad is the named `PIIM` editor. She appears only through concise,
 polite messages. She calls all reports helpful and asks the player to address
@@ -298,10 +299,31 @@ under-review paper remains unresolved; and rejected or withdrawn work either
 remains available as a preprint or has a clear cost when its public record is
 removed. It adds no new random paper result.
 
-## Deferred narrative work
+## B10 content map and authored draft
 
-- B04 owns exact laboratory and revision-board interactions.
-- B07 owns spatial and event staging, location schedules, and room-state
-  detail. B08 documents camera, animation, audio, and visual execution.
-- B10 owns exact English messages, reports, dialogue lines, identifiers,
-  epilogue writing, and the complete content inventory.
+The authoritative content catalogue and initial English draft are in
+`12-content-specification.md`. The mandatory scene IDs are:
+
+- `MR-SCN-CLARIFIED`
+- `MR-SCN-A-COMPLETE-NARRATIVE`
+- `MR-SCN-WHAT-WE-HAD`
+- `MR-SCN-PUBLIC-RECORD`
+- `MR-SCN-HELPFUL-COMMENTS`
+- `MR-SCN-A-REASONABLE-RESPONSE`
+- `MR-SCN-0642`
+
+The ten optional scene IDs, twenty primary records, request prerequisites,
+expiries, state effects, captions, and skip recaps are also authoritative in
+that document. The full campaign uses all seven mandatory scenes and ten
+optional character scenes. The fallback uses all mandatory scenes, four local
+character scenes, and the three Camila contacts; it removes the three named
+late or early local scenes and drug exposure.
+
+No future content system may generate dialogue freely. A main scene has at
+most two meaningful state variants. An optional scene or report has at most two
+meaningful variants. The selection is saved and one-time content does not
+repeat in a campaign.
+
+Before a public remote exists, a title-conflict and brand check must examine
+*Minor Revisions*, the fictional journal names, and the fictional organization
+names. The game must not copy real journal branding or imply real affiliation.

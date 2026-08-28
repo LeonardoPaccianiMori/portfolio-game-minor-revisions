@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **approved through B09; authored content work deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## Scientific field and model
 
@@ -9,11 +9,12 @@ lab-grown human cardiac tissue model. The model has beating muscle cells,
 support cells, and a simple internal tissue structure. It has no patient
 identity or donor story.
 
-The fictional decisive result is that limited controlled damage starts a
-temporary **repair state**. Cells near the damage first show irregular rhythm.
-They then rebuild a clear tissue pattern and restore coordinated rhythmic
-contraction. The tissue model is not a complete heart, a transplantable organ,
-or a treatment.
+The fictional decisive result is that limited controlled damage is associated
+with a temporary **repair state**. Cells near the damage first show irregular
+rhythm. Later, the tissue can rebuild a clear pattern and coordinated rhythmic
+contraction. The repair state appears alongside this recovery; it is not a
+demonstrated cause. The tissue model is not a complete heart, a transplantable
+organ, or a treatment.
 
 Current science supports contracting cardiac tissue models, self-assembling
 heart organoids with selected organized features, and cardiac organoid use in
@@ -160,12 +161,13 @@ The manuscript board offers three claim levels:
 |---|---|---|
 | Careful | Recovery is linked to the repair state. | Protects integrity but can make publication harder. |
 | Strong | The repair state supports recovery. | Can increase PI confidence. |
-| Inflated | The repair state drives recovery. | Can increase PI confidence, harm integrity, and cause harder reviewer demands. |
+| Inflated | Treat the repair state as if it drives recovery. This is unsupported. | Can increase PI confidence, harm integrity, and cause harder reviewer demands. |
 
 The main paper claim is that a controlled cardiac tissue model can enter a
-repeatable repair state after limited damage. This state restores tissue pattern
-and coordinated rhythm. The claim supports an injury, recovery, and drug-safety
-assay. It is not a treatment claim.
+repeatable repair state after limited damage and show spatial-rhythmic recovery.
+The repair state is associated with, but does not demonstrate cause of, that
+recovery. The claim supports an injury, recovery, and drug-safety assay. It is
+not a treatment claim.
 
 ## Industry relevance
 
@@ -209,12 +211,32 @@ all required experiment information.
 These sources ground feasibility only. Scientific claims require rechecking
 before public release.
 
-## Deferred details
+## B10 authored experiment baselines
 
-B07 station placement and spatial navigation are documented in
-`06-world-and-level-design.md`. B08 defines the full input and accessibility
-baseline. `11-technical-architecture.md` defines the data and save-model
-boundary. B10 defines exact experiment baselines, instances, and content
-counts. No later block may add real
-laboratory quantities, executable protocols, or a claim that the repair state
-is proven to cause recovery.
+Each template has one fixed qualitative baseline. Configuration, equipment,
+monitoring, fatigue, and the saved campaign seed choose only the approved
+strong, limited, or weak band. These bands never provide laboratory quantities
+or operational instruction.
+
+| Template | Strong result | Limited result | Weak result |
+|---|---|---|---|
+| Laser/sham | Clear recovery and a stable sham record. | Partial recovery or an unclear control. | An unreliable record. |
+| Damage range | A clear recovery boundary. | A mixed recovery range. | No useful range. |
+| Batch check | A similar response in another batch. | A partial or mixed second batch. | A mismatch or unreliable batch. |
+| Repair state | Repatterning tracks recovery. | It tracks only part of recovery. | The stress signal is unclear. |
+| Oxygen loss | Constrained recovery after the challenge. | Delayed or mixed recovery. | No usable recovery. |
+| Drug exposure | A useful condition-dependent response. | A mixed response. | An unreliable response. |
+
+The repair state is present while tissue pattern and rhythm can recover. It is
+associated with recovery and can support a careful or strong paper claim. It
+does not cause recovery in the game fiction, and the game never proves that it
+does.
+
+The five required templates are laser/sham, damage range, batch check,
+repair-state evidence, and oxygen loss. Drug exposure is optional. Laser,
+range, batch, and repair-state work may each run one repeat. A repeat is a
+second run of the same template, not a new experiment family.
+
+`12-content-specification.md` owns the exact requests, evidence cards, and
+readable clues. No later work may add real laboratory quantities, executable
+protocols, or a claim that the repair state is a demonstrated mechanism.

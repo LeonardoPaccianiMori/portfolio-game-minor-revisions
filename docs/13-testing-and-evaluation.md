@@ -1,154 +1,238 @@
 # Testing and Evaluation
 
-Status: **B09 documented; later evaluation thresholds unresolved**
+Status: **B10 documented; implementation approval pending**
 
-## Evaluation sequence
+## Evaluation boundary
 
-1. Complete the design-readiness gate.
-2. Build and evaluate a 20–30-minute vertical slice containing one complete
-   experiment cycle, a consequential failure, a PI interaction, a manuscript
-   update, exploration, and save/resume.
-3. Continue to full production only if the loop is understandable, enjoyable,
-   technically feasible, and capable of carrying the satire.
-4. Evaluate the 90-minute fallback before expanding to the approximately
-   three-hour target.
+Testing is private to Leonardo and Codex. This is a personal creative project,
+not a research study or commercial product test. Do not recruit external
+players, collect participant data, use consent forms, run surveys, or require
+external science or narrative review.
 
-## B09 technical test and quality contract
+Leonardo is the only human play evaluator. Codex provides automated tests,
+private technical checks, content checks, and documented review. A later
+independent LLM consistency review is outside this B10 plan. It is not an
+implementation gate and it does not replace Leonardo's approval.
 
-Use Vitest for pure game rules, typed commands, state transitions, Zod
-schemas, migrations, deterministic seed behaviour, and ending-state fixtures.
-Rules tests must prove that reload cannot reroll a locked outcome and that a
-valid command cannot create an invalid state.
+No test result exists yet. This document defines future evidence only.
 
-Use Playwright for browser flows. Required flows include compatibility failure,
-New Game, pressure-profile lock, save and reload, active-save replacement,
-backup recovery, keyboard interaction, browser-view safety, 150% UI scale, and
-key accessibility settings. Run Playwright on Chromium, Firefox, and WebKit.
-WebKit evidence is useful compatibility evidence, but it is not a Safari claim.
+## Test identifiers and required evidence
 
-Use ESLint for TypeScript quality and Prettier for configured formatting.
-After implementation is authorized, `npm run check` runs type, lint, format,
-and unit checks; `npm run test:e2e` runs browser tests; `npm run build` creates
-the production build; and `npm run verify` runs the complete local quality
-gate. No code or package configuration is authorized by this requirement.
+| Test ID | Scope | Required future evidence |
+|---|---|---|
+| MR-TEST-CONT-001 | Content data and English strings | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan |
+| MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six templates, repeats, bands, monitoring, and result/evidence separation |
+| MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
+| MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, and Morrow/Aldercroft fixtures |
+| MR-TEST-WORLD-001 | Floor states and environmental content | Act windows, scene anchors, no required fact in optional text, and no trapping path |
+| MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 citations, and 12-card retention |
+| MR-TEST-SAVE-001 | IndexedDB persistence and recovery | Safe saves, replacement, backup, migration, corruption, completion, and data clearing |
+| MR-TEST-UI-001 | Main menu, status, prompts, and save controls | Keyboard flow, controller roles where available, text keys, and confirmations |
+| MR-TEST-A11Y-001 | Accessibility baseline | Captions, scale, contrast, motion, Interaction Assist, and browser-view checks |
+| MR-TEST-TECH-001 | Compatibility and deterministic rules | WebGL2, storage, modules, deterministic seed, no elapsed-time advance, and sanitized errors |
+| MR-TEST-PERF-001 | Build size and manual performance | Compressed size audit, reference-device notes, frame samples, and resource-session notes |
+| MR-TEST-RELEASE-001 | Public-release boundary | Dependency, licence, asset, privacy, title, and release-package audit |
 
-After Leonardo approves a public GitHub remote, GitHub Actions may run the same
-checks on pushes and pull requests. It must not deploy the game, require a
-deployment secret, collect player data, or change the local-only data model.
-Coverage percentages and exact test-count targets remain B10 decisions.
+Every implementation requirement must link to at least one of these test IDs.
+Every content object must link to a requirement and a test. A failed test has a
+plain-language record of cause, fix, and retest result.
 
-## Required test domains
+## Automated-test targets
 
-### Systems
+The automated suite must meet these targets before a release candidate:
 
-- Experiment outcomes follow inspectable causes and bounded variability.
-- Time, energy, evidence, PI confidence, integrity, and relationships update
-  consistently.
-- Authored events do not deadlock or become impossible after valid choices.
-- Manuscript history and route readiness remain coherent.
+- At least 90 percent line coverage and 85 percent branch coverage in pure
+  rules, persistence, and content-validation modules.
+- One valid and one rejected-command test for every typed command.
+- Full branch coverage for campaign-ending resolution, content validation,
+  active-save recovery, forward migration, active-save replacement, and local
+  data clearing.
+- A fixture for every experiment template, every earned outcome band, every
+  one-time expiry, all four paper states, all four career labels, all
+  twenty-nine ending modules, and all twelve Citations.
+- A content scan that rejects missing text keys, orphaned text keys, duplicate
+  IDs, invalid dependencies, unbounded content generation, wrong counts, and
+  English text above 6,000 unique words.
+- Browser tests in Chromium, Firefox, and WebKit for the stated core flows.
+  WebKit result is not a Safari support claim.
 
-### Narrative and content
+The coverage target applies to deterministic game rules, persistence, and
+content validation. It does not reward canvas rendering code that is better
+checked through browser flows and private manual review.
 
-- Every reachable branch has required dialogue, captions, and consequences.
-- Contradictory requests are intentional and comprehensible.
-- The satire remains bitterly comic without requiring insider expertise.
-- No text accidentally identifies or reproduces real people or institutions.
+## Required private test flows
 
-### Saves
+### Rules and content
 
-- Close/reload and connection interruption preserve the last safe state.
-- Cutscene skip, choice confirmation, and act transition cannot corrupt saves.
-- Schema migration, invalid data, and fallback recovery are tested.
+MR-TEST-EXP-001 must show that:
 
-### Accessibility and UX
+- each experiment begins from its approved baseline;
+- robust, mixed, and compromised preparation select only the approved outcome
+  bands;
+- closing or reloading cannot reroll a locked outcome;
+- monitoring, quality checks, missed windows, fatigue, and control quality
+  change only the approved outcome or evidence layer;
+- the repair state is associated with recovery but is never represented as
+  demonstrated cause; and
+- no valid path needs a perfect outcome or a crash.
 
-- Keyboard-mouse and controller controls, first-person motion, text, captions,
-  contrast, timing, and irreversible choices meet the approved B08 baseline.
-- Players can understand experimental evidence without wet-lab expertise.
-- At 150% text and UI scale, required controls, captions, prompts, and state
-  information remain usable at 1280 × 720.
-- Reduced motion removes non-essential motion and flashes without hiding
-  information or blocking play. Interaction Assist highlights only usable
-  objects in the current room and never becomes a path or objective arrow.
-- A small browser view pauses safely and gives resize advice. Required UI
-  remains usable in 16:9, wider, and 4:3 desktop windows.
+MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
 
-### Performance and compatibility
+- all seven mandatory scenes occur once in the fixed campaign calendar;
+- a scene waits for a safe stopping point and never interrupts a required
+  equipment action;
+- all ten optional scenes use their stated condition, window, expiry, and
+  saved result;
+- ignored Morrow messages close only the stated industry route;
+- Aldercroft and Morrow use the approved visible conditions;
+- public-record withdrawal closes both routes; and
+- a hidden integrity problem alone does not create an unsupported route block.
 
-- The supported desktop-browser targets are current Chrome, Edge, and Firefox.
-  Safari is best-effort only. Do not make a public Safari-support claim without
-  direct Safari evidence.
-- The approved reference class is an 11th-generation Intel i5, Intel Iris Xe,
-  16 GB RAM, and current Chrome. Performance evidence must record the exact
-  device model, graphics driver, operating system, browser, and browser
-  version.
-- Manual profiling must measure the B08 target of 60 fps at 1920 × 1080
-  Standard and 30 fps at 1280 × 720 Low on the reference class. CI cannot make
-  a truthful frame-rate claim by itself.
-- The initial compressed download is no more than 75 MB and does not exceed
-  100 MB without renewed approval. A local build audit reports this size.
-- Long sessions and repeated act transitions do not leak material resources.
-- Browser preflight must report missing WebGL2, IndexedDB, ES modules, Web
-  Audio, pointer lock, or controller support correctly. It must block campaign
-  creation for missing WebGL2, IndexedDB, or ES modules.
+MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
 
-### Science, privacy, and licensing
+- the content catalogue has the approved full and fallback counts;
+- every authored line has an English text key;
+- no runtime path generates dialogue or a report;
+- all twenty-nine ending modules select in the approved order;
+- the four paper states do not change randomly after Week 16;
+- the Archive retains the twelve newest ending cards and persistent Citation
+  state; and
+- no Citation requires unethical play.
 
-- Public scientific wording respects the fictional boundary.
-- No actionable protocol, credential, private data, or unapproved telemetry is
-  present.
-- Every distributed asset and dependency has compatible provenance and
-  attribution.
-- Each third-party or generated asset appears in the asset manifest before
-  integration, has public-repository and deployed-game redistribution rights,
-  permits required modification, and has an attribution path in the repository
-  and Credits/Licences page.
+### Save, interruption, and technical checks
 
-## B08 acceptance checks
+MR-TEST-SAVE-001 and MR-TEST-TECH-001 must show that:
 
-- Verify that every important cue has a text, icon, or visible-state duplicate;
-  colour and sound never carry required information alone.
-- Verify captions and speaker names default on, and that muted dialogue sounds
-  do not remove required dialogue meaning.
-- Verify New Game, fixed pressure profile, one-active-save confirmation,
-  completion archive, Clear Saved Data, and cutscene-recap behaviour.
-- Verify that no account, server save, uploaded player data, save cookie, or
-  automatic unfinished-save expiration is present.
-- Verify that the first New Game shows the approved content note and that the
-  release does not imply mobile, tablet, or localization support.
+- safe points save after experiment-stage changes, monitoring choices,
+  analysis archiving, manuscript commits, and scene boundaries;
+- browser closure, connection loss, menus, and pause never advance game time;
+- the active campaign is validated before save and the prior valid state is
+  available as a backup;
+- a damaged active save offers the backup without overwriting it;
+- a failed migration preserves its source record;
+- campaign completion removes the full active and backup state only after an
+  ending card and Citation state are stored;
+- New Game confirms active-save replacement; and
+- Clear Saved Data confirms before removing settings, save, Archive, Citations,
+  and metadata.
 
-## Approved experience criteria
+The compatibility flow checks WebGL2, IndexedDB, ES modules, Web Audio, pointer
+lock, and controller availability. Missing WebGL2, IndexedDB, or ES modules
+blocks a new campaign. Missing controller support retains keyboard-mouse play.
+The game has no telemetry, analytics, automatic error report, account, server
+save, save cookie, or automatic unfinished-save expiration.
 
-Playtests must check these B00 requirements:
+### UI and accessibility checks
 
-- A player without academic experience can explain the main objective.
-- A player can understand why each main experiment matters.
-- A player can identify visible effects from important choices.
-- The first part can cause laughter.
-- The later parts create pressure and discomfort.
-- The ending communicates that publication does not solve academic precarity.
-- The industry route is attractive but imperfect.
-- At least one choice or ending gives the player a reason for discussion.
+MR-TEST-UI-001 and MR-TEST-A11Y-001 must show that:
 
-B10 must set the playtest method, sample sizes, and numeric pass thresholds.
+- keyboard-mouse and controller input cover every core action where a
+  controller is available;
+- captions and speaker names start enabled;
+- required information is not colour-only or sound-only;
+- no core action needs drag-only, hold-only, timed, or precise-motor input;
+- Research Status, the inbox, and all confirmations have semantic text;
+- the active pressure profile cannot change inside an active save;
+- 150 percent text and UI scale remains usable at 1280 by 720;
+- reduced motion removes non-essential movement and flashes without removing
+  required information;
+- Interaction Assist highlights only usable objects in the current room; and
+- a browser view that is too small pauses safely and gives resize advice.
 
-## Evidence to retain
+### Performance, assets, privacy, and release checks
 
-- Automated test output and coverage appropriate to the chosen architecture.
-- State-transition and ending-matrix test fixtures.
-- Performance captures for representative devices.
-- Build-size audit output, package lockfile, and runtime dependency security
-  and licence review results.
-- Playtest protocol, participant context, observations, and changes.
-- Accessibility review and known limitations.
-- Asset and dependency audit.
+MR-TEST-PERF-001 uses the approved Intel i5 and Iris Xe reference class after
+implementation. The evidence names the actual device, driver, operating
+system, browser, and browser version. It records:
 
-## Open decisions
+- 60 frames per second target at 1920 by 1080 Standard;
+- 30 frames per second target at 1280 by 720 Low;
+- initial compressed download at or below 75 MB, with renewed Leonardo
+  approval required above 100 MB; and
+- a long-session and act-transition resource check.
 
-- Numeric success thresholds for the vertical slice and full game.
-- Playtest audience, sample size, tasks, consent, and feedback instruments.
-- Exact coverage expectations, browser-fixture depth, and test-count targets.
-- Measured performance results, exact reference-device details, and a later
-  decision on whether to obtain direct Safari evidence.
-- Scientific and narrative review process before publication.
-- Stop/reframe thresholds after the vertical slice.
+Codex may run automated Chromium, Firefox, and WebKit checks. Leonardo will
+not perform a manual Safari check. Do not state that Safari is supported
+without direct Safari evidence.
+
+MR-TEST-RELEASE-001 checks:
+
+- no actionable wet-lab protocol or claim that the repair state causes
+  recovery;
+- no credential, private data, real-person material, account, upload,
+  telemetry, or unapproved network feature;
+- every third-party or generated asset and dependency has public
+  redistribution, modification, attribution, and manifest evidence before
+  integration;
+- no unverified asset appears even in a prototype;
+- the future title and brand check occurs before a public remote; and
+- the future source release uses the agreed licence plan and credits path.
+
+This is a fiction and release-boundary check. It is not an external scientific
+or narrative review.
+
+## Vertical-slice evaluation
+
+The vertical slice is the Week-1-only 20–30-minute evaluation build. It
+contains the opening, laser/sham loop, Gabriel queue choice, analysis, compact
+manuscript claim choice, and safe save/resume flow.
+
+Its private completion check requires:
+
+1. all applicable automated checks pass;
+2. Leonardo completes one Standard-profile run from opening to safe resume;
+3. Codex verifies a limited or missed-monitoring fixture as well as the
+   routine path;
+4. the opening objective, action costs, evidence views, queue choice, claim
+   choice, and save behaviour are understandable in the approved content;
+5. no blocker exists in save recovery, accessibility, licensed assets, or the
+   fiction boundary; and
+6. the slice remains a coherent 20–30-minute segment without unexplained
+   placeholder content.
+
+Leonardo records each item as pass, needs rework, or not yet checked. The slice
+does not pass if any item is needs rework or not yet checked. There is no
+participant count, survey score, or external-playtest requirement.
+
+## Fallback and full-game evaluation
+
+Before full expansion, the 90-minute fallback must pass the same private
+quality gate with its exact cut line. Leonardo checks its complete campaign,
+one constrained evidence path, one weakened path, one available career route,
+one no-route result, and an ending-card Archive result. Codex runs the full
+automated matrix and private technical review.
+
+Before a release candidate, Leonardo reviews the eight experience criteria:
+
+- the main objective is understandable without academic knowledge;
+- each main experiment has an understandable purpose;
+- important choices have visible effects;
+- the first part can be funny;
+- later pressure and discomfort are present;
+- publication does not solve precarity;
+- industry is attractive but imperfect; and
+- at least one choice or ending can prompt thought or discussion.
+
+For each criterion, Leonardo records pass or a concrete change request. All
+eight must pass before release preparation. This is private creative review,
+not a claim about a general audience.
+
+## Evidence records and known limits
+
+Keep private evidence for future decisions:
+
+- command, state, ending, content, and save-test output;
+- coverage and browser-test reports;
+- build-size report and manual performance notes;
+- Leonardo's private vertical-slice, fallback, and full-game checklists;
+- asset and dependency audit records;
+- known accessibility and browser limitations; and
+- changes made after failed checks.
+
+Do not publish private conversations, save payloads, personal data, or a
+private test diary. Any later public case study selects only safe evidence
+after a separate review.
+
+Exact Node and package versions, actual assets and codecs, measured frame
+rates, browser versions, and a public release date are deliberate later facts.
+They are not assumptions or current claims.

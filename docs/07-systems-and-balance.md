@@ -1,6 +1,6 @@
 # Systems and Balance
 
-Status: **approved through B09; runtime implementation and tuning deferred**
+Status: **B10 documented; implementation approval pending**
 
 ## State model and player visibility
 
@@ -247,8 +247,9 @@ enough evidence to support that statement.
 Poor results must always give useful information, a clear repeat reason, or a
 lower-quality route forward. Mandatory progress cannot require a perfect
 result. The player can repeat work, change controls, revise a claim, omit
-evidence, or use a more limited paper route. B10 owns exact authored outcome
-weights and post-playtest tuning.
+evidence, or use a more limited paper route. B10 sets the authored outcome
+bands and baselines. A later recorded slice review may adjust only the approved
+band percentages.
 
 ## Pressure and trade-offs
 
@@ -431,12 +432,27 @@ and relationship afterbeat; it cannot change paper state or route availability.
 - Recovery and constructive failure must remain possible.
 - Approximately three hours should contain escalation, not repetitive grinding.
 
-## Deferred decisions
+## B10 outcome-band and tuning contract
 
-- B07 schedule, room, and event staging rules are documented in
-  `06-world-and-level-design.md` and `05-characters-and-dialogue.md`.
-- `11-technical-architecture.md` defines data schemas, seed serialization,
-  save migration, browser scope, and the runtime boundary. B10 owns authored
-  data instances, implementation verification, and tuned values.
-- B10 owns exact experiment baselines, request content, dialogue, and tuned
-  values after playtests.
+Each started experiment enters one earned outcome band. The saved campaign seed
+locks its variation at start. Reloading cannot change that variation.
+
+| Earned band | Strong | Limited | Weak |
+|---|---:|---:|---:|
+| Robust preparation | 80% | 20% | 0% |
+| Mixed preparation | 20% | 60% | 20% |
+| Compromised preparation | 0% | 20% | 80% |
+
+Configuration, equipment state, monitoring, fatigue, and quality choices set
+the band. The seed selects only inside that band. A major player-caused problem
+cannot become a strong result through variation, and robust preparation cannot
+become a weak result through variation.
+
+The approved action-cost table is in `02-player-experience-and-loop.md`. The
+authored template baselines are in `04-science-and-experiments.md`. Every
+catalogue action and test fixture must reference both where relevant.
+
+After the vertical-slice internal evaluation, a recorded balance change may
+alter the three percentages only. It may not add a new outcome type, hide a
+player-caused failure, change a fixed campaign gate, or create a new mandatory
+experiment without Leonardo's explicit approval.

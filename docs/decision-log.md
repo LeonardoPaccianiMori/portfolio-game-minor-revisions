@@ -102,6 +102,19 @@ belongs in the numbered design documents.
 | 2026-08-28 | Use the approved Intel i5/Iris Xe reference class, a central resource manager, WebGL2 compatibility check, visual-cost graphics profiles, local sanitized diagnostics, a compressed-build audit, and manual performance evidence. | Confirmed |
 | 2026-08-28 | Use Vitest, Playwright, ESLint, Prettier, local quality commands, and a future non-deploying GitHub Actions workflow after remote approval. Review runtime dependency security and licence status intentionally before releases and changes. | Confirmed |
 
+| 2026-08-28 | Use stable MR content identifiers, validated JSON later, one English strings file, saved content selection, no free-form generated dialogue, and no more than 6,000 unique English words. | Confirmed |
+| 2026-08-28 | Set full content at six experiment templates, seven mandatory scenes, ten optional character scenes, twenty primary records, twenty-nine ending modules, twelve Institutional Citations, and thirty environmental text items. | Confirmed |
+| 2026-08-28 | Define the Week-1 vertical slice and the coherent 90-minute fallback: retain all mandatory scenes, four local optional scenes, and three Camila contacts; remove drug exposure, Haoran late, Samira early, and Gabriel late content. | Confirmed |
+| 2026-08-28 | Assign the approved B10 action costs, experiment baselines, robust/mixed/compromised outcome bands, and locked saved variation. | Confirmed |
+| 2026-08-28 | Test only with Leonardo and Codex. Do not recruit external players, collect participant data, use surveys or consent, or require external science or narrative review. | Confirmed |
+| 2026-08-28 | Require requirement-linked automated content, rules, save, ending, browser, accessibility, build-size, and private evaluation checks, including the approved rules/persistence/content coverage targets. | Confirmed |
+| 2026-08-28 | Plan production at 6–8 hours per week over an estimated 12–18 months, with no planned paid budget and a EUR 150 exceptional-cost ceiling. | Confirmed |
+| 2026-08-28 | Use phase gates and the approved pause, reframe, cost, vertical-slice, fallback, and no-release rules. After a future public release, use a 90-day private critical-fix period only. | Confirmed |
+| 2026-08-28 | Require verified asset provenance before any integration, including prototypes. No unverified online or generated asset may enter the repository as an asset. | Confirmed |
+| 2026-08-28 | Leonardo alone decides when to create and push a remote. A later public source release plans MIT for code and CC BY 4.0 for Leonardo's original non-code work; do not add licence files now. | Confirmed |
+| 2026-08-28 | Use requirement IDs in the MR-REQ-DOMAIN-NUMBER form and the approved work-package, branch, review, contribution-record, and definition-of-done contract. | Confirmed |
+| 2026-08-28 | Treat exact package versions, verified asset sources and codecs, source hashes, and measured performance as future verified implementation facts. | Confirmed |
+
 ## Rules for future entries
 
 - Record the decision, date, alternatives when material, and whether it
