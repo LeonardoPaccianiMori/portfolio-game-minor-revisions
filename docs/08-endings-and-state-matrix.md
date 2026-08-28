@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **approved through B08; exact authored content pending**
+Status: **approved through B09; exact authored content pending**
 
 ## Confirmed architecture
 
@@ -195,7 +195,7 @@ earlier decision.
 
 ## Deferred content work
 
-B08 final summary presentation and accessibility are documented. B09 owns the
-archive and save schema, migration, data validation, and recovery. B10 owns
-exact epilogue lines, status text, citation names and triggers, and later
-content tuning.
+B08 final summary presentation and accessibility are documented.
+`11-technical-architecture.md` defines the Archive and save-schema,
+migration, data-validation, and recovery boundary. B10 owns exact epilogue
+lines, status text, citation names and triggers, and later content tuning.

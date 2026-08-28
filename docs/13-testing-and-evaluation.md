@@ -1,6 +1,6 @@
 # Testing and Evaluation
 
-Status: **approved through B08; later evaluation thresholds unresolved**
+Status: **B09 documented; later evaluation thresholds unresolved**
 
 ## Evaluation sequence
 
@@ -12,6 +12,30 @@ Status: **approved through B08; later evaluation thresholds unresolved**
    technically feasible, and capable of carrying the satire.
 4. Evaluate the 90-minute fallback before expanding to the approximately
    three-hour target.
+
+## B09 technical test and quality contract
+
+Use Vitest for pure game rules, typed commands, state transitions, Zod
+schemas, migrations, deterministic seed behaviour, and ending-state fixtures.
+Rules tests must prove that reload cannot reroll a locked outcome and that a
+valid command cannot create an invalid state.
+
+Use Playwright for browser flows. Required flows include compatibility failure,
+New Game, pressure-profile lock, save and reload, active-save replacement,
+backup recovery, keyboard interaction, browser-view safety, 150% UI scale, and
+key accessibility settings. Run Playwright on Chromium, Firefox, and WebKit.
+WebKit evidence is useful compatibility evidence, but it is not a Safari claim.
+
+Use ESLint for TypeScript quality and Prettier for configured formatting.
+After implementation is authorized, `npm run check` runs type, lint, format,
+and unit checks; `npm run test:e2e` runs browser tests; `npm run build` creates
+the production build; and `npm run verify` runs the complete local quality
+gate. No code or package configuration is authorized by this requirement.
+
+After Leonardo approves a public GitHub remote, GitHub Actions may run the same
+checks on pushes and pull requests. It must not deploy the game, require a
+deployment secret, collect player data, or change the local-only data model.
+Coverage percentages and exact test-count targets remain B10 decisions.
 
 ## Required test domains
 
@@ -51,11 +75,22 @@ Status: **approved through B08; later evaluation thresholds unresolved**
 
 ### Performance and compatibility
 
-- The B09 browser/device matrix must measure the B08 target of 60 fps at
-  1920 × 1080 Standard and 30 fps at 1280 × 720 Low on its approved baseline.
+- The supported desktop-browser targets are current Chrome, Edge, and Firefox.
+  Safari is best-effort only. Do not make a public Safari-support claim without
+  direct Safari evidence.
+- The approved reference class is an 11th-generation Intel i5, Intel Iris Xe,
+  16 GB RAM, and current Chrome. Performance evidence must record the exact
+  device model, graphics driver, operating system, browser, and browser
+  version.
+- Manual profiling must measure the B08 target of 60 fps at 1920 × 1080
+  Standard and 30 fps at 1280 × 720 Low on the reference class. CI cannot make
+  a truthful frame-rate claim by itself.
 - The initial compressed download is no more than 75 MB and does not exceed
-  100 MB without renewed approval.
+  100 MB without renewed approval. A local build audit reports this size.
 - Long sessions and repeated act transitions do not leak material resources.
+- Browser preflight must report missing WebGL2, IndexedDB, ES modules, Web
+  Audio, pointer lock, or controller support correctly. It must block campaign
+  creation for missing WebGL2, IndexedDB, or ES modules.
 
 ### Science, privacy, and licensing
 
@@ -102,6 +137,8 @@ B10 must set the playtest method, sample sizes, and numeric pass thresholds.
 - Automated test output and coverage appropriate to the chosen architecture.
 - State-transition and ending-matrix test fixtures.
 - Performance captures for representative devices.
+- Build-size audit output, package lockfile, and runtime dependency security
+  and licence review results.
 - Playtest protocol, participant context, observations, and changes.
 - Accessibility review and known limitations.
 - Asset and dependency audit.
@@ -110,8 +147,8 @@ B10 must set the playtest method, sample sizes, and numeric pass thresholds.
 
 - Numeric success thresholds for the vertical slice and full game.
 - Playtest audience, sample size, tasks, consent, and feedback instruments.
-- Exact supported-browser matrix, baseline hardware, memory/loading targets,
-  and measured performance method.
-- Automated-test stack, coverage expectations, browser automation, and CI.
+- Exact coverage expectations, browser-fixture depth, and test-count targets.
+- Measured performance results, exact reference-device details, and a later
+  decision on whether to obtain direct Safari evidence.
 - Scientific and narrative review process before publication.
 - Stop/reframe thresholds after the vertical slice.

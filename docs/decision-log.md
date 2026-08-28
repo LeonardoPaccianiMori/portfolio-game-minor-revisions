@@ -91,6 +91,16 @@ belongs in the numbered design documents.
 | 2026-08-28 | Use one active local IndexedDB save per browser profile, no save cookies, account, server data, uploaded data, or automatic expiration; completion creates a compact ending card, Archive keeps the 12 most recent cards and persistent Institutional Citations, and players can clear local data. | Confirmed |
 | 2026-08-28 | Default captions and speaker names on; require scalable readable UI, high contrast, colour-independent signals, remapping, sensitivity, inversion, FOV, reduced motion, Interaction Assist, English-only scope, content note, and safe browser-view behaviour. | Confirmed |
 | 2026-08-28 | Use Low, Standard, and High visual-cost presets; target 60 fps at 1920 × 1080 Standard and 30 fps at 1280 × 720 Low on a later B09 baseline; target an initial compressed download at or below 75 MB and require renewed approval above 100 MB. | Confirmed |
+| 2026-08-28 | Use strict TypeScript with Vite, direct Three.js, semantic HTML/CSS overlays, `npm` with a committed lockfile, and a later recorded Node LTS version. | Confirmed |
+| 2026-08-28 | Keep runtime dependencies limited to locally bundled Three.js, `idb`, and Zod. Do not use React, React Three Fiber, a full game engine, runtime CDN, service worker, runtime API, analytics, telemetry, or automatic error reporting. | Confirmed |
+| 2026-08-28 | Separate rendering/world, player/input, interaction, rules, content, UI/accessibility, audio/cutscenes, persistence, and test modules. Rules use typed commands to return serializable state and presentation effects. | Confirmed |
+| 2026-08-28 | Use validated authored data, stable identifiers, a stored deterministic campaign seed, locked action outcomes, and a safe-point scheduler that never uses elapsed real time. | Confirmed |
+| 2026-08-28 | Use one continuous Three.js floor with a kinematic controller, static collision, interaction raycasts, authored NPC anchors, shared resources, visibility control, lower-detail distant rooms, animation mixers, and a code-owned cutscene timeline. | Confirmed |
+| 2026-08-28 | Use one versioned IndexedDB database with settings, one active campaign, one last-known-good backup, ending cards, Institutional Citations, metadata, validated recovery, forward-only migrations, and confirmed local-data clearing. | Confirmed |
+| 2026-08-28 | Use action-based remappable input, controlled pointer lock, semantic HTML UI, and one Web Audio manager with Master, Music, Ambience/Effects, and Dialogue Sounds buses. | Confirmed |
+| 2026-08-28 | Target current Chrome, Edge, and Firefox desktop browsers. Test Chromium, Firefox, and WebKit automatically. Treat Safari as best-effort only and do not make a public Safari-support claim without direct Safari evidence. | Confirmed |
+| 2026-08-28 | Use the approved Intel i5/Iris Xe reference class, a central resource manager, WebGL2 compatibility check, visual-cost graphics profiles, local sanitized diagnostics, a compressed-build audit, and manual performance evidence. | Confirmed |
+| 2026-08-28 | Use Vitest, Playwright, ESLint, Prettier, local quality commands, and a future non-deploying GitHub Actions workflow after remote approval. Review runtime dependency security and licence status intentionally before releases and changes. | Confirmed |
 
 ## Rules for future entries
 

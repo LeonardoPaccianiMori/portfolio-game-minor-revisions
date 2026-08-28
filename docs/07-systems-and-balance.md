@@ -1,6 +1,6 @@
 # Systems and Balance
 
-Status: **approved through B08; runtime implementation and tuning deferred**
+Status: **approved through B09; runtime implementation and tuning deferred**
 
 ## State model and player visibility
 
@@ -338,7 +338,8 @@ and browser closure do not advance game time or cause a missed monitoring
 window. The B05 time and progression rules apply. B08 fixes one active local
 IndexedDB save per browser profile, no automatic unfinished-save expiration,
 and a completion Archive with 12 ending cards plus persistent Institutional
-Citations. B09 defines persistence schemas and recovery.
+Citations. `11-technical-architecture.md` defines persistence schemas,
+validation, migration, and recovery.
 
 ## PIIM response band
 
@@ -434,7 +435,8 @@ and relationship afterbeat; it cannot change paper state or route availability.
 
 - B07 schedule, room, and event staging rules are documented in
   `06-world-and-level-design.md` and `05-characters-and-dialogue.md`.
-- B09 owns data schemas, seed serialization, save migration, browser support,
-  and runtime implementation.
+- `11-technical-architecture.md` defines data schemas, seed serialization,
+  save migration, browser scope, and the runtime boundary. B10 owns authored
+  data instances, implementation verification, and tuned values.
 - B10 owns exact experiment baselines, request content, dialogue, and tuned
   values after playtests.

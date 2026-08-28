@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **implementation prohibited; contract skeleton seeded**
+Status: **implementation prohibited; B09 technical boundary documented**
 
 ## Authorization gate
 
@@ -22,14 +22,35 @@ answer merely because one option is easier to code.
 
 ## Required pre-implementation artifacts
 
-- Approved architecture and dependency policy.
+- Approved architecture and dependency policy in `11-technical-architecture.md`.
 - Requirement IDs with acceptance criteria.
-- Final state model, event schema, save schema, and migrations.
+- Final content-specific state model, event schema, save schema, and
+  migrations, based on the approved B09 architecture.
 - Final content IDs and ownership.
 - Supported browsers/devices and performance budgets.
 - Accessibility baseline and control map.
 - Asset inventory and licensing path.
 - Vertical-slice work breakdown, validation, and stop criteria.
+
+## B09 quality and integration boundary
+
+The implementation repository must later use strict TypeScript, Vite, direct
+Three.js, semantic HTML/CSS overlays, `npm`, a committed lockfile, and the
+approved local runtime dependency boundary. A work package must not add a
+runtime CDN, account, telemetry, automatic error reporting, API dependency,
+service worker, physics engine, general NPC navigation system, or framework
+outside the approved architecture without a new design decision.
+
+The future local quality gate is `npm run verify`. It includes type, lint,
+format, unit, browser, and production-build checks through the commands defined
+in `11-technical-architecture.md`. After a separate remote approval, GitHub
+Actions may run the same non-deploying gate on pushes and pull requests.
+
+Every work package that changes rules, authored data, persistence, input, UI,
+or cutscenes must name its typed commands, state effects, stable identifiers,
+save effects, migration implications, accessibility effects, and tests. A
+worker must not let Three.js objects, DOM state, audio state, or real elapsed
+time become the campaign source of truth.
 
 ## Later agent contract
 
@@ -78,4 +99,5 @@ The exact scheme is open. Expected domains include `VISION`, `LOOP`, `EXP`,
   and approval workflow.
 - Branching, review, commit, and integration conventions.
 - Work-package boundaries and agent sequence.
-- CI gates and definition of done per subsystem.
+- Exact requirement-level definition of done, coverage thresholds, and test
+  fixtures per subsystem.

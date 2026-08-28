@@ -1,120 +1,266 @@
 # Technical Architecture
 
-Status: **approved through B08; stack and schemas unresolved**
+Status: **B09 documented; implementation prohibited**
 
-## Confirmed platform
+## Scope and boundary
 
-- Browser game built with Three.js.
-- Eventual deployment on Leonardo's portfolio website alongside *Wanderer*.
-- First-person exploration on a compact university research floor.
-- No user account required.
-- Real-time in-engine cutscenes.
-- Desktop and laptop browser release only; no mobile or tablet first release.
-- Keyboard-mouse and standard-controller support.
-- English-only release scope.
+This document defines the approved technical direction for the first release.
+It does not authorize game code, package files, production assets, a remote,
+or deployment work. The implementation gate in `00-design-index.md` remains
+blocked until B10 is complete and Leonardo gives separate approval.
 
-No framework, bundler, language variant, physics library, animation library,
-audio library, testing stack, or hosting integration is selected yet.
+The game is a self-contained static browser game. It has no account, server
+data, uploaded player data, analytics, telemetry, runtime API, runtime CDN, or
+runtime network dependency after its static files are delivered. A later
+portfolio task may publish a static build only. It must not copy this source
+into the portfolio repository or reuse *Wanderer* code or assets without a
+separate rights and provenance review.
 
-## Save direction
+## Stack and build policy
 
-Real save state uses IndexedDB. Do not use cookies for save state, ownership,
-or save discovery. Saves are browser- and device-specific unless a later
-approved export/import feature adds portability. There is no account,
-server-side save, uploaded player data, or automatic expiration of an
-unfinished save.
+- Use strict TypeScript and Vite.
+- Use direct Three.js for the 3D scene. Do not use React, React Three Fiber, or
+  a full game engine.
+- Use semantic HTML and CSS overlays for all important interface content.
+- Keep runtime dependencies limited to Three.js, `idb`, and Zod. Bundle them
+  locally. Do not load a runtime dependency from a CDN.
+- Use `npm` and commit its lockfile. At implementation start, record one
+  supported Node LTS version in `.nvmrc`. Exact package and Node versions are
+  an implementation-start record, not a reason to change the approved design.
+- Do not add a service worker in the first release. Normal browser caching is
+  allowed, but the game makes no promise that a first launch works offline.
 
-Save checkpoints must be safe around cutscenes and major choices. A connection
-interruption or browser close must not erase meaningful progress. Schema
-versioning and migrations are required before implementation but not yet
-designed.
+## Runtime modules and ownership
 
-The player experience requires saves at experiment-stage changes, monitoring
-choices, analysis archiving, manuscript commits, and scene boundaries. Closing
-or pausing the game must not advance game time or cause an experiment check to
-be missed. B09 must implement this rule without relying on real-world elapsed
-time.
+Each module has one primary responsibility. Game rules must not import or
+depend on Three.js. Rendering code must not decide campaign outcomes.
 
-A new game must create and persist a campaign seed. The seed determines only
-small variation inside an earned experiment or PIIM response band. Reloading,
-closing the browser, or resuming a save must not reroll that variation. B09
-owns the exact seed, state-transition, serialization, and migration schema.
+| Module | Primary responsibility | Rules boundary |
+|---|---|---|
+| Boot and compatibility | Check browser capabilities, load settings, show truthful loading and error screens. | It creates no campaign until required capabilities pass. |
+| Rendering and world | Own the Three.js renderer, continuous floor scene, cameras, lighting, graphics profile, and resource visibility. | It displays state and effects only. |
+| Player and input | Own first-person movement, look, pointer lock, controller input, remapping, and focused-view transitions. | It sends action requests; it does not change campaign state directly. |
+| Interaction | Resolve nearby valid targets and open focused station views. | It turns player intent into typed rule commands. |
+| Game rules | Validate typed commands and return the next serializable state plus presentation effects. | It is deterministic for a given state, command, and saved variation. |
+| Authored content | Hold validated data for experiments, events, dialogue conditions, room states, and endings. | It has stable identifiers and no rendering objects. |
+| UI and accessibility | Render semantic overlays, menus, captions, settings, prompts, and browser-view safety. | It reads state and sends commands through the input layer. |
+| Audio and cutscenes | Own audio buses, scene timelines, scene skip, checkpoints, and input restoration. | It consumes approved effects and cannot silently advance time. |
+| Persistence | Validate, migrate, save, load, recover, archive, and clear local records. | It stores serializable data only. |
+| Tests and developer tools | Test rules, schemas, migrations, browser flows, and build quality. | It has no runtime gameplay authority. |
 
-A completed campaign must create a compact local ending card and update the
-local Institutional Citation archive. The game has one active local save per
-browser profile. On completion it removes the full active state; Archive keeps
-the 12 most recent ending cards and the persistent citation record. A New Game
-uses a new seed and no gameplay state from an earlier campaign. It requires
-confirmation when it replaces an active save. B09 owns the exact data schema,
-archive recovery, migration, validation, and user-controlled data clearing.
+## State, rules, and authored data
 
-## B08 presentation and performance boundary
+### Campaign state
 
-Runtime art uses GLB/glTF models, shared geometry and materials where practical,
-mostly 1K textures, rare 2K major assets, no 4K textures, live text or SVG for
-readable UI, and compressed browser-ready audio. The game has Low, Standard,
-and High graphics presets. Standard is the default. Presets change visual cost
-only: shadows, render scale, and cosmetic effects.
+The active campaign source of truth is one serializable `CampaignState`. It
+contains at least:
 
-The target is 60 fps at 1920 × 1080 in Standard on B09 baseline hardware, and
-30 fps at 1280 × 720 in Low. The initial compressed download target is no more
-than 75 MB and must not exceed 100 MB without renewed approval. Normal browser
-cache holds runtime assets; IndexedDB is for local game data. B09 must select
-the exact baseline hardware and browser matrix, implement loading and codecs,
-and measure these targets.
+- campaign and schema versions, stable campaign identifier, and saved seed;
+- semester clock, pressure profile, energy, evidence, PI confidence,
+  integrity, and working trust;
+- active sample groups, sample history, equipment state, raw records, evidence
+  cards, and locked experiment outcomes;
+- manuscript cards, committed snapshots, requests, reviewer response cards,
+  paper state, and authorship and integrity history;
+- received messages, route state, character and scene state, floor act state,
+  cutscene recaps, and permanent consequence flags; and
+- the identifiers and state needed for the ending card and Institutional
+  Citation evaluation.
 
-## Required architectural capabilities
+It contains no Three.js objects, DOM nodes, audio nodes, functions, real-time
+timestamps that drive play, or browser-specific object references.
 
-- Deterministic or inspectable game-state transitions and campaign-seed use.
-- Asynchronous experiment scheduling and monitoring.
-- Data-driven authored events and conditional narrative triggers.
-- Manuscript version history and contradictory request tracking.
-- Relationship, paper, integrity, energy, evidence, and career-route state.
-- Cutscene sequencing with skip, captions, checkpoint, and input restoration.
-- Modular epilogue composition.
-- Asset provenance and runtime asset inventory.
-- Local save serialization, validation, migration, and recovery.
-- Local ending-card and Institutional Citation archive persistence.
-- Test hooks for state combinations and time progression.
-- Settings, captions, scale, contrast, motion, input, and local-data controls
-  that satisfy the approved B08 user interface contract.
+### Commands, effects, and deterministic variation
 
-## B07 continuous-floor constraint
+Every meaningful action is a typed command. Examples include starting or
+monitoring an experiment, analysing a record, committing a manuscript
+revision, advancing a work period, answering a message, beginning a scene,
+and making a final choice. The rules module validates a command against the
+current state and returns:
 
-The research floor is one continuous level. Room loading screens, gameplay
-portals, and streaming transitions are not allowed. Doors, glass partitions,
-and corridor bends limit sightlines. At most two or three nearby rooms need
-full visual detail at one time. Distant rooms may use lower-detail geometry,
-lighting, sound, silhouettes, and message signals.
+1. the next `CampaignState`; and
+2. a typed list of presentation effects, such as a message, cue, cutscene,
+   save request, UI refresh, or sound request.
 
-B09 selects the rendering, collision, navigation, occlusion, level-of-detail,
-and loading implementation. It must preserve the B07 room sizes, clear paths,
-automatic core doors, and the rule that characters cannot trap the player.
+The game uses a small deterministic pseudo-random number generator. A new
+campaign stores its seed. When an experiment or PIIM outcome begins, the game
+records its earned outcome band and locked variation in campaign state.
+Reloading cannot reroll it. The PRNG never replaces authored causal rules or
+allows a result outside its approved band.
 
-## Relationship to Unpaid
+Every event, experiment, manuscript revision, scene, ending module, and
+permanent consequence has a stable identifier. Authored data is validated by
+Zod before use. Invalid authored data is a development error, not a fallback
+random event.
 
-Historical Three.js prototypes exist at
-`/home/lpm/Documents/unpaid-intern-game/game` and
-`/home/lpm/Documents/unpaid`. They are inspiration only. Timed pressure,
-relationships, witness/visibility consequences, task systems, narration,
-branching outcomes, and modular event state may be studied later. No code reuse
-is approved without a separate technical and rights review.
+### Safe-point scheduler
 
-## Security and privacy boundary
+The scheduler runs only after an explicit game-time change or another approved
+safe state. It reads the calendar and conditional authored events, queues the
+next eligible event, and respects experiment-attention and cutscene safety
+rules. It does not use elapsed real time, browser timers, or background-tab
+time to advance campaign state.
 
-The game should function without accounts, analytics, or server-side personal
-data by default. Any analytics, telemetry, external services, or networked
-features require separate approval, privacy review, and failure handling.
+## World, rendering, and interaction runtime
 
-## Open decisions
+The complete Bellwether floor uses one continuous Three.js scene. There are no
+room loading screens, gameplay portals, crowd simulation, or runtime network
+requests. One initial loading screen prepares all required campaign assets
+before Continue or New Game becomes available.
 
-- TypeScript versus JavaScript, build tooling, application structure, and
-  dependency policy.
-- Rendering pipeline, physics/collision, navigation, animation, audio, and UI
-  integration.
-- State model, event schema, experiment model, save schema, migrations, and
-  corruption recovery.
-- Exact browser matrix, baseline device, memory budget, loading budget,
-  render scale, and measured frame-time validation.
-- Deployment boundary with the portfolio and offline/interruption behaviour.
-- Testing layers, CI, error reporting, observability, and dependency updates.
+The rendering and resource manager must:
+
+- own loaded geometry, materials, textures, GLB/glTF scenes, and audio
+  buffers;
+- share reusable resources where practical and dispose only resources it owns;
+- use visibility control, corridor sightline limits, and lower-detail distant
+  rooms so that only two or three nearby rooms need full detail;
+- prepare already-loaded later-act resources safely in the background without
+  visible pop-in;
+- preserve the B07 floor plan, room access, and no-character-trapping rule;
+  and
+- retain no untracked GPU or audio resource after a long session, an act
+  transition, or a completed campaign.
+
+Use a kinematic first-person player controller, static collision shapes, and
+interaction raycasts. Do not add a physics engine. Physical characters use
+authored anchors and short authored paths. Do not add a general navigation
+mesh, pathfinding system, or free NPC roaming.
+
+Use Three.js animation mixers for reusable animation clips. A small
+code-owned cutscene timeline controls camera, actor movement, dialogue,
+audio, checkpoints, skipping, choices, and input restoration. A reload never
+restores half-open UI, pointer lock, or an incomplete animation. It resumes at
+the last verified safe state and provides the approved recap when needed.
+
+## Interface, input, and audio runtime
+
+All important UI is semantic HTML and CSS outside the canvas. The canvas does
+not contain the only copy of text, an important choice, a caption, or a state
+cue. The UI layer implements the B08 scale, contrast, reduced-motion,
+Interaction Assist, caption, and small-browser-view rules.
+
+Input is action-based. The default controller roles are:
+
+- left stick: movement;
+- right stick: look;
+- south face button: interact and confirm;
+- View button: Research Status; and
+- Menu button: pause or go back.
+
+Keyboard and mouse use the approved B08 defaults. Both input systems support
+all core actions and remapping. Pointer lock is active only during free
+first-person movement. It is released for UI, focused views, menus, and
+cutscenes.
+
+One Web Audio API Audio Manager owns Master, Music, Ambience/Effects, and
+Dialogue Sounds buses. It starts only after player interaction. Required
+meaning remains available through text, captions, icons, or visible state when
+audio is unavailable or muted.
+
+## Local persistence and recovery
+
+Use one versioned IndexedDB database. Its logical stores are:
+
+| Store | Contents | Retention |
+|---|---|---|
+| `settings` | Audio, display, control, accessibility, and local-data preferences. | Until the player clears local data. |
+| `activeCampaign` | One validated unfinished `CampaignState`. | Replaced at each verified safe save. |
+| `activeCampaignBackup` | One last-known-good validated active-campaign record. | Stores the prior record that passed validation before the latest safe save. |
+| `endingCards` | Compact completion records. | Keep the 12 most recent cards. |
+| `institutionalCitations` | Persistent citation unlock record. | Persists between campaigns. |
+| `metadata` | Database schema version, migration history, and technical record metadata. | Managed only by the persistence module. |
+
+Before a save, validate the serializable campaign data. In one IndexedDB
+transaction, preserve the prior verified active record as backup and write the
+new active record. Save and Quit waits for that transaction to complete and
+reports a failure clearly if it cannot complete.
+
+On load, validate the active record with its declared schema version. If it
+fails, validate and offer the backup. A recovery never overwrites the failing
+source record before the player accepts it. If both records fail, explain the
+problem in plain language and offer a confirmed reset. Do not use a cookie for
+save state, ownership, or discovery.
+
+Migrations are forward-only and tested. A migration reads and validates a
+source record, creates a new valid record, and only then replaces the stored
+version. A failed migration leaves the source record unchanged. Game state
+never uses real elapsed time, so browser closure and connection loss cannot
+advance the semester.
+
+At completion, one transaction creates the ending card, retains the 12 newest
+cards, updates citations, and removes full active-campaign and backup data.
+New Game confirms replacement of an active campaign and creates a new seed.
+Clear Saved Data requires confirmation and removes this database, including
+settings, campaign records, archive, citations, and metadata. The running UI
+then returns to default settings.
+
+## Browser, deployment, and performance boundary
+
+The start-up compatibility check tests WebGL2, IndexedDB, ES modules, Web
+Audio API, pointer lock, and standard controller API support. Missing WebGL2,
+IndexedDB, or ES modules blocks campaign creation and explains the reason.
+Missing controller support keeps keyboard-mouse play available and clearly
+states that controller play is unavailable. The normal first-person release
+requires pointer lock and Web Audio support.
+
+The supported desktop-browser targets are current Chrome, Edge, and Firefox.
+Automated browser tests run on Chromium, Firefox, and WebKit. Safari is a
+best-effort compatibility target only. Do not claim Safari support in public
+material without direct Safari test evidence.
+
+The reference performance class is an 11th-generation Intel i5 with Intel Iris
+Xe graphics, 16 GB RAM, and current Chrome. Later performance evidence must
+name the exact device model, graphics driver, operating system, browser, and
+browser version. The target is 60 fps at 1920 × 1080 in Standard and 30 fps at
+1280 × 720 in Low on that reference class. The initial compressed download
+target is no more than 75 MB. It must not exceed 100 MB without renewed
+approval.
+
+One graphics-profile module owns Low, Standard, and High. These profiles change
+visual cost only, such as shadow quality, render scale, and cosmetic effects.
+They never change rules, route access, information, accessibility content, or
+outcomes. A local build audit reports the compressed initial-download size.
+Frame-rate and long-session resource evidence comes from manual profiling on
+the reference device and supported browser targets; CI cannot make a truthful
+frame-rate claim by itself.
+
+## Errors, testing, CI, and maintenance
+
+The game has no analytics or automatic error reporting. It shows a plain local
+error message and a copyable sanitized diagnostic code. It must not include a
+save payload, player name, browser storage contents, or other personal data.
+
+Use these quality tools after implementation is authorized:
+
+| Tool | Required use |
+|---|---|
+| Vitest | Pure rules, commands, state transitions, schemas, migrations, deterministic variation, and ending-state fixtures. |
+| Playwright | Boot, compatibility, New Game, save and reload, backup recovery, keyboard interaction, browser-view safety, UI scale, and key accessibility flows. |
+| ESLint | TypeScript code-quality checks. |
+| Prettier | Consistent TypeScript, CSS, JSON, and Markdown formatting checks where configured. |
+
+The local quality commands will be `npm run check` for type, lint, format, and
+unit checks; `npm run test:e2e` for browser tests; `npm run build` for the
+production build; and `npm run verify` for the complete local gate. The exact
+coverage percentage and performance pass threshold remain B10 decisions.
+
+After Leonardo approves a public GitHub remote, a GitHub Actions workflow may
+run the same checks on pushes and pull requests. It does not deploy the game,
+use deployment secrets, or send player data. Before each release, and after a
+runtime dependency change, review runtime dependency security and licence
+status. Do not use an automatic dependency-update bot. Every asset and
+dependency must continue to meet the public redistribution, modification, and
+attribution boundary.
+
+## Deliberate deferrals
+
+- Exact Node and package versions are fixed only when implementation begins.
+- B10 owns exact content identifiers, authored data instances, coverage and
+  playtest thresholds, implementation work packages, release licence, and
+  measured performance evidence.
+- A future external Safari test service could provide direct Safari evidence,
+  but it is not part of the approved first-release plan.
+
+Nothing in this document authorizes implementation before the design-index
+gate is explicitly approved.

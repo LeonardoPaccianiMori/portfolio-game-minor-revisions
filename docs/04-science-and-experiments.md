@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **approved through B08; authored content work deferred**
+Status: **approved through B09; authored content work deferred**
 
 ## Scientific field and model
 
@@ -213,7 +213,8 @@ before public release.
 
 B07 station placement and spatial navigation are documented in
 `06-world-and-level-design.md`. B08 defines the full input and accessibility
-baseline. B09 defines the data and save model. B10 defines exact experiment
-baselines, instances, and content counts. No later block may add real
+baseline. `11-technical-architecture.md` defines the data and save-model
+boundary. B10 defines exact experiment baselines, instances, and content
+counts. No later block may add real
 laboratory quantities, executable protocols, or a claim that the repair state
 is proven to cause recovery.

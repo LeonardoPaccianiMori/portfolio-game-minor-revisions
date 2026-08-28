@@ -13,12 +13,14 @@
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
 | Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
 | Campaign seed | Stored value created for a new game. It selects small variation only inside the outcome range the player has earned. |
+| CampaignState | Serializable active-campaign source of truth. It stores campaign progress and permanent consequences but no Three.js, DOM, audio, function, or real-time browser object. |
 | Common Archive, The | Fictional public preprint service used to release the manuscript. |
 | Controlled cardiac tissue model | The standardized lab-grown human cardiac tissue model. It has no patient identity or donor story. |
 | Cosmos | First fictional journal in the submission ladder; a parody of broad-interest prestige publishing. |
 | Career route | Academia, industry, or neither, as determined by accumulated state and final choice. |
 | Crash | Consequential involuntary loss of one work period after a zero-energy push-through. It restores two energy segments and can miss monitoring or lose opportunities. |
 | Cutscene recap | Short inbox or Research Status record of a skipped scene's choice and immediate result. |
+| Deterministic PRNG | Small pseudo-random number generator that produces saved, repeatable variation from a campaign seed. It cannot move an outcome outside the player's earned authored band. |
 | Department of Developmental Systems | Fictional Bellwether University department that contains the Cardiac Patterning Group. |
 | Developmental Systems Letters | Third fictional journal in the submission ladder; it rejects the paper because the mechanism remains incomplete. |
 | Ending card | Local post-campaign record of the career label, paper, evidence, integrity, fatigue, and citations. |
@@ -37,6 +39,7 @@
 | Interaction Assist | Accessibility option that briefly highlights usable objects in the current room without showing a path, objective arrow, or minimap. |
 | Institutional Citation | Satirical diegetic stamp earned for research, relationship, integrity, career, or ending state. Twelve exist, and their local archive persists between campaigns. |
 | Knowledge | Second fictional journal in the submission ladder; a parody of decisive-proof prestige publishing. |
+| Last-known-good backup | The one validated earlier active-campaign record kept separately in IndexedDB for recovery if the active record fails validation. |
 | Minor request | A PI, editor, or reviewer demand described as small despite meaningful time, evidence, or ethical cost. |
 | Monitoring window | A stated point at which the player can continue, spend attention, or stop an active experiment before deliberately advancing game time. |
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
@@ -48,6 +51,7 @@
 | Paper-aftershock | One short post-career-scene object, message, or line that shows what the paper state means six months later. |
 | PI confidence | The PI's approval and willingness to support submission or continuation; it is not scientific truth. |
 | Pressure profile | Standard or Supported balance setting selected for a new campaign. Both keep the same calendar, narrative, routes, and ending content; it cannot change during that save. |
+| Presentation effect | Typed request from a game rule for non-rule work, such as a message, cue, cutscene, save, UI refresh, or sound. It does not itself change campaign state. |
 | Preprint | Public manuscript version that can attract industry interest before journal publication. |
 | Protected break | One-period recovery action. It restores energy but does not act as a home scene or voluntary sleep action. |
 | Reconstructive rhythmogenesis | The PI's deliberately inflated term for the fictional recovery result. It is not a proven mechanism. |
@@ -58,11 +62,13 @@
 | Revision commit | Player action that makes a manuscript-board arrangement permanent and creates a version snapshot. |
 | Revision snapshot | Visible historical manuscript version used for comparison. It cannot undo the consequences of a committed revision. |
 | Safe stopping point | A point at which an active experiment can pause without an important message interrupting or disappearing. |
+| Safe-point scheduler | Rules component that checks authored calendar and conditional events only after an explicit game-time change or approved safe state. It never uses elapsed real time. |
 | Service pass-through | Optional Gabriel-linked short route between shared desks and imaging. It opens at 61 Gabriel working trust and is never required. |
 | Semester time | Finite campaign clock compressed from one academic semester into the target playtime. |
 | Stylized institutional realism | Plausible near-present research-world art direction with simplified modular geometry, institutional palette, and environmental satire. It excludes photorealism, glossy science fiction, and cartoon slapstick. |
 | Spatial-rhythmic recovery | Paper-facing term for restored tissue pattern and coordinated rhythm after limited damage. |
 | Transient repatterning state | Paper-facing term for the temporary repair state. |
+| Typed command | Validated representation of one meaningful player or system action. The rules module uses it to return the next CampaignState and presentation effects. |
 | Unbroken work loop | The continuous day-and-night campaign structure. The player does not go home or use a sleep action. |
 | Vertical slice | A polished 20–30-minute segment proving one complete loop, narrative consequence, save behaviour, and technical feasibility. |
 | Work period | One of 64 compressed time units: early, late, night, or after-hours within a campaign week. |

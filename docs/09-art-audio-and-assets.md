@@ -1,6 +1,6 @@
 # Art, Audio, and Assets
 
-Status: **approved through B08; exact asset selection deferred**
+Status: **approved through B09; exact asset selection deferred**
 
 ## Presentation thesis
 
@@ -117,8 +117,9 @@ unmodified character pack.
 Runtime models use GLB/glTF. Share geometry and materials where practical.
 Most 3D texture maps are limited to 1K. A rare major object may use 2K. Do not
 use 4K textures. UI, data, and readable notices use live text or SVG rather
-than baked image text. Audio uses compressed browser-ready formats. B09 selects
-the exact compression and runtime pipeline after browser tests.
+than baked image text. Audio uses compressed browser-ready formats.
+`11-technical-architecture.md` defines the local bundle and resource boundary.
+B10 selects exact codecs and records actual asset metadata after browser tests.
 
 ## Performance and download boundary
 
@@ -133,9 +134,10 @@ target is no more than 75 MB. It must not exceed 100 MB without Leonardo's
 renewed approval. Runtime game assets use normal browser cache; IndexedDB is
 reserved for local game data rather than the general asset cache.
 
-B09 must select the baseline hardware and browser matrix, implement the
-presets, choose codecs and loading behaviour, and measure these targets. These
-are content and player-experience limits, not proof of measured performance.
+`11-technical-architecture.md` defines the reference hardware class, browser
+scope, graphics-profile boundary, loading behaviour, and build-size audit.
+B10 must measure these targets and select actual asset codecs. These are
+content and player-experience limits, not proof of measured performance.
 
 ## Dialogue sound and voice boundary
 
@@ -218,15 +220,16 @@ likenesses, voices, or private source material.
   three cue types, and six modular music stems without full voice production.
 - Runtime asset formats follow the GLB/glTF, texture-size, live-text, and
   compressed-audio and graphics-preset rules.
-- The initial download target, graphics-preset boundary, and B09 measurement
-  responsibility remain explicit.
+- The initial download target, graphics-preset boundary, B09 architecture,
+  and B10 measurement responsibility remain explicit.
 - No asset is integrated without a public-repository-compatible licence,
   manifest record, and attribution path.
 
 ## Deferred work
 
-B09 owns rendering, asset loading, codecs, browser tests, performance
-measurement, and technical quality-preset implementation. B10 owns exact
-asset IDs, source selection, colour values after contrast checks, notice text,
-music and sound file names, cue variations, and final inventory counts. This
-document does not authorize asset import or production implementation.
+The B09 rendering, asset-loading, browser-scope, resource, and
+quality-preset architecture is documented in `11-technical-architecture.md`.
+B10 owns exact asset IDs, source selection, colour values after contrast
+checks, actual codecs, notice text, music and sound file names, cue variations,
+final inventory counts, and measured performance evidence. This document does
+not authorize asset import or production implementation.

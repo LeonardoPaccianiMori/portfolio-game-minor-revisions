@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **approved through B08; authored content and runtime work deferred**
+Status: **approved through B09; authored content and implementation evidence deferred**
 
 ## Perspective and interaction
 
@@ -200,8 +200,8 @@ game time after a clear warning. Advancing past it can produce a weaker or less
 reliable result. Menus, pause, and browser closure never cause a missed check.
 The game saves at safe states, including experiment-stage changes, monitoring
 choices, analysis archiving, manuscript commits, and scene boundaries. Game
-time does not pass while the game is closed. B09 owns the persistence
-implementation.
+time does not pass while the game is closed. The B09 persistence contract is
+defined in `11-technical-architecture.md`.
 
 ## Other play modes
 
@@ -254,7 +254,8 @@ and the persistent Institutional Citation record.
 - B07 room placement, layout, and navigation paths are documented in
   docs/06-world-and-level-design.md.
 - Exact authored experiment baselines and content counts belong to B10.
-- Save schema, corruption recovery, exact browser matrix, and UI runtime
-  implementation belong to B09.
+- `11-technical-architecture.md` defines the save schema boundary, corruption
+  recovery, browser scope, and UI runtime boundary. B10 owns implementation
+  verification and measured evidence.
 - Exact tutorial text, authored experiment instances, and replay content
   belong to B10.

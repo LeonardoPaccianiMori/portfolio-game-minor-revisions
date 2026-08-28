@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **approved through B08; runtime implementation and authored text deferred**
+Status: **approved through B09; runtime implementation and authored text deferred**
 
 ## Interaction principles
 
@@ -128,8 +128,8 @@ confirmation.
 Skipping a cutscene adds a concise recap, including its choice and immediate
 result, to the inbox or Research Status. Normal cutscenes do not replay during
 an active save. The Archive provides ending cards, citations, and ending
-summaries only. B09 owns save schemas, migrations, data validation, corruption
-recovery, and the exact storage implementation.
+summaries only. `11-technical-architecture.md` defines save schemas,
+migrations, data validation, corruption recovery, and the storage boundary.
 
 ## Accessibility baseline
 
@@ -170,8 +170,9 @@ scope decision, not a claim that English is accessible to every player.
 
 ## Deferred work
 
-B09 owns browser support details, concrete controller mapping, UI runtime
-architecture, save schema, migrations, validation, corruption recovery, and
-measured performance. B10 owns exact tutorial wording, message and report
-text, final content counts, playtest protocol, and changes supported by tests.
-This document does not authorize implementation code or production assets.
+`11-technical-architecture.md` defines browser scope, controller roles, UI
+runtime architecture, pointer-lock behaviour, save schemas, migrations,
+validation, corruption recovery, and the performance boundary. B10 owns exact
+tutorial wording, message and report text, final content counts, playtest
+protocol, and measured implementation evidence. This document does not
+authorize implementation code or production assets.

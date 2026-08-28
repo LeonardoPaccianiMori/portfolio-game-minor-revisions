@@ -1,6 +1,6 @@
 # World and Level Design
 
-Status: **approved through B08; technical execution and authored content deferred**
+Status: **approved through B09; technical execution and authored content deferred**
 
 ## Confirmed world structure
 
@@ -317,8 +317,9 @@ rooms use lower-detail geometry, sound, lighting, silhouettes, and messages.
 There is no simulated crowd. Sound, lighting, silhouettes, notices, and remote
 communication imply the wider university.
 
-B09 chooses the technical rendering, collision, navigation, occlusion,
-level-of-detail, and loading method. It must meet this spatial contract.
+`11-technical-architecture.md` defines the technical rendering, collision,
+authored-character navigation, occlusion, lower-detail, and loading boundary.
+Implementation must meet this spatial contract.
 
 ## B07 acceptance criteria
 
@@ -345,7 +346,8 @@ B07 is complete only if all of the following are true:
 
 The B08 presentation, camera, audio, controls, UI, accessibility, and asset
 boundaries are documented in docs/09-art-audio-and-assets.md and
-docs/10-ui-ux-accessibility.md. B09 owns technical implementation and measured
-performance. B10 owns exact scene text, notice text, prop identifiers, and full
-content counts. No B07 or B08 decision authorizes implementation code or
-production assets.
+docs/10-ui-ux-accessibility.md. The B09 technical architecture is documented
+in docs/11-technical-architecture.md. B10 owns exact scene text, notice text,
+prop identifiers, full content counts, and measured implementation evidence.
+No B07, B08, or B09 decision authorizes implementation code or production
+assets.

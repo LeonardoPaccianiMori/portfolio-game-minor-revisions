@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **seeded; not implementation-ready**
+Status: **B09 documented; B10 incomplete; not implementation-ready**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -9,20 +9,20 @@ gaps. It does not mean that the domain is finished.
 | Document | Domain | Status | Principal unresolved work |
 |---|---|---|---|
 | `01-vision-and-pillars.md` | Thesis, tone, scope | Approved through B06 | Release execution and exact public text remain in B10 |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B08 | Runtime behaviour and authored content remain in B09 and B10 |
+| `02-player-experience-and-loop.md` | Moment-to-moment play | Approved through B09 | Authored content and tuning remain in B10 |
 | `03-narrative-and-campaign.md` | Five-act story | Approved through B08 | Line-level content remains in B10 |
-| `04-science-and-experiments.md` | Fictional science | Approved through B08 | Exact authored experiment content remains in B10 |
+| `04-science-and-experiments.md` | Fictional science | Approved through B09 | Exact authored experiment content remains in B10 |
 | `05-characters-and-dialogue.md` | Cast and voice | Approved through B08 | Exact dialogue and scene content remain in B10 |
-| `06-world-and-level-design.md` | University research floor | Approved through B08 | Technical implementation and exact props remain in B09 and B10 |
-| `07-systems-and-balance.md` | State and rules | Approved through B08 | Runtime schemas and tuned values remain in B09 and B10 |
-| `08-endings-and-state-matrix.md` | Outcomes | Approved through B08 | Exact authored ending content remains in B10 |
-| `09-art-audio-and-assets.md` | Presentation | Approved through B08 | Exact asset selection and content remain in B10 |
-| `10-ui-ux-accessibility.md` | Interface and access | Approved through B08 | Runtime implementation and authored text remain in B09 and B10 |
-| `11-technical-architecture.md` | Runtime design | Approved through B08 | Stack, modules, save schema, and measured performance remain in B09 |
+| `06-world-and-level-design.md` | University research floor | Approved through B09 | Exact props and measurement evidence remain in B10 |
+| `07-systems-and-balance.md` | State and rules | Approved through B09 | Tuned values and authored data remain in B10 |
+| `08-endings-and-state-matrix.md` | Outcomes | Approved through B09 | Exact authored ending content remains in B10 |
+| `09-art-audio-and-assets.md` | Presentation | Approved through B09 | Exact asset selection and measurement evidence remain in B10 |
+| `10-ui-ux-accessibility.md` | Interface and access | Approved through B09 | Authored text and implementation verification remain in B10 |
+| `11-technical-architecture.md` | Runtime design | Documented in B09 | Exact versions and measured implementation evidence remain in B10 |
 | `12-content-specification.md` | Content inventory | Approved through B08 (partial) | Full identifiers, line counts, and authored content remain in B10 |
-| `13-testing-and-evaluation.md` | Quality evidence | Approved through B08 | Targets, playtest protocol, acceptance thresholds |
+| `13-testing-and-evaluation.md` | Quality evidence | Approved through B09 | Playtest targets, protocol, and acceptance thresholds remain in B10 |
 | `14-production-plan.md` | Delivery strategy | Seeded | Time/cost budget, milestones, stop criteria |
-| `15-implementation-contract.md` | Agent handoff | Seeded | Requirement IDs and approved work packages |
+| `15-implementation-contract.md` | Agent handoff | Approved through B09 (partial) | Requirement IDs and approved work packages remain in B10 |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | Seeded | Expand as systems receive final names |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | Ready for use | No assets selected yet |
@@ -51,11 +51,11 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **B09 — Technical architecture**
-- Last documented block: **B08 — Art, audio, UI, and accessibility**
-- Next action: define the implementation stack, runtime modules, data and save
-  schemas, browser support, loading, collision, rendering, and technical test
-  plan that implement the approved design.
+- Current block: **B10 — Content, evaluation, production, and implementation handoff**
+- Last documented block: **B09 — Technical architecture**
+- Next action: define the exact content inventory, evaluation and playtest
+  method, production limits, release boundary, requirement traceability, and
+  agent work packages. Do not start implementation work.
 - Implementation gate: **blocked**; completing discussion blocks does not by
   itself authorize implementation.
 
@@ -192,9 +192,9 @@ status, and the next place to resume.
   rules are approved.
 - **Deferred outside B04:** B05 owns time costs, values, formulas, variability,
   difficulty, and route thresholds. B07 owns the floor plan. B08 documents
-  detailed controls, UI, and accessibility settings. B09 owns save schemas and
-  runtime architecture. B10 owns exact tutorial text and authored experiment
-  content.
+  detailed controls, UI, and accessibility settings. B09 save schemas and
+  runtime architecture are documented in `11-technical-architecture.md`. B10
+  owns exact tutorial text and authored experiment content.
 - **Complete when:** each repeated player action, outcome, feedback signal, and
   transition can be described without inventing mechanics during implementation.
 - **Completion record:** `Complete Minor Revisions B04 laboratory and
@@ -221,9 +221,10 @@ status, and the next place to resume.
   of calendar delay or unlimited catch-up. Aldercroft, Morrow, PIIM, route
   closure, reviewer-card, and player-feedback rules are approved.
 - **Deferred outside B05:** B07 owns period schedules and staging. B08
-  documents detailed visual interface, controls, and accessibility. B09 owns
-  schemas and persistence. B10 owns exact authored experiments, requests,
-  dialogue, and post-playtest tuning.
+  documents detailed visual interface, controls, and accessibility. B09
+  schemas and persistence are documented in `11-technical-architecture.md`.
+  B10 owns exact authored experiments, requests, dialogue, and post-playtest
+  tuning.
 - **Complete when:** the state model and pacing rules are consistent, tunable,
   explainable to the player where appropriate, and connected to narrative and
   experiment outcomes.
@@ -251,8 +252,9 @@ status, and the next place to resume.
   explicitly reopens them.
 - **Deferred outside B06:** B07 owns exact spatial placement and staging. B08
   documents visual, camera, control, summary-layout, and accessibility
-  production. B09 owns archive and save schemas. B10 owns exact ending lines, citation
-  names and triggers, content identifiers, and later tuning.
+  production. B09 archive and save schemas are documented in
+  `11-technical-architecture.md`. B10 owns exact ending lines, citation names
+  and triggers, content identifiers, and later tuning.
 - **Complete when:** every reachable final state maps deterministically to a
   coherent choice or failure state and an approved modular epilogue.
 - **Completion record:** `Complete Minor Revisions B06 endings and epilogues`.
@@ -274,9 +276,10 @@ status, and the next place to resume.
   spatial and event placement. B08 documents camera, audio, and visual
   execution.
 - **Deferred outside B07:** B08 documents final palette roles, lighting
-  boundary, camera, audio, controls, UI, and accessibility settings. B09 owns
-  the collision implementation, navigation data, loading code, and performance
-  measurements. B10 owns exact prop text, scene lines, and content identifiers.
+  boundary, camera, audio, controls, UI, and accessibility settings. B09
+  defines the collision, authored-character navigation, loading, and
+  performance boundary in `11-technical-architecture.md`. B10 owns exact prop
+  text, scene lines, content identifiers, and measured performance evidence.
 - **Complete when:** the complete playable floor supports all approved actions,
   scenes, routes, and performance needs with a bounded asset burden.
 - **Completion record:** `Complete Minor Revisions B07 world and level design`.
@@ -308,12 +311,13 @@ status, and the next place to resume.
   no-account privacy boundary, cutscene recap, and data-clear behaviour are
   approved. Captions and speaker names default on, with the approved scaling,
   contrast, motion, cue, Interaction Assist, and browser-view requirements.
-- **Deferred outside B08:** B09 owns the exact stack, browser matrix and
-  baseline device, renderer/loading/audio pipeline, concrete controller
-  mapping, UI and save runtime architecture, save schema/migrations, collision,
-  navigation, and measured performance. B10 owns exact asset IDs and sources,
-  colour values after contrast checks, notice and dialogue text, audio file
-  names, content inventory, playtests, production plan, and release licence.
+- **Deferred outside B08:** B09 defines the stack, browser scope and baseline
+  class, renderer/loading/audio pipeline, controller roles, UI and save runtime
+  architecture, save schema/migrations, collision, and authored-character
+  navigation in `11-technical-architecture.md`. B10 owns exact asset IDs and
+  sources, colour values after contrast checks, notice and dialogue text, audio
+  file names, content inventory, playtests, production plan, release licence,
+  and measured performance evidence.
 - **Complete when:** presentation and interaction have bounded inventories,
   accessibility acceptance criteria, performance budgets, and viable creation
   or licensed-sourcing paths.
@@ -321,18 +325,50 @@ status, and the next place to resume.
 
 ### B09 — Technical architecture
 
-- **Status:** Not started.
+- **Status:** Documented.
 - **Depends on:** B04, B05, B07, and B08.
 - **Primary documents:** `11-technical-architecture.md`, with cross-references
   to `10-ui-ux-accessibility.md` and `13-testing-and-evaluation.md`.
-- **Must resolve:** language, build tooling, dependencies, module boundaries,
-  rendering, collision, navigation, animation, audio, and UI integration;
-  state, event, experiment, and save schemas; migrations and corruption
-  recovery; supported browsers and devices; frame-time, memory, bundle, and
-  loading targets; portfolio deployment and interruption behaviour; testing,
-  CI, error reporting, observability, and dependency maintenance.
+- **Approved decision set:** use strict TypeScript with Vite, direct Three.js,
+  semantic HTML/CSS overlays, local bundled dependencies, `npm`, and a later
+  recorded Node LTS version. Keep the game repository independent and publish
+  only a static build through a future approved portfolio task. Separate the
+  rendering/world, player/input, interaction, rules, content, UI/accessibility,
+  audio/cutscenes, persistence, and test modules. Rules return serializable
+  next state and presentation effects, use validated authored data, stable
+  identifiers, a saved deterministic seed, typed commands, and a safe-point
+  event scheduler.
+
+  Use one continuous Three.js floor scene, a kinematic controller, static
+  collision shapes, interaction raycasts, authored NPC anchors, shared
+  resources, visibility control, distant lower detail, animation mixers, and
+  a small code-owned cutscene timeline. Do not use a physics engine, general
+  navigation, room loading, runtime CDN, API, analytics, telemetry, service
+  worker, or runtime network dependency.
+
+  Use one versioned IndexedDB database with validated settings, one active
+  campaign, one last-known-good backup, ending cards, Institutional Citations,
+  and metadata. Use safe saves, recovery, forward-only migrations, and local
+  data clearing. Use action-based remappable input, controlled pointer lock,
+  semantic UI, and one Web Audio manager with four buses. Require WebGL2 and
+  show compatibility feedback before campaign creation.
+
+  Target current Chrome, Edge, and Firefox desktop browsers. Test Chromium,
+  Firefox, and WebKit automatically. Treat Safari as best-effort only until
+  direct Safari evidence exists. Use the approved Intel i5/Iris Xe reference
+  class, Low/Standard/High graphics profiles, a central resource manager, a
+  local error screen with sanitized diagnostics, and no automatic reporting.
+  Use Vitest, Playwright, ESLint, Prettier, local quality commands, a future
+  non-deploying GitHub Actions workflow after remote approval, a build-size
+  audit, manual performance evidence, and intentional dependency review.
+- **Deferred outside B09:** B10 owns exact Node and package versions, authored
+  data instances and content identifiers, coverage and playtest thresholds,
+  measured performance evidence, release licence, requirement traceability,
+  and implementation work packages. Direct Safari testing is outside the
+  approved first-release plan.
 - **Complete when:** every required system has an owned interface, data model,
   failure behaviour, performance target, and validation path.
+- **Completion record:** `Complete Minor Revisions B09 technical architecture`.
 
 ### B10 — Content, evaluation, production, and implementation handoff
 
