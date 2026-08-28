@@ -1,6 +1,6 @@
 # Independent Design Review Protocol
 
-Status: **approved protocol; review not yet completed**
+Status: **review completed; findings discussion pending**
 
 ## Purpose
 
@@ -520,6 +520,11 @@ Initial API responses remain outside Git until Codex checks that:
 - Stage 1 and Stage 4A contain no leaked vision packet;
 - recommendations appear only in the stages that permit them; and
 - model metadata and token use are complete.
+
+The 2026-08-28 Claude Opus 5 run passed these checks. The reviewed Markdown
+reports, metadata, and validation qualifications are stored in
+`docs/reviews/2026-08-28-opus-5/`. Raw API response JSON is not retained in the
+repository.
 
 After a separate tracked-change approval, reviewed reports can use:
 

@@ -11,15 +11,20 @@ the academic survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **design and evaluation; B10 documented; implementation still blocked**.
+Status: **design and evaluation; independent review complete; implementation
+still blocked**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
 configuration. B10 now records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
-now defines the next specification check. The specification is still not
-implementation-ready until Leonardo separately approves the gate in
+defined the next specification check. The Claude Opus 5 reports and Codex
+validation notes are now stored under
+[`docs/reviews/2026-08-28-opus-5/`](docs/reviews/2026-08-28-opus-5/).
+Their findings are advisory. No recommendation is accepted yet. The
+specification is still not implementation-ready until Leonardo separately
+approves the gate in
 [`docs/00-design-index.md`](docs/00-design-index.md).
 
 Target experience:

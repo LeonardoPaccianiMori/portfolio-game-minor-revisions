@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **B10 documented; implementation approval pending; no implementation authorized**
+Status: **independent review complete; findings discussion pending; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -23,7 +23,8 @@ gaps. It does not mean that the domain is finished.
 | `13-testing-and-evaluation.md` | Quality evidence | B10 documented | Test results are future evidence, not current claims. |
 | `14-production-plan.md` | Delivery strategy | B10 documented | Leonardo may later revise capacity or release timing. |
 | `15-implementation-contract.md` | Agent handoff | B10 documented | Work begins only after the separate gate approval. |
-| `reviews/independent-design-review-protocol.md` | External specification review | Protocol approved | Run and inspect the four review stages; no report exists yet. |
+| `reviews/independent-design-review-protocol.md` | External specification review | Review complete | Discuss the validated findings and record Leonardo's decisions. |
+| `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -54,10 +55,13 @@ status, and the next place to resume.
 
 - Current block: **Independent post-workshop specification review**
 - Last documented block: **B10 — Content, evaluation, production, and implementation handoff**
-- Next action: run the approved independent LLM review against design snapshot
-  `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`, inspect its reports, and record
-  Leonardo's decisions before he separately considers implementation
-  approval. Do not start implementation work.
+- Review state: Claude Opus 5 completed all four approved review stages against
+  design snapshot `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`. Codex checked
+  completeness, file isolation, citations, privacy, and material claims.
+- Next action: discuss the validated findings and record each material
+  recommendation as accepted, rejected, deferred, or requiring a prototype.
+  Only then can Leonardo separately consider implementation approval. Do not
+  start implementation work.
 - Implementation gate: **blocked**; B10 documentation does not authorize
   implementation.
 

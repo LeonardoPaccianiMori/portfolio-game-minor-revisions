@@ -12,11 +12,13 @@ external science or narrative review.
 Leonardo is the only human play evaluator. Codex provides automated tests,
 private technical checks, content checks, and documented review. The approved
 [`independent LLM design review`](reviews/independent-design-review-protocol.md)
-is outside B10 testing. It must occur before Leonardo considers the separate
-implementation-readiness approval. It is an advisory specification audit, not
-external playtesting, scientific validation, narrative authority, or a vote on
-implementation. Its recommendations do not change the design until Leonardo
-accepts them.
+is outside B10 testing. Claude Opus 5 completed the review on 2026-08-28 against
+the B10 snapshot. The reports, metadata, and Codex validation notes are stored
+in [`reviews/2026-08-28-opus-5/`](reviews/2026-08-28-opus-5/). It is an advisory
+specification audit, not external playtesting, scientific validation,
+narrative authority, or a vote on implementation. Its recommendations do not
+change the design until Leonardo accepts them. The review must be discussed
+before Leonardo considers the separate implementation-readiness approval.
 
 No test result exists yet. This document defines future evidence only.
 
