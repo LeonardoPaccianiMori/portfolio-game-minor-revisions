@@ -64,11 +64,12 @@ status, and the next place to resume.
   `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`. A separate reconciliation report
   preserves duplicates, conflicts, qualifications, and genuinely new findings.
   Codex checked completeness, file isolation, citations, privacy, and material
-  claims. All `MR-REV-*` entries remain unreviewed.
-- Next action: discuss the recommendation register in dependency order and
-  record each material entry as accepted, rejected, deferred, or requiring a
-  prototype. Only then can Leonardo separately consider implementation
-  approval. Do not start implementation work.
+  claims. R00 is documented: `MR-REV-053` and `MR-REV-055` are protected, and
+  `MR-REV-054` is accepted and written into the vision and UI rules.
+- Next action: discuss R01, covering `MR-REV-001` through `MR-REV-007` and
+  `MR-REV-014`. Only after all review blocks are resolved can Leonardo
+  separately consider implementation approval. Do not start implementation
+  work.
 - Implementation gate: **blocked**; B10 documentation does not authorize
   implementation.
 

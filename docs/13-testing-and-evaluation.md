@@ -22,6 +22,12 @@ before Leonardo considers the separate implementation-readiness approval.
 
 No test result exists yet. This document defines future evidence only.
 
+Review findings use three evidence levels: a document fact, an inference from
+the design, or measured private play evidence. Predictions about fun, boredom,
+optimization, comedy, traversal, comprehension, or likely player behaviour are
+hypotheses until an approved private prototype or game evaluation tests them.
+Do not present a design-review prediction as a measured result.
+
 ## Test identifiers and required evidence
 
 | Test ID | Scope | Required future evidence |

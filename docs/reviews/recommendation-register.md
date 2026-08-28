@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **all entries unreviewed; implementation remains blocked**
+Status: **R00 resolved; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -22,6 +22,9 @@ records Leonardo's decisions without rewriting the source reports.
   must be recorded.
 - `prototype required`: the question must be tested in an approved build before
   a final design decision.
+- `protected`: an approved constraint that governs later decisions and creates
+  no separate implementation task.
+- `informational`: retained context that creates no implementation task.
 
 No model can change a status. A status changes only after Leonardo explicitly
 decides it. Conflicting recommendations remain separate alternatives inside
@@ -95,12 +98,22 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `unreviewed` |
 | MR-REV-051 | Content | Add required reason and forecast strings within the word cap | `unreviewed` |
 | MR-REV-052 | Camila | Specify video-call presentation | `unreviewed` |
-| MR-REV-053 | Protected design | Preserve the shared do-not-normalize constraints | `unreviewed` |
-| MR-REV-054 | Aesthetic context | Preserve the system's player-facing procedural integrity | `unreviewed` |
-| MR-REV-055 | Evidence boundary | Treat behavioural review claims as hypotheses | `unreviewed` |
+| MR-REV-053 | Protected design | Preserve the shared do-not-normalize constraints | `protected` |
+| MR-REV-054 | Aesthetic context | Preserve the system's player-facing procedural integrity | `accepted` |
+| MR-REV-055 | Evidence boundary | Treat behavioural review claims as hypotheses | `protected` |
 
 ## Current decision record
 
-No recommendation has been accepted, rejected, deferred, or classified as
-prototype required. No authoritative game-design document has changed because
-of either review.
+### R00 — Guardrails
+
+- `MR-REV-053`: protect core creative identity and player-fairness choices.
+  Production limits remain approved but deliberately reopenable. This decision
+  does not decide whether hidden misconduct can have a non-moral time,
+  relationship, or opportunity cost under `MR-REV-022`.
+- `MR-REV-054`: formalize **fair rules, unfair institution**. Institutional
+  pressure must not come from misleading interface behaviour.
+- `MR-REV-055`: treat every behavioural prediction from a document review as a
+  hypothesis until approved private play produces evidence.
+
+No implementation is authorized. `MR-REV-001` through `MR-REV-052` remain
+unreviewed.

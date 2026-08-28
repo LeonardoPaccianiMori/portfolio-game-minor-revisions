@@ -52,6 +52,15 @@ requests, environment details, and player-facing records are part of the
 comedy, not only dialogue delivery. Exact jokes, citations, and text remain
 B10 work.
 
+## Fair rules, unfair institution
+
+Institutional pressure comes from difficult choices, limited resources, and
+the fictional university. It does not come from deceptive interface behaviour.
+The game states known costs, deadlines, expiry, and irreversible consequences
+before commitment. It can keep formulas, flags, and uncertain outcomes hidden,
+but it must distinguish deliberate uncertainty from missing or misleading
+feedback.
+
 ## Confirmed format
 
 - Three.js web game intended for later portfolio deployment alongside

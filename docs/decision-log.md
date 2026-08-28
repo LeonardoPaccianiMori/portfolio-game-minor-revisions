@@ -115,6 +115,9 @@ belongs in the numbered design documents.
 | 2026-08-28 | Use requirement IDs in the MR-REQ-DOMAIN-NUMBER form and the approved work-package, branch, review, contribution-record, and definition-of-done contract. | Confirmed |
 | 2026-08-28 | Treat exact package versions, verified asset sources and codecs, source hashes, and measured performance as future verified implementation facts. | Confirmed |
 | 2026-08-28 | Run an independent frontier-LLM design review before Leonardo considers implementation approval. Use Claude Opus 5 for Stages 1-3, a separate blind context for the incentives review, exact file packets, the B10 snapshot, and reviewed reports that remain advisory until Leonardo records a decision. Gemini 3.1 Pro can later provide the separate incentives lane. | Confirmed |
+| 2026-08-28 | Protect the review's shared do-not-normalize constraints while keeping production limits deliberately reopenable; do not use this protection to decide the still-open non-moral consequences of hidden misconduct. | Confirmed |
+| 2026-08-28 | Use the explicit principle “fair rules, unfair institution”: state known costs, deadlines, expiry, and irreversible consequences, while preserving deliberate uncertainty without misleading interface behaviour. | Confirmed |
+| 2026-08-28 | Treat behavioural predictions from document review as hypotheses until an approved private prototype or game evaluation provides evidence. | Confirmed |
 
 ## Rules for future entries
 

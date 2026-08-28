@@ -68,6 +68,12 @@ equipment remotely. Every received message remains in a readable inbox.
 Important messages state their deadline and time cost. The notebook, inbox,
 and Research Status give context, not a permanent quest-arrow system.
 
+The interface follows the fair-rules principle in `01-vision-and-pillars.md`.
+It states known costs, deadlines, expiry, and irreversible consequences. It
+does not reveal deliberately hidden formulas, flags, or uncertain outcomes,
+but it cannot use missing or misleading feedback to simulate institutional
+pressure.
+
 Science views use labelled structure, rhythm, and repatterning-index panels
 with plain-English summaries, icons, and visible state. A graph or tissue image
 must not require colour alone for interpretation. An irreversible report or
