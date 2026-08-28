@@ -113,13 +113,32 @@ MR-TEST-EXP-001 must show that:
   demonstrated cause; and
 - no valid path needs a perfect outcome or a crash.
 
-The rules suite must also reproduce the R01 paper fixture counts: minimum
-defensible demand of 43 periods and 25 energy before late-work surcharge;
-thorough-honest demand of 55 periods and 29 energy; and maximizing demand of
-78 periods and 45 energy. It must report the current optimistic lower-bound
-totals for Standard and Supported. It must not silently claim that the
-thorough-honest Standard fixture fits until a later approved balance decision
-changes the input rules.
+The rules suite must also reproduce the updated paper fixture counts: minimum
+defensible demand of 44 periods and 26 energy before late-work surcharge;
+thorough-honest demand of 56 periods and 30 energy; and maximizing demand of
+79 periods and 46 energy. The optimistic Standard totals are 55, 69, and 100;
+the Supported totals are 51, 65, and 93. It must not claim that the
+thorough-honest fixture fits either profile until a later approved balance
+decision changes the input rules.
+
+The manuscript and PIIM fixtures must show that:
+
+- all fixed manuscript positions enforce capacity and valid card references;
+- Careful, Strong, and Inflated use their exact factual requirements for every
+  packet band, while an incomplete commit remains possible;
+- honest evidence cannot fill Inflated causal support, but a changed or
+  unsupported reported reading can appear to fill it when no visible conflict
+  exists;
+- every batch, oxygen, and claim-scope card reaches Met, Partly Met, and Not
+  Met through its stated rule;
+- all three PIIM outcome bands are reachable, including one middle-band path
+  with a Developing packet and honestly stated limitations;
+- an honest absent-result statement can unlock `MR-CIT-03` without improving
+  the related paper-response card;
+- each reviewer selects exactly one of two visible-state forms and preserves
+  that form after reload; and
+- **What We Had** is reachable only after the initial draft and mandatory
+  Week-6 contradictory revision are both committed.
 
 MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
 
@@ -143,12 +162,18 @@ MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
 
 - the content catalogue has the approved full and fallback counts;
 - every authored line has an English text key;
+- every meaningful action and material effect has a valid forecast or reason
+  key, with no runtime prose generation;
 - no runtime path generates dialogue or a report;
 - all twenty-nine ending modules select in the approved order;
 - the four paper states do not change randomly after Week 16;
 - the Archive retains the twelve newest ending cards and persistent Citation
   state; and
 - no Citation requires unethical play.
+
+The content test measures the actual build-specific strings.en.json after
+lowercasing and punctuation removal. It must contain no more than 6,000 unique
+English words, and it must not bundle strings excluded from that build.
 
 MR-TEST-WORLD-001 and MR-TEST-CONT-001 must also show that all three
 operational room states have their exact trigger, window, forecast, expiry,

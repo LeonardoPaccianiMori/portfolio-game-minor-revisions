@@ -122,6 +122,9 @@ belongs in the numbered design documents.
 | 2026-08-28 | Record the R01 64-period and evidence-reachability audit. It does not validate the existing thorough-honest Standard balance or justify evidence re-pricing. | Confirmed finding; later balance decision required |
 | 2026-08-28 | Resolve R02 experiment outcomes with visible sample and equipment states, exact biological issue counts, a locked variation value inside the final earned band, and separate evidence-quality rules. Controls and fatigue cannot change biological reality. | Confirmed |
 | 2026-08-28 | Require raw observations before player interpretation, one stored primary reading and caveat, richer rack and imaging focused views, explicit stop triage, and exactly three authored operational room states with two-or-more visible routes. | Confirmed |
+| 2026-08-28 | Resolve R03 with a fixed constraint-based manuscript board, factual support states, explicit PIIM card rules, free claim selection, and visible rather than moral judgement of unsupported claims. | Confirmed |
+| 2026-08-28 | Add two saved visible-state forms for each reviewer and the mandatory Week-6 remove-caution task. Record that its existing one-period, one-energy commit makes thorough-honest play exceed both optimistic pressure-profile totals. | Confirmed finding; later balance decision required |
+| 2026-08-28 | Require fixed forecast and reason keys for player-facing causality. Apply the 6,000-word limit to the actual build-specific English file and exclude unshipped content from that file. | Confirmed |
 
 ## Rules for future entries
 

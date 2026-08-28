@@ -62,8 +62,10 @@ contains at least:
   issue counts, projected and final preparation bands, locked variation values,
   monitoring and observation coverage, stop logs, raw records, evidence cards,
   selected readings, and selected caveats;
-- manuscript cards, committed snapshots, requests, reviewer response cards,
-  paper state, and authorship and integrity history;
+- manuscript slot contents, card connections, selected caveat, factual
+  requirements state, committed snapshots, contradictory-revision task state,
+  saved reviewer variants, PIIM response cards, paper state, and authorship and
+  integrity history;
 - received messages, route state, character and scene state, floor act state,
   cutscene recaps, and permanent consequence flags; and
 - the identifiers and state needed for the ending card and Institutional
@@ -97,6 +99,13 @@ replaces authored causal rules or allows a result outside its approved final
 band. Controls, observation coverage, zero-energy fatigue, and record handling
 are evidence-quality inputs and cannot modify biological reality.
 
+Manuscript resolution is deterministic. A commit command validates slot
+capacity and card references, calculates Met, Missing, Conflict, and
+Unsupported states, records PIIM card states when relevant, applies the stated
+effects, and stores a snapshot. Unmet requirements do not invalidate the
+command. The Week-7 scene cannot become eligible until the initial draft and
+`MR-TASK-REMOVE-CAUTION` commits are both stored.
+
 Every event, experiment, manuscript revision, scene, ending module, and
 permanent consequence has a stable identifier. Authored data is validated by
 Zod before use. Invalid authored data is a development error, not a fallback
@@ -109,6 +118,14 @@ Implementation must split authored data into validated JSON objects and one
 English strings.en.json file. JSON stores IDs, conditions, effects, action
 cost IDs, dependencies, windows, expiry, and test links. The English file
 stores all player-facing text keys and values.
+
+Every meaningful action object has one fixed forecast key. Every material
+state effect has one fixed reason key. The UI can present separate authored
+labels, values, and reason fields, but cannot generate or assemble prose. A
+full build contains and counts the full-build English strings. A fallback build
+contains and counts only the fallback selection; excluded content is not
+bundled as unreferenced text. Either shipped file must remain within 6,000
+unique English words.
 
 CampaignState stores a content version, selected content variants, completed
 and expired one-time content IDs, and citation unlock IDs. It stores no copied
@@ -123,6 +140,11 @@ It must also reject an operational room state without a visible window,
 forecast, expiry response, and at least two valid routes with different stated
 costs. Optional desk work must reference a defined character, career, wording,
 or room-state content ID.
+The validator must also reject a meaningful action without a forecast key, a
+material effect without a reason key, a manuscript card in an invalid or
+duplicate slot, a missing PIIM-card rule, more than two variants for one
+reviewer, an invalid reviewer condition, or a build-specific English string
+file above the word limit.
 
 ### Safe-point scheduler
 

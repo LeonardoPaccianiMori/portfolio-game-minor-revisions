@@ -57,7 +57,7 @@ regenerative treatment.
 | 3 | Supplementary data | Batch evidence creates uncertainty. Samira's imaging conflict appears. |
 | 4 | Supplementary data | Repair-state evidence becomes available. Haoran's work-pressure scene can occur. |
 | 5 | Supplementary data | **A Complete Narrative** ends the act. Elena opens manuscript work, even with a weak packet. |
-| 6 | Manuscript hell | Elena removes cautious wording, then asks for it back. |
+| 6 | Manuscript hell | `MR-TASK-REMOVE-CAUTION` makes Elena remove cautious wording because it looks too defensive. |
 | 7 | Manuscript hell | **What We Had** confronts the player with a manuscript close to its first careful form. |
 | 8 | Submission | **Public Record** posts the preprint. *Cosmos* and *Knowledge* reject. Camila writes after the second rejection. |
 | 9 | Submission | *Developmental Systems Letters* rejects. `PIIM` receives the manuscript. |
@@ -86,7 +86,7 @@ that evidence exists.
 |---|---:|---|---|
 | **Clarified** | 1 | Main laboratory and PI office | Elena sees the overnight result and reframes the next work as a small clarification. |
 | **A Complete Narrative** | 5 | PI office | Elena permits manuscript work regardless of packet quality. The packet changes later fragility. |
-| **What We Had** | 7 | Player desk and PI office | The third contradictory revision brings the paper close to its original careful version. |
+| **What We Had** | 7 | Player desk and PI office | After the initial draft and Week-6 removal, the third contradictory revision brings the paper close to its original careful version. |
 | **Public Record** | 8 | Player desk | The player posts the preprint to The Common Archive. |
 | **Helpful Comments** | 10 | Player desk and PI office | The player receives the editor letter and three reports. Elena calls the demands manageable. |
 | **A Reasonable Response** | 14 | Player desk and PI office | The player chooses a defensible response, Elena's stronger response, or withdrawal. |
@@ -161,6 +161,12 @@ all concerns, even where the reports conflict.
 | Reviewer 1 | Enthusiastic about the observation; asks for clearer batch evidence. | Wording and examples respond to visible evidence quality. |
 | Reviewer 2 | Sees assay value; requires the oxygen-loss challenge and careful claims. | The strength of the request responds to claim level and support. |
 | Reviewer 3 | Calls laser injury artificial and the repair state a stress response. | Can identify a visible mismatch, but has no hidden knowledge of fabrication. |
+
+Each report has one base form and one conditional form. Reviewer 1 changes
+with batch-evidence quality. Reviewer 2 changes with claim strength and scope.
+Reviewer 3 changes only when a visible record mismatch exists. A reviewer has
+no hidden knowledge of an altered or invented reading. The selected form is
+saved and does not change after reload.
 
 `PIIM` gives major revisions, not rejection, in Week 10. It has no second full
 review loop. In Week 15, the paper is in one of four states: published,
@@ -248,6 +254,20 @@ Elena can force movement between these forms, then ask for the careful version
 again. She uses the phrase “minor revisions” in Week 1 and Week 7. After the
 formal `PIIM` major-revision decision, she again calls the work minor revisions
 “in the useful sense.”
+
+The initial Week-5 draft is the first claim commitment. The mandatory Week-6
+`MR-TASK-REMOVE-CAUTION` message calls the current careful language too
+defensive and requires one normal manuscript commit. When it becomes due, the
+player cannot begin another time-costing action before resolving it. **What We
+Had** in Week 7 can therefore become due only after both the initial draft and
+Week-6 contradiction are committed. It then asks for the earlier caution to
+return. This task is desk play, not an eighth mandatory scene.
+
+Claim selection remains free. Careful and Strong can satisfy their factual
+board requirements. Inflated cannot receive honest causal support in this
+campaign. It can appear supported only if an altered or unsupported reported
+reading fills the causal slot and no visible record contradicts it. The game
+still permits every claim and uses no moral label.
 
 The protagonist is first author and Elena is senior author. Haoran can earn,
 lose, or be denied co-authorship through the player's choices. Samira must

@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 through R02 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R03 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -62,11 +62,11 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-014 | Evidence | Resolve evidence saturation and reachability | `accepted` |
 | MR-REV-015 | Institutional pressure | Catalogue promised queues, faults, limits, and requests | `accepted` |
 | MR-REV-016 | Experiments | Make experiment stopping legible as triage or accept its current role | `accepted` |
-| MR-REV-017 | Manuscript | Specify manuscript-board behaviour | `unreviewed` |
-| MR-REV-018 | Peer review | Define PIIM response-card satisfaction | `unreviewed` |
-| MR-REV-019 | Manuscript | Decide whether claim level must follow evidence support | `unreviewed` |
-| MR-REV-020 | Peer review | Decide whether reviewer reports respond to result variants | `unreviewed` |
-| MR-REV-021 | Narrative | Author or revise the Week-6 contradictory-revision beat | `unreviewed` |
+| MR-REV-017 | Manuscript | Specify manuscript-board behaviour | `accepted` |
+| MR-REV-018 | Peer review | Define PIIM response-card satisfaction | `accepted` |
+| MR-REV-019 | Manuscript | Decide whether claim level must follow evidence support | `accepted` |
+| MR-REV-020 | Peer review | Decide whether reviewer reports respond to result variants | `accepted` |
+| MR-REV-021 | Narrative | Author or revise the Week-6 contradictory-revision beat | `accepted` |
 | MR-REV-022 | Integrity | Decide whether hidden misconduct needs a non-route counter-cost | `unreviewed` |
 | MR-REV-023 | Integrity | Define a visible evidence concern | `unreviewed` |
 | MR-REV-024 | Integrity | Resolve deferral versus denial in concern scenes | `unreviewed` |
@@ -96,7 +96,7 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-048 | Documentation | Align non-interactive scene-time values | `unreviewed` |
 | MR-REV-049 | Fallback | Qualify the six-template requirement for fallback | `unreviewed` |
 | MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `unreviewed` |
-| MR-REV-051 | Content | Add required reason and forecast strings within the word cap | `unreviewed` |
+| MR-REV-051 | Content | Add required reason and forecast strings within the word cap | `accepted` |
 | MR-REV-052 | Camila | Specify video-call presentation | `unreviewed` |
 | MR-REV-053 | Protected design | Preserve the shared do-not-normalize constraints | `protected` |
 | MR-REV-054 | Aesthetic context | Preserve the system's player-facing procedural integrity | `accepted` |
@@ -169,5 +169,27 @@ Discuss entries in dependency order, not numerical order:
   and elapsed work, preserves earlier archived records, creates no evidence
   card, and identifies a relevant expiring opportunity.
 
-No implementation is authorized. R03 is next: `MR-REV-017`–`021` and
-`MR-REV-051`. Five review blocks remain, R03 through R07.
+### R03 — Manuscript and peer review
+
+- `MR-REV-017`: use a fixed manuscript board with claim, figure/evidence,
+  control, caveat, authorship, supplementary, and request positions. Show
+  factual support requirements and allow incomplete commits.
+- `MR-REV-018`: define Met, Partly Met, and Not Met for batch, oxygen, and
+  claim-scope cards. Honest missing-result statements can satisfy the Citation
+  transparency path but do not improve the paper card.
+- `MR-REV-019`: keep every claim selectable. Careful and Strong can satisfy
+  visible support rules. Honest Inflated cannot satisfy causal support; a
+  changed or unsupported reading can appear to satisfy it when no visible
+  contradiction exists.
+- `MR-REV-020`: give each reviewer one base and one visible-state conditional
+  form, selected and saved when **Helpful Comments** begins.
+- `MR-REV-021`: add mandatory Week-6 `MR-TASK-REMOVE-CAUTION` through the
+  existing manuscript action. **What We Had** requires both earlier commits.
+  The added period and energy make the thorough-honest fixture exceed both
+  pressure profiles under optimistic assumptions.
+- `MR-REV-051`: require a fixed forecast key for every meaningful action and a
+  fixed reason key for every material effect. The 6,000-word limit applies to
+  the actual build-specific English file; excluded content is not bundled.
+
+No implementation is authorized. R04 is next and covers integrity,
+complicity, and fallback findings. Four review blocks remain, R04 through R07.

@@ -27,10 +27,13 @@ The full game has:
 | Institutional Citations | 12 | All 12 |
 | Environmental text items | 30 | 20 selected items; no required fact depends on them |
 
-The released English text must contain no more than 6,000 unique words. Count
-words after lowercasing strings.en.json. Count names and contractions as words.
-Ignore identifiers, markup, and punctuation. This document is below that
-limit; the later content check must measure the generated string file.
+The shipped English text must contain no more than 6,000 unique words. Count
+words after lowercasing the build-specific strings.en.json. Count names and
+contractions as words. Ignore identifiers, markup, and punctuation. A full
+build counts all full-build strings. A fallback build contains and counts only
+its selected content; excluded content is not bundled as unused text. This
+document is below the limit; the later content check must measure the generated
+string file for the build that will ship.
 
 The fallback is a coherent 90-minute game, not a damaged full game. It keeps
 the complete five-act story, all mandatory scenes, all ending types, and the
@@ -138,6 +141,62 @@ matching text keys:
 | action.roomWait.label | Wait for the stated room response |
 | action.break.label | Take a protected break |
 
+Each action object uses the following exact forecast key. Time and energy are
+separate structured fields beside this text.
+
+| Action ID | Forecast key | Initial English text |
+|---|---|---|
+| MR-ACT-SAMPLE-CONFIGURE | forecast.sampleConfigure | This creates one active sample plan and applies the shown preparation factors. |
+| MR-ACT-START-FOCUSED | forecast.startFocused | This starts the selected experiment and locks its saved variation. |
+| MR-ACT-START-INTENSE | forecast.startIntense | This starts the selected intensive experiment and locks its saved variation. |
+| MR-ACT-MONITOR-ROUTINE | forecast.monitorRoutine | This records the current monitoring choice or stops the active run. |
+| MR-ACT-MONITOR-QUALITY | forecast.monitorQuality | This improves the shown observation coverage or removes one eligible issue. |
+| MR-ACT-ANALYSE | forecast.analyse | This archives the raw record and requires one reading and caveat. |
+| MR-ACT-REPORT-ELENA | forecast.reportElena | This reports the current request result and changes the shown PI response. |
+| MR-ACT-MANUSCRIPT-DRAFT | forecast.manuscriptDraft | This creates the first committed manuscript arrangement. |
+| MR-ACT-MANUSCRIPT-COMMIT | forecast.manuscriptCommit | This stores the shown arrangement and unmet requirements as a new permanent snapshot. |
+| MR-ACT-PIIM-COMMIT | forecast.piimCommit | This commits the shown PIIM response or withdrawal and changes the paper path. |
+| MR-ACT-CAREER-FOCUSED | forecast.careerFocused | This completes the shown career task before its deadline. |
+| MR-ACT-RELATIONSHIP | forecast.relationship | This completes the shown conversation and stores its relationship result. |
+| MR-ACT-ROOM-WAIT | forecast.roomWait | This advances one period and restores the stated normal room access. |
+| MR-ACT-BREAK | forecast.break | This advances one period and restores the stated energy. |
+
+Every material effect selects one of these fixed reason keys. Content can show
+the separate character, amount, card, or route label beside the reason. It
+cannot insert those values into generated prose.
+
+| Reason key | Initial English text |
+|---|---|
+| reason.time.action | Time changed because you completed the confirmed action. |
+| reason.time.scene | Time changed because the required scene ended. |
+| reason.energy.work | Energy changed because the confirmed work used it. |
+| reason.energy.break | Energy changed because the protected break ended. |
+| reason.energy.crash | Energy changed after the involuntary crash. |
+| reason.band.sample | Preparation changed because of the visible sample condition. |
+| reason.band.equipment | Preparation changed because of the visible equipment state. |
+| reason.band.choice | Preparation changed because of the selected experiment choice. |
+| reason.band.monitor | Preparation changed because of the monitoring result. |
+| reason.band.stabilized | Preparation improved because the stabilizing action removed one eligible issue. |
+| reason.evidence.result | Evidence changed because an archived result supports the packet. |
+| reason.evidence.limited | Evidence did not increase because the archived result does not add support. |
+| reason.pi.complete | PI confidence changed because the active request was answered. |
+| reason.pi.partial | PI confidence changed because the active request was only partly answered. |
+| reason.pi.missed | PI confidence changed because the active request expired or was refused. |
+| reason.pi.claim | PI confidence changed because the manuscript claim changed. |
+| reason.integrity.omission | Integrity changed because valid evidence was omitted from the reported record. |
+| reason.integrity.alteration | Integrity changed because the reported reading no longer matches the raw record. |
+| reason.integrity.unsupported | Integrity changed because an unsupported reading was added. |
+| reason.integrity.correction | Integrity changed because the current reported record was corrected. |
+| reason.trust.help | Working trust changed because the confirmed choice provided help or credit. |
+| reason.trust.refuse | Working trust changed because the confirmed choice refused help, access, or credit. |
+| reason.trust.ignore | Working trust changed because a direct request expired without a response. |
+| reason.route.requirement | Route status changed because a visible requirement was met or missed. |
+| reason.route.closed | This route closed because the stated irreversible condition occurred. |
+| reason.paper.requirement | The manuscript state changed because its visible support requirements changed. |
+| reason.paper.commit | The manuscript state changed because a revision was committed. |
+| reason.paper.response | The paper state changed because the PIIM response band resolved. |
+| reason.opportunity.expired | This opportunity expired at its stated deadline. |
+
 `MR-ACT-BREAK` selects the string for the current act. It has no random result
 and never changes a relationship, route, evidence, integrity, or PI confidence.
 
@@ -192,6 +251,7 @@ The following exact labels and instructions apply to every experiment view:
 | task.batchCheck | Check one additional tissue batch. |
 | task.repairState | Read the repair-state signal with structure and rhythm. |
 | task.manuscript | Draft the paper with the packet that exists, not the packet that would be convenient. |
+| task.removeCaution | Remove the cautious wording because it makes the result look too defensive. |
 | task.preprint | Post the current manuscript to The Common Archive. |
 | task.morrowReply | Reply to Camila before the conversation window closes. |
 | task.researchPlan | Complete the five-year research plan before Week 12. |
@@ -203,6 +263,34 @@ The following exact labels and instructions apply to every experiment view:
 | manuscript.requirements.title | Active requirements |
 | manuscript.requirements.missing | The current draft has a visible evidence or authorship gap. |
 | manuscript.requirements.commit | Commit this revision? The record cannot be restored from an earlier snapshot. |
+| manuscript.lane.claim | Claim |
+| manuscript.lane.figure | Figures and linked evidence |
+| manuscript.lane.control | Controls |
+| manuscript.lane.caveat | Caveat |
+| manuscript.lane.authorship | Authorship |
+| manuscript.lane.supplementary | Supplementary material |
+| manuscript.lane.request | Active request |
+| manuscript.requirement.met | Met |
+| manuscript.requirement.missing | Missing |
+| manuscript.requirement.conflict | Conflict |
+| manuscript.requirement.unsupported | Unsupported |
+| manuscript.requirement.careful | Careful needs one supported figure, one relevant control, and one caveat. |
+| manuscript.requirement.strong | Strong needs two supported figures from different experiments, structure and rhythm coverage, one matched control, and one caveat. |
+| manuscript.requirement.inflated | Inflated also needs causal support. The current honest record does not provide it. |
+| piim.card.batch | Batch evidence |
+| piim.card.oxygen | Oxygen-loss challenge |
+| piim.card.claim | Claim scope and reviewer response |
+| piim.status.met | Met |
+| piim.status.partial | Partly Met |
+| piim.status.notMet | Not Met |
+| piim.reason.usable | A relevant Usable record, control, and caveat are included. |
+| piim.reason.limited | A valid limited record and its caveat are included. |
+| piim.reason.absent | The required record is absent from the response. |
+| piim.reason.omitted | The available record was omitted from the response. |
+| piim.reason.contradiction | A visible contradiction remains in the response. |
+| piim.reason.claimMet | The selected claim meets its visible board requirements. |
+| piim.reason.claimPartial | The selected claim has one stated missing support requirement. |
+| piim.reason.claimNotMet | The selected claim has two missing requirements, unsupported causal scope, or a visible contradiction. |
 
 ## Selection, variants, and repeat prevention
 
@@ -267,6 +355,7 @@ The work items are:
 | MR-TASK-BATCH-CHECK | Check a second tissue batch | W3–W6 | Laser/sham analysis | Enables batch record and later PIIM card | task.batchCheck | MR-TEST-EXP-001 |
 | MR-TASK-REPAIR-STATE | Read the repair-state signal carefully | W4–W6 | Damage-range analysis | Enables repair-state record | task.repairState | MR-TEST-EXP-001 |
 | MR-TASK-MANUSCRIPT | Draft the paper with the current packet | W5–W7 | A Complete Narrative | Requires MR-ACT-MANUSCRIPT-DRAFT | task.manuscript | MR-TEST-NARR-001 |
+| MR-TASK-REMOVE-CAUTION | Remove cautious wording | W6; due at first safe point after the initial draft | Initial manuscript commit | Requires MR-ACT-MANUSCRIPT-COMMIT; stores first contradictory revision | task.removeCaution | MR-TEST-NARR-001 |
 | MR-TASK-PREPRINT | Commit and post the preprint | W8 only | Manuscript draft | Sets public-record state | task.preprint | MR-TEST-NARR-001 |
 | MR-TASK-MORROW-REPLY | Reply to Camila | W8–W10 | Morrow initial contact | Opens video-call eligibility | task.morrowReply | MR-TEST-CHAR-001 |
 | MR-TASK-RESEARCH-PLAN | Draft five-year research plan | W8–W11 | Manuscript draft | Required for Aldercroft eligibility | task.researchPlan | MR-TEST-CHAR-001 |
@@ -278,6 +367,30 @@ MR-FB-EXP-RANGE-REPAIR. It uses one combined qualitative result: a clear,
 mixed, or weak relation between recovery and repatterning. It has no separate
 causal claim and creates MR-FB-REC-RANGE-REPAIR. It is not a seventh
 full-game template.
+
+### Manuscript and PIIM board rules
+
+The manuscript board has one Claim position, three Figure positions with one
+Evidence card each, two Control positions, one Caveat strip, one Authorship
+position, one Supplementary position, and one Active Request position. Careful
+needs one supported figure, one relevant control, and one caveat. Strong needs
+two supported figures from different experiments, structure and rhythm
+coverage, one matched control, and one caveat. Inflated also needs causal
+support, which honest campaign evidence cannot provide.
+
+PIIM evaluates batch evidence, oxygen-loss challenge, and claim scope. A
+relevant Usable record with its control and caveat is Met. A valid limited,
+Inconclusive, or Worth repeating record with its caveat is Partly Met. An
+absent, omitted, visibly unsupported, or visibly contradicted record is Not
+Met. Claim scope is Met when Careful or Strong meets all board requirements,
+Partly Met with exactly one stated missing requirement, and Not Met with two
+missing requirements, unsupported Inflated scope, or a visible contradiction.
+
+All three Met gives the top response band. At least one Met with every other
+card Partly Met gives the middle band. Any Not Met, all three only Partly Met,
+or a visible contradiction gives the weak band. A missing result that is
+stated honestly remains Not Met for the paper outcome, but it can satisfy the
+transparent-limit alternative for `MR-CIT-03`.
 
 ## Primary-record catalogue
 
@@ -301,9 +414,9 @@ new primary-record ID.
 | MR-REC-KNOWLEDGE | Journal rejection | W8; permanent | Cosmos delivered | record.knowledge | MR-REQ-NARR-002 / MR-TEST-NARR-001 |
 | MR-REC-DSL | Journal rejection | W9; permanent | Knowledge delivered | record.dsl | MR-REQ-NARR-002 / MR-TEST-NARR-001 |
 | MR-REC-PIIM-RECEIPT | PIIM receipt | W9; permanent | DSL delivered | record.piimReceipt | MR-REQ-NARR-002 / MR-TEST-NARR-001 |
-| MR-REC-REVIEWER-1 | Reviewer 1 report | W10; permanent | Helpful Comments | record.reviewer1 | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
-| MR-REC-REVIEWER-2 | Reviewer 2 report | W10; permanent | Helpful Comments | record.reviewer2 | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
-| MR-REC-REVIEWER-3 | Reviewer 3 report | W10; permanent | Helpful Comments | record.reviewer3 | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
+| MR-REC-REVIEWER-1 | Reviewer 1 report | W10; permanent | Helpful Comments; saved batch condition | record.reviewer1.batchMet or record.reviewer1.batchLimited | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
+| MR-REC-REVIEWER-2 | Reviewer 2 report | W10; permanent | Helpful Comments; saved claim condition | record.reviewer2.boundedClaim or record.reviewer2.broadClaim | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
+| MR-REC-REVIEWER-3 | Reviewer 3 report | W10; permanent | Helpful Comments; saved visible-mismatch condition | record.reviewer3.noMismatch or record.reviewer3.visibleMismatch | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-REC-PIIM-EDITOR | Editor letter | W10; permanent | Reviewer reports | record.piimEditor | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-REC-MORROW-CONTACT | Morrow email thread | W8–W10; permanent after first delivery | Knowledge rejection; expiry can close Morrow | record.morrowContact.initial or record.morrowContact.followUp | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-REC-ALDERCROFT | Aldercroft letter | W13; permanent | Research-plan and route check | record.aldercroft.invitation or record.aldercroft.rejection | MR-REQ-END-001 / MR-TEST-END-001 |
@@ -320,7 +433,7 @@ time is 14 minutes 45 seconds. A 75-second epilogue keeps the total below the
 |---|---:|---:|---|---|---|---|
 | MR-SCN-CLARIFIED | 1 | 2:20 | Game opening | None | One base form | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-SCN-A-COMPLETE-NARRATIVE | 5 | 1:50 | First safe point in W5 | Advance 1, energy 0 | Packet base or low-evidence | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
-| MR-SCN-WHAT-WE-HAD | 7 | 2:10 | First safe point in W7 | Advance 1, energy 0 | Claim-alignment base or conflict | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
+| MR-SCN-WHAT-WE-HAD | 7 | 2:10 | W7 safe point after initial draft and MR-TASK-REMOVE-CAUTION commits | Advance 1, energy 0 | Claim-alignment base or conflict | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-SCN-PUBLIC-RECORD | 8 | 1:15 | Manuscript committed | Advance 1, energy 0 | Careful/strong presentation only | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-SCN-HELPFUL-COMMENTS | 10 | 2:40 | PIIM reports ready | Advance 1, energy 0 | Stronger or weaker evidence wording | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-SCN-A-REASONABLE-RESPONSE | 14 | 2:20 | Response board ready | Advance 1, energy 0; later response action costs 3/2 | One base form | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
@@ -374,12 +487,30 @@ P+5 and default manuscript claim Strong. Both create the same work item.
 Skip recap key: scene.complete.recap — Elena opens manuscript work even though
 the packet remains incomplete.
 
+### MR-TASK-REMOVE-CAUTION
+
+This mandatory Week-6 desk task is not a scene or primary record. It arrives at
+the first safe point after the initial manuscript commit and remains due until
+the player uses `MR-ACT-MANUSCRIPT-COMMIT`. No other time-costing action can
+begin while it is due. The task costs one period and one energy. It stores the
+first contradictory-revision flag. The fixed text is:
+
+| Role | Text key | Initial English text |
+|---|---|---|
+| Elena message | task.removeCaution.message | The wording is too defensive. If the result is real, the sentence should not look frightened of it. |
+| Board instruction | task.removeCaution.instruction | Remove the cautious language from the main claim. |
+| Commit result | task.removeCaution.result | The claim now carries the requested confidence. The earlier version remains in the snapshot history. |
+
+`MR-SCN-WHAT-WE-HAD` cannot become due until the initial manuscript and this
+revision are both committed. It then asks for the earlier caution to return.
+
 ### MR-SCN-WHAT-WE-HAD
 
-Location: shared desks, then PI office. Prerequisite: initial manuscript
-snapshot. Completion requires one MR-ACT-MANUSCRIPT-COMMIT action after the
-scene. The conflict form appears if the last committed claim is Inflated or if
-a visible requirements warning remains.
+Location: shared desks, then PI office. Prerequisites: initial manuscript
+snapshot and committed `MR-TASK-REMOVE-CAUTION`. Completion requires one
+MR-ACT-MANUSCRIPT-COMMIT action after the scene. The conflict form appears if
+the last committed claim is Inflated or if a visible requirements warning
+remains.
 
 | Beat | Speaker | Text key | Base English text |
 |---|---|---|---|
@@ -693,9 +824,12 @@ the locked outcome and can be read again from the desk record.
 | MR-REC-KNOWLEDGE | record.knowledge.body | Decision: decline. The claim is attractive, but direct proof has not yet agreed to exist. We encourage a journal with a more local appetite. |
 | MR-REC-DSL | record.dsl.body | Decision: decline. The observation is strong, but the mechanism remains incomplete. We recommend a venue that values an observation with aspirations. |
 | MR-REC-PIIM-RECEIPT | record.piimReceipt.body | Submission received. The Proceedings of the International Institute of Morphodynamics thanks you for a manuscript that fits our current definition of international. |
-| MR-REC-REVIEWER-1 | record.reviewer1.body | Reviewer 1: The observation is promising. Please clarify whether the batch evidence reflects a repeatable pattern or a single persuasive afternoon. |
-| MR-REC-REVIEWER-2 | record.reviewer2.body | Reviewer 2: The assay may be useful. Please include the oxygen-loss challenge and keep causal language inside the evidence. |
-| MR-REC-REVIEWER-3 | record.reviewer3.body | Reviewer 3: Laser injury is artificial. The reported repair state may be stress with better public relations. Address the mismatch between record and claim. |
+| MR-REC-REVIEWER-1 | record.reviewer1.batchMet | Reviewer 1: The batch comparison is useful. Please state whether repeatability refers to the tissue, the pattern, or the confidence with which the figure uses both. |
+| MR-REC-REVIEWER-1 | record.reviewer1.batchLimited | Reviewer 1: The observation is promising. Please clarify whether the batch evidence reflects a repeatable pattern or a single persuasive afternoon. |
+| MR-REC-REVIEWER-2 | record.reviewer2.boundedClaim | Reviewer 2: The assay may be useful. Please include the oxygen-loss challenge and keep causal language inside the evidence. |
+| MR-REC-REVIEWER-2 | record.reviewer2.broadClaim | Reviewer 2: The manuscript uses supports with the confidence of causes. Please include the oxygen-loss challenge and explain where one verb became the other. |
+| MR-REC-REVIEWER-3 | record.reviewer3.noMismatch | Reviewer 3: Laser injury is artificial. The reported repair state may be stress with better public relations. Please address this alternative. |
+| MR-REC-REVIEWER-3 | record.reviewer3.visibleMismatch | Reviewer 3: The raw record and reported claim do not appear to occupy the same manuscript. Resolve the visible discrepancy. |
 | MR-REC-PIIM-EDITOR | record.piimEditor.body | Editor: The reports are constructive and should all be addressed. Where they conflict, please provide a response that is complete, concise, and persuasive. |
 | MR-REC-MORROW-CONTACT | record.morrowContact.initial | Subject: Your preprint and a possible assay role. We value results that remain useful after their first exciting figure. Would you be open to a short conversation? |
 | MR-REC-MORROW-CONTACT | record.morrowContact.followUp | Subject: Re: Your preprint. I know the semester is busy. If the timing is wrong, a short reply is still useful. |
@@ -710,6 +844,15 @@ The fallback uses record.fallback.rangeRepair.body in place of the separate
 range and repair-state records: Observation: recovery and repatterning move
 together in some conditions and apart in others. Interpretation: the model
 supports a bounded association, not a demonstrated cause.
+
+Reviewer 1 uses `batchMet` only when the submitted batch record is Usable;
+otherwise it uses `batchLimited`. Reviewer 2 uses `boundedClaim` for a Careful
+or Strong claim whose visible requirements are met. It uses `broadClaim`
+otherwise. Reviewer 3 uses `visibleMismatch` only when the report packet
+contains a visible raw-versus-reported conflict; otherwise it uses
+`noMismatch`. Each selected form is saved when **Helpful Comments** begins and
+never rerolls. No reviewer has more than
+two forms or hidden knowledge of fabrication.
 
 ## Environmental-text catalogue
 
@@ -982,6 +1125,8 @@ MR-TEST-CONT-001 must prove all of the following before a release candidate:
 
 - every stable content ID is unique and matches its prefix;
 - every referenced text key exists exactly once in strings.en.json;
+- every meaningful action has one forecast key and every material effect has a
+  valid fixed reason key;
 - every required content object links to a requirement and test ID;
 - every dependency, window, expiry, and effect references a valid object;
 - every one-time object has a saved completion or expiry state;
@@ -989,12 +1134,19 @@ MR-TEST-CONT-001 must prove all of the following before a release candidate:
   fallback, and at least two valid routes with different stated costs;
 - every optional desk item refers to a defined character, career, wording, or
   room-state object;
+- `MR-TASK-REMOVE-CAUTION` uses the existing manuscript action, and **What We
+  Had** requires both earlier manuscript commits;
+- each reviewer has exactly two valid, saved forms and no hidden-state
+  condition;
+- all three claim levels and PIIM cards resolve through their stated factual
+  requirements without blocking a deliberate incomplete commit;
 - the full-game counts are 6, 3, 7, 10, 20, 29, 12, and 30 in the order stated
   at the start of this document;
 - the fallback selection exactly matches its stated cut line;
 - no text claims that the repair state causes recovery;
 - no text contains actionable laboratory instructions; and
-- the measured unique English-word count is no more than 6,000.
+- the build-specific English file excludes content outside that build, and its
+  measured unique English-word count is no more than 6,000.
 
 MR-TEST-NARR-001, MR-TEST-CHAR-001, MR-TEST-EXP-001, MR-TEST-END-001, and
 MR-TEST-WORLD-001 test the reachable conditional paths. The complete

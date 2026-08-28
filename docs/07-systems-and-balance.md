@@ -94,13 +94,13 @@ batch check, and repair-state work.
 | Analyse | 5 | 6 | 10 |
 | Report to Elena | 5 | 5 | 6 |
 | Initial manuscript draft | 1 | 1 | 1 |
-| PI revision or preprint commit | 2 | 2 | 2 |
+| PI revision or preprint commit | 3 | 3 | 3 |
 | PIIM response commit | 1 | 1 | 1 |
 | Research-plan or Morrow video action | 1 | 2 | 2 |
 | Morrow or local relationship action | 0 | 7 | 9 |
 | Mandatory scene period advances | 5 | 5 | 5 |
-| **Non-break period demand** | **43** | **55** | **78** |
-| **Energy before late-work surcharge** | **25** | **29** | **45** |
+| **Non-break period demand** | **44** | **56** | **79** |
+| **Energy before late-work surcharge** | **26** | **30** | **46** |
 
 The minimum fixture completes the five required experiment templates, their
 reports, the required manuscript path, and the Aldercroft research plan. The
@@ -117,19 +117,19 @@ can need more breaks, not fewer.
 
 | Fixture | Standard breaks | Standard total / slack | Supported breaks | Supported total / slack |
 |---|---:|---:|---:|---:|
-| Minimum defensible | 11 | 54 / 10 | 7 | 50 / 14 |
-| Thorough honest | 13 | 68 / -4 | 8 | 63 / 1 |
-| Maximizing | 21 | 99 / -35 | 14 | 92 / -28 |
+| Minimum defensible | 11 | 55 / 9 | 7 | 51 / 13 |
+| Thorough honest | 13 | 69 / -5 | 9 | 65 / -1 |
+| Maximizing | 21 | 100 / -36 | 14 | 93 / -29 |
 
 The result does not confirm the earlier balance claim. The minimum route fits
-both profiles. The thorough-honest fixture cannot fit Standard even under the
-optimistic assumptions. It fits Supported with only one period of theoretical
-slack. Maximizing all systems is deliberately impossible. No reward, route
-threshold, or non-break action cost changes in R01. R01 changes the former
-tiered Standard-break rule to flat two-segment recovery. A later balance
-decision must reduce thorough-honest demand, change recovery, change the
-intended scope of that archetype, or explicitly accept that Standard requires
-sacrifice.
+both profiles. The thorough-honest fixture cannot fit either profile even
+under the optimistic assumptions. The mandatory Week-6 revision added in R03
+uses the existing one-period, one-energy manuscript action. It removes
+Supported's former one-period theoretical slack. Maximizing all systems is
+deliberately impossible. No reward, route threshold, or action price changes
+in this audit. A later balance decision must reduce demand, change recovery,
+change the intended scope of the thorough-honest archetype, or explicitly
+accept that it requires sacrifice in both profiles.
 
 Evidence reachability also remains unpriced, but its current bounds are now
 explicit:
@@ -415,16 +415,32 @@ authorship, request, and supplementary cards. The player connects cards to
 figures and claims rather than typing a paper. Analysis creates evidence cards
 with research-question, control, evidence-view, quality, and caveat tags.
 
+The board has one claim slot, three figure slots with one linked evidence card
+each, two control slots, one caveat strip, one authorship slot, one
+supplementary slot, and one active-request slot. The caveat must come from an
+included evidence card. A card can occupy only one board position in a commit.
+
+| Claim | Factual support requirements |
+|---|---|
+| Careful | One supported figure/evidence pair, one relevant control, and one selected caveat. |
+| Strong | Two supported pairs from different templates, structure and rhythm coverage, one matched control, and one selected caveat. |
+| Inflated | Every Strong requirement plus causal support. Honest campaign evidence cannot fill the causal requirement. |
+
+An altered or unsupported reported reading can appear to fill the Inflated
+causal requirement if no visible record contradicts it. This changes the
+reported board, not the locked raw record or integrity history.
+
 Each PI or reviewer request creates a small revision task. The player can
 support it with evidence, soften wording, defer it, omit evidence, or request
 another experiment. The response affects time, coherence, PI confidence,
 evidence alignment, relationships, or integrity. The repair-state claim still
 has careful, strong, and inflated levels.
 
-A requirements panel lists active requests, missing controls, conflicting
-claims, and authorship obligations. It warns about a weak or compromised draft
-but does not prevent a deliberate choice, except where the campaign requires a
-submission, response, or withdrawal.
+A requirements panel lists every slot and active request as met, missing,
+conflict, or unsupported. It also lists authorship obligations. These are
+factual support states, not moral labels. The panel never prevents a commit,
+except where the campaign requires the player to choose submission, response,
+or withdrawal before the fixed gate can continue.
 
 A change becomes permanent only when the player commits a revision. The commit
 creates a visible version snapshot. Leaving the board before a commit discards
@@ -462,15 +478,25 @@ validation, migration, and recovery.
 ## PIIM response band
 
 PIIM has three visible response cards: batch evidence, oxygen-loss challenge,
-and claim scope and reviewer response. Each card is met, partly met, or not
-met. The manuscript board shows the current reason. A strong but overstated
-claim can weaken the claim-scope card even where the result looks impressive.
+and claim scope and reviewer response. Each card is Met, Partly Met, or Not
+Met. The manuscript board shows the current reason.
+
+| Response card | Met | Partly Met | Not Met |
+|---|---|---|---|
+| Batch evidence | A relevant Usable batch record with its control and caveat is included. | A valid limited, Inconclusive, or Worth repeating batch record is included with its limitation. | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
+| Oxygen-loss challenge | A relevant Usable oxygen-loss record with its control and caveat is included. | A valid limited, Inconclusive, or Worth repeating oxygen-loss record is included with its limitation. | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
+| Claim scope and reviewer response | The selected Careful or Strong claim meets all board requirements. | A Careful or Strong claim has exactly one missing support requirement and states that limitation. | Two or more requirements are missing, an honest Inflated claim lacks causal support, or a visible contradiction remains. |
+
+An altered or invented reading can make a response card appear Met if it fills
+the visible requirement and no visible record contradicts it. This does not
+restore integrity. Clearly stating that a missing result is absent keeps its
+card Not Met, but can satisfy the separate `MR-CIT-03` transparency trigger.
 
 | Earned response band | Week 15 paper state |
 |---|---|
-| All three cards met and no visible evidence contradiction | Published or accepted pending final work |
-| Mixed cards | Accepted pending final work or under review |
-| Weak or mismatched cards | Under review or rejected |
+| All three cards Met and no visible evidence contradiction | Published or accepted pending final work |
+| At least one card Met, all other cards Partly Met, and no visible contradiction | Accepted pending final work or under review |
+| Any card Not Met, all three cards only Partly Met, or a visible contradiction | Under review or rejected |
 | Journal or public-record withdrawal | Rejected or withdrawn |
 
 The stored seed chooses only between the adjacent outcomes in the earned band.

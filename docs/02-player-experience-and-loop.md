@@ -242,9 +242,28 @@ defined in `11-technical-architecture.md`.
 
 ## Other play modes
 
-- The manuscript is managed through an interactive revision board, not a
-  simulated word processor. Sections, figures, claims, and supplementary items
-  respond to contradictory requests and retain visible revision history.
+The manuscript is managed through an interactive revision board, not a
+simulated word processor. It has one claim slot, three figure slots with one
+linked evidence card each, two control slots, one selected caveat strip, one
+authorship slot, one supplementary slot, and one active-request slot. Unused
+slots stay visible.
+
+The player selects a claim, connects available cards, selects a caveat from an
+included evidence card, resolves authorship where needed, and reviews the
+requirements panel. Careful needs one supported figure/evidence pair, one
+relevant control, and one caveat. Strong needs two supported pairs from
+different templates, structure and rhythm coverage, one matched control, and
+one caveat. Inflated adds a causal-support requirement that honest campaign
+evidence cannot fill.
+
+The requirements panel uses factual states: met, missing, conflict, or
+unsupported. It never calls a choice correct, wrong, good, or bad. The player
+can commit with unmet requirements. A commit stores the complete arrangement,
+requirements state, reported readings, omissions, authorship, and current
+request. Earlier snapshots remain readable but are not free undo.
+
+- Sections, figures, claims, and supplementary items respond to contradictory
+  requests and retain visible revision history.
 - Dialogue and action choices express priorities, integrity, relationships,
   and coping style without constructing wholly different protagonists.
 - Email, notices, and environmental changes convey the wider institution.

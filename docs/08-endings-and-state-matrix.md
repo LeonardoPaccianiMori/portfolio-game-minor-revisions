@@ -76,20 +76,28 @@ each relevant route deadline.
 ## B05 PIIM response contract
 
 PIIM has three visible response cards: batch evidence, oxygen-loss challenge,
-and claim scope and reviewer response. Each is met, partly met, or not met.
-The manuscript board explains the current state.
+and claim scope and reviewer response. Each is Met, Partly Met, or Not Met.
+The manuscript board explains the current state. Batch and oxygen cards are
+Met by an included relevant Usable record, Partly Met by an included valid
+limited record with its caveat, and Not Met when absent, omitted, visibly
+unsupported, or visibly contradicted. Claim scope uses the approved Careful,
+Strong, and Inflated board requirements in `07-systems-and-balance.md`.
 
 | Response band | Possible Week 15 state |
 |---|---|
-| All cards met with no visible evidence contradiction | Published or accepted pending final work |
-| Mixed cards | Accepted pending final work or under review |
-| Weak or mismatched cards | Under review or rejected |
+| All three cards Met with no visible evidence contradiction | Published or accepted pending final work |
+| At least one card Met, all other cards Partly Met, and no visible contradiction | Accepted pending final work or under review |
+| Any card Not Met, all three cards only Partly Met, or a visible contradiction | Under review or rejected |
 | Journal or public-record withdrawal | Rejected or withdrawn |
 
 The stored campaign seed selects only between adjacent outcomes in the earned
 response band. It cannot turn strong work into rejection or weak work into
 publication. An altered or invented report can appear to meet a card if no
 visible record contradicts it, but does not restore integrity.
+
+An honest statement that a result is absent keeps the related response card
+Not Met. It can still satisfy the separate transparent-limit path for
+`MR-CIT-03`. Therefore the Citation does not change the paper outcome.
 
 ## B06 final-state and compatibility contract
 

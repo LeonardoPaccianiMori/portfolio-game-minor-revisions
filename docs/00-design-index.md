@@ -27,7 +27,7 @@ gaps. It does not mean that the domain is finished.
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
 | `reviews/2026-08-28-opus-5-holistic/` | Holistic Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R02 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
+| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R03 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -70,9 +70,11 @@ status, and the next place to resume.
   and open prototype or later-balance conditions recorded. R02 is documented:
   `MR-REV-008`–`013` and `MR-REV-015`–`016` now define experiment resolution,
   evidence quality, interpretation, station texture, operational room states,
-  and stop triage.
-- Next action: discuss R03, covering `MR-REV-017` through `MR-REV-021` and
-  `MR-REV-051`. Five review blocks remain: R03 through R07. Only after all
+  and stop triage. R03 is documented: `MR-REV-017`–`021` and `MR-REV-051`
+  define manuscript-board behaviour, PIIM card rules, claim support, reviewer
+  variants, the Week-6 contradiction, and forecast and reason text.
+- Next action: discuss R04, covering integrity, complicity, and fallback
+  findings. Four review blocks remain: R04 through R07. Only after all
   review blocks are resolved can Leonardo
   separately consider implementation approval. Do not start implementation
   work.

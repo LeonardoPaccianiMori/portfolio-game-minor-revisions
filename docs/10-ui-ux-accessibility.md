@@ -68,6 +68,18 @@ equipment remotely. Every received message remains in a readable inbox.
 Important messages state their deadline and time cost. The notebook, inbox,
 and Research Status give context, not a permanent quest-arrow system.
 
+The manuscript focused view shows fixed labelled positions: Claim, three
+Figures with linked Evidence, two Controls, Caveat, Authorship, Supplementary,
+and Active Request. Empty positions remain visible. Selecting a card shows its
+source, quality, caveat, and current connections. Ordinary select, confirm,
+back, and comparison controls cover all board work; dragging is never required.
+
+The requirements panel lists each rule as Met, Missing, Conflict, or
+Unsupported and gives a plain-language reason. It does not use a moral label or
+block a deliberate incomplete commit. Before confirmation, it shows the
+one-period and one-energy cost, unmet requirements, record changes, authorship
+changes, and irreversible integrity action, if present.
+
 The interface follows the fair-rules principle in `01-vision-and-pillars.md`.
 It states known costs, deadlines, expiry, and irreversible consequences. It
 does not reveal deliberately hidden formulas, flags, or uncertain outcomes,
