@@ -68,6 +68,18 @@ regenerative treatment.
 | 15 | Competing futures | `PIIM` gives its final state. Morrow makes an eligible player a formal offer. Elena reacts privately. |
 | 16 | Decision | **06:42** moves from the research floor to the exit and the final career choice. |
 
+Weeks 8 and 9 deliberately have no open experiment template. This is not idle
+time. Play shifts from laboratory work to the preprint, journal rejections,
+manuscript administration, career tasks, and relationships. The batch window
+still ends in Week 6. This change of rhythm separates the first experiment
+cycle from the reviewer-driven cycle that starts in Week 10.
+
+Weeks 15 and 16 deliberately use emptier rooms and fewer demands. This quiet
+tail supports the final choice, but it must not force the player to wait with
+no safe way to advance. The private campaign prototype must test this point.
+Do not add a reward-generating period sink or filler relationship action before
+that evidence exists.
+
 ## Mandatory scenes
 
 | Scene | Week | Primary location | Required narrative function |

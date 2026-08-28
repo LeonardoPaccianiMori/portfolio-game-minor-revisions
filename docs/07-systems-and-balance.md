@@ -58,24 +58,97 @@ people and shared services. Exact schedules are in
 `06-world-and-level-design.md`.
 
 Standard profile starts with four energy segments. Supported starts with five,
-removes the late-work energy surcharge, restores three segments through each
-protected break, and gives an extra clear warning before a gate or irreversible
-choice. Both profiles have the same calendar, narrative, routes, and endings.
-Supported has no stigma or content penalty.
+removes the night and after-hours energy surcharge, and restores three segments
+through each protected break. Both profiles receive the same clear warnings.
+They have the same calendar, narrative, routes, endings, period costs, deadlines, and
+expiry rules. Supported changes the pressure structure as well as tolerance;
+it has no stigma or content penalty.
 
-In Standard profile, the first protected break in a week costs one period and
-restores two segments. Later protected breaks cost one period and restore one.
+`MR-ACT-BREAK` costs one period and no energy. Every Standard break restores
+two segments. Every Supported break restores three. Breaks are not capped per
+week, and restoration cannot exceed five segments.
 At zero energy, the player can push through one focused or intense task. At its
 next safe point, the protagonist crashes, loses one further work period,
 restores two segments, and misses any monitoring window that passed during the
 crash. A crash can damage evidence, lose optional content, or close a route. It
 cannot begin during manual equipment interaction or a cutscene.
 
-A defensible route needs about 48–52 productive periods. A normal run with a
-repeat, relationship work, or recovery needs about 52–56. A high-evidence
-paper path can use 58–62. No viable route requires a crash. A player risks a
-crash by trying to maximize evidence, PI confidence, relationships, and both
-career routes in one run.
+The earlier estimates of 48–52, 52–56, and 58–62 productive periods are
+superseded by the R01 audit below. The approved action catalogue does not yet
+support those estimates.
+
+## R01 period, energy, and evidence audit
+
+This paper audit closes the previously undefined action counts. It is a design
+fixture, not measured play evidence. Each count uses only an approved action.
+Every run has one monitoring action, except oxygen loss, which has two. The
+maximizing fixture uses the one allowed repeat of laser/sham, damage range,
+batch check, and repair-state work.
+
+| Action | Minimum defensible | Thorough honest | Maximizing |
+|---|---:|---:|---:|
+| Configure sample group | 5 | 6 | 10 |
+| Start focused experiment | 2 | 3 | 3 |
+| Start intense experiment or repeat | 3 | 3 | 7 |
+| Monitor | 6 | 7 | 11 |
+| Analyse | 5 | 6 | 10 |
+| Report to Elena | 5 | 5 | 6 |
+| Initial manuscript draft | 1 | 1 | 1 |
+| PI revision or preprint commit | 2 | 2 | 2 |
+| PIIM response commit | 1 | 1 | 1 |
+| Research-plan or Morrow video action | 1 | 2 | 2 |
+| Morrow or local relationship action | 0 | 7 | 9 |
+| Mandatory scene period advances | 5 | 5 | 5 |
+| **Non-break period demand** | **43** | **55** | **78** |
+| **Energy before late-work surcharge** | **25** | **29** | **45** |
+
+The minimum fixture completes the five required experiment templates, their
+reports, the required manuscript path, and the Aldercroft research plan. The
+thorough-honest fixture also completes drug work, both career preparations,
+and seven selected relationship actions. The maximizing fixture completes all
+six templates, all four permitted repeats, both career preparations, and all
+nine time-costing non-video relationship contacts. It is demand analysis, not
+a promise that every item can fit its content window.
+
+The break counts below are optimistic lower bounds. They assume that every
+restored segment is useful, assign no focused or intense action to night or
+after-hours, and ignore the five-segment cap between actions. A real schedule
+can need more breaks, not fewer.
+
+| Fixture | Standard breaks | Standard total / slack | Supported breaks | Supported total / slack |
+|---|---:|---:|---:|---:|
+| Minimum defensible | 11 | 54 / 10 | 7 | 50 / 14 |
+| Thorough honest | 13 | 68 / -4 | 8 | 63 / 1 |
+| Maximizing | 21 | 99 / -35 | 14 | 92 / -28 |
+
+The result does not confirm the earlier balance claim. The minimum route fits
+both profiles. The thorough-honest fixture cannot fit Standard even under the
+optimistic assumptions. It fits Supported with only one period of theoretical
+slack. Maximizing all systems is deliberately impossible. No reward, route
+threshold, or non-break action cost changes in R01. R01 changes the former
+tiered Standard-break rule to flat two-segment recovery. A later balance
+decision must reduce thorough-honest demand, change recovery, change the
+intended scope of that archetype, or explicitly accept that Standard requires
+sacrifice.
+
+Evidence reachability also remains unpriced, but its current bounds are now
+explicit:
+
+- the campaign starts at 3, so Thin is not reachable because raw support never
+  decreases;
+- five required usable results give 10 more points and reach the cap of 12;
+- five useful partial results give 5 more points and end at 8, Coherent;
+- five inconclusive results give no points and end at 3, Developing;
+- the optional drug result can add 0, 1, or 2, and Samira's usable evidence can
+  add 1; and
+- four permitted repeats can add between 0 and 4 in total, but the current
+  text does not say whether “first repeat” means per template or per campaign.
+
+Therefore, required strong work can reach Substantial without optional work,
+while required partial work reaches Coherent. The four packet labels do not
+currently create four reachable experiences. R01 does not change starting
+support or reward values. Repeat yield and any evidence re-pricing require a
+later explicit balance decision after R02 defines result and quality rules.
 
 ## B07 period schedule and spatial event rules
 

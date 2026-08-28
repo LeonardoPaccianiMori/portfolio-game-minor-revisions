@@ -118,6 +118,8 @@ belongs in the numbered design documents.
 | 2026-08-28 | Protect the review's shared do-not-normalize constraints while keeping production limits deliberately reopenable; do not use this protection to decide the still-open non-moral consequences of hidden misconduct. | Confirmed |
 | 2026-08-28 | Use the explicit principle “fair rules, unfair institution”: state known costs, deadlines, expiry, and irreversible consequences, while preserving deliberate uncertainty without misleading interface behaviour. | Confirmed |
 | 2026-08-28 | Treat behavioural predictions from document review as hypotheses until an approved private prototype or game evaluation provides evidence. | Confirmed |
+| 2026-08-28 | Resolve R01: add `MR-ACT-BREAK`; use uncapped flat recovery of two energy in Standard and three in Supported; make warnings universal; set one monitoring window per normal run and two for oxygen loss; retain the Week 8–9 laboratory pause; and keep the late quiet tail under a required prototype check. | Confirmed; later balance and prototype conditions remain |
+| 2026-08-28 | Record the R01 64-period and evidence-reachability audit. It does not validate the existing thorough-honest Standard balance or justify evidence re-pricing. | Confirmed finding; later balance decision required |
 
 ## Rules for future entries
 

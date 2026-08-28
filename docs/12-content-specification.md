@@ -107,6 +107,7 @@ choice never silently spends time. The main action IDs and costs are fixed:
 | MR-ACT-PIIM-COMMIT | Commit PIIM response or withdrawal | 3 | 2 | MR-REQ-NARR-001 | MR-TEST-NARR-001 |
 | MR-ACT-CAREER-FOCUSED | Complete research plan or Morrow video call | 1 | 1 | MR-REQ-CHAR-001 | MR-TEST-CHAR-001 |
 | MR-ACT-RELATIONSHIP | Reply to Morrow or complete local optional scene | 1 | 0 | MR-REQ-CHAR-001 | MR-TEST-CHAR-001 |
+| MR-ACT-BREAK | Take a protected break | 1 | 0 | MR-REQ-LOOP-001 | MR-TEST-EXP-001 |
 
 The five middle mandatory scenes advance one period without energy cost.
 Clarified and 06:42 have no separate period cost. The controller shows the
@@ -131,6 +132,18 @@ matching text keys:
 | action.piimCommit.label | Commit PIIM response |
 | action.careerFocused.label | Complete career action |
 | action.relationship.label | Continue conversation |
+| action.break.label | Take a protected break |
+
+`MR-ACT-BREAK` selects the string for the current act. It has no random result
+and never changes a relationship, route, evidence, integrity, or PI confidence.
+
+| Text key | Initial English text |
+|---|---|
+| action.break.act1 | Protected break: the kettle begins an experimental cooling phase. |
+| action.break.act2 | Protected break: the manuscript is unchanged. Its comments are resting. |
+| action.break.act3 | Protected break: the public record remains available for professional concern. |
+| action.break.act4 | Protected break: a calendar reminder asks whether recovery has a deliverable. |
+| action.break.act5 | Protected break: the building is almost empty. The work remains administratively present. |
 
 | Text key | Initial English text |
 |---|---|
@@ -178,18 +191,22 @@ show quantities, settings, timings, or a real protocol. A strong result gives
 the stated strong reading; a limited result gives the stated limited reading;
 a weak result gives the stated weak reading.
 
-| ID | Window and expiry | Prerequisite | Baseline: strong / limited / weak | Completion effect | Text key | Requirement / test |
-|---|---|---|---|---|---|---|
-| MR-EXP-LASER-SHAM | W1 after Clarified to W4 after-hours | MR-SCN-CLARIFIED | Clear recovery with stable sham / partial recovery or unclear control / unreliable record | Creates MR-REC-LASER-SHAM; supports the next request | experiment.laserSham | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-DAMAGE-RANGE | W2 early to W4 after-hours | Analysed laser/sham record | Clear recovery boundary / mixed recovery range / no useful range | Creates MR-REC-DAMAGE-RANGE | experiment.damageRange | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-BATCH-CHECK | W3 early to W6 after-hours | Analysed laser/sham record | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input | experiment.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
-| MR-EXP-REPAIR-STATE | W4 early to W6 after-hours | Analysed damage-range record | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear | Creates MR-REC-REPAIR-STATE | experiment.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
-| MR-EXP-OXYGEN-LOSS | W10 after Helpful Comments to W12 after-hours; analysis before W14 | MR-SCN-HELPFUL-COMMENTS | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input | experiment.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | MR-OPT-CAMILA-INITIAL | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE; can strengthen Morrow context | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| ID | Window and expiry | Monitoring windows | Prerequisite | Baseline: strong / limited / weak | Completion effect | Text key | Requirement / test |
+|---|---|---:|---|---|---|---|---|
+| MR-EXP-LASER-SHAM | W1 after Clarified to W4 after-hours | 1 | MR-SCN-CLARIFIED | Clear recovery with stable sham / partial recovery or unclear control / unreliable record | Creates MR-REC-LASER-SHAM; supports the next request | experiment.laserSham | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-DAMAGE-RANGE | W2 early to W4 after-hours | 1 | Analysed laser/sham record | Clear recovery boundary / mixed recovery range / no useful range | Creates MR-REC-DAMAGE-RANGE | experiment.damageRange | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-BATCH-CHECK | W3 early to W6 after-hours | 1 | Analysed laser/sham record | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input | experiment.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
+| MR-EXP-REPAIR-STATE | W4 early to W6 after-hours | 1 | Analysed damage-range record | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear | Creates MR-REC-REPAIR-STATE | experiment.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
+| MR-EXP-OXYGEN-LOSS | W10 after Helpful Comments to W12 after-hours; analysis before W14 | 2 | MR-SCN-HELPFUL-COMMENTS | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input | experiment.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | 1 | MR-OPT-CAMILA-INITIAL | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE; can strengthen Morrow context | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
 
 MR-EXP-REPAIR-STATE is associated with recovery. It never proves that the
 repair state causes recovery. This rule applies to every result string,
 manuscript option, report, and ending module.
+
+Each permitted repeat inherits one monitoring window from its source template.
+R01 defines no separate missed-window penalty. That effect waits for the
+evidence-quality decision in R02.
 
 The work items are:
 

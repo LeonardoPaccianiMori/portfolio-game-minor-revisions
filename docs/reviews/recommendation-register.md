@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 resolved; later entries unreviewed; implementation remains blocked**
+Status: **R00 and R01 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -46,20 +46,20 @@ Discuss entries in dependency order, not numerical order:
 
 | ID | Area | Finding or recommendation | Status |
 |---|---|---|---|
-| MR-REV-001 | Time and energy | Close the 64-period time and energy economy | `unreviewed` |
-| MR-REV-002 | Time and energy | Add the missing protected-break action definition | `unreviewed` |
-| MR-REV-003 | Time and energy | Define monitoring-window counts and miss penalties | `unreviewed` |
-| MR-REV-004 | Time and energy | Resolve break cadence and crash calibration | `unreviewed` |
-| MR-REV-005 | Pressure profile | Decide how Supported changes pressure | `unreviewed` |
-| MR-REV-006 | Campaign pacing | Decide whether the Weeks 8–9 experiment gap is intended | `unreviewed` |
-| MR-REV-007 | Campaign pacing | Decide whether Weeks 15–16 need a period sink | `unreviewed` |
+| MR-REV-001 | Time and energy | Close the 64-period time and energy economy | `accepted` |
+| MR-REV-002 | Time and energy | Add the missing protected-break action definition | `accepted` |
+| MR-REV-003 | Time and energy | Define monitoring-window counts and miss penalties | `accepted` |
+| MR-REV-004 | Time and energy | Resolve break cadence and crash calibration | `accepted` |
+| MR-REV-005 | Pressure profile | Decide how Supported changes pressure | `accepted` |
+| MR-REV-006 | Campaign pacing | Decide whether the Weeks 8–9 experiment gap is intended | `accepted` |
+| MR-REV-007 | Campaign pacing | Decide whether Weeks 15–16 need a period sink | `prototype required` |
 | MR-REV-008 | Experiments | Define configuration-to-outcome-band mapping | `unreviewed` |
 | MR-REV-009 | Experiments | Define evidence-quality resolution and `suspicious` | `unreviewed` |
 | MR-REV-010 | Experiments | Decide whether outcome bands can teach causality | `unreviewed` |
 | MR-REV-011 | Interpretation | Decide how much interpretation the player performs | `unreviewed` |
 | MR-REV-012 | Interaction | Specify focused-station interaction texture | `unreviewed` |
 | MR-REV-013 | Experiments | Define sample, equipment, supply, and fatigue effects | `unreviewed` |
-| MR-REV-014 | Evidence | Resolve evidence saturation and reachability | `unreviewed` |
+| MR-REV-014 | Evidence | Resolve evidence saturation and reachability | `accepted` |
 | MR-REV-015 | Institutional pressure | Catalogue promised queues, faults, limits, and requests | `unreviewed` |
 | MR-REV-016 | Experiments | Make experiment stopping legible as triage or accept its current role | `unreviewed` |
 | MR-REV-017 | Manuscript | Specify manuscript-board behaviour | `unreviewed` |
@@ -115,5 +115,31 @@ Discuss entries in dependency order, not numerical order:
 - `MR-REV-055`: treat every behavioural prediction from a document review as a
   hypothesis until approved private play produces evidence.
 
+### R01 — Time, pressure, and early evidence audit
+
+- `MR-REV-001`: use the documented minimum-defensible, thorough-honest, and
+  maximizing action fixtures before future implementation. The audit shows that
+  thorough-honest Standard demand does not fit under optimistic assumptions.
+  Do not claim that it does.
+- `MR-REV-002`: add `MR-ACT-BREAK`, with a one-period, zero-energy cost and
+  short act-dependent comic text.
+- `MR-REV-003`: use one monitoring window for each normal run and permitted
+  repeat, and two for oxygen loss. The exact missed-window penalty is deferred
+  to R02.
+- `MR-REV-004`: use uncapped flat recovery of two energy in Standard and three
+  in Supported. The audit does not validate final crash or break calibration;
+  private prototype evidence must do that.
+- `MR-REV-005`: keep Supported's approved starting energy, break recovery, and
+  removed late-work surcharge. Move all clear warnings to the universal player
+  contract and preserve a separate Supported fixture.
+- `MR-REV-006`: retain the deliberate Week 8–9 pause in laboratory templates.
+  Those weeks shift to submission, administration, careers, and relationships.
+- `MR-REV-007`: keep the late-game quiet tail for now. A private full-campaign
+  prototype must test for forced idle waiting before any period sink is added.
+- `MR-REV-014`: record current evidence bounds before any re-pricing. Thin is
+  unreachable from the current starting state; required strong work can reach
+  Substantial. Repeat yield and re-pricing wait for the R02 result and quality
+  decision.
+
 No implementation is authorized. `MR-REV-001` through `MR-REV-052` remain
-unreviewed.
+unreviewed except the R01 entries recorded above.

@@ -111,6 +111,11 @@ called easy. The selected profile is fixed for the whole save. A player must
 start a New Game to use another profile. If an active save exists, New Game
 requires confirmation before replacement.
 
+Both profiles receive the same clear warnings before gates, expiry, missed
+monitoring windows, and irreversible choices. Supported changes energy and
+recovery tolerance. It never withholds information from Standard or adds
+information that Standard does not receive.
+
 The first New Game displays a short content note about academic pressure,
 burnout, insecure work, and ethical pressure around research records. It does
 not spoil routes or endings.

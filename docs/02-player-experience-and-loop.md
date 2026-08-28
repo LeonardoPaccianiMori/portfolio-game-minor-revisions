@@ -67,10 +67,10 @@ equipment recovery use the intense class. B10 assigns the exact class to each
 authored action.
 
 Night and after-hours add one energy segment to focused or intense work in the
-Standard profile. A protected break costs one period. The first protected break
-in a week restores two segments; later breaks restore one. In Supported
-profile, protected breaks restore three segments and late work has no added
-energy cost.
+Standard profile. `MR-ACT-BREAK` is a protected break. It costs one period and
+no energy. Every Standard break restores two segments, and every Supported
+break restores three, up to the five-segment limit. Breaks are not capped per
+week.
 
 At zero energy, the player can push through one focused or intense task. At
 its next safe point, the protagonist has an involuntary crash at the desk,
@@ -80,9 +80,13 @@ missed. It can damage evidence, lose an optional opportunity, or close a route.
 It cannot begin during a manual equipment action or cutscene. There is no home
 scene, voluntary sleep action, or global game-over screen before Week 16.
 
-Standard is the intended survival-game profile. Supported keeps the calendar,
-narrative, routes, and ending content unchanged, but adds clearer warnings and
-more time tolerance. It has no stigma or content penalty.
+Standard is the intended survival-game profile. Supported starts with one more
+energy segment, restores one more segment per protected break, and removes the
+night and after-hours energy surcharge. It therefore changes the pressure
+structure as well as its tolerance. It keeps the calendar, narrative, routes,
+ending content, period costs, deadlines, and warnings unchanged. All players receive
+the same clear warning before a gate, expiry, missed monitoring window, or
+irreversible choice. Supported has no stigma or content penalty.
 
 ## Recurring five-stage experiment loop
 
@@ -94,7 +98,8 @@ more time tolerance. It has no stigma or content penalty.
 3. **Start and run:** start the work at the setup station. The group becomes
    active while the player performs other work.
 4. **Monitor:** travel to the relevant station at a meaningful monitoring
-   point. Continue as planned, spend attention on a quality check or
+   point. Every run has one monitoring window, except oxygen-loss work, which
+   has two. Continue as planned, spend attention on a quality check or
    stabilizing action, or stop the experiment.
 5. **Analyse and interpret:** use the analysis workstation to compare the
    evidence views, classify the result, record caveats, and create an evidence
@@ -268,6 +273,7 @@ costs and uses its approved energy adjustments.
 | `PIIM` response commit | 3 | 2 | A rare major commitment. |
 | Five-year research plan or Morrow video call | 1 | 1 | One focused career action. |
 | Morrow reply or optional local character scene | 1 | 0 | A light relationship action. |
+| Protected break | 1 | 0 | Restores two energy in Standard or three in Supported. |
 
 The five middle mandatory scenes—**A Complete Narrative**, **What We Had**,
 **Public Record**, **Helpful Comments**, and **A Reasonable Response**—advance
@@ -277,6 +283,8 @@ story events without charging dialogue as ordinary work.
 
 The content catalogue assigns these costs to every authored action. No later
 agent may add a new time-costing action class without a requirement change.
+The R01 paper audit in `07-systems-and-balance.md` enumerates every action used
+by the minimum-defensible, thorough-honest, and maximizing demand fixtures.
 
 ## B10 content and implementation boundary
 

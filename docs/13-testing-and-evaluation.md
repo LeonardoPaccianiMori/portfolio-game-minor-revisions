@@ -79,6 +79,10 @@ checked through browser flows and private manual review.
 MR-TEST-EXP-001 must show that:
 
 - each experiment begins from its approved baseline;
+- `MR-ACT-BREAK` has its approved one-period, zero-energy cost and restores
+  two energy in Standard or three in Supported without changing other state;
+- each normal experiment and permitted repeat has one monitoring window, while
+  oxygen loss has two;
 - robust, mixed, and compromised preparation select only the approved outcome
   bands;
 - closing or reloading cannot reroll a locked outcome;
@@ -87,6 +91,14 @@ MR-TEST-EXP-001 must show that:
 - the repair state is associated with recovery but is never represented as
   demonstrated cause; and
 - no valid path needs a perfect outcome or a crash.
+
+The rules suite must also reproduce the R01 paper fixture counts: minimum
+defensible demand of 43 periods and 25 energy before late-work surcharge;
+thorough-honest demand of 55 periods and 29 energy; and maximizing demand of
+78 periods and 45 energy. It must report the current optimistic lower-bound
+totals for Standard and Supported. It must not silently claim that the
+thorough-honest Standard fixture fits until a later approved balance decision
+changes the input rules.
 
 MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
 
@@ -99,6 +111,12 @@ MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
 - Aldercroft and Morrow use the approved visible conditions;
 - public-record withdrawal closes both routes; and
 - a hidden integrity problem alone does not create an unsupported route block.
+
+The calendar fixture must also show that Weeks 8–9 have no open experiment
+template but retain their approved manuscript, journal, career, and
+relationship work. A private full-campaign prototype must record whether Weeks
+15–16 ever force idle waiting. If it does, return `MR-REV-007` for a new design
+decision; do not add filler as a test workaround.
 
 MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
 

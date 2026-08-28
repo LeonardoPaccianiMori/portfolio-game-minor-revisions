@@ -102,10 +102,14 @@ quantities, timings, concentrations, equipment settings, or instructions.
 
 During a run, the active sample rack and desk work queue show a clear state.
 The player must visit the station for meaningful monitoring or intervention.
-At a monitoring point, the player can continue, spend attention on a quality
-check or stabilizing action, or stop. A stopped group is lost; a finally
-analysed group frees its active slot. Neither action removes its raw laboratory
-record.
+Laser/sham, damage-range, batch-check, repair-state, drug-exposure, and every
+permitted repeat have one monitoring window. Oxygen-loss work has two. At a
+monitoring point, the player can continue, spend attention on a quality check
+or stabilizing action, or stop. A stopped group is lost; a finally analysed
+group frees its active slot. Neither action removes its raw laboratory record.
+
+The exact missed-window effect depends on the evidence-quality rules resolved
+with `MR-REV-009`. R01 fixes only the number of windows and their period cost.
 
 Analysis creates an evidence card. It records the research question, controls,
 available evidence views, evidence quality, and caveats. A later manuscript

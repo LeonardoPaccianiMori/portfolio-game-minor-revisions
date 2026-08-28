@@ -35,9 +35,9 @@ not implemented.
 | Requirement | Behaviour and acceptance criteria | Source | Test | Primary work package |
 |---|---|---|---|---|
 | MR-REQ-VISION-001 | Preserve bitterly comic, accessible institutional satire; keep science and human stakes grounded; do not add prohibited content. | 01 | MR-TEST-CONT-001 | MR-WP-08 |
-| MR-REQ-LOOP-001 | Implement the approved action costs, 64-period calendar, pressure profiles, energy rules, crash, and no pre-W16 global game over. | 02, 07 | MR-TEST-EXP-001, MR-TEST-NARR-001 | MR-WP-01 |
-| MR-REQ-EXP-001 | Implement the five-stage loop, six templates, active-sample limit, physical monitoring, record creation, and non-actionable science boundary. | 02, 04 | MR-TEST-EXP-001 | MR-WP-01 |
-| MR-REQ-EXP-002 | Use the approved support points, outcome bands, locked seed variation, and batch/oxygen response-card inputs. | 04, 07 | MR-TEST-EXP-001 | MR-WP-01 |
+| MR-REQ-LOOP-001 | Implement the approved action costs, `MR-ACT-BREAK`, 64-period calendar, pressure profiles, universal warnings, energy rules, crash, and no pre-W16 global game over. Preserve the recorded R01 economy fixture results until Leonardo approves a later balance change. | 02, 07, 12 | MR-TEST-EXP-001, MR-TEST-NARR-001 | MR-WP-01 |
+| MR-REQ-EXP-001 | Implement the five-stage loop, six templates, active-sample limit, one monitoring window per normal run and two for oxygen loss, physical monitoring, record creation, and non-actionable science boundary. | 02, 04, 12 | MR-TEST-EXP-001 | MR-WP-01 |
+| MR-REQ-EXP-002 | Use the approved support points, outcome bands, locked seed variation, current reachability bounds, and batch/oxygen response-card inputs. Do not reprice evidence or infer repeat yield without later Leonardo approval. | 04, 07 | MR-TEST-EXP-001 | MR-WP-01 |
 | MR-REQ-EXP-003 | Never present the repair state as proven cause of recovery or expose a real laboratory protocol. | 04, 12 | MR-TEST-CONT-001 | MR-WP-08 |
 | MR-REQ-NARR-001 | Run the fixed 16-week campaign, seven mandatory scenes, manuscript flow, PIIM response, and Week-16 decision in the approved order. | 03, 12 | MR-TEST-NARR-001 | MR-WP-08 |
 | MR-REQ-NARR-002 | Deliver messages, records, rejections, and safe-gated scenes without unsafe interruption or silent expiry. | 02, 03, 12 | MR-TEST-NARR-001 | MR-WP-08 |
