@@ -92,18 +92,22 @@ irreversible choice. Supported has no stigma or content penalty.
 
 1. **Select sample group:** choose one labelled sample group for an approved
    research goal. At most three groups can be active at one time.
-2. **Configure:** select the goal, control quality, and observation focus:
-   structure, rhythm, or both. An authored experiment can add one
-   family-specific fictional choice.
+2. **Configure:** select the goal, matched or limited control quality, and an
+   observation focus: structure, rhythm, or paired observation. Each template
+   also gives one qualitative family-specific choice. Paired observation is
+   not a free best option: it needs the quality-check monitoring action to
+   produce full paired coverage.
 3. **Start and run:** start the work at the setup station. The group becomes
    active while the player performs other work.
 4. **Monitor:** travel to the relevant station at a meaningful monitoring
    point. Every run has one monitoring window, except oxygen-loss work, which
-   has two. Continue as planned, spend attention on a quality check or
-   stabilizing action, or stop the experiment.
-5. **Analyse and interpret:** use the analysis workstation to compare the
-   evidence views, classify the result, record caveats, and create an evidence
-   card for later manuscript work.
+   has two. Inspect the current projected preparation band and its reasons,
+   then continue, spend attention on a quality check or stabilizing action, or
+   stop the experiment.
+5. **Analyse and interpret:** use the analysis workstation to inspect the raw
+   observations before any interpretation. Select one primary reading and at
+   least one relevant caveat, then create an evidence card for later manuscript
+   work.
 
 The player does not discover a real laboratory protocol. The first
 laser-and-sham task is guided by Elena or Gabriel. Later tasks can use an
@@ -125,16 +129,30 @@ and open scientific question. The notebook is not a quest-marker system.
 
 ## Scientific feedback model
 
-Each experiment reports two separate layers:
+Each experiment reports two separate layers. A sample condition can show
+complete, partial, failed, or unreliable biological recovery. A complete
+template record then summarizes its evidence as strong, limited, or weak.
 
 - **Biological result:** complete recovery, partial recovery, failed recovery,
   or unreliable result.
 - **Evidence quality:** usable, inconclusive, suspicious, or worth repeating.
 
+The evidence-quality labels have fixed meanings:
+
+- **Usable:** the valid record supports the stated conclusion.
+- **Inconclusive:** the valid record does not answer the stated question.
+- **Worth repeating:** a clear, recoverable process issue limits the record and
+  one permitted repeat remains.
+- **Suspicious:** the raw record contains an unexplained internal mismatch.
+  This label does not by itself mean that the player or a character committed
+  misconduct.
+
 The player reads three simple evidence views: tissue structure, rhythm, and the
 repatterning index. These views show clear states such as strong, unclear,
-mixed, or failed. The player can learn causal patterns from these views without
-reading raw biological data.
+mixed, or failed. The analysis view shows observations before the system asks
+for a reading. The player chooses the primary reading and a relevant caveat;
+the system stores both. Limited results can support disagreement between the
+views. The game does not show exact probabilities or real biological data.
 
 The manuscript board offers careful, strong, and inflated claims about the
 repair state. Claim choice changes integrity, PI confidence, and later reviewer
@@ -157,16 +175,27 @@ but far enough apart that a queue, a colleague, or a changed room state can
 become meaningful.
 
 The active rack gives each group a physical label and a simple state signal.
+Its focused view lets the player select one of the three physical tray
+positions, read its sample condition and next window, and confirm a tray
+action. The tray remains visible while the panel is open. This is selection
+and confirmation, not a dexterity task.
 The desk work queue repeats the state in words, such as running, check ready,
 attention needed, or ready for analysis. The queue informs the player but
 cannot control equipment remotely. Meaningful inspection and intervention
 require a visit to the station.
 
+The imaging bay focused view lets the player switch among structure, rhythm,
+and repatterning views and record an observation. Switching views costs no
+time. Only a confirmed monitoring or analysis action advances time. There are
+no hidden correct clicks, timed targets, or dexterity tests.
+
 An active group occupies one of the three slots from preparation through final
-analysis. Final archiving frees the slot. The raw result remains in the
-laboratory record, but the physical group cannot be reused for a different
-experiment. Cancelling an active experiment loses that group and the game time
-already spent.
+analysis. Final archiving frees the slot. A stop confirmation frees the slot
+immediately, loses the current sample and its elapsed work, preserves earlier
+archived records, and creates only a stop log for the current run. It also
+names any opportunity that will expire before a replacement can finish.
+Stopping is therefore a visible triage choice when a slot, later monitoring
+burden, or expiring task is more valuable than the current run.
 
 Before a meaningful action, the game gives a short plain-language forecast of
 the likely trade-off. After the result, it records what is observed separately
@@ -175,14 +204,17 @@ supports that explanation. Poor results always provide useful information, a
 clear reason to repeat, or a lower-quality route forward. Mandatory progress
 never requires a perfect result.
 
-Equipment queues, faults, and access limits are authored situations. They give
-clear choices to wait, negotiate, ask Gabriel for help, use a limited
-alternative, or change the experiment plan. They are not random barriers.
+Equipment queues, faults, and access limits use only the authored room states
+in `06-world-and-level-design.md` and `12-content-specification.md`. Every
+operational state gives at least two clear routes with different time,
+relationship, or evidence costs. They are not random barriers.
 
 ## Workload and soft failure
 
 The desk shows at most two high-priority required requests and three optional
-requests at one time. Active sample groups use their separate work queue.
+items at one time. Every optional item must name a defined character, career,
+wording, or room-state event. There are no uncatalogued optional PI requests.
+Active sample groups use their separate work queue.
 Mandatory beats use the fixed weekly calendar. Weak work changes the available
 paper path; it does not delay the calendar.
 
@@ -273,6 +305,7 @@ costs and uses its approved energy adjustments.
 | `PIIM` response commit | 3 | 2 | A rare major commitment. |
 | Five-year research plan or Morrow video call | 1 | 1 | One focused career action. |
 | Morrow reply or optional local character scene | 1 | 0 | A light relationship action. |
+| Wait for an authored room response | 1 | 0 | Clears a stated room-state delay; it never creates evidence by itself. |
 | Protected break | 1 | 0 | Restores two energy in Standard or three in Supported. |
 
 The five middle mandatory scenes—**A Complete Narrative**, **What We Had**,

@@ -120,6 +120,8 @@ belongs in the numbered design documents.
 | 2026-08-28 | Treat behavioural predictions from document review as hypotheses until an approved private prototype or game evaluation provides evidence. | Confirmed |
 | 2026-08-28 | Resolve R01: add `MR-ACT-BREAK`; use uncapped flat recovery of two energy in Standard and three in Supported; make warnings universal; set one monitoring window per normal run and two for oxygen loss; retain the Week 8–9 laboratory pause; and keep the late quiet tail under a required prototype check. | Confirmed; later balance and prototype conditions remain |
 | 2026-08-28 | Record the R01 64-period and evidence-reachability audit. It does not validate the existing thorough-honest Standard balance or justify evidence re-pricing. | Confirmed finding; later balance decision required |
+| 2026-08-28 | Resolve R02 experiment outcomes with visible sample and equipment states, exact biological issue counts, a locked variation value inside the final earned band, and separate evidence-quality rules. Controls and fatigue cannot change biological reality. | Confirmed |
+| 2026-08-28 | Require raw observations before player interpretation, one stored primary reading and caveat, richer rack and imaging focused views, explicit stop triage, and exactly three authored operational room states with two-or-more visible routes. | Confirmed |
 
 ## Rules for future entries
 

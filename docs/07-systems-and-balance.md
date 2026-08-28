@@ -147,8 +147,9 @@ explicit:
 Therefore, required strong work can reach Substantial without optional work,
 while required partial work reaches Coherent. The four packet labels do not
 currently create four reachable experiences. R01 does not change starting
-support or reward values. Repeat yield and any evidence re-pricing require a
-later explicit balance decision after R02 defines result and quality rules.
+support or reward values. R02 now defines result and quality rules. Repeat
+yield and any evidence re-pricing still require a later explicit balance
+decision.
 
 ## B07 period schedule and spatial event rules
 
@@ -184,9 +185,13 @@ intervention, biological variability, and control quality. Randomness may
 model variability but cannot dominate or conceal the causal model.
 
 A new game creates a stored campaign seed. When an experiment starts, the
-system records its earned outcome range. Reloading or closing the game cannot
-reroll it. A new game can use a different seed. A different setup, control
-choice, or sample state can produce a different result for a stated reason.
+system locks one deterministic variation value and records the current
+projected preparation band. Reloading or closing the game cannot reroll that
+value. Visible sample, equipment, and monitoring events can change the
+projected band. The final band locks at the last monitoring or resolution
+point, and the stored value selects only inside it. A new game can use a
+different seed. A different family choice, equipment state, sample condition,
+or monitoring history can produce a different result for a stated reason.
 
 Each experiment has two result layers.
 
@@ -200,12 +205,42 @@ distinguish the two layers through the structure, rhythm, and repatterning-index
 views plus plain-language result labels.
 
 Biological result begins with the authored experiment baseline, then responds
-to sample state, selected approach, equipment condition, and small saved
-variation. Evidence quality responds to control quality, monitoring, quality
-checks, missed windows, fatigue, and record handling. Saved variation can move
-the biological result by one adjacent category only. It cannot make an expected
-failure complete recovery or hide a major player-caused evidence problem. B10
-defines each experiment's authored baseline.
+only to sample condition, the family-specific choice, equipment state,
+monitoring state, and small saved variation. Evidence quality responds to
+control quality, observation coverage, monitoring, fatigue, and raw-record
+handling. Control quality cannot change biological reality.
+
+The biological preparation calculation uses issue counts:
+
+| Input | Biological issue effect |
+|---|---|
+| Stable sample or Ready equipment | None |
+| Stressed sample or Limited equipment | Add one issue each |
+| Failing sample | One severe issue; band is Compromised |
+| Higher-risk template choice | Add one issue |
+| Each missed biological monitoring window | Add one issue |
+| Valid stabilizing action | Remove one eligible non-severe issue |
+| Unavailable equipment | Block normal start and offer only an authored room-state response |
+
+Zero issues gives Robust, one gives Mixed, and two or one severe issue gives
+Compromised. The system shows the current band and plain-language reasons
+before commitment. It does not show exact probabilities. After resolution, it
+names the player-controlled factors that affected the final band.
+
+Evidence quality uses the following priority:
+
+1. Suspicious for an unexplained conflict inside the raw record.
+2. Worth repeating for a clear recoverable process limit while one permitted
+   repeat remains.
+3. Usable when the valid record answers the stated conclusion.
+4. Inconclusive when the valid record does not answer the question, including
+   a process-limited record with no repeat left.
+
+A suspicious scientific record does not automatically mean misconduct. A
+later mismatch between raw and reported evidence is an integrity event. Only
+a zero-energy push-through creates fatigue-related evidence risk; fatigue
+cannot change the biological issue count. Saved variation cannot hide a severe
+issue or a major evidence problem. B10 defines each experiment baseline.
 
 ## Evidence, PI confidence, integrity, and trust
 
@@ -294,21 +329,30 @@ preparation until final analysis. It moves through a visible running,
 check-ready, attention-needed, or ready-for-analysis condition. Its physical
 rack signal and its desk work-queue label show the same condition.
 
-The player configures a goal, control quality, and observation focus. An
-authored family-specific choice can add one qualitative decision. The player
-then starts the run, monitors it at meaningful points, and analyses it. The
-work queue cannot control the sample remotely. Meaningful monitoring and
-intervention require the physical station.
+These three slots are the complete sample-capacity constraint. The game has no
+separate finite sample-supply resource.
+
+The player configures a goal, matched or limited control quality, structure,
+rhythm, or paired observation, and one qualitative template-specific choice.
+Paired observation gives full paired coverage only when the player spends the
+quality-check monitor action. The player then starts the run, monitors it at
+meaningful points, and analyses it. The work queue cannot control the sample
+remotely. Meaningful monitoring and intervention require the physical station.
 
 At a monitoring point, the player can continue, spend attention on a quality
 check or stabilizing action, or stop. A clear warning appears before the player
-advances past the window. Passing it can weaken evidence quality or result
-reliability. Stopping loses the sample group and elapsed game time. Final
-analysis frees the active slot. Raw evidence survives both outcomes.
+advances past the window. Each missed biological window adds one preparation
+issue and each missed observation reduces evidence coverage. Stopping frees
+the slot immediately, loses the current sample and elapsed work, and preserves
+only earlier archived raw records. It creates a stop log, not an evidence card.
+The confirmation also identifies any opportunity that can expire before a
+replacement finishes. Final analysis frees the slot and archives the raw
+record.
 
-Equipment queues, faults, and access restrictions are authored choices, not
-random hard barriers. They offer a stated route such as waiting, negotiating,
-asking Gabriel for help, using a limited alternative, or changing the plan.
+Equipment queues, faults, and access restrictions use the three authored room
+states in `06-world-and-level-design.md`. They are not random hard barriers.
+Every state offers at least two stated routes with different costs. No other
+room state can block an action.
 
 ## Causal feedback and recovery
 
@@ -341,10 +385,10 @@ band percentages.
 
 ## Requests, gates, and soft failure
 
-The request system is hybrid. Mandatory weekly beats and core PI requests are
-authored and fixed. Optional requests, character scenes, equipment problems,
-and wording changes come from small authored sets selected by current state.
-The game has no unlimited procedural requests.
+The request system is authored. Mandatory weekly beats and core PI requests
+are fixed. Optional desk items can refer only to a catalogued character,
+career, wording, or room-state event selected by current state. There are no
+uncatalogued optional PI requests and no unlimited procedural requests.
 
 The desk shows at most two high-priority required requests and three optional
 requests at one time. Active sample groups use their separate queue. Week 5
@@ -507,8 +551,10 @@ and relationship afterbeat; it cannot change paper state or route availability.
 
 ## B10 outcome-band and tuning contract
 
-Each started experiment enters one earned outcome band. The saved campaign seed
-locks its variation at start. Reloading cannot change that variation.
+Each started experiment locks one saved variation value and shows its current
+projected preparation band. The final earned band locks at the last monitoring
+or resolution point. Reloading cannot change the variation or any earned state
+change.
 
 | Earned band | Strong | Limited | Weak |
 |---|---:|---:|---:|
@@ -516,10 +562,12 @@ locks its variation at start. Reloading cannot change that variation.
 | Mixed preparation | 20% | 60% | 20% |
 | Compromised preparation | 0% | 20% | 80% |
 
-Configuration, equipment state, monitoring, fatigue, and quality choices set
-the band. The seed selects only inside that band. A major player-caused problem
-cannot become a strong result through variation, and robust preparation cannot
-become a weak result through variation.
+Sample condition, equipment state, the family-specific choice, and biological
+monitoring set the band through the issue-count rules above. Controls,
+observation coverage, fatigue, and record handling set evidence quality, not
+biological reality. The seed selects only inside the final band. A major
+player-caused problem cannot become a strong result through variation, and
+robust preparation cannot become a weak result through variation.
 
 The approved action-cost table is in `02-player-experience-and-loop.md`. The
 authored template baselines are in `04-science-and-experiments.md`. Every

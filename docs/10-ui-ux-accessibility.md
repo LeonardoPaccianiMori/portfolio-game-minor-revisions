@@ -80,6 +80,31 @@ must not require colour alone for interpretation. An irreversible report or
 revision commit requires a clear confirmation that states the immediate cost or
 record consequence.
 
+Before an experiment commitment, the station shows **Robust**, **Mixed**, or
+**Compromised** as the current projected preparation band and gives each
+plain-language reason. It never shows the hidden percentage table. After
+resolution, the result view names the player-controlled factors that changed
+the final band. Biological variation remains identified as variation, not as a
+hidden player error.
+
+The active-rack focused view keeps the physical three-position tray visible.
+The player selects a tray, reads Stable, Stressed, or Failing plus its next
+window, and confirms an available action. The imaging focused view lets the
+player switch among structure, rhythm, and repatterning tabs, compare their raw
+observations, and record a reading. Switching tabs and leaving either view are
+free. These views use the ordinary select, confirm, and back controls. They use
+no hidden correct click, timed input, drag, or dexterity test.
+
+Analysis shows raw observations before interpretation. It then requires one
+primary reading and at least one relevant caveat. A limited result can show
+disagreement between views. The selected reading and caveat stay visible on
+the evidence card and later manuscript board.
+
+The stop confirmation states that the active slot is freed, the current sample
+and elapsed work are lost, earlier archived records remain, and the current
+run creates no evidence card. It names any relevant opportunity that can expire
+before a replacement finishes.
+
 ## Dialogue, reading, and tutorial
 
 Dialogue appears in a lower-screen panel with the speaker name. It has no 2D

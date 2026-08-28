@@ -19,6 +19,7 @@ The full game has:
 | Content family | Full-game count | Fallback count or rule |
 |---|---:|---|
 | Experiment templates | 6 | 4: laser/sham, combined range/repair, batch, oxygen |
+| Operational room states | 3 | 2: facility queue and imaging service limit |
 | Mandatory scenes | 7 | All 7 |
 | Optional character scenes | 10 | 7: four local scenes and the three Camila contacts |
 | Primary records | 20 | 18; drug and separate repair records are absent |
@@ -49,6 +50,7 @@ form MR-REQ-DOMAIN-NUMBER. Content objects use one of these prefixes:
 | MR-FB- | Fallback-only composition |
 | MR-ACT- | Player action |
 | MR-TASK- | In-world request or work item |
+| MR-ROOM- | Authored operational room state |
 | MR-REC- | Primary record |
 | MR-ENV- | Environmental text item |
 | MR-CIT- | Institutional Citation |
@@ -107,6 +109,7 @@ choice never silently spends time. The main action IDs and costs are fixed:
 | MR-ACT-PIIM-COMMIT | Commit PIIM response or withdrawal | 3 | 2 | MR-REQ-NARR-001 | MR-TEST-NARR-001 |
 | MR-ACT-CAREER-FOCUSED | Complete research plan or Morrow video call | 1 | 1 | MR-REQ-CHAR-001 | MR-TEST-CHAR-001 |
 | MR-ACT-RELATIONSHIP | Reply to Morrow or complete local optional scene | 1 | 0 | MR-REQ-CHAR-001 | MR-TEST-CHAR-001 |
+| MR-ACT-ROOM-WAIT | Wait for an authored room response | 1 | 0 | MR-REQ-WORLD-001 | MR-TEST-EXP-001 |
 | MR-ACT-BREAK | Take a protected break | 1 | 0 | MR-REQ-LOOP-001 | MR-TEST-EXP-001 |
 
 The five middle mandatory scenes advance one period without energy cost.
@@ -132,6 +135,7 @@ matching text keys:
 | action.piimCommit.label | Commit PIIM response |
 | action.careerFocused.label | Complete career action |
 | action.relationship.label | Continue conversation |
+| action.roomWait.label | Wait for the stated room response |
 | action.break.label | Take a protected break |
 
 `MR-ACT-BREAK` selects the string for the current act. It has no random result
@@ -144,6 +148,36 @@ and never changes a relationship, route, evidence, integrity, or PI confidence.
 | action.break.act3 | Protected break: the public record remains available for professional concern. |
 | action.break.act4 | Protected break: a calendar reminder asks whether recovery has a deliverable. |
 | action.break.act5 | Protected break: the building is almost empty. The work remains administratively present. |
+
+The following exact labels and instructions apply to every experiment view:
+
+| Text key | Initial English text |
+|---|---|
+| experiment.band.robust | Robust preparation |
+| experiment.band.mixed | Mixed preparation |
+| experiment.band.compromised | Compromised preparation |
+| experiment.sample.stable | Stable sample |
+| experiment.sample.stressed | Stressed sample |
+| experiment.sample.failing | Failing sample |
+| experiment.equipment.ready | Equipment ready |
+| experiment.equipment.limited | Equipment limited |
+| experiment.equipment.unavailable | Equipment unavailable: select another route before starting. |
+| experiment.quality.usable | Usable: this valid record supports the stated conclusion. |
+| experiment.quality.inconclusive | Inconclusive: this valid record does not answer the stated question. |
+| experiment.quality.repeat | Worth repeating: a clear process issue can be corrected in one permitted repeat. |
+| experiment.quality.suspicious | Suspicious: the raw record contains an unexplained internal mismatch. This does not by itself show misconduct. |
+| experiment.analysis.reading | Select one primary reading. |
+| experiment.analysis.caveat | Select at least one relevant caveat. |
+| experiment.stop.confirm | Stop this experiment? The active slot will be free. The current sample and elapsed work will be lost. Earlier archived records will remain. This run will create no evidence card. |
+| experiment.stop.expiry | Review the listed opportunity before you stop. A replacement cannot finish before it expires. |
+| room.facilityQueue.forecast | The shared facility slot is overbooked. Normal access is unavailable until you select a response. |
+| room.imagingBooking.forecast | This imaging booking overlaps with Samira's work. Normal access is unavailable until you select a response. |
+| room.imagingService.forecast | The imaging service is limited. Normal access is unavailable until you select a response. |
+| room.route.wait | Wait one period for normal access. |
+| room.route.limited | Use the limited route now. The experiment will start with Limited equipment. |
+| room.route.gabriel | Ask Gabriel about the queue. This opens an optional conversation. |
+| room.route.samira | Ask Samira about the booking. This opens an optional conversation. |
+| room.route.gabrielSupport | Ask Gabriel for the available high-trust support. |
 
 | Text key | Initial English text |
 |---|---|
@@ -191,22 +225,38 @@ show quantities, settings, timings, or a real protocol. A strong result gives
 the stated strong reading; a limited result gives the stated limited reading;
 a weak result gives the stated weak reading.
 
-| ID | Window and expiry | Monitoring windows | Prerequisite | Baseline: strong / limited / weak | Completion effect | Text key | Requirement / test |
-|---|---|---:|---|---|---|---|---|
-| MR-EXP-LASER-SHAM | W1 after Clarified to W4 after-hours | 1 | MR-SCN-CLARIFIED | Clear recovery with stable sham / partial recovery or unclear control / unreliable record | Creates MR-REC-LASER-SHAM; supports the next request | experiment.laserSham | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-DAMAGE-RANGE | W2 early to W4 after-hours | 1 | Analysed laser/sham record | Clear recovery boundary / mixed recovery range / no useful range | Creates MR-REC-DAMAGE-RANGE | experiment.damageRange | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-BATCH-CHECK | W3 early to W6 after-hours | 1 | Analysed laser/sham record | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input | experiment.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
-| MR-EXP-REPAIR-STATE | W4 early to W6 after-hours | 1 | Analysed damage-range record | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear | Creates MR-REC-REPAIR-STATE | experiment.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
-| MR-EXP-OXYGEN-LOSS | W10 after Helpful Comments to W12 after-hours; analysis before W14 | 2 | MR-SCN-HELPFUL-COMMENTS | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input | experiment.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | 1 | MR-OPT-CAMILA-INITIAL | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE; can strengthen Morrow context | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| ID | Window and expiry | Monitoring windows | Prerequisite | Family choice: baseline / higher risk | Baseline: strong / limited / weak | Completion effect | Text key | Requirement / test |
+|---|---|---:|---|---|---|---|---|---|
+| MR-EXP-LASER-SHAM | W1 after Clarified to W4 after-hours | 1 | MR-SCN-CLARIFIED | Matched comparison / broader injury case | Clear recovery with stable sham / partial recovery or unclear control / unreliable record | Creates MR-REC-LASER-SHAM; supports the next request | experiment.laserSham | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-DAMAGE-RANGE | W2 early to W4 after-hours | 1 | Analysed laser/sham record | Observed recovery range / recovery edge | Clear recovery boundary / mixed recovery range / no useful range | Creates MR-REC-DAMAGE-RANGE | experiment.damageRange | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-BATCH-CHECK | W3 early to W6 after-hours | 1 | Analysed laser/sham record | Established batch context / newly available batch context | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input | experiment.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
+| MR-EXP-REPAIR-STATE | W4 early to W6 after-hours | 1 | Analysed damage-range record | Observe association / broader-condition challenge | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear | Creates MR-REC-REPAIR-STATE | experiment.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
+| MR-EXP-OXYGEN-LOSS | W10 after Helpful Comments to W12 after-hours; analysis before W14 | 2 | MR-SCN-HELPFUL-COMMENTS | Interpretable recovery condition / broader reviewer condition | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input | experiment.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | 1 | MR-OPT-CAMILA-INITIAL | Established assay context / exploratory assay context | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE; can strengthen Morrow context | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
 
 MR-EXP-REPAIR-STATE is associated with recovery. It never proves that the
 repair state causes recovery. This rule applies to every result string,
 manuscript option, report, and ending module.
 
 Each permitted repeat inherits one monitoring window from its source template.
-R01 defines no separate missed-window penalty. That effect waits for the
-evidence-quality decision in R02.
+Each missed biological window adds one preparation issue and each missed
+observation reduces evidence coverage. The evidence-quality priority decides
+whether the result is worth repeating, inconclusive, or suspicious.
+
+### Operational room-state catalogue
+
+These states are the full set of operational obstructions. They do not add
+another scene or record family.
+
+| ID | Window, trigger, and expiry | Forecast key | Routes | Expiry fallback | Requirement / test |
+|---|---|---|---|---|---|
+| MR-ROOM-FACILITY-QUEUE | W1–W4; first shared-facility conflict; resolves once | room.facilityQueue.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited slot now: no extra response action, Limited. Complete optional MR-OPT-GABRIEL-QUEUE: MR-ACT-RELATIONSHIP, with Ready for wait or press and Limited for limited use, plus its stated trust effect. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
+| MR-ROOM-IMAGING-BOOKING | W2–W5; overlapping imaging booking; resolves once | room.imagingBooking.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited observation now: no extra response action, Limited. Complete optional MR-OPT-SAMIRA-SHARED-INSTRUMENT: MR-ACT-RELATIONSHIP, with Ready for share or keep and Limited for limited use, plus its stated trust effect. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
+| MR-ROOM-IMAGING-SERVICE-LIMIT | W10–W14; first late imaging start; resolves once and expires at the W14 response gate | room.imagingService.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited service now: no extra response action, Limited. Ask Gabriel at trust 61 or more: no extra response action, Ready. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
+
+The R01 demand fixtures exclude conditional room-response periods. A route
+that waits adds exactly the stated one period. A route with no extra response
+action still pays the experiment's normal configure and start costs.
 
 The work items are:
 
@@ -505,7 +555,7 @@ technical setting.
 |---|---|---|---|
 | Samira | optional.samira.shared.opening | The booking system says we both have priority. It does not say which century. | None |
 | Player A | optional.samira.shared.share | Take the slot. I can move mine. | T:Samira+10; FLAG:sharedImaging |
-| Player B | optional.samira.shared.swap | Can we trade the next useful window instead? | T:Samira+0 |
+| Player B | optional.samira.shared.limited | I can use the limited observation window. Record the limit. | T:Samira+0; FLAG:limitedImagingUse |
 | Player C | optional.samira.shared.keep | I need this booking for the paper. | T:Samira-10; FLAG:tookImagingPriority |
 | Samira | optional.samira.shared.close | Good. The machine remains neutral. We will try to imitate it. | None |
 
@@ -935,7 +985,11 @@ MR-TEST-CONT-001 must prove all of the following before a release candidate:
 - every required content object links to a requirement and test ID;
 - every dependency, window, expiry, and effect references a valid object;
 - every one-time object has a saved completion or expiry state;
-- the full-game counts are 6, 7, 10, 20, 29, 12, and 30 in the order stated
+- every operational room state has a visible forecast, valid window, expiry
+  fallback, and at least two valid routes with different stated costs;
+- every optional desk item refers to a defined character, career, wording, or
+  room-state object;
+- the full-game counts are 6, 3, 7, 10, 20, 29, 12, and 30 in the order stated
   at the start of this document;
 - the fallback selection exactly matches its stated cut line;
 - no text claims that the repair state causes recovery;

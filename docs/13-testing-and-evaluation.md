@@ -83,11 +83,32 @@ MR-TEST-EXP-001 must show that:
   two energy in Standard or three in Supported without changing other state;
 - each normal experiment and permitted repeat has one monitoring window, while
   oxygen loss has two;
-- robust, mixed, and compromised preparation select only the approved outcome
-  bands;
-- closing or reloading cannot reroll a locked outcome;
-- monitoring, quality checks, missed windows, fatigue, and control quality
-  change only the approved outcome or evidence layer;
+- all six templates expose their approved baseline-preserving and higher-risk
+  family choices without operational laboratory detail;
+- Stable, Stressed, Failing, Ready, Limited, Unavailable, each missed window,
+  and one valid stabilizing action produce the exact approved issue count;
+- zero, one, two, and one-severe-issue fixtures produce Robust, Mixed,
+  Compromised, and Compromised respectively;
+- Unavailable equipment blocks normal start and offers only a valid authored
+  room-state route;
+- the locked variation value survives closing and reloading while later saved
+  monitoring can still change the projected and final preparation band;
+- final Robust, Mixed, and Compromised bands select only their approved Strong,
+  Limited, or Weak results;
+- matched and limited controls, structure, rhythm, paired observation, quality
+  monitoring, missed coverage, zero-energy fatigue, and raw-record conflict
+  change only evidence quality;
+- paired observation without the quality-check monitor does not give full
+  paired coverage;
+- Usable, Inconclusive, Worth repeating, and Suspicious each resolve through
+  their approved priority and definition;
+- a suspicious raw record does not set a misconduct flag, while a later
+  raw-versus-reported mismatch remains an integrity event;
+- analysis always shows raw observations first, then stores one primary
+  reading and at least one caveat;
+- stopping frees the active slot, loses the current sample and elapsed work,
+  preserves earlier archived records, creates no evidence card, and names a
+  relevant expiring opportunity;
 - the repair state is associated with recovery but is never represented as
   demonstrated cause; and
 - no valid path needs a perfect outcome or a crash.
@@ -129,6 +150,13 @@ MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
   state; and
 - no Citation requires unethical play.
 
+MR-TEST-WORLD-001 and MR-TEST-CONT-001 must also show that all three
+operational room states have their exact trigger, window, forecast, expiry,
+fallback, and two-or-more valid routes. No uncatalogued room state can block
+work. Optional desk content must refer to a defined character, career, wording,
+or room-state object. The R01 demand fixtures exclude conditional
+room-response periods, and a wait route adds exactly one period and no energy.
+
 ### Save, interruption, and technical checks
 
 MR-TEST-SAVE-001 and MR-TEST-TECH-001 must show that:
@@ -162,6 +190,13 @@ MR-TEST-UI-001 and MR-TEST-A11Y-001 must show that:
 - required information is not colour-only or sound-only;
 - no core action needs drag-only, hold-only, timed, or precise-motor input;
 - Research Status, the inbox, and all confirmations have semantic text;
+- the rack and imaging focused views support select, confirm, back, free view
+  switching, and non-dexterity use through keyboard-mouse and controller;
+- projected preparation bands show Robust, Mixed, or Compromised with reasons
+  but no exact probability, and resolved results identify player-controlled
+  factors;
+- the stop confirmation states slot, sample, elapsed-work, earlier-record,
+  evidence-card, and relevant-expiry consequences;
 - the active pressure profile cannot change inside an active save;
 - 150 percent text and UI scale remains usable at 1280 by 720;
 - reduced motion removes non-essential movement and flashes without removing

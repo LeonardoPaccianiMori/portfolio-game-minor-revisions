@@ -309,6 +309,28 @@ at an act boundary or a major scene. Across the whole floor, each phase permits
 at most one major and two minor room changes. A change appears only on safe
 room entry, never as a visible pop-in in front of the player.
 
+## R02 authored operational room states
+
+The following three states are the complete operational-obstruction catalogue.
+They reuse room, character, and experiment content. They are not a separate
+content family. Each state appears visibly before commitment and offers at
+least two routes. A room notice that is not in this table is presentation only
+and cannot block work.
+
+| State | Window and place | Visible condition | Clear routes and different costs |
+|---|---|---|---|
+| `MR-ROOM-FACILITY-QUEUE` | Weeks 1–4, facility station and imaging bay | The shared slot is overbooked; equipment is Unavailable until the player responds. | Wait one period for Ready equipment; use the limited slot now and enter with Limited equipment; or complete the optional **The Queue** scene for its stated Ready or Limited result and Gabriel-trust effect. |
+| `MR-ROOM-IMAGING-BOOKING` | Weeks 2–5, imaging booking board | Samira and the player have one overlapping booking. | Wait one period for Ready equipment; use the limited observation route now and enter with Limited equipment; or complete the optional **Shared Instrument** scene for its stated Ready or Limited result and Samira-trust effect. |
+| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Weeks 10–14, imaging bay and service alcove | A visible service limit makes normal imaging Unavailable. | Wait one period with no energy cost and restore Ready equipment; use the limited service path immediately and enter with Limited equipment; or use Gabriel's high-trust support at 61 or more to restore Ready equipment without an extra period. |
+
+The limited route never hides its Mixed-preparation consequence. Waiting uses
+the authored room-response action and advances exactly one period. A character
+scene is an optional third route, never the only way to continue. The late
+high-trust route is a bounded relationship reward, not a required solution. If
+a state expires, it resolves to the stated limited route rather than silently
+blocking the related mandatory task. Week 15–16 access notices are non-blocking
+environmental changes only.
+
 ## B07 continuous-floor performance boundary
 
 The floor has no room loading screens. Doors, glass partitions, and bends limit
@@ -337,6 +359,8 @@ B07 is complete only if all of the following are true:
   can override it safely;
 - the five act states, time layers, environmental categories, and persistence
   limits can be implemented without changing the floor plan;
+- all three operational room states use their stated windows, visible
+  conditions, and two-or-more routes, and no other room change blocks work;
 - the object inventory has no loose pickups, hidden item hunt, or unbounded
   prop requirement; and
 - the level can be implemented as one continuous floor with bounded visible

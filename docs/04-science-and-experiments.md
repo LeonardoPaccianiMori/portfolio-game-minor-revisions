@@ -87,32 +87,41 @@ and analyse and interpret the result. The player can manage at most three
 active groups. A group is a labelled physical tray and a linked digital record,
 not an inventory item.
 
-Preparation offers no more than three main choices: experiment goal, control
-quality, and observation focus. Each family can add one authored fictional
-choice without giving a real protocol:
+Preparation offers no more than three main choices: experiment goal, matched
+or limited control quality, and structure, rhythm, or paired observation.
+Paired observation needs the quality-check monitoring action to produce full
+paired coverage. Each template also gives one authored fictional choice
+without giving a real protocol:
 
-| Family | Family-specific gameplay focus |
-|---|---|
-| Laser injury | Compare controlled damage with sham work. |
-| Oxygen loss and restoration | Compare recovery conditions after the challenge. |
-| Cardiotoxic-drug exposure | Compare exposure results and monitoring coverage. |
+| Template | Baseline-preserving choice | Higher-risk biological choice |
+|---|---|---|
+| Laser/sham | Prioritize the matched comparison. | Include the broader injury case. |
+| Damage range | Stay inside the observed recovery range. | Test the recovery edge. |
+| Batch check | Use the established batch context. | Use the newly available batch context. |
+| Repair state | Observe the association beside recovery. | Challenge the association in a broader condition. |
+| Oxygen loss | Prioritize the interpretable recovery condition. | Prioritize the broader reviewer condition. |
+| Drug exposure | Use the established assay context. | Use the exploratory assay context. |
 
-The family-specific choice must stay qualitative. It must not show operational
-quantities, timings, concentrations, equipment settings, or instructions.
+The baseline-preserving choice adds no biological preparation issue. The
+higher-risk choice adds one issue, but can provide its stated broader or more
+novel record. It is not labelled as a wrong choice. Control quality and
+observation focus never change what the tissue biologically did. Every choice
+must stay qualitative. It must not show operational quantities, timings,
+concentrations, equipment settings, or instructions.
 
 During a run, the active sample rack and desk work queue show a clear state.
 The player must visit the station for meaningful monitoring or intervention.
 Laser/sham, damage-range, batch-check, repair-state, drug-exposure, and every
 permitted repeat have one monitoring window. Oxygen-loss work has two. At a
 monitoring point, the player can continue, spend attention on a quality check
-or stabilizing action, or stop. A stopped group is lost; a finally analysed
-group frees its active slot. Neither action removes its raw laboratory record.
+or stabilizing action, or stop. A stopped group and its unarchived work are
+lost, its slot is freed immediately, and earlier archived records remain. A
+finally analysed group also frees its slot.
 
-The exact missed-window effect depends on the evidence-quality rules resolved
-with `MR-REV-009`. R01 fixes only the number of windows and their period cost.
-
-Analysis creates an evidence card. It records the research question, controls,
-available evidence views, evidence quality, and caveats. A later manuscript
+Analysis first shows the raw structure, rhythm, and repatterning observations.
+The player then selects one primary reading and at least one relevant caveat.
+The resulting evidence card records the research question, controls, available
+views, evidence quality, selected reading, and selected caveat. A later manuscript
 choice may use, omit, reinterpret, change the reported reading of, or add an
 unsupported reading beside this raw record. The game gives no practical method
 for falsification.
@@ -125,12 +134,48 @@ laboratory protocol.
 
 ## B05 result and evidence contract
 
-Each experiment resolves two separate results. Biological result starts from
-the authored experiment baseline and responds to sample state, selected
-approach, equipment condition, and small saved variation. Evidence quality
-responds to controls, monitoring, quality checks, missed windows, fatigue, and
-record handling. The saved campaign seed can move only within the earned
-adjacent result range; it cannot conceal a major player-caused problem.
+Each experiment resolves two separate results. Biological outcome starts from
+the authored template baseline and responds only to sample condition,
+equipment state, the template-specific choice, monitoring state, and small
+saved variation. Evidence quality responds to controls, observation coverage,
+monitoring, fatigue, and raw-record handling. Control quality cannot change
+what the tissue biologically did.
+
+Sample condition is **Stable**, **Stressed**, or **Failing**. Equipment is
+**Ready**, **Limited**, or **Unavailable**. Stable or Ready adds no biological
+issue. Stressed, Limited, and each missed biological monitoring window add one
+issue. Failing is one severe issue and directly makes preparation
+Compromised. Unavailable equipment blocks a normal start and presents the
+authored wait, help, limited-alternative, or plan-change routes. A stated
+stabilizing action can remove one eligible non-severe issue.
+
+Every newly configured run starts with a projected Robust band before its
+visible conditions and selected family choice are applied. The three active
+sample slots are the complete capacity constraint. There is no finite
+sample-supply resource behind them.
+
+Zero issues gives **Robust** preparation. One issue gives **Mixed**
+preparation. Two issues, or one severe issue, gives **Compromised**
+preparation. The game locks its deterministic variation value at experiment
+start, but not the final band. Visible sample, equipment, and monitoring events
+can change the projected band. The last monitoring or resolution point fixes
+the earned band, and the locked value selects only inside it. Reloading cannot
+reroll that value.
+
+Evidence quality resolves in this order:
+
+1. **Suspicious** when the raw record has an unexplained internal conflict.
+2. **Worth repeating** when a clear, recoverable process issue limits the
+   record and one permitted repeat remains.
+3. **Usable** when the valid record answers the stated question, including a
+   carefully narrowed question supported by limited controls.
+4. **Inconclusive** when valid evidence does not answer the stated question,
+   or a process-limited record has no permitted repeat left.
+
+Only a zero-energy push-through creates fatigue-related evidence risk. Fatigue
+never secretly changes biological reality. A later mismatch between a raw
+record and the reported manuscript reading is an integrity concern, not the
+original scientific **Suspicious** state.
 
 A new usable result with appropriate controls gives two evidence-support
 points. A useful partial result or first repeat gives one. An inconclusive
@@ -146,7 +191,10 @@ changes, or invents reported evidence.
 
 ## Results and claims
 
-Each experiment has a biological result and a separate evidence-quality result.
+Each experiment has biological observations and a separate evidence-quality
+result. The four labels below apply to individual sample conditions. A
+multi-condition template summarizes the full record with its authored strong,
+limited, or weak result string.
 
 | Biological result | Meaning |
 |---|---|

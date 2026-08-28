@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 and R01 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R02 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -53,15 +53,15 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-005 | Pressure profile | Decide how Supported changes pressure | `accepted` |
 | MR-REV-006 | Campaign pacing | Decide whether the Weeks 8–9 experiment gap is intended | `accepted` |
 | MR-REV-007 | Campaign pacing | Decide whether Weeks 15–16 need a period sink | `prototype required` |
-| MR-REV-008 | Experiments | Define configuration-to-outcome-band mapping | `unreviewed` |
-| MR-REV-009 | Experiments | Define evidence-quality resolution and `suspicious` | `unreviewed` |
-| MR-REV-010 | Experiments | Decide whether outcome bands can teach causality | `unreviewed` |
-| MR-REV-011 | Interpretation | Decide how much interpretation the player performs | `unreviewed` |
-| MR-REV-012 | Interaction | Specify focused-station interaction texture | `unreviewed` |
-| MR-REV-013 | Experiments | Define sample, equipment, supply, and fatigue effects | `unreviewed` |
+| MR-REV-008 | Experiments | Define configuration-to-outcome-band mapping | `accepted` |
+| MR-REV-009 | Experiments | Define evidence-quality resolution and `suspicious` | `accepted` |
+| MR-REV-010 | Experiments | Decide whether outcome bands can teach causality | `accepted` |
+| MR-REV-011 | Interpretation | Decide how much interpretation the player performs | `accepted` |
+| MR-REV-012 | Interaction | Specify focused-station interaction texture | `accepted` |
+| MR-REV-013 | Experiments | Define sample, equipment, supply, and fatigue effects | `accepted` |
 | MR-REV-014 | Evidence | Resolve evidence saturation and reachability | `accepted` |
-| MR-REV-015 | Institutional pressure | Catalogue promised queues, faults, limits, and requests | `unreviewed` |
-| MR-REV-016 | Experiments | Make experiment stopping legible as triage or accept its current role | `unreviewed` |
+| MR-REV-015 | Institutional pressure | Catalogue promised queues, faults, limits, and requests | `accepted` |
+| MR-REV-016 | Experiments | Make experiment stopping legible as triage or accept its current role | `accepted` |
 | MR-REV-017 | Manuscript | Specify manuscript-board behaviour | `unreviewed` |
 | MR-REV-018 | Peer review | Define PIIM response-card satisfaction | `unreviewed` |
 | MR-REV-019 | Manuscript | Decide whether claim level must follow evidence support | `unreviewed` |
@@ -141,5 +141,33 @@ Discuss entries in dependency order, not numerical order:
   Substantial. Repeat yield and re-pricing wait for the R02 result and quality
   decision.
 
-No implementation is authorized. `MR-REV-001` through `MR-REV-052` remain
-unreviewed except the R01 entries recorded above.
+### R02 — Experiment resolution and interaction
+
+- `MR-REV-008`: biological outcome uses sample condition, equipment state,
+  template-specific choice, monitoring state, and locked variation. Controls
+  affect evidence quality only.
+- `MR-REV-009`: use the approved Usable, Inconclusive, Worth repeating, and
+  Suspicious definitions and resolution priority. Suspicious does not by
+  itself mean misconduct.
+- `MR-REV-010`: show Robust, Mixed, or Compromised plus plain-language reasons
+  before commitment, and identify player-controlled factors after resolution.
+  Do not show exact probabilities.
+- `MR-REV-011`: show raw observations first. The player selects one primary
+  reading and at least one caveat, and both remain in later records.
+- `MR-REV-012`: give the physical sample rack and imaging bay richer focused
+  interaction through tray selection and evidence-view switching. Retain
+  selection-and-confirm input with no dexterity test.
+- `MR-REV-013`: use Stable, Stressed, and Failing samples; Ready, Limited, and
+  Unavailable equipment; three active slots; exact issue-count bands; and
+  zero-energy fatigue risk on evidence only. There is no finite sample-supply
+  resource.
+- `MR-REV-015`: reuse exactly three authored operational room states. Each has
+  two or more visible routes. Optional desk work must reference a defined
+  character, career, wording, or room-state object; there are no uncatalogued
+  optional PI requests.
+- `MR-REV-016`: stopping immediately frees the slot, loses the current sample
+  and elapsed work, preserves earlier archived records, creates no evidence
+  card, and identifies a relevant expiring opportunity.
+
+No implementation is authorized. R03 is next: `MR-REV-017`–`021` and
+`MR-REV-051`. Five review blocks remain, R03 through R07.

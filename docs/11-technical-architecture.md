@@ -58,8 +58,10 @@ contains at least:
 - campaign and schema versions, stable campaign identifier, and saved seed;
 - semester clock, pressure profile, energy, evidence, PI confidence,
   integrity, and working trust;
-- active sample groups, sample history, equipment state, raw records, evidence
-  cards, and locked experiment outcomes;
+- active sample groups, sample-condition history, equipment state, biological
+  issue counts, projected and final preparation bands, locked variation values,
+  monitoring and observation coverage, stop logs, raw records, evidence cards,
+  selected readings, and selected caveats;
 - manuscript cards, committed snapshots, requests, reviewer response cards,
   paper state, and authorship and integrity history;
 - received messages, route state, character and scene state, floor act state,
@@ -83,10 +85,17 @@ current state and returns:
    save request, UI refresh, or sound request.
 
 The game uses a small deterministic pseudo-random number generator. A new
-campaign stores its seed. When an experiment or PIIM outcome begins, the game
-records its earned outcome band and locked variation in campaign state.
-Reloading cannot reroll it. The PRNG never replaces authored causal rules or
-allows a result outside its approved band.
+campaign stores its seed. When an experiment starts, the game records its
+locked variation and current projected preparation band. The band is derived
+from visible biological issues and can change through later sample, equipment,
+stabilizing, or monitoring events. The last monitoring or resolution command
+records the final band. The locked value then selects only inside that band.
+Reloading cannot reroll the value or reverse a saved band change.
+
+PIIM keeps its separate approved locked response-band rule. The PRNG never
+replaces authored causal rules or allows a result outside its approved final
+band. Controls, observation coverage, zero-energy fatigue, and record handling
+are evidence-quality inputs and cannot modify biological reality.
 
 Every event, experiment, manuscript revision, scene, ending module, and
 permanent consequence has a stable identifier. Authored data is validated by
@@ -110,6 +119,10 @@ The rules module may select a saved approved variant. It must not assemble
 sentences, use a language model, fill an arbitrary template, or create a new
 event. The validator must reject duplicate IDs, missing string keys, invalid
 dependencies, invalid effect targets, and a count outside the B10 catalogue.
+It must also reject an operational room state without a visible window,
+forecast, expiry response, and at least two valid routes with different stated
+costs. Optional desk work must reference a defined character, career, wording,
+or room-state content ID.
 
 ### Safe-point scheduler
 
