@@ -114,6 +114,7 @@ belongs in the numbered design documents.
 | 2026-08-28 | Leonardo alone decides when to create and push a remote. A later public source release plans MIT for code and CC BY 4.0 for Leonardo's original non-code work; do not add licence files now. | Confirmed |
 | 2026-08-28 | Use requirement IDs in the MR-REQ-DOMAIN-NUMBER form and the approved work-package, branch, review, contribution-record, and definition-of-done contract. | Confirmed |
 | 2026-08-28 | Treat exact package versions, verified asset sources and codecs, source hashes, and measured performance as future verified implementation facts. | Confirmed |
+| 2026-08-28 | Run an independent frontier-LLM design review before Leonardo considers implementation approval. Use Claude Opus 5 for Stages 1-3, a separate blind context for the incentives review, exact file packets, the B10 snapshot, and reviewed reports that remain advisory until Leonardo records a decision. Gemini 3.1 Pro can later provide the separate incentives lane. | Confirmed |
 
 ## Rules for future entries
 

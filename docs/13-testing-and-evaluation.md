@@ -10,9 +10,13 @@ players, collect participant data, use consent forms, run surveys, or require
 external science or narrative review.
 
 Leonardo is the only human play evaluator. Codex provides automated tests,
-private technical checks, content checks, and documented review. A later
-independent LLM consistency review is outside this B10 plan. It is not an
-implementation gate and it does not replace Leonardo's approval.
+private technical checks, content checks, and documented review. The approved
+[`independent LLM design review`](reviews/independent-design-review-protocol.md)
+is outside B10 testing. It must occur before Leonardo considers the separate
+implementation-readiness approval. It is an advisory specification audit, not
+external playtesting, scientific validation, narrative authority, or a vote on
+implementation. Its recommendations do not change the design until Leonardo
+accepts them.
 
 No test result exists yet. This document defines future evidence only.
 

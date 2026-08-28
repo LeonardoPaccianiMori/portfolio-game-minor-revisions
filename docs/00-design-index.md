@@ -23,6 +23,7 @@ gaps. It does not mean that the domain is finished.
 | `13-testing-and-evaluation.md` | Quality evidence | B10 documented | Test results are future evidence, not current claims. |
 | `14-production-plan.md` | Delivery strategy | B10 documented | Leonardo may later revise capacity or release timing. |
 | `15-implementation-contract.md` | Agent handoff | B10 documented | Work begins only after the separate gate approval. |
+| `reviews/independent-design-review-protocol.md` | External specification review | Protocol approved | Run and inspect the four review stages; no report exists yet. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -51,11 +52,12 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **Post-workshop specification review**
+- Current block: **Independent post-workshop specification review**
 - Last documented block: **B10 — Content, evaluation, production, and implementation handoff**
-- Next action: Leonardo reviews the complete specification and separately
-  decides whether to approve implementation planning. Do not start
-  implementation work.
+- Next action: run the approved independent LLM review against design snapshot
+  `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`, inspect its reports, and record
+  Leonardo's decisions before he separately considers implementation
+  approval. Do not start implementation work.
 - Implementation gate: **blocked**; B10 documentation does not authorize
   implementation.
 

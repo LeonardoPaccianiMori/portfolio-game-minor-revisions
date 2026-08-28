@@ -16,8 +16,10 @@ Status: **design and evaluation; B10 documented; implementation still blocked**.
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
 configuration. B10 now records the bounded content, evaluation, production,
-and handoff plan. The specification is still not implementation-ready until
-Leonardo separately approves the gate in
+and handoff plan. An approved
+[`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
+now defines the next specification check. The specification is still not
+implementation-ready until Leonardo separately approves the gate in
 [`docs/00-design-index.md`](docs/00-design-index.md).
 
 Target experience:
@@ -33,7 +35,9 @@ Target experience:
 
 The numbered documents divide the design into implementation-owned domains.
 Confirmed decisions, unresolved questions, and acceptance requirements must
-remain explicit. Start with the design index and decision log.
+remain explicit. Start with the design index and decision log. Review reports
+remain advisory and cannot change the numbered documents without Leonardo's
+later decision.
 
 ## Repository boundary
 
