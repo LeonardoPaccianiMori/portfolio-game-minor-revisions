@@ -194,20 +194,28 @@ no account, server-side save, uploaded player data, or automatic expiration of
 an unfinished save. Browser closure and a lost connection do not advance game
 time.
 
-Safe saves occur at approved experiment, manuscript, and scene boundaries.
-Save and Quit gives a clear confirmation at the last safe state. On campaign
-completion, the game removes the full active state and retains a compact ending
-card. Archive has two areas. **Departures** keeps the 12 most recent ending
-cards as a chronological record without empty slots, an expected-run count, or
-a completion percentage. **Institutional Citations** shows the persistent
-12-item collectible set. Neither gives a gameplay advantage. The Archive does
-not retain full earlier saves or every previous cinematic. Settings includes
-**Clear Saved Data** with a clear confirmation.
+Safe saves occur at approved experiment, manuscript, and scene boundaries. A
+safe save can contain queued events and a pending crash, but not an active
+scene. Save and Quit during an unresolved scene returns to the verified
+pre-scene checkpoint. After the result is saved, it uses the verified
+post-scene state. On campaign completion, the game removes the full active
+state and retains a compact ending card. Archive has two areas. **Departures**
+keeps the 12 most recent ending cards as a chronological record without empty
+slots, an expected-run count, or a completion percentage. **Institutional
+Citations** shows the persistent 12-item collectible set. Neither gives a
+gameplay advantage. The Archive does not retain full earlier saves or every
+previous cinematic. Settings includes **Clear Saved Data** with a clear
+confirmation.
 
-Skipping a cutscene adds a concise recap, including its choice and immediate
-result, to the inbox or Research Status. Normal cutscenes do not replay during
-an active save. The Archive provides ending cards, citations, and ending
-summaries only. `11-technical-architecture.md` defines save schemas,
+Skip before an unresolved cutscene choice advances to that choice and cannot
+select it. After a choice, the player can play or skip the remaining
+presentation without changing the saved result. A skipped scene adds a concise
+authored recap, including its choice and immediate result, to the inbox or
+Research Status. If saved closing dialogue is interrupted, Continue shows the
+same recap and never replays the choice. Normal cutscenes do not replay during
+an active save. Mouse capture requires a new player confirmation after a
+scene, reload, or focus change. The Archive provides ending cards, citations,
+and ending summaries only. `11-technical-architecture.md` defines save schemas,
 migrations, data validation, corruption recovery, and the storage boundary.
 
 ## Accessibility baseline

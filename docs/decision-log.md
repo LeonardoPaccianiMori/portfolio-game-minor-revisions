@@ -171,6 +171,14 @@ belongs in the numbered design documents.
 | 2026-08-29 | Use stateless deterministic experiment and PIIM variation from the exact UTF-8 key, FNV-1a, campaign-seed XOR, one Mulberry32 step, and a 0–99 bucket. Save each result once so that retry, reload, rejection, or unrelated work cannot redraw it. | Confirmed |
 | 2026-08-29 | Define the documented time, energy, experiment, evidence, manuscript, integrity, relationship, PIIM, career-route, final-choice, and ending-resolution algorithms in S04; keep S05 ordering, S06 content forms, S07 persistence, S09 projections, S12 executable fixtures, and S14 freeze audit in their owning blocks. | Confirmed |
 | 2026-08-29 | Make `MR-IF-003` and `MR-IF-004` candidate `v1` and refine candidate `MR-IF-002` with the exact S04 stored facts. Keep all candidates unavailable to implementation until their connected freeze evidence exists. | Confirmed |
+| 2026-08-29 | Use the exact 64-period S05 calendar, entered-period order, safe-point triggers, combined consequence warning, scheduler priority, event lifecycle, queue order, expiry, and no-real-time rules. | Confirmed |
+| 2026-08-29 | Resolve one non-stacking pending crash before other safe-point content, preserve its recovery anchor, process missed monitoring in order, and reject a push-through that would require a period after Week 16. | Confirmed |
+| 2026-08-29 | Use the exact S05 message, reminder, world-update, cue, operational-room, mandatory manuscript, submission, late-gate, Elena-reaction, and Week-16 order. | Confirmed |
+| 2026-08-29 | Lock and checkpoint a scene before start; protect unresolved choices from skip; commit choice, result, time, and scene completion together; and use verified pre-scene or post-result recovery without replaying a saved choice. | Confirmed |
+| 2026-08-29 | Store `lastSchedulerRevision`, scheduler event eligibility and resolution periods, locked scene forms, and final closing-or-recap presentation state as approved refinements of candidate `MR-IF-002`. | Confirmed |
+| 2026-08-29 | Make the pure one-step scheduler `MR-IF-005` candidate `v1` and the S05 campaign-facing part of cutscene `MR-IF-011` draft `v1`; keep 24 commands and five effects. | Confirmed |
+| 2026-08-29 | Require the named S05 calendar, scheduler, crash, message, room, gate, scene, skip, recovery, ending, fault, and complete-journey fixtures without claiming that tests exist or pass. | Confirmed |
+| 2026-08-29 | Use `requestScene` in two steps without adding a command or effect: lock the scene form and verify its queued pre-scene checkpoint first, then activate and start only from that exact verified revision. | Confirmed |
 
 ## Rules for future entries
 

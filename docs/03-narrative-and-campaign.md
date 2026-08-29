@@ -44,6 +44,7 @@ regenerative treatment.
   opportunity.
 - Important messages wait until an active experiment reaches a safe stopping
   point. They cannot disappear or interrupt the player without warning.
+  Closing a message is deferral, not a reply or expiry.
 - The fixed calendar, submission order, and final week do not change between
   runs. Results, available optional scenes, relationships, reports, and career
   routes can change.
@@ -65,7 +66,7 @@ regenerative treatment.
 | 11–12 | Competing futures | The player answers reviewers and completes the required oxygen-loss work. |
 | 13 | Competing futures | Aldercroft sends a final-round invitation or a polite rejection. |
 | 14 | Competing futures | **A Reasonable Response** requires resubmission, journal withdrawal, or public-record withdrawal. |
-| 15 | Competing futures | `PIIM` gives its final state. Morrow makes an eligible player a formal offer. Elena reacts privately. |
+| 15 | Competing futures | `PIIM` gives its final state. Morrow makes an eligible player a formal offer or refusal. Elena then reacts privately to the saved paper result. |
 | 16 | Decision | **06:42** moves from the research floor to the exit and the final career choice. |
 
 Weeks 8 and 9 deliberately have no open experiment template. This is not idle
@@ -100,9 +101,10 @@ minutes. Messages, reports, and manuscript work remain player-controlled.
 
 ## B07 spatial scene staging
 
-Every required scene becomes due at a safe point in its stated week. A lit
-office, open door, desk message, voice, or character presence gives an
-in-world cue. The player can continue to walk, inspect, and read, but cannot
+Every required scene becomes due at a safe point in its stated week. **Clarified**
+starts automatically after its verified opening checkpoint. A lit office,
+open door, desk message, voice, or character presence gives every later scene
+an in-world cue. The player can continue to walk, inspect, and read, but cannot
 start another time-costing task before the due scene occurs. This is a time
 gate, not a room lock or teleport. The B08 presentation contract controls
 camera, animation, audio, and visual execution.
@@ -130,12 +132,15 @@ sounds, but they never carry required information or form real words. The
 protagonist has no spoken performance. Captions and speaker names are on by
 default. Dialogue advances manually, and important choices remain untimed.
 
-Every scene is skippable and safe around a checkpoint. A skip writes a concise
-recap of the choice and immediate result into the inbox or Research Status.
-Normal scenes do not replay during an active save. The seven main scenes
-remain inside the approved 14–18-minute target. The modular epilogue and all
-other non-interactive content stay inside the normal 15–20-minute total and the
-absolute 22-minute maximum.
+Every scene is skippable and safe around a checkpoint. Skip before a required
+choice advances to that choice and cannot select it. The final choice saves its
+result and can then play or skip the remaining presentation. A skipped or
+interrupted saved scene writes a concise authored recap of the choice and
+immediate result into the inbox or Research Status. Normal scenes do not
+replay during an active save. The seven main scenes remain inside the approved
+14–18-minute target. The modular epilogue and all other non-interactive
+content stay inside the normal 15–20-minute total and the absolute 22-minute
+maximum.
 
 ## Submission ladder and peer review
 
@@ -308,7 +313,10 @@ discovery, automatic detection, or moral punishment.
 | Public-record withdrawal | The player also removes the preprint. This closes both career routes and selects the separate public-withdrawal text variant of **End of Contract**. |
 
 The B05 response-band and route rules determine the Week 15 state. The
-narrative calendar does not change after any Week 14 choice.
+narrative calendar does not change after any Week 14 choice. After Camila's
+Week-15 contact or its expiry, one no-time private Elena notification reacts
+only to the saved `PIIM` paper state. It is not a scene, does not reveal
+Camila's private contact, and changes no route or relationship.
 
 ## Final choice and ending boundary
 

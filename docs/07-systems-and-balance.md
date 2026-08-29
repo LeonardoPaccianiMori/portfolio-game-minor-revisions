@@ -76,11 +76,14 @@ it has no stigma or content penalty.
 `MR-ACT-BREAK` costs one period and no energy. Every Standard break restores
 two segments. Every Supported break restores three. Breaks are not capped per
 week, and restoration cannot exceed five segments.
-At zero energy, the player can push through one focused or intense task. At its
+At zero energy, the player can push through one focused or intense task. The
+completed task stores one pending crash and its nearby recovery anchor. At the
 next safe point, the protagonist crashes, loses one further work period,
 restores two segments, and misses any monitoring window that passed during the
-crash. A crash can damage evidence, lose optional content, or close a route. It
-cannot begin during manual equipment interaction or a cutscene.
+crash. Pending crashes cannot stack, and a push-through is unavailable when
+its guaranteed crash would require a period after Week 16 after-hours. A crash
+can damage evidence, lose optional content, or close a route. It cannot begin
+during manual equipment interaction or a cutscene.
 
 The earlier estimates of 48–52, 52–56, and 58–62 productive periods are
 superseded by the R01 audit below. The approved action catalogue does not yet
@@ -192,11 +195,13 @@ Equipment can run at every period. A room or station may have a visible queue,
 fault, booking limit, or repair state when an authored event requires it.
 
 A mandatory weekly beat becomes due at the first safe point in its stated
-week. The game gives an in-world cue and does not let the player begin another
+week. **Clarified** starts after its verified opening checkpoint. Every later
+scene gives an in-world cue and does not let the player begin another
 time-costing action first. This preserves the fixed calendar without a
-teleport, a physical room lock, or an unsafe interruption. Optional scenes
-remain available through their stated deadline. `06-world-and-level-design.md`
-defines their spatial positions and the exact floor access rules.
+teleport, a physical room lock, or an unsafe interruption. Optional cues do
+not block work, and optional scenes remain available through their inclusive
+deadline. `06-world-and-level-design.md` defines their spatial positions and
+the exact floor access rules.
 
 ## Experiment resolution
 
@@ -513,17 +518,19 @@ unresolved concern becomes serious only at the Week 13 Aldercroft check.
 ## Interruptions and safe continuity
 
 An interruption uses a world signal, safe queue notification, then optional
-response or scene. Non-critical messages can be deferred. A scene cannot start
-while equipment needs attention, and a deadline must be explicit.
+response or scene. Non-critical messages can be deferred. Closing a message
+does not reply or resolve it. A scene cannot start while equipment needs
+attention, and a deadline must be explicit.
 
 Safe checkpoints occur at experiment-stage changes, monitoring decisions,
-analysis archiving, manuscript commits, and scene boundaries. Menus, pause,
-and browser closure do not advance game time or cause a missed monitoring
-window. The B05 time and progression rules apply. B08 fixes one active local
-IndexedDB save per browser profile, no automatic unfinished-save expiration,
-and a completion Archive with 12 ending cards plus persistent Institutional
-Citations. `11-technical-architecture.md` defines persistence schemas,
-validation, migration, and recovery.
+analysis archiving, manuscript commits, and scene boundaries. A safe save can
+contain queued events and one pending crash, but not an active scene. Menus,
+pause, browser focus loss, and browser closure do not advance game time or
+cause a missed monitoring window. The B05 time and progression rules apply.
+B08 fixes one active local IndexedDB save per browser profile, no automatic
+unfinished-save expiration, and a completion Archive with 12 ending cards
+plus persistent Institutional Citations. `11-technical-architecture.md`
+defines persistence schemas, validation, migration, and recovery.
 
 ## PIIM response band
 
@@ -657,8 +664,9 @@ catalogue action and test fixture must reference both where relevant.
 The exact pure command boundary, 24-command and five-effect unions, rejection
 and fault order, atomic time and energy application, deterministic FNV-1a and
 Mulberry32 bucket, preparation, evidence, manuscript, integrity, PIIM, route,
-and ending algorithms are documented in implementation S04. S05 still owns
-safe-point, crash, event, cutscene, skip, and resume order.
+and ending algorithms are documented in implementation S04. Implementation
+S05 fixes safe-point, crash, event, cutscene, skip, resume, and finalization
+order.
 
 After the vertical-slice internal evaluation, a recorded balance change may
 alter the three percentages only. It may not add a new outcome type, hide a

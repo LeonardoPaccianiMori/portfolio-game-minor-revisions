@@ -110,9 +110,21 @@ allowed only where the row states them. Unknown fields are contract faults.
 
 | Command | Required payload | Main result |
 |---|---|---|
-| `requestScene` | eligible scene ID | Queue or begin the scene as allowed by the S05 boundary. |
-| `chooseSceneOption` | in-progress scene ID and available option ID | Apply the authored choice and complete or advance the scene. |
-| `skipScene` | skippable in-progress scene ID | Record the approved skipped state; S05 defines checkpoint and input-restoration order. |
+| `requestScene` | scene ID selected by the current active cue, or initial **Clarified**; verified checkpoint revision only for step two | In step one, lock the authored form and request its pre-scene checkpoint; after verification, step two makes the same scene and event active. |
+| `chooseSceneOption` | in-progress scene ID, available option ID, and `playRemaining` or `skipRemaining` | Atomically apply the authored choice, result, cost, final scene state, event completion, active-event clearing, and recap fact. |
+| `skipScene` | skippable in-progress scene ID with no unresolved choice | Record the approved no-choice skipped state; it cannot select a required choice. |
+
+`requestScene` is one command with two state-dependent steps. Step one omits a
+checkpoint revision. It validates the current cue or initial **Clarified**,
+locks the authored scene form, leaves the scene and event queued, and emits
+only `saveCheckpoint` for the resulting revision. The application must verify
+that exact checkpoint before it submits step two with the same scene ID and
+the verified revision. Step two revalidates the unchanged queued scene and
+locked form, atomically makes the event active and scene `inProgress`, and
+emits `startCutscene`. A missing, stale, or mismatched checkpoint revision is a
+contract fault. Save failure never runs step two; the locked scene remains
+queued and no presentation token exists. Persistence can retry the same exact
+checkpoint without another campaign command.
 
 ### Conclusion command
 
@@ -128,16 +140,17 @@ They are still validated by rules and cannot bypass state prerequisites.
 | Command | Required payload | Main result |
 |---|---|---|
 | `applyScheduledTransition` | eligible scheduled-event ID | Apply one authored scheduled transition. |
-| `resolvePendingCrash` | no additional payload | Record one pending crash and its approved campaign facts. |
+| `resolvePendingCrash` | no additional payload | Clear one pending crash, advance one period, restore energy to 2, preserve its recovery anchor, and record all approved crossed-period facts. |
 | `resolvePiimOutcome` | no additional payload | Save the one deterministic PIIM result after a committed response. |
 | `evaluateCareerRoute` | `aldercroft` or `morrow` | Perform that route's single fixed-time eligibility check. |
-| `finalizeCampaign` | no additional payload | Select the ending modules and complete the campaign after all prerequisites. |
-| `recordContentPresentation` | content ID and `messageRead`, `contextualContent`, or `environmentalText` | Record reading or one-time presentation so that reload cannot repeat it. |
+| `finalizeCampaign` | no additional payload | In phase one, select the five ending modules and begin the epilogue; in phase two, complete the saved epilogue and campaign. |
+| `recordContentPresentation` | content ID and `messageRead`, `contextualContent`, `environmentalText`, `sceneClosing`, or `sceneRecap` | Record reading or one-time presentation so that reload cannot repeat it. |
 
 `recordContentPresentation` is the only rule command for a message read, a
-one-time contextual line or reaction, or environmental text consumption. It
-does not turn presentation frames, ordinary movement, or panel focus into
-campaign commands.
+one-time contextual line or reaction, environmental text consumption, a
+resolved scene's completed closing presentation, or its recovery recap. A
+scene cannot record both final presentation kinds. The command does not turn
+presentation frames, ordinary movement, or panel focus into campaign commands.
 
 ## Validation and result order
 
@@ -526,11 +539,17 @@ voluntary choice; it is used only when no route remains. Public withdrawal
 closes both routes and uses the `publicWithdrawal` End of Contract variant.
 When both routes are available, selecting one records the other as declined.
 
-`finalizeCampaign` selects exactly one career module, one paper module, one
-integrity module, one fatigue module, and one relationship module. The fatigue
-module is the neutral no-fatigue module when no crash occurred and final energy
-is above one. The five-part shape remains exact even where a module has neutral
-presentation.
+`finalizeCampaign` is state-dependent. In its first phase it selects exactly
+one career module, one paper module, one integrity module, one fatigue module,
+and one relationship module, records them, and moves the conclusion to
+`epilogueInProgress`. In its second phase, after the saved epilogue plays,
+skips, or uses recap recovery, it moves the conclusion and campaign to
+completed and emits the existing `completeCampaign` effect. The second phase
+cannot select different modules or produce another paper draw.
+
+The fatigue module is the neutral no-fatigue module when no crash occurred and
+final energy is above one. The five-part shape remains exact even where a
+module has neutral presentation.
 
 The relationship module uses this fixed tie order:
 
@@ -570,7 +589,12 @@ S12 will define their executable object format and individual case suffixes.
   `79`, `80`, and `99`.
 - Route and ending vectors cover each requirement boundary, each final choice,
   public withdrawal, hidden integrity, both-route decline, every ending module,
-  and all relationship tie-break levels.
+  all relationship tie-break levels, and both saved `finalizeCampaign` phases.
+- Scene and presentation vectors cover both `requestScene` steps, checkpoint
+  failure and retry, active-cue and **Clarified** start, mismatched checkpoint
+  revision, `playRemaining`, `skipRemaining`, no-choice skip, all five
+  `recordContentPresentation` kinds, and rejection of contradictory closing
+  and recap receipts.
 - Determinism vectors use fixed seeds and exact ASCII and Unicode target IDs.
   They cover retry, reload, unrelated commands, rejected commands, namespace
   separation, the same target, changed target, changed draw index, and no
@@ -596,9 +620,10 @@ codes, and `applyRuleCommand`.
 Owner: `rules`. Consumers: application, interaction, UI projection, scheduler,
 audio, cutscenes, persistence checkpoint coordination, and tests.
 
-It remains candidate until S05 connects scheduled order, S06 connects exact
-content objects, S09 connects projections, S12 supplies executable fixtures,
-and S14 completes the cross-interface audit.
+S05 now connects exact scheduled, scene, crash, skip, reload, and finalization
+order. The interface remains candidate until S06 connects exact content
+objects, S09 connects projections, S12 supplies executable fixtures, and S14
+completes the cross-interface audit.
 
 ## `MR-IF-004` candidate `v1`
 
@@ -622,9 +647,10 @@ S04 is documented when:
 - the S03 candidate refinements and all control documents agree;
 - `MR-IMP-OPEN-004` is resolved;
 - `MR-IF-003` and `MR-IF-004` are candidate `v1`;
-- S05 is the durable next block; and
+- S05 connects the safe-point scheduler without changing these atomic results;
+  and
 - no code, package, asset, remote, licence, or deployment file exists.
 
-S05 must preserve the atomic results and unchanged-state guarantees above when
-it defines safe points, time crossings, crashes, events, cutscenes, skip, and
-resume order.
+S05 preserves the atomic results and unchanged-state guarantees above and now
+defines safe points, time crossings, crashes, events, cutscenes, skip, resume,
+and two-phase finalization order. S06 is the durable next block.

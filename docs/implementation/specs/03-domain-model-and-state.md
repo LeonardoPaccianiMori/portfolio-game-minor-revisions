@@ -233,17 +233,37 @@ and `skipped`. Message states are `locked`, `available`, `read`, `replied`, and
 `expired`. Concern entries preserve source, visibility, current response, and
 permanent response history.
 
+Each scene also stores its locked authored-form ID or `null` and its final
+presentation state. The final presentation state is `closingPlayed`,
+`recapShown`, or `null`. It stays `null` before a result exists. A completed or
+skipped scene can temporarily retain `null` only after its campaign result is
+saved and before closing or recap presentation is recorded. On validated load,
+S05 converts that recoverable gap to the fixed authored recap; it never replays
+or reapplies the choice.
+
 Route states are `locked`, `developing`, `available`, `closed`, `chosen`, and
 `declined`. The Aldercroft and Morrow routes start locked. A chosen route must
 have been available. Choosing it records any other available route as
 declined. Locked or closed routes cannot be chosen.
 
 The scheduler stores `eventsById`, ordered unique `queue`, `activeEventId`, and
-`lastSafePointRevision`. Event states are `locked`, `eligible`, `queued`,
-`active`, `completed`, and `expired`. Every queued ID has state `queued`; the
-one active ID has state `active` and is absent from the queue. A scene in
-progress matches the active scheduler event. Completed, skipped, or expired
-content cannot remain active or queued.
+`lastSchedulerRevision`. Every stored event contains its stable ID, lifecycle
+state, `firstEligiblePeriod`, and `resolvedPeriod`. The two period fields are a
+period index or `null`. Authored delivery type, window, priority, deadline, and
+order remain in validated S06 content rather than campaign state.
+
+Event states are `locked`, `eligible`, `queued`, `active`, `completed`, and
+`expired`. A locked event has both period fields `null`. Eligibility records
+`firstEligiblePeriod` once and never clears it. Completion or expiry records
+`resolvedPeriod` once. Every queued ID has state `queued`; the one active ID
+has state `active` and is absent from the queue. A scene in progress matches
+the active scheduler event. Completed, skipped, or expired content cannot
+remain active or queued.
+
+`lastSchedulerRevision` changes only when an applied command changes scheduler
+event or queue truth. It never exceeds `stateRevision`. A harmless scheduler
+check, ignored late presentation token, rejected command, reload, browser
+frame, or other no-change operation does not update it.
 
 Browser time and visual frames cannot change scheduler state. S05 defines the
 future ordering and safe-point algorithms.
@@ -272,10 +292,11 @@ and S08 defines presentation.
 
 `contentHistory` stores selected variants, completed and expired content IDs,
 read message IDs, consumed once-only contextual lines and reactions, displayed
-once-only environmental-text IDs, and campaign Citation IDs. Selected variants
-never reroll. All IDs must exist in validated content and cannot be consumed
-before their content starts. Persistent cross-campaign Citations stay outside
-campaign state.
+once-only environmental-text IDs, recorded scene-closing and scene-recap IDs,
+and campaign Citation IDs. Selected variants never reroll. A resolved scene has
+at most one final closing or recap receipt. All IDs must exist in validated
+content and cannot be consumed before their content starts. Persistent
+cross-campaign Citations stay outside campaign state.
 
 Conclusion states are `unresolved`, `choicePending`, `confirmed`,
 `epilogueInProgress`, and `completed`. The state stores the final choice ID and
@@ -331,7 +352,7 @@ separately supplied `ValidatedContent` from S06.
 The complete campaign must also satisfy these invariants:
 
 - floor act, character schedule, event window, expiry, and period agree;
-- no history, snapshot, or safe-point revision exceeds `stateRevision`;
+- no history, snapshot, or scheduler revision exceeds `stateRevision`;
 - every manuscript figure, control, caveat, reading, omission, and PIIM card
   traces to a permitted evidence source;
 - reviewer, PIIM, preprint, journal, route, and conclusion facts occur only
@@ -375,8 +396,9 @@ At creation:
 - every manuscript slot is empty, all revision tasks are locked, preprint is
   `notPosted`, journal is `notSubmitted`, and later paper facts are `null`;
 - `MR-SCN-CLARIFIED` is queued and is the only scheduler queue entry; all
-  later narrative entries are locked, no event is active, and the last safe
-  point revision is `0`;
+  later narrative entries are locked, no event is active, its first eligible
+  period is `0`, its resolved period is `null`, all locked events have both
+  period fields `null`, and the last scheduler revision is `0`;
 - both routes are locked;
 - the world uses `orderlyButOverbooked`, the shared-desks safe anchor, the
   Week-1 early background roster, and inactive room problems;
@@ -405,8 +427,8 @@ explicit transition pair. S12 gives each variant an executable case ID.
 | Experiment | Stage/active-list mismatch; analysed run without exactly one raw record and card; stopped run without exactly one stop log or with evidence. |
 | Evidence | Evidence source outside its matching raw record or the Samira contribution. |
 | Manuscript | Snapshot order or current-snapshot mismatch; premature reviewer or PIIM fact; public preprint without snapshot; duplicate committed effect. |
-| Scheduler | Queue/state mismatch, duplicate queue ID, active ID also queued, or scene/active-event mismatch. |
-| Content | Unknown, premature, repeated once-only, or changed selected variant. |
+| Scheduler | Queue/state mismatch, duplicate queue ID, active ID also queued, scene/active-event mismatch, invalid eligibility or resolved period, or scheduler revision after campaign revision. |
+| Content | Unknown, premature, repeated once-only, changed selected variant, contradictory scene-closing and recap receipts, or invalid final scene-presentation state. |
 | World | Wrong floor act, invalid anchor, early Camila introduction, or physical Camila placement. |
 | Route | Chosen route was not available, locked/closed route chosen, or missing decline of the other available route. |
 | Conclusion | Skipped or reversed state, missing choice, missing ending module, or premature completion. |
@@ -434,7 +456,10 @@ persistence, UI projection, cutscenes, and tests.
 
 S04 refines candidate `MR-IF-002` with exact stored experiment-variation,
 raw-record, evidence-card, PIIM-lock, content-presentation, and ending-module
-facts. `MR-IF-002` remains candidate until S06 connects content validation, S07
+facts. S05 further refines it with the scheduler-field rename, event period
+facts, locked scene form, and final scene-presentation state. These changes
+occur before implementation and freeze, so no save migration exists.
+`MR-IF-002` remains candidate until S06 connects content validation, S07
 connects persistence, S12 supplies executable fixtures, and S14 completes the
 cross-interface audit. Candidate status does not authorize implementation.
 

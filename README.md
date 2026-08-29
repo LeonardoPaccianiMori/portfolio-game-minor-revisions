@@ -13,7 +13,7 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **implementation specification; creative design, two independent
-review passes, and S00–S04 complete; S05 is next; all implementation gates
+review passes, and S00–S05 complete; S06 is next; all implementation gates
 blocked**.
 
 This repository contains design documentation only. It contains no game
@@ -39,10 +39,12 @@ S01 freezes the toolchain and repository contract. S02 freezes the documented
 module-architecture contract. S03 freezes the documented campaign-state,
 validation, canonical JSON, and fixture contract. S04 freezes the documented
 command, rule, deterministic-variation, truth-table, and unchanged-state
-contract. Its two new shared interfaces and the two earlier interfaces are
-candidates for later consistency review. None creates package or runtime
-files. S05 will define calendar, scheduler, event, cutscene, skip, and resume
-order.
+contract. S05 freezes the documented calendar, safe-point, scheduler, event,
+crash, message, room, cutscene, skip, reload, recap, and finalization order.
+`MR-IF-001`–`MR-IF-005` are candidates for later consistency review, and the
+S05 campaign part of `MR-IF-011` is draft. None creates package or runtime
+files. S06 will define content data, references, validation, strings, and
+build profiles.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

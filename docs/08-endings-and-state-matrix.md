@@ -33,6 +33,11 @@ The Week 16 scene always occurs at 06:42 at the building exit. It can present:
   uncertain third choice, not a hidden best ending.
 - **Neither:** leave because no viable route remains.
 
+At Week 16 after-hours, the scheduler resolves a pending final-period crash,
+expires optional content, blocks new time-costing work, prepares the available
+choices, and then makes **06:42** due. The selected choice requires irreversible
+confirmation and records any declined available alternative.
+
 The `PIIM` decision arrives in Week 15 after one major-revision round. It can
 publish a defensible paper, accept it pending final work, leave it under review,
 reject it, or publish an undetected compromised paper. A journal result does
@@ -144,6 +149,11 @@ epilogue set six months after Week 16. It has this order:
    behind or as a silhouette.
 5. Ending card and summary.
 
+Campaign finalization has two saved phases. The first selects and stores the
+five approved ending modules and starts the epilogue. The second completes the
+campaign only after the epilogue plays, skips, or uses its authored recap. A
+reload cannot select different modules or create a new paper result.
+
 The four career scenes use the Bellwether desk or PI office, a small Morrow
 assay room, the university exit with a short outward view, or a cleared
 Bellwether desk followed by the exit. They do not create a second explorable
@@ -178,8 +188,8 @@ high bar.
 
 Implementation S04 fixes the PIIM 0–99 outcome buckets, one-time route checks,
 final-choice restrictions, exact five-module resolver, and this relationship
-tie order. S05 still owns the Week-13, Week-15, and Week-16 safe-point order and
-cutscene progression.
+tie order. Implementation S05 fixes the Week-13, Week-15, and Week-16
+safe-point order and cutscene progression.
 
 The People summary also shows one consequence sentence for all five recurring
 characters by reusing the existing support, ambiguous, or distance module for

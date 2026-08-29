@@ -229,11 +229,14 @@ short physical walk to the station.
 
 ## B07 required and optional scene staging
 
-Every required scene becomes due only at a safe point. An in-world cue, such
-as a voice, lit office, open door, desk message, or character presence, calls
-the player to it. The player can walk freely, but cannot start another
-time-costing action before the scene occurs. Optional scenes remain available
-until their stated deadline.
+Every required scene becomes due only at a safe point. **Clarified** starts
+automatically after its opening checkpoint. An in-world cue, such as a voice,
+lit office, open door, desk message, or character presence, calls the player
+to every later scene. The player can walk freely, but cannot start another
+time-costing action before a required due scene occurs. Optional cues do not
+block time-costing work. Optional scenes remain available through their stated
+deadline. Temporary character absence pauses physical access but does not
+extend a deadline; required content keeps an authored desk or world fallback.
 
 | Scene | B07 spatial staging |
 |---|---|
@@ -285,6 +288,11 @@ Night has quiet rooms, available desk and laboratory work, and limited people.
 After-hours has reduced light, empty corridors, and limited shared services.
 Equipment can remain active in every period when its authored booking or fault
 state permits it.
+
+After a period change, the world applies floor act, time of day, normal roster,
+required character overrides, room windows, and then cues in that order. A cue
+is exposed only after experiment attention, expiry, room facts, and terminal
+campaign state have been checked.
 
 ## B07 semester states and environmental storytelling
 
@@ -352,9 +360,11 @@ The limited route never hides its Mixed-preparation consequence. Waiting uses
 the authored room-response action and advances exactly one period. A character
 scene is an optional third route, never the only way to continue. The late
 high-trust route is a bounded relationship reward, not a required solution. If
-a state expires, it resolves to the stated limited route rather than silently
-blocking the related mandatory task. Week 15–16 access notices are non-blocking
-environmental changes only.
+a state expires, its related optional content expires first and the room state
+then resolves once to the stated limited route rather than silently blocking
+the related mandatory task. The Week-14 imaging fallback resolves before
+**A Reasonable Response** becomes due. Week 15–16 access notices are
+non-blocking environmental changes only.
 
 ## B07 continuous-floor performance boundary
 

@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S04 documented; S05 is next; no code authorized**
+Status: **S00–S05 documented; S06 is next; no code authorized**
 
 ## Purpose
 
@@ -122,8 +122,8 @@ full-game evaluation gates still apply during production.
 | S02 | Module architecture | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries | S01 | Documented |
 | S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Documented |
 | S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Documented |
-| S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Not started; next |
-| S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Not started |
+| S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Documented |
+| S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Not started; next |
 | S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Not started |
 | S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Not started |
 | S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Not started |
@@ -196,8 +196,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-Begin S05. Decide the exact safe-point and time-crossing order, event
-eligibility and expiry, required and optional scene priority, interruption,
-pending-crash resolution, cutscene checkpoint and skip behaviour, reload, and
-recap state machines. Use the candidate S03 state contract and the S04 atomic
-rule-result contract. Do not create files from the planned runtime tree.
+Begin S06. Decide the exact authored-data file split, schemas, ID and reference
+rules, English-string boundary, delivery definitions, content versioning,
+validation order, migration meaning, and full, fallback, and vertical-slice
+build selection. Use the candidate S03–S05 state, rule, and scheduler
+contracts. Do not create files from the planned runtime tree.

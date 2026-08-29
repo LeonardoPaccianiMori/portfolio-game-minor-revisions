@@ -137,7 +137,8 @@ random event.
 
 S04 also fixes the time and energy operation, experiment and evidence rules,
 manuscript and integrity truth, PIIM buckets, career-route checks, and ending
-resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05–S07, S09, S12,
+resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
+scheduler and campaign-facing cutscene coordination. S06–S07, S09–S10, S12,
 and S14 still own their named connected contracts and freeze evidence.
 
 ### Content and strings contract
@@ -177,11 +178,16 @@ file above the word limit.
 
 ### Safe-point scheduler
 
-The scheduler runs only after an explicit game-time change or another approved
-safe state. It reads the calendar and conditional authored events, queues the
-next eligible event, and respects experiment-attention and cutscene safety
-rules. It does not use elapsed real time, browser timers, or background-tab
-time to advance campaign state.
+The pure rules-owned scheduler runs only after campaign creation, an applied
+command, event-presentation completion, or validated load. It returns one S04
+system command, notification, scene cue, settled result, or typed fault at a
+time. The application completes that instruction before it asks again. The
+scheduler reads the calendar and conditional authored events, queues each
+eligible event once, and respects crash, experiment-attention, deadline,
+message, room, cutscene, and final-campaign order. It does not use elapsed real
+time, browser timers, frames, focus, or background-tab time to advance campaign
+state. Implementation S05 defines candidate `MR-IF-005` and its required
+future fixtures.
 
 ## World, rendering, and interaction runtime
 
@@ -222,6 +228,12 @@ code-owned cutscene timeline controls camera, actor movement, dialogue,
 audio, checkpoints, skipping, choices, and input restoration. A reload never
 restores half-open UI, pointer lock, or an incomplete animation. It resumes at
 the last verified safe state and provides the approved recap when needed.
+Rules retain all authority for choices, time, scene results, and campaign
+state. One temporary presentation token connects one active request to its
+responses. Skip before a required choice advances only to that choice. After a
+saved result, interruption uses closing or recap recovery and never reapplies
+the result. S05 defines the draft campaign-facing part of `MR-IF-011`; S10 must
+still define camera, actor, audio, resource, and full restoration behaviour.
 
 ## Interface, input, and audio runtime
 

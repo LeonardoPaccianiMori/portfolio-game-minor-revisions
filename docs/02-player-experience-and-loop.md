@@ -41,10 +41,13 @@ time passages advance this calendar. Walking, reading, and ordinary dialogue
 use no period. A meaningful action costs one, two, or three periods, and shows
 that cost before the player commits.
 
-Experiments update first when an action enters a new period. A due message or
-scene then waits for the next safe stopping point. In the final Week 16
-after-hours period, the clock returns to 06:42 and the exit scene begins. The
-player cannot spend additional time after that point.
+When an action crosses more than one period, the game processes every entered
+period from earliest to latest. Experiments update first, then deadlines and
+expiry, then new content and its world cues. Old optional content expires
+before new content opens at the same boundary. A due message or scene waits for
+the next safe stopping point. In the final Week 16 after-hours period, the
+clock returns to 06:42 and the exit scene becomes due. The player cannot spend
+additional time after that point.
 
 Early and late periods are normal work time. Night and after-hours periods
 allow laboratory and desk work, but increase energy cost and reduce access to
@@ -79,21 +82,25 @@ no energy. Every Standard break restores two segments, and every Supported
 break restores three, up to the five-segment limit. Breaks are not capped per
 week.
 
-At zero energy, the player can push through one focused or intense task. At
-its next safe point, the protagonist has an involuntary crash at the desk,
-break room, or laboratory. The crash advances one further work period, restores
-two energy segments, and resolves any monitoring window passed during it as
-missed. It can damage evidence, lose an optional opportunity, or close a route.
-It cannot begin during a manual equipment action or cutscene. There is no home
-scene, voluntary sleep action, or global game-over screen before Week 16.
+At zero energy, the player can push through one focused or intense task. The
+completed action stores one pending crash and a nearby safe recovery place. At
+the next safe point, the protagonist has an involuntary crash at the desk,
+break room, or laboratory. The crash advances one further work period,
+restores two energy segments, and resolves any monitoring window passed during
+it as missed. Pending crashes cannot stack. A push-through is unavailable when
+its crash would go beyond the final period. A crash can damage evidence, lose
+an optional opportunity, or close a route. It cannot begin during a manual
+equipment action or cutscene. There is no home scene, voluntary sleep action,
+or global game-over screen before Week 16.
 
 Standard is the intended survival-game profile. Supported starts with one more
 energy segment, restores one more segment per protected break, and removes the
 night and after-hours energy surcharge. It therefore changes the pressure
 structure as well as its tolerance. It keeps the calendar, narrative, routes,
-ending content, period costs, deadlines, and warnings unchanged. All players receive
-the same clear warning before a gate, expiry, missed monitoring window, or
-irreversible choice. Supported has no stigma or content penalty.
+ending content, period costs, deadlines, and warnings unchanged. All players
+receive one combined clear warning before an action crosses a gate, expiry,
+missed monitoring window, guaranteed crash, or irreversible choice. Supported
+has no stigma or content penalty.
 
 ## Recurring five-stage experiment loop
 
@@ -245,17 +252,19 @@ Week 16 conclusion.
 ## Interruptions, recovery, and continuity
 
 Important messages first appear as world signals, then as safe queue
-notifications, then as an optional response or scene. Non-critical messages
-can be deferred. A scene never begins while an equipment action needs player
+notifications, then as an optional response or scene. Closing a message
+defers it; it does not reply or make it expire. Non-critical messages can be
+deferred. A scene never begins while an equipment action needs player
 attention, and every deadline is stated clearly.
 
 A monitoring window remains available until the player deliberately advances
 game time after a clear warning. Advancing past it can produce a weaker or less
 reliable result. Menus, pause, and browser closure never cause a missed check.
 The game saves at safe states, including experiment-stage changes, monitoring
-choices, analysis archiving, manuscript commits, and scene boundaries. Game
-time does not pass while the game is closed. The B09 persistence contract is
-defined in `11-technical-architecture.md`.
+choices, analysis archiving, manuscript commits, and scene boundaries. A safe
+save can contain queued content or a pending crash, but not an active scene.
+Game time does not pass while the game is closed. The B09 persistence contract
+is defined in `11-technical-architecture.md`.
 
 ## Other play modes
 
@@ -285,7 +294,9 @@ request. Earlier snapshots remain readable but are not free undo.
   and coping style without constructing wholly different protagonists.
 - Email, notices, and environmental changes convey the wider institution.
 - Real-time in-engine cutscenes may temporarily control input and camera, then
-  restore play or present a choice.
+  restore play or present a choice. Skip before a required choice moves to
+  that choice and never selects it. After the choice, the player can play or
+  skip the remaining presentation without changing the saved result.
 - Mandatory and optional narrative scenes plus the ending epilogue normally
   total 15–20 minutes and must never exceed 22 minutes. The seven main scenes
   target 14–18 minutes; their current authored total is 14:45. Each ending uses
@@ -318,6 +329,9 @@ uses dismissible contextual prompts; Help and Controls remain available at no
 game-time cost.
 
 One active local IndexedDB save preserves progress at approved safe points.
+Save and Quit during an unresolved scene returns to its verified pre-scene
+checkpoint. If the scene result is already saved, Continue keeps that result
+and shows closing dialogue or the approved recap instead of replaying it.
 The game uses no account, server save, save cookie, or automatic unfinished-save
 expiration. Completion removes the full active state and adds a compact ending
 card to the **Departures** area of the local Archive. Departures keeps the 12
