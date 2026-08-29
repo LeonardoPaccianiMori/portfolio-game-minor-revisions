@@ -9,10 +9,12 @@ semester of a fixed-term position. They have a defined predicament and a
 distinctive internal narrative voice but are not Leonardo or another real
 person.
 
-The player chooses name and pronouns. No elaborate appearance creator,
-biography builder, or branching origin is required. Choices express priorities,
-research integrity, relationships, and coping style rather than replacing the
-character with unrelated personalities.
+The player chooses name and pronouns. The name accepts 1–64 visible Unicode
+characters under the exact S03 normalization and safety rules. Pronoun sets are
+she/her, he/him, and they/them. No elaborate appearance creator, biography
+builder, or branching origin is required. Choices express priorities, research
+integrity, relationships, and coping style rather than replacing the character
+with unrelated personalities.
 
 ### Narrative voice
 

@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001` candidate; no interface frozen**
+Status: **`MR-IF-001` and `MR-IF-002` candidate; no interface frozen**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -24,7 +24,7 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 | ID | Interface | Owning block | Planned consumers | State | Version and owner | Required freeze evidence |
 |---|---|---|---|---|---|---|
 | MR-IF-001 | Runtime bootstrap and application lifecycle | S01–S02 | All runtime modules, UI, tests | Candidate | `v1`; controller owner: `application`; browser-entry owner: `bootstrap` | `MR-S02-FIX-001`–`010`; connected executable format pending S12; cross-interface audit pending S14 |
-| MR-IF-002 | `CampaignState` and serializable domain types | S03 | Rules, scheduler, content, persistence, UI, cutscenes, tests | Not started | Pending S03 | Schema, invariants, valid complete fixture, and rejected fixtures |
+| MR-IF-002 | `CampaignState` and serializable domain types | S03 | Rules, scheduler, content, persistence, UI, cutscenes, tests | Candidate | `v1`; owner: `rules` | Complete schema and invariants; `MR-S03-FIX-001`; `MR-S03-REJ-001`–`005` and connected variants; S06 content connection; S07 persistence connection; S12 executable format; S14 audit |
 | MR-IF-003 | Rule command, rejection, effect, and transition result | S04 | Interaction, UI, rules, scheduler, audio, cutscenes, tests | Not started | Pending S04 | Valid and rejected command vectors with unchanged-state guarantees |
 | MR-IF-004 | Deterministic seed and variation service | S04 | Experiments, content selection, reviewer forms, tests, persistence | Not started | Pending S04 | Reproducibility, no-reroll, and rejected-command position fixtures |
 | MR-IF-005 | Safe-point scheduler and event queue | S05 | Rules, narrative, cutscenes, persistence, UI | Not started | Pending S05 | Ordering, expiry, interruption, save, resume, and no-real-time fixtures |
@@ -42,12 +42,14 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 ## Current freeze state
 
 `MR-IF-001` is candidate `v1` through
-`specs/02-module-architecture.md`. Its inputs, outputs, ownership, failures,
-invariants, and specification scenarios exist. S12 must supply the connected
-executable fixture format and S14 must complete the cross-interface audit
-before it can become frozen.
+`specs/02-module-architecture.md`. `MR-IF-002` is candidate `v1` through
+`specs/03-domain-model-and-state.md`. Their inputs, outputs, ownership,
+failures, invariants, and specification fixtures exist. S06 and S07 must
+connect content and persistence to `MR-IF-002`; S12 must supply connected
+executable fixture formats; and S14 must complete the cross-interface audit
+before either applicable interface can become frozen.
 
 No interface is frozen. No implementation worker can use candidate status as
-permission to create a signature or source file. A change to `MR-IF-001`
+permission to create a signature or source file. A change to either candidate
 requires an affected-consumer list, compatibility and migration review,
 updated fixtures, and Leonardo's approval.

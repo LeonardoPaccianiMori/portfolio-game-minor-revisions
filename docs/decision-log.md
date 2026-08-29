@@ -164,6 +164,9 @@ belongs in the numbered design documents.
 | 2026-08-29 | Use twelve minimal application ports, one ordered campaign-request queue, one visual frame loop, fixed startup, frame, campaign-reset, failure-cleanup, and shutdown orders, and typed rejected, recoverable, and fatal results. | Confirmed |
 | 2026-08-29 | Replace the central-resource-manager shorthand with named specialist ownership: rendering owns Three.js resources, audio owns audio resources, application controls preparation order, and no general shared resource service exists. | Confirmed; supersedes central-resource-manager wording only |
 | 2026-08-29 | Make `MR-IF-001` candidate `v1` after S02. Keep it unavailable to implementation until later connected fixtures and the S14 consistency audit permit freeze. | Confirmed |
+| 2026-08-29 | Define one strict ten-section plain-data `CampaignState` with safe integers, stable non-reusable IDs, immutable factual histories, a complete initial fixture, rejected fixtures, canonical JSON, and cross-section validation. Store campaign facts and calculate display labels and eligibility. | Confirmed |
+| 2026-08-29 | Accept protagonist names of 1–64 visible Unicode characters after NFC normalization, with no leading or trailing whitespace or control characters. | Confirmed; replaces the proposed 32-character technical limit before documentation |
+| 2026-08-29 | Make `MR-IF-002` candidate `v1`, owned by rules, with complete-copy creation, validation, parse, and serialization operations. Keep it unavailable to implementation until S06, S07, S12, and S14 provide connected freeze evidence. | Confirmed |
 
 ## Rules for future entries
 

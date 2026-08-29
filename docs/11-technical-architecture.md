@@ -89,7 +89,11 @@ contains at least:
   Citation evaluation.
 
 It contains no Three.js objects, DOM nodes, audio nodes, functions, real-time
-timestamps that drive play, or browser-specific object references.
+timestamps that drive play, or browser-specific object references. S03 now
+defines its exact ten-section shape, stable IDs, stored-versus-derived facts,
+safe integers, immutable histories, cross-section invariants, complete initial
+fixture, rejected fixtures, and canonical JSON representation. `MR-IF-002` is
+candidate `v1`; later blocks cannot add campaign fields silently.
 
 ### Commands, effects, and deterministic variation
 

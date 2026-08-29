@@ -1,6 +1,6 @@
 # Implementation Specification Decision Register
 
-Status: **current through S02**
+Status: **current through S03**
 
 This register records approved process and technical decisions for the
 implementation-specification programme. It does not replace the detailed
@@ -54,6 +54,20 @@ specification files or the creative decision log.
 | MR-IMP-DEC-034 | 2026-08-29 | Use the exact minimal method sets for the twelve public ports in the S02 specification. | Confirmed | Later blocks can define connected data without expanding module authority silently. |
 | MR-IMP-DEC-035 | 2026-08-29 | Provide plain test fakes for every port and require the ten S02 startup, cleanup, request, campaign reset, fatal, frame, and import scenarios. | Confirmed | Establishes architecture acceptance without claiming that tests exist. |
 | MR-IMP-DEC-036 | 2026-08-29 | Move `MR-IF-001` to candidate `v1`, owned by application for the controller and bootstrap for the browser entry; defer freeze until connected S12 fixtures and the S14 consistency audit. | Confirmed | Candidate status does not authorize implementation. |
+| MR-IMP-DEC-037 | 2026-08-29 | Use one versioned plain-data `CampaignState` with exactly ten required top-level sections; store campaign facts and calculate display labels, bands, availability, and eligibility. | Confirmed | Excludes browser, presentation, settings, archive, and cross-campaign state. |
+| MR-IMP-DEC-038 | 2026-08-29 | Store the exact metadata, calendar, campaign-value, relationship, protagonist, and revision fields and approved initial values in the S03 specification. | Confirmed | Includes Standard energy 4, Supported energy 5, evidence 3, Elena confidence 45, integrity 100, and the five trust values. |
+| MR-IMP-DEC-039 | 2026-08-29 | Use strict stable campaign-local ID families, matching record keys and internal IDs, a secure random lowercase UUID campaign ID, an unsigned secure random campaign seed, and no reuse after terminal state. | Confirmed | Makes every referenced fact traceable without personal data in identifiers. |
+| MR-IMP-DEC-040 | 2026-08-29 | Record every real campaign change with revision, sequence, source, field, previous value, and new value; keep histories permanent, ordered, and continuous. | Confirmed | One successful operation increments revision once; rejected and no-change operations do not. |
+| MR-IMP-DEC-041 | 2026-08-29 | Store experiment runs, active IDs, raw records, evidence cards, stop logs, equipment, and preparation facts under the exact S03 stage, source, and consistency rules. | Confirmed | Analysed and stopped runs have mutually exclusive permanent outputs. |
+| MR-IMP-DEC-042 | 2026-08-29 | Store committed manuscript versions only, with the exact board capacity, immutable snapshots, task, review, preprint, journal, PIIM, paper, authorship, reading, omission, and once-only effect states. | Confirmed | Earlier snapshots are history, not free undo. |
+| MR-IMP-DEC-043 | 2026-08-29 | Store exact narrative, relationship, scheduler, semantic world, content-history, route, and conclusion facts with strict ordering and cross-section invariants. | Confirmed | No Three.js geometry, physical Camila placement, browser time progression, or backward conclusion progress is allowed. |
+| MR-IMP-DEC-044 | 2026-08-29 | Accept protagonist names of 1–64 visible Unicode characters after NFC normalization, without leading or trailing whitespace or control characters; use the three fixed pronoun sets. | Confirmed | Leonardo increased the proposed technical limit from 32 to 64 before documentation. |
+| MR-IMP-DEC-045 | 2026-08-29 | Require all numbers to be exact safe integers and apply the exact S03 limits for revisions, seed, calendar, values, trust, IDs, and version strings. | Confirmed | Rejects fractions, negative zero, non-finite values, overflow, and out-of-range domain facts. |
+| MR-IMP-DEC-046 | 2026-08-29 | Validate strictly after creation, transition, load or migration, and before save or state replacement; reject unknown, missing, duplicate, invalid, inconsistent, or out-of-range data and return a new checked copy. | Confirmed | No silent repair, partial campaign, or retained input reference is permitted. |
+| MR-IMP-DEC-047 | 2026-08-29 | Use two connected validation stages: rules validates campaign structure and internal references; application checks content IDs, content version, and build profile against separate `ValidatedContent` before activation. | Confirmed | Preserves the S02 state/content boundary and defers authored-content values to S06. |
+| MR-IMP-DEC-048 | 2026-08-29 | Serialize validated campaign state as compact canonical UTF-8 JSON with fixed field order, sorted ID-record keys, meaningful list order, safe Unicode, exact round trips, and sanitized typed failures. | Confirmed | The same campaign facts produce the same text. |
+| MR-IMP-DEC-049 | 2026-08-29 | Require complete Standard initial fixture `MR-S03-FIX-001`, one Supported difference vector, five basic rejection groups, connected invalid variants, and transition-pair permanence fixtures. | Confirmed | S12 will supply their executable format; no fixture file or test result is claimed now. |
+| MR-IMP-DEC-050 | 2026-08-29 | Move `MR-IF-002` to candidate `v1`, owned by rules, with complete-copy creation, validation, parse, and serialization operations; defer freeze until S06, S07, S12, and S14 evidence exists. | Confirmed | Candidate status does not authorize implementation. |
 
 ## Entry rule
 

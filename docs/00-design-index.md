@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S02 documented | Complete S03–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S03 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S02 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001` candidate; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-003` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S03 documented | Complete S04–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S04 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S03 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001` and `MR-IF-002` candidate; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-004` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,11 +63,11 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Technical-specification block: **S03 — Domain model and campaign state**.
-- Last documented technical block: **S02 — Module architecture**.
+- Technical-specification block: **S04 — Commands, rules, and determinism**.
+- Last documented technical block: **S03 — Domain model and campaign state**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-003`.
-- Technical-specification gate: **blocked**; S03–S14 remain.
+- Active issue group: `MR-IMP-OPEN-004`.
+- Technical-specification gate: **blocked**; S04–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

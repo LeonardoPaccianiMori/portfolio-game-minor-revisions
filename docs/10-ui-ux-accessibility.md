@@ -169,11 +169,13 @@ Settings has Audio, Display, Controls, Accessibility, and Local Data
 categories. Changes apply immediately and persist locally. Audio provides
 Master, Music, Ambience/Effects, and Dialogue Sounds controls.
 
-New Game asks for the protagonist's name, pronouns, and pressure profile.
-Standard is the default. Supported is equal in story and content; it is not
-called easy. The selected profile is fixed for the whole save. A player must
-start a New Game to use another profile. If an active save exists, New Game
-requires confirmation before replacement.
+New Game asks for the protagonist's name, pronouns, and pressure profile. The
+name accepts 1–64 visible Unicode characters and uses the exact S03
+normalization and rejection rules. Pronoun choices are she/her, he/him, and
+they/them. Standard is the default. Supported is equal in story and content;
+it is not called easy. The selected profile is fixed for the whole save. A
+player must start a New Game to use another profile. If an active save exists,
+New Game requires confirmation before replacement.
 
 Both profiles receive the same clear warnings before gates, expiry, missed
 monitoring windows, and irreversible choices. Supported changes energy and

@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-29
 
-Status: **S00–S02 documented; S03 is next; all implementation gates blocked**
+Status: **S00–S03 documented; S04 is next; all implementation gates blocked**
 
 ## Current repository state
 
@@ -25,7 +25,7 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S03–S14 are not documented. |
+| Technical specification complete | Blocked | S04–S14 are not documented. |
 | Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
 | Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
@@ -33,16 +33,16 @@ not insert a future or guessed commit identifier into this document.
 
 ## Current checkpoint
 
-- Current block: **S03 — Domain model and campaign state**.
-- Last documented block: **S02 — Module architecture**.
+- Current block: **S04 — Commands, rules, and determinism**.
+- Last documented block: **S03 — Domain model and campaign state**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
 - Primary existing design input: `../07-systems-and-balance.md`,
-  `../11-technical-architecture.md`, the frozen S01 toolchain contract, and the
-  approved S02 module-architecture contract.
-- Current open issue group: `MR-IMP-OPEN-003`.
-- Next action: discuss and approve the exact S03 domain types, `CampaignState`,
-  invariants, identifiers, units, defaults, and serialization boundary.
+  `../11-technical-architecture.md`, the frozen S01 toolchain contract, the
+  approved S02 module-architecture contract, and the approved S03 domain model.
+- Current open issue group: `MR-IMP-OPEN-004`.
+- Next action: discuss and approve exact S04 commands, effects, transition
+  results, validation order, deterministic variation, and rule truth tables.
 - Prohibited next action: create package files, source directories, code,
   assets, or deployment files.
 
@@ -53,7 +53,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S02 are documented; S03 is next. `MR-IF-001` is candidate `v1`, not frozen. |
+| Technical specification | In progress | S01–S03 are documented; S04 is next. `MR-IF-001` and `MR-IF-002` are candidate `v1`, not frozen. |
 | Vertical slice | Not authorized | No code exists. |
 | Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
 

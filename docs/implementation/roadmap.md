@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S02 documented; S03 is next; no code authorized**
+Status: **S00–S03 documented; S04 is next; no code authorized**
 
 ## Purpose
 
@@ -120,8 +120,8 @@ full-game evaluation gates still apply during production.
 | S00 | Governance and durable state | Roadmap, status, decisions, interfaces, open issues, authority, and gates | B00–B10 and R00–R07 | Documented |
 | S01 | Toolchain and repository | Exact runtime and development versions, package policy, scripts, directories, configuration, and environment rules | S00 | Documented |
 | S02 | Module architecture | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries | S01 | Documented |
-| S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Not started; next |
-| S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Not started |
+| S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Documented |
+| S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Not started; next |
 | S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Not started |
 | S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Not started |
 | S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Not started |
@@ -196,7 +196,7 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-Begin S03. Decide the exact domain types, complete `CampaignState`, stored and
-derived fields, invariants, stable identifiers, units, defaults, serialization
-boundary, and validation ownership. Do not create files from the planned
-runtime tree during S03.
+Begin S04. Decide the exact command, effect, rejection, and transition-result
+families; validation order; unchanged-state guarantees; deterministic seed
+service; rule algorithms; and outcome truth tables. Use the candidate S03
+state contract and do not create files from the planned runtime tree.
