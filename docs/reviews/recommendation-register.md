@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 through R06 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R07 documented; no review block remains; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -93,9 +93,9 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-045 | Vision | Reconcile continuous fun with the darkening arc | `accepted` |
 | MR-REV-046 | Production | Test capacity and asset cost against the production plan | `accepted` |
 | MR-REV-047 | Traceability | Give `MR-REQ-VISION-001` a valid verification path | `accepted` |
-| MR-REV-048 | Documentation | Align non-interactive scene-time values | `unreviewed` |
-| MR-REV-049 | Fallback | Qualify the six-template requirement for fallback | `unreviewed` |
-| MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `unreviewed` |
+| MR-REV-048 | Documentation | Align non-interactive scene-time values | `accepted` |
+| MR-REV-049 | Fallback | Qualify the six-template requirement for fallback | `accepted` |
+| MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `accepted` |
 | MR-REV-051 | Content | Add required reason and forecast strings within the word cap | `accepted` |
 | MR-REV-052 | Camila | Specify video-call presentation | `accepted` |
 | MR-REV-053 | Protected design | Preserve the shared do-not-normalize constraints | `protected` |
@@ -264,5 +264,20 @@ Discuss entries in dependency order, not numerical order:
 - `MR-REV-047`: add `MR-TEST-VISION-001` and map `MR-REQ-VISION-001` to it as
   well as the content test.
 
-No implementation is authorized. R07 is next and covers documentation
-corrections. One review block remains.
+### R07 — Documentation corrections
+
+- `MR-REV-048`: distinguish the seven-scene target of 14–18 minutes and its
+  current 14:45 authored total from the 60–90-second epilogue target and its
+  current 75-second duration. All non-interactive content normally totals
+  15–20 minutes and has an absolute 22-minute maximum.
+- `MR-REV-049`: require six experiment templates in the full build and exactly
+  laser/sham, combined range/repair, batch, and oxygen in the fallback.
+- `MR-REV-050`: define twenty planned prop families and twenty-four as the hard
+  maximum for later substitutions. Remove the blank-line interruption from the
+  decision-log table. The content catalogue already has one
+  `task.repairState` row, so no artificial deletion is made. Future checks
+  reject interrupted tables, duplicate text keys, and conflicting numeric
+  claims.
+
+No implementation is authorized. R00–R07 are documented, and no review block
+remains. Wait for Leonardo's next instruction.

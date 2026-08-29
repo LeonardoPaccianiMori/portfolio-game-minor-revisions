@@ -34,7 +34,7 @@ Do not present a design-review prediction as a measured result.
 |---|---|---|
 | MR-TEST-VISION-001 | Comprehension, engagement, comedy, and pacing | Clean-context comprehension result plus Leonardo's slice, fallback, and full-game vision checks |
 | MR-TEST-CONT-001 | Content data and English strings | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan |
-| MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six templates, repeats, bands, monitoring, and result/evidence separation |
+| MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six full-build templates or the approved four-template fallback composition, repeats, bands, monitoring, and result/evidence separation |
 | MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
 | MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures |
 | MR-TEST-WORLD-001 | Floor states and environmental content | Act rosters, scene anchors, environmental display, no required optional fact, and no trapping path |
@@ -63,9 +63,11 @@ The automated suite must meet these targets before a release candidate:
 - A fixture for every experiment template, every earned outcome band, every
   one-time expiry, all four paper states, all four career labels, all
   twenty-nine ending modules, and all twelve Citations.
-- A content scan that rejects missing text keys, orphaned text keys, duplicate
-  IDs, invalid dependencies, unbounded content generation, wrong counts, and
-  English text above 6,000 unique words.
+- A content scan that rejects missing, orphaned, or duplicate text keys;
+  duplicate IDs; invalid dependencies; unbounded content generation; wrong
+  counts; and English text above 6,000 unique words.
+- A design-document scan that rejects interrupted Markdown tables and
+  conflicting approved numeric claims across authoritative documents.
 - Browser tests in Chromium, Firefox, and WebKit for the stated core flows.
   WebKit result is not a Safari support claim.
 
@@ -84,8 +86,10 @@ MR-TEST-EXP-001 must show that:
   two energy in Standard or three in Supported without changing other state;
 - each normal experiment and permitted repeat has one monitoring window, while
   oxygen loss has two;
-- all six templates expose their approved baseline-preserving and higher-risk
-  family choices without operational laboratory detail;
+- all six full-build templates, or the approved fallback composition of
+  laser/sham, combined range/repair, batch, and oxygen, expose their approved
+  baseline-preserving and higher-risk family choices without operational
+  laboratory detail;
 - Stable, Stressed, Failing, Ready, Limited, Unavailable, each missed window,
   and one valid stabilizing action produce the exact approved issue count;
 - zero, one, two, and one-severe-issue fixtures produce Robust, Mixed,
@@ -390,6 +394,12 @@ quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo checks
 its complete campaign, one constrained evidence path, one weakened path, one
 available career route, one no-route result, and an ending-card Archive result.
 Codex runs the full automated matrix and private technical review.
+
+For every documentation change before implementation, check that Markdown
+tables have no blank-line interruption, text keys are unique inside the
+catalogue, and scene-time, experiment-count, prop-count, and other approved
+numeric claims agree across authoritative files. Report a conflict instead of
+silently selecting one value.
 
 Before a release candidate, Leonardo repeats `MR-TEST-VISION-001` and reviews
 the experience criteria:

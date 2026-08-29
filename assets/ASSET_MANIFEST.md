@@ -28,7 +28,7 @@ available and verified.
 | Planning role | Count or limit | Source status |
 |---|---:|---|
 | Modular floor kit | 1 | No source selected |
-| Reusable prop families | 20 planned; never more than 24 | No source selected |
+| Reusable prop families | 20 planned; 24 is the hard substitution maximum | No source selected |
 | Functional station kits | 6 | No source selected |
 | Physical NPC models | 4 | No source selected |
 | Protagonist silhouette | 1 | No source selected |
@@ -46,6 +46,8 @@ laboratory bench, stool, glass partition, automatic door, generic monitor,
 keyboard, paper stack, notice rail, clipboard, cable or tray, generic
 equipment housing, coffee machine, break-room table, corridor sign, service
 panel, and exit fixture.
+Later sourcing can substitute these planned families, but it cannot increase
+the inventory above the hard maximum of twenty-four families.
 
 ## Phase-1 feasibility record
 

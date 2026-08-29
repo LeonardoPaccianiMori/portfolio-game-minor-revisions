@@ -93,9 +93,10 @@ that evidence exists.
 | **06:42** | 16 | Research floor and building exit | The player confirms Aldercroft, accepts Morrow, or leaves without either route. |
 
 Scenes are real-time, skippable, captioned, and safe around checkpoints. The
-seven main scenes together target 14–18 minutes. The ending epilogue adds 60–90 seconds inside the
-22-minute maximum for all non-interactive scenes. Messages, reports, and
-manuscript work remain player-controlled.
+seven main scenes target 14–18 minutes and currently total 14:45. The ending
+epilogue targets 60–90 seconds and is currently authored at 75 seconds. All
+non-interactive content normally totals 15–20 minutes and must never exceed 22
+minutes. Messages, reports, and manuscript work remain player-controlled.
 
 ## B07 spatial scene staging
 
@@ -132,8 +133,9 @@ default. Dialogue advances manually, and important choices remain untimed.
 Every scene is skippable and safe around a checkpoint. A skip writes a concise
 recap of the choice and immediate result into the inbox or Research Status.
 Normal scenes do not replay during an active save. The seven main scenes
-together remain inside the approved 14-18-minute target, and the modular epilogue remains
-inside the 22-minute total non-interactive-scene maximum.
+remain inside the approved 14–18-minute target. The modular epilogue and all
+other non-interactive content stay inside the normal 15–20-minute total and the
+absolute 22-minute maximum.
 
 ## Submission ladder and peer review
 

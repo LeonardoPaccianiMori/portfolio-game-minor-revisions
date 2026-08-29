@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **two independent review passes complete; recommendation discussion pending; no implementation authorized**
+Status: **two independent review passes and R00–R07 decisions documented; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -27,7 +27,7 @@ gaps. It does not mean that the domain is finished.
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
 | `reviews/2026-08-28-opus-5-holistic/` | Holistic Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R06 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
+| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R07 documented | No review block remains; wait for Leonardo's next instruction. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -83,10 +83,14 @@ status, and the next place to resume.
   is documented: `MR-REV-043`–`047` define the private vision test,
   clean-context comprehension check, engagement and repetition interpretation,
   darkening-comedy rule, Phase-1 asset feasibility check, and valid vision
-  traceability. R07 is next. One review block remains.
-  Only after all
-  review blocks are resolved can Leonardo
-  separately consider implementation approval. Do not start implementation
+  traceability. R07 is documented: `MR-REV-048`–`050` align scene-time scopes,
+  qualify the full and fallback experiment-template requirement, define the
+  prop-family plan and hard substitution ceiling, and strengthen documentation
+  validation. The decision-log table interruption is removed. The text-key
+  catalogue already has only one `task.repairState` row, so no artificial
+  deletion was made. No review block remains. Wait for Leonardo's next
+  instruction. He can later consider
+  implementation approval as a separate decision. Do not start implementation
   work.
 - Implementation gate: **blocked**; B10 documentation does not authorize
   implementation.

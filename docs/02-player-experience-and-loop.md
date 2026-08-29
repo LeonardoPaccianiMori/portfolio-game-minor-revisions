@@ -286,10 +286,11 @@ request. Earlier snapshots remain readable but are not free undo.
 - Email, notices, and environmental changes convey the wider institution.
 - Real-time in-engine cutscenes may temporarily control input and camera, then
   restore play or present a choice.
-- Mandatory and optional narrative scenes plus the ending epilogue use the
-  22-minute maximum for all non-interactive scenes. The seven main scenes
-  together target 14–18 minutes; each ending uses a 60–90-second epilogue. They remain skippable,
-  captioned, and safe around checkpoints.
+- Mandatory and optional narrative scenes plus the ending epilogue normally
+  total 15–20 minutes and must never exceed 22 minutes. The seven main scenes
+  target 14–18 minutes; their current authored total is 14:45. Each ending uses
+  a 60–90-second epilogue, currently authored at 75 seconds. They remain
+  skippable, captioned, and safe around checkpoints.
 
 ## B08 interaction and access contract
 

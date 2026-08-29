@@ -113,7 +113,7 @@ identifier before its rights and technical facts are verified.
 | Asset group | B08 limit or rule |
 |---|---|
 | Building | One modular kit for the eight B07 floor spaces. |
-| Props | No more than 24 core reusable 3D prop families. |
+| Props | 20 planned core reusable 3D prop families; 24 is the hard maximum for later substitutions. |
 | Narrative room detail | Reusable notices, labels, paper, screen, and decal templates; no unique model for each beat. |
 | People | Four physical NPCs plus one simple protagonist silhouette. |
 | Science | Original organoids, main laboratory stations, data views, and science VFX. |
@@ -229,7 +229,7 @@ likenesses, voices, or private source material.
 ## B10 asset planning and sourcing gate
 
 The B10 asset plan defines roles, not selected source files. The design
-requires one modular floor kit, twenty reusable prop families, six functional
+requires one modular floor kit, twenty planned reusable prop families, six functional
 station kits, four physical NPCs, one protagonist silhouette, reusable
 interface templates, eight room-ambience roles, three system-cue roles, five
 eight-sound dialogue palettes, six music-stem roles, and twenty lighting
@@ -241,6 +241,8 @@ bench, stool, glass partition, automatic door, generic monitor, keyboard,
 paper stack, notice rail, clipboard, cable or tray, generic equipment housing,
 coffee machine, break-room table, corridor sign, service panel, and exit
 fixture. These are visual roles. They do not identify a model source.
+Later sourcing can substitute a family when needed. It cannot increase the
+inventory above the hard maximum of twenty-four prop families.
 
 Before any external or generated asset enters even a prototype, use this
 sequence:

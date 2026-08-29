@@ -415,8 +415,10 @@ human response. It must not mock nationality, disability, precarious workers,
 or scientific ignorance. Required information never depends on an inspectable
 environment item alone.
 
-The asset plan uses one modular floor kit, twenty reusable prop families, six
-main station kits, four physical NPCs, one protagonist silhouette, and twenty
-lighting presets. Asset roles and their later provenance path are in
+The asset plan uses one modular floor kit, twenty planned reusable prop
+families, six main station kits, four physical NPCs, one protagonist
+silhouette, and twenty lighting presets. Later substitutions can change the
+family composition, but the inventory has a hard maximum of twenty-four prop
+families. Asset roles and their later provenance path are in
 `09-art-audio-and-assets.md` and `assets/ASSET_MANIFEST.md`. No B07, B08, B09,
 or B10 decision authorizes implementation code or production assets.

@@ -487,8 +487,10 @@ new primary-record ID.
 
 Each mandatory scene is real-time, skippable, captioned, and safe at a
 checkpoint. Its skip recap is part of the stated text. The planned main-scene
-time is 14 minutes 45 seconds. A 75-second epilogue keeps the total below the
-22-minute non-interactive limit.
+target is 14–18 minutes; the current authored total is 14:45. The epilogue
+target is 60–90 seconds; its current authored duration is 75 seconds. All
+non-interactive content normally totals 15–20 minutes and must never exceed 22
+minutes.
 
 | ID | Week | Duration | Start condition | Period effect | Variant rule | Requirement / test |
 |---|---:|---:|---|---|---|---|

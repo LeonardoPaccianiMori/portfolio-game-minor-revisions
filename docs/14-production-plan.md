@@ -76,6 +76,8 @@ The full target remains bounded by:
   scenes, twenty primary records, twenty-nine ending modules, twelve
   Institutional Citations, thirty environmental text items, fourteen
   one-time contextual lines, five queue lines, and five exit responses;
+- twenty planned reusable prop families, with twenty-four as the hard maximum
+  if later sourcing needs substitutions;
 - a 90-minute fallback with the exact content cut line in
   12-content-specification.md;
 - four physical NPCs, remote Camila with one original 2D portrait, shared

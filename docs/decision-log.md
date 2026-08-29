@@ -101,7 +101,6 @@ belongs in the numbered design documents.
 | 2026-08-28 | Target current Chrome, Edge, and Firefox desktop browsers. Test Chromium, Firefox, and WebKit automatically. Treat Safari as best-effort only and do not make a public Safari-support claim without direct Safari evidence. | Confirmed |
 | 2026-08-28 | Use the approved Intel i5/Iris Xe reference class, a central resource manager, WebGL2 compatibility check, visual-cost graphics profiles, local sanitized diagnostics, a compressed-build audit, and manual performance evidence. | Confirmed |
 | 2026-08-28 | Use Vitest, Playwright, ESLint, Prettier, local quality commands, and a future non-deploying GitHub Actions workflow after remote approval. Review runtime dependency security and licence status intentionally before releases and changes. | Confirmed |
-
 | 2026-08-28 | Use stable MR content identifiers, validated JSON later, one English strings file, saved content selection, no free-form generated dialogue, and no more than 6,000 unique English words. | Confirmed |
 | 2026-08-28 | Set full content at six experiment templates, seven mandatory scenes, ten optional character scenes, twenty primary records, twenty-nine ending modules, twelve Institutional Citations, and thirty environmental text items. | Confirmed |
 | 2026-08-28 | Define the Week-1 vertical slice and the coherent 90-minute fallback: retain all mandatory scenes, four local optional scenes, and three Camila contacts; remove drug exposure, Haoran late, Samira early, and Gabriel late content. | Confirmed |
@@ -145,6 +144,10 @@ belongs in the numbered design documents.
 | 2026-08-29 | Reconcile fun with the darkening arc: active play remains engaging and absurdist through agency, discovery, responsive satire, and satisfying interaction. Later comedy can become darker and less frequent without disappearing. | Confirmed |
 | 2026-08-29 | Keep the EUR 150 ceiling for non-LLM direct project costs and run a Phase-1 asset feasibility check before the vertical slice. Normal LLM subscriptions, token use, token limits, and resets are outside the ceiling. | Confirmed; clarifies the earlier cost boundary |
 | 2026-08-29 | Add `MR-TEST-VISION-001` for comprehension, engagement, comedy, pacing, and the darkening arc, and map `MR-REQ-VISION-001` to it. | Confirmed |
+| 2026-08-29 | Resolve R07 scene timing: seven main scenes target 14–18 minutes and currently total 14:45; the epilogue targets 60–90 seconds and is currently 75 seconds; all non-interactive content normally totals 15–20 minutes and must not exceed 22 minutes. | Confirmed; clarifies the earlier scene-time decisions |
+| 2026-08-29 | Require all six experiment templates in the full build and exactly laser/sham, combined range/repair, batch, and oxygen in the fallback. | Confirmed; qualifies the full-build requirement for fallback |
+| 2026-08-29 | Use twenty planned prop families. Permit later substitutions without exceeding a hard maximum of twenty-four families. | Confirmed; clarifies the earlier asset limit |
+| 2026-08-29 | Remove the blank-line interruption from the decision-log table and confirm that the content catalogue has no duplicate `task.repairState` row. Add checks for interrupted Markdown tables, duplicate text keys, and conflicting numeric claims. | Confirmed |
 
 ## Rules for future entries
 
