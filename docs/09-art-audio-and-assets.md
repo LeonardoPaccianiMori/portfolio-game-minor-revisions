@@ -26,7 +26,8 @@ not from many unique high-detail models.
 Materials are matte painted metal, off-white plastic, frosted glass, paper,
 and light wear. Do not use photoreal textures, heavy grime, or elaborate
 surface damage. Each phase can use only the B07 allowance of one major and two
-minor visible room changes across the whole floor.
+minor physical room changes across the whole floor. Live-text or SVG notices,
+labels, paper, and stamps use the separate bounded accretion rule.
 
 | Colour role | Approved use |
 |---|---|
@@ -62,6 +63,13 @@ Effects are restrained: organoid beating, imaging sweeps, monitor glow, and
 status pulses. The game has no gore, sudden flash, body horror, hallucination,
 or glitch effect. Reduced-motion settings remove non-essential motion and
 flashes without removing needed information.
+
+The institution becomes surreal through bureaucratic accretion, not visual
+impossibility. Existing live-text or SVG notices, labels, paper, and stamps can
+accumulate, overlap, or contradict an earlier item at safe act transitions.
+They do not distort architecture, scale props, change collision, create a
+glitch effect, or add a new asset family. The thirty approved environmental
+IDs remain the complete set.
 
 ## Characters, animation, and cinematics
 

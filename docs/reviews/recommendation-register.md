@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 through R04 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R05 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -83,11 +83,11 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-035 | Relationships | Define high-trust support and review unused trust bars | `accepted` |
 | MR-REV-036 | Relationships | Decide how visible trust bars should feel | `accepted` |
 | MR-REV-037 | Replay | Align replay intent with the Archive | `accepted` |
-| MR-REV-038 | Comedy | Put comic voice into repeated mid-campaign actions | `unreviewed` |
-| MR-REV-039 | Comedy | Review optional and skippable environmental satire | `unreviewed` |
-| MR-REV-040 | Art and tone | Resolve the meaning and channel of increasing surrealism | `unreviewed` |
-| MR-REV-041 | World | Decide floor population and validate traversal value | `unreviewed` |
-| MR-REV-042 | Content | Resolve the exit voice, drug template, and orphaned flag | `unreviewed` |
+| MR-REV-038 | Comedy | Put comic voice into repeated mid-campaign actions | `accepted` |
+| MR-REV-039 | Comedy | Review optional and skippable environmental satire | `accepted` |
+| MR-REV-040 | Art and tone | Resolve the meaning and channel of increasing surrealism | `accepted` |
+| MR-REV-041 | World | Decide floor population and validate traversal value | `accepted` |
+| MR-REV-042 | Content | Resolve the exit voice, drug template, and orphaned flag | `accepted` |
 | MR-REV-043 | Evaluation | Add or reject an engagement, pacing, and repetition criterion | `unreviewed` |
 | MR-REV-044 | Evaluation | Reconcile audience claims with the sole-evaluator boundary | `unreviewed` |
 | MR-REV-045 | Vision | Reconcile continuous fun with the darkening arc | `unreviewed` |
@@ -225,5 +225,24 @@ Discuss entries in dependency order, not numerical order:
   chronological **Departures** and a separate 12-item **Institutional
   Citations** collectible set.
 
-No implementation is authorized. R05 is next and covers comedy, world, and
-artistic escalation. Three review blocks remain, R05 through R07.
+### R05 — Comedy, world, and artistic escalation
+
+- `MR-REV-038`: add five act-based queue lines, six one-time internal
+  reactions, and eight one-time character lines in Weeks 1–7. They add comic
+  texture without changing state or creating an unbounded dialogue system.
+- `MR-REV-039`: use close-range glance display for exactly ten short
+  environmental items. Keep focused inspection for the other twenty. Required
+  information never depends on either type.
+- `MR-REV-040`: define surrealism as plausible bureaucratic accretion. Notices,
+  labels, paper, and stamps can accumulate or contradict each other, but the
+  floor keeps credible architecture, scale, collision, and props.
+- `MR-REV-041`: reduce the background roster through the semester. Required
+  scenes and support results override it. Add no crowd simulation, roaming NPC,
+  or new character model. The vertical slice records traversal and repetition
+  measurements; R06 decides how to interpret them.
+- `MR-REV-042`: add five act-based exit responses, one result-specific Camila
+  line for an analysed drug experiment, and one Week-5 dialogue variation for
+  `FLAG:openingCaution`. Drug work does not improve Morrow or PIIM eligibility.
+
+No implementation is authorized. R06 is next and covers evaluation and
+production evidence. Two review blocks remain, R06 and R07.

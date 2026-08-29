@@ -33,6 +33,15 @@ icon, colour, sound, and object state. Captions and speaker names default on;
 high contrast, scale, reduced motion, and Interaction Assist must not hide or
 change a route, value, or consequence.
 
+The desk work queue selects one of five act-state comic lines. It places the
+line below the factual queue and never changes the queue state. Six contextual
+internal reactions each have one saved consumed flag. They fire only after the
+first matching night, missed monitoring window, zero-energy push-through,
+crash, Compromised integrity state, or unresolved concern. Eight early
+character lines use the same once-only rule but have no command, cost, choice,
+or trust effect. `MR-ACT-EXIT-CHECK` costs no time or energy and selects one of
+five act-state responses before the Week-16 final scene.
+
 ## Time, pacing, and pressure profiles
 
 The fixed semester has 64 work periods: early, late, night, and after-hours in

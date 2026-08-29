@@ -35,8 +35,8 @@ Do not present a design-review prediction as a measured result.
 | MR-TEST-CONT-001 | Content data and English strings | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan |
 | MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six templates, repeats, bands, monitoring, and result/evidence separation |
 | MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
-| MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, and Morrow/Aldercroft fixtures |
-| MR-TEST-WORLD-001 | Floor states and environmental content | Act windows, scene anchors, no required fact in optional text, and no trapping path |
+| MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures |
+| MR-TEST-WORLD-001 | Floor states and environmental content | Act rosters, scene anchors, environmental display, no required optional fact, and no trapping path |
 | MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 citations, and 12-card retention |
 | MR-TEST-SAVE-001 | IndexedDB persistence and recovery | Safe saves, replacement, backup, migration, corruption, completion, and data clearing |
 | MR-TEST-UI-001 | Main menu, status, prompts, and save controls | Keyboard flow, controller roles where available, text keys, and confirmations |
@@ -152,6 +152,10 @@ MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
   equipment action;
 - all ten optional scenes use their stated condition, window, expiry, and
   saved result;
+- `FLAG:openingCaution` selects its Week-5 dialogue variation and changes no
+  mechanic;
+- all eight character-context lines use their stated person, anchor, window,
+  and once-only state without a choice, cost, or trust effect;
 - each of the five support results requires its supportive choice, Working or
   better trust, no breach, and unused state; fires once only; and produces its
   exact bounded effect without improving a PIIM card directly;
@@ -169,6 +173,8 @@ MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
 - ignored Morrow messages close only the stated industry route;
 - Morrow requires three analysed records and one honest limitation or caveat,
   but not a weak result, publication, a Coherent packet, or drug exposure;
+- an analysed drug record selects exactly one useful, mixed, or unreliable
+  Camila acknowledgement without changing Morrow eligibility or a PIIM card;
 - Aldercroft requires the plan, Coherent or Substantial evidence, Supportive or
   Invested Elena's paper confidence or at least 41 Elena trust, and no
   unresolved serious concern;
@@ -191,6 +197,10 @@ MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
 - every authored line has an English text key;
 - every meaningful action and material effect has a valid forecast or reason
   key, with no runtime prose generation;
+- all five queue lines and five exit responses select only by act state;
+- all six internal reactions fire once at their exact trigger and change no
+  game state;
+- all fourteen `MR-CTX-*` objects ship in full and fallback builds;
 - no runtime path generates dialogue or a report;
 - all twenty-nine ending modules select in the approved order;
 - the four paper states do not change randomly after Week 16;
@@ -214,6 +224,12 @@ fallback, and two-or-more valid routes. No uncatalogued room state can block
 work. Optional desk content must refer to a defined character, career, wording,
 or room-state object. The R01 demand fixtures exclude conditional
 room-response periods, and a wait route adds exactly one period and no energy.
+The same tests must reproduce the exact five-stage background roster, preserve
+every required or optional actor override, and keep Week 15–16 background
+presence empty. Exactly ten environmental items use the one-time close-range
+glance rule. The other twenty require focused inspection. Live-text and SVG
+accretion must use only the existing thirty IDs and must not change collision,
+architecture, or required information.
 
 ### Save, interruption, and technical checks
 
@@ -260,6 +276,8 @@ MR-TEST-UI-001 and MR-TEST-A11Y-001 must show that:
 - reduced motion removes non-essential movement and flashes without removing
   required information;
 - Interaction Assist highlights only usable objects in the current room; and
+- close-range environmental text uses semantic scaled text, yields to a
+  higher-priority interaction, and receives no Interaction Assist marker; and
 - a browser view that is too small pauses safely and gives resize advice.
 
 ### Performance, assets, privacy, and release checks
@@ -316,6 +334,14 @@ Its private completion check requires:
 Leonardo records each item as pass, needs rework, or not yet checked. The slice
 does not pass if any item is needs rework or not yet checked. There is no
 participant count, survey score, or external-playtest requirement.
+
+The slice records station visits, total traversal seconds, traversal share of
+session time, monitoring visits with no decision, confirmations per minute,
+contextual lines displayed, and environmental lines read. These are private
+development measurements, not telemetry. R06 must set the engagement and
+repetition interpretation before they become a pass or fail threshold. Until
+then, they are evidence for `MR-REV-038`, `039`, and `041`, not proof that the
+loop is fun.
 
 ## Fallback and full-game evaluation
 

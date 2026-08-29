@@ -30,9 +30,10 @@ possible revision of their career.
 1. **Survival through decisions:** difficulty comes from planning,
    interpretation, time allocation, and ethical choices rather than precision
    pipetting or reflex challenges.
-2. **Plausible science, surreal institution:** experiments have intelligible
-   causes and stakes while academic language, incentives, and bureaucracy
-   become increasingly absurd.
+2. **Plausible science, institutionally surreal world:** experiments have
+   intelligible causes and stakes. The architecture remains credible while
+   plausible notices, labels, procedures, contradictions, and absences
+   accumulate until the institution becomes increasingly absurd.
 3. **Success does not resolve the system:** publication can be achieved but may
    buy little security. Failure may still produce insight or a defensible exit.
 4. **The exit is meaningful, not utopian:** industry can break the academic
@@ -51,9 +52,11 @@ possible revision of their career.
 
 Every serious game system must allow comic, satirical, or strange feedback
 without hiding its real stakes. Institutional Citations, contradictory
-requests, environment details, and player-facing records are part of the
-comedy, not only dialogue delivery. Exact jokes, citations, and text remain
-B10 work.
+requests, environment details, repeated work surfaces, and player-facing
+records are part of the comedy, not only dialogue delivery. Comedy must appear
+during ordinary work without becoming a constant joke channel. The physical
+floor never becomes dreamlike or impossible. Its surrealism comes from
+plausible bureaucratic material that accumulates and contradicts itself.
 
 ## Fair rules, unfair institution
 

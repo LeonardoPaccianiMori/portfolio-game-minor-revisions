@@ -5,9 +5,10 @@ about a developmental-biology postdoc trying to turn a promising cardiac
 organoid result into a publishable paper before a final semester ends.
 
 The tone is witty, sarcastic, and bitterly comic. The science remains legible;
-the institution and its incentives become increasingly surreal. Publication is
-not automatically a happy ending, and an industry role can offer an exit from
-the academic survival loop without being presented as a perfect life.
+the institution becomes increasingly surreal through plausible bureaucratic
+accretion, contradiction, and absence. Publication is not automatically a
+happy ending, and an industry role can offer an exit from the academic
+survival loop without being presented as a perfect life.
 
 ## Repository status
 
@@ -28,7 +29,7 @@ are stored under
 [`docs/reviews/2026-08-28-opus-5-holistic/`](docs/reviews/2026-08-28-opus-5-holistic/).
 The controlled
 [`recommendation register`](docs/reviews/recommendation-register.md) preserves
-duplicates, conflicts, new findings, and decision status. R00 through R04 are
+duplicates, conflicts, new findings, and decision status. R00 through R05 are
 documented; later entries remain unreviewed. The specification is still not
 implementation-ready until Leonardo discusses the material findings and
 separately approves the gate in

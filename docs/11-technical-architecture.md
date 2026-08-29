@@ -67,8 +67,9 @@ contains at least:
   saved reviewer variants, PIIM response cards, paper state, and authorship and
   integrity history;
 - received messages, route state, character and scene state, floor act state,
-  support-result consumption, concern and reminder state, cutscene recaps, and
-  permanent consequence flags; and
+  support-result consumption, concern and reminder state, consumed contextual
+  and environmental-line IDs, cutscene recaps, and permanent consequence
+  flags; and
 - the identifiers and state needed for the ending card and Institutional
   Citation evaluation.
 

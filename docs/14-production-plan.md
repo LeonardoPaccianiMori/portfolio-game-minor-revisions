@@ -61,11 +61,14 @@ The full target remains bounded by:
 - one continuous approximately 400-square-metre research floor;
 - six experiment templates, seven mandatory scenes, ten optional character
   scenes, twenty primary records, twenty-nine ending modules, twelve
-  Institutional Citations, and thirty environmental text items;
+  Institutional Citations, thirty environmental text items, fourteen
+  one-time contextual lines, five queue lines, and five exit responses;
 - a 90-minute fallback with the exact content cut line in
   12-content-specification.md;
 - four physical NPCs, remote Camila with one original 2D portrait, shared
   animation, no full voice acting, and modular epilogues;
+- text-only bureaucratic accretion and contextual dialogue that add no NPC,
+  prop, room, animation, or audio role;
 - local-only IndexedDB storage, no account, server, telemetry, or runtime
   network dependency; and
 - public-source-compatible asset provenance and attribution.

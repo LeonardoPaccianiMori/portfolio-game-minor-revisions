@@ -225,7 +225,10 @@ Camila's three contacts have separate dramatic functions. The initial email
 establishes that the public work has value outside Bellwether. The video call
 tests how the player explains evidence and limits while revealing Morrow's
 stability and commercial trade-offs. The Week 15 contact resolves eligibility
-into an offer or a refusal; it does not repeat the interview.
+into an offer or a refusal; it does not repeat the interview. If the player
+analysed the optional drug-exposure experiment, Camila adds one line selected
+from its useful, mixed, or unreliable result. This acknowledgement never
+changes Morrow eligibility or a PIIM card.
 
 ## Optional character scenes
 

@@ -134,6 +134,11 @@ belongs in the numbered design documents.
 | 2026-08-28 | Keep both career routes open at no extra cost. Add a public-withdrawal text variant without changing the 29-module count. Dramatize one relationship afterbeat and show one consequence sentence for all five characters. | Confirmed |
 | 2026-08-28 | Give Camila's email, desk-monitor video call, and offer separate functions. Use one original 2D portrait, captions, and non-lexical sounds for the call, with no 3D model, lip sync, or full voice. | Confirmed |
 | 2026-08-28 | Treat the first campaign as complete by itself. Present completed ending cards chronologically as **Departures** and keep the 12-item **Institutional Citations** collectible set separate. | Confirmed; supersedes the earlier combined Archive presentation |
+| 2026-08-29 | Resolve R05 repeated-action comedy with five act-based work-queue lines, six one-time internal reactions, and eight one-time contextual character lines. None changes game state. | Confirmed |
+| 2026-08-29 | Use close-range glance display for exactly ten short environmental items and focused inspection for the other twenty. Required information depends on neither form. | Confirmed |
+| 2026-08-29 | Define increasing surrealism as plausible bureaucratic accretion. Let notices, labels, paper, and stamps accumulate or contradict each other without impossible architecture, giant props, glitches, or slapstick. | Confirmed |
+| 2026-08-29 | Reduce the background-character roster through the semester, with no normal background characters in Weeks 15–16. Required content can override the roster. Add no crowd simulation, roaming NPC, or new model. | Confirmed |
+| 2026-08-29 | Add five act-based exit responses, a result-specific Camila acknowledgement for optional drug work, and a Week-5 dialogue-only use of `FLAG:openingCaution`. Drug work gives no Morrow or PIIM advantage. Record traversal and repetition measurements for later R06 interpretation. | Confirmed |
 
 ## Rules for future entries
 

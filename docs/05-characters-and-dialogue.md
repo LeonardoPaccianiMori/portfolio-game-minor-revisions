@@ -191,10 +191,24 @@ overrides the normal schedule. Camila remains remote at the protagonist desk.
 | Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
 | Camila | Remote only | Remote only | Remote only | Remote only |
 
-The normal table applies in every week unless the campaign beat, an optional
-scene, a visible equipment situation, or a relationship result overrides it.
-It is exact enough for player expectation, but avoids a full crowd simulation.
-The fixed optional-scene anchors are in `03-narrative-and-campaign.md`.
+The character table gives eligible anchors. The authored background roster
+becomes smaller as the semester continues:
+
+| Weeks | Early | Late | Night | After-hours |
+|---|---|---|---|---|
+| 1–4 | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None |
+| 5–7 | Haoran, Gabriel | Elena, Samira | Haoran | None, except **The Future** |
+| 8–9 | Haoran, Gabriel | Elena, Samira | None | None, except **The Future** |
+| 10–14 | Gabriel | Samira | None | None |
+| 15–16 | None | None | None | None |
+
+A required scene, optional scene, operational room state, or support result
+places its needed character even when the background roster is empty. It does
+not add an extra background person. Eight one-time contextual lines appear at
+eligible anchors in Weeks 1–7: two each for Elena, Haoran, Samira, and Gabriel.
+They have no choices, trust effects, or time cost. They never repeat and do not
+become unbounded contextual dialogue. The fixed optional-scene anchors are in
+`03-narrative-and-campaign.md`.
 
 ## Dialogue principles
 

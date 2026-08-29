@@ -9,8 +9,10 @@
 | Active sample group | One labelled physical tray and linked digital record that occupies one of the three laboratory slots until final analysis or cancellation. |
 | Aldercroft University | Fictional university that can invite the protagonist to a final-round Assistant Professor interview in Week 13. |
 | Archive | Local menu with chronological **Departures** and a separate persistent **Institutional Citations** collectible set. It does not keep full earlier saves or normal cutscenes. |
+| Background roster | Exact act-period list of characters who can appear as ordinary floor presence. Required scenes, optional scenes, operational room states, and support results can override it. It is not a crowd simulation. |
 | Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
 | B10 | The documented content, evaluation, production, and implementation-handoff block. It does not authorize implementation. |
+| Bureaucratic accretion | Plausible notices, labels, paper, stamps, procedures, contradictions, and absences that accumulate through the semester. It creates institutional surrealism without impossible architecture, giant props, glitches, or slapstick. |
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
 | Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
 | Campaign seed | Stored value created for a new game. It selects small variation only inside the outcome range the player has earned. |
@@ -20,6 +22,7 @@
 | Content ID | A stable MR-prefixed identifier for one content object. It must not change after implementation begins without a migration and approved decision. |
 | Content text key | A stable key that links a content object to exactly one English string in strings.en.json. |
 | Controlled cardiac tissue model | The standardized lab-grown human cardiac tissue model. It has no patient identity or donor story. |
+| Contextual line | One bounded, once-per-campaign internal or character line that adds comic or human texture without a choice, time cost, or state change. |
 | Cosmos | First fictional journal in the submission ladder; a parody of broad-interest prestige publishing. |
 | Career route | Academia, industry, or neither, as determined by accumulated state and final choice. |
 | Crash | Consequential involuntary loss of one work period after a zero-energy push-through. It restores two energy segments and can miss monitoring or lose opportunities. |
@@ -40,6 +43,7 @@
 | Facility station | Gabriel's operational base directly beside the imaging room. It supports booking, queue, and service scenes. |
 | Fatigue module | Ending treatment used only after a crash or an ending energy value of zero or one. It changes tone but not paper or career outcome. |
 | Graphics preset | Low, Standard, or High visual-cost setting. It changes shadows, render scale, and cosmetic effects, not game information or rules. |
+| Glance display | Close-range environmental-text rule that shows one complete short line when the player looks at its item and no higher-priority interaction is active. It needs no click, marker, or time cost. |
 | Implementation-ready | Explicitly approved state in which every blocking design decision and acceptance criterion required for coding is resolved. |
 | Industry contact | The company scientist or recruiter interested in the preprint and protagonist's assay-development skills. |
 | Interaction Assist | Accessibility option that briefly highlights usable objects in the current room without showing a path, objective arrow, or minimap. |

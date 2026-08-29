@@ -26,6 +26,7 @@ The full game has:
 | Ending modules | 29 | All 29 |
 | Institutional Citations | 12 | All 12 |
 | Environmental text items | 30 | 20 selected items; no required fact depends on them |
+| One-time contextual lines | 14 | All 14 |
 
 The shipped English text must contain no more than 6,000 unique words. Count
 words after lowercasing the build-specific strings.en.json. Count names and
@@ -56,6 +57,7 @@ form MR-REQ-DOMAIN-NUMBER. Content objects use one of these prefixes:
 | MR-TASK- | In-world request or work item |
 | MR-ROOM- | Authored operational room state |
 | MR-SUP- | Once-per-campaign character support result |
+| MR-CTX- | One-time contextual internal or character line |
 | MR-REC- | Primary record |
 | MR-ENV- | Environmental text item |
 | MR-CIT- | Institutional Citation |
@@ -210,6 +212,52 @@ and never changes a relationship, route, evidence, integrity, or Elena's paper c
 | action.break.act4 | Protected break: a calendar reminder asks whether recovery has a deliverable. |
 | action.break.act5 | Protected break: the building is almost empty. The work remains administratively present. |
 
+The desk work queue keeps its factual state text and adds one subordinate line
+for the current act. These lines do not enter the HUD or change state:
+
+| Text key | Initial English text |
+|---|---|
+| queue.flavour.act1 | The queue is short enough to fit on one screen and long enough to outlive the week. |
+| queue.flavour.act2 | The queue now includes the work required to explain why the queue changed. |
+| queue.flavour.act3 | Public access has made the private queue more urgent. |
+| queue.flavour.act4 | Three requests are marked minor. Together they occupy the screen. |
+| queue.flavour.act5 | The queue has begun assigning work to a future employee. |
+
+### MR-ACT-EXIT-CHECK
+
+This is a repeatable, no-cost interaction before the Week-16 final scene. It
+selects the current act line and changes no state:
+
+| Text key | Initial English text |
+|---|---|
+| exit.interaction.act1 | The door is not locked. The contract is doing that work. |
+| exit.interaction.act2 | Outside remains available. The manuscript has classified it as non-essential. |
+| exit.interaction.act3 | The glass reflects the laboratory less clearly. This feels like progress. |
+| exit.interaction.act4 | The door opens automatically for everyone except the current decision. |
+| exit.interaction.act5 | The exit has completed its revisions. |
+
+The fourteen `MR-CTX-*` lines are text-only, once-per-campaign content. They
+cost no time, present no choice, change no state, and ship in both full and
+fallback builds. All link to `MR-REQ-CONTENT-001` and `MR-TEST-CONT-001`; the
+eight character lines also link to `MR-REQ-CHAR-001` and `MR-TEST-CHAR-001`.
+
+| ID | Trigger and window | Text key | Initial English text |
+|---|---|---|---|
+| MR-CTX-INTERNAL-NIGHT | First night period | context.internal.night | The windows have become mirrors. The laboratory has not noticed the change of shift. |
+| MR-CTX-INTERNAL-MISSED-WINDOW | First missed monitoring window | context.internal.missedWindow | The experiment continued without supervision. It has already completed the relevant paperwork. |
+| MR-CTX-INTERNAL-ZERO-PUSH | First zero-energy push-through | context.internal.zeroPush | The body has submitted a limitation. The schedule has returned it without review. |
+| MR-CTX-INTERNAL-CRASH | First crash | context.internal.crash | Consciousness resumes in a later work period with no explanatory appendix. |
+| MR-CTX-INTERNAL-COMPROMISED | First Compromised integrity state | context.internal.compromised | The record and the argument are now colleagues rather than relatives. |
+| MR-CTX-INTERNAL-CONCERN | First unresolved concern | context.internal.concern | The concern remains on the desk, where unresolved things acquire administrative stability. |
+| MR-CTX-ELENA-EARLY | Elena at the PI office, W1–W4 | context.elena.early | If the result is real, it will survive one more condition. Real results are very resilient to other people's calendars. |
+| MR-CTX-ELENA-DRAFT | Elena at the main laboratory or PI office, W5–W7 | context.elena.draft | The draft is much clearer now. I moved the uncertainty to the supplement. |
+| MR-CTX-HAORAN-URGENT | Haoran in tissue culture, W1–W4 | context.haoran.urgent | I labelled the urgent cultures. The others became urgent while I was printing. |
+| MR-CTX-HAORAN-CHAPTER | Haoran at shared desks, W5–W7 | context.haoran.chapter | My chapter passed internal review. It now has more comments than sentences. |
+| MR-CTX-SAMIRA-BOOKING | Samira near imaging, W1–W4 | context.samira.booking | The booking system approved both of us. I assume it wants comparative data. |
+| MR-CTX-SAMIRA-FIGURE | Samira at shared desks, W5–W7 | context.samira.figure | Your figure is persuasive. My result is still deciding whether to cooperate with it. |
+| MR-CTX-GABRIEL-AVAILABLE | Gabriel at the facility station, W1–W4 | context.gabriel.available | The instrument is available in the administrative sense. |
+| MR-CTX-GABRIEL-REPAIR | Gabriel at the facility station, W5–W7 | context.gabriel.repair | I fixed the fault. Procurement asked me to preserve it until the replacement is approved. |
+
 The following exact labels and instructions apply to every experiment view:
 
 | Text key | Initial English text |
@@ -305,8 +353,9 @@ The following exact labels and instructions apply to every experiment view:
   with the record and never rerolls.
 - A repeat is allowed only once for laser/sham, range, batch, or repair-state
   work. It is a second run of the same template, not new content.
-- An environmental item can be inspected once for its full text. It remains
-  visible as dressing after the first inspection.
+- An environmental item displays its full text once through its assigned
+  glance or focused-inspection rule. It remains visible as dressing after that
+  display.
 - A citation can unlock once. Its archive entry remains available.
 
 ## Work-item and experiment catalogue
@@ -323,7 +372,7 @@ a weak result gives the stated weak reading.
 | MR-EXP-BATCH-CHECK | W3 early to W6 after-hours | 1 | Analysed laser/sham record | Established batch context / newly available batch context | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input | experiment.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
 | MR-EXP-REPAIR-STATE | W4 early to W6 after-hours | 1 | Analysed damage-range record | Observe association / broader-condition challenge | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear | Creates MR-REC-REPAIR-STATE | experiment.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
 | MR-EXP-OXYGEN-LOSS | W10 after Helpful Comments to W12 after-hours; analysis before W14 | 2 | MR-SCN-HELPFUL-COMMENTS | Interpretable recovery condition / broader reviewer condition | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input | experiment.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | 1 | MR-OPT-CAMILA-INITIAL | Established assay context / exploratory assay context | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE; can strengthen Morrow context | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14 | 1 | MR-OPT-CAMILA-INITIAL | Established assay context / exploratory assay context | Useful condition-dependent response / mixed response / unreliable response | Creates MR-REC-DRUG-EXPOSURE and one later Camila acknowledgement; no route or PIIM effect | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
 
 MR-EXP-REPAIR-STATE is associated with recovery. It never proves that the
 repair state causes recovery. This rule applies to every result string,
@@ -411,7 +460,7 @@ new primary-record ID.
 | MR-REC-BATCH-CHECK | Analysis record | W3–W6; permanent after analysis | MR-EXP-BATCH-CHECK; PIIM batch-card source | record.batchCheck | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
 | MR-REC-REPAIR-STATE | Analysis record | W4–W6; permanent after analysis | MR-EXP-REPAIR-STATE; claim-scope context | record.repairState | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
 | MR-REC-OXYGEN-LOSS | Analysis record | W10–W13; permanent after analysis | MR-EXP-OXYGEN-LOSS; PIIM oxygen-card source | record.oxygenLoss | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
-| MR-REC-DRUG-EXPOSURE | Analysis record | W10–W13; permanent after analysis | MR-EXP-DRUG-EXPOSURE; Morrow context only | record.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+| MR-REC-DRUG-EXPOSURE | Analysis record | W10–W13; permanent after analysis | MR-EXP-DRUG-EXPOSURE; selects a Camila acknowledgement only | record.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
 | MR-REC-MANUSCRIPT-V1 | Manuscript snapshot | W5–W8; permanent after commit | Initial draft; claim-level record | record.manuscriptV1.careful, record.manuscriptV1.strong, or record.manuscriptV1.inflated | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-REC-PREPRINT-RECEIPT | Common Archive receipt | W8; permanent | Public Record; sets public preprint | record.preprintReceipt | MR-REQ-NARR-001 / MR-TEST-NARR-001 |
 | MR-REC-COSMOS | Journal rejection | W8; permanent | Public record | record.cosmos | MR-REQ-NARR-002 / MR-TEST-NARR-001 |
@@ -485,6 +534,11 @@ or Developing.
 Low-evidence replacement for beat 1:
 scene.complete.elena.lowEvidence — We have enough of a narrative to begin
 repairing it in public.
+
+If `FLAG:openingCaution` is set, beat 6 uses
+`scene.complete.elena.close.openingCaution` — **Good. You were careful at the
+start. Now the draft can carry that burden for you.** This dialogue-only
+variation combines with either beat-1 form and changes no effect.
 
 Choice A effect: P-5 and default manuscript claim Careful. Choice B effect:
 P+5 and default manuscript claim Strong. Both create the same work item.
@@ -845,6 +899,16 @@ analysed experiment records, one honestly stated limitation or caveat, Working
 or better Camila trust, and no confession. Publication, a Coherent packet, a
 weak result, and drug exposure are not required.
 
+If `MR-REC-DRUG-EXPOSURE` exists, one line appears before the offer or no-offer
+form. It acknowledges the analysed biological result but never changes
+eligibility, trust, evidence, integrity, or a PIIM card.
+
+| Drug result | Text key | Initial English text |
+|---|---|---|
+| Useful | optional.camila.offer.drugUseful | I saw the drug-exposure record. The result remains useful after the condition changes. |
+| Mixed | optional.camila.offer.drugMixed | I saw the drug-exposure record. A mixed response is still an assay result, not an apology. |
+| Unreliable | optional.camila.offer.drugUnreliable | I saw the drug-exposure record. Knowing where the assay stops being reliable is still usable work. |
+
 | Form or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Offer | optional.camila.offer.opening | We can offer Research Scientist, Cardiac Assay Development. The work has deadlines, budgets, and fewer committee adjectives. | ROUTE:morrowAvailable |
@@ -922,8 +986,17 @@ two forms or hidden knowledge of fabrication.
 
 Environmental text is optional flavour. It must not be the only source of a
 required objective, scientific result, route condition, or safety warning.
-Every item displays once on first inspection in its active window and stays as
-visible dressing until its stated room state changes.
+Every item records one display in its active window and stays as visible
+dressing until its stated room state changes.
+
+Exactly ten short items use close-range glance display:
+`MR-ENV-BUR-01`, `MR-ENV-BUR-05`, `MR-ENV-PUB-02`, `MR-ENV-PUB-04`,
+`MR-ENV-PER-01`, `MR-ENV-PER-06`, `MR-ENV-REP-01`, `MR-ENV-REP-04`,
+`MR-ENV-EXIT-03`, and `MR-ENV-EXIT-06`. Looking at one from interaction range
+shows its complete line when no higher-priority interaction is active. The
+other twenty require focused inspection. Neither display costs time, uses a
+marker, or carries required information. A live-text or SVG item can persist
+and accumulate beyond its first window without adding another content ID.
 
 ### Bureaucracy
 
@@ -1188,6 +1261,8 @@ The 90-minute fallback includes:
 - eighteen primary records, with MR-FB-REC-RANGE-REPAIR replacing
   MR-REC-DAMAGE-RANGE and MR-REC-REPAIR-STATE, and without
   MR-REC-DRUG-EXPOSURE;
+- all fourteen MR-CTX lines, five work-queue lines, and five exit-response
+  lines;
 - all ending modules and citations; and
 - the stated selected environmental-text subset.
 
@@ -1208,6 +1283,11 @@ MR-TEST-CONT-001 must prove all of the following before a release candidate:
 - every required content object links to a requirement and test ID;
 - every dependency, window, expiry, and effect references a valid object;
 - every one-time object has a saved completion or expiry state;
+- exactly fourteen MR-CTX objects exist, each fires once, and none changes
+  time, state, trust, or route conditions;
+- the work queue and exit select exactly one line for the current act state;
+- exactly ten of the thirty environmental items use the glance rule, with no
+  missing full or fallback content reference;
 - every operational room state has a visible forecast, valid window, expiry
   fallback, and at least two valid routes with different stated costs;
 - every optional desk item refers to a defined character, career, wording, or
@@ -1218,8 +1298,8 @@ MR-TEST-CONT-001 must prove all of the following before a release candidate:
   condition;
 - all three claim levels and PIIM cards resolve through their stated factual
   requirements without blocking a deliberate incomplete commit;
-- the full-game counts are 6, 3, 7, 10, 20, 29, 12, and 30 in the order stated
-  at the start of this document;
+- the full-game counts are 6, 3, 7, 10, 20, 29, 12, 30, and 14 in the order
+  stated at the start of this document;
 - the fallback selection exactly matches its stated cut line;
 - no text claims that the repair state causes recovery;
 - no text contains actionable laboratory instructions; and

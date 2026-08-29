@@ -268,10 +268,23 @@ anchor.
 | Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
 | Camila | Remote only | Remote only | Remote only | Remote only |
 
-Early and late have normal service. Night has quiet rooms, available desk and
-laboratory work, and limited people. After-hours has reduced light, empty
-corridors, and limited shared services. Equipment can remain active in every
-period when its authored booking or fault state permits it.
+The eligible anchors use this exact background roster:
+
+| Weeks | Early | Late | Night | After-hours |
+|---|---|---|---|---|
+| 1–4 | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None |
+| 5–7 | Haoran, Gabriel | Elena, Samira | Haoran | None, except **The Future** |
+| 8–9 | Haoran, Gabriel | Elena, Samira | None | None, except **The Future** |
+| 10–14 | Gabriel | Samira | None | None |
+| 15–16 | None | None | None | None |
+
+A required scene, optional scene, operational room state, or support result
+overrides the roster for its needed character. It does not add a simulated
+crowd. Early and late retain available service even when no person is shown.
+Night has quiet rooms, available desk and laboratory work, and limited people.
+After-hours has reduced light, empty corridors, and limited shared services.
+Equipment can remain active in every period when its authored booking or fault
+state permits it.
 
 ## B07 semester states and environmental storytelling
 
@@ -309,8 +322,12 @@ Environmental storytelling uses five categories:
 
 Details persist unless a later event visibly replaces them. Updates occur only
 at an act boundary or a major scene. Across the whole floor, each phase permits
-at most one major and two minor room changes. A change appears only on safe
-room entry, never as a visible pop-in in front of the player.
+at most one major and two minor physical room changes. Live-text or SVG
+notices, labels, paper, and stamps do not use this physical-change allowance.
+They remain bounded by the existing thirty environmental IDs and can
+accumulate or contradict an earlier item. A change appears only on safe room
+entry, never as a visible pop-in in front of the player. Architecture, scale,
+collision, and prop size remain credible.
 
 ## R02 authored operational room states
 
@@ -359,15 +376,20 @@ B07 is complete only if all of the following are true:
 - the opening route, seven required scenes, and ten optional scene anchors
   have stated spatial staging without teleport or false room locks;
 - every normal work period has a character-presence rule and authored events
-  can override it safely;
-- the five act states, time layers, environmental categories, and persistence
-  limits can be implemented without changing the floor plan;
+  can override it safely, and the exact background roster declines to no
+  normal background characters in Weeks 15–16;
+- the five act states, time layers, environmental categories, physical-change
+  limits, and text-only bureaucratic accretion can be implemented without
+  changing credible architecture, scale, collision, or prop size;
+- exactly ten environmental items use close-range glance display, the other
+  twenty use focused inspection, and neither form carries required information;
 - all three operational room states use their stated windows, visible
   conditions, and two-or-more routes, and no other room change blocks work;
 - the object inventory has no loose pickups, hidden item hunt, or unbounded
   prop requirement; and
 - the level can be implemented as one continuous floor with bounded visible
-  detail and no simulated crowd.
+  detail, no simulated crowd, no roaming NPC system, and no extra character
+  model.
 
 ## B10 environmental content boundary
 
@@ -376,6 +398,12 @@ bureaucracy, publication and career, personal traces, repairs and warnings,
 and exit-facing material. Each item has a stable `MR-ENV-...` ID, a room,
 an act-state window, a one-time display rule, and text in
 `12-content-specification.md`.
+
+Exactly ten short items use a close-range glance rule. When the player looks
+at one and no higher-priority interaction is active, its full text appears in
+the contextual prompt without a click or time cost. It uses no marker, pop-up,
+objective arrow, or Interaction Assist highlight. The other twenty keep their
+focused inspection. Required information never depends on either form.
 
 An environmental item must reveal an institutional contradiction, pressure, or
 human response. It must not mock nationality, disability, precarious workers,

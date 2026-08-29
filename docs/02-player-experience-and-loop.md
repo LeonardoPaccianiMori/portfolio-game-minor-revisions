@@ -171,8 +171,10 @@ desk in shared desks. The player can read status at the desk but must visit the
 physical room for meaningful monitoring or equipment work. The shortest work
 loop is PI office, shared desks, main laboratory, tissue culture, then PI
 office. Its stations are close enough to support repeated first-person travel,
-but far enough apart that a queue, a colleague, or a changed room state can
-become meaningful.
+but far enough apart that a queue, a colleague, a changed room state, or a
+later absence can become meaningful. Travel is also a deliberate short pacing
+valve between decisions. The vertical slice must measure it before this claim
+is treated as proven.
 
 The active rack gives each group a physical label and a simple state signal.
 Its focused view lets the player select one of the three physical tray
@@ -182,7 +184,9 @@ and confirmation, not a dexterity task.
 The desk work queue repeats the state in words, such as running, check ready,
 attention needed, or ready for analysis. The queue informs the player but
 cannot control equipment remotely. Meaningful inspection and intervention
-require a visit to the station.
+require a visit to the station. It also shows one subordinate comic line for
+the current act state. This line never replaces status, enters the permanent
+HUD, or changes a rule.
 
 The imaging bay focused view lets the player switch among structure, rhythm,
 and repatterning views and record an observation. Switching views costs no
@@ -208,6 +212,12 @@ Equipment queues, faults, and access limits use only the authored room states
 in `06-world-and-level-design.md` and `12-content-specification.md`. Every
 operational state gives at least two clear routes with different time,
 relationship, or evidence costs. They are not random barriers.
+
+Six one-time internal reactions can fire after the first night period, missed
+monitoring window, zero-energy push-through, crash, Compromised integrity
+state, and unresolved concern. They cost no time, change no state, and never
+repeat. Eight one-time contextual character lines can appear at approved
+anchors in Weeks 1–7. They contain no choice or relationship effect.
 
 ## Workload and soft failure
 

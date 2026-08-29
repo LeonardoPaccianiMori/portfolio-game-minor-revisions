@@ -55,6 +55,15 @@ The permanent HUD is quiet and has three fixed areas:
 | Lower centre | Current interaction prompt. | Shows only for a valid nearby target. |
 | Upper right | Quiet new-message and safe-notification indicators. | An indicator does not force an immediate response. |
 
+Ten designated short environmental items can also use the lower-centre area as
+a close-range glance surface. When the player looks at one and no
+higher-priority interaction is active, the complete line appears without an
+action label, click, or time cost. It is semantic HTML text, follows the UI
+scale and contrast settings, and uses no marker, animation, or Interaction
+Assist highlight. Looking away dismisses it. Each line records its one-time
+display; the physical notice remains in the room. The other twenty items use
+focused inspection.
+
 The player opens **Research Status** with its assigned control. It is a large,
 readable quick-menu panel for evidence, Elena's paper confidence, integrity, five working
 trust bars, route feedback, and stated reasons for material changes. It cannot
@@ -219,6 +228,9 @@ scope decision, not a claim that English is accessible to every player.
   action, with the approved defaults and remapping.
 - The HUD, Research Status, inbox, dialogue, focused views, and menus follow
   the stated visibility, cost, and no-objective-arrow rules.
+- The ten glance-display items use semantic scaled text, yield to a
+  higher-priority interaction, and receive no marker or Interaction Assist
+  highlight. The other twenty items keep focused inspection.
 - New Game, pressure-profile lock, local save, completion archive, data
   clearing, and cutscene-recap behaviour follow the local-only contract.
 - Captions, speaker names, reading controls, motion controls, Interaction
@@ -238,11 +250,11 @@ must use those text keys. It must not add a second source of player-facing
 English text or use generated wording.
 
 MR-TEST-UI-001 must verify the New Game flow, fixed pressure profile,
-replacement confirmation, Save and Quit, local-data clear confirmation, and
-Archive headings. MR-TEST-A11Y-001 must verify the 150 percent scale,
-1280 by 720 view, keyboard and controller core actions, captions, reduced
-motion, contrast, and Interaction Assist rules. These checks are private to
-Leonardo and Codex.
+replacement confirmation, Save and Quit, local-data clear confirmation,
+Archive headings, and glance-display priority. MR-TEST-A11Y-001 must verify the
+150 percent scale, 1280 by 720 view, keyboard and controller core actions,
+captions, reduced motion, contrast, and glance-display and Interaction Assist
+rules. These checks are private to Leonardo and Codex.
 
 The UI must continue to use IndexedDB only for local game data. It must not
 use a cookie for saves, ownership, discovery, or expiry. The active save has

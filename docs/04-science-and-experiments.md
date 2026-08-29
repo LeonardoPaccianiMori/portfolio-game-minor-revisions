@@ -63,7 +63,8 @@ The PI term is deliberately inflated. It does not describe a proven mechanism.
 5. **Oxygen-loss challenge:** answer the required paper response with temporary
    oxygen loss and restoration.
 6. **Drug-exposure challenge:** optionally test cardiotoxic drug exposure. It
-   can strengthen industry interest and some paper paths.
+   creates a distinct analysed record and a later Camila acknowledgement. It
+   does not improve Morrow eligibility or replace a PIIM requirement.
 
 The game uses only three abstract time groups: same shift, next day, and
 several days. It does not show real laboratory timings.
