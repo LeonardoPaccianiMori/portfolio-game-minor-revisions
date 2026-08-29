@@ -9,6 +9,10 @@ It does not authorize game code, package files, production assets, a remote,
 or deployment work. B10 is documented, but the implementation gate remains
 blocked until Leonardo gives separate approval.
 
+S02 defines the exact subordinate module graph, public ports, lifecycle,
+ownership, frame order, and error boundaries in
+`implementation/specs/02-module-architecture.md`.
+
 The game is a self-contained static browser game. It has no account, server
 data, uploaded player data, analytics, telemetry, runtime API, runtime CDN, or
 runtime network dependency after its static files are delivered. A later
@@ -39,16 +43,25 @@ depend on Three.js. Rendering code must not decide campaign outcomes.
 
 | Module | Primary responsibility | Rules boundary |
 |---|---|---|
-| Boot and compatibility | Check browser capabilities, load settings, show truthful loading and error screens. | It creates no campaign until required capabilities pass. |
-| Rendering and world | Own the Three.js renderer, continuous floor scene, cameras, lighting, graphics profile, and resource visibility. | It displays state and effects only. |
-| Player and input | Own first-person movement, look, pointer lock, controller input, remapping, and focused-view transitions. | It sends action requests; it does not change campaign state directly. |
-| Interaction | Resolve nearby valid targets and open focused station views. | It turns player intent into typed rule commands. |
+| Bootstrap | Prepare fatal errors and boot UI, check the environment, create modules, and transfer ownership. | It creates no campaign and contains no campaign rule. |
+| Application | Coordinate ordered requests and own the active in-memory campaign state. | It alone sends commands to rules and distributes returned state and effects. |
+| Platform | Report required browser capabilities and page visibility. | It cannot inspect campaign or saved data. |
 | Game rules | Validate typed commands and return the next serializable state plus presentation effects. | It is deterministic for a given state, command, and saved variation. |
 | Authored content | Hold validated data for experiments, events, dialogue conditions, room states, and endings. | It has stable identifiers and no rendering objects. |
-| UI and accessibility | Render semantic overlays, menus, captions, settings, prompts, and browser-view safety. | It reads state and sends commands through the input layer. |
-| Audio and cutscenes | Own audio buses, scene timelines, scene skip, checkpoints, and input restoration. | It consumes approved effects and cannot silently advance time. |
-| Persistence | Validate, migrate, save, load, recover, archive, and clear local records. | It stores serializable data only. |
-| Tests and developer tools | Test rules, schemas, migrations, browser flows, and build quality. | It has no runtime gameplay authority. |
+| Persistence | Validate, migrate, save, load, recover, archive, and clear local records. | It stores validated serializable snapshots only. |
+| World | Maintain plain world presentation and bounded movement and interaction context. | It owns no browser object and cannot change campaign state. |
+| Rendering | Own the Three.js renderer, visual resources, cameras, lighting, visibility, and graphics profile. | It displays state and effects only. |
+| Input | Own raw browser input, pointer lock, controller input, and remapping. | It sends requests or frame input and cannot change campaign state directly. |
+| Player | Calculate first-person movement and look from plain input and collision context. | It owns no Three.js camera and cannot change campaign state. |
+| Interaction | Resolve nearby valid targets and focused actions. | It returns a typed application request and cannot apply it. |
+| UI and accessibility | Render semantic overlays, menus, captions, settings, prompts, and browser-view safety. | It receives read-only projections and sends requests. |
+| Audio | Own audio buffers, nodes, buses, cues, and audio settings. | It consumes approved requests and cannot carry required meaning alone. |
+| Cutscenes | Own presentation timelines, skip, checkpoints, and input-restoration instructions. | It consumes approved effects and cannot advance campaign rules or time directly. |
+
+Tests stay under `tests/`. Each runtime module has one public entrance and no
+browser module can import another browser module. Rules contain no browser
+dependency. S02 contains the exact allowed import directions and twelve
+application ports.
 
 ## State, rules, and authored data
 
@@ -165,10 +178,14 @@ room loading screens, gameplay portals, crowd simulation, or runtime network
 requests. One initial loading screen prepares all required campaign assets
 before Continue or New Game becomes available.
 
-The rendering and resource manager must:
+Specialist modules own their resources. Rendering owns Three.js geometry,
+materials, textures, GLB/glTF scenes, and animation resources. Audio owns audio
+buffers and audio nodes. There is no general shared resource manager or port.
+The application controls preparation order but owns no browser resource.
 
-- own loaded geometry, materials, textures, GLB/glTF scenes, and audio
-  buffers;
+The rendering module must:
+
+- own loaded geometry, materials, textures, and GLB/glTF scenes;
 - share reusable resources where practical and dispose only resources it owns;
 - use visibility control, corridor sightline limits, and lower-detail distant
   rooms so that only two or three nearby rooms need full detail;
@@ -176,8 +193,12 @@ The rendering and resource manager must:
   visible pop-in;
 - preserve the B07 floor plan, room access, and no-character-trapping rule;
   and
-- retain no untracked GPU or audio resource after a long session, an act
-  transition, or a completed campaign.
+- retain no untracked GPU resource after a long session, an act transition,
+  or a completed campaign.
+
+The audio module applies the equivalent ownership and cleanup rule to audio
+buffers and nodes. A resource shared inside one specialist module has one named
+owner. World and cutscenes exchange plain requests and presentation data only.
 
 Use a kinematic first-person player controller, static collision shapes, and
 interaction raycasts. Do not add a physics engine. Physical characters use

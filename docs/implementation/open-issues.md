@@ -1,6 +1,6 @@
 # Implementation Specification Open Issues
 
-Status: **S01 resolved; S02 issue group active; no issue silently resolved**
+Status: **S01–S02 resolved; S03 issue group active; no issue silently resolved**
 
 This is the durable clarification ledger for technical specification. It
 tracks missing or undecided material information. It does not contain casual
@@ -22,8 +22,8 @@ ideas or measured results that do not exist yet.
 | ID | Block | Required decision group | Status | Resolution evidence |
 |---|---|---|---|---|
 | MR-IMP-OPEN-001 | S01 | Exact Node, npm, TypeScript, Vite, Three.js and approved runtime/development dependency versions; package scripts; repository tree; configuration; local environment; update and lockfile policy | Resolved | `specs/01-toolchain-and-repository.md`; MR-IMP-DEC-013–022 |
-| MR-IMP-OPEN-002 | S02 | Exact module graph, allowed import directions, service lifecycles, error boundaries, dependency injection, public interfaces, and shared ownership | Open; next | Pending `specs/02-module-architecture.md` |
-| MR-IMP-OPEN-003 | S03 | Exact domain types, `CampaignState`, stored and derived fields, invariants, identifiers, units, defaults, and serialization boundary | Open | Pending `specs/03-domain-model-and-state.md` |
+| MR-IMP-OPEN-002 | S02 | Exact module graph, allowed import directions, service lifecycles, error boundaries, dependency injection, public interfaces, and shared ownership | Resolved | `specs/02-module-architecture.md`; MR-IMP-DEC-023–036; MR-IF-001 candidate `v1` |
+| MR-IMP-OPEN-003 | S03 | Exact domain types, `CampaignState`, stored and derived fields, invariants, identifiers, units, defaults, and serialization boundary | Open; next | Pending `specs/03-domain-model-and-state.md` |
 | MR-IMP-OPEN-004 | S04 | Exact commands, effects, validation order, rejection results, transition algorithms, PRNG use, outcome truth tables, and unchanged-state guarantees | Open | Pending `specs/04-commands-rules-and-determinism.md` |
 | MR-IMP-OPEN-005 | S05 | Exact safe-point ordering, period and week transitions, event eligibility, expiry, scene priority, interruption, cutscene skip, checkpoint, reload, and recap state machines | Open | Pending `specs/05-calendar-scheduler-events-and-cutscenes.md` |
 | MR-IMP-OPEN-006 | S06 | Exact authored-data file split, object schemas, cross-references, string-file contract, validation order, content versioning, and full/fallback/slice build selection | Open | Pending `specs/06-content-data-and-build-profiles.md` |
@@ -46,4 +46,4 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-The current active group is `MR-IMP-OPEN-002`.
+The current active group is `MR-IMP-OPEN-003`.

@@ -7,16 +7,19 @@
 | Active local save | The one unfinished campaign stored locally per browser profile. It has no account or server owner and does not expire automatically. |
 | Act state | One of five persistent floor conditions that changes room function and environmental story without changing the floor plan. |
 | Active sample group | One labelled physical tray and linked digital record that occupies one of the three laboratory slots until final analysis or cancellation. |
+| Adapter | Browser-facing module that implements one small application port without calling another browser module directly. |
 | Aldercroft University | Fictional university that can invite the protagonist to a final-round Assistant Professor interview in Week 13. |
 | Archive | Local menu with chronological **Departures** and a separate persistent **Institutional Citations** collectible set. It does not keep full earlier saves or normal cutscenes. |
 | Background roster | Exact act-period list of characters who can appear as ordinary floor presence. Required scenes, optional scenes, operational room states, and support results can override it. It is not a crowd simulation. |
 | Bellwether University | Fictional university that contains the Department of Developmental Systems and the playable research floor. |
 | B10 | The documented content, evaluation, production, and implementation-handoff block. It does not authorize implementation. |
 | Bureaucratic accretion | Plausible notices, labels, paper, stamps, procedures, contradictions, and absences that accumulate through the semester. It creates institutional surrealism without impossible architecture, giant props, glitches, or slapstick. |
+| Bootstrap | Startup boundary that prepares the boot screen, checks the environment, validates content, creates runtime modules, and transfers ownership to the application. |
 | Cardiac organoid | The fictionalized beating 3D cardiac tissue model at the centre of the research. It is not a complete miniature heart. |
 | Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
 | Campaign seed | Stored value created for a new game. It selects small variation only inside the outcome range the player has earned. |
 | CampaignState | Serializable active-campaign source of truth. It stores campaign progress and permanent consequences but no Three.js, DOM, audio, function, or real-time browser object. |
+| Coordinator | The application module that controls the order of campaign requests, state transitions, persistence, and presentation work. |
 | Clean-context comprehension check | Private Codex check that receives only shipped player-facing text and representative interface captures. It tests whether core meaning is understandable without design documents or academic knowledge. It does not test humour, emotion, or broad audience appeal. |
 | Common Archive, The | Fictional public preprint service used to release the manuscript. |
 | Content catalogue | The authoritative set of stable IDs, conditions, effects, text keys, and initial English draft in 12-content-specification.md. |
@@ -51,6 +54,7 @@
 | Institutional Citation | One of twelve satirical diegetic collectibles earned for research, relationship, integrity, career, or ending state. The separate local set persists between campaigns and gives no gameplay advantage. |
 | Knowledge | Second fictional journal in the submission ladder; a parody of decisive-proof prestige publishing. |
 | Last-known-good backup | The one validated earlier active-campaign record kept separately in IndexedDB for recovery if the active record fails validation. |
+| Lifecycle | The allowed runtime states and transitions from creation through startup, readiness, failure, and shutdown. |
 | Minor request | A PI, editor, or reviewer demand described as small despite meaningful time, evidence, or ethical cost. |
 | Monitoring window | A stated point at which the player can continue, spend attention, or stop an active experiment before deliberately advancing game time. |
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
@@ -60,11 +64,13 @@
 | Non-lexical vocal palette | Small original supporting-character sound set with controlled pitch and rhythm. It forms no real words and carries no required dialogue meaning. |
 | PIIM | Short form of *Proceedings of the International Institute of Morphodynamics*, the fictional journal that sends the paper to peer review. |
 | PIIM response card | Visible status for batch evidence, oxygen-loss work, or claim scope in the PIIM response. Each is met, partly met, or not met. |
+| Port | Small named list of operations that the application is allowed to use on another module. It does not expose the complete module. |
 | Paper-aftershock | One short post-career-scene object, message, or line that shows what the paper state means six months later. |
 | Elena's paper confidence | Elena's confidence that the paper supports its current claim. It is separate from Elena working trust and is not scientific truth. |
 | Pressure profile | Standard or Supported balance setting selected for a new campaign. Both keep the same calendar, narrative, routes, and ending content; it cannot change during that save. |
 | Primary record | One of the twenty main readable records that moves the story or explains a main experiment. A repeat adds a note to its source record rather than a new primary-record ID. |
 | Presentation effect | Typed request from a game rule for non-rule work, such as a message, cue, cutscene, save, UI refresh, or sound. It does not itself change campaign state. |
+| Projection | Bounded read-only plain data prepared from campaign state for one presentation module. It is not the complete campaign state. |
 | Preprint | Public manuscript version that can attract industry interest before journal publication. |
 | Protected break | One-period recovery action. It restores energy but does not act as a home scene or voluntary sleep action. |
 | Reconstructive rhythmogenesis | The PI's deliberately inflated term for the fictional recovery result. It is not a proven mechanism. |

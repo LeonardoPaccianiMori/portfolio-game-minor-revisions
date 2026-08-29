@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S01 documented | Complete S02–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S02 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S01 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | Planned inventory; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-002` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S02 documented | Complete S03–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S03 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S02 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001` candidate; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-003` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,11 +63,11 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Technical-specification block: **S02 — Module architecture**.
-- Last documented technical block: **S01 — Toolchain and repository**.
+- Technical-specification block: **S03 — Domain model and campaign state**.
+- Last documented technical block: **S02 — Module architecture**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-002`.
-- Technical-specification gate: **blocked**; S02–S14 remain.
+- Active issue group: `MR-IMP-OPEN-003`.
+- Technical-specification gate: **blocked**; S03–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not
@@ -375,8 +375,11 @@ status, and the next place to resume.
   Target current Chrome, Edge, and Firefox desktop browsers. Test Chromium,
   Firefox, and WebKit automatically. Treat Safari as best-effort only until
   direct Safari evidence exists. Use the approved Intel i5/Iris Xe reference
-  class, Low/Standard/High graphics profiles, a central resource manager, a
-  local error screen with sanitized diagnostics, and no automatic reporting.
+  class, Low/Standard/High graphics profiles, named specialist resource
+  ownership, a local error screen with sanitized diagnostics, and no automatic
+  reporting. S02 replaces the earlier central-resource-manager shorthand:
+  rendering owns visual resources, audio owns audio resources, and no general
+  shared resource service exists.
   Use Vitest, Playwright, ESLint, Prettier, local quality commands, a future
   non-deploying GitHub Actions workflow after remote approval, a build-size
   audit, manual performance evidence, and intentional dependency review.

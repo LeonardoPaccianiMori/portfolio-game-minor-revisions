@@ -99,7 +99,7 @@ belongs in the numbered design documents.
 | 2026-08-28 | Use one versioned IndexedDB database with settings, one active campaign, one last-known-good backup, ending cards, Institutional Citations, metadata, validated recovery, forward-only migrations, and confirmed local-data clearing. | Confirmed |
 | 2026-08-28 | Use action-based remappable input, controlled pointer lock, semantic HTML UI, and one Web Audio manager with Master, Music, Ambience/Effects, and Dialogue Sounds buses. | Confirmed |
 | 2026-08-28 | Target current Chrome, Edge, and Firefox desktop browsers. Test Chromium, Firefox, and WebKit automatically. Treat Safari as best-effort only and do not make a public Safari-support claim without direct Safari evidence. | Confirmed |
-| 2026-08-28 | Use the approved Intel i5/Iris Xe reference class, a central resource manager, WebGL2 compatibility check, visual-cost graphics profiles, local sanitized diagnostics, a compressed-build audit, and manual performance evidence. | Confirmed |
+| 2026-08-28 | Use the approved Intel i5/Iris Xe reference class, a central resource manager, WebGL2 compatibility check, visual-cost graphics profiles, local sanitized diagnostics, a compressed-build audit, and manual performance evidence. | Partly superseded on 2026-08-29; central-resource-manager wording only |
 | 2026-08-28 | Use Vitest, Playwright, ESLint, Prettier, local quality commands, and a future non-deploying GitHub Actions workflow after remote approval. Review runtime dependency security and licence status intentionally before releases and changes. | Confirmed |
 | 2026-08-28 | Use stable MR content identifiers, validated JSON later, one English strings file, saved content selection, no free-form generated dialogue, and no more than 6,000 unique English words. | Confirmed |
 | 2026-08-28 | Set full content at six experiment templates, seven mandatory scenes, ten optional character scenes, twenty primary records, twenty-nine ending modules, twelve Institutional Citations, and thirty environmental text items. | Confirmed |
@@ -159,6 +159,11 @@ belongs in the numbered design documents.
 | 2026-08-29 | Keep one self-contained npm project directly in `/home/lpm/Desktop/minor-revisions`; keep all project-owned inputs and outputs inside it; require no Docker, secret environment, external local repository, or runtime network service. | Confirmed |
 | 2026-08-29 | Use the approved strict ES2022 TypeScript, local-only Vite, portable command, formatting, coverage, browser-test, report-privacy, dependency-review, and no-surprise-change contracts in the frozen S01 specification. | Confirmed |
 | 2026-08-29 | Treat Leonardo as a hobbyist who is not a software engineer or game developer and has no prior Three.js coding experience. Require plain-language technical explanations and do not assume that he will implement or debug Three.js himself. | Confirmed |
+| 2026-08-29 | Use the exact S02 module graph with a pure rules core, one application coordinator, one-way public imports, no circular or private imports, explicit bootstrap construction, and no general service registry or event bus. | Confirmed |
+| 2026-08-29 | Keep the active `CampaignState` only in application memory, return new state from rules, send validated snapshots to persistence, and send only read-only projections to browser modules. | Confirmed |
+| 2026-08-29 | Use twelve minimal application ports, one ordered campaign-request queue, one visual frame loop, fixed startup, frame, campaign-reset, failure-cleanup, and shutdown orders, and typed rejected, recoverable, and fatal results. | Confirmed |
+| 2026-08-29 | Replace the central-resource-manager shorthand with named specialist ownership: rendering owns Three.js resources, audio owns audio resources, application controls preparation order, and no general shared resource service exists. | Confirmed; supersedes central-resource-manager wording only |
+| 2026-08-29 | Make `MR-IF-001` candidate `v1` after S02. Keep it unavailable to implementation until later connected fixtures and the S14 consistency audit permit freeze. | Confirmed |
 
 ## Rules for future entries
 
