@@ -154,6 +154,11 @@ belongs in the numbered design documents.
 | 2026-08-29 | Prohibit implementation workers from autonomous creative, player-visible, shared-contract, dependency, schema, balance, accessibility, asset, or acceptance decisions. Permit bounded discretion only for private reversible details that preserve frozen contracts. | Confirmed |
 | 2026-08-29 | Use `not started`, `draft`, `candidate`, `frozen`, and `superseded` for shared interfaces, with owner, consumers, version, fixtures, and freeze commit required before implementation use. | Confirmed |
 | 2026-08-29 | Treat performance, browser behaviour, build size, and play quality as future measured facts; decide their methods, targets, and response rules before code rather than inventing results. | Confirmed |
+| 2026-08-29 | Freeze the exact toolchain and package baseline during S01, before code, and require a fresh compatibility, security, licence, clean-install, and verification check before Gate 2. This supersedes the earlier timing statement that exact versions would first be selected after implementation approval. | Confirmed; supersedes version-selection timing only |
+| 2026-08-29 | Use Node 24.20.0 LTS, npm 11.19.0, TypeScript 6.0.3, Vite 8.2.2, Three.js 0.185.1, idb 8.0.3, Zod 4.5.2, and the exact compatible S01 development-tool versions with exact pins and a committed npm lockfile. | Confirmed |
+| 2026-08-29 | Keep one self-contained npm project directly in `/home/lpm/Desktop/minor-revisions`; keep all project-owned inputs and outputs inside it; require no Docker, secret environment, external local repository, or runtime network service. | Confirmed |
+| 2026-08-29 | Use the approved strict ES2022 TypeScript, local-only Vite, portable command, formatting, coverage, browser-test, report-privacy, dependency-review, and no-surprise-change contracts in the frozen S01 specification. | Confirmed |
+| 2026-08-29 | Treat Leonardo as a hobbyist who is not a software engineer or game developer and has no prior Three.js coding experience. Require plain-language technical explanations and do not assume that he will implement or debug Three.js himself. | Confirmed |
 
 ## Rules for future entries
 

@@ -1,6 +1,6 @@
 # Implementation Specification Decision Register
 
-Status: **current through S00**
+Status: **current through S01**
 
 This register records approved process and technical decisions for the
 implementation-specification programme. It does not replace the detailed
@@ -30,6 +30,16 @@ specification files or the creative decision log.
 | MR-IMP-DEC-010 | 2026-08-29 | Keep all code, package, asset, remote, release, and deployment gates blocked during technical specification. | Confirmed | This programme is design work, not implementation authorization. |
 | MR-IMP-DEC-011 | 2026-08-29 | Reference existing design sections, requirement IDs, content IDs, and text keys instead of copying the full creative corpus into technical prose. | Confirmed | Prevents two competing sources and reduces drift. |
 | MR-IMP-DEC-012 | 2026-08-29 | Build the foundation in dependency order and allow parallel implementation only for non-overlapping ownership against frozen shared interfaces. | Confirmed | Governs later worker assignments. |
+| MR-IMP-DEC-013 | 2026-08-29 | Freeze exact tool and package versions in S01, before code, and revalidate them before Gate 2. | Confirmed | Supersedes the earlier version-selection timing; failed revalidation reopens the affected S01 contract. |
+| MR-IMP-DEC-014 | 2026-08-29 | Use Node 24.20.0 LTS, npm 11.19.0, TypeScript 6.0.3, Vite 8.2.2, Three.js 0.185.1, idb 8.0.3, and Zod 4.5.2. | Confirmed | Establishes the exact environment and shipped dependency baseline. |
+| MR-IMP-DEC-015 | 2026-08-29 | Use the exact Vitest, coverage, Playwright, ESLint, TypeScript ESLint, Prettier, Node-type, cross-environment, and globals versions in the frozen S01 specification. | Confirmed | Establishes one compatible development-only tool graph. |
+| MR-IMP-DEC-016 | 2026-08-29 | Pin all direct packages exactly, commit the npm lockfile, require the exact Node and npm versions, and prohibit automatic dependency-update bots. | Confirmed | Makes installs reproducible and updates deliberate. |
+| MR-IMP-DEC-017 | 2026-08-29 | Keep one self-contained root npm project and every project-owned input and output under `/home/lpm/Desktop/minor-revisions`. | Confirmed | Prohibits nested projects, external local inputs, and project output outside the repository. |
+| MR-IMP-DEC-018 | 2026-08-29 | Use the exact planned tree, configuration inventory, strict ES2022 checks, local-only Vite settings, formatting contract, and portable command graph in S01. | Confirmed | Workers cannot invent setup, scripts, locations, or configuration. |
+| MR-IMP-DEC-019 | 2026-08-29 | Use no Docker, project secret, `.env` input, editor dependency, runtime external service, or non-loopback development server. | Confirmed | Keeps the hobby workflow local, inspectable, and self-contained. |
+| MR-IMP-DEC-020 | 2026-08-29 | Keep browser and coverage evidence private and local, install Playwright browsers inside project dependencies, and prohibit personal or save data in reports. | Confirmed | Preserves the local evidence and privacy boundary. |
+| MR-IMP-DEC-021 | 2026-08-29 | Explain specialized terms and commands in plain language because Leonardo is a hobbyist, not a software engineer or game developer, and has no prior Three.js coding experience. | Confirmed | Shapes documentation and handoffs without reducing quality requirements. |
+| MR-IMP-DEC-022 | 2026-08-29 | Treat actual installation, command, build, browser, coverage, and performance results as future evidence; reopen S01 after a failed Gate-2 revalidation instead of using an undocumented workaround. | Measured later | Defines the method and response without inventing execution results. |
 
 ## Entry rule
 

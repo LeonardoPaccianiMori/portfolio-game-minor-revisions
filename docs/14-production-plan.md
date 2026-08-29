@@ -32,8 +32,9 @@ hosting, server, database, telemetry, or runtime external service.
 | 5. Private release candidate | Accessibility, performance, licensing, and public-boundary evidence | Release-candidate gate passes |
 | 6. Public handoff, if chosen | Remote, source release, and later portfolio integration | Separate Leonardo approvals for each public action |
 
-Phase 1 starts only after implementation approval. It selects exact Node and
-package versions, browser-tested asset codecs, and verified asset sources. It
+Phase 1 starts only after implementation approval. It revalidates the exact
+S01 Node and package versions, then verifies browser-tested asset codecs and
+asset sources. A failed toolchain check reopens the affected S01 contract. It
 does not treat a free download, a browser preview, or an unverified generated
 asset as acceptable material.
 

@@ -42,4 +42,7 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 ## Current freeze state
 
 No interface is draft, candidate, or frozen. No implementation worker can use
-this inventory as permission to invent a signature or source file.
+this inventory as permission to invent a signature or source file. S01 freezes
+the toolchain and repository environment but does not define a shared runtime
+signature. `MR-IF-001` remains `not started` until S02 defines the bootstrap and
+application-lifecycle contract.

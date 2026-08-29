@@ -10,6 +10,16 @@ assets, or deployment configuration until the technical-specification gate is
 complete and `docs/00-design-index.md` records Leonardo's separate approval for
 vertical-slice implementation.
 
+## Leonardo context and communication
+
+Leonardo is not a software engineer or game developer. This is a hobby
+project, and he has no prior Three.js coding experience. Define specialized
+terms when they first appear, explain why a technical choice matters, and give
+plain-language commands, expected results, and recovery steps. Do not assume
+that Leonardo will implement or debug Three.js himself. These communication
+rules do not reduce specification, review, testing, accessibility, provenance,
+or acceptance requirements.
+
 ## Mandatory bootstrap
 
 Before non-trivial work, read `README.md`, `docs/00-design-index.md`,

@@ -12,8 +12,9 @@ survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **implementation specification; creative design and two independent
-review passes complete; all implementation gates blocked**.
+Status: **implementation specification; creative design, two independent
+review passes, S00, and S01 complete; S02 is next; all implementation gates
+blocked**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
@@ -34,6 +35,8 @@ documented, and no review block remains. The
 [`implementation roadmap`](docs/implementation/roadmap.md) now controls a
 separate technical-specification programme. Its
 [`current status`](docs/implementation/status.md) is the durable resume point.
+S01 freezes the toolchain and repository contract without creating package or
+runtime files. S02 will define the exact module architecture.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

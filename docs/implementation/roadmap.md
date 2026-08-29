@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **programme approved; S00 governance documented; S01 is next; no code authorized**
+Status: **S00–S01 documented; S02 is next; no code authorized**
 
 ## Purpose
 
@@ -118,8 +118,8 @@ full-game evaluation gates still apply during production.
 | Block | Subject | Main output | Depends on | Status |
 |---|---|---|---|---|
 | S00 | Governance and durable state | Roadmap, status, decisions, interfaces, open issues, authority, and gates | B00–B10 and R00–R07 | Documented |
-| S01 | Toolchain and repository | Exact runtime and development versions, package policy, scripts, directories, configuration, and environment rules | S00 | Not started; next |
-| S02 | Module architecture | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries | S01 | Not started |
+| S01 | Toolchain and repository | Exact runtime and development versions, package policy, scripts, directories, configuration, and environment rules | S00 | Documented |
+| S02 | Module architecture | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries | S01 | Not started; next |
 | S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Not started |
 | S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Not started |
 | S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Not started |
@@ -196,7 +196,7 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-Begin S01. Decide the exact toolchain, package and dependency versions,
-repository tree, scripts, configuration files, environment rules, supported
-development commands, and version-update policy. No files from the planned
-runtime tree can be created during S01.
+Begin S02. Decide the exact module graph, dependency directions, ownership,
+public interfaces, service lifecycles, bootstrap sequence, dependency
+injection, and error boundaries. Do not create files from the planned runtime
+tree during S02.

@@ -24,9 +24,11 @@ separate rights and provenance review.
 - Use semantic HTML and CSS overlays for all important interface content.
 - Keep runtime dependencies limited to Three.js, `idb`, and Zod. Bundle them
   locally. Do not load a runtime dependency from a CDN.
-- Use `npm` and commit its lockfile. At implementation start, record one
-  supported Node LTS version in `.nvmrc`. Exact package and Node versions are
-  an implementation-start record, not a reason to change the approved design.
+- Use `npm` and commit its lockfile. S01 freezes the exact Node LTS, npm,
+  package, configuration, and command baseline in
+  `implementation/specs/01-toolchain-and-repository.md`. Gate 2 requires a
+  fresh compatibility, security, licence, clean-install, and verification
+  check; a failed check reopens the affected S01 contract.
 - Do not add a service worker in the first release. Normal browser caching is
   allowed, but the game makes no promise that a first launch works offline.
 
@@ -314,7 +316,9 @@ attribution boundary.
 
 ## Deliberate later verification
 
-- Exact Node and package versions are fixed only when implementation begins.
+- Exact Node and package versions are frozen in S01 before implementation and
+  rechecked before Gate 2. Actual installation and command results remain
+  future evidence.
 - Exact source assets, audio codecs, source file hashes, and measured
   performance are verified before their integration or public claim.
 - A future external Safari test service could provide direct Safari evidence,
