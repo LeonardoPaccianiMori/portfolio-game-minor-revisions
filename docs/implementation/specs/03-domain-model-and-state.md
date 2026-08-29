@@ -100,7 +100,9 @@ twice or exceed the current campaign period.
 
 Valid rule effects stop at the approved limits. They do not wrap, overflow, or
 create fractions. Integrity event types are `omittedEvidence`,
-`alteredReading`, `fabricatedResult`, `restoredEvidence`, and `correctedDraft`.
+`alteredReading`, `unsupportedReading`, `restoredEvidence`, and
+`correctedDraft`. The unsupported-reading fact covers a reported result that
+has no permitted raw support; it does not add an actionable fabrication method.
 
 ## Relationships
 
@@ -165,15 +167,24 @@ and `stopped`. Attention states are `normal`, `checkReady`, and
 A run stores its qualitative goal, control, observation, and risk choices;
 sample condition (`stable`, `stressed`, or `failing`); equipment state
 (`ready`, `limited`, or `unavailable`); issue count; severe-issue fact;
-projected and final result bands; locked variation; and ordered monitoring
-responses. Monitoring responses are `continue`, `qualityCheck`, `stabilize`,
-and `stop`. A normal run has one window; oxygen loss has two.
+projected and final result bands; locked variation namespace, target ID, draw
+index, and integer bucket from `0` through `99`; and ordered monitoring
+responses. The only S04 namespaces are `experimentVariation` and
+`piimOutcome`. Experiment runs use `experimentVariation`, their run ID, and
+draw index `0`. Monitoring responses are `continue`, `qualityCheck`,
+`stabilize`, and `stop`. A normal run has one window; oxygen loss has two.
 
 Final analysis creates exactly one immutable raw record and one immutable
-evidence card. Their IDs are `raw:<runId>` and `evidence:<runId>`. A stopped
-run creates `stop:<runId>` and creates neither a raw record nor an evidence
-card. An evidence source is its experiment raw record or the single Samira
-contribution, whose evidence ID and source ID are both
+evidence card. Their IDs are `raw:<runId>` and `evidence:<runId>`. The raw
+record stores the biological result, final preparation band, structure,
+rhythm, repatterning, control, observation coverage, monitoring, fatigue, and
+internal-mismatch facts used by S04. The evidence card stores the evidence
+quality, selected reading, selected caveat, reported-reading status, awarded
+support, and raw-record source. Reported-reading status is `honest`, `altered`,
+or `unsupported`; it never changes the raw record. A stopped run creates
+`stop:<runId>` and creates neither a raw record nor an evidence card. An
+evidence source is its experiment raw record or the single Samira contribution,
+whose evidence ID and source ID are both
 `evidence:MR-SUP-SAMIRA-EVIDENCE` and `MR-SUP-SAMIRA-EVIDENCE` respectively.
 
 A configured, running, or ready-for-analysis run appears exactly once in
@@ -200,7 +211,10 @@ Preprint states are `notPosted`, `public`, and `withdrawn`. Journal states are
 `notSubmitted`, `submitted`, `majorRevision`, `withdrawn`, and `resolved`.
 Final paper state is `null` before it exists, then `published`,
 `acceptedPendingFinalWork`, `underReview`, or `rejectedOrWithdrawn`. PIIM cards
-are `met`, `partlyMet`, or `notMet` and do not exist before the reports.
+are `met`, `partlyMet`, or `notMet` and do not exist before the reports. A
+resolved PIIM outcome also stores its response band, the `piimOutcome`
+namespace, stable target ID, draw index `0`, integer bucket, and one locked
+result. Withdrawal stores no variation facts and uses `rejectedOrWithdrawn`.
 
 The manuscript stores fixed variable-authorship states for Haoran and Samira,
 the factual status of reported readings (`honest`, `altered`, or
@@ -257,17 +271,18 @@ factual inactive, unresolved, or resolved condition; S05 defines activation
 and S08 defines presentation.
 
 `contentHistory` stores selected variants, completed and expired content IDs,
-consumed once-only lines and reactions, and campaign Citation IDs. Selected
-variants never reroll. All IDs must exist in validated content and cannot be
-consumed before their content starts. Persistent cross-campaign Citations stay
-outside campaign state.
+read message IDs, consumed once-only contextual lines and reactions, displayed
+once-only environmental-text IDs, and campaign Citation IDs. Selected variants
+never reroll. All IDs must exist in validated content and cannot be consumed
+before their content starts. Persistent cross-campaign Citations stay outside
+campaign state.
 
 Conclusion states are `unresolved`, `choicePending`, `confirmed`,
 `epilogueInProgress`, and `completed`. The state stores the final choice ID and
-ordered ending-module IDs after they exist. Progress cannot move backward.
-Confirmation needs one valid choice. Epilogue progress needs the matching
-ending modules. Completion needs the final scene, choice, modules, and
-epilogue all complete.
+exactly one career, paper, integrity, fatigue, and relationship module after
+they exist, in that order. Progress cannot move backward. Confirmation needs
+one valid choice. Epilogue progress needs the matching ending modules.
+Completion needs the final scene, choice, modules, and epilogue all complete.
 
 ## Stable identifier contract
 
@@ -417,7 +432,9 @@ receives partial state or can mutate its supplied input through the result.
 Owner: `rules`. Consumers: application, scheduler, content validation,
 persistence, UI projection, cutscenes, and tests.
 
-`MR-IF-002` remains candidate until S06 connects content validation, S07
+S04 refines candidate `MR-IF-002` with exact stored experiment-variation,
+raw-record, evidence-card, PIIM-lock, content-presentation, and ending-module
+facts. `MR-IF-002` remains candidate until S06 connects content validation, S07
 connects persistence, S12 supplies executable fixtures, and S14 completes the
 cross-interface audit. Candidate status does not authorize implementation.
 
@@ -433,5 +450,7 @@ S03 is documented when:
 - S04 is the durable next block; and
 - no code, package, asset, remote, licence, or deployment file exists.
 
-S04 must use this state contract when it defines commands, effects, transition
-results, deterministic variation, rejection order, and unchanged-state rules.
+S04 now uses and refines this candidate state contract for commands, effects,
+transition results, deterministic variation, rejection order, and
+unchanged-state rules. S05 must preserve it when defining calendar, scheduler,
+event, crash, cutscene, skip, and resume order.

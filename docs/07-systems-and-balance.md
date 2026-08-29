@@ -162,15 +162,15 @@ explicit:
 - five inconclusive results give no points and end at 3, Developing;
 - the optional drug result can add 0, 1, or 2, and Samira's usable evidence can
   add 1; and
-- four permitted repeats can add between 0 and 4 in total, but the current
-  text does not say whether “first repeat” means per template or per campaign.
+- four permitted repeats can add between 0 and 4 in total because each Usable
+  repeat gives at most one.
 
 Therefore, required strong work can reach Substantial without optional work,
 while required partial work reaches Coherent. The four packet labels do not
 currently create four reachable experiences. R01 does not change starting
-support or reward values. R02 now defines result and quality rules. Repeat
-yield and any evidence re-pricing still require a later explicit balance
-decision.
+support or reward values. R02 defines result and quality rules, and S04 fixes
+the repeat yield. Any evidence re-pricing still requires a later explicit
+balance decision.
 
 ## B07 period schedule and spatial event rules
 
@@ -274,13 +274,15 @@ Evidence has 12 maximum support points.
 | 6–8 | Coherent |
 | 9–12 | Substantial |
 
-The game starts at three points, Developing. A new usable result with
-appropriate controls gives two points. A useful partial result or first repeat
-gives one. An inconclusive result gives zero, but can answer a reviewer or
-show the next useful action. Later repeats have diminishing returns. The game
-states when another repeat is unlikely to improve support. Raw evidence remains
-available after analysis and never decreases. Omitting a card does not erase
-raw support; it weakens the paper response instead.
+The game starts at three points, Developing. An original Usable result with a
+matched control and full required observation coverage gives two points. An
+honestly narrowed original Usable result with a limited control or limited
+coverage gives one. Any Usable repeat gives at most one. Suspicious, Worth
+repeating, and Inconclusive results give zero, but can answer a reviewer or
+show the next useful action. Samira's properly credited contribution gives one
+once. The game states when another repeat is unlikely to improve support. Raw
+evidence remains available after analysis and never decreases. Omitting a card
+does not erase raw support; it weakens the paper response instead.
 
 Elena's paper confidence starts at 45, Conditional. It measures her confidence
 that the paper supports its current claim. Elena working trust separately
@@ -651,6 +653,12 @@ robust preparation cannot become a weak result through variation.
 The approved action-cost table is in `02-player-experience-and-loop.md`. The
 authored template baselines are in `04-science-and-experiments.md`. Every
 catalogue action and test fixture must reference both where relevant.
+
+The exact pure command boundary, 24-command and five-effect unions, rejection
+and fault order, atomic time and energy application, deterministic FNV-1a and
+Mulberry32 bucket, preparation, evidence, manuscript, integrity, PIIM, route,
+and ending algorithms are documented in implementation S04. S05 still owns
+safe-point, crash, event, cutscene, skip, and resume order.
 
 After the vertical-slice internal evaluation, a recorded balance change may
 alter the three percentages only. It may not add a new outcome type, hide a

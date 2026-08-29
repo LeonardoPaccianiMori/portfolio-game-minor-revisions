@@ -167,6 +167,10 @@ belongs in the numbered design documents.
 | 2026-08-29 | Define one strict ten-section plain-data `CampaignState` with safe integers, stable non-reusable IDs, immutable factual histories, a complete initial fixture, rejected fixtures, canonical JSON, and cross-section validation. Store campaign facts and calculate display labels and eligibility. | Confirmed |
 | 2026-08-29 | Accept protagonist names of 1–64 visible Unicode characters after NFC normalization, with no leading or trailing whitespace or control characters. | Confirmed; replaces the proposed 32-character technical limit before documentation |
 | 2026-08-29 | Make `MR-IF-002` candidate `v1`, owned by rules, with complete-copy creation, validation, parse, and serialization operations. Keep it unavailable to implementation until S06, S07, S12, and S14 provide connected freeze evidence. | Confirmed |
+| 2026-08-29 | Define one pure rules operation with 24 commands in seven families, five presentation effects, Applied, Rejected, and Fault results, fixed validation order, 15 rejection codes, six fault codes, and atomic unchanged-state guarantees. | Confirmed |
+| 2026-08-29 | Use stateless deterministic experiment and PIIM variation from the exact UTF-8 key, FNV-1a, campaign-seed XOR, one Mulberry32 step, and a 0–99 bucket. Save each result once so that retry, reload, rejection, or unrelated work cannot redraw it. | Confirmed |
+| 2026-08-29 | Define the documented time, energy, experiment, evidence, manuscript, integrity, relationship, PIIM, career-route, final-choice, and ending-resolution algorithms in S04; keep S05 ordering, S06 content forms, S07 persistence, S09 projections, S12 executable fixtures, and S14 freeze audit in their owning blocks. | Confirmed |
+| 2026-08-29 | Make `MR-IF-003` and `MR-IF-004` candidate `v1` and refine candidate `MR-IF-002` with the exact S04 stored facts. Keep all candidates unavailable to implementation until their connected freeze evidence exists. | Confirmed |
 
 ## Rules for future entries
 

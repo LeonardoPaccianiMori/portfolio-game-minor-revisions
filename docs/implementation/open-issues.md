@@ -1,6 +1,6 @@
 # Implementation Specification Open Issues
 
-Status: **S01–S03 resolved; S04 issue group active; no issue silently resolved**
+Status: **S01–S04 resolved; S05 issue group active; no issue silently resolved**
 
 This is the durable clarification ledger for technical specification. It
 tracks missing or undecided material information. It does not contain casual
@@ -24,8 +24,8 @@ ideas or measured results that do not exist yet.
 | MR-IMP-OPEN-001 | S01 | Exact Node, npm, TypeScript, Vite, Three.js and approved runtime/development dependency versions; package scripts; repository tree; configuration; local environment; update and lockfile policy | Resolved | `specs/01-toolchain-and-repository.md`; MR-IMP-DEC-013–022 |
 | MR-IMP-OPEN-002 | S02 | Exact module graph, allowed import directions, service lifecycles, error boundaries, dependency injection, public interfaces, and shared ownership | Resolved | `specs/02-module-architecture.md`; MR-IMP-DEC-023–036; MR-IF-001 candidate `v1` |
 | MR-IMP-OPEN-003 | S03 | Exact domain types, `CampaignState`, stored and derived fields, invariants, identifiers, units, defaults, and serialization boundary | Resolved | `specs/03-domain-model-and-state.md`; MR-IMP-DEC-037–050; MR-IF-002 candidate `v1` |
-| MR-IMP-OPEN-004 | S04 | Exact commands, effects, validation order, rejection results, transition algorithms, PRNG use, outcome truth tables, and unchanged-state guarantees | Open; next | Pending `specs/04-commands-rules-and-determinism.md` |
-| MR-IMP-OPEN-005 | S05 | Exact safe-point ordering, period and week transitions, event eligibility, expiry, scene priority, interruption, cutscene skip, checkpoint, reload, and recap state machines | Open | Pending `specs/05-calendar-scheduler-events-and-cutscenes.md` |
+| MR-IMP-OPEN-004 | S04 | Exact commands, effects, validation order, rejection results, transition algorithms, PRNG use, outcome truth tables, and unchanged-state guarantees | Resolved | `specs/04-commands-rules-and-determinism.md`; MR-IMP-DEC-051–067; MR-IF-003 and MR-IF-004 candidate `v1` |
+| MR-IMP-OPEN-005 | S05 | Exact safe-point ordering, period and week transitions, event eligibility, expiry, scene priority, interruption, cutscene skip, checkpoint, reload, and recap state machines | Open; next | Pending `specs/05-calendar-scheduler-events-and-cutscenes.md` |
 | MR-IMP-OPEN-006 | S06 | Exact authored-data file split, object schemas, cross-references, string-file contract, validation order, content versioning, and full/fallback/slice build selection | Open | Pending `specs/06-content-data-and-build-profiles.md` |
 | MR-IMP-OPEN-007 | S07 | Exact database name and version, store and key shapes, transaction boundaries, validation, backup, recovery offers, migration steps, completion retention, and clear-data behaviour | Open | Pending `specs/07-persistence-and-recovery.md` |
 | MR-IMP-OPEN-008 | S08 | Exact coordinate and unit system, floor and room dimensions, geometry, collision volumes, player controller values, interaction ranges, anchors, camera, focused stations, and no-trap checks | Open | Pending `specs/08-world-geometry-and-interaction.md` |
@@ -46,4 +46,4 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-The current active group is `MR-IMP-OPEN-004`.
+The current active group is `MR-IMP-OPEN-005`.

@@ -97,17 +97,20 @@ candidate `v1`; later blocks cannot add campaign fields silently.
 
 ### Commands, effects, and deterministic variation
 
-Every meaningful action is a typed command. Examples include starting or
-monitoring an experiment, analysing a record, committing a manuscript
-revision, advancing a work period, answering a message, beginning a scene,
-and making a final choice. The rules module validates a command against the
-current state and returns:
+Every meaningful campaign action is one of the 24 S04 typed commands in seven
+families. One pure `applyRuleCommand` operation validates it against the
+current state and separate validated content. It returns Applied with a new
+complete state and ordered effects, Rejected with one of 15 expected codes, or
+Fault with one of six contract or invariant codes. A rejection or fault leaves
+state, revision, history, time, energy, variation, and effects unchanged.
 
-1. the next `CampaignState`; and
-2. a typed list of presentation effects, such as a message, cue, cutscene,
-   save request, UI refresh, or sound request.
+The closed presentation-effect union is `saveCheckpoint`, `showNotice`,
+`startCutscene`, `playAudioCue`, and `completeCampaign`. An effect requests
+browser or presentation work. It cannot change campaign truth.
 
-The game uses a small deterministic pseudo-random number generator. A new
+The game uses a small deterministic pseudo-random number generator. S04 fixes
+the two namespaces, versioned UTF-8 key, FNV-1a constants, unsigned
+campaign-seed combination, one Mulberry32 step, and 0–99 mapping. A new
 campaign stores its seed. When an experiment starts, the game records its
 locked variation and current projected preparation band. The band is derived
 from visible biological issues and can change through later sample, equipment,
@@ -131,6 +134,11 @@ Every event, experiment, manuscript revision, scene, ending module, and
 permanent consequence has a stable identifier. Authored data is validated by
 Zod before use. Invalid authored data is a development error, not a fallback
 random event.
+
+S04 also fixes the time and energy operation, experiment and evidence rules,
+manuscript and integrity truth, PIIM buckets, career-route checks, and ending
+resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05–S07, S09, S12,
+and S14 still own their named connected contracts and freeze evidence.
 
 ### Content and strings contract
 

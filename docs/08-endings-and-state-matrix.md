@@ -169,11 +169,17 @@ the paper or career result. Evidence has no separate scene because it already
 affects paper and career state; its final packet label appears in the summary.
 
 The relationship afterbeat selects a permanent consequence first, then the
-largest change from starting working trust, then the most recent consequential
-scene in a tie. It uses support or solidarity at 61 or above without a
+largest absolute change from starting working trust, then the most recent
+consequential scene in a tie, then Elena, Haoran, Samira, Gabriel, and Camila
+in that fixed order. It uses support or solidarity at 61 or above without a
 permanent breach, ambiguous recognition at 21–60, and distance or confrontation
 at 20 or below or after a permanent breach. A breach always overrides a later
 high bar.
+
+Implementation S04 fixes the PIIM 0–99 outcome buckets, one-time route checks,
+final-choice restrictions, exact five-module resolver, and this relationship
+tie order. S05 still owns the Week-13, Week-15, and Week-16 safe-point order and
+cutscene progression.
 
 The People summary also shows one consequence sentence for all five recurring
 characters by reusing the existing support, ambiguous, or distance module for
