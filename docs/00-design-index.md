@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **two independent review passes and R00–R07 decisions documented; no implementation authorized**
+Status: **creative design and R00–R07 documented; technical specification in progress; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -31,6 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
+| `implementation/roadmap.md` | Technical-specification programme | S00 documented | Complete S01–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S01 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S00 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | Planned inventory; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -56,44 +61,19 @@ status, and the next place to resume.
 
 ### Current checkpoint
 
-- Current block: **Review reconciliation and recommendation decisions**
-- Last documented block: **B10 — Content, evaluation, production, and implementation handoff**
-- Review state: Claude Opus 5 completed the first alignment and revealed-game
-  review plus a later holistic identity, fun-hypothesis, direction, and
-  expectations review against design snapshot
-  `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`. A separate reconciliation report
-  preserves duplicates, conflicts, qualifications, and genuinely new findings.
-  Codex checked completeness, file isolation, citations, privacy, and material
-  claims. R00 is documented: `MR-REV-053` and `MR-REV-055` are protected, and
-  `MR-REV-054` is accepted and written into the vision and UI rules. R01 is
-  documented: `MR-REV-001`–`007` and `MR-REV-014` have their approved responses
-  and open prototype or later-balance conditions recorded. R02 is documented:
-  `MR-REV-008`–`013` and `MR-REV-015`–`016` now define experiment resolution,
-  evidence quality, interpretation, station texture, operational room states,
-  and stop triage. R03 is documented: `MR-REV-017`–`021` and `MR-REV-051`
-  define manuscript-board behaviour, PIIM card rules, claim support, reviewer
-  variants, the Week-6 contradiction, and forecast and reason text.
-- R04 is documented: `MR-REV-022`–`037` and `MR-REV-052` define optional
-  personal misconduct, visible concerns and fallback routes, career-route
-  conditions, ending variants, Camila's call, relationship support, and replay
-  presentation. R05 is documented: `MR-REV-038`–`042` define bounded comedy in
-  repeated work, environmental display, plausible bureaucratic accretion, the
-  declining background roster, exit responses, drug-result acknowledgement,
-  the Week-5 opening-caution variation, and later traversal measurements. R06
-  is documented: `MR-REV-043`–`047` define the private vision test,
-  clean-context comprehension check, engagement and repetition interpretation,
-  darkening-comedy rule, Phase-1 asset feasibility check, and valid vision
-  traceability. R07 is documented: `MR-REV-048`–`050` align scene-time scopes,
-  qualify the full and fallback experiment-template requirement, define the
-  prop-family plan and hard substitution ceiling, and strengthen documentation
-  validation. The decision-log table interruption is removed. The text-key
-  catalogue already has only one `task.repairState` row, so no artificial
-  deletion was made. No review block remains. Wait for Leonardo's next
-  instruction. He can later consider
-  implementation approval as a separate decision. Do not start implementation
-  work.
-- Implementation gate: **blocked**; B10 documentation does not authorize
-  implementation.
+- Creative workshop: **B00–B10 documented**.
+- Independent review decisions: **R00–R07 documented**.
+- Technical-specification block: **S01 — Toolchain and repository**.
+- Last documented technical block: **S00 — Governance and durable state**.
+- Durable technical resume point: `implementation/status.md`.
+- Active issue group: `MR-IMP-OPEN-001`.
+- Technical-specification gate: **blocked**; S01–S14 remain.
+- Vertical-slice implementation gate: **blocked**; the technical baseline is
+  incomplete and Leonardo has not given separate approval.
+- Full-game implementation gate: **blocked**; the vertical slice does not
+  exist and has not been evaluated.
+- No code, package configuration, production asset, deployment configuration,
+  remote, or public licence is authorized.
 
 ### B00 — Vision, audience, success, and boundaries
 

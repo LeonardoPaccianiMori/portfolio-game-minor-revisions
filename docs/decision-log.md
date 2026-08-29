@@ -148,6 +148,12 @@ belongs in the numbered design documents.
 | 2026-08-29 | Require all six experiment templates in the full build and exactly laser/sham, combined range/repair, batch, and oxygen in the fallback. | Confirmed; qualifies the full-build requirement for fallback |
 | 2026-08-29 | Use twenty planned prop families. Permit later substitutions without exceeding a hard maximum of twenty-four families. | Confirmed; clarifies the earlier asset limit |
 | 2026-08-29 | Remove the blank-line interruption from the decision-log table and confirm that the content catalogue has no duplicate `task.repairState` row. Add checks for interrupted Markdown tables, duplicate text keys, and conflicting numeric claims. | Confirmed |
+| 2026-08-29 | Preserve the numbered creative-design corpus and create a separate subordinate implementation-specification corpus with durable roadmap, status, decision, interface, and open-issue records. | Confirmed |
+| 2026-08-29 | Complete all known full-game implementation decisions before code, then separately approve and build the vertical slice, evaluate it, rebaseline only with evidence and approval, and only then consider full-game implementation. | Confirmed |
+| 2026-08-29 | Use separate technical-specification, vertical-slice implementation, and full-game implementation gates. Completing one gate does not approve the next. | Confirmed |
+| 2026-08-29 | Prohibit implementation workers from autonomous creative, player-visible, shared-contract, dependency, schema, balance, accessibility, asset, or acceptance decisions. Permit bounded discretion only for private reversible details that preserve frozen contracts. | Confirmed |
+| 2026-08-29 | Use `not started`, `draft`, `candidate`, `frozen`, and `superseded` for shared interfaces, with owner, consumers, version, fixtures, and freeze commit required before implementation use. | Confirmed |
+| 2026-08-29 | Treat performance, browser behaviour, build size, and play quality as future measured facts; decide their methods, targets, and response rules before code rather than inventing results. | Confirmed |
 
 ## Rules for future entries
 

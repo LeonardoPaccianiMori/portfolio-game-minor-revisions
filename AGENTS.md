@@ -4,19 +4,30 @@ These rules apply to the entire repository.
 
 ## Current phase
 
-The repository is in design and evaluation. Do not create game code, package
-configuration, production assets, or deployment configuration until
-`docs/00-design-index.md` marks the implementation-readiness gate `approved`
-following Leonardo's explicit approval.
+The repository is in implementation specification, which remains design and
+evaluation work. Do not create game code, package configuration, production
+assets, or deployment configuration until the technical-specification gate is
+complete and `docs/00-design-index.md` records Leonardo's separate approval for
+vertical-slice implementation.
 
 ## Mandatory bootstrap
 
 Before non-trivial work, read `README.md`, `docs/00-design-index.md`,
 `docs/decision-log.md`, and every domain document relevant to the task.
 
+For implementation-specification work, also read
+`docs/implementation/status.md`, `docs/implementation/roadmap.md`,
+`docs/implementation/decisions.md`, `docs/implementation/interfaces.md`, and
+`docs/implementation/open-issues.md`. Resume the current block in `status.md`
+unless Leonardo explicitly changes the order.
+
 ## Design authority
 
-- Numbered design documents are authoritative for implementation details.
+- Numbered design documents are authoritative for creative intent, game rules,
+  and player-visible meaning.
+- Frozen files under `docs/implementation/specs/` are authoritative for exact
+  technical contracts. They are subordinate to the numbered design documents
+  and cannot silently change them.
 - `docs/decision-log.md` records approvals and supersessions; it does not
   replace the full specification.
 - Distinguish `confirmed`, `proposed`, and `open`. Never turn an inference or a
@@ -26,11 +37,26 @@ Before non-trivial work, read `README.md`, `docs/00-design-index.md`,
 - Preserve a universal fictional world. Do not reproduce real people,
   institutions, or Leonardo's experiences literally.
 
+## Implementation specification discipline
+
+- Keep the roadmap, status, decision, interface, and open-issue documents
+  current in every specification commit.
+- Use `not started`, `draft`, `candidate`, `frozen`, and `superseded` for
+  shared-interface state.
+- Do not guess a missing technical decision. Register it and stop dependent
+  work.
+- Workers have no authority over player-visible behaviour, shared contracts,
+  dependencies, schemas, assets, accessibility meaning, or acceptance rules.
+- Bounded discretion applies only to private, reversible details that preserve
+  all observable behaviour and frozen contracts.
+- Measured facts need an approved method, target, and response rule. Do not
+  invent a result before execution.
+
 ## Change discipline
 
 - Before every design discussion, consult the discussion roadmap in
-  `docs/00-design-index.md` and resume its recorded current block unless
-  Leonardo explicitly changes the order.
+  `docs/00-design-index.md`. For B00–B10 design work, resume its recorded block.
+  For technical specification, use `docs/implementation/status.md`.
 - Keep each roadmap block's status, unresolved work, and next-block pointer
   current. A block is complete only when its approved decisions are written in
   the authoritative domain documents, checked for contradictions, and

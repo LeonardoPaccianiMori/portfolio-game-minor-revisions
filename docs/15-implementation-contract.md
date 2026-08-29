@@ -1,13 +1,13 @@
 # Implementation Contract
 
-Status: **B10 documented; implementation prohibited**
+Status: **B10 documented; implementation specification in progress; code prohibited**
 
 ## Authorization gate
 
-No agent or contributor may implement game code until 00-design-index.md records
-Leonardo's explicit implementation-readiness approval and marks the gate
-approved. This B10 document completes the handoff plan. It does not grant that
-approval.
+No agent or contributor may implement game code until S00–S14 are documented,
+the technical-specification gate is complete, and `00-design-index.md` records
+Leonardo's separate vertical-slice implementation approval. Completion of the
+technical baseline does not itself grant that approval.
 
 No agent may create a remote, push a remote, publish a release, deploy the
 game, add a public licence file, import an unverified asset, or change a
@@ -16,14 +16,19 @@ creative decision without a new Leonardo instruction.
 ## Source-of-truth order
 
 1. Leonardo's explicit current instruction.
-2. Latest approved numbered design document.
-3. This implementation contract and its requirement map.
-4. decision-log.md for approval and supersession history.
-5. Approved content IDs and text keys.
-6. Code and tests, which must conform to the approved documents.
+2. Latest approved numbered design document for creative intent, game rules,
+   and player-visible meaning.
+3. Frozen files under `docs/implementation/specs/` for exact technical
+   contracts.
+4. This implementation contract and its requirement map.
+5. `docs/decision-log.md` and `docs/implementation/decisions.md` for approval
+   and supersession history.
+6. Approved content IDs and text keys.
+7. Tests and code, which must conform to all higher sources.
 
-Conflicts must be surfaced. An implementation worker may not choose a creative
-answer merely because it is easier to code.
+Conflicts must be surfaced. An implementation specification cannot silently
+change a numbered design decision. An implementation worker may not choose a
+creative or shared technical answer merely because it is easier to code.
 
 ## Requirement format
 
@@ -141,18 +146,19 @@ A requirement or work package is done only when:
 Code running once, a green screenshot, a successful build, or agent
 self-report is not enough.
 
-## Deliberate implementation-stage facts
+## Specification and measurement boundary
 
-These facts are not guessed in B10. They are chosen or measured only when the
-gate is approved and the relevant work begins:
+The S01–S14 programme decides exact tool versions, dependencies, schemas,
+interfaces, algorithms, source ownership, asset and codec policy, supported
+browser boundary, measurement methods, targets, and failure responses before
+code begins. Asset candidates can be researched and approved, but no asset
+file enters the repository during specification.
 
-- exact Node and package versions;
-- exact third-party and generated asset sources, licences, codecs, hashes, and
-  attribution text;
-- exact browser and device versions used for measurement;
-- measured performance and build size;
-- public remote timing and visibility; and
-- public release and portfolio-deployment timing.
+The programme does not invent execution results. Integrated asset hashes,
+measured browser behaviour, measured performance, measured build size, and
+play-evaluation results become facts only after the applicable build exists.
+Remote timing, public visibility, release timing, and portfolio deployment
+also remain subject to separate Leonardo instructions.
 
-Nothing in this contract authorizes implementation before the design-index
-gate is explicitly approved.
+Nothing in this contract authorizes implementation before the technical
+baseline and the separate design-index gate are explicitly approved.

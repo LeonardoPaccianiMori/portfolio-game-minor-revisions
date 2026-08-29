@@ -12,8 +12,8 @@ survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **design and evaluation; two independent review passes complete;
-implementation still blocked**.
+Status: **implementation specification; creative design and two independent
+review passes complete; all implementation gates blocked**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
@@ -30,9 +30,12 @@ are stored under
 The controlled
 [`recommendation register`](docs/reviews/recommendation-register.md) preserves
 duplicates, conflicts, new findings, and decision status. R00 through R07 are
-documented, and no review block remains. The specification is still not
-implementation-ready. Leonardo must give the next instruction and separately
-approve the gate in
+documented, and no review block remains. The
+[`implementation roadmap`](docs/implementation/roadmap.md) now controls a
+separate technical-specification programme. Its
+[`current status`](docs/implementation/status.md) is the durable resume point.
+No code can begin until the technical baseline is complete and Leonardo gives
+separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).
 
 Target experience:
@@ -48,9 +51,10 @@ Target experience:
 
 The numbered documents divide the design into implementation-owned domains.
 Confirmed decisions, unresolved questions, and acceptance requirements must
-remain explicit. Start with the design index and decision log. Review reports
-remain advisory and cannot change the numbered documents without Leonardo's
-later decision.
+remain explicit. Start with the design index and decision log. During technical
+specification, also start with the implementation status and roadmap. Review
+reports remain advisory and cannot change the numbered documents without
+Leonardo's later decision.
 
 ## Repository boundary
 
