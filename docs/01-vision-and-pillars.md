@@ -41,12 +41,13 @@ possible revision of their career.
 5. **Compact depth:** one evolving university research floor and reusable experiment
    systems should support dense consequences without pretending to be a vast
    campus simulation.
-6. **Bitter comedy through active play:** the game must remain fun and
+6. **Bitter comedy through active play:** the game must remain engaging and
    absurdist throughout. Humour comes from institutional language, physical
    environment, and responsive systems, as well as euphemism, contradiction,
-   signs, emails, repetition, and human incentives. Science and character
-   stakes remain grounded; the game does not rely on random dream logic or
-   cruelty alone.
+   signs, emails, repetition, and human incentives. Fun means meaningful
+   choice, discovery, responsive satire, and satisfying interaction. It does
+   not require constant jokes. Science and character stakes remain grounded;
+   the game does not rely on random dream logic or cruelty alone.
 
 ## Humour execution rule
 
@@ -57,6 +58,10 @@ records are part of the comedy, not only dialogue delivery. Comedy must appear
 during ordinary work without becoming a constant joke channel. The physical
 floor never becomes dreamlike or impossible. Its surrealism comes from
 plausible bureaucratic material that accumulates and contradicts itself.
+As the story becomes colder and more uncomfortable, joke frequency can fall
+and comic language can become darker. The game must still give the player
+agency, discovery, and absurd institutional responses. The darker arc cannot
+turn required play into passive punishment or remove comedy from active play.
 
 ## Fair rules, unfair institution
 
@@ -85,6 +90,14 @@ or laboratory work. Players with academic experience can find an additional
 layer of recognition, but insider knowledge must not be necessary to understand
 the objectives, causes, jokes, or consequences.
 
+Core objectives, scientific questions, choices, costs, and consequences use
+plain English. When academic precision and broad comprehension conflict, the
+required player-facing explanation chooses comprehension. Optional records can
+add technical nuance. Simplification must not reverse the evidence, claim a
+real treatment, present a fictional result as current science, or expose an
+actionable laboratory protocol. This is a design rule for broad comprehension,
+not a claim that every possible player will understand every part.
+
 Portfolio reviewers are a secondary audience. The game must first work as a
 game. Its portfolio value comes from the quality of the result and the evidence
 of the process.
@@ -108,17 +121,21 @@ sacrifices and cannot maximize every desirable result.
 
 The game must meet these qualitative criteria:
 
-- A player without academic experience can explain the main objective.
-- A player can understand why each main experiment matters.
+- The main objective can be explained from shipped player-facing content
+  without design documents or academic knowledge.
+- Each main experiment states its question and consequence in plain English.
 - A player can see how important choices change the game state and later events.
-- The first part can make the player laugh.
-- The later parts create pressure and discomfort.
+- Repeated work and traversal provide useful pacing or a meaningful decision;
+  they do not become filler.
+- The first part can make the player laugh, while later comedy can become
+  darker and less frequent without disappearing from active play.
+- The later parts create pressure and discomfort without removing agency.
 - The ending shows that publication does not solve academic precarity.
 - The industry route is attractive but imperfect.
 - At least one choice or ending gives the player a reason for discussion.
 
 Private evaluation in 13-testing-and-evaluation.md defines the acceptance
-method and automated thresholds. It does not use external sample sizes.
+method. It uses no external sample size and makes no universal audience claim.
 
 ## Creative and portfolio purpose
 

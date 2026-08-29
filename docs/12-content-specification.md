@@ -14,6 +14,14 @@ It can only select an approved item or an approved saved variant from this
 catalogue. A content revision that changes a condition, effect, cost, text
 meaning, or count requires an approved design decision.
 
+Required player-facing text uses plain English and explains the purpose of a
+technical term when that purpose affects a task, choice, or consequence. When
+academic precision and comprehension conflict, required text uses the simpler
+form and optional records can carry the nuance. This rule cannot reverse the
+evidence, turn fictional science into a real-world claim, or add an actionable
+protocol. `MR-TEST-VISION-001` checks comprehension; it does not authorize
+runtime text generation or new content outside this catalogue.
+
 The full game has:
 
 | Content family | Full-game count | Fallback count or rule |

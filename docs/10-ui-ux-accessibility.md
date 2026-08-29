@@ -15,6 +15,13 @@ uses clear English and sentence case. It does not depend on expert science
 knowledge, fast reading, drag actions, timed button presses, holds, or precise
 motor actions.
 
+Required interface text gives the plain-language meaning before or beside a
+technical label. If academic precision makes a core instruction harder to
+understand, the core instruction uses the simpler accurate-enough form and an
+optional record holds the nuance. A player must not need an external source or
+the design documents to understand the current objective, experiment purpose,
+cost, warning, or consequence.
+
 ## Supported devices and controls
 
 The first release targets desktop and laptop browsers only. Mobile and tablet

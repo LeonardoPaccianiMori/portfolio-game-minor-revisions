@@ -27,7 +27,7 @@ gaps. It does not mean that the domain is finished.
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
 | `reviews/2026-08-28-opus-5-holistic/` | Holistic Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R05 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
+| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R06 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -80,7 +80,10 @@ status, and the next place to resume.
   repeated work, environmental display, plausible bureaucratic accretion, the
   declining background roster, exit responses, drug-result acknowledgement,
   the Week-5 opening-caution variation, and later traversal measurements. R06
-  is next. Two review blocks remain: R06 and R07.
+  is documented: `MR-REV-043`–`047` define the private vision test,
+  clean-context comprehension check, engagement and repetition interpretation,
+  darkening-comedy rule, Phase-1 asset feasibility check, and valid vision
+  traceability. R07 is next. One review block remains.
   Only after all
   review blocks are resolved can Leonardo
   separately consider implementation approval. Do not start implementation
@@ -104,9 +107,10 @@ status, and the next place to resume.
   game fiction does not refer to its AI-assisted production. Agent direction is
   shown through repository evidence, requirement traceability, evaluation, and
   a later case study. The target content level is similar to `Teen` or `12+`.
-  The game must remain fun and absurdist throughout through institutional
-  language, physical environment, and responsive systems, while its science
-  and character stakes remain grounded.
+  The game must remain engaging and absurdist throughout through meaningful
+  choice, discovery, institutional language, physical environment, and
+  responsive systems. Later comedy can become darker and less frequent while
+  science and character stakes remain grounded.
   The approved success criteria, content limits, non-goals, public position,
   agent-evidence fields, and release rules are in the primary documents.
 - **Deferred outside B00:** B10 now records private evaluation targets,
@@ -421,9 +425,10 @@ status, and the next place to resume.
   Evaluation is private to Leonardo and Codex. It uses the approved internal
   checkpoints, automated test targets, build-size audit, and evidence records;
   it does not recruit participants or require external scientific or narrative
-  review. Production has a capacity-based schedule, a EUR 150 exceptional-cost
-  ceiling, stop rules, and a 90-day private critical-fix period. Leonardo alone
-  decides when to create and push a remote. A later public source release uses
+  review. Production has a capacity-based schedule, a EUR 150 non-LLM
+  exceptional-cost ceiling, a Phase-1 asset feasibility check, stop rules, and
+  a 90-day private critical-fix period. Leonardo alone decides when to create
+  and push a remote. A later public source release uses
   MIT for code, CC BY 4.0 for Leonardo's original non-code work, verified
   third-party rights, and the approved release package.
 

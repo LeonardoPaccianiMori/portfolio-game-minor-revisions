@@ -191,7 +191,8 @@ Use six short modular music loops or stems. Their style is dry electronic
 pulse, soft laboratory tone, and occasional over-formal institutional melody.
 They become colder and thinner later in the semester. They support menus,
 important scenes, and state changes; routine play does not have a constant
-score.
+score. The later mix can become sparse, but it must not turn the game into
+horror or remove every dry institutional accent from active play.
 
 The settings menu provides separate master, music, ambience/effects, and
 dialogue-sound volume controls. Captions remain the source of required

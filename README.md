@@ -29,7 +29,7 @@ are stored under
 [`docs/reviews/2026-08-28-opus-5-holistic/`](docs/reviews/2026-08-28-opus-5-holistic/).
 The controlled
 [`recommendation register`](docs/reviews/recommendation-register.md) preserves
-duplicates, conflicts, new findings, and decision status. R00 through R05 are
+duplicates, conflicts, new findings, and decision status. R00 through R06 are
 documented; later entries remain unreviewed. The specification is still not
 implementation-ready until Leonardo discusses the material findings and
 separately approves the gate in

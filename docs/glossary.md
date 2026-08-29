@@ -17,6 +17,7 @@
 | Cardiac Patterning Group | Elena Markovic's fictional research group in the Department of Developmental Systems. |
 | Campaign seed | Stored value created for a new game. It selects small variation only inside the outcome range the player has earned. |
 | CampaignState | Serializable active-campaign source of truth. It stores campaign progress and permanent consequences but no Three.js, DOM, audio, function, or real-time browser object. |
+| Clean-context comprehension check | Private Codex check that receives only shipped player-facing text and representative interface captures. It tests whether core meaning is understandable without design documents or academic knowledge. It does not test humour, emotion, or broad audience appeal. |
 | Common Archive, The | Fictional public preprint service used to release the manuscript. |
 | Content catalogue | The authoritative set of stable IDs, conditions, effects, text keys, and initial English draft in 12-content-specification.md. |
 | Content ID | A stable MR-prefixed identifier for one content object. It must not change after implementation begins without a migration and approved decision. |
@@ -55,6 +56,7 @@
 | Manuscript board | Interactive system for sections, figures, claims, controls, supplements, requests, and revision history. |
 | Modular epilogue | A 60–90-second six-month ending sequence: career scene, paper-aftershock, relationship afterbeat, final image, and summary. |
 | Morrow Biotech | Fictional assay-development company that contacts the protagonist after reading the preprint. |
+| Non-LLM direct cost | Project-specific purchase such as an asset, software licence, or new paid external service. Normal LLM subscriptions, token use, token limits, and resets do not use the EUR 150 ceiling. |
 | Non-lexical vocal palette | Small original supporting-character sound set with controlled pitch and rhythm. It forms no real words and carries no required dialogue meaning. |
 | PIIM | Short form of *Proceedings of the International Institute of Morphodynamics*, the fictional journal that sends the paper to peer review. |
 | PIIM response card | Visible status for batch evidence, oxygen-loss work, or claim scope in the PIIM response. Each is met, partly met, or not met. |
@@ -88,3 +90,4 @@
 | Support result | One bounded, once-per-campaign form of practical help from a recurring character. It requires a relevant supportive choice, Working-or-better trust, and no permanent breach. |
 | Working trust | Character-specific willingness to help, speak openly, or support the player. It is numeric internally but appears only as five segments, a descriptive state, and a factual reason. It is not friendship or moral worth. |
 | Verified asset | An external, generated, or original asset with a complete manifest record, verified rights, technical check, and attribution path before integration. |
+| Vision test | `MR-TEST-VISION-001`, the private comprehension and creative-experience gate used at the slice, fallback, and full-game stages. |

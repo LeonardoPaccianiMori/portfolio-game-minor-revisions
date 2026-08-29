@@ -32,6 +32,7 @@ Do not present a design-review prediction as a measured result.
 
 | Test ID | Scope | Required future evidence |
 |---|---|---|
+| MR-TEST-VISION-001 | Comprehension, engagement, comedy, and pacing | Clean-context comprehension result plus Leonardo's slice, fallback, and full-game vision checks |
 | MR-TEST-CONT-001 | Content data and English strings | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan |
 | MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six templates, repeats, bands, monitoring, and result/evidence separation |
 | MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
@@ -338,33 +339,76 @@ participant count, survey score, or external-playtest requirement.
 The slice records station visits, total traversal seconds, traversal share of
 session time, monitoring visits with no decision, confirmations per minute,
 contextual lines displayed, and environmental lines read. These are private
-development measurements, not telemetry. R06 must set the engagement and
-repetition interpretation before they become a pass or fail threshold. Until
-then, they are evidence for `MR-REV-038`, `039`, and `041`, not proof that the
-loop is fun.
+development measurements, not telemetry. Do not set an arbitrary numeric pass
+limit before prototype evidence exists. Before the first run, Leonardo and
+Codex record the qualitative questions that the measurements will answer:
+
+- Does travel create a short decision pause, or does it dominate useful play?
+- Does every required monitoring visit reveal a decision, changed state, or
+  meaningful consequence?
+- Does each confirmation protect a material or irreversible choice, or does it
+  only repeat information?
+- Do contextual and environmental lines add comic or human texture without
+  hiding factual status?
+- Does any required repeated action feel like filler?
+
+Leonardo records each answer as pass or a concrete rework request. Measurements
+support the judgment but cannot prove that the loop is fun. After the slice,
+later approved tuning can set a numeric concern band when the evidence makes
+one useful.
+
+## MR-TEST-VISION-001
+
+This private test has two parts. First, a fresh Codex context receives only the
+actual build-specific player-facing strings and representative captures of the
+current objective, the three evidence views, Research Status, and the relevant
+choice screens. It receives no numbered design document, review report, hidden
+formula, or intended answer. It must explain:
+
+1. the campaign objective and deadline;
+2. why the laser-and-sham task matters;
+3. what the repatterning index can and cannot show;
+4. what a Thin evidence packet means for the current work; and
+5. the cost and likely consequence of the shown choices.
+
+An absent, materially wrong, or unexplained insider-only answer creates a
+specific rewrite request and a new clean-context run. This checks
+comprehension only. It does not test humour, emotional response, broad audience
+appeal, or scientific accuracy.
+
+Second, Leonardo checks that active play remains engaging and absurdist while
+the arc becomes darker: repeated work and travel have purpose; the first act
+can be funny; later comedy can become darker or less frequent but does not
+disappear; pressure does not remove meaningful agency; and the final result is
+bitter but human. Each item receives pass or a concrete rework request. The
+test passes only when both parts pass.
 
 ## Fallback and full-game evaluation
 
 Before full expansion, the 90-minute fallback must pass the same private
-quality gate with its exact cut line. Leonardo checks its complete campaign,
-one constrained evidence path, one weakened path, one available career route,
-one no-route result, and an ending-card Archive result. Codex runs the full
-automated matrix and private technical review.
+quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo checks
+its complete campaign, one constrained evidence path, one weakened path, one
+available career route, one no-route result, and an ending-card Archive result.
+Codex runs the full automated matrix and private technical review.
 
-Before a release candidate, Leonardo reviews the eight experience criteria:
+Before a release candidate, Leonardo repeats `MR-TEST-VISION-001` and reviews
+the experience criteria:
 
-- the main objective is understandable without academic knowledge;
-- each main experiment has an understandable purpose;
+- the main objective is understandable without design documents or academic
+  knowledge;
+- each main experiment states an understandable question and consequence;
 - important choices have visible effects;
-- the first part can be funny;
-- later pressure and discomfort are present;
+- repeated work and travel do not become filler;
+- the first part can be funny, and later active play keeps darker comic or
+  absurd responses;
+- later pressure and discomfort are present without removing agency;
 - publication does not solve precarity;
 - industry is attractive but imperfect; and
 - at least one choice or ending can prompt thought or discussion.
 
 For each criterion, Leonardo records pass or a concrete change request. All
-eight must pass before release preparation. This is private creative review,
-not a claim about a general audience.
+must pass before release preparation. This is private creative review, not a
+claim that every player will have the same response.
 
 ## Evidence records and known limits
 

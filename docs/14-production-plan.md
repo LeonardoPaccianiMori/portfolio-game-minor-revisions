@@ -15,6 +15,10 @@ implementation to a private release candidate is 12–18 months. This is a
 capacity estimate, not a delivery promise. The project has no planned paid
 budget. Exceptional direct costs have a EUR 150 total ceiling. Do not buy or
 commit to a cost above that ceiling without a new explicit Leonardo approval.
+This ceiling applies to non-LLM project purchases such as assets, software, or
+a new paid external service. Normal LLM subscriptions, token use, token limits,
+and limit resets do not use this ceiling. The current design plans no paid game
+hosting, server, database, telemetry, or runtime external service.
 
 ## Confirmed phase sequence
 
@@ -32,6 +36,15 @@ Phase 1 starts only after implementation approval. It selects exact Node and
 package versions, browser-tested asset codecs, and verified asset sources. It
 does not treat a free download, a browser preview, or an unverified generated
 asset as acceptable material.
+
+Before the vertical slice, Phase 1 must also test asset feasibility for every
+planning role. Record its likely reusable or original source route, licence and
+redistribution risk, estimated non-LLM direct cost, estimated original-work
+effort, and `feasible`, `needs rework`, or `remove role` result. The four
+physical NPCs, five non-lexical vocal palettes, six music stems, modular floor,
+and prop families require explicit results. If the complete plan cannot keep
+the rights boundary and the EUR 150 ceiling, rework or remove a role before
+slice production. Do not treat the fallback as the assumed final product.
 
 ## Asset and provenance sequence
 

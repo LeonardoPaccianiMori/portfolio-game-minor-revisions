@@ -19,6 +19,13 @@ samples, equipment, the desk, and characters, but the meaningful challenge is
 choosing what to do, what evidence to trust, and what cost to accept. Focused
 work uses clear selections rather than physical simulation of laboratory tools.
 
+Every core interaction states its immediate purpose, cost, and possible
+consequence in plain English. A required technical term appears beside an
+observable question or result. The main path never requires the player to know
+why a sham, batch, repatterning index, preprint, or reviewer response matters
+before the game explains it. Optional records can provide the more precise
+academic layer.
+
 ## Campaign time and continuity
 
 The narrative covers a 16-week final semester. The player stays on the

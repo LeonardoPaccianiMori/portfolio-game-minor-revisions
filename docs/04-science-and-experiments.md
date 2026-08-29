@@ -50,6 +50,13 @@ The game does not show raw biological data or operational protocol values.
 
 The PI term is deliberately inflated. It does not describe a proven mechanism.
 
+Player comprehension has priority over academic precision in required text.
+The game can simplify a scientific distinction or use a fictional qualitative
+label when that makes the objective and consequence clear. Optional paper and
+record text can preserve more precise language. Simplification must not change
+what the evidence supports, imply a real treatment, present the repair state as
+proven cause, or create an actionable laboratory instruction.
+
 ## Progressive damage ladder
 
 1. **Replication and sham:** repeat the original localized laser-damage result

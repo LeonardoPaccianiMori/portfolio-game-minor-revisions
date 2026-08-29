@@ -299,6 +299,11 @@ meaning, not the room plan.
 | 10–14 | Review pressure | Colder light, repairs, warnings, queue pressure, and accumulated clutter. |
 | 15–16 | Decision horizon | Emptier rooms, accumulated debris, cleared desk traces, and the most inviting exit. |
 
+The colder and emptier later states increase pressure, but they do not remove
+interactive comedy. Queue text, notices, contextual responses, and changed
+object meaning continue to answer the player's actions. Emptiness is a human
+and institutional consequence, not a replacement for play.
+
 The time-of-day layer combines with the act state:
 
 | Period | Functional lighting and activity |

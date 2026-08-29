@@ -214,6 +214,10 @@ become unbounded contextual dialogue. The fixed optional-scene anchors are in
 
 - Bitter comedy should arise from plausible language, euphemism,
   contradiction, and self-justification.
+- Required dialogue and internal narration must explain an academic term,
+  process, or joke through plain context when its meaning affects an objective,
+  choice, or consequence. Insider recognition can add a second layer but
+  cannot carry the only meaning.
 - Characters must have interests and limits beyond serving as satire delivery
   devices.
 - The PI cannot become a one-note monster, and the industry contact cannot

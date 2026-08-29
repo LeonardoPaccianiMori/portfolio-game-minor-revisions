@@ -47,6 +47,21 @@ keyboard, paper stack, notice rail, clipboard, cable or tray, generic
 equipment housing, coffee machine, break-room table, corridor sign, service
 panel, and exit fixture.
 
+## Phase-1 feasibility record
+
+Before vertical-slice asset production, every planning role must have a
+feasibility result. Record the likely reusable or original source route,
+licence and redistribution risk, estimated non-LLM direct cost, estimated
+original-work effort, and `feasible`, `needs rework`, or `remove role` result.
+This planning record does not approve a candidate or permit file integration.
+The four physical NPCs, five non-lexical vocal palettes, six music stems,
+modular floor, and prop families cannot remain `not checked` when the slice
+gate begins.
+
+The EUR 150 production ceiling applies to non-LLM project purchases. Normal
+LLM subscriptions, token use, token limits, and limit resets are outside it.
+No paid hosting or runtime external service is planned.
+
 ## Allowed-source boundary
 
 Prefer original work, CC0, CC BY, Open Font License, MIT, Apache, or paid

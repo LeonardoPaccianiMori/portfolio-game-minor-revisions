@@ -139,6 +139,12 @@ belongs in the numbered design documents.
 | 2026-08-29 | Define increasing surrealism as plausible bureaucratic accretion. Let notices, labels, paper, and stamps accumulate or contradict each other without impossible architecture, giant props, glitches, or slapstick. | Confirmed |
 | 2026-08-29 | Reduce the background-character roster through the semester, with no normal background characters in Weeks 15–16. Required content can override the roster. Add no crowd simulation, roaming NPC, or new model. | Confirmed |
 | 2026-08-29 | Add five act-based exit responses, a result-specific Camila acknowledgement for optional drug work, and a Week-5 dialogue-only use of `FLAG:openingCaution`. Drug work gives no Morrow or PIIM advantage. Record traversal and repetition measurements for later R06 interpretation. | Confirmed |
+| 2026-08-29 | Resolve R06 engagement evaluation with predefined qualitative questions supported by traversal, visit, confirmation, and contextual-content measurements. Do not invent numeric pass limits before prototype evidence exists. | Confirmed |
+| 2026-08-29 | Prefer broad comprehension to academic precision in required player-facing text. Use optional records for nuance, preserve evidence meaning and fiction safety, and make no universal audience claim. | Confirmed |
+| 2026-08-29 | Use a fresh-context Codex comprehension check with only shipped text and representative interface captures. It cannot judge humour, emotional response, or general audience appeal. | Confirmed |
+| 2026-08-29 | Reconcile fun with the darkening arc: active play remains engaging and absurdist through agency, discovery, responsive satire, and satisfying interaction. Later comedy can become darker and less frequent without disappearing. | Confirmed |
+| 2026-08-29 | Keep the EUR 150 ceiling for non-LLM direct project costs and run a Phase-1 asset feasibility check before the vertical slice. Normal LLM subscriptions, token use, token limits, and resets are outside the ceiling. | Confirmed; clarifies the earlier cost boundary |
+| 2026-08-29 | Add `MR-TEST-VISION-001` for comprehension, engagement, comedy, pacing, and the darkening arc, and map `MR-REQ-VISION-001` to it. | Confirmed |
 
 ## Rules for future entries
 

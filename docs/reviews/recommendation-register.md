@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 through R05 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R06 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -88,11 +88,11 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-040 | Art and tone | Resolve the meaning and channel of increasing surrealism | `accepted` |
 | MR-REV-041 | World | Decide floor population and validate traversal value | `accepted` |
 | MR-REV-042 | Content | Resolve the exit voice, drug template, and orphaned flag | `accepted` |
-| MR-REV-043 | Evaluation | Add or reject an engagement, pacing, and repetition criterion | `unreviewed` |
-| MR-REV-044 | Evaluation | Reconcile audience claims with the sole-evaluator boundary | `unreviewed` |
-| MR-REV-045 | Vision | Reconcile continuous fun with the darkening arc | `unreviewed` |
-| MR-REV-046 | Production | Test capacity and asset cost against the production plan | `unreviewed` |
-| MR-REV-047 | Traceability | Give `MR-REQ-VISION-001` a valid verification path | `unreviewed` |
+| MR-REV-043 | Evaluation | Add or reject an engagement, pacing, and repetition criterion | `accepted` |
+| MR-REV-044 | Evaluation | Reconcile audience claims with the sole-evaluator boundary | `accepted` |
+| MR-REV-045 | Vision | Reconcile continuous fun with the darkening arc | `accepted` |
+| MR-REV-046 | Production | Test capacity and asset cost against the production plan | `accepted` |
+| MR-REV-047 | Traceability | Give `MR-REQ-VISION-001` a valid verification path | `accepted` |
 | MR-REV-048 | Documentation | Align non-interactive scene-time values | `unreviewed` |
 | MR-REV-049 | Fallback | Qualify the six-template requirement for fallback | `unreviewed` |
 | MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `unreviewed` |
@@ -244,5 +244,25 @@ Discuss entries in dependency order, not numerical order:
   line for an analysed drug experiment, and one Week-5 dialogue variation for
   `FLAG:openingCaution`. Drug work does not improve Morrow or PIIM eligibility.
 
-No implementation is authorized. R06 is next and covers evaluation and
-production evidence. Two review blocks remain, R06 and R07.
+### R06 — Evaluation and production evidence
+
+- `MR-REV-043`: use traversal, visit, confirmation, and contextual-content
+  measurements as evidence for predefined qualitative questions. Leonardo
+  records pass or a concrete rework request. Do not invent a numeric pass limit
+  before prototype evidence exists.
+- `MR-REV-044`: prefer broad comprehension to academic precision in required
+  player-facing text. Use a fresh-context Codex check for comprehension only,
+  with no design documents or intended answers. Do not claim universal audience
+  understanding or use the method to judge humour and emotional response.
+- `MR-REV-045`: keep active play engaging and absurdist throughout. Later
+  comedy can become darker and less frequent, but pressure cannot remove
+  agency, discovery, responsive satire, or every comic response.
+- `MR-REV-046`: retain the EUR 150 non-LLM direct-cost ceiling and add a
+  Phase-1 asset feasibility check before the slice. Existing LLM subscriptions,
+  token use, token limits, and resets are outside the ceiling. Do not assume
+  that the fallback will become the final product.
+- `MR-REV-047`: add `MR-TEST-VISION-001` and map `MR-REQ-VISION-001` to it as
+  well as the content test.
+
+No implementation is authorized. R07 is next and covers documentation
+corrections. One review block remains.
