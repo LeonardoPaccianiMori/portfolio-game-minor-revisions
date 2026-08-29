@@ -56,11 +56,17 @@ The permanent HUD is quiet and has three fixed areas:
 | Upper right | Quiet new-message and safe-notification indicators. | An indicator does not force an immediate response. |
 
 The player opens **Research Status** with its assigned control. It is a large,
-readable quick-menu panel for evidence, PI confidence, integrity, five working
+readable quick-menu panel for evidence, Elena's paper confidence, integrity, five working
 trust bars, route feedback, and stated reasons for material changes. It cannot
 cover a required subtitle or confirmation. It gives clear non-spoiling route
 feedback but does not reveal hidden flags, raw formulas, or a completion
 percentage.
+
+Working trust appears only as a five-segment bar, a descriptive state, and a
+factual reason for a change. The interface never shows the internal 0–100
+value, numeric delta, formula, or support threshold. The bar is the
+protagonist's estimate of willingness to cooperate, not an institutional score,
+friendship meter, or moral rank.
 
 The shared desk is the diegetic hub for email, calendar, work queue, analysis,
 and manuscript work. It can report remote status but cannot operate laboratory
@@ -79,6 +85,11 @@ Unsupported and gives a plain-language reason. It does not use a moral label or
 block a deliberate incomplete commit. Before confirmation, it shows the
 one-period and one-energy cost, unmet requirements, record changes, authorship
 changes, and irreversible integrity action, if present.
+
+Camila's video call uses the protagonist's desk monitor as a focused view. It
+shows a simple original 2D portrait, captions, speaker name, and non-lexical
+sounds. It uses no 3D model, lip sync, full voice, or recorded talking-head
+video.
 
 The interface follows the fair-rules principle in `01-vision-and-pillars.md`.
 It states known costs, deadlines, expiry, and irreversible consequences. It
@@ -168,10 +179,12 @@ time.
 Safe saves occur at approved experiment, manuscript, and scene boundaries.
 Save and Quit gives a clear confirmation at the last safe state. On campaign
 completion, the game removes the full active state and retains a compact ending
-card. Archive keeps the 12 most recent ending cards and the persistent
-Institutional Citation record. It does not retain full earlier saves or every
-previous cinematic. Settings includes **Clear Saved Data** with a clear
-confirmation.
+card. Archive has two areas. **Departures** keeps the 12 most recent ending
+cards as a chronological record without empty slots, an expected-run count, or
+a completion percentage. **Institutional Citations** shows the persistent
+12-item collectible set. Neither gives a gameplay advantage. The Archive does
+not retain full earlier saves or every previous cinematic. Settings includes
+**Clear Saved Data** with a clear confirmation.
 
 Skipping a cutscene adds a concise recap, including its choice and immediate
 result, to the inbox or Research Status. Normal cutscenes do not replay during

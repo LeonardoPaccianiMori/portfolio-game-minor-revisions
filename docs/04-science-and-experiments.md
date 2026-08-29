@@ -212,8 +212,8 @@ The manuscript board offers three claim levels:
 | Claim level | Paper wording | Main effect |
 |---|---|---|
 | Careful | Recovery is linked to the repair state. | Protects integrity but can make publication harder. |
-| Strong | The repair state supports recovery. | Can increase PI confidence. |
-| Inflated | Treat the repair state as if it drives recovery. This is unsupported. | Can increase PI confidence, harm integrity, and cause harder reviewer demands. |
+| Strong | The repair state supports recovery. | Can increase Elena's paper confidence. |
+| Inflated | Treat the repair state as if it drives recovery. This is unsupported. | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
 
 The main paper claim is that a controlled cardiac tissue model can enter a
 repeatable repair state after limited damage and show spatial-rhythmic recovery.

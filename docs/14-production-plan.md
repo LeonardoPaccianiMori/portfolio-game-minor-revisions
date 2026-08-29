@@ -64,8 +64,8 @@ The full target remains bounded by:
   Institutional Citations, and thirty environmental text items;
 - a 90-minute fallback with the exact content cut line in
   12-content-specification.md;
-- four physical NPCs, remote Camila, shared animation, no full voice acting,
-  and modular epilogues;
+- four physical NPCs, remote Camila with one original 2D portrait, shared
+  animation, no full voice acting, and modular epilogues;
 - local-only IndexedDB storage, no account, server, telemetry, or runtime
   network dependency; and
 - public-source-compatible asset provenance and attribution.

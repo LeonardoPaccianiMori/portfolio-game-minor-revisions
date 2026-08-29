@@ -66,9 +66,11 @@ flashes without removing needed information.
 ## Characters, animation, and cinematics
 
 Only Elena, Haoran, Samira, and Gabriel need on-floor character models during
-the playable semester. Camila remains remote. The protagonist appears only as
-a simple partial figure or silhouette in selected external shots. Other people
-remain remote, off-screen, or environmental.
+the playable semester. Camila remains remote and uses one simple original 2D
+portrait on the desk monitor during her video call. She needs no 3D model,
+lip-sync rig, or facial animation. The protagonist appears only as a simple
+partial figure or silhouette in selected external shots. Other people remain
+remote, off-screen, or environmental.
 
 Characters have realistic stylized proportions, clear role-based silhouettes,
 and no cultural costume or real-person likeness. Use a small shared animation
@@ -154,6 +156,9 @@ text-only to preserve player projection after name and pronoun selection.
 Do not use voice acting, lip sync, performance capture, cloned voices, or a
 real person's voice. Captions and speaker names carry all required dialogue
 meaning.
+
+Camila's call uses her 2D portrait, captions, and the same non-lexical sound
+contract. It does not use full voice, lip sync, or a talking-head video asset.
 
 ## Ambience, cues, music, and mix
 

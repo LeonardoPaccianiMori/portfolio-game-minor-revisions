@@ -155,7 +155,7 @@ the system stores both. Limited results can support disagreement between the
 views. The game does not show exact probabilities or real biological data.
 
 The manuscript board offers careful, strong, and inflated claims about the
-repair state. Claim choice changes integrity, PI confidence, and later reviewer
+repair state. Claim choice changes integrity, Elena's paper confidence, and later reviewer
 pressure.
 
 ## Station, sample, and feedback rules
@@ -302,8 +302,10 @@ game-time cost.
 One active local IndexedDB save preserves progress at approved safe points.
 The game uses no account, server save, save cookie, or automatic unfinished-save
 expiration. Completion removes the full active state and adds a compact ending
-card to the local Archive. The archive keeps the 12 most recent ending cards
-and the persistent Institutional Citation record.
+card to the **Departures** area of the local Archive. Departures keeps the 12
+most recent cards as a chronological record without empty slots or a
+completion count. The separate Institutional Citations area keeps the
+persistent 12-item collectible set. It gives no gameplay advantage.
 
 ## B10 authored action-cost contract
 

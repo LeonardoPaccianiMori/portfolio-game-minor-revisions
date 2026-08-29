@@ -1,6 +1,6 @@
 # Design Review Recommendation Register
 
-Status: **R00 through R03 documented; later entries unreviewed; implementation remains blocked**
+Status: **R00 through R04 documented; later entries unreviewed; implementation remains blocked**
 
 This file is the status ledger for recommendations and actionable findings
 from the two Claude Opus 5 reviews of B10 snapshot
@@ -67,22 +67,22 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-019 | Manuscript | Decide whether claim level must follow evidence support | `accepted` |
 | MR-REV-020 | Peer review | Decide whether reviewer reports respond to result variants | `accepted` |
 | MR-REV-021 | Narrative | Author or revise the Week-6 contradictory-revision beat | `accepted` |
-| MR-REV-022 | Integrity | Decide whether hidden misconduct needs a non-route counter-cost | `unreviewed` |
-| MR-REV-023 | Integrity | Define a visible evidence concern | `unreviewed` |
-| MR-REV-024 | Integrity | Resolve deferral versus denial in concern scenes | `unreviewed` |
-| MR-REV-025 | Fallback | Restore or deliberately remove fallback mismatch discovery | `unreviewed` |
-| MR-REV-026 | Complicity | Decide how broadly players should experience complicity | `unreviewed` |
-| MR-REV-027 | Integrity | Check correction-after-omission trust effects | `unreviewed` |
-| MR-REV-028 | Morrow | Review Morrow access at starting evidence | `unreviewed` |
-| MR-REV-029 | Aldercroft | Check whether experimental work is optional for the route | `unreviewed` |
-| MR-REV-030 | Elena | Distinguish or merge PI confidence and Elena trust | `unreviewed` |
-| MR-REV-031 | Career routes | Decide whether keeping both routes open should have a cost | `unreviewed` |
-| MR-REV-032 | Ending | Separate or accept principled and collapse variants of End of Contract | `unreviewed` |
-| MR-REV-033 | Ending tone | Test whether the ending remains bitter but human | `unreviewed` |
-| MR-REV-034 | Morrow | Decide Camila and Morrow's dramatic weight | `unreviewed` |
-| MR-REV-035 | Relationships | Define high-trust support and review unused trust bars | `unreviewed` |
-| MR-REV-036 | Relationships | Decide how visible trust bars should feel | `unreviewed` |
-| MR-REV-037 | Replay | Align replay intent with the Archive | `unreviewed` |
+| MR-REV-022 | Integrity | Decide whether hidden misconduct needs a non-route counter-cost | `accepted` |
+| MR-REV-023 | Integrity | Define a visible evidence concern | `accepted` |
+| MR-REV-024 | Integrity | Resolve deferral versus denial in concern scenes | `accepted` |
+| MR-REV-025 | Fallback | Restore or deliberately remove fallback mismatch discovery | `accepted` |
+| MR-REV-026 | Complicity | Decide how broadly players should experience complicity | `accepted` |
+| MR-REV-027 | Integrity | Check correction-after-omission trust effects | `accepted` |
+| MR-REV-028 | Morrow | Review Morrow access at starting evidence | `accepted` |
+| MR-REV-029 | Aldercroft | Check whether experimental work is optional for the route | `accepted` |
+| MR-REV-030 | Elena | Distinguish or merge PI confidence and Elena trust | `accepted` |
+| MR-REV-031 | Career routes | Decide whether keeping both routes open should have a cost | `accepted` |
+| MR-REV-032 | Ending | Separate or accept principled and collapse variants of End of Contract | `accepted` |
+| MR-REV-033 | Ending tone | Test whether the ending remains bitter but human | `accepted` |
+| MR-REV-034 | Morrow | Decide Camila and Morrow's dramatic weight | `accepted` |
+| MR-REV-035 | Relationships | Define high-trust support and review unused trust bars | `accepted` |
+| MR-REV-036 | Relationships | Decide how visible trust bars should feel | `accepted` |
+| MR-REV-037 | Replay | Align replay intent with the Archive | `accepted` |
 | MR-REV-038 | Comedy | Put comic voice into repeated mid-campaign actions | `unreviewed` |
 | MR-REV-039 | Comedy | Review optional and skippable environmental satire | `unreviewed` |
 | MR-REV-040 | Art and tone | Resolve the meaning and channel of increasing surrealism | `unreviewed` |
@@ -97,7 +97,7 @@ Discuss entries in dependency order, not numerical order:
 | MR-REV-049 | Fallback | Qualify the six-template requirement for fallback | `unreviewed` |
 | MR-REV-050 | Documentation | Fix the decision-log table and prop-count wording | `unreviewed` |
 | MR-REV-051 | Content | Add required reason and forecast strings within the word cap | `accepted` |
-| MR-REV-052 | Camila | Specify video-call presentation | `unreviewed` |
+| MR-REV-052 | Camila | Specify video-call presentation | `accepted` |
 | MR-REV-053 | Protected design | Preserve the shared do-not-normalize constraints | `protected` |
 | MR-REV-054 | Aesthetic context | Preserve the system's player-facing procedural integrity | `accepted` |
 | MR-REV-055 | Evidence boundary | Treat behavioural review claims as hypotheses | `protected` |
@@ -191,5 +191,39 @@ Discuss entries in dependency order, not numerical order:
   fixed reason key for every material effect. The 6,000-word limit applies to
   the actual build-specific English file; excluded content is not bundled.
 
-No implementation is authorized. R04 is next and covers integrity,
-complicity, and fallback findings. Four review blocks remain, R04 through R07.
+### R04 — Integrity, routes, endings, and relationships
+
+- `MR-REV-022`–`024` and `027`: hidden misconduct has no automatic cost,
+  detection, or moral punishment. Public contradictions are visible to
+  Aldercroft, and Haoran or Gabriel mismatches are visible to Elena. A concern
+  becomes serious only if unresolved at the Week-13 check. Correction resolves
+  it and preserves history. Denial costs 20 trust. Deferral costs 10, creates
+  one free reminder, and costs 10 more if that reminder is ignored.
+- `MR-REV-025`: fallback keeps Gabriel's Archive scene, removes his Queue
+  scene, keeps the basic queue routes, and permits valid concerns from any
+  colleague.
+- `MR-REV-026`: structural complicity exists in every campaign. Personal
+  misconduct stays optional. Both pressure profiles must permit a Defensible
+  run with meaningful sacrifices.
+- `MR-REV-028`–`031`: Morrow requires three analysed records and one honest
+  limitation or caveat. It does not require publication, a Coherent packet, a
+  weak result, or drug exposure. Aldercroft requires the research plan,
+  Coherent or Substantial evidence, paper confidence or Elena trust, and no
+  unresolved serious concern. Publication is not required. PI confidence is
+  renamed **Elena's paper confidence**. Keeping both routes open has no cost.
+- `MR-REV-032`–`034` and `052`: public-record withdrawal uses a separate text
+  variant without changing the 29-module count. One relationship has a
+  dramatized afterbeat, and all five characters receive a consequence sentence.
+  Camila's email, call, and offer have distinct functions. Her call uses the
+  desk monitor, one original 2D portrait, captions, and non-lexical sounds. It
+  uses no 3D model, lip sync, or full voice.
+- `MR-REV-035`–`036`: each character has one bounded support result. Support
+  requires a relevant supportive choice, Working-or-better trust, and no
+  breach. Trust stays numeric internally but appears only as five segments, a
+  descriptive state, and a factual reason.
+- `MR-REV-037`: the first campaign is complete by itself. Archive has
+  chronological **Departures** and a separate 12-item **Institutional
+  Citations** collectible set.
+
+No implementation is authorized. R05 is next and covers comedy, world, and
+artistic escalation. Three review blocks remain, R05 through R07.

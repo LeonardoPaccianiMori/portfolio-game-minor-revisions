@@ -40,33 +40,40 @@ not automatically create or remove an existing Aldercroft invitation. B05
 defines the route-unlock thresholds.
 
 Fabrication can remain undiscovered. A disclosure to Camila closes the Morrow
-offer. Haoran and Gabriel can react to a supported mismatch but do not
-automatically report the player. B06 determines the final-state and epilogue
-rules without making hidden misconduct automatically public.
+offer. A public contradiction is visible to Aldercroft. A supported mismatch
+raised by Haoran or Gabriel is visible to Elena; Samira can also raise a valid
+concern from an honest limitation or caveat. No character automatically
+reports the player, and no random discovery occurs. B06 determines the
+final-state and epilogue rules without making hidden misconduct automatically
+public.
 
 ## B05 route-unlock contract
 
 An Aldercroft invitation needs all of the following:
 
 - the one-period five-year research plan completed before Week 12;
-- two of these three conditions: Coherent or Substantial evidence, Supportive
-  or Invested PI confidence, and at least 41 Elena working trust;
-- no serious evidence concern visible to Aldercroft or Elena.
+- Coherent or Substantial evidence;
+- either Supportive or Invested Elena's paper confidence, or at least 41 Elena
+  working trust; and
+- no unresolved serious evidence concern visible to Aldercroft or Elena at the
+  Week 13 check.
 
 A hidden integrity problem alone does not block Aldercroft. A Week 15 PIIM
-result cannot remove an invitation already received.
+result cannot remove an invitation already received. Publication is not
+required.
 
 A Morrow offer needs all of the following:
 
 - reply to Camila and attendance at her video call;
 - a public preprint still available;
-- at least Developing evidence;
+- at least three analysed experiment records;
+- at least one honestly stated limitation or caveat;
 - at least 41 Camila working trust;
 - no confession of fabrication to Camila.
 
-The optional drug experiment can strengthen Morrow interest but is not
-required. A hidden integrity problem alone does not close Morrow. A visible
-conflict or fabrication confession can.
+A weak result, publication, a Coherent packet, and the optional drug experiment
+are not required. A hidden integrity problem alone does not close Morrow. A
+visible conflict or fabrication confession can.
 
 Public-record withdrawal closes both routes. Ignoring both Camila messages or
 confessing fabrication closes Morrow. Aldercroft's Week 13 rejection closes
@@ -103,16 +110,21 @@ Not Met. It can still satisfy the separate transparent-limit path for
 
 The final resolver first checks closure and availability, then player choice.
 Public-record withdrawal closes both career routes and produces **End of
-Contract**. With at least one available route, the player may choose the
+Contract** with a separate `publicWithdrawal` text variant and no moral praise.
+With at least one available route, the player may choose the
 available Aldercroft or Morrow route, or deliberately leave through **Out of
 Scope**. **End of Contract** is not a voluntary choice: it occurs only when no
 route remains. If both routes are available, the summary records the one not
 chosen as an alternative declined.
 
+Keeping both routes open has no additional cost. The final choice is
+irreversible and states the concrete gains and losses of each available route
+before confirmation.
+
 | Career result | Ending label | Valid paper condition | Six-month consequence |
 |---|---|---|---|
 | Aldercroft chosen | **Pending Appointment** | Any except public-record withdrawal | A temporary bridge appointment and further committee delay; the interview is not proof of a permanent job. |
-| Morrow chosen | **Transferable Skills** | Any except public-record withdrawal | Employment at Morrow with stability and product pressure. |
+| Morrow chosen | **Transferable Skills** | Any except public-record withdrawal | Employment at Morrow with stability and product pressure; one scientific question from the paper is now outside the protagonist's control. |
 | Deliberate departure | **Out of Scope** | Any except public-record withdrawal | Uncertainty, relief, and an open future. |
 | No viable route | **End of Contract** | Any | The fixed term ends, but the protagonist still has agency beyond the university. |
 
@@ -127,7 +139,7 @@ epilogue set six months after Week 16. It has this order:
 
 1. Career scene in a compact, non-explorable setting.
 2. Paper-aftershock through one object, message, or spoken line.
-3. One relationship afterbeat.
+3. One dramatized relationship afterbeat.
 4. A 4–6-second external wide final image, with the protagonist only from
    behind or as a silhouette.
 5. Ending card and summary.
@@ -163,6 +175,11 @@ permanent breach, ambiguous recognition at 21–60, and distance or confrontatio
 at 20 or below or after a permanent breach. A breach always overrides a later
 high bar.
 
+The People summary also shows one consequence sentence for all five recurring
+characters by reusing the existing support, ambiguous, or distance module for
+each person. This does not add five more dramatized scenes or change the
+twenty-nine-module count.
+
 ## Ending summary, citations, and replay
 
 The ending label comes from career result. Paper, integrity, and human-state
@@ -171,9 +188,10 @@ The summary has three parts:
 
 1. **Record:** career label, paper state, evidence-packet label, integrity
    state, and fatigue state.
-2. **People:** the five final working-trust bars and short status lines.
+2. **People:** the five final working-trust bars and one consequence sentence
+   for each character.
 3. **Institutional Citations:** the citations unlocked in that run and the
-   complete local archive.
+   complete persistent collectible set.
 
 The summary shows labels and bars, not hidden flags, raw formulas, or a
 completion percentage. It has twelve **Institutional Citations**: four for
@@ -196,10 +214,17 @@ One active local IndexedDB save exists per browser profile. A New Game creates
 a new campaign seed but does not keep a second active campaign. If an active
 save exists, the player must confirm its replacement. On completion, the game
 removes the full active state and adds a compact ending card to the local
-Archive. The Archive keeps the 12 most recent ending cards and the persistent
-Institutional Citation record. It carries no gameplay advantage, route, or
-state into a new campaign. There is no chapter rewind or free return to an
-earlier decision.
+Archive's **Departures** area. Departures keeps the 12 most recent ending cards
+as a chronological record. It shows no empty card slots, expected-run count, or
+completion percentage. The separate **Institutional Citations** area is a
+visible persistent 12-item collectible set. It carries no gameplay advantage,
+route, or state into a new campaign. There is no chapter rewind or free return
+to an earlier decision.
+
+The approximately three-hour first campaign is the complete intended
+experience. Replay is optional and can explore different ethics,
+relationships, paper states, routes, endings, and Citations. The game does not
+promise large campaign changes or require Archive completion.
 
 ## B10 ending-content inventory
 

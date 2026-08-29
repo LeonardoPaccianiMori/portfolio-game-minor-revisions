@@ -190,10 +190,11 @@ can lead to a Week 10 video call and, for an eligible and professionally
 reliable player, a Week 15 formal offer for **Research Scientist, Cardiac Assay
 Development**.
 
-Eligibility requires the reply, video call, public preprint, at least a
-Developing evidence packet, at least 41 Camila working trust, and no
-fabrication confession to Camila. The optional drug experiment can strengthen
-this route but is never required. A visible conflict can also close the offer.
+Eligibility requires the reply, video call, public preprint, at least three
+analysed experiment records, at least one honestly stated limitation or caveat,
+at least 41 Camila working trust, and no fabrication confession to Camila.
+Publication, a Coherent packet, drug exposure, and a weak result are not
+required. A visible conflict can also close the offer.
 
 The Morrow role has multi-year security, clear pay, and better working
 conditions. Its trade-offs are product deadlines, client priorities, and less
@@ -208,17 +209,23 @@ polite rejection. The role is **Assistant Professor of Developmental Cardiac
 Systems**. Its application asks for a five-year research plan and evidence of
 independent scientific direction. Elena treats the paper as proof of both.
 
-The player must complete the one-period research plan before Week 12. The
-invitation also needs two of the following: Coherent or Substantial evidence,
-Supportive or Invested PI confidence, and at least 41 Elena working trust. A
-serious evidence concern visible to Aldercroft or Elena blocks the route. A
-hidden integrity problem alone does not.
+The player must complete the one-period research plan before Week 12, have a
+Coherent or Substantial evidence packet, and have either Supportive or Invested
+Elena's paper confidence or at least 41 Elena working trust. A serious evidence
+concern that remains unresolved at the Week 13 check blocks the route. A hidden
+integrity problem alone does not.
 
 The `PIIM` result does not automatically create or remove an Aldercroft
-invitation. Publication does not secure the job, and a late journal rejection
+invitation. Publication is not required and does not secure the job. A late journal rejection
 does not automatically cancel the interview. In Week 16, an available academic
 route means that the player confirms they will attend the interview. The game
 does not show the interview.
+
+Camila's three contacts have separate dramatic functions. The initial email
+establishes that the public work has value outside Bellwether. The video call
+tests how the player explains evidence and limits while revealing Morrow's
+stability and commercial trade-offs. The Week 15 contact resolves eligibility
+into an offer or a refusal; it does not repeat the interview.
 
 ## Optional character scenes
 
@@ -233,8 +240,8 @@ desk messages, room changes, and character presence. It uses no quest markers.
 | Haoran | **The Missing Replicate** | Weeks 9–14 | Shared desks | He questions missing or altered evidence where the record supports concern. |
 | Samira | **Shared Instrument** | Weeks 2–5 | Imaging booking board | The player shares, negotiates for, or takes imaging time. |
 | Samira | **Not in My Figure** | Weeks 6–12 | Shared desks or break room | She offers useful evidence and asks for proper credit. |
-| Gabriel | **The Queue** | Weeks 1–4 | Facility station | He asks the player to accept a facility delay or limit. |
-| Gabriel | **The Archive** | Weeks 10–14 | Imaging service alcove | He notices a supported mismatch in the evidence record and can warn the player. |
+| Gabriel | **The Queue** | Weeks 1–4 | Facility station | He asks the player to accept a facility delay or limit. Full game only. |
+| Gabriel | **The Archive** | Weeks 10–14 | Imaging service alcove | He notices a supported mismatch in the evidence record and can warn the player. Retained in fallback. |
 | Elena | **The Future** | Weeks 6–9 | PI office after-hours | An after-hours conversation shows grant-renewal pressure and fear. |
 | Camila | Initial email | Weeks 8–10 | Protagonist desk | The player can reply to Morrow's first approach. |
 | Camila | Video call | Week 10 | Protagonist desk | The player explains the work carefully, strongly, or dishonestly. |
@@ -278,11 +285,13 @@ alter an existing result, or invent a result. The game provides no practical
 method for falsification. Such choices occur as clear narrative actions on the
 analysis or manuscript board.
 
-Fabrication can remain undiscovered. Haoran and Gabriel can only notice a
-mismatch supported by the player's visible evidence trail. They can confront or
-distance themselves, but they do not automatically report the player. The
-player can deny, conceal, or confess. The paper, relationships, and career
-routes react to evidence and disclosed actions, not random punishment.
+Fabrication can remain undiscovered. A misconduct flag alone is hidden. A
+public contradiction is visible to Aldercroft, and a supported mismatch raised
+by Haoran or Gabriel is visible to Elena. Samira can raise a valid concern from
+an honest limitation or caveat as well as from a visible mismatch. No concern
+becomes serious until it remains unresolved at the Week 13 route check.
+Correction resolves it while preserving its history. There is no random
+discovery, automatic detection, or moral punishment.
 
 ## Week 14 response and Week 15 consequences
 
@@ -291,7 +300,7 @@ routes react to evidence and disclosed actions, not random punishment.
 | Defensible resubmission | `PIIM` gives a state based on evidence, claims, and reviewer concerns. |
 | Elena's stronger response | The player can use selective reporting, altered results, or fabrication. `PIIM` can still publish if concerns appear answered. |
 | Journal withdrawal | `PIIM` records the withdrawal. The public preprint can remain available. |
-| Public-record withdrawal | The player also removes the preprint. This can remove both career routes. |
+| Public-record withdrawal | The player also removes the preprint. This closes both career routes and selects the separate public-withdrawal text variant of **End of Contract**. |
 
 The B05 response-band and route rules determine the Week 15 state. The
 narrative calendar does not change after any Week 14 choice.
@@ -303,6 +312,10 @@ building exit. If routes remain available, the player can confirm the
 Aldercroft interview, accept Morrow's offer, or leave without either. Leaving
 is a deliberate uncertain choice, not a hidden best ending. A poor run can
 leave neither route viable.
+
+Keeping both routes open has no additional cost. The final choice is
+irreversible, states concrete gains and losses, and records the available route
+that the player did not choose.
 
 A short approved modular epilogue follows the confirmation.
 
@@ -316,7 +329,7 @@ epilogue is real-time, skippable, captioned, and safe around checkpoints.
 | Career ending | Label | Compact non-explorable setting | Central consequence |
 |---|---|---|---|
 | Aldercroft chosen | **Pending Appointment** | Bellwether desk or PI office | A temporary bridge appointment and another committee delay; the interview does not prove a permanent job. |
-| Morrow chosen | **Transferable Skills** | Small Morrow assay room | The player has stability and product pressure, not perfect rescue. |
+| Morrow chosen | **Transferable Skills** | Small Morrow assay room | The player has stability and product pressure, not perfect rescue, and no longer controls one scientific question from the paper. |
 | Deliberate departure | **Out of Scope** | University exit with a short outward view | The player has uncertainty, relief, and an open future. |
 | No viable route | **End of Contract** | Cleared Bellwether desk, then exit | The fixed term ends, but the player retains agency beyond the university. |
 
@@ -330,6 +343,10 @@ meeting; accepted final work continues through routine administration; an
 under-review paper remains unresolved; and rejected or withdrawn work either
 remains available as a preprint or has a clear cost when its public record is
 removed. It adds no new random paper result.
+
+One relationship receives the dramatized afterbeat. The People summary also
+gives one consequence sentence for Elena, Haoran, Samira, Gabriel, and Camila
+by reusing the approved relationship modules.
 
 ## B10 content map and authored draft
 

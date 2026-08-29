@@ -27,7 +27,7 @@ gaps. It does not mean that the domain is finished.
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
 | `reviews/2026-08-28-opus-5-holistic/` | Holistic Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R03 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
+| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R04 documented | Discuss entries in dependency order and record Leonardo's explicit decision. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
@@ -73,8 +73,11 @@ status, and the next place to resume.
   and stop triage. R03 is documented: `MR-REV-017`–`021` and `MR-REV-051`
   define manuscript-board behaviour, PIIM card rules, claim support, reviewer
   variants, the Week-6 contradiction, and forecast and reason text.
-- Next action: discuss R04, covering integrity, complicity, and fallback
-  findings. Four review blocks remain: R04 through R07. Only after all
+- R04 is documented: `MR-REV-022`–`037` and `MR-REV-052` define optional
+  personal misconduct, visible concerns and fallback routes, career-route
+  conditions, ending variants, Camila's call, relationship support, and replay
+  presentation. R05 is next. Three review blocks remain: R05 through R07.
+  Only after all
   review blocks are resolved can Leonardo
   separately consider implementation approval. Do not start implementation
   work.
@@ -234,7 +237,7 @@ status, and the next place to resume.
   `05-characters-and-dialogue.md`, `10-ui-ux-accessibility.md`, and
   `11-technical-architecture.md`.
 - **Approved decision set:** the fixed semester has 64 named work periods and
-  Standard and Supported pressure profiles. Energy, evidence, PI confidence,
+  Standard and Supported pressure profiles. Energy, evidence, Elena's paper confidence,
   integrity, and five working-trust relationships have approved values,
   visibility, starting states, bands, costs, recovery, and permanent-flag
   rules. A zero-energy push-through causes a consequential involuntary crash,

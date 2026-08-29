@@ -56,7 +56,7 @@ The active campaign source of truth is one serializable `CampaignState`. It
 contains at least:
 
 - campaign and schema versions, stable campaign identifier, and saved seed;
-- semester clock, pressure profile, energy, evidence, PI confidence,
+- semester clock, pressure profile, energy, evidence, Elena's paper confidence,
   integrity, and working trust;
 - active sample groups, sample-condition history, equipment state, biological
   issue counts, projected and final preparation bands, locked variation values,
@@ -67,7 +67,8 @@ contains at least:
   saved reviewer variants, PIIM response cards, paper state, and authorship and
   integrity history;
 - received messages, route state, character and scene state, floor act state,
-  cutscene recaps, and permanent consequence flags; and
+  support-result consumption, concern and reminder state, cutscene recaps, and
+  permanent consequence flags; and
 - the identifiers and state needed for the ending card and Institutional
   Citation evaluation.
 
@@ -220,7 +221,7 @@ Use one versioned IndexedDB database. Its logical stores are:
 | `settings` | Audio, display, control, accessibility, and local-data preferences. | Until the player clears local data. |
 | `activeCampaign` | One validated unfinished `CampaignState`. | Replaced at each verified safe save. |
 | `activeCampaignBackup` | One last-known-good validated active-campaign record. | Stores the prior record that passed validation before the latest safe save. |
-| `endingCards` | Compact completion records. | Keep the 12 most recent cards. |
+| `endingCards` | Compact completion records shown as **Departures**. | Keep the 12 most recent cards. |
 | `institutionalCitations` | Persistent citation unlock record. | Persists between campaigns. |
 | `metadata` | Database schema version, migration history, and technical record metadata. | Managed only by the persistence module. |
 
@@ -243,6 +244,9 @@ advance the semester.
 
 At completion, one transaction creates the ending card, retains the 12 newest
 cards, updates citations, and removes full active-campaign and backup data.
+The UI presents ending cards chronologically as Departures without empty slots
+or a completion percentage. It presents Institutional Citations separately as
+the persistent 12-item collectible set.
 New Game confirms replacement of an active campaign and creates a new seed.
 Clear Saved Data requires confirmation and removes this database, including
 settings, campaign records, archive, citations, and metadata. The running UI

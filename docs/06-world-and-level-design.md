@@ -60,8 +60,9 @@ period anchors:
 | Editor and reviewers | Messages and reports only |
 
 Camila, the editor, and the reviewers do not need physical navigation or 3D
-models during the playable semester. B07 documents exact schedules, routes,
-event staging, and crowd implication.
+models during the playable semester. Camila's Week 10 call uses the protagonist
+desk monitor, a simple original 2D portrait, captions, and non-lexical sounds.
+B07 documents exact schedules, routes, event staging, and crowd implication.
 
 ## Implied wider university
 
@@ -150,8 +151,9 @@ corridor, break room, then tissue culture. Imaging attaches to the main
 laboratory. The exit attaches to the south corridor.
 
 Gabriel's service pass-through later links shared desks and imaging. It opens
-only when Gabriel working trust is 61 or more. It is a reward for respectful
-work, not a required route. No other shortcut or player-controlled door exists.
+after the relevant respectful queue choice, with Working or better Gabriel
+trust and no permanent breach. It is a reward for respectful work, not a
+required route. No other shortcut or player-controlled door exists.
 
 Three landmarks give orientation without a minimap or permanent objective
 arrows:
@@ -248,7 +250,8 @@ The optional-scene anchors are fixed: **Borrowed Time** is in tissue culture;
 booking board; **Not in My Figure** at shared desks or in the break room;
 **The Queue** at the facility station; **The Archive** in the imaging service
 alcove; **The Future** in the PI office after-hours; and Camila's messages and
-calls at the protagonist desk.
+calls at the protagonist desk. The video call enters a focused desk-monitor
+view. It never loads another room or creates an explorable Morrow space.
 
 ## B07 character presence and schedules
 
@@ -321,7 +324,7 @@ and cannot block work.
 |---|---|---|---|
 | `MR-ROOM-FACILITY-QUEUE` | Weeks 1–4, facility station and imaging bay | The shared slot is overbooked; equipment is Unavailable until the player responds. | Wait one period for Ready equipment; use the limited slot now and enter with Limited equipment; or complete the optional **The Queue** scene for its stated Ready or Limited result and Gabriel-trust effect. |
 | `MR-ROOM-IMAGING-BOOKING` | Weeks 2–5, imaging booking board | Samira and the player have one overlapping booking. | Wait one period for Ready equipment; use the limited observation route now and enter with Limited equipment; or complete the optional **Shared Instrument** scene for its stated Ready or Limited result and Samira-trust effect. |
-| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Weeks 10–14, imaging bay and service alcove | A visible service limit makes normal imaging Unavailable. | Wait one period with no energy cost and restore Ready equipment; use the limited service path immediately and enter with Limited equipment; or use Gabriel's high-trust support at 61 or more to restore Ready equipment without an extra period. |
+| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Weeks 10–14, imaging bay and service alcove | A visible service limit makes normal imaging Unavailable. | Wait one period with no energy cost and restore Ready equipment; use the limited service path immediately and enter with Limited equipment; or use Gabriel's earned support after the respectful queue choice to restore Ready equipment without an extra period. |
 
 The limited route never hides its Mixed-preparation consequence. Waiting uses
 the authored room-response action and advances exactly one period. A character

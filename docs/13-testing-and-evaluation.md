@@ -121,6 +121,11 @@ the Supported totals are 51, 65, and 93. It must not claim that the
 thorough-honest fixture fits either profile until a later approved balance
 decision changes the input rules.
 
+The minimum-defensible fixture must remain achievable in both profiles while
+giving up meaningful optional work. No fixture can require personal misconduct
+or force a Compromised result. Hidden misconduct creates no automatic
+maintenance task, detection roll, moral punishment, or route penalty.
+
 The manuscript and PIIM fixtures must show that:
 
 - all fixed manuscript positions enforce capacity and valid card references;
@@ -147,9 +152,31 @@ MR-TEST-NARR-001 and MR-TEST-CHAR-001 must show that:
   equipment action;
 - all ten optional scenes use their stated condition, window, expiry, and
   saved result;
+- each of the five support results requires its supportive choice, Working or
+  better trust, no breach, and unused state; fires once only; and produces its
+  exact bounded effect without improving a PIIM card directly;
+- an imaging-service waiting route adds one period, while earned Gabriel
+  support adds zero and saves exactly one period without changing normal
+  experiment costs;
+- every concern fixture proves its stated visibility, correction history,
+  denial result, no-cost deferral reminder, ignored-reminder trust loss, and
+  Week-13 serious-concern transition;
+- correction grants trust and limited integrity recovery once per concern and
+  never rewrites a raw record or committed snapshot;
+- the fallback removes Gabriel's Queue scene, retains his Archive scene and
+  the basic queue routes, and makes MR-CIT-08 reachable through a valid concern
+  from Samira or Gabriel, including one honest-limitation path;
 - ignored Morrow messages close only the stated industry route;
-- Aldercroft and Morrow use the approved visible conditions;
-- public-record withdrawal closes both routes; and
+- Morrow requires three analysed records and one honest limitation or caveat,
+  but not a weak result, publication, a Coherent packet, or drug exposure;
+- Aldercroft requires the plan, Coherent or Substantial evidence, Supportive or
+  Invested Elena's paper confidence or at least 41 Elena trust, and no
+  unresolved serious concern;
+- keeping both routes open adds no cost; the irreversible final choice records
+  the unchosen route and shows its gains and losses;
+- public-record withdrawal closes both routes and selects the separate
+  `publicWithdrawal` End of Contract text without increasing the 29-module
+  count; and
 - a hidden integrity problem alone does not create an unsupported route block.
 
 The calendar fixture must also show that Weeks 8–9 have no open experiment
@@ -167,8 +194,14 @@ MR-TEST-CONT-001 and MR-TEST-END-001 must show that:
 - no runtime path generates dialogue or a report;
 - all twenty-nine ending modules select in the approved order;
 - the four paper states do not change randomly after Week 16;
-- the Archive retains the twelve newest ending cards and persistent Citation
-  state; and
+- Departures retains the twelve newest ending cards without empty slots or a
+  completion count, while Institutional Citations remains a separate visible
+  persistent 12-item collectible set;
+- one relationship receives the dramatized afterbeat and the People summary
+  selects one existing consequence sentence for all five characters;
+- Camila's call uses the desk monitor, original 2D portrait role, captions, and
+  non-lexical sounds, with no 3D model, lip sync, full voice, or recorded video;
+  and
 - no Citation requires unethical play.
 
 The content test measures the actual build-specific strings.en.json after

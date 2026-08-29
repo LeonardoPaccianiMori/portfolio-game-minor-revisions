@@ -38,7 +38,8 @@ string file for the build that will ship.
 The fallback is a coherent 90-minute game, not a damaged full game. It keeps
 the complete five-act story, all mandatory scenes, all ending types, and the
 industry route. It removes drug exposure, Haoran's late scene, Samira's early
-scene, Gabriel's late scene, and their related non-essential variants.
+scene, Gabriel's early scene, and their related non-essential variants. It
+keeps Gabriel's late Archive concern scene.
 
 ## Stable identifier and text-key rules
 
@@ -54,6 +55,7 @@ form MR-REQ-DOMAIN-NUMBER. Content objects use one of these prefixes:
 | MR-ACT- | Player action |
 | MR-TASK- | In-world request or work item |
 | MR-ROOM- | Authored operational room state |
+| MR-SUP- | Once-per-campaign character support result |
 | MR-REC- | Primary record |
 | MR-ENV- | Environmental text item |
 | MR-CIT- | Institutional Citation |
@@ -88,7 +90,7 @@ typed effects.
 
 | Short form | Meaning |
 |---|---|
-| P+N or P-N | PI confidence changes by N |
+| P+N or P-N | Elena's paper confidence changes by N |
 | I+N or I-N | Integrity changes by N, subject to the approved recovery limit |
 | T:Name+N or T:Name-N | Named working-trust change |
 | EV+N | Evidence-support change |
@@ -179,10 +181,10 @@ cannot insert those values into generated prose.
 | reason.band.stabilized | Preparation improved because the stabilizing action removed one eligible issue. |
 | reason.evidence.result | Evidence changed because an archived result supports the packet. |
 | reason.evidence.limited | Evidence did not increase because the archived result does not add support. |
-| reason.pi.complete | PI confidence changed because the active request was answered. |
-| reason.pi.partial | PI confidence changed because the active request was only partly answered. |
-| reason.pi.missed | PI confidence changed because the active request expired or was refused. |
-| reason.pi.claim | PI confidence changed because the manuscript claim changed. |
+| reason.pi.complete | Elena's paper confidence changed because the active request was answered. |
+| reason.pi.partial | Elena's paper confidence changed because the active request was only partly answered. |
+| reason.pi.missed | Elena's paper confidence changed because the active request expired or was refused. |
+| reason.pi.claim | Elena's paper confidence changed because the manuscript claim changed. |
 | reason.integrity.omission | Integrity changed because valid evidence was omitted from the reported record. |
 | reason.integrity.alteration | Integrity changed because the reported reading no longer matches the raw record. |
 | reason.integrity.unsupported | Integrity changed because an unsupported reading was added. |
@@ -198,7 +200,7 @@ cannot insert those values into generated prose.
 | reason.opportunity.expired | This opportunity expired at its stated deadline. |
 
 `MR-ACT-BREAK` selects the string for the current act. It has no random result
-and never changes a relationship, route, evidence, integrity, or PI confidence.
+and never changes a relationship, route, evidence, integrity, or Elena's paper confidence.
 
 | Text key | Initial English text |
 |---|---|
@@ -236,7 +238,7 @@ The following exact labels and instructions apply to every experiment view:
 | room.route.limited | Use the limited route now. The experiment will start with Limited equipment. |
 | room.route.gabriel | Ask Gabriel about the queue. This opens an optional conversation. |
 | room.route.samira | Ask Samira about the booking. This opens an optional conversation. |
-| room.route.gabrielSupport | Ask Gabriel for the available high-trust support. |
+| room.route.gabrielSupport | Ask Gabriel to use the service route that he offered. |
 
 | Text key | Initial English text |
 |---|---|
@@ -257,6 +259,7 @@ The following exact labels and instructions apply to every experiment view:
 | task.researchPlan | Complete the five-year research plan before Week 12. |
 | task.piimOxygen | Answer the required oxygen-loss question before the response deadline. |
 | task.piimResponse | Submit a response, withdraw from PIIM, or withdraw the public record. |
+| task.concernReminder | A deferred record concern needs a response before the Week-13 route check. |
 | manuscript.claim.careful | Recovery is linked to a transient repatterning state. |
 | manuscript.claim.strong | The transient repatterning state supports recovery in this model. |
 | manuscript.claim.inflated | Treat the transient repatterning state as if it governs recovery. This is unsupported. |
@@ -340,7 +343,7 @@ another scene or record family.
 |---|---|---|---|---|---|
 | MR-ROOM-FACILITY-QUEUE | W1–W4; first shared-facility conflict; resolves once | room.facilityQueue.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited slot now: no extra response action, Limited. Complete optional MR-OPT-GABRIEL-QUEUE: MR-ACT-RELATIONSHIP, with Ready for wait or press and Limited for limited use, plus its stated trust effect. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
 | MR-ROOM-IMAGING-BOOKING | W2–W5; overlapping imaging booking; resolves once | room.imagingBooking.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited observation now: no extra response action, Limited. Complete optional MR-OPT-SAMIRA-SHARED-INSTRUMENT: MR-ACT-RELATIONSHIP, with Ready for share or keep and Limited for limited use, plus its stated trust effect. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
-| MR-ROOM-IMAGING-SERVICE-LIMIT | W10–W14; first late imaging start; resolves once and expires at the W14 response gate | room.imagingService.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited service now: no extra response action, Limited. Ask Gabriel at trust 61 or more: no extra response action, Ready. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
+| MR-ROOM-IMAGING-SERVICE-LIMIT | W10–W14; first late imaging start; resolves once and expires at the W14 response gate | room.imagingService.forecast | Wait: MR-ACT-ROOM-WAIT, Ready. Use limited service now: no extra response action, Limited. Use MR-SUP-GABRIEL-SERVICE after a supportive queue choice, with Working or better trust and no breach: no extra response action, Ready. | Limited equipment, with the consequence shown before start. | MR-REQ-WORLD-001 / MR-TEST-EXP-001 |
 
 The R01 demand fixtures exclude conditional room-response periods. A route
 that waits adds exactly the stated one period. A route with no extra response
@@ -361,6 +364,7 @@ The work items are:
 | MR-TASK-RESEARCH-PLAN | Draft five-year research plan | W8–W11 | Manuscript draft | Required for Aldercroft eligibility | task.researchPlan | MR-TEST-CHAR-001 |
 | MR-TASK-PIIM-OXYGEN | Answer the oxygen-loss request | W10–W12 | Helpful Comments | Opens PIIM oxygen response card | task.piimOxygen | MR-TEST-EXP-001 |
 | MR-TASK-PIIM-RESPONSE | Submit response, withdraw journal, or withdraw record | W14 only | PIIM reports | Sets Week-15 paper state path | task.piimResponse | MR-TEST-NARR-001 |
+| MR-TASK-CONCERN-REMINDER | Resolve one deferred concern | Next safe desk point before the Week-13 check | A deferred valid concern | Costs no period or energy; permits correction or no response; cannot recur | task.concernReminder | MR-TEST-CHAR-001 |
 
 The fallback replaces MR-EXP-DAMAGE-RANGE and MR-EXP-REPAIR-STATE with
 MR-FB-EXP-RANGE-REPAIR. It uses one combined qualitative result: a clear,
@@ -624,7 +628,19 @@ career label to the ending resolver. The scene does not add random results.
 | 7 | Internal | scene.0642.internal.close | The door opens with the confidence of a system that will not notice what happens next. |
 
 If no route is available, only the neither form appears. If one or two routes
-are available, Leave remains available. Skip recap key: scene.0642.recap —
+are available, Leave remains available. Keeping both open has no cost. Each
+choice uses one irreversible confirmation:
+
+- `scene.0642.confirm.academia` — **Confirm Aldercroft? You keep an academic
+  route with another temporary bridge and committee process. Any available
+  Morrow offer will be recorded as declined.**
+- `scene.0642.confirm.morrow` — **Confirm Morrow? You gain multi-year stability
+  and product resources. You decline any Aldercroft route and give up sole
+  control of the next scientific question.**
+- `scene.0642.confirm.leave` — **Leave both routes? You keep no secured next
+  position. Any available offer or interview will be recorded as declined.**
+
+Skip recap key: scene.0642.recap —
 The player leaves Bellwether through the selected available route, or without
 one.
 
@@ -641,12 +657,26 @@ calendar event. The only route-critical expiry is the Morrow email thread.
 | MR-OPT-HAORAN-MISSING-REPLICATE | W9–W14; expires W14 after-hours | A visible record supports concern | Haoran trust / concern flag | Remove | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-SAMIRA-SHARED-INSTRUMENT | W2–W5; expires W5 after-hours | Imaging booking conflict | Samira trust | Remove | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-SAMIRA-NOT-IN-MY-FIGURE | W6–W12; expires W12 after-hours | Samira has useful evidence | Samira trust / credit flag | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
-| MR-OPT-GABRIEL-QUEUE | W1–W4; expires W4 after-hours | Facility limit is active | Gabriel trust / queue state | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
-| MR-OPT-GABRIEL-ARCHIVE | W10–W14; expires W14 after-hours | A visible record supports concern | Gabriel trust / concern flag | Remove | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-OPT-GABRIEL-QUEUE | W1–W4; expires W4 after-hours | Facility limit is active | Gabriel trust / queue state | Remove | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-OPT-GABRIEL-ARCHIVE | W10–W14; expires W14 after-hours | A visible record supports concern | Gabriel trust / concern flag | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-ELENA-FUTURE | W6–W9 after-hours; expires W9 | Elena is present after-hours | Elena trust | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-CAMILA-INITIAL | W8–W10; follow-up at W10 | Knowledge rejection delivered | Camila trust / Morrow route | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-CAMILA-VIDEO | W10 only | Initial reply sent | Camila trust / Morrow route | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 | MR-OPT-CAMILA-OFFER | W15 only | Morrow eligibility check | Camila trust / offer state | Keep | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+
+### Once-per-campaign support results
+
+These results are not separate scenes or time-costing actions. Each requires
+its stated supportive choice, Working or better current trust, no permanent
+breach, and an unused support flag. It can resolve once per campaign.
+
+| ID | Prerequisite and opportunity | Effect | Text key and initial English text | Requirement / test |
+|---|---|---|---|---|
+| MR-SUP-HAORAN-CHECK | FLAG:helpedHaoran; before one later experiment start | Remove one eligible visible preparation issue before the start; never remove a severe issue or change locked variation | support.haoran.check — Haoran checks the labels once and points to the one that stopped matching the plan. | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-SUP-SAMIRA-EVIDENCE | FLAG:samiraCoauthor; when her credited evidence is accepted | EV+1 once; preserve her authorship and source record | support.samira.evidence — Samira sends the analysis with her caveat still attached and her name already in the file. | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-SUP-GABRIEL-SERVICE | FLAG:acceptedQueue; MR-ROOM-IMAGING-SERVICE-LIMIT active | Restore Ready equipment without a waiting period | support.gabriel.service — Gabriel opens the service route he kept available for work that respects the queue. | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-SUP-ELENA-PLAN | Supportive choice in MR-OPT-ELENA-FUTURE; research plan not committed | Reveal one missing Aldercroft-plan requirement before commit; no paper, evidence, or PIIM change | support.elena.plan — Elena reads the plan once and identifies the requirement the committee forgot to state publicly. | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
+| MR-SUP-CAMILA-BRIEFING | Careful Morrow reply; before the final choice | Reveal the complete stability, product-pressure, ownership, and scientific-control trade-off; no eligibility change | support.camila.briefing — Camila sends the role terms without adjectives: stability, product deadlines, shared ownership, and questions the company can redirect. | MR-REQ-CHAR-001 / MR-TEST-CHAR-001 |
 
 ### MR-OPT-HAORAN-BORROWED-TIME
 
@@ -672,9 +702,9 @@ invent hidden knowledge.
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Haoran | optional.haoran.missing.opening | I may be reading this wrong. The record does not line up with the figure. | None |
-| Player A | optional.haoran.missing.correct | You are right. I will correct the record. | T:Haoran+10; allowed I recovery; FLAG:correction |
-| Player B | optional.haoran.missing.deny | The figure is a summary, not a confession. | T:Haoran-20; FLAG:haoranConcern |
-| Player C | optional.haoran.missing.defer | Leave it with me. Do not move it yet. | T:Haoran-10; FLAG:haoranConcern |
+| Player A | optional.haoran.missing.correct | You are right. I will correct the record. | T:Haoran+10; allowed I recovery once; FLAG:correction; FLAG:haoranConcernResolved; preserve concern history |
+| Player B | optional.haoran.missing.deny | The figure is a summary, not a confession. | T:Haoran-20; FLAG:haoranConcern; unresolved; end discussion |
+| Player C | optional.haoran.missing.defer | Leave it with me. Do not move it yet. | T:Haoran-10; FLAG:haoranConcern; unresolved; schedule one no-cost reminder |
 | Haoran | optional.haoran.missing.close | I hope the record is still allowed to be more useful than the story. | None |
 
 ### MR-OPT-SAMIRA-SHARED-INSTRUMENT
@@ -698,10 +728,22 @@ evidence, the authored outcome always credits her as co-author.
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Samira | optional.samira.figure.opening | I have a result that may help your response. I do not want it to become a decorative control. | None |
-| Player A | optional.samira.figure.credit | Use it with your name on the paper. | T:Samira+10; EV+1; FLAG:samiraCoauthor |
-| Player B | optional.samira.figure.joint | Add it as a joint supplementary note. | T:Samira+0; EV+1; FLAG:samiraCoauthor |
+| Player A | optional.samira.figure.credit | Use it with your name on the paper. | T:Samira+10; FLAG:samiraCoauthor; enables MR-SUP-SAMIRA-EVIDENCE |
+| Player B | optional.samira.figure.joint | Add it as a joint supplementary note. | T:Samira+10; FLAG:samiraCoauthor; enables MR-SUP-SAMIRA-EVIDENCE |
 | Player C | optional.samira.figure.separate | Keep it in your record. I will not use it. | T:Samira-10 |
 | Samira | optional.samira.figure.close | Credit is a small word for a large ownership problem. | None |
+
+This scene has one conditional concern variant when a visible mismatch or an
+honestly reported limitation or caveat supports a valid concern. It replaces
+the base exchange; it does not create an eleventh optional scene.
+
+| Speaker or choice | Text key | Initial English text | Effect |
+|---|---|---|---|
+| Samira | optional.samira.concern.opening | The caveat is honest. The figure has stopped carrying it. | None |
+| Player A | optional.samira.concern.correct | You are right. I will put the limit back into the record. | T:Samira+10; allowed I recovery once; FLAG:correction; FLAG:samiraConcernResolved; preserve concern history |
+| Player B | optional.samira.concern.deny | The figure cannot carry every hesitation. | T:Samira-20; FLAG:samiraConcern; unresolved; end discussion |
+| Player C | optional.samira.concern.defer | Leave the note with me. I will decide before the response. | T:Samira-10; FLAG:samiraConcern; unresolved; schedule one no-cost reminder |
+| Samira | optional.samira.concern.close | A limit does not become smaller when the font does. | None |
 
 ### MR-OPT-GABRIEL-QUEUE
 
@@ -723,10 +765,26 @@ Gabriel's concern.
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Gabriel | optional.gabriel.archive.opening | The archive has two versions of this reading. It prefers the earlier one. | None |
-| Player A | optional.gabriel.archive.correct | Add a correction note and keep both versions visible. | T:Gabriel+10; allowed I recovery; FLAG:correction |
-| Player B | optional.gabriel.archive.dismiss | The later figure is the one that matters. | T:Gabriel-20; FLAG:gabrielConcern |
-| Player C | optional.gabriel.archive.private | Keep the discrepancy inside the group for now. | T:Gabriel-10; FLAG:gabrielConcern |
+| Player A | optional.gabriel.archive.correct | Add a correction note and keep both versions visible. | T:Gabriel+10; allowed I recovery once; FLAG:correction; FLAG:gabrielConcernResolved; preserve concern history |
+| Player B | optional.gabriel.archive.dismiss | The later figure is the one that matters. | T:Gabriel-20; FLAG:gabrielConcern; unresolved; end discussion |
+| Player C | optional.gabriel.archive.private | Keep the discrepancy inside the group for now. | T:Gabriel-10; FLAG:gabrielConcern; unresolved; schedule one no-cost reminder |
 | Gabriel | optional.gabriel.archive.close | Archives are patient. They do not need to be persuaded. | None |
+
+### Concern visibility and reminder contract
+
+A misconduct flag alone is hidden. A public contradiction is visible to
+Aldercroft. A Haoran or Gabriel mismatch is visible to Elena. Any unresolved
+concern becomes serious only at the Week 13 Aldercroft check. Correction
+resolves it and preserves the concern history; it never rewrites a raw record
+or committed snapshot. There is no random discovery.
+
+Deferral creates one `MR-TASK-CONCERN-REMINDER` at the next safe desk point.
+The reminder has no period or energy cost. It offers correction with the same
+one-time benefit, or no response. No response uses
+`concern.reminder.ignored` — **The concern remains unresolved. Working trust
+changed because the reminder received no response.** — and applies another
+T:Source-10. A concern creates no second reminder, and its correction trust and
+integrity benefit can occur only once.
 
 ### MR-OPT-ELENA-FUTURE
 
@@ -736,7 +794,7 @@ harm.
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Elena | optional.elena.future.opening | The renewal panel wants a five-year plan. It has not asked whether I will have a fifth year. | None |
-| Player A | optional.elena.future.empathy | That is not a reasonable way to run a group. | T:Elena+10 |
+| Player A | optional.elena.future.empathy | That is not a reasonable way to run a group. | T:Elena+10; FLAG:supportedElena |
 | Player B | optional.elena.future.boundary | The deadline is becoming the method. | T:Elena-10; FLAG:challengedElena |
 | Player C | optional.elena.future.align | Tell me which result will make the panel calm down. | T:Elena+0; FLAG:alignedWithElena |
 | Elena | optional.elena.future.close | Panels do not calm down. They merely move to another meeting. | None |
@@ -750,7 +808,7 @@ the same record. Ignoring both closes Morrow.
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
 | Camila | optional.camila.initial.opening | I read your preprint. The assay question is interesting, especially because you describe its limits. Would you talk? | None |
-| Player A | optional.camila.initial.careful | Reply with the current evidence and its limits. | T:Camila+10; ROUTE:morrowConversation |
+| Player A | optional.camila.initial.careful | Reply with the current evidence and its limits. | T:Camila+10; FLAG:camilaCarefulReply; ROUTE:morrowConversation |
 | Player B | optional.camila.initial.strong | Reply with the strongest supported framing. | T:Camila+0; ROUTE:morrowConversation |
 | Player C | optional.camila.initial.defer | Leave the message for later. | None; follow-up remains |
 | Camila follow-up | optional.camila.initial.followUp | I know the end of a semester has no spare minutes. I would still value a short call. | None |
@@ -763,7 +821,9 @@ ROUTE:morrowClosed.
 
 Location: protagonist desk. Prerequisite: a sent reply. The scene is a
 one-period focused career action. Camila judges only the player's stated
-description.
+description. The desk monitor shows one simple original 2D portrait with
+captions and non-lexical sounds. The scene uses no 3D model, lip sync, full
+voice, or recorded talking-head video.
 
 | Speaker or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
@@ -772,6 +832,7 @@ description.
 | Player B | optional.camila.video.strong | It can support a strong assay hypothesis if the limits remain visible. | T:Camila+0; FLAG:morrowVideoDone |
 | Player C | optional.camila.video.oversell | I would call it proven, although the record is still catching up. | T:Camila-10; FLAG:morrowConcern; FLAG:morrowVideoDone |
 | Player D | optional.camila.video.confess | I changed or invented part of the reported record. | T:Camila-20; ROUTE:morrowClosed; FLAG:confessedToCamila |
+| Camila | optional.camila.video.tradeoff | The role is stable. The questions are not entirely yours: product deadlines, budgets, and team priorities can redirect them. | Enables MR-SUP-CAMILA-BRIEFING when its prerequisites hold |
 | Camila | optional.camila.video.close | Clear limits are not a weakness. They are how a result becomes usable. | None |
 
 ### MR-OPT-CAMILA-OFFER
@@ -779,7 +840,10 @@ description.
 Location: protagonist desk. This is a Week-15 contact, not the final career
 choice. If all Morrow conditions pass, it shows the offer form. Otherwise it
 shows the no-offer form. The player can keep the offer open for Week 16 or
-close it.
+close it. Eligibility requires the public preprint, reply, video call, three
+analysed experiment records, one honestly stated limitation or caveat, Working
+or better Camila trust, and no confession. Publication, a Coherent packet, a
+weak result, and drug exposure are not required.
 
 | Form or choice | Text key | Initial English text | Effect |
 |---|---|---|---|
@@ -936,7 +1000,7 @@ alternative defensible trigger.
 | MR-CIT-05 | Collegial Load-Bearing Recognition — help Haoran or share an imaging slot | Citation received: collegial support has been recorded as additional capacity. | Awarded for carrying a shared load without turning it into a metric. | MR-REQ-END-002 / MR-TEST-END-001 |
 | MR-CIT-06 | Authorship Harmonization Notice — credit Samira when using her evidence | Citation received: contributor alignment has been restored. | Awarded for recording shared work as shared work. | MR-REQ-END-002 / MR-TEST-END-001 |
 | MR-CIT-07 | Selective Transparency Distinction — correct a record, omit a valid card, alter a reading, or add an unsupported reading | Citation received: a distinction has been made between record and presentation. | Awarded when the player makes a material record-handling decision. The archive retains no moral rank. | MR-REQ-END-002 / MR-TEST-END-001 |
-| MR-CIT-08 | Archival Continuity Citation — read a concern from Haoran or Gabriel and respond | Citation received: the archive has been invited to participate in continuity. | Awarded for facing a visible record mismatch, whether by correction or refusal. | MR-REQ-END-002 / MR-TEST-END-001 |
+| MR-CIT-08 | Archival Continuity Citation — read a valid concern from any colleague and respond | Citation received: the archive has been invited to participate in continuity. | Awarded for facing a valid concern about a visible mismatch or honest limitation, whether by correction, denial, or deferral. | MR-REQ-END-002 / MR-TEST-END-001 |
 | MR-CIT-09 | Provisional Appointment Readiness — receive Aldercroft invitation | Citation received: future potential has reached interviewable resolution. | Awarded for meeting the visible academic-route conditions. | MR-REQ-END-002 / MR-TEST-END-001 |
 | MR-CIT-10 | Translational Availability Recognition — receive Morrow offer | Citation received: your limits have been classified as product-relevant. | Awarded for opening the Morrow route. | MR-REQ-END-002 / MR-TEST-END-001 |
 | MR-CIT-11 | Scope Realignment Certificate — choose Out of Scope | Citation received: the project has been responsibly moved outside the current scope. | Awarded for a deliberate departure when a route remained available. | MR-REQ-END-002 / MR-TEST-END-001 |
@@ -963,6 +1027,9 @@ addition to the canvas.
 | MR-UI-MENU-CONTINUE | ui.menu.continue | Continue |
 | MR-UI-MENU-NEW | ui.menu.newGame | New Game |
 | MR-UI-MENU-ARCHIVE | ui.menu.archive | Archive |
+| MR-UI-ARCHIVE-DEPARTURES | ui.archive.departures | Departures |
+| MR-UI-ARCHIVE-DEPARTURES-NOTE | ui.archive.departuresNote | A chronological record of completed contracts. No number of departures is required. |
+| MR-UI-ARCHIVE-CITATIONS | ui.archive.citations | Institutional Citations |
 | MR-UI-MENU-SETTINGS | ui.menu.settings | Settings |
 | MR-UI-MENU-ACCESSIBILITY | ui.menu.accessibility | Accessibility |
 | MR-UI-MENU-CREDITS | ui.menu.credits | Credits and Licences |
@@ -1039,9 +1106,15 @@ modules, four integrity modules, and two fatigue modules total 29.
 | ID | Selection | Text key | Initial English text |
 |---|---|---|---|
 | MR-END-CAREER-ACADEMIA | Pending Appointment | ending.career.academia | Six months later, the Bellwether desk is temporary again. Aldercroft has not made a final decision, but another committee has asked for another document. |
-| MR-END-CAREER-MORROW | Transferable Skills | ending.career.morrow | Six months later, Morrow has a clear project board and a product deadline. The work is finite only in the way a useful job can be finite. |
+| MR-END-CAREER-MORROW | Transferable Skills | ending.career.morrow | Six months later, Morrow has a clear project board and a product deadline. The work is stable, but the next recovery question now belongs to a product team the protagonist does not control. |
 | MR-END-CAREER-LEAVE | Out of Scope | ending.career.leave | Six months later, the exit is still ordinary. The future is not solved, but it is no longer waiting in the same corridor. |
 | MR-END-CAREER-NONE | End of Contract | ending.career.none | Six months later, the desk has been cleared. The contract ended on time. The person who held it did not. |
+
+`MR-END-CAREER-NONE` has one saved text variant when
+FLAG:publicWithdrawal is set: `ending.career.none.publicWithdrawal` — **Six
+months later, the desk has been cleared. The public record is absent. The
+contract and its questions ended in different places.** This is a variant of
+the existing module, not a thirtieth module, and it gives no moral praise.
 
 ### Paper-aftershock modules
 
@@ -1085,7 +1158,10 @@ modules, four integrity modules, and two fatigue modules total 29.
 
 The ending card uses these fixed headings: Record, People, and Institutional
 Citations. It shows labels and bars, not hidden flags, formulas, or a moral
-rank.
+rank. One selected relationship receives the dramatized afterbeat. The People
+section also selects the existing support, ambiguous, or distance line for
+each of the five characters as a consequence sentence; it creates no new
+ending module.
 
 ## Vertical-slice and fallback content boundaries
 
@@ -1108,7 +1184,7 @@ The 90-minute fallback includes:
 - MR-EXP-LASER-SHAM, MR-FB-EXP-RANGE-REPAIR, MR-EXP-BATCH-CHECK, and
   MR-EXP-OXYGEN-LOSS;
 - MR-OPT-HAORAN-BORROWED-TIME, MR-OPT-SAMIRA-NOT-IN-MY-FIGURE,
-  MR-OPT-GABRIEL-QUEUE, MR-OPT-ELENA-FUTURE, and all three Camila contacts;
+  MR-OPT-GABRIEL-ARCHIVE, MR-OPT-ELENA-FUTURE, and all three Camila contacts;
 - eighteen primary records, with MR-FB-REC-RANGE-REPAIR replacing
   MR-REC-DAMAGE-RANGE and MR-REC-REPAIR-STATE, and without
   MR-REC-DRUG-EXPOSURE;
@@ -1116,7 +1192,9 @@ The 90-minute fallback includes:
 - the stated selected environmental-text subset.
 
 It excludes MR-EXP-DRUG-EXPOSURE, MR-OPT-HAORAN-MISSING-REPLICATE,
-MR-OPT-SAMIRA-SHARED-INSTRUMENT, and MR-OPT-GABRIEL-ARCHIVE. It may not add a
+MR-OPT-SAMIRA-SHARED-INSTRUMENT, and MR-OPT-GABRIEL-QUEUE. The facility queue
+keeps its basic wait and limited routes without Gabriel's optional scene. The
+fallback Samira scene keeps its valid-concern conditional variant. It may not add a
 replacement optional scene to recover the removed content count.
 
 ## Content validation and handoff checks

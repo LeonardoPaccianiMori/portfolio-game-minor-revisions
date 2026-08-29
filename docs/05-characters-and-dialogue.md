@@ -78,10 +78,13 @@ good. Her offer has real trade-offs.
 
 ## B05 working-trust contract
 
-Each recurring character has a visible 0–100 working-trust bar. It represents
-willingness to help, speak openly, or support the player; it does not measure
-friendship or moral worth. Camila's bar represents professional trust at
-Morrow.
+Each recurring character has an internal 0–100 working-trust value and a
+visible five-segment bar. It represents the protagonist's current estimate of
+that person's willingness to help, speak openly, or support the player; it does
+not measure friendship or moral worth. Camila's bar represents professional
+trust at Morrow. The interface never shows the numeric value, numeric change,
+formula, or support threshold. It shows the descriptive state and a factual
+reason for each change.
 
 | Value | Status |
 |---:|---|
@@ -103,8 +106,14 @@ A minor authored action changes a bar by 10 points; a major action changes it
 by 20. Values do not drift without a stated event. Ignoring a direct request
 counts as an authored action when its deadline expires.
 
-At 61 or above, a character can offer one bounded support action in the related
-scene. At 20 or below, they can withhold help, confront the player, or distance
+Each character has one distinct, once-per-campaign support result. It requires
+a relevant supportive choice, no permanent breach, and a current state of
+Working or better. Haoran identifies one eligible preparation problem before
+start. Samira provides one properly credited evidence contribution. Gabriel's
+existing service intervention is his support. Elena assists with the
+Aldercroft research plan, not the paper or PIIM result. Camila provides fuller
+information about Morrow's role and trade-offs, without improving eligibility.
+At Damaged, a character can withhold help, confront the player, or distance
 themselves. A later high value cannot erase denied credit, a fabrication
 concern, or a closed route stored as a permanent flag. Camila needs at least
 41 working trust for a Morrow offer.
@@ -149,11 +158,14 @@ lose, or be denied co-authorship through the player's choices. Samira must
 receive co-authorship if the player uses her useful evidence.
 
 Haoran and Gabriel can notice a mismatch only where the player's visible
-evidence record supports it. They can question, confront, or distance
-themselves from the player. They do not automatically report the player.
-Camila judges only what the player tells her. A confession of fabrication closes
-the Morrow offer. No character has hidden, omniscient knowledge of player
-actions.
+evidence record supports it. Samira can raise a valid concern supported by an
+honestly reported limitation or caveat, or by a visible mismatch. They can
+question, confront, or distance themselves from the player. They do not
+automatically report the player. A mismatch raised by Haoran or Gabriel is
+visible to Elena. Correction resolves a concern but preserves its history.
+Camila judges only what the player tells her. A confession of fabrication
+closes the Morrow offer. No character has hidden, omniscient knowledge of
+player actions.
 
 ## Remote and environmental roles
 

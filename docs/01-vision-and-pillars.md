@@ -12,7 +12,10 @@ spend limited time, energy, evidence, integrity, and relationships while the
 standard for a publishable paper keeps moving.
 
 The fictional semester targets an approximately three-hour first playthrough.
-Branching and replayability may add longevity. Production must preserve a
+That first campaign is the complete intended experience. Optional replay can
+explore other ethical choices, relationships, paper states, career endings,
+and Institutional Citations, but the game does not promise a substantially
+different campaign on each run. Production must preserve a
 coherent 90-minute fallback and first prove the concept in a 20–30-minute
 vertical slice.
 
@@ -91,6 +94,12 @@ is bitter but human. The game can be bleak, but it must not become nihilistic.
 Characters and relationships continue to matter. Small acts of solidarity can
 have value even when they do not change the institution. Leaving academia is
 not total defeat, and an industry choice is not perfect salvation.
+
+Structural complicity is present in every run because the player must operate
+inside Bellwether's moving standards, credit system, deadlines, and career
+gates. Personal misconduct remains optional and tempting. Both pressure
+profiles must allow a Defensible run, but that route requires meaningful
+sacrifices and cannot maximize every desirable result.
 
 ## Experience success criteria
 

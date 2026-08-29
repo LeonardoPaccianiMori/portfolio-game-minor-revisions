@@ -9,12 +9,12 @@ Status: **B10 documented; implementation approval pending**
 | Semester time | 64 work periods across 16 weeks | Current week and early, late, night, or after-hours period on the permanent HUD |
 | Energy | 0–5 segments | Five-segment bar on the permanent HUD |
 | Evidence | 0–12 support points | Thin, Developing, Coherent, or Substantial packet label in Research Status |
-| PI confidence | 0–100 | Cautious, Conditional, Supportive, or Invested desk label and Elena's response |
+| Elena's paper confidence | 0–100 | Cautious, Conditional, Supportive, or Invested desk label and Elena's response |
 | Research integrity | 0–100 plus permanent history flags | Five-segment bar and factual warnings in Research Status |
 | Working trust | 0–100 for each main character plus permanent flags | One five-segment bar for Elena, Haoran, Samira, Gabriel, and Camila |
 
-The player can open Research Status at any time. It contains evidence, PI
-confidence, integrity, working trust, current route feedback, and the reason
+The player can open Research Status at any time. It contains evidence, Elena's
+paper confidence, integrity, working trust, current route feedback, and the reason
 for each material state change. These displays show the current system state,
 not moral worth or friendship.
 
@@ -109,6 +109,18 @@ and seven selected relationship actions. The maximizing fixture completes all
 six templates, all four permitted repeats, both career preparations, and all
 nine time-costing non-video relationship contacts. It is demand analysis, not
 a promise that every item can fit its content window.
+
+Conditional room-response periods remain separate from the base table. A run
+that waits for `MR-ROOM-IMAGING-SERVICE-LIMIT` adds one period. A run that has
+earned and uses `MR-SUP-GABRIEL-SERVICE` adds zero periods for that response and
+therefore saves exactly one period against the waiting route. The support does
+not remove an experiment's normal configure or start cost. The economy fixture
+must report both adjustments:
+
+| Imaging-service route | Period adjustment to the selected base fixture |
+|---|---:|
+| Wait for normal service | +1 |
+| Use earned Gabriel support | +0 |
 
 The break counts below are optimistic lower bounds. They assume that every
 restored segment is useful, assign no focused or intense action to night or
@@ -242,7 +254,7 @@ a zero-energy push-through creates fatigue-related evidence risk; fatigue
 cannot change the biological issue count. Saved variation cannot hide a severe
 issue or a major evidence problem. B10 defines each experiment baseline.
 
-## Evidence, PI confidence, integrity, and trust
+## Evidence, Elena's paper confidence, integrity, and trust
 
 Evidence has 12 maximum support points.
 
@@ -261,7 +273,9 @@ states when another repeat is unlikely to improve support. Raw evidence remains
 available after analysis and never decreases. Omitting a card does not erase
 raw support; it weakens the paper response instead.
 
-PI confidence starts at 45, Conditional.
+Elena's paper confidence starts at 45, Conditional. It measures her confidence
+that the paper supports its current claim. Elena working trust separately
+measures her willingness to support the protagonist as a colleague.
 
 | Value | Desk state |
 |---:|---|
@@ -272,9 +286,10 @@ PI confidence starts at 45, Conditional.
 
 Fully answering an active PI request with useful work gives 10 points; partly
 answering it gives five. Deferring, refusing, or missing it removes 10.
-Committing a careful, strong, or inflated claim changes PI confidence by minus
-five, plus five, or plus 10. Revealing a clear weakness in the current packet
-removes 10. Each request or committed revision changes PI confidence once.
+Committing a careful, strong, or inflated claim changes Elena's paper
+confidence by minus five, plus five, or plus 10. Revealing a clear weakness in
+the current packet removes 10. Each request or committed revision changes
+paper confidence once.
 Values remain between zero and 100.
 
 Research integrity starts at 100. Honest reporting of weak work causes no
@@ -316,11 +331,21 @@ Each recurring character has working trust on the same 0–100 scale.
 
 A minor authored choice changes working trust by 10 points and a major action
 by 20. Values do not drift without a clear event. Ignoring a direct request
-counts as an authored action when its deadline expires. At 61 or above, a
-character can offer one bounded support action in the related scene. At 20 or
-below, they can withhold help, confront the player, or distance themselves.
-Permanent flags retain denied credit, fabrication concerns, and closed routes
-even after the visible bar later improves.
+counts as an authored action when its deadline expires. The interface shows
+only the five-segment bar, descriptive state, and factual reason for a change.
+It never shows numeric values, deltas, formulas, or support thresholds.
+
+Each character has one distinct, once-per-campaign support result. It requires
+a relevant supportive choice, no permanent breach, and Working or better trust
+when used. Haoran removes one eligible visible preparation issue before start.
+Samira supplies one properly credited evidence contribution. Gabriel resolves
+the approved imaging-service limit without a wait. Elena identifies one
+missing Aldercroft-plan requirement before its commit; she does not change a
+PIIM card or scientific result. Camila provides the complete Morrow role and
+trade-off briefing without changing eligibility. At Damaged, a character can
+withhold help, confront the player, or distance themselves. Permanent flags
+retain denied credit, fabrication concerns, and closed routes even after the
+visible bar later improves.
 
 ## Experiment interaction state
 
@@ -376,12 +401,13 @@ band percentages.
   interpretability.
 - Extra work can improve evidence while consuming the resources needed to
   finish the manuscript or maintain relationships.
-- PI confidence can rise while integrity falls, and vice versa.
+- Elena's paper confidence can rise while integrity falls, and vice versa.
 - Failure should alter knowledge or opportunity rather than function as a pure
   time tax.
-- A careful manuscript claim can protect integrity but reduce PI confidence. A
-  strong claim can increase PI confidence. An inflated claim can increase PI
-  confidence, harm integrity, and cause harder reviewer demands.
+- A careful manuscript claim can protect integrity but reduce Elena's paper
+  confidence. A strong claim can increase paper confidence. An inflated claim
+  can increase paper confidence, harm integrity, and cause harder reviewer
+  demands.
 
 ## Requests, gates, and soft failure
 
@@ -432,9 +458,9 @@ reported board, not the locked raw record or integrity history.
 
 Each PI or reviewer request creates a small revision task. The player can
 support it with evidence, soften wording, defer it, omit evidence, or request
-another experiment. The response affects time, coherence, PI confidence,
-evidence alignment, relationships, or integrity. The repair-state claim still
-has careful, strong, and inflated levels.
+another experiment. The response affects time, coherence, Elena's paper
+confidence, evidence alignment, relationships, or integrity. The repair-state
+claim still has careful, strong, and inflated levels.
 
 A requirements panel lists every slot and active request as met, missing,
 conflict, or unsupported. It also lists authorship obligations. These are
@@ -459,6 +485,19 @@ The original record cannot be erased. The player cannot restore an abandoned
 sample group, reverse a committed report, or use an earlier manuscript
 snapshot as a free undo. Fabrication can still remain undiscovered when the
 visible record does not support another character's concern.
+
+A misconduct flag alone stays hidden. A public contradiction is visible to
+Aldercroft. A mismatch raised by Haoran or Gabriel is visible to Elena. Samira
+can raise a valid concern supported by an honest limitation or caveat, or by a
+visible mismatch. There is no random discovery.
+
+Correction resolves the concern, preserves its history, gives the approved
+trust increase, and permits the limited integrity recovery. Denial removes 20
+trust, ends the immediate discussion, and leaves the concern unresolved.
+Deferral removes 10 trust and schedules one no-cost reminder. Ignoring that
+reminder removes another 10 trust and leaves the concern unresolved. Each
+concern grants correction trust and integrity recovery at most once. An
+unresolved concern becomes serious only at the Week 13 Aldercroft check.
 
 ## Interruptions and safe continuity
 
@@ -506,24 +545,25 @@ where no visible record contradicts it. It does not repair integrity.
 
 ## Career-route readiness
 
-The player can receive an Aldercroft invitation in Week 13 only if they
-complete the one-period five-year research-plan task before Week 12, have at
-least two of the following three conditions, and have no serious evidence
-concern visible to Aldercroft or Elena:
+The player can receive an Aldercroft invitation in Week 13 only if they:
 
-- Coherent or Substantial evidence packet;
-- Supportive or Invested PI confidence;
-- at least 41 Elena working trust.
+- complete the one-period five-year research-plan task before Week 12;
+- have a Coherent or Substantial evidence packet;
+- have either Supportive or Invested Elena's paper confidence, or at least 41
+  Elena working trust; and
+- have no unresolved serious concern visible to Aldercroft or Elena.
 
 A hidden integrity problem alone does not block an Aldercroft route. A late
-PIIM result does not change an existing invitation.
+PIIM result does not change an existing invitation. Publication is not
+required.
 
 The player can receive the Week 15 Morrow offer only if they reply to Camila,
-attend the video call, keep the public preprint available, have at least a
-Developing evidence packet, have at least 41 Camila working trust, and do not
-confess fabrication to Camila. The optional drug experiment improves this
-route but is never required. Hidden integrity alone does not close it; a
-visible conflict or confession can.
+attend the video call, keep the public preprint available, have at least three
+analysed experiment records, include at least one honestly stated limitation or
+caveat, have at least 41 Camila working trust, and do not confess fabrication
+to Camila. A weak result, publication, a Coherent packet, and drug exposure are
+not required. Hidden integrity alone does not close it; a visible conflict or
+confession can.
 
 Before a route deadline, Research Status gives clear non-spoiling feedback,
 such as Aldercroft needs a stronger research case or Morrow needs a reply. It
@@ -532,12 +572,16 @@ does not reveal the full formula or hidden flags.
 ## B06 final-state resolution
 
 The Week 16 result first checks route closure. Public-record withdrawal closes
-both routes and therefore creates **End of Contract**. Otherwise, a player can
+both routes and creates **End of Contract** with the separate
+`publicWithdrawal` text variant, without moral praise. Otherwise, a player can
 choose **Pending Appointment** only when Aldercroft is available, or
 **Transferable Skills** only when Morrow is available. **Out of Scope** is the
 separate deliberate-departure choice when at least one route is available.
 **End of Contract** is used only when no route remains. When both routes are
 available, the summary records the unchosen route as an alternative declined.
+Keeping both routes available has no additional time, trust, or route cost.
+The final confirmation is irreversible and states the concrete gain and loss
+for the selected route.
 
 Morrow can coexist with journal rejection or journal withdrawal, but not with
 public-record withdrawal. Aldercroft can coexist with every paper state except

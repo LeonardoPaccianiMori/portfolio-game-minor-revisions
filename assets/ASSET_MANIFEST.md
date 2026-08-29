@@ -32,6 +32,7 @@ available and verified.
 | Functional station kits | 6 | No source selected |
 | Physical NPC models | 4 | No source selected |
 | Protagonist silhouette | 1 | No source selected |
+| Camila desk-monitor portrait | 1 original 2D portrait | No source selected |
 | Reusable interface templates | Bounded reusable set | No source selected |
 | Room-ambience roles | 8 | No source selected |
 | System-cue roles | 3 | No source selected |
