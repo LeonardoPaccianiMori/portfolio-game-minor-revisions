@@ -52,6 +52,12 @@ time by itself. Time advances only when the player confirms a time-costing
 task. Focused views use clear selections and ordinary confirm actions, not
 drag-only, hold-only, timed, or precision-motor input.
 
+`implementation/specs/08-world-geometry-and-interaction.md` now fixes the
+supporting spatial contract: camera limits, interaction range, target priority,
+environmental glance priority, and focused-station entry and return. S09 still
+owns the player-facing prompt, pointer-lock, input, focus, and accessibility
+behaviour.
+
 ## Gameplay interface
 
 The permanent HUD is quiet and has three fixed areas:

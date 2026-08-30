@@ -37,7 +37,7 @@ Do not present a design-review prediction as a measured result.
 | MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six full-build templates or the approved four-template fallback composition, repeats, bands, monitoring, and result/evidence separation |
 | MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
 | MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures |
-| MR-TEST-WORLD-001 | Floor states and environmental content | Act rosters, scene anchors, environmental display, no required optional fact, and no trapping path |
+| MR-TEST-WORLD-001 | Floor states and environmental content | Exact S08 floor, collision, anchors, act rosters, scene anchors, target and environmental display, room-state routes, and no-trapping traversal |
 | MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 Citations, exact compact cards, newest-first order, and 12-card retention |
 | MR-TEST-SAVE-001 | IndexedDB persistence and recovery | S07 save, recovery, migration, completion, clearing, concurrency, repair, and failure fixture groups |
 | MR-TEST-UI-001 | Main menu, status, prompts, and save controls | Keyboard flow, controller roles where available, text keys, and confirmations |
@@ -235,6 +235,12 @@ presence empty. Exactly ten environmental items use the one-time close-range
 glance rule. The other twenty require focused inspection. Live-text and SVG
 accretion must use only the existing thirty IDs and must not change collision,
 architecture, or required information.
+
+S12 must also encode `MR-S08-GEO-001`, `MR-S08-COL-001`, `MR-S08-MOV-001`,
+`MR-S08-ANC-001`, `MR-S08-TGT-001`, `MR-S08-FOC-001`, `MR-S08-WLD-001`,
+`MR-S08-TRV-001`, and `MR-S08-FLT-001` with the exact S08 geometry, player,
+target, focus, world, traversal, and unchanged-state expectations. No S08 test
+or result exists yet.
 
 ### Save, interruption, and technical checks
 

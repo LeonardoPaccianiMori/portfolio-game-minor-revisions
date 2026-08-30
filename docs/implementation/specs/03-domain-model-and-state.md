@@ -275,6 +275,11 @@ future ordering and safe-point algorithms.
 three operational room states, and persistent environment IDs. It never stores
 geometry, collision shapes, a Three.js transform, or camera data.
 
+S08 maps each permitted semantic anchor ID to one exact safe physical position
+and authored facing, and maps character IDs to approved background anchors. A
+saved campaign continues to store IDs only; it does not gain position, camera,
+target, or focused-view fields.
+
 The five floor acts and ranges are:
 
 | Stored act | Weeks | Player-visible design name |
@@ -471,6 +476,10 @@ limit, complete save and load validation, atomic active and backup storage,
 source-preserving migration, and compact completion. `MR-IF-002` remains
 candidate until S12 supplies executable fixtures and S14 completes the
 cross-interface audit. Candidate status does not authorize implementation.
+
+S08 maps the saved semantic `world` facts into its draft world projection and
+fixed spatial plan without refining this serializable state. It preserves the
+S03 rule that browser pose and camera data are never campaign facts.
 
 ## S03 acceptance and handoff
 

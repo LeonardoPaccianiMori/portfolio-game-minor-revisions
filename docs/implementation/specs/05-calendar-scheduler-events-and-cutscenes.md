@@ -620,7 +620,7 @@ does not receive a recap when its closing receipt exists.
 
 After scene campaign truth is saved, presentation restores:
 
-- the approved semantic exit anchor;
+- the S08 approved semantic exit anchor and its exact safe physical mapping;
 - current world act and time of day;
 - camera and visual state;
 - UI and caption state;
@@ -813,7 +813,8 @@ exactly once.
 S06 supplies final content references. S07 supplies the exact physical
 checkpoint, required-save blocking, backup, load, recovery, migration, and
 completion transactions plus persistence fixture groups. S09 supplies
-player-visible UI fixtures. S10 supplies complete presentation fixtures. S12
+player-visible UI fixtures. S08 supplies the semantic-anchor, world-projection,
+and focus return contract. S10 supplies complete presentation fixtures. S12
 joins them without weakening this S05 campaign order.
 
 ## Interface lifecycle

@@ -376,7 +376,10 @@ communication imply the wider university.
 
 `11-technical-architecture.md` defines the technical rendering, collision,
 authored-character navigation, occlusion, lower-detail, and loading boundary.
-Implementation must meet this spatial contract.
+`implementation/specs/08-world-geometry-and-interaction.md` now fixes the
+subordinate exact coordinates, collision, anchors, target ranges, camera,
+focused stations, and no-trap checks for this approved floor. It does not
+change this document's player-visible spatial or narrative intent.
 
 ## B07 acceptance criteria
 

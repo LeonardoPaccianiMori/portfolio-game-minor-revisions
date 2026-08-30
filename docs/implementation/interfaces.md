@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-007` candidate; `MR-IF-011` S05 part draft; no interface frozen**
+Status: **`MR-IF-001`–`MR-IF-007` candidate; `MR-IF-008`, `MR-IF-009`, and `MR-IF-011` parts draft; no interface frozen**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -30,8 +30,8 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 | MR-IF-005 | Safe-point scheduler and event queue | S05–S07 | Application, rules, narrative, cutscenes, persistence, UI, content validation, tests | Candidate | `v1`; owner: `rules` | Complete trigger and result unions, ordering, priority, lifecycle, expiry, crash, message, room, late-gate, ending, fault, invariant, exact authored-reference, physical checkpoint, load, and recovery contract; S05 fixtures and journeys plus `MR-S07-SAV-001`, `MR-S07-REC-001`, and `MR-S07-CMP-001`; S09–S10 consumers; S12 executable format; S14 audit |
 | MR-IF-006 | Authored content objects, references, strings, and build profiles | S06–S07 | Rules, scheduler, application bootstrap, persistence, UI, audio, cutscenes, content tests | Candidate | `v1`; owner: `content` | Strict source package and immutable views; S06 fixture groups; exact stored version, profile, saved-reference, direct-mapping, Citation, and ending-card checks in `MR-S07-MIG-001` and `MR-S07-CMP-001`; S09–S10 consumers; S12 executable format; S14 audit |
 | MR-IF-007 | IndexedDB persistence and migration boundary | S07 | Rules state, settings UI, Continue/New Game, Archive | Candidate | `v1`; owner: `persistence` | Complete database, store, key, envelope, transaction, validation, backup, recovery, migration, settings, Archive, completion, concurrency, clear-data, lifecycle, and failure contract; `MR-S07-SAV-001`, `MR-S07-REC-001`, `MR-S07-MIG-001`, `MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001`; S09 UI consumer; S12 executable format; S14 browser and cross-interface audit |
-| MR-IF-008 | World state and presentation projection | S08–S10 | Renderer, interaction, UI, cutscenes, rules effects | Not started | Pending S10 | Act change, room state, character anchor, visibility, and teardown fixtures |
-| MR-IF-009 | Action-based input and interaction target | S08–S09 | Player controller, stations, UI, cutscenes, accessibility | Not started | Pending S09 | Keyboard, controller, pointer lock, focus, remap, and invalid-target fixtures |
+| MR-IF-008 | World state and presentation projection | S08–S10 | Renderer, interaction, UI, cutscenes, rules effects | Draft | `v1`; spatial-plan and world-projection owner: `world`; renderer and cutscene presentation pending S10 | Exact S08 geometry, anchor, projection, semantic-location, room-state, character, passage, lifecycle, traversal, and fault contract; `MR-S08-GEO-001`, `MR-S08-ANC-001`, `MR-S08-WLD-001`, `MR-S08-TRV-001`, and `MR-S08-FLT-001`; S10 visibility, resources, transitions, cutscenes, and teardown; S12 executable format; S14 audit |
+| MR-IF-009 | Action-based input and interaction target | S08–S09 | Player controller, stations, UI, cutscenes, accessibility | Draft | `v1`; movement-context owner: `world`; player-result owner: `player`; target owner: `interaction`; device and focus completion pending S09 | Exact S08 movement, camera, collision, target, focus-geometry, context, rejection, and fault contract; `MR-S08-COL-001`, `MR-S08-MOV-001`, `MR-S08-TGT-001`, `MR-S08-FOC-001`, and `MR-S08-FLT-001`; S09 keyboard, controller, pointer lock, focus, remap, prompt, and accessibility connections; S12 executable format; S14 audit |
 | MR-IF-010 | UI view model and semantic action dispatch | S09 | Rules, persistence, input, captions, menus, tests | Not started | Pending S09 | Screen-state, focus, scale, confirmation, error, and action-cost fixtures |
 | MR-IF-011 | Cutscene timeline, checkpoint, skip, and restoration | S05 and S10 | Scheduler, world, UI, input, audio, persistence, tests | Draft | `v1`; campaign owner: `rules`; presentation owner pending S10 | S05 request, response, token, checkpoint, choice, skip, failure, reload, closing, and recap contract; `MR-S05-SCN-001`, `MR-S05-SKP-001`, and `MR-S05-REC-001`; S10 timeline, camera, actor, audio, resource, and restoration contract; S12 executable format; S14 audit |
 | MR-IF-012 | Audio bus, cue, and dialogue-sound request | S10 | UI, rules effects, world, cutscenes, settings | Not started | Pending S10 | Muted, unavailable, suspended-context, caption redundancy, and teardown fixtures |
@@ -49,7 +49,9 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 through `specs/05-calendar-scheduler-events-and-cutscenes.md` and its approved
 S06 content connection. `MR-IF-006` is candidate `v1` through
 `specs/06-content-data-and-build-profiles.md`. `MR-IF-007` is candidate `v1`
-through `specs/07-persistence-and-recovery.md`. The S05-owned campaign part of
+through `specs/07-persistence-and-recovery.md`. The S08-owned parts of
+`MR-IF-008` and `MR-IF-009` are draft `v1` through
+`specs/08-world-geometry-and-interaction.md`. The S05-owned campaign part of
 `MR-IF-011` is draft `v1`; S10 still owns its presentation completion. S09,
 S10, and S12 must make the connected contracts and executable fixtures named
 in the table; S14 must complete the cross-interface audit before an applicable

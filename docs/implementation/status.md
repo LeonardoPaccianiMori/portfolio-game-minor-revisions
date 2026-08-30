@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-30
 
-Status: **S00–S07 documented; S08 is next; all implementation gates blocked**
+Status: **S00–S08 documented; S09 is next; all implementation gates blocked**
 
 ## Current repository state
 
@@ -25,7 +25,7 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S08–S14 are not documented. |
+| Technical specification complete | Blocked | S09–S14 are not documented. |
 | Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
 | Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
@@ -33,20 +33,19 @@ not insert a future or guessed commit identifier into this document.
 
 ## Current checkpoint
 
-- Next block: **S08 — World geometry and interaction**; do not begin it until
-  Leonardo approves moving to it after the S07 commit.
-- Last documented block: **S07 — Persistence and recovery**.
+- Next block: **S09 — Input, UI, and accessibility**; do not begin it until
+  Leonardo approves moving to it after the S08 commit.
+- Last documented block: **S08 — World geometry and interaction**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
-- Primary existing design input: `../06-world-and-level-design.md`,
-  `../10-ui-ux-accessibility.md`, `../11-technical-architecture.md`, and the
-  approved S02–S03 architecture and campaign-world contracts.
-- Current open issue group: `MR-IMP-OPEN-008`.
-- Next action: after committing S07, ask Leonardo whether he approves moving
-  to S08. If approved, discuss the exact coordinate and unit system, floor and
-  room dimensions, collision volumes, player-controller values, interaction
-  ranges, semantic anchors, focused stations, camera limits, and no-trap
-  checks.
+- Primary existing design input: `../10-ui-ux-accessibility.md`,
+  `../11-technical-architecture.md`, and the approved S02–S08 architecture,
+  state, content, persistence, world, player, and interaction contracts.
+- Current open issue group: `MR-IMP-OPEN-009`.
+- Next action: after committing S08, ask Leonardo whether he approves moving
+  to S09. If approved, discuss the exact action map, focus and pointer-lock
+  states, screen and overlay inventory, UI view model, responsive layout,
+  controller navigation, settings, and accessibility acceptance.
 - Prohibited next action: create package files, source directories, code,
   assets, or deployment files.
 
@@ -57,7 +56,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S07 are documented; S08 is next. `MR-IF-001`–`MR-IF-007` are candidate `v1`; the S05 part of `MR-IF-011` is draft `v1`; none is frozen. |
+| Technical specification | In progress | S01–S08 are documented; S09 is next. `MR-IF-001`–`MR-IF-007` are candidate `v1`; the S08 parts of `MR-IF-008` and `MR-IF-009` and the S05 part of `MR-IF-011` are draft `v1`; none is frozen. |
 | Vertical slice | Not authorized | No code exists. |
 | Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
 

@@ -233,6 +233,13 @@ interaction raycasts. Do not add a physics engine. Physical characters use
 authored anchors and short authored paths. Do not add a general navigation
 mesh, pathfinding system, or free NPC roaming.
 
+S08 now fixes the exact floor plan, collision footprints, player dimensions and
+movement limits, camera values, anchors, target volumes, focused-station
+geometry, projection, no-trap rules, and related future fixtures in
+`implementation/specs/08-world-geometry-and-interaction.md`. This document
+keeps rendering, resource, animation, and cutscene presentation ownership with
+S10.
+
 Use Three.js animation mixers for reusable animation clips. A small
 code-owned cutscene timeline controls camera, actor movement, dialogue,
 audio, checkpoints, skipping, choices, and input restoration. A reload never

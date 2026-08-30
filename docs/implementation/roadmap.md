@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S07 documented; S08 is next; no code authorized**
+Status: **S00–S08 documented; S09 is next; no code authorized**
 
 ## Purpose
 
@@ -125,8 +125,8 @@ full-game evaluation gates still apply during production.
 | S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Documented |
 | S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Documented |
 | S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Documented |
-| S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Not started; next |
-| S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Not started |
+| S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Documented |
+| S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Not started; next |
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Not started |
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Not started |
 | S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Not started |
@@ -198,9 +198,9 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S07 documentation commit, ask Leonardo whether he approves moving to
-S08. If he approves, decide the exact coordinate and unit system, floor and
-room dimensions, collision volumes, player-controller values, interaction
-ranges, semantic anchors, focused stations, camera limits, and no-trap checks.
-Use the candidate S02–S03 architecture and campaign-world contracts. Do not
-create files from the planned runtime tree.
+After the S08 documentation commit, ask Leonardo whether he approves moving to
+S09. If he approves, decide the exact action map, focus and pointer-lock state,
+screen and overlay inventory, UI view model, responsive behaviour, controller
+navigation, settings, and accessibility acceptance. Use the candidate S02–S06
+contracts and the draft S08 world and interaction interfaces. Do not create
+files from the planned runtime tree.

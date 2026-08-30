@@ -115,7 +115,7 @@ factory returns an unstarted `ApplicationController`.
 `ApplicationRequest` is a closed family, not an arbitrary message. Its outer
 categories are campaign creation or continuation, campaign rule commands,
 save-and-quit work, settings or local-data actions, and recovery choices.
-S03, S04, S07, and S09 define the exact variants and fields.
+S03, S04, S07, S08, and S09 define the exact connected variants and fields.
 
 Only `bootstrap` receives the complete controller. UI and input receive only
 the approved `submit(request)` callback. The timing module receives only the
@@ -171,6 +171,10 @@ campaign state or raw stored record.
 Player results contain plain position and view data. Movement and interaction
 contexts contain only the collision or target information required for the
 current operation. `resolveAction` returns a request and cannot apply it.
+S08 now fixes the plain frame values, player result, contexts, target geometry,
+focus geometry, lifecycle meanings, and S08 fault boundary. S09 still defines
+device conversion, remapping, pointer lock, complete focus state, prompts, and
+accessibility use.
 
 ### Rendering, audio, and cutscenes
 
@@ -292,8 +296,9 @@ state silently.
 
 If the page becomes hidden, the loop can pause. When it resumes, the first
 frame cannot process the missing browser time as movement or animation
-catch-up. The exact safe delta limit belongs to S08 or S11. Browser time never
-advances campaign time.
+catch-up. S08 fixes the safe movement delta at `0.05 seconds`; S11 owns later
+measurement and browser-performance evidence. Browser time never advances
+campaign time.
 
 ## Shutdown
 

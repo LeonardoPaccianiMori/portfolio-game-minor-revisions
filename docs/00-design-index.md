@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S07 documented | Complete S08–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S08 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S07 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-007` candidate; `MR-IF-011` S05 part draft; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-008` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S08 documented | Complete S09–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S09 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S08 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-007` candidate; `MR-IF-008`, `MR-IF-009`, and `MR-IF-011` parts draft; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-009` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,12 +63,12 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Next technical-specification block: **S08 — World geometry and interaction**;
-  Leonardo's approval to begin it is pending after the S07 commit.
-- Last documented technical block: **S07 — Persistence and recovery**.
+- Next technical-specification block: **S09 — Input, UI, and accessibility**;
+  Leonardo's approval to begin it is pending after the S08 commit.
+- Last documented technical block: **S08 — World geometry and interaction**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-008`.
-- Technical-specification gate: **blocked**; S08–S14 remain.
+- Active issue group: `MR-IMP-OPEN-009`.
+- Technical-specification gate: **blocked**; S09–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

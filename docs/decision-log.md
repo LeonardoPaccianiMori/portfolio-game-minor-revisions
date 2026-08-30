@@ -196,6 +196,8 @@ belongs in the numbered design documents.
 | 2026-08-30 | Reject stale browser-tab writes, use one persistence-operation queue, close connections for version changes and deletion, and report only the approved safe persistence failure categories. | Confirmed |
 | 2026-08-30 | Use uncompressed canonical campaign JSON with no browser-only encryption or extra checksum, enforce a 1 MiB save limit, and preserve existing data after size, quota, validation, or transaction failure. | Confirmed |
 | 2026-08-30 | Make `MR-IF-007` candidate `v1`, require the named S07 save, recovery, migration, completion, clear, and failure fixture groups without claiming test results, resolve S07, and make S08 the next technical block. | Confirmed |
+| 2026-08-30 | Fix the complete S08 coordinate, approximately 400 m² floor, room, circulation, service, opening, collision, player, camera, station, anchor, character, scene-stage, target, focused-view, environmental, room-state, world-projection, lifecycle, fault, and no-trap contract. | Confirmed; detailed contract is `implementation/specs/08-world-geometry-and-interaction.md` |
+| 2026-08-30 | Make the S08 portions of `MR-IF-008` and `MR-IF-009` draft `v1`, require the nine named S08 fixture groups without claiming tests exist, resolve S08, and make S09 the next technical block. | Confirmed |
 
 ## Rules for future entries
 

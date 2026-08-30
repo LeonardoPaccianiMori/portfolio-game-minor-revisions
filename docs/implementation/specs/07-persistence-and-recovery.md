@@ -651,6 +651,9 @@ mappings, and draft `MR-IF-011` scene checkpoints.
 Their S07 persistence connections are now specified, but S12 executable
 evidence and S14 audit evidence do not exist. The S05 campaign part of
 `MR-IF-011` remains draft `v1` until S10 completes presentation ownership.
+S08 now supplies the physical mapping for saved semantic recovery and
+character-anchor IDs through draft `MR-IF-008`; S07 continues to persist only
+the validated S03 IDs, never browser pose or presentation objects.
 
 No interface is frozen.
 
@@ -665,10 +668,12 @@ S07 is documented only when:
   contradictory persistence claim;
 - `MR-IF-007` is candidate `v1`;
 - `MR-IMP-OPEN-007` is resolved;
-- the implementation controls agree that S08 is next;
+- the implementation controls record the correct next-block pointer for the
+  S07 commit;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S08 is the next technical-specification block. It owns world geometry and
-interaction. It cannot begin until the S07 documentation commit exists and
-Leonardo separately approves moving to S08.
+S08 now defines world geometry and interaction without changing this S07
+persistence contract. S09 is the next technical-specification block. It owns
+input, UI, and accessibility and cannot begin until the S08 documentation
+commit exists and Leonardo separately approves moving to S09.

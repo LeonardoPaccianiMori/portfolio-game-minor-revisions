@@ -626,9 +626,11 @@ audio, cutscenes, persistence checkpoint coordination, and tests.
 S05 connects exact scheduled, scene, crash, skip, reload, and finalization
 order. S06 now connects exact content objects, references, and the restricted
 rules view. S07 connects effects to complete validated, ordered persistence
-operations without changing the 24-command or five-effect unions. The
-interface remains candidate until S09 connects projections, S12 supplies
-executable fixtures, and S14 completes the cross-interface audit.
+operations without changing the 24-command or five-effect unions. S08 now
+connects typed station and target requests to this boundary without adding a
+command, effect, or presentation authority. The interface remains candidate
+until S09 connects projections, S12 supplies executable fixtures, and S14
+completes the cross-interface audit.
 
 ## `MR-IF-004` candidate `v1`
 

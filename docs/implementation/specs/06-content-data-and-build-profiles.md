@@ -209,8 +209,9 @@ The semantic location IDs are:
 - `MR-LOC-SOUTH-CORRIDOR`; and
 - `MR-LOC-EXIT-VESTIBULE`.
 
-They express meaning only. S08 will map them to exact coordinates and
-interaction anchors.
+They express meaning only. S08 now maps them to exact coordinates and
+interaction anchors. S06 continues to store only the stable semantic identity,
+not physical coordinates or visible models.
 
 ## Reference contract
 
@@ -286,8 +287,9 @@ key in `strings.en.json`. A list is always present, including when empty.
 | `interface` | Interface ID, semantic purpose, text keys, confirmation meaning, availability, and dynamic-field roles |
 | `audio` | Audio or music role ID, semantic role, cue meaning, required visual or text duplicate, and S10 handoff role |
 
-An S08 mapping key is semantic only until S08 defines geometry. An S10 handoff
-role identifies meaning only until S10 defines an actual verified resource.
+An S08 mapping key remains semantic in content data. S08 now owns its exact
+geometry and anchor mapping. An S10 handoff role identifies meaning only until
+S10 defines an actual verified resource.
 
 ## Conditions
 
@@ -932,7 +934,9 @@ rules view and unchanged totals of 24 commands and five presentation effects.
 profile-reference checks. The campaign-facing part of `MR-IF-011` remains
 draft `v1`. S07 now connects exact stored content versions, immutable profiles,
 saved reference validation, direct mapping, ending-card references, and
-Citation records through candidate `MR-IF-007`. No interface is frozen.
+Citation records through candidate `MR-IF-007`. S08 now maps semantic locations
+and environmental-item presentation to its draft `MR-IF-008` and target
+contract, without adding coordinates to content data. No interface is frozen.
 
 ## S06 acceptance and handoff
 
