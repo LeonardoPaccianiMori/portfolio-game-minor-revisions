@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-013` candidate; no interface frozen**
+Status: **`MR-IF-001`–`MR-IF-014` candidate; no interface frozen**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -35,8 +35,8 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 | MR-IF-010 | UI view model and semantic action dispatch | S09 | Rules, persistence, input, content, captions, menus, tests | Candidate | `v1`; projection and semantic-screen owner: `ui`; validation and dispatch owner: `application` | Exact closed screen, complete revisioned projection, action dispatch, settings, focus, scale, responsive layout, confirmation, notification, error, storage-message, accessibility, lifecycle, and fault contract; `MR-S09-UI-001`, `MR-S09-SET-001`, `MR-S09-A11Y-001`, `MR-S09-ERR-001`, `MR-S09-RSP-001`, `MR-S09-LIF-001`, and `MR-S09-JRN-001`; S10 presentation connections; S12 executable format; S14 audit |
 | MR-IF-011 | Cutscene timeline, checkpoint, skip, and restoration | S05 and S10 | Scheduler, world, UI, input, audio, persistence, tests | Candidate | `v1`; campaign owner: `rules`; presentation owner: `cutscenes` | S05 request, response, token, checkpoint, choice, skip, failure, reload, closing, and recap contract plus S10 timeline, camera, actor, animation, audio, resource validation, Camila portrait, complete restoration, stale response, and teardown; `MR-S05-SCN-001`, `MR-S05-SKP-001`, `MR-S05-REC-001`, and `MR-S10-SCN-001`; S12 executable format; S14 audit |
 | MR-IF-012 | Audio bus, cue, and dialogue-sound request | S10 | UI, rules effects, world, cutscenes, settings, tests | Candidate | `v1`; owner: `audio` | One context; exactly four total buses; exact volume, mute, ambience, spatial-source, cue-priority, music-role, dialogue-palette, caption, unavailable, suspended-context, restoration, and teardown contract; `MR-S10-SCN-001` and `MR-S10-RES-001`; S11 compatibility consumers; S12 executable format; S14 audit |
-| MR-IF-013 | Asset and resource ownership lifecycle | S10 | Application, world, renderer, UI, cutscenes, audio, diagnostics, tests | Candidate | `v1`; preparation-order owner: `application`; visual-resource owner: `rendering`; audio-resource owner: `audio`; DOM-presentation owner: `ui`; provenance owner: asset manifest | Specialist ownership; stable plain records; initial preparation; sharing inside one resource owner; already-loaded background preparation; required and optional failure; cancellation; late result; release; placeholder; provenance; context loss; and teardown; `MR-S10-RND-001`, `MR-S10-SCN-001`, and `MR-S10-RES-001`; S11 resource-budget consumers; S12 executable format; S14 audit |
-| MR-IF-014 | Compatibility, performance, and sanitized diagnostic record | S11 | Bootstrap, settings, UI, tests, private evaluation | Not started | Pending S11 | Supported, blocked, degraded, resource-budget, and privacy fixtures |
+| MR-IF-013 | Asset and resource ownership lifecycle | S10 | Application, world, renderer, UI, cutscenes, audio, bootstrap diagnostics, tests | Candidate | `v1`; preparation-order owner: `application`; visual-resource owner: `rendering`; audio-resource owner: `audio`; DOM-presentation owner: `ui`; provenance owner: asset manifest | Specialist ownership; stable plain records; initial preparation; sharing inside one resource owner; already-loaded background preparation; required and optional failure; cancellation; late result; release; placeholder; provenance; context loss; and teardown; `MR-S10-RND-001`, `MR-S10-SCN-001`, and `MR-S10-RES-001`; S11 resource-budget consumers; S12 executable format; S14 audit |
+| MR-IF-014 | Compatibility, performance, and sanitized diagnostic record | S11 | Bootstrap, platform, persistence boundary, rendering, input, audio, settings, UI, tests, private evaluation | Candidate | `v1`; compatibility owner: `platform`; graphics-budget owner: `rendering`; diagnostic-conversion owner: bootstrap's private diagnostic adapter; evidence owner: private evaluation | Exact six-capability report, temporary probe lifecycle, three profiles, frame, processor, workload, memory, loading and download budgets, measurement and failure rules, sanitized 2-KiB record, and `MR-S11-CMP-001`, `MR-S11-PERF-001`, `MR-S11-DIA-001`; S12 executable format; S14 audit |
 | MR-IF-015 | Test fixture and traceability format | S12 | Every module and future worker | Not started | Pending S12 | Schema check plus requirement, interface, content, and expected-result links |
 
 ## Current freeze state
@@ -55,8 +55,10 @@ through the connected S08 and S09 contracts. `MR-IF-010` is candidate `v1`
 through `specs/09-input-ui-and-accessibility.md`. `MR-IF-011` is candidate
 `v1` through the connected S05 and S10 contracts. `MR-IF-012` and `MR-IF-013`
 are candidate `v1` through
-`specs/10-rendering-resources-assets-and-audio.md`. S11 must add compatibility,
-performance, and diagnostic consumers. S12 must create the connected executable
+`specs/10-rendering-resources-assets-and-audio.md`. `MR-IF-014` is candidate
+`v1` through `specs/11-browser-performance-and-diagnostics.md`, including its
+startup, persistence-boundary, rendering, input, audio, UI, diagnostic, and
+private-evaluation consumers. S12 must create the connected executable
 fixtures. S14 must complete the cross-interface audit before an applicable
 interface can become frozen.
 

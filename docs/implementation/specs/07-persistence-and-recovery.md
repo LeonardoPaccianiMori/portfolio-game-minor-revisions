@@ -58,7 +58,12 @@ record version, ending-card record version, Citation record version, and
 metadata record version are separate facts. A change to one never silently
 changes another.
 
-The game has one database per browser profile. It has no account, server save,
+The game has one persistent game-data database per browser profile. S11's
+empty `minor-revisions-capability-probe` is a separate transient platform
+check: it has no store, reads no game database, and is closed and deleted
+before persistence starts. It is not a save or second persistence system.
+
+The game has no account, server save,
 uploaded save, cookie marker, telemetry, analytics, automatic error report,
 or automatic unfinished-save expiry. Browser closure, lost connection, focus,
 visibility, real time, and device time do not advance a campaign.
@@ -678,5 +683,7 @@ persistence contract. S09 now defines the complete settings record,
 Continue/New Game, recovery, migration, repair, clear-data, cross-tab, and
 nine-code player-facing UI consumer without changing S07 transactions or
 failure meanings. S10 now defines presentation resources and restoration
-without changing the S07 safe-state boundary. S11 is the next technical-
-specification block.
+without changing the S07 safe-state boundary. S11 now defines the temporary
+capability-probe separation, required storage readiness, sanitized diagnostic
+boundary, and measured resource evidence without changing S07 records or
+transactions. S12 is the next technical-specification block.

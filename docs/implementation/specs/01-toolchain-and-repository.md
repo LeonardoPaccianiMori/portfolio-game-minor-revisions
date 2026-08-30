@@ -138,7 +138,10 @@ provenance and build checks as other assets.
 
 Generated local paths remain inside the repository and are ignored by Git.
 They include `node_modules/`, `dist/`, `coverage/`, `playwright-report/`,
-`test-results/`, tool caches, logs, and Playwright-managed browser copies.
+`test-results/`, `local-artifacts/performance/`, tool caches, logs, and
+Playwright-managed browser copies. The S11 local performance path can hold
+temporary raw profiler exports; it is never part of a build or tracked
+evidence.
 Editor, operating-system, secret, and `.env` files are also ignored and cannot
 control the project.
 
@@ -211,7 +214,9 @@ Playwright uses local Chromium, Firefox, and WebKit projects against the local
 server. It records no video by default. It keeps a trace and screenshot only
 for a failed test. Reports stay in ignored repository folders and cannot
 contain player names, save payloads, or personal data. A WebKit result is not a
-Safari-support claim.
+Safari-support claim. S11 separately requires direct dated current-stable
+Chrome, Edge, and Firefox evidence for a future support claim; Playwright's
+managed browsers do not replace it.
 
 `PLAYWRIGHT_BROWSERS_PATH=0` keeps Playwright-managed browser copies inside the
 installed project dependencies. `cross-env` applies that setting portably.

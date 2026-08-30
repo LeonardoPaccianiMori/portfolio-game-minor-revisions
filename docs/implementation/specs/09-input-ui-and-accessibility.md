@@ -14,9 +14,10 @@ returns only its nine approved failure categories. S08 owns movement, target,
 and focused-view geometry. S09 converts physical input into plain actions and
 presents read-only player-visible facts. It cannot change campaign truth.
 
-S10 now owns rendered presentation and audio resources. S11 owns measured
-browser and performance limits. S12 will encode the fixtures named here. S14
-will audit and freeze connected interfaces.
+S10 now owns rendered presentation and audio resources. S11 now owns exact
+browser capability results, graphics values, local performance advice,
+sanitized diagnostics, and measured-performance limits. S12 will encode the
+fixtures named here. S14 will audit and freeze connected interfaces.
 
 Nothing in S09 creates game code, package configuration, runtime UI, tests,
 production assets, a licence, a remote, deployment, or implementation
@@ -307,9 +308,10 @@ content**, **Opening local data**, **Preparing game**, or **Ready**. It shows no
 invented percentage or early success animation. Menu controls stay unavailable
 until required work succeeds.
 
-A missing required browser capability shows a blocking screen with the missing
-capability, the fact that campaign data did not change, **Retry Check**, and
-safe browser guidance. Missing controller support is non-blocking. Muted or
+A missing required browser capability shows one blocking screen with every
+missing capability, the exact S11 plain reason, the fact that campaign data did
+not change, **Retry Check**, and safe browser guidance. Missing controller
+support uses the exact non-blocking S11 keyboard-and-mouse message. Muted or
 unavailable audio keeps required text and visual meaning. A required player
 action for audio or pointer capture is not a campaign action.
 
@@ -393,8 +395,12 @@ at zero mutes all audio. Every required sound meaning also has visible meaning.
 S10 owns the exact four-bus graph and safe relative mix inside each audio
 group.
 
-Standard graphics is default. Field of view defaults to `70°`, ranges from
-`60°` to `90°` in `1°` steps, and never changes campaign rules. The centre
+Standard graphics is default. S11 fixes the Low, Standard, and High drawing,
+detail, particle, shadow, and frame values. A failed change returns to the last
+complete profile. The game never changes quality automatically. One local
+once-per-session advisory can recommend the next lower profile and offer
+Display Settings without pausing play. Field of view defaults to `70°`, ranges
+from `60°` to `90°` in `1°` steps, and never changes campaign rules. The centre
 reticle defaults on. Fullscreen is an explicit **Enter Fullscreen** or **Exit
 Fullscreen** command and is never automatic or saved.
 
@@ -592,7 +598,8 @@ confirmation also requires focus to move from Cancel to its explicit action.
 A correctable field error appears beside its field and receives focus after
 failed confirmation. An action rejection appears in the current station or
 panel. A persistence or settings failure uses its approved message. A fatal
-error replaces all interaction.
+error replaces all interaction and follows the S11 sanitized-diagnostic
+boundary.
 
 ## Persistence failure messages
 
@@ -710,10 +717,11 @@ offers **Try Again** and **Back**. A retry cannot repeat an already successful
 campaign action.
 
 A fatal failure disables all game input and shows: **Minor Revisions must stop
-because it cannot continue safely.** It shows only a sanitized issue code and
-**Reload Page**. It starts no emergency save, reloads nowhere automatically,
-and makes no claim about the latest action. Reload uses normal S07 validation
-and recovery to select the last verified state.
+because it cannot continue safely.** It shows only the plain explanation,
+sanitized issue code, **Copy Diagnostic**, and **Reload Page**. It starts no
+emergency save, copies or reloads nowhere automatically, and makes no claim
+about the latest action. Reload uses normal S07 validation and recovery to
+select the last verified state.
 
 ## Required future fixtures
 
@@ -766,11 +774,14 @@ S09 is documented only when:
   input, UI, or accessibility claim;
 - `MR-IF-009` and `MR-IF-010` are candidate `v1` with all later evidence named;
 - `MR-IMP-OPEN-009` is resolved;
-- implementation controls preserve this S09 result and now agree that S11 is
-  next after documented S10;
+- implementation controls preserve this S09 result and now agree that S12 is
+  next after documented S11;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
 S10 now owns the documented rendering, resource, asset, and audio connection.
-S11 is the next technical-specification block. It cannot begin until the S10
-documentation commit exists and Leonardo separately approves moving to S11.
+S11 now owns the documented browser, graphics-budget, local advisory,
+diagnostic, privacy, and measurement connection. `MR-IF-014` is candidate
+`v1`. S12 is the next technical-specification block. It cannot begin until the
+S11 documentation commit exists and Leonardo separately approves moving to
+S12.

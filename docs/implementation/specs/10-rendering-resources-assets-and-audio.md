@@ -56,8 +56,8 @@ new drawing buffer. It keeps the last safe size and resumes only after a valid
 size exists.
 
 Graphics quality is selected by the player. S10 does not change it
-automatically. S11 owns the exact Low, Standard, and High pixel-ratio and
-performance values and the response to measured failure.
+automatically. S11 now fixes the exact Low, Standard, and High pixel-ratio,
+detail, particle, frame, workload, resource, and failed-measurement values.
 
 ## Scene graph and atomic projection
 
@@ -136,8 +136,8 @@ time. Shadow quality is:
 | Standard | `1024 x 1024` |
 | High | `2048 x 2048` |
 
-S11 owns later measured performance evidence. A worker cannot silently change
-these values in response to an unrecorded observation.
+S11 now owns the exact measured-performance method and response. A worker
+cannot silently change these values in response to an unrecorded observation.
 
 ## Materials, textures, and colour
 
@@ -149,8 +149,8 @@ Colour textures use sRGB interpretation. Normal, roughness, metalness, and
 other data textures use non-colour interpretation. Texture orientation and
 channel use must match the selected verified asset record. Normal maps have a
 maximum size of `1024 x 1024`, except for a rare approved `2048 x 2048` source
-record. No `4096 x 4096` texture is permitted. S11 owns total texture-memory and
-download budgets.
+record. No `4096 x 4096` texture is permitted. S11 now fixes total calculated
+graphics-memory, live-texture, and clean-download budgets.
 
 In-world text uses live HTML where S09 requires semantics, or local SVG and
 project-owned canvas textures for mounted world text. It does not use a
@@ -500,11 +500,13 @@ spatial sources, mute, suspension, captions, availability, and teardown.
 `MR-IF-013`, Asset and resource ownership lifecycle, is candidate `v1`. It is
 not a general resource manager or port. It records the plain-data request,
 ownership, preparation, availability, cancellation, and release contract used
-across application, rendering, audio, world, cutscenes, and diagnostics. Each
-specialist keeps its browser objects and loaded resources private.
+across application, rendering, audio, world, cutscenes, and bootstrap's private
+diagnostic adapter. Each specialist keeps its browser objects and loaded
+resources private.
 
-No interface is frozen or available for implementation. S11 adds compatibility
-and measured-budget consumers. S12 adds executable fixtures. S14 performs the
+No interface is frozen or available for implementation. S11 now adds candidate
+`MR-IF-014` compatibility, graphics-profile, resource-budget, diagnostic, and
+measured-evidence consumers. S12 adds executable fixtures. S14 performs the
 cross-interface freeze audit.
 
 ## S10 acceptance and handoff
@@ -521,12 +523,12 @@ S10 is documented only when:
 - numbered design documents and S02–S09 contain no contradictory claim;
 - `MR-IF-008`, `MR-IF-011`, `MR-IF-012`, and `MR-IF-013` are candidate `v1`;
 - `MR-IMP-OPEN-010` is resolved;
-- implementation controls agree that S11 is next;
+- implementation controls agree that S12 is next after documented S11;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S11 is the next technical-specification block. It owns browser compatibility,
-exact graphics-profile values, performance and memory budgets, profiling,
-diagnostics, privacy, and the response to failed measurements. It cannot begin
-until the S10 documentation commit exists and Leonardo separately approves
-moving to S11.
+S11 now owns browser compatibility, exact graphics-profile values, performance
+and memory budgets, profiling, diagnostics, privacy, and the response to failed
+measurements. S12 is the next technical-specification block. It cannot begin
+until the S11 documentation commit exists and Leonardo separately approves
+moving to S12.

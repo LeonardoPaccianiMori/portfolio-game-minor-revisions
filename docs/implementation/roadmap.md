@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S10 documented; S11 is next; no code authorized**
+Status: **S00–S11 documented; S12 is next; no code authorized**
 
 ## Purpose
 
@@ -128,8 +128,8 @@ full-game evaluation gates still apply during production.
 | S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Documented |
 | S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Documented |
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Documented |
-| S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Not started; next |
-| S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Not started |
+| S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
+| S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Not started; next |
 | S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Not started |
 | S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Not started |
 
@@ -198,9 +198,9 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S10 documentation commit, ask Leonardo whether he approves moving to
-S11. If he approves, decide exact compatibility detection, graphics-profile
-values, CPU, GPU, memory, download and frame budgets, profiling method,
-sanitized diagnostics, privacy boundaries, and the response to failed
-measurements. Use the candidate S01–S10 contracts, including `MR-IF-008` and
-`MR-IF-011`–`MR-IF-014`. Do not create files from the planned runtime tree.
+After the S11 documentation commit, ask Leonardo whether he approves moving to
+S12. If he approves, decide the exact executable fixture format and values,
+cross-module journeys, requirement and interface traceability, coverage and
+rejection rules, browser and accessibility checks, manual-evidence boundary,
+and acceptance matrix. Use all candidate S03–S11 contracts, including
+`MR-IF-015`. Do not create files from the planned runtime tree.

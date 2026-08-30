@@ -76,7 +76,9 @@ Browser-object ownership is exact:
 
 - Three.js objects stay in `rendering`;
 - DOM objects stay in `bootstrap` or `ui`;
-- IndexedDB objects stay in `persistence`;
+- game-database IndexedDB objects stay in `persistence`; the `platform` module
+  can own only its empty S11 compatibility-probe handle until it closes and
+  deletes that probe;
 - audio buffers and audio nodes stay in `audio`; and
 - raw browser input events stay in `input`.
 
@@ -141,8 +143,12 @@ campaign-state reference.
 | `DiagnosticsPort` | `createDiagnostic(fault)` |
 
 `TimingPort` rejects a second permanent loop. Repeated pause and stop are
-safe. `DiagnosticsPort` returns sanitized player-safe information, sends
-nothing remotely, and cannot inspect saves or campaign data.
+safe. S11 makes `checkCompatibility()` one single-active asynchronous
+operation returning the exact six-entry plain report. It makes
+`createDiagnostic(fault)` one synchronous typed conversion returning the exact
+sanitized record. `DiagnosticsPort` sends nothing remotely and cannot inspect
+saves or campaign data. Bootstrap owns its private diagnostic adapter; S11
+does not add a public runtime module.
 
 ### Persistence, input, and UI
 
@@ -299,9 +305,9 @@ state silently.
 
 If the page becomes hidden, the loop can pause. When it resumes, the first
 frame cannot process the missing browser time as movement or animation
-catch-up. S08 fixes the safe movement delta at `0.05 seconds`; S11 owns later
-measurement and browser-performance evidence. Browser time never advances
-campaign time.
+catch-up. S08 fixes the safe movement delta at `0.05 seconds`; S11 now fixes
+the measurement method and browser-performance evidence boundary. Browser time
+never advances campaign time.
 
 ## Shutdown
 
@@ -397,7 +403,8 @@ The following are deliberately deferred to their owning blocks:
   documented through candidate `MR-IF-009` and `MR-IF-010`;
 - rendering, asset, animation, audio, and cutscene presentation data: S10, now
   documented through candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`;
-- compatibility results and diagnostic fields: S11; and
+- compatibility, graphics-budget, performance-evidence, and diagnostic fields:
+  S11, now documented through candidate `MR-IF-014`; and
 - executable fixtures and the acceptance matrix: S12.
 
 S02 resolves `MR-IMP-OPEN-002`. S03 and `MR-IMP-OPEN-003` are next. Technical

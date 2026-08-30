@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-30
 
-Status: **S00–S10 documented; S11 is next; all implementation gates blocked**
+Status: **S00–S11 documented; S12 is next; all implementation gates blocked**
 
 ## Current repository state
 
@@ -25,7 +25,7 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S11–S14 are not documented. |
+| Technical specification complete | Blocked | S12–S14 are not documented. |
 | Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
 | Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
@@ -33,20 +33,20 @@ not insert a future or guessed commit identifier into this document.
 
 ## Current checkpoint
 
-- Next block: **S11 — Browser, performance, and diagnostics**; do not begin it
-  until Leonardo approves moving to it after the S10 commit.
-- Last documented block: **S10 — Rendering, resources, assets, and audio**.
+- Next block: **S12 — Test vectors and acceptance matrix**; do not begin it
+  until Leonardo approves moving to it after the S11 commit.
+- Last documented block: **S11 — Browser, performance, and diagnostics**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
-- Primary existing design input: `../09-art-audio-and-assets.md`,
-  `../11-technical-architecture.md`, and the approved S01–S03 and S08–S10
-  architecture, world, input, UI, rendering, resource, asset, and audio
-  contracts.
-- Current open issue group: `MR-IMP-OPEN-011`.
-- Next action: after committing S10, ask Leonardo whether he approves moving
-  to S11. If approved, discuss exact compatibility detection, graphics-profile
-  values, resource and frame budgets, profiling, diagnostics, privacy, and the
-  response to failed measurements.
+- Primary existing design input: `../13-testing-and-evaluation.md`,
+  `../15-implementation-contract.md`, and the approved S03–S11 state, rule,
+  scheduler, content, persistence, world, input, UI, rendering, resource,
+  browser, performance, and diagnostic contracts.
+- Current open issue group: `MR-IMP-OPEN-012`.
+- Next action: after committing S11, ask Leonardo whether he approves moving
+  to S12. If approved, decide the exact executable fixture format, expected
+  values, traceability, automated-versus-manual classification, and complete
+  acceptance matrix.
 - Prohibited next action: create package files, source directories, code,
   assets, or deployment files.
 
@@ -57,7 +57,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S10 are documented; S11 is next. `MR-IF-001`–`MR-IF-013` are candidate `v1`; none is frozen. |
+| Technical specification | In progress | S01–S11 are documented; S12 is next. `MR-IF-001`–`MR-IF-014` are candidate `v1`; none is frozen. |
 | Vertical slice | Not authorized | No code exists. |
 | Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
 

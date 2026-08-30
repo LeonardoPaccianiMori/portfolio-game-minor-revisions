@@ -147,11 +147,17 @@ target is no more than 75 MB. It must not exceed 100 MB without Leonardo's
 renewed approval. Runtime game assets use normal browser cache; IndexedDB is
 reserved for local game data rather than the general asset cache.
 
-`11-technical-architecture.md` defines the reference hardware class, browser
-scope, graphics-profile boundary, loading behaviour, and build-size audit.
-Implementation must measure these targets and select actual asset codecs after
-assets are verified. These are content and player-experience limits, not proof
-of measured performance.
+Implementation S11 now fixes Low, Standard, and High drawing ratios, full-
+detail room and cosmetic-particle limits, frame and processor targets, draw-
+call and triangle limits, live graphics counts, 384 MiB calculated graphics,
+96 MiB decoded-audio, 1 GiB tab, loading, long-session, profiling, and failed-
+measurement boundaries. It also requires optimization or a separate exception
+above 75 MB and renewed approval above 100 MB. The exact contract is
+`implementation/specs/11-browser-performance-and-diagnostics.md`.
+
+Implementation must still measure these targets and select actual asset codecs
+after assets are verified. These are content and player-experience limits, not
+proof of measured performance.
 
 ## Dialogue sound and voice boundary
 
@@ -293,5 +299,6 @@ defines the one-pass renderer, lighting and shadow limits, candidate palette,
 materials, animation, cutscene presentation, specialist resource ownership,
 placeholder and provenance connection, exactly four total audio buses,
 playback priority, spatial sound, fallback, captions, and resource lifetime.
-It selects no actual file or codec. This document does not authorize asset
-import or production implementation.
+S11 now defines the exact profile and resource budgets and measurement method.
+Neither block selects an actual file or codec. This document does not authorize
+asset import or production implementation.

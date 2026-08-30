@@ -283,9 +283,17 @@ while audio plays, late old-session results, and both graphics-context recovery
 results. They must preserve campaign truth through every presentation failure.
 No S10 test, browser result, performance result, or asset result exists yet.
 
-The compatibility flow checks WebGL2, IndexedDB, ES modules, Web Audio, pointer
-lock, and controller availability. Missing WebGL2, IndexedDB, or ES modules
-blocks a new campaign. Missing controller support retains keyboard-mouse play.
+S12 must also encode the three approved S11 groups: `MR-S11-CMP-001` with
+eight Compatibility setups, `MR-S11-PERF-001` with nine Performance setups,
+and `MR-S11-DIA-001` with eight Diagnostics setups. Automated cases verify
+records, limits, calculations, privacy, lifecycle, and failure response. They
+cannot claim a real browser, frame, processor, memory, loading, or transfer
+result. No S11 fixture or result exists yet.
+
+The compatibility flow checks ES modules, WebGL2, IndexedDB, Web Audio, pointer
+lock, and controller availability in the exact S11 order. Missing any of the
+first five blocks campaign creation or load. Missing controller support retains
+keyboard-mouse play.
 The game has no telemetry, analytics, automatic error report, account, server
 save, save cookie, or automatic unfinished-save expiration.
 
@@ -328,17 +336,27 @@ vision-free 3D navigation.
 
 MR-TEST-PERF-001 uses the approved Intel i5 and Iris Xe reference class after
 implementation. The evidence names the actual device, driver, operating
-system, browser, and browser version. It records:
+system, browser, browser version, exact commit, content profile, graphics
+profile, viewport, and measurement tool. It records:
 
-- 60 frames per second target at 1920 by 1080 Standard;
-- 30 frames per second target at 1280 by 720 Low;
-- initial compressed download at or below 75 MB, with renewed Leonardo
-  approval required above 100 MB; and
-- a long-session and act-transition resource check.
+- Low 30-frame target at 1280 by 720, Standard 60-frame target at 1920 by
+  1080, and High 30-frame target at 1920 by 1080, with the exact S11 average,
+  slowest-one-percent, and processor floors;
+- exact draw-call, triangle, live-resource, JavaScript, calculated graphics,
+  decoded-audio, complete-tab, Ready, and campaign-opening limits;
+- a clean initial transfer pass at or below 75 MB, optimization or approved
+  exception above 75 through 100 MB, and renewed approval above 100 MB;
+- the five fixed S11 scenarios with the approved warm-up, three-run, median,
+  browser, environment, invalid-run, failure, and regression method; and
+- the 60-minute repeated-use, act-transition, title, reload, memory-growth,
+  listener, callback, audio, and resource-cleanup check.
 
-Codex may run automated Chromium, Firefox, and WebKit checks. Leonardo will
-not perform a manual Safari check. Do not state that Safari is supported
-without direct Safari evidence.
+Direct current stable Chrome, Edge, and Firefox evidence uses the reference
+computer. Detailed processor, graphics, and memory evidence uses Chrome.
+Codex may run automated Chromium, Firefox, and WebKit checks. Leonardo will not
+perform a manual Safari check. Do not state that Safari is supported without
+direct Safari evidence. Raw local profiler exports remain ignored and
+unpublished; the tracked summary follows the S11 privacy contract.
 
 MR-TEST-RELEASE-001 checks:
 

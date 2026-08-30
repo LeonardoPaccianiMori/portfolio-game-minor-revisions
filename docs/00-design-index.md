@@ -18,7 +18,7 @@ gaps. It does not mean that the domain is finished.
 | `08-endings-and-state-matrix.md` | Outcomes | B10 documented | Authored draft is ready for later specification review. |
 | `09-art-audio-and-assets.md` | Presentation | B10 documented | Verified asset selection and measurements occur before integration. |
 | `10-ui-ux-accessibility.md` | Interface and access | B10 documented | Implementation verification only. |
-| `11-technical-architecture.md` | Runtime design | B10 documented | Exact versions and measurements are deliberate implementation-stage facts. |
+| `11-technical-architecture.md` | Runtime design | B10 and S11 documented | Measured browser and performance results remain future facts. |
 | `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
 | `13-testing-and-evaluation.md` | Quality evidence | B10 documented | Test results are future evidence, not current claims. |
 | `14-production-plan.md` | Delivery strategy | B10 documented | Leonardo may later revise capacity or release timing. |
@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S10 documented | Complete S11–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S11 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S10 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-013` candidate; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-011` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S11 documented | Complete S12–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S12 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S11 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-014` candidate; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-012` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,14 +63,14 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Next technical-specification block: **S11 — Browser, performance, and
-  diagnostics**; Leonardo's approval to begin it is pending after the S10
+- Next technical-specification block: **S12 — Test vectors and acceptance
+  matrix**; Leonardo's approval to begin it is pending after the S11
   commit.
-- Last documented technical block: **S10 — Rendering, resources, assets, and
-  audio**.
+- Last documented technical block: **S11 — Browser, performance, and
+  diagnostics**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-011`.
-- Technical-specification gate: **blocked**; S11–S14 remain.
+- Active issue group: `MR-IMP-OPEN-012`.
+- Technical-specification gate: **blocked**; S12–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

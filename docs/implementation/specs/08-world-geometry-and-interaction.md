@@ -746,7 +746,7 @@ station-focus geometry, and S08 rejections. S09 now defines device mappings,
 remapping, pointer capture, complete focus states, prompts, and accessibility
 behaviour.
 
-`MR-IF-001`–`MR-IF-013` are now candidate `v1` through their owning connected
+`MR-IF-001`–`MR-IF-014` are now candidate `v1` through their owning connected
 specifications. No interface is frozen, and no status authorizes
 implementation.
 
@@ -763,11 +763,13 @@ S08 is documented only when:
   now candidate `v1` through S10, while connected `MR-IF-009` remains candidate;
 - `MR-IMP-OPEN-008` is resolved;
 - the implementation controls preserve the documented S08 result and record
-  S11 as the current next block after documented S10;
+  S12 as the current next block after documented S11;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
 S09 owns the documented input, UI, and accessibility connection. S10 now owns
 the documented rendering, resource, asset, audio, and presentation connection.
-S11 is the next technical-specification block and cannot begin until the S10
-documentation commit exists and Leonardo separately approves moving to S11.
+S11 now owns the measured browser, profile, frame, visibility, resource, and
+diagnostic connection without changing S08 movement or campaign time. S12 is
+the next technical-specification block and cannot begin until the S11
+documentation commit exists and Leonardo separately approves moving to S12.

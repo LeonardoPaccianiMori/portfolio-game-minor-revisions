@@ -38,6 +38,14 @@ asset sources. A failed toolchain check reopens the affected S01 contract. It
 does not treat a free download, a browser preview, or an unverified generated
 asset as acceptable material.
 
+Phase 1 also establishes the S11 deterministic performance scenes and
+resource calculations without claiming release evidence. Phase 5 applies the
+complete S11 reference-device, direct-browser, three-run, memory, transfer,
+loading, long-session, diagnostic-privacy, invalid-evidence, optimization, and
+retest contract. Standard or Low performance failure, a retained-resource
+leak, unavailable valid evidence, or an unapproved hard-limit exception blocks
+the private release candidate.
+
 Before the vertical slice, Phase 1 must also test asset feasibility for every
 planning role. Record its likely reusable or original source route, licence and
 redistribution risk, estimated non-LLM direct cost, estimated original-work

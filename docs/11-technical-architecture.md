@@ -141,8 +141,8 @@ resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
 scheduler and campaign-facing cutscene coordination. S06 now defines authored
 content and candidate `MR-IF-006`. S07 now defines persistence and candidate
 `MR-IF-007`. S09 defines candidate `MR-IF-009` and `MR-IF-010`. S10 defines
-candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`. S11–S12 and S14 still own
-their named connected contracts and freeze evidence.
+candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`. S11 defines candidate
+`MR-IF-014`. S12 and S14 still own executable fixtures and freeze evidence.
 
 ### Content and strings contract
 
@@ -337,12 +337,12 @@ candidate `MR-IF-007`, and all failure cases.
 
 ## Browser, deployment, and performance boundary
 
-The start-up compatibility check tests WebGL2, IndexedDB, ES modules, Web
-Audio API, pointer lock, and standard controller API support. Missing WebGL2,
-IndexedDB, or ES modules blocks campaign creation and explains the reason.
-Missing controller support keeps keyboard-mouse play available and clearly
-states that controller play is unavailable. The normal first-person release
-requires pointer lock and Web Audio support.
+The start-up compatibility check tests ES modules, WebGL2, IndexedDB, Web
+Audio, pointer lock, and standard controller support in the exact S11 order.
+Missing any of the first five blocks campaign creation or load and explains
+the reason. Missing controller support keeps keyboard-mouse play available and
+clearly states that controller play is unavailable. The check reads no save or
+existing database content.
 
 The supported desktop-browser targets are current Chrome, Edge, and Firefox.
 Automated browser tests run on Chromium, Firefox, and WebKit. Safari is a
@@ -352,24 +352,27 @@ material without direct Safari test evidence.
 The reference performance class is an 11th-generation Intel i5 with Intel Iris
 Xe graphics, 16 GB RAM, and current Chrome. Later performance evidence must
 name the exact device model, graphics driver, operating system, browser, and
-browser version. The target is 60 fps at 1920 × 1080 in Standard and 30 fps at
-1280 × 720 in Low on that reference class. The initial compressed download
-target is no more than 75 MB. It must not exceed 100 MB without renewed
-approval.
+browser version. S11 defines exact Low, Standard, and High pixel ratios,
+detail, frame, processor, workload, memory, loading, and long-session targets.
+The initial clean transfer target remains no more than 75 MB. Above 75 through
+100 MB needs optimization or a separately approved exception. Above 100 MB
+needs renewed approval.
 
 One graphics-profile module owns Low, Standard, and High. These profiles change
 visual cost only, such as shadow quality, render scale, and cosmetic effects.
 They never change rules, route access, information, accessibility content, or
-outcomes. A local build audit reports the compressed initial-download size.
-Frame-rate and long-session resource evidence comes from manual profiling on
-the reference device and supported browser targets; CI cannot make a truthful
-frame-rate claim by itself.
+outcomes. A local build audit reports the clean initial-download size.
+Frame-rate and long-session resource evidence comes from the exact S11 manual
+profiling method on the reference device and supported browser targets; CI
+cannot make a truthful frame-rate claim by itself.
 
 ## Errors, testing, CI, and maintenance
 
 The game has no analytics or automatic error reporting. It shows a plain local
-error message and a copyable sanitized diagnostic code. It must not include a
-save payload, player name, browser storage contents, or other personal data.
+error message and an explicit-copy, memory-only, fixed-order diagnostic of at
+most 2 KiB. S11 fixes its fields, stable code, severity, recovery, development
+boundary, and prohibited player, campaign, storage, device, path, raw-error,
+stack, and personal facts.
 
 Use these quality tools after implementation is authorized:
 

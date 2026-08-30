@@ -304,7 +304,11 @@ three camera roles, Reduced Motion rendering equivalents, complete cutscene
 restoration, the four existing audio controls, sound-caption timing, visible
 audio failure meaning, and Camila's one desk-monitor portrait. Required
 information remains outside the canvas and never depends on colour, motion, or
-sound alone. `MR-IF-010`–`MR-IF-012` are candidate `v1`; none is frozen.
+sound alone. Implementation S11 adds the exact combined blocking-capability
+reasons, non-blocking controller message, player-selected graphics profiles,
+once-per-session local performance advice, and warning, recoverable, and fatal
+diagnostic presentation. It adds no screen outside the S09 inventory.
+`MR-IF-010`–`MR-IF-012` and `MR-IF-014` are candidate `v1`; none is frozen.
 
 The UI must continue to use IndexedDB only for local game data. It must not
 use a cookie for saves, ownership, discovery, or expiry. The active save has
@@ -313,9 +317,10 @@ game time.
 
 ## Deliberate later verification
 
-11-technical-architecture.md and S09–S10 define browser scope, controller
+11-technical-architecture.md and S09–S11 define browser scope, controller
 roles, UI and presentation architecture, pointer-capture behaviour, save
 schemas, migrations, validation, corruption recovery, interface lifecycle,
-and the performance boundary. Exact rendered layout measurements, browser
-results, and implementation evidence remain future facts. This document does
-not authorize implementation code or production assets.
+diagnostic privacy, and the performance boundary. Exact rendered layout
+measurements, browser results, performance results, and implementation evidence
+remain future facts. This document does not authorize implementation code or
+production assets.
