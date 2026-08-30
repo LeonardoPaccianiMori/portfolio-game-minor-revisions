@@ -625,8 +625,10 @@ audio, cutscenes, persistence checkpoint coordination, and tests.
 
 S05 connects exact scheduled, scene, crash, skip, reload, and finalization
 order. S06 now connects exact content objects, references, and the restricted
-rules view. The interface remains candidate until S09 connects projections,
-S12 supplies executable fixtures, and S14 completes the cross-interface audit.
+rules view. S07 connects effects to complete validated, ordered persistence
+operations without changing the 24-command or five-effect unions. The
+interface remains candidate until S09 connects projections, S12 supplies
+executable fixtures, and S14 completes the cross-interface audit.
 
 ## `MR-IF-004` candidate `v1`
 
@@ -637,8 +639,10 @@ one standard Mulberry32 step, bucket mapping, and stored no-redraw rules.
 Owner: `rules`. Consumers: experiment rules, PIIM rules, persistence through
 stored campaign facts, and tests.
 
-It remains candidate until S07 connects persistence, S12 supplies exact
-vectors, and S14 completes the cross-interface audit.
+S07 now preserves every saved draw through canonical round trip, backup,
+recovery, migration, and exact retry without a redraw. It remains candidate
+until S12 supplies exact executable vectors and S14 completes the
+cross-interface audit.
 
 ## S04 acceptance and handoff
 
@@ -657,4 +661,5 @@ S04 is documented when:
 S05 preserves the atomic results and unchanged-state guarantees above and
 defines safe points, time crossings, crashes, events, cutscenes, skip, resume,
 and two-phase finalization order. S06 now supplies the exact authored-content
-connection. S07 is the durable next block.
+connection. S07 now supplies the exact persistence connection without changing
+any rule result.

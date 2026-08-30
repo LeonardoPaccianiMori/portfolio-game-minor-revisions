@@ -187,6 +187,15 @@ belongs in the numbered design documents.
 | 2026-08-30 | Divide immutable validated content into metadata, rules, presentation, and string views; reject invalid content without partial data, profile switching, or saved-data change. | Confirmed |
 | 2026-08-30 | Add the fixed content-invalid message, separate messages from notifications, identify Elena's four-form Week-15 notification, and keep audio data semantic until S10. | Confirmed |
 | 2026-08-30 | Make `MR-IF-006` candidate `v1`, require the named valid and rejected S06 fixture groups without claiming test results, resolve S06, and make S07 the next technical block. | Confirmed |
+| 2026-08-30 | Use IndexedDB database `minor-revisions` at layout version 1 with exactly six stores, fixed singleton keys, campaign-ID ending-card keys, and sequence-based Archive order. | Confirmed |
+| 2026-08-30 | Store one complete canonical campaign envelope, validate it against S03–S06 before every safe save, and atomically rotate the prior valid active save to one backup without partial writes or silent conflict resolution. | Confirmed |
+| 2026-08-30 | Validate active and backup independently, offer backup recovery only after confirmation, preserve migration sources, and provide a separate confirmed discard for unusable campaign records. | Confirmed |
+| 2026-08-30 | Use forward-only direct database, record, campaign-schema, and content migrations; never downgrade or alter a source after failed migration; require confirmation for a one-way campaign update. | Confirmed |
+| 2026-08-30 | Store compact ending cards and permanent Citation unlock sequences, show newest Departures first, retain the newest 12, and complete the Archive, Citation, metadata, active, and backup changes in one transaction. | Confirmed |
+| 2026-08-30 | Confirm New Game replacement, Archive repair, unusable-campaign discard, and whole-database clearing separately; never delete or repair usable unrelated data silently. | Confirmed |
+| 2026-08-30 | Reject stale browser-tab writes, use one persistence-operation queue, close connections for version changes and deletion, and report only the approved safe persistence failure categories. | Confirmed |
+| 2026-08-30 | Use uncompressed canonical campaign JSON with no browser-only encryption or extra checksum, enforce a 1 MiB save limit, and preserve existing data after size, quota, validation, or transaction failure. | Confirmed |
+| 2026-08-30 | Make `MR-IF-007` candidate `v1`, require the named S07 save, recovery, migration, completion, clear, and failure fixture groups without claiming test results, resolve S07, and make S08 the next technical block. | Confirmed |
 
 ## Rules for future entries
 

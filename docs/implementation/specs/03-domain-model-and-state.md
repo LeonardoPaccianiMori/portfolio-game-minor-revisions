@@ -465,8 +465,11 @@ facts. S05 further refines it with the scheduler-field rename, event period
 facts, locked scene form, and final scene-presentation state. These changes
 occur before implementation and freeze, so no save migration exists.
 S06 connects exact content-version and immutable-profile validation through
-candidate `MR-IF-006`. `MR-IF-002` remains candidate until S07 connects
-persistence, S12 supplies executable fixtures, and S14 completes the
+candidate `MR-IF-006`. S07 connects the complete canonical JSON to a strict
+campaign envelope, repeated identity and version checks, the 1 MiB UTF-8
+limit, complete save and load validation, atomic active and backup storage,
+source-preserving migration, and compact completion. `MR-IF-002` remains
+candidate until S12 supplies executable fixtures and S14 completes the
 cross-interface audit. Candidate status does not authorize implementation.
 
 ## S03 acceptance and handoff
@@ -481,6 +484,6 @@ S03 is documented when:
 - S04 is the durable next block; and
 - no code, package, asset, remote, licence, or deployment file exists.
 
-S04 and S05 use and refine this candidate state contract. S06 now supplies its
-exact authored-content connection. S07 must preserve all three contracts when
-it defines persistence, backup, recovery, and migration.
+S04 and S05 use and refine this candidate state contract. S06 supplies its
+exact authored-content connection. S07 preserves all three contracts through
+candidate `MR-IF-007`; it never repairs or partially writes campaign state.

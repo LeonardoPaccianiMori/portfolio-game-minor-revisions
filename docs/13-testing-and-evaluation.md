@@ -38,8 +38,8 @@ Do not present a design-review prediction as a measured result.
 | MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
 | MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures |
 | MR-TEST-WORLD-001 | Floor states and environmental content | Act rosters, scene anchors, environmental display, no required optional fact, and no trapping path |
-| MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 citations, and 12-card retention |
-| MR-TEST-SAVE-001 | IndexedDB persistence and recovery | Safe saves, replacement, backup, migration, corruption, completion, and data clearing |
+| MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 Citations, exact compact cards, newest-first order, and 12-card retention |
+| MR-TEST-SAVE-001 | IndexedDB persistence and recovery | S07 save, recovery, migration, completion, clearing, concurrency, repair, and failure fixture groups |
 | MR-TEST-UI-001 | Main menu, status, prompts, and save controls | Keyboard flow, controller roles where available, text keys, and confirmations |
 | MR-TEST-A11Y-001 | Accessibility baseline | Captions, scale, contrast, motion, Interaction Assist, and browser-view checks |
 | MR-TEST-TECH-001 | Compatibility and deterministic rules | WebGL2, storage, modules, deterministic seed, no elapsed-time advance, and sanitized errors |
@@ -245,13 +245,22 @@ MR-TEST-SAVE-001 and MR-TEST-TECH-001 must show that:
 - browser closure, connection loss, menus, and pause never advance game time;
 - the active campaign is validated before save and the prior valid state is
   available as a backup;
-- a damaged active save offers the backup without overwriting it;
-- a failed migration preserves its source record;
-- campaign completion removes the full active and backup state only after an
-  ending card and Citation state are stored;
-- New Game confirms active-save replacement; and
-- Clear Saved Data confirms before removing settings, save, Archive, Citations,
-  and metadata.
+- exact retry does not rotate backup, while an older, conflicting, invalid,
+  over-1-MiB, quota-failed, or concurrent-tab write changes no record;
+- a damaged or missing active save offers valid backup without silently
+  selecting or changing it;
+- every failed database, record, campaign-schema, or content migration
+  preserves its source;
+- campaign completion atomically stores sequence, ending card, Citation merge,
+  newest-12 retention, metadata advance, and active and backup deletion;
+- New Game confirms atomic active-save replacement;
+- targeted confirmed repairs preserve unrelated valid data; and
+- Clear Saved Data confirms before whole-database deletion, closes connections,
+  reports blocked deletion, and never claims partial success.
+
+S12 must encode `MR-S07-SAV-001`, `MR-S07-REC-001`, `MR-S07-MIG-001`,
+`MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001` with the exact S07
+inputs, results, failure codes, and unchanged-store expectations.
 
 The compatibility flow checks WebGL2, IndexedDB, ES modules, Web Audio, pointer
 lock, and controller availability. Missing WebGL2, IndexedDB, or ES modules

@@ -1,6 +1,6 @@
 # Implementation Specification Open Issues
 
-Status: **S01–S06 resolved; S07 issue group active; no issue silently resolved**
+Status: **S01–S07 resolved; S08 issue group active; no issue silently resolved**
 
 This is the durable clarification ledger for technical specification. It
 tracks missing or undecided material information. It does not contain casual
@@ -27,8 +27,8 @@ ideas or measured results that do not exist yet.
 | MR-IMP-OPEN-004 | S04 | Exact commands, effects, validation order, rejection results, transition algorithms, PRNG use, outcome truth tables, and unchanged-state guarantees | Resolved | `specs/04-commands-rules-and-determinism.md`; MR-IMP-DEC-051–067; MR-IF-003 and MR-IF-004 candidate `v1` |
 | MR-IMP-OPEN-005 | S05 | Exact safe-point ordering, period and week transitions, event eligibility, expiry, scene priority, interruption, cutscene skip, checkpoint, reload, and recap state machines | Resolved | `specs/05-calendar-scheduler-events-and-cutscenes.md`; MR-IMP-DEC-068–086; MR-IF-005 candidate `v1`; MR-IF-011 S05 part draft `v1` |
 | MR-IMP-OPEN-006 | S06 | Exact authored-data file split, object schemas, cross-references, string-file contract, validation order, content versioning, and full/fallback/slice build selection | Resolved | `specs/06-content-data-and-build-profiles.md`; MR-IMP-DEC-087–107; MR-IF-006 candidate `v1` |
-| MR-IMP-OPEN-007 | S07 | Exact database name and version, store and key shapes, transaction boundaries, validation, backup, recovery offers, migration steps, completion retention, and clear-data behaviour | Open; next | Pending `specs/07-persistence-and-recovery.md` |
-| MR-IMP-OPEN-008 | S08 | Exact coordinate and unit system, floor and room dimensions, geometry, collision volumes, player controller values, interaction ranges, anchors, camera, focused stations, and no-trap checks | Open | Pending `specs/08-world-geometry-and-interaction.md` |
+| MR-IMP-OPEN-007 | S07 | Exact database name and version, store and key shapes, transaction boundaries, validation, backup, recovery offers, migration steps, completion retention, and clear-data behaviour | Resolved | `specs/07-persistence-and-recovery.md`; MR-IMP-DEC-108–126; MR-IF-007 candidate `v1` |
+| MR-IMP-OPEN-008 | S08 | Exact coordinate and unit system, floor and room dimensions, geometry, collision volumes, player controller values, interaction ranges, anchors, camera, focused stations, and no-trap checks | Open; next | Pending `specs/08-world-geometry-and-interaction.md` |
 | MR-IMP-OPEN-009 | S09 | Exact action map, focus and pointer-lock states, screen and overlay inventory, component behaviour, responsive layout, controller navigation, settings, and accessibility acceptance | Open | Pending `specs/09-input-ui-and-accessibility.md` |
 | MR-IMP-OPEN-010 | S10 | Exact render pipeline, scene graph, cameras, lighting, materials, animation, resource ownership, placeholder and provenance path, audio graph, cue priority, and cutscene presentation | Open | Pending `specs/10-rendering-resources-assets-and-audio.md` |
 | MR-IMP-OPEN-011 | S11 | Exact compatibility detection, graphics-profile values, CPU/GPU and memory budgets, download budgets, profiling method, diagnostics format, privacy boundary, and response to failed measurements | Open | Pending `specs/11-browser-performance-and-diagnostics.md` |
@@ -46,4 +46,4 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-The current active group is `MR-IMP-OPEN-007`.
+The current active group is `MR-IMP-OPEN-008`.

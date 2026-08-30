@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-005` candidate; `MR-IF-011` S05 part draft; no interface frozen**
+Status: **`MR-IF-001`–`MR-IF-007` candidate; `MR-IF-011` S05 part draft; no interface frozen**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -24,12 +24,12 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 | ID | Interface | Owning block | Planned consumers | State | Version and owner | Required freeze evidence |
 |---|---|---|---|---|---|---|
 | MR-IF-001 | Runtime bootstrap and application lifecycle | S01–S02 | All runtime modules, UI, tests | Candidate | `v1`; controller owner: `application`; browser-entry owner: `bootstrap` | `MR-S02-FIX-001`–`010`; connected executable format pending S12; cross-interface audit pending S14 |
-| MR-IF-002 | `CampaignState` and serializable domain types | S03–S06 | Rules, scheduler, content, persistence, UI, cutscenes, tests | Candidate | `v1`; owner: `rules` | Complete schema and invariants; exact experiment variation, raw-record, evidence-card, PIIM-lock, content-history, ending-module, scheduler-event, locked-scene-form, final-presentation, content-version, and immutable-profile facts; `MR-S03-FIX-001`; `MR-S03-REJ-001`–`005` and connected variants; S07 persistence connection; S12 executable format; S14 audit |
+| MR-IF-002 | `CampaignState` and serializable domain types | S03–S07 | Rules, scheduler, content, persistence, UI, cutscenes, tests | Candidate | `v1`; owner: `rules` | Complete schema and invariants; exact experiment variation, raw-record, evidence-card, PIIM-lock, content-history, ending-module, scheduler-event, locked-scene-form, final-presentation, content-version, immutable-profile, canonical persistence round-trip, envelope agreement, and 1 MiB facts; `MR-S03-FIX-001`; `MR-S03-REJ-001`–`005`; `MR-S07-SAV-001` and connected variants; S12 executable format; S14 audit |
 | MR-IF-003 | Rule command, rejection, effect, and transition result | S04–S06 | Application, interaction, UI, scheduler, audio, cutscenes, persistence coordination, tests | Candidate | `v1`; owner: `rules` | One valid vector for all 24 commands; all 15 rejections and six faults; unchanged-state, atomicity, rule-table, route, ending, scheduler, scene, two-phase finalization, and restricted-content-view fixtures; S09 and S12 connections; S14 audit |
-| MR-IF-004 | Stateless deterministic variation | S04 | Experiment rules, PIIM rules, persistence through campaign facts, tests | Candidate | `v1`; owner: `rules` | Exact UTF-8/FNV-1a/Mulberry32 vectors; bucket boundaries; namespace isolation; reload, retry, unrelated-command, rejected-command, and no-redraw fixtures; S07 and S12 connections; S14 audit |
-| MR-IF-005 | Safe-point scheduler and event queue | S05–S06 | Application, rules, narrative, cutscenes, persistence, UI, content validation, tests | Candidate | `v1`; owner: `rules` | Complete trigger and result unions, ordering, priority, lifecycle, expiry, crash, message, room, late-gate, ending, fault, invariant, and exact authored-reference contract; `MR-S05-CAL-001`, `MR-S05-SCH-001`, `MR-S05-CRS-001`, `MR-S05-MSG-001`, `MR-S05-ROOM-001`, `MR-S05-GATE-001`, `MR-S05-END-001`, `MR-S05-FLT-001`, and connected journeys; S07, S09, S10, and S12 connections; S14 audit |
-| MR-IF-006 | Authored content objects, references, strings, and build profiles | S06 | Rules, scheduler, application bootstrap, UI, audio, cutscenes, content tests | Candidate | `v1`; owner: `content` | Strict source package and immutable views; `MR-S06-VAL-001`, `MR-S06-FBK-001`, `MR-S06-SLC-001`, `MR-S06-REF-001`, `MR-S06-STR-001`, `MR-S06-OBJ-001`, `MR-S06-MIG-001`, and `MR-S06-FLT-001`; S07 migration connection; S09–S10 consumers; S12 executable format; S14 audit |
-| MR-IF-007 | IndexedDB persistence and migration boundary | S07 | Rules state, settings UI, Continue/New Game, Archive | Not started | Pending S07 | Round trip, backup, corrupt active, corrupt backup, migration, and clear-data fixtures |
+| MR-IF-004 | Stateless deterministic variation | S04 and S07 | Experiment rules, PIIM rules, persistence through campaign facts, tests | Candidate | `v1`; owner: `rules` | Exact UTF-8/FNV-1a/Mulberry32 vectors; bucket boundaries; namespace isolation; reload, retry, unrelated-command, rejected-command, and no-redraw fixtures; saved canonical round trip and migration preservation in `MR-S07-SAV-001` and `MR-S07-MIG-001`; S12 executable format; S14 audit |
+| MR-IF-005 | Safe-point scheduler and event queue | S05–S07 | Application, rules, narrative, cutscenes, persistence, UI, content validation, tests | Candidate | `v1`; owner: `rules` | Complete trigger and result unions, ordering, priority, lifecycle, expiry, crash, message, room, late-gate, ending, fault, invariant, exact authored-reference, physical checkpoint, load, and recovery contract; S05 fixtures and journeys plus `MR-S07-SAV-001`, `MR-S07-REC-001`, and `MR-S07-CMP-001`; S09–S10 consumers; S12 executable format; S14 audit |
+| MR-IF-006 | Authored content objects, references, strings, and build profiles | S06–S07 | Rules, scheduler, application bootstrap, persistence, UI, audio, cutscenes, content tests | Candidate | `v1`; owner: `content` | Strict source package and immutable views; S06 fixture groups; exact stored version, profile, saved-reference, direct-mapping, Citation, and ending-card checks in `MR-S07-MIG-001` and `MR-S07-CMP-001`; S09–S10 consumers; S12 executable format; S14 audit |
+| MR-IF-007 | IndexedDB persistence and migration boundary | S07 | Rules state, settings UI, Continue/New Game, Archive | Candidate | `v1`; owner: `persistence` | Complete database, store, key, envelope, transaction, validation, backup, recovery, migration, settings, Archive, completion, concurrency, clear-data, lifecycle, and failure contract; `MR-S07-SAV-001`, `MR-S07-REC-001`, `MR-S07-MIG-001`, `MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001`; S09 UI consumer; S12 executable format; S14 browser and cross-interface audit |
 | MR-IF-008 | World state and presentation projection | S08–S10 | Renderer, interaction, UI, cutscenes, rules effects | Not started | Pending S10 | Act change, room state, character anchor, visibility, and teardown fixtures |
 | MR-IF-009 | Action-based input and interaction target | S08–S09 | Player controller, stations, UI, cutscenes, accessibility | Not started | Pending S09 | Keyboard, controller, pointer lock, focus, remap, and invalid-target fixtures |
 | MR-IF-010 | UI view model and semantic action dispatch | S09 | Rules, persistence, input, captions, menus, tests | Not started | Pending S09 | Screen-state, focus, scale, confirmation, error, and action-cost fixtures |
@@ -48,11 +48,12 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 `specs/04-commands-rules-and-determinism.md`. `MR-IF-005` is candidate `v1`
 through `specs/05-calendar-scheduler-events-and-cutscenes.md` and its approved
 S06 content connection. `MR-IF-006` is candidate `v1` through
-`specs/06-content-data-and-build-profiles.md`. The S05-owned campaign part of
-`MR-IF-011` is draft `v1`; S10 still owns its presentation completion. S07,
-S09, S10, and S12 must make the connected contracts and executable fixtures
-named in the table; S14 must complete the cross-interface audit before an
-applicable interface can become frozen.
+`specs/06-content-data-and-build-profiles.md`. `MR-IF-007` is candidate `v1`
+through `specs/07-persistence-and-recovery.md`. The S05-owned campaign part of
+`MR-IF-011` is draft `v1`; S10 still owns its presentation completion. S09,
+S10, and S12 must make the connected contracts and executable fixtures named
+in the table; S14 must complete the cross-interface audit before an applicable
+interface can become frozen.
 
 No interface is frozen. No implementation worker can use candidate status as
 permission to create a signature or source file. A change to any candidate

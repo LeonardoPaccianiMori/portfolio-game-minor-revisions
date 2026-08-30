@@ -13,7 +13,7 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **implementation specification; creative design, two independent
-review passes, and S00–S06 complete; S07 is next; all implementation gates
+review passes, and S00–S07 complete; S08 is next; all implementation gates
 blocked**.
 
 This repository contains design documentation only. It contains no game
@@ -42,10 +42,11 @@ command, rule, deterministic-variation, truth-table, and unchanged-state
 contract. S05 freezes the documented calendar, safe-point, scheduler, event,
 crash, message, room, cutscene, skip, reload, recap, and finalization order.
 S06 freezes the documented authored-data, reference, English-string, profile,
-validation, and content-compatibility contract. `MR-IF-001`–`MR-IF-006` are
-candidates for later consistency review, and the S05 campaign part of
-`MR-IF-011` is draft. None creates package or runtime files. S07 will define
-persistence, backup, recovery, and save migration.
+validation, and content-compatibility contract. S07 freezes the documented
+IndexedDB, save, backup, recovery, migration, Archive, and local-data-clearing
+contract. `MR-IF-001`–`MR-IF-007` are candidates for later consistency review,
+and the S05 campaign part of `MR-IF-011` is draft. None creates package or
+runtime files. S08 will define world geometry and interaction.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

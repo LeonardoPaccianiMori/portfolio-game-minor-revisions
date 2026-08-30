@@ -930,7 +930,9 @@ level. It is not frozen and does not authorize implementation.
 rules view and unchanged totals of 24 commands and five presentation effects.
 `MR-IF-005` remains candidate `v1` with final event, delivery, order, cue, and
 profile-reference checks. The campaign-facing part of `MR-IF-011` remains
-draft `v1`. No interface is frozen.
+draft `v1`. S07 now connects exact stored content versions, immutable profiles,
+saved reference validation, direct mapping, ending-card references, and
+Citation records through candidate `MR-IF-007`. No interface is frozen.
 
 ## S06 acceptance and handoff
 
@@ -946,6 +948,7 @@ S06 is documented only when:
 - the repository control documents agree; and
 - Leonardo's approved documentation is committed.
 
-S07 is next. It must define the exact IndexedDB stores, keys, transactions,
-validation, backup, recovery, content-version migration operation, completion
-retention, and clear-data behaviour. All implementation gates remain blocked.
+S07 now defines the exact IndexedDB stores, keys, transactions, validation,
+backup, recovery, content-version migration operation, completion retention,
+and clear-data behaviour. It preserves this S06 content contract. All
+implementation gates remain blocked.

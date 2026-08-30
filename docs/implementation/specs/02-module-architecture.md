@@ -152,10 +152,13 @@ nothing remotely, and cannot inspect saves or campaign data.
 | `InputControlPort` | `start()`, `setMode(mode)`, `readFrameInput()`, `applyBindings(bindings)`, `stop()` |
 | `UiPort` | `start()`, `showBoot(status)`, `showStartMenu(data)`, `openCampaign(projection)`, `present(projection)`, `updateFrame(frameData)`, `closeCampaign()`, `showFatal(diagnostic)`, `stop()` |
 
-Persistence operations return typed results. The exact records, transaction
-rules, and recovery choices belong to S07. Input sends discrete actions
-through `submit(request)` and supplies continuous movement and look input once
-per frame. UI receives no full campaign state.
+Persistence operations return the S07 common asynchronous success-or-failure
+result. S07 fixes their exact inputs, outputs, queue, records, transaction
+rules, validation, recovery, migration, Archive, clearing, lifecycle, and
+failure codes through candidate `MR-IF-007`. Only `persistence` can access
+IndexedDB. Input sends discrete actions through `submit(request)` and supplies
+continuous movement and look input once per frame. UI receives no full
+campaign state or raw stored record.
 
 ### Player, world, and interaction
 
@@ -238,7 +241,9 @@ The complete startup order is:
 2. Start the boot screen and diagnostic path.
 3. Check browser capabilities.
 4. Validate authored content.
-5. Start persistence and read settings and save metadata.
+5. Start persistence, complete approved layout and supporting-record
+   migrations, and read safe settings, metadata, campaign, Archive, and
+   Citation summaries.
 6. Create or start the coordinator and remaining browser modules.
 7. Prepare required presentation resources.
 8. Start input and show Continue or New Game only when startup is ready.

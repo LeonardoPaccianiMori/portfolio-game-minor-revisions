@@ -231,11 +231,17 @@ a new campaign seed but does not keep a second active campaign. If an active
 save exists, the player must confirm its replacement. On completion, the game
 removes the full active state and adds a compact ending card to the local
 Archive's **Departures** area. Departures keeps the 12 most recent ending cards
-as a chronological record. It shows no empty card slots, expected-run count, or
-completion percentage. The separate **Institutional Citations** area is a
-visible persistent 12-item collectible set. It carries no gameplay advantage,
-route, or state into a new campaign. There is no chapter rewind or free return
-to an earlier decision.
+as a newest-first chronological record. Each compact card stores the selected
+ending modules, final evidence label, five trust values and consequence
+references, one dramatized afterbeat, and the Citations unlocked in that run.
+It does not retain the completed campaign or copied English text. Departures
+shows no empty card slots, expected-run count, or completion percentage. The
+separate **Institutional Citations** area is a visible persistent 12-item
+collectible set ordered by first unlock. It carries no gameplay advantage,
+route, or state into a new campaign. Completion stores the card and Citations
+before it removes the active campaign and backup. There is no chapter rewind
+or free return to an earlier decision. Implementation S07 owns the exact
+records, atomic transaction, retention, retry, recovery, and clearing rules.
 
 The approximately three-hour first campaign is the complete intended
 experience. Replay is optional and can explore different ethics,

@@ -199,13 +199,20 @@ safe save can contain queued events and a pending crash, but not an active
 scene. Save and Quit during an unresolved scene returns to the verified
 pre-scene checkpoint. After the result is saved, it uses the verified
 post-scene state. On campaign completion, the game removes the full active
-state and retains a compact ending card. Archive has two areas. **Departures**
-keeps the 12 most recent ending cards as a chronological record without empty
-slots, an expected-run count, or a completion percentage. **Institutional
-Citations** shows the persistent 12-item collectible set. Neither gives a
-gameplay advantage. The Archive does not retain full earlier saves or every
-previous cinematic. Settings includes **Clear Saved Data** with a clear
-confirmation.
+state and backup only after it atomically stores the compact ending card and
+Citation state. Archive has two areas. **Departures** shows the 12 most recent
+ending cards newest first, without empty slots, an expected-run count, or a
+completion percentage. **Institutional Citations** shows the persistent
+12-item collectible set. Neither gives a gameplay advantage. The Archive does
+not retain full earlier saves or every previous cinematic.
+
+Continue uses the valid active campaign. If active is missing or unusable and
+backup is valid, the UI offers recovery and never chooses it silently. Separate
+confirmations govern New Game replacement, unusable-campaign discard, damaged
+Archive repair, one-way campaign migration, and **Clear Saved Data**. Clear
+Saved Data lists settings, campaign, backup, Departures, Citations, and
+metadata. It deletes the complete local database or reports failure; it never
+claims partial success. S07 supplies the exact safe result and failure codes.
 
 Skip before an unresolved cutscene choice advances to that choice and cannot
 select it. After a choice, the player can play or skip the remaining

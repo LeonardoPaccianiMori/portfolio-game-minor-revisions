@@ -139,8 +139,9 @@ S04 also fixes the time and energy operation, experiment and evidence rules,
 manuscript and integrity truth, PIIM buckets, career-route checks, and ending
 resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
 scheduler and campaign-facing cutscene coordination. S06 now defines authored
-content and candidate `MR-IF-006`. S07, S09–S10, S12, and S14 still own their
-named connected contracts and freeze evidence.
+content and candidate `MR-IF-006`. S07 now defines persistence and candidate
+`MR-IF-007`. S09–S10, S12, and S14 still own their named connected contracts
+and freeze evidence.
 
 ### Content and strings contract
 
@@ -271,43 +272,44 @@ audio is unavailable or muted.
 
 ## Local persistence and recovery
 
-Use one versioned IndexedDB database. Its logical stores are:
+Use IndexedDB database `minor-revisions`, starting at layout version `1`. Its
+exact stores and singleton keys are:
 
 | Store | Contents | Retention |
 |---|---|---|
-| `settings` | Audio, display, control, accessibility, and local-data preferences. | Until the player clears local data. |
-| `activeCampaign` | One validated unfinished `CampaignState`. | Replaced at each verified safe save. |
-| `activeCampaignBackup` | One last-known-good validated active-campaign record. | Stores the prior record that passed validation before the latest safe save. |
-| `endingCards` | Compact completion records shown as **Departures**. | Keep the 12 most recent cards. |
-| `institutionalCitations` | Persistent citation unlock record. | Persists between campaigns. |
-| `metadata` | Database schema version, migration history, and technical record metadata. | Managed only by the persistence module. |
+| `settings` | `current`; audio, display, control, accessibility, and local-data preferences. | Until the player clears local data. |
+| `activeCampaign` | `current`; one validated unfinished canonical campaign envelope. | Replaced at each verified safe save. |
+| `activeCampaignBackup` | `previous`; one last-known-good campaign envelope. | Stores the prior active record that passed validation. |
+| `endingCards` | Campaign ID; compact completion records shown as **Departures**. | Keep the 12 highest completion sequences. |
+| `institutionalCitations` | `current`; Citation IDs and first-unlock sequences. | Persists between campaigns. |
+| `metadata` | `database`; layout version, direct migration history, and next completion sequence. | Managed only by persistence. |
 
-Before a save, validate the serializable campaign data. In one IndexedDB
-transaction, preserve the prior verified active record as backup and write the
-new active record. Save and Quit waits for that transaction to complete and
-reports a failure clearly if it cannot complete.
+Before a save, validate the complete canonical campaign, content references,
+profile, version, and S05 safe point. Enforce the 1 MiB canonical-JSON limit.
+In one transaction, preserve the prior verified active record as backup and
+write the new active record. Exact retry is idempotent. Older, conflicting,
+invalid, quota-failed, or concurrent-tab writes change neither record. Save
+and Quit waits for the correct transaction and reports failure clearly.
 
-On load, validate the active record with its declared schema version. If it
-fails, validate and offer the backup. A recovery never overwrites the failing
-source record before the player accepts it. If both records fail, explain the
-problem in plain language and offer a confirmed reset. Do not use a cookie for
-save state, ownership, or discovery.
+On load, validate active and backup separately. Continue loads active only. If
+active is missing or unusable and backup is valid, offer recovery; never select
+backup silently. Accepted recovery copies validated backup to active and keeps
+backup unchanged. If neither record is usable, offer confirmed campaign-only
+discard. Do not use a cookie for save state, ownership, or discovery.
 
-Migrations are forward-only and tested. A migration reads and validates a
-source record, creates a new valid record, and only then replaces the stored
-version. A failed migration leaves the source record unchanged. Game state
-never uses real elapsed time, so browser closure and connection loss cannot
-advance the semester.
+Migrations are forward-only direct approved steps. Each validates its source,
+creates and validates a copy, and only then writes. Campaign migration needs
+confirmation and preserves the source as backup. A failed migration leaves the
+source unchanged. Game state never uses real elapsed time.
 
-At completion, one transaction creates the ending card, retains the 12 newest
-cards, updates citations, and removes full active-campaign and backup data.
-The UI presents ending cards chronologically as Departures without empty slots
-or a completion percentage. It presents Institutional Citations separately as
-the persistent 12-item collectible set.
-New Game confirms replacement of an active campaign and creates a new seed.
-Clear Saved Data requires confirmation and removes this database, including
-settings, campaign records, archive, citations, and metadata. The running UI
-then returns to default settings.
+At completion, one transaction assigns a completion sequence, stores the card,
+merges Citation first-unlock sequences, retains the 12 highest sequences,
+advances metadata, and removes active and backup. Departures appears newest
+first without empty slots or a completion percentage. New Game confirms and
+atomically replaces a usable active campaign. Clear Saved Data confirms and
+deletes the complete database after connections close. S07 defines targeted
+Archive repair, metadata recovery, the operation queue, the eight-operation
+candidate `MR-IF-007`, and all failure cases.
 
 ## Browser, deployment, and performance boundary
 

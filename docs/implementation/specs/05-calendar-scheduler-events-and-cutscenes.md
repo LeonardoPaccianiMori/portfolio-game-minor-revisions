@@ -810,9 +810,11 @@ departure while a route exists. Every case reaches **06:42**, saves the five
 ending modules, completes or skips the epilogue, and completes the campaign
 exactly once.
 
-S06 supplies final content references. S07 supplies physical save fixtures.
-S09 supplies player-visible UI fixtures. S10 supplies complete presentation
-fixtures. S12 joins them without weakening this S05 campaign order.
+S06 supplies final content references. S07 supplies the exact physical
+checkpoint, required-save blocking, backup, load, recovery, migration, and
+completion transactions plus persistence fixture groups. S09 supplies
+player-visible UI fixtures. S10 supplies complete presentation fixtures. S12
+joins them without weakening this S05 campaign order.
 
 ## Interface lifecycle
 
@@ -820,7 +822,9 @@ fixtures. S12 joins them without weakening this S05 campaign order.
 outputs, triggers, failures, invariants, and required fixtures are complete at
 the specification level. It is not frozen and does not authorize code. S06
 now supplies its authored event, delivery, cue, form, choice, and reference
-connection. S07, S09, S10, S12, and S14 still owe connected evidence.
+connection. S07 now supplies its persistence specification connection through
+candidate `MR-IF-007`; S09, S10, S12, and S14 still owe their connected
+evidence.
 
 The campaign-facing part of `MR-IF-011` is draft `v1`. It cannot become
 candidate until S10 defines presentation timelines, camera, actors, audio,
@@ -848,4 +852,5 @@ S05 is documented only when:
 
 S06 now defines the exact content-data split, schemas, references, delivery
 data, stable IDs, English strings, full/fallback/slice profiles, validation,
-and content migration meaning without changing this S05 order. S07 is next.
+and content migration meaning without changing this S05 order. S07 now
+defines physical storage and recovery without changing this S05 order.
