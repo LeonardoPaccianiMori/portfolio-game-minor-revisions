@@ -481,6 +481,11 @@ S08 maps the saved semantic `world` facts into its draft world projection and
 fixed spatial plan without refining this serializable state. It preserves the
 S03 rule that browser pose and camera data are never campaign facts.
 
+S09 maps only approved player-visible campaign facts into candidate
+`MR-IF-010`. It does not expose the complete state, hidden values, mutable
+content, pointer capture, input mode, selected screen, or other temporary
+presentation data through `MR-IF-002`.
+
 ## S03 acceptance and handoff
 
 S03 is documented when:

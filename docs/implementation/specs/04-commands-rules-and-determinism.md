@@ -629,8 +629,9 @@ rules view. S07 connects effects to complete validated, ordered persistence
 operations without changing the 24-command or five-effect unions. S08 now
 connects typed station and target requests to this boundary without adding a
 command, effect, or presentation authority. The interface remains candidate
-until S09 connects projections, S12 supplies executable fixtures, and S14
-completes the cross-interface audit.
+with the S09 revision-safe UI projection and semantic action-dispatch
+connection. S12 still supplies executable fixtures, and S14 completes the
+cross-interface audit.
 
 ## `MR-IF-004` candidate `v1`
 
@@ -664,4 +665,6 @@ S05 preserves the atomic results and unchanged-state guarantees above and
 defines safe points, time crossings, crashes, events, cutscenes, skip, resume,
 and two-phase finalization order. S06 now supplies the exact authored-content
 connection. S07 now supplies the exact persistence connection without changing
-any rule result.
+any rule result. S08 supplies typed world targets, and S09 supplies only
+revision-safe semantic requests and factual presentation of applied, rejected,
+or fault results.

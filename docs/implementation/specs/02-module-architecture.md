@@ -158,7 +158,10 @@ rules, validation, recovery, migration, Archive, clearing, lifecycle, and
 failure codes through candidate `MR-IF-007`. Only `persistence` can access
 IndexedDB. Input sends discrete actions through `submit(request)` and supplies
 continuous movement and look input once per frame. UI receives no full
-campaign state or raw stored record.
+campaign state or raw stored record. S09 now fixes the exact five input modes,
+device conversion, binding rules, complete revisioned UI projection, semantic
+action dispatch, screen lifecycle, settings, and player-facing failure use
+through candidate `MR-IF-009` and `MR-IF-010`.
 
 ### Player, world, and interaction
 
@@ -171,10 +174,10 @@ campaign state or raw stored record.
 Player results contain plain position and view data. Movement and interaction
 contexts contain only the collision or target information required for the
 current operation. `resolveAction` returns a request and cannot apply it.
-S08 now fixes the plain frame values, player result, contexts, target geometry,
-focus geometry, lifecycle meanings, and S08 fault boundary. S09 still defines
-device conversion, remapping, pointer lock, complete focus state, prompts, and
-accessibility use.
+S08 fixes the plain frame values, player result, contexts, target geometry,
+focus geometry, lifecycle meanings, and S08 fault boundary. S09 now defines
+device conversion, remapping, pointer capture, complete focus state, prompts,
+and accessibility use. Their connected `MR-IF-009` is candidate `v1`.
 
 ### Rendering, audio, and cutscenes
 
@@ -390,7 +393,8 @@ The following are deliberately deferred to their owning blocks:
 - authored content and `ValidatedContent` schemas: S06;
 - persistence records and transaction algorithms: S07;
 - world, movement, camera, and interaction values: S08;
-- input modes, UI models, settings, and accessibility detail: S09;
+- input modes, UI models, settings, and accessibility detail: S09, now
+  documented through candidate `MR-IF-009` and `MR-IF-010`;
 - rendering, asset, animation, audio, and cutscene presentation data: S10;
 - compatibility results and diagnostic fields: S11; and
 - executable fixtures and the acceptance matrix: S12.

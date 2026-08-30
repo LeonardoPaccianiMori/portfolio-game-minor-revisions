@@ -14,7 +14,7 @@ content and semantic location identities. S07 owns persistence. S08 maps those
 plain facts to one fixed navigable floor and supplies plain movement and target
 contexts. It does not give presentation code authority over campaign truth.
 
-S09 still owns device inputs, remapping, pointer lock, complete focus state,
+S09 now owns device inputs, remapping, pointer capture, complete focus state,
 prompts, UI, and accessibility presentation. S10 still owns Three.js objects,
 rendering, lighting, visual transitions, resources, animation, audio, and
 cutscene camera work. S12 will encode the fixtures named here. S14 will audit
@@ -740,11 +740,11 @@ passage, and world lifecycle. S10 must still define renderer, resource,
 visibility, transition, and cutscene presentation before the complete
 interface can become candidate.
 
-The S08 part of `MR-IF-009` is draft `v1`. It defines device-independent frame
-values, player result, collision and interaction contexts, target geometry,
-selection, station-focus geometry, and S08 rejections. S09 must still define
-device mappings, remapping, pointer lock, complete focus states, prompts, and
-accessibility behaviour before the complete interface can become candidate.
+`MR-IF-009` is candidate `v1`. S08 defines device-independent frame values,
+player result, collision and interaction contexts, target geometry, selection,
+station-focus geometry, and S08 rejections. S09 now defines device mappings,
+remapping, pointer capture, complete focus states, prompts, and accessibility
+behaviour.
 
 `MR-IF-001`–`MR-IF-007` remain candidate `v1`. The S05 campaign-facing part of
 `MR-IF-011` remains draft `v1`. No interface is frozen, and no status authorizes
@@ -759,13 +759,14 @@ S08 is documented only when:
   lifecycle, failure, traversal, and fixture contract is present;
 - S02–S07 and the connected numbered design documents contain no
   contradictory world or interaction claim;
-- the S08 parts of `MR-IF-008` and `MR-IF-009` are draft `v1` with later owner
-  work named explicitly;
+- the S08 part of `MR-IF-008` remains draft `v1` with S10 work named, while the
+  connected S08–S09 `MR-IF-009` is candidate `v1`;
 - `MR-IMP-OPEN-008` is resolved;
-- the implementation controls agree that S09 is next;
+- the implementation controls preserve the documented S08 result and record
+  S10 as the current next block after documented S09;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S09 is the next technical-specification block. It owns input, UI, and
-accessibility. It cannot begin until the S08 documentation commit exists and
-Leonardo separately approves moving to S09.
+S09 now owns the documented input, UI, and accessibility connection. S10 is the
+next technical-specification block. It cannot begin until the S09 documentation
+commit exists and Leonardo separately approves moving to S10.

@@ -268,6 +268,13 @@ S12 must encode `MR-S07-SAV-001`, `MR-S07-REC-001`, `MR-S07-MIG-001`,
 `MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001` with the exact S07
 inputs, results, failure codes, and unchanged-store expectations.
 
+S12 must also encode `MR-S09-INP-001`, `MR-S09-FOC-001`, `MR-S09-UI-001`,
+`MR-S09-SET-001`, `MR-S09-A11Y-001`, `MR-S09-ERR-001`, `MR-S09-RSP-001`,
+`MR-S09-LIF-001`, and `MR-S09-JRN-001`. These fixtures use the exact S09
+actions, values, modes, screens, settings, messages, lifecycle, layout sizes,
+contrast ratios, and complete device journeys. No S09 test or result exists
+yet.
+
 The compatibility flow checks WebGL2, IndexedDB, ES modules, Web Audio, pointer
 lock, and controller availability. Missing WebGL2, IndexedDB, or ES modules
 blocks a new campaign. Missing controller support retains keyboard-mouse play.
@@ -293,12 +300,21 @@ MR-TEST-UI-001 and MR-TEST-A11Y-001 must show that:
   evidence-card, and relevant-expiry consequences;
 - the active pressure profile cannot change inside an active save;
 - 150 percent text and UI scale remains usable at 1280 by 720;
+- the 960 by 540 minimum remains usable at 100 percent scale, and wider and
+  4:3 desktop layouts preserve required controls;
+- normal text has at least 4.5:1 contrast, while large text, focus outlines,
+  and essential control shapes have at least 3:1;
 - reduced motion removes non-essential movement and flashes without removing
   required information;
 - Interaction Assist highlights only usable objects in the current room; and
 - close-range environmental text uses semantic scaled text, yields to a
   higher-priority interaction, and receives no Interaction Assist marker; and
 - a browser view that is too small pauses safely and gives resize advice.
+
+The accessibility evidence also includes automated semantic-control checks and
+one manual assistive-reading check. It is practical evidence for the approved
+baseline, not a claim of complete assistive-technology certification or
+vision-free 3D navigation.
 
 ### Performance, assets, privacy, and release checks
 

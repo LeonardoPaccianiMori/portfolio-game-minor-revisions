@@ -140,8 +140,8 @@ manuscript and integrity truth, PIIM buckets, career-route checks, and ending
 resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
 scheduler and campaign-facing cutscene coordination. S06 now defines authored
 content and candidate `MR-IF-006`. S07 now defines persistence and candidate
-`MR-IF-007`. S09–S10, S12, and S14 still own their named connected contracts
-and freeze evidence.
+`MR-IF-007`. S09 now defines candidate `MR-IF-009` and `MR-IF-010`. S10, S12,
+and S14 still own their named connected contracts and freeze evidence.
 
 ### Content and strings contract
 
@@ -271,6 +271,13 @@ Keyboard and mouse use the approved B08 defaults. Both input systems support
 all core actions and remapping. Pointer lock is active only during free
 first-person movement. It is released for UI, focused views, menus, and
 cutscenes.
+
+S09 fixes the exact action list, bindings, device conversion, sensitivity,
+dead zones, repeat rules, five input modes, pointer-capture recovery, complete
+screen inventory, revisioned read-only UI projection, semantic action dispatch,
+settings schema, responsive behaviour, player-facing storage failures,
+accessibility acceptance, and UI lifecycle. `MR-IF-009` and `MR-IF-010` are
+candidate `v1`; this status does not authorize source creation.
 
 One Web Audio API Audio Manager owns Master, Music, Ambience/Effects, and
 Dialogue Sounds buses. It starts only after player interaction. Required

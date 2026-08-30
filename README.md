@@ -13,7 +13,7 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **implementation specification; creative design, two independent
-review passes, and S00–S08 complete; S09 is next; all implementation gates
+review passes, and S00–S09 complete; S10 is next; all implementation gates
 blocked**.
 
 This repository contains design documentation only. It contains no game
@@ -46,10 +46,12 @@ validation, and content-compatibility contract. S07 freezes the documented
 IndexedDB, save, backup, recovery, migration, Archive, and local-data-clearing
 contract. S08 freezes the documented spatial plan, floor, collision, player,
 camera, anchor, target, focused-station, and world-projection contract.
-`MR-IF-001`–`MR-IF-007` are candidates for later consistency review; the S08
-parts of `MR-IF-008` and `MR-IF-009` and the S05 campaign part of `MR-IF-011`
-are draft. None creates package or runtime files. S09 will define input, UI,
-and accessibility.
+S09 freezes the documented action, device, focus, pointer-capture, screen,
+settings, responsive-layout, accessibility, UI-projection, and error contract.
+`MR-IF-001`–`MR-IF-007`, `MR-IF-009`, and `MR-IF-010` are candidates for later
+consistency review; the S08 part of `MR-IF-008` and the S05 campaign part of
+`MR-IF-011` are draft. None creates package or runtime files. S10 will define
+rendering, resources, assets, and audio.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

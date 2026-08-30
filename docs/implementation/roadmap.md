@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S08 documented; S09 is next; no code authorized**
+Status: **S00–S09 documented; S10 is next; no code authorized**
 
 ## Purpose
 
@@ -126,8 +126,8 @@ full-game evaluation gates still apply during production.
 | S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Documented |
 | S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Documented |
 | S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Documented |
-| S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Not started; next |
-| S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Not started |
+| S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Documented |
+| S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Not started; next |
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Not started |
 | S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Not started |
 | S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Not started |
@@ -198,9 +198,9 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S08 documentation commit, ask Leonardo whether he approves moving to
-S09. If he approves, decide the exact action map, focus and pointer-lock state,
-screen and overlay inventory, UI view model, responsive behaviour, controller
-navigation, settings, and accessibility acceptance. Use the candidate S02–S06
-contracts and the draft S08 world and interaction interfaces. Do not create
-files from the planned runtime tree.
+After the S09 documentation commit, ask Leonardo whether he approves moving to
+S10. If he approves, decide the exact render pipeline, scene graph, cameras,
+lighting, materials, animation, resource ownership, placeholder and provenance
+path, audio graph, cue priority, and cutscene presentation. Use the candidate
+S01–S09 contracts and the draft S08 world and S05 cutscene-presentation
+interfaces. Do not create files from the planned runtime tree.

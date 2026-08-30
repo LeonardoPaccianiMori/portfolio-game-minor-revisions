@@ -673,7 +673,8 @@ S07 is documented only when:
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S08 now defines world geometry and interaction without changing this S07
-persistence contract. S09 is the next technical-specification block. It owns
-input, UI, and accessibility and cannot begin until the S08 documentation
-commit exists and Leonardo separately approves moving to S09.
+S08 defines world geometry and interaction without changing this S07
+persistence contract. S09 now defines the complete settings record,
+Continue/New Game, recovery, migration, repair, clear-data, cross-tab, and
+nine-code player-facing UI consumer without changing S07 transactions or
+failure meanings. S10 is the next technical-specification block.

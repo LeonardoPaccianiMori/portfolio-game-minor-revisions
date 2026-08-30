@@ -52,11 +52,12 @@ time by itself. Time advances only when the player confirms a time-costing
 task. Focused views use clear selections and ordinary confirm actions, not
 drag-only, hold-only, timed, or precision-motor input.
 
-`implementation/specs/08-world-geometry-and-interaction.md` now fixes the
+`implementation/specs/08-world-geometry-and-interaction.md` fixes the
 supporting spatial contract: camera limits, interaction range, target priority,
-environmental glance priority, and focused-station entry and return. S09 still
-owns the player-facing prompt, pointer-lock, input, focus, and accessibility
-behaviour.
+environmental glance priority, and focused-station entry and return.
+`implementation/specs/09-input-ui-and-accessibility.md` now fixes the complete
+player-facing action, binding, pointer-capture, input-mode, prompt, focus,
+screen, settings, accessibility, responsive-layout, and failure behaviour.
 
 ## Gameplay interface
 
@@ -292,6 +293,12 @@ Archive headings, and glance-display priority. MR-TEST-A11Y-001 must verify the
 captions, reduced motion, contrast, and glance-display and Interaction Assist
 rules. These checks are private to Leonardo and Codex.
 
+S12 must also encode the nine S09 fixture groups from `MR-S09-INP-001` through
+`MR-S09-JRN-001`. They cover exact device conversion, input and focus modes,
+the closed screen inventory, settings, accessibility, failures, responsive
+layout, lifecycle, and complete keyboard-and-mouse and controller journeys.
+No S09 test or result exists yet.
+
 The UI must continue to use IndexedDB only for local game data. It must not
 use a cookie for saves, ownership, discovery, or expiry. The active save has
 no automatic expiration. Browser closure and connection loss must not advance
@@ -299,9 +306,9 @@ game time.
 
 ## Deliberate later verification
 
-11-technical-architecture.md defines browser scope, controller roles, UI
-runtime architecture, pointer-lock behaviour, save schemas, migrations,
-validation, corruption recovery, and the performance boundary. Exact rendered
-layout measurements, browser results, and implementation evidence remain
-future facts. This document does not authorize implementation code or
-production assets.
+11-technical-architecture.md and S09 define browser scope, controller roles, UI
+runtime architecture, pointer-capture behaviour, save schemas, migrations,
+validation, corruption recovery, interface lifecycle, and the performance
+boundary. Exact rendered layout measurements, browser results, and
+implementation evidence remain future facts. This document does not authorize
+implementation code or production assets.

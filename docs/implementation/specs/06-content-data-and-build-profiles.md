@@ -936,7 +936,10 @@ draft `v1`. S07 now connects exact stored content versions, immutable profiles,
 saved reference validation, direct mapping, ending-card references, and
 Citation records through candidate `MR-IF-007`. S08 now maps semantic locations
 and environmental-item presentation to its draft `MR-IF-008` and target
-contract, without adding coordinates to content data. No interface is frozen.
+contract, without adding coordinates to content data. S09 now consumes only
+the presentation and string views needed by the current UI projection. It uses
+authored text and stable reason keys without copying hidden rules or creating a
+second English source. No interface is frozen.
 
 ## S06 acceptance and handoff
 
