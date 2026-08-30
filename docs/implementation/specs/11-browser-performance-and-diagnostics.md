@@ -541,5 +541,6 @@ S11 is documented only when:
 
 S12 now owns the future executable-format test vectors, expected values,
 traceability, automated-versus-manual classification, and complete acceptance
-matrix. S13 is the current next technical-specification block. S11 and S12
-create no implementation permission.
+matrix. S13 now fixes future package ownership, validation cadence, review,
+evidence, and integration. S14 is the current next technical-specification
+block. S11–S13 create no implementation permission.

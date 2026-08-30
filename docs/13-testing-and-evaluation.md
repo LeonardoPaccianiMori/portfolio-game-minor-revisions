@@ -1,6 +1,6 @@
 # Testing and Evaluation
 
-Status: **B10 and S12 documented; implementation approval pending**
+Status: **B10, S12, and S13 documented; implementation approval pending**
 
 ## Evaluation boundary
 
@@ -29,6 +29,14 @@ S02–S12 case routes, cross-module journeys, manual procedures, and private
 result records. It creates no machine-readable fixture or result. The exact
 contract is
 [`implementation/specs/12-test-vectors-and-acceptance.md`](implementation/specs/12-test-vectors-and-acceptance.md).
+
+S13 assigns each future package its own unit and browser-test paths. Fixture
+files remain grouped by Sxx source and declare their package owner.
+`MR-WP-09` alone owns the shared fixture manifest, acceptance matrix, quality
+utilities, and durable private evidence summaries. Required checks cannot be
+skipped or weakened, and a worker cannot provide its own final review. The
+exact contract is
+[`implementation/specs/13-agent-work-orders-and-integration.md`](implementation/specs/13-agent-work-orders-and-integration.md).
 
 Review findings use three evidence levels: a document fact, an inference from
 the design, or measured private play evidence. Predictions about fun, boredom,

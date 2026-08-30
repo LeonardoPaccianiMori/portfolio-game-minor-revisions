@@ -86,3 +86,10 @@ ownership. Workers are not alone in the repository: they must preserve and
 accommodate others' changes, avoid overlapping edits, and report assumptions.
 All implementation must trace to approved requirements and acceptance criteria
 in `docs/15-implementation-contract.md`.
+
+Every future implementation assignment must also follow
+`docs/implementation/specs/13-agent-work-orders-and-integration.md`. Only the
+primary agent creates work orders, isolated branches and worktrees, integrates
+reviewed commits, updates control documents, and communicates with Leonardo.
+Workers cannot delegate, contact Leonardo, edit another owner's path, change a
+frozen interface, use a remote, or begin from an informal chat instruction.

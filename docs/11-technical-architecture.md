@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: **B10 documented; implementation approval pending**
+Status: **B10 and S13 documented; implementation approval pending**
 
 ## Scope and boundary
 
@@ -392,6 +392,12 @@ fixture envelope, stable case and acceptance identities, two-way traceability,
 exact expected and unchanged-data comparison, separate automated and manual
 evidence, and the complete S02–S12 case routes. Expected fixtures never contain
 future pass or fail results.
+
+S13 assigns every runtime module to one of `MR-WP-00`–`MR-WP-06`, keeps slice
+and campaign integration in separately gated packages, and requires stored
+work orders, isolated local branches and worktrees, independent review,
+package checks, primary-agent integration, and private contribution records.
+No ownership or work-order record authorizes implementation.
 
 After Leonardo approves a public GitHub remote, a GitHub Actions workflow may
 run the same checks on pushes and pull requests. It does not deploy the game,

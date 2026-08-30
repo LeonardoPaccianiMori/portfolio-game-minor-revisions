@@ -53,6 +53,20 @@ and are not a runtime module.
 Do not create broad `shared`, `utils`, `services`, or `managers` runtime
 folders. A private helper stays with the module that owns its purpose.
 
+S13 assigns the exact future module owners:
+
+- `MR-WP-00`: `bootstrap`, `application`, and `platform`;
+- `MR-WP-01`: `rules` and `content`;
+- `MR-WP-02`: `persistence`;
+- `MR-WP-03`: `world` and `rendering`;
+- `MR-WP-04`: `input`, `player`, and `interaction`;
+- `MR-WP-05`: `ui`; and
+- `MR-WP-06`: `audio` and `cutscenes`.
+
+One module path has one owner at one time. An integration package cannot edit
+a module to repair it silently; the primary agent returns the defect to its
+owner through an approved repair work order.
+
 ## Public entrances and import graph
 
 Each runtime module exposes one public `index.ts`. A module can import another
@@ -405,7 +419,10 @@ The following are deliberately deferred to their owning blocks:
   documented through candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`;
 - compatibility, graphics-budget, performance-evidence, and diagnostic fields:
   S11, now documented through candidate `MR-IF-014`; and
-- executable fixture format and the acceptance matrix: now documented in S12.
+- executable fixture format and the acceptance matrix: now documented in S12;
+  and
+- exact future work-package ownership, dependencies, work orders, review, and
+  integration: now documented in S13.
 
 S02 resolves `MR-IMP-OPEN-002`. S03 and `MR-IMP-OPEN-003` are next. Technical
 specification, vertical-slice implementation, full-game implementation,

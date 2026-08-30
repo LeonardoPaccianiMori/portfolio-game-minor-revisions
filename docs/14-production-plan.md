@@ -1,6 +1,6 @@
 # Production Plan
 
-Status: **B10 documented; implementation approval pending**
+Status: **B10 and S13 documented; implementation approval pending**
 
 ## Production boundary
 
@@ -52,6 +52,19 @@ phase supplies only the fixtures and evidence in its approved scope. Expected
 fixtures, raw reports, durable private summaries, and Leonardo's play reviews
 remain separate. No phase can mark an unrun case as passed or change an
 expected result to hide an implementation failure.
+
+S13 now fixes ten future work packages, dependency waves, stored work orders,
+isolated local branches and worktrees, independent review, primary-agent
+integration, and contribution records. Vertical-slice approval can cover only
+`MR-WP-00`–`MR-WP-07` and slice quality work. Fallback and full expansion use
+separate later approvals.
+
+The root content catalogue remains one source. During slice production, slice
+content must be complete while fallback and full profiles can be explicitly
+incomplete and cannot build. During fallback production, slice and fallback
+must be complete while full can remain incomplete. All three must be complete
+before full production can pass. Incomplete profiles cannot use fake prose or
+claim final counts, closure, or reachability.
 
 Before the vertical slice, Phase 1 must also test asset feasibility for every
 planning role. Record its likely reusable or original source route, licence and

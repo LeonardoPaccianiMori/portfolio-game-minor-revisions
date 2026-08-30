@@ -783,4 +783,6 @@ S10 now owns the documented rendering, resource, asset, and audio connection.
 S11 now owns the documented browser, graphics-budget, local advisory,
 diagnostic, privacy, and measurement connection. `MR-IF-014` is candidate
 `v1`. S12 now supplies the future executable fixture and acceptance contract.
-S13 is the current next technical-specification block.
+S13 now assigns `input`, `player`, and `interaction` to `MR-WP-04` and semantic
+UI, CSS, and accessibility to `MR-WP-05`. S14 is the current next technical-
+specification block.

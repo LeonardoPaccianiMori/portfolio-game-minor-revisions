@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 documented; implementation specification in progress; code prohibited**
+Status: **B10 and S13 documented; implementation specification in progress; code prohibited**
 
 ## Authorization gate
 
@@ -55,40 +55,43 @@ not implemented.
 | MR-REQ-UI-001 | Implement the exact S09 action map, semantic HUD, Research Status, desk hub, close-range environmental text, fixed manuscript positions and factual requirements panel, menus, costs, projected-band reasons without probabilities, raw-first analysis, stop consequences, confirmations, settings, notifications, recovery and storage messages, closed screen inventory, revisioned UI projection, lifecycle, and no-objective-arrow rule. | 02, 10, 12, implementation S09 | MR-TEST-UI-001, MR-S09-INP-001, MR-S09-FOC-001, MR-S09-UI-001, MR-S09-SET-001, MR-S09-ERR-001, MR-S09-LIF-001 | MR-WP-05 |
 | MR-REQ-A11Y-001 | Meet the exact S09 keyboard-only, controller-only, semantic focus, scale, contrast, caption, motion, input, Interaction Assist, responsive-layout, and small-view criteria without claiming vision-free 3D navigation. | 10, implementation S09 | MR-TEST-A11Y-001, MR-S09-A11Y-001, MR-S09-RSP-001, MR-S09-JRN-001 | MR-WP-05 |
 | MR-REQ-SAVE-001 | Use the exact S07 `minor-revisions` database, six stores and keys, canonical campaign envelope, 1 MiB limit, atomic active-to-backup save, safe-point blocking, validated recovery, confirmed direct migration, compact completion, targeted repair, cross-tab conflict, whole-database clear, operation queue, and closed failure contract. Preserve the S05 safe-save, scene, Save and Quit, load, and recap boundaries and the S06 exact-version, profile, direct-mapping, and unchanged-source rules. | 10, 11, implementation S05–S07 | MR-TEST-SAVE-001, MR-S05-REC-001, MR-S06-MIG-001, MR-S07-SAV-001, MR-S07-REC-001, MR-S07-MIG-001, MR-S07-CMP-001, MR-S07-CLR-001, MR-S07-FLT-001 | MR-WP-02 |
-| MR-REQ-TECH-001 | Use the approved strict TypeScript, Vite, direct Three.js, local dependency, deterministic rules, manuscript and reviewer state, forecast/reason validation, build-specific string validation, no-network architecture, S02 module graph, one-way imports, single application coordinator, state ownership, specialist resource ownership, lifecycle, request queue, frame loop, failure boundaries, exact S03 campaign-state contract, exact S04 rule contracts, exact S05 scheduler, event, cutscene-coordination, and fault contracts, exact S06 content package, profile, validation, and view contracts, exact S07 persistence interface and transaction contracts, exact S08 spatial, movement, target, focus, projection, and fault contracts, exact S09 input, UI projection, semantic dispatch, settings, accessibility, and lifecycle contracts, exact S10 rendering, resource, asset, cutscene-presentation, and audio contracts, exact S11 compatibility, profile, budget, diagnostic, privacy, and measurement-response contracts, and the exact S12 fixture, traceability, evidence, coverage, and acceptance contract. | 11, implementation S01–S12 | MR-TEST-TECH-001, MR-S02-FIX-001–010, MR-S03-FIX-001, MR-S03-REJ-001–005, MR-S03-INV-001, MR-S03-TRN-001, MR-S04-CMD-001, MR-S04-REJ-001, MR-S04-FLT-001, MR-S05-SCH-001, MR-S05-FLT-001, MR-S06-VAL-001, MR-S06-FLT-001, MR-S07-SAV-001, MR-S07-FLT-001, MR-S08-MOV-001, MR-S08-TGT-001, MR-S08-WLD-001, MR-S08-FLT-001, MR-S09-INP-001, MR-S09-UI-001, MR-S09-LIF-001, MR-S10-RND-001, MR-S10-SCN-001, MR-S10-RES-001, MR-S11-CMP-001, MR-S11-DIA-001, MR-S12-FMT-001, MR-S12-DOC-001 | MR-WP-00 |
+| MR-REQ-TECH-001 | Use the approved strict TypeScript, Vite, direct Three.js, local dependency, deterministic rules, manuscript and reviewer state, forecast/reason validation, build-specific string validation, no-network architecture, S02 module graph, one-way imports, single application coordinator, state ownership, specialist resource ownership, lifecycle, request queue, frame loop, failure boundaries, exact S03 campaign-state contract, exact S04 rule contracts, exact S05 scheduler, event, cutscene-coordination, and fault contracts, exact S06 staged content package, complete-profile, validation, and view contracts, exact S07 persistence interface and transaction contracts, exact S08 spatial, movement, target, focus, projection, and fault contracts, exact S09 input, UI projection, semantic dispatch, settings, accessibility, and lifecycle contracts, exact S10 rendering, resource, asset, cutscene-presentation, and audio contracts, exact S11 compatibility, profile, budget, diagnostic, privacy, and measurement-response contracts, exact S12 fixture, traceability, evidence, coverage, and acceptance contract, and exact S13 ownership, work-order, model, branch, review, validation, contribution, integration, recovery, and phase-gate contract. | 11, implementation S01–S13 | MR-TEST-TECH-001, MR-S02-FIX-001–010, MR-S03-FIX-001, MR-S03-REJ-001–005, MR-S03-INV-001, MR-S03-TRN-001, MR-S04-CMD-001, MR-S04-REJ-001, MR-S04-FLT-001, MR-S05-SCH-001, MR-S05-FLT-001, MR-S06-VAL-001, MR-S06-FLT-001, MR-S07-SAV-001, MR-S07-FLT-001, MR-S08-MOV-001, MR-S08-TGT-001, MR-S08-WLD-001, MR-S08-FLT-001, MR-S09-INP-001, MR-S09-UI-001, MR-S09-LIF-001, MR-S10-RND-001, MR-S10-SCN-001, MR-S10-RES-001, MR-S11-CMP-001, MR-S11-DIA-001, MR-S12-FMT-001, MR-S12-DOC-001, MR-S13-OWN-001, MR-S13-DAG-001, MR-S13-WO-001, MR-S13-GIT-001, MR-S13-REV-001, MR-S13-CON-001, MR-S13-GATE-001 | MR-WP-00 |
 | MR-REQ-PERF-001 | Meet the exact S11 Low, Standard, and High values; frame, processor, workload, memory, loading, transfer, and long-session budgets; five-scenario three-run browser method; sanitized evidence record; invalid and failed measurement response; and manual-only profile-change rule. | 09, 11, 13, implementation S11 | MR-TEST-PERF-001, MR-S11-PERF-001 | MR-WP-09 |
-| MR-REQ-CONTENT-001 | Use the exact S06 source tree, strict manifest and family shapes, global stable content IDs, validated references, closed conditions and authored effects, immutable views, one build-specific strings.en.json, fixed forecast and reason keys, saved variants, no generated text, excluded-build text removal, and the normalized 6,000-word limit. | 03, 05, 12, implementation S06 | MR-TEST-CONT-001, MR-S06-VAL-001, MR-S06-REF-001, MR-S06-STR-001, MR-S06-OBJ-001, MR-S06-FLT-001 | MR-WP-01 |
+| MR-REQ-CONTENT-001 | Use the exact S06 source tree, strict manifest and family shapes, global stable content IDs, validated references, closed conditions and authored effects, immutable views, one build-specific strings.en.json, fixed forecast and reason keys, saved variants, monotonic complete or incomplete development-profile states, refusal to build incomplete profiles, no generated or placeholder story text, excluded-build text removal, and the normalized 6,000-word limit. | 03, 05, 12, implementation S06 and S13 | MR-TEST-CONT-001, MR-S06-VAL-001, MR-S06-REF-001, MR-S06-STR-001, MR-S06-OBJ-001, MR-S06-FLT-001, MR-S13-OWN-001 | MR-WP-01 |
 | MR-REQ-CONTENT-002 | Ship the approved exact full, fallback, and slice selections and counts, fourteen contextual lines, five queue lines, five exit responses, operational room states, defined optional desk references, dependencies, expiry, effects, records, citations, environmental items, and profile-specific reachability. | 06, 08, 12, implementation S06 | MR-TEST-CONT-001, MR-S06-VAL-001, MR-S06-FBK-001, MR-S06-SLC-001 | MR-WP-08 |
-| MR-REQ-TEST-001 | Meet the exact S12 fixture, manifest, traceability, automated, browser, private-evaluation, traversal-and-repetition, manual-evidence, result-privacy, and coverage targets. | 13, implementation S12 | All MR-TEST IDs; all applicable S02–S12 groups | MR-WP-09 |
-| MR-REQ-RELEASE-001 | Preserve privacy, title/brand, licence, attribution, remote, and portfolio-handoff boundaries. | 01, 09, 13, 14 | MR-TEST-RELEASE-001 | MR-WP-09 |
+| MR-REQ-TEST-001 | Meet the exact S12 fixture, manifest, traceability, automated, browser, private-evaluation, traversal-and-repetition, manual-evidence, result-privacy, and coverage targets plus the S13 test ownership, submission, independent-review, package, wave, contribution, and no-skip gates. | 13, implementation S12–S13 | All MR-TEST IDs; all applicable S02–S13 groups | MR-WP-09 |
+| MR-REQ-RELEASE-001 | Preserve privacy, title/brand, licence, attribution, remote, portfolio-handoff, and separate phase-approval boundaries. | 01, 09, 13, 14, implementation S13 | MR-TEST-RELEASE-001, MR-S13-GATE-001 | MR-WP-09 |
 
 ## Planned work packages and ownership
 
 The paths below are planned future paths. They are not created by this
 document. A worker owns the listed paths only for its package. Shared design
 documents, content interfaces, and integration files require explicit
-coordination.
+coordination. S13 is authoritative for exact path ownership, dependency waves,
+work-order state, review, validation, integration, and recovery.
 
 | Work package | Owned planned paths and responsibility | Depends on | Required evidence |
 |---|---|---|---|
-| MR-WP-00 Foundation | package files, TypeScript/Vite setup, static check configuration, `src/bootstrap`, `src/application`, `src/platform`, and architecture checks | Gate approval, frozen shared interfaces | Clean local quality commands, dependency record, compatibility and S02 architecture fixtures |
-| MR-WP-01 Rules and content schema | src/rules, src/content, schemas, deterministic PRNG, commands, experiment, ending resolver | MR-WP-00 | Rule fixtures, schema checks, content-validation output |
+| MR-WP-00 Foundation | package files, TypeScript/Vite setup, static check configuration, `index.html`, foundation scripts, `src/bootstrap`, `src/application`, `src/platform`, and architecture checks | Gate approval, frozen shared interfaces | Clean local quality commands, dependency record, compatibility and S02 architecture fixtures |
+| MR-WP-01 Rules and content schema | src/rules, src/content, schemas, deterministic PRNG, commands, experiment, ending resolver; no final authored prose | MR-WP-00 | Rule fixtures, schema checks, content-validation output |
 | MR-WP-02 Persistence | src/persistence and persistence tests | MR-WP-00, MR-WP-01 state interface | Exact S07 database, save, backup, migration, recovery, completion, repair, clearing, concurrency, and failure fixtures |
 | MR-WP-03 World and rendering | src/world, src/rendering, visual-resource ownership, approved asset-loading boundary, floor collision and visibility | MR-WP-00, verified asset records | S08 world checks and S10 renderer, lighting, material, animation, effect, resource, asset, lifecycle, and graphics-context fixtures |
 | MR-WP-04 Input and interaction | src/player, src/input, src/interaction | MR-WP-00, MR-WP-03 target interface | Keyboard/controller action tests and focused-view checks |
 | MR-WP-05 UI and accessibility | src/ui, semantic overlays, menu, settings, status, accessibility tests | MR-WP-01, MR-WP-02, MR-WP-04 interfaces | UI, scale, captions, small-view, and input evidence |
 | MR-WP-06 Audio and cutscenes | src/audio, src/cutscenes, audio-resource ownership, cue wiring, skip and input restoration | MR-WP-01, MR-WP-03, MR-WP-05 interfaces | S05 campaign-safe scene checks and S10 cutscene, audio, ambience, music, dialogue-sound, restoration, and teardown fixtures |
-| MR-WP-07 Vertical-slice integration | Week-1 selected content, integration fixes, slice evidence | MR-WP-01 through MR-WP-06 | Vertical-slice private gate evidence |
-| MR-WP-08 Campaign content integration | Remaining full or fallback content data, scene wiring, record and ending text integration | MR-WP-07 | Content counts, route matrix, citation and ending checks |
-| MR-WP-09 Quality and release preparation | Own future `MR-IF-015`, fixture schema, manifest, acceptance matrix, test harness, performance audit, asset/dependency audit, private evidence, and release checklist | All prior packages | Fixture and documentation self-checks, complete traceability, verify command output, and approved release-boundary audit |
+| MR-WP-07 Vertical-slice integration | Week-1 selected content, integration checks, slice journeys, save/recovery evidence, and private slice packet | MR-WP-01 through MR-WP-06 | Vertical-slice private gate evidence |
+| MR-WP-08 Campaign content integration | Separately approved fallback and full content data, scene wiring, records, endings, English text, and campaign journeys | Accepted MR-WP-07 gate, then accepted fallback gate | Content counts, route matrix, Citation and ending checks |
+| MR-WP-09 Quality and release preparation | Own future `MR-IF-015`, fixture schema, manifest, acceptance matrix, shared test utilities, performance audit, asset/dependency audit, private evidence, and release checklist | Shared preparation after MR-WP-00; final evidence after applicable packages | Fixture and documentation self-checks, complete traceability, verify command output, and approved release-boundary audit |
 
 MR-WP-07 is the first integration target. MR-WP-08 begins only after the
-vertical-slice gate passes. MR-WP-09 can prepare non-mutating checks during
+vertical-slice gate passes. MR-WP-09 can prepare shared checks during
 development, but it cannot publish, create a remote, or deploy.
 
 ## Worker-assignment contract
 
-Every future worker assignment must state:
+Every future worker assignment is stored under
+`docs/implementation/work-orders/` with the exact S13 lifecycle and must
+state:
 
 - the objective and owned paths;
 - the exact requirements, content IDs, dependencies, and acceptance criteria;
@@ -110,12 +113,15 @@ tests, review result, Leonardo's corrections, and final commit.
 
 ## Branch, review, and integration rules
 
-Until a remote exists, main remains the local integration branch. A future
-worker uses an approved short-lived branch named work/MR-WP-number-topic unless
-Leonardo explicitly approves another local workflow. A worker makes atomic
-commits that name its work package and does not bundle unrelated formatting.
+Until a remote exists, main remains the local integration branch. The primary
+agent creates a short-lived `work/MR-WP-xx-topic` branch and matching ignored
+`.worktrees/MR-WP-xx-topic/` folder from the exact work-order commit. A worker
+makes atomic commits that name its work package and does not bundle unrelated
+formatting. The primary agent alone copies reviewed commits to `main` in
+dependency order.
 
-Before integration, the primary reviewer must:
+Before integration, the primary integration agent must use the independent
+review and must:
 
 1. inspect the full diff and staged paths;
 2. verify requirement and content-ID links;

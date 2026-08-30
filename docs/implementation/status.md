@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-30
 
-Status: **S00–S12 documented; S13 is next; all implementation gates blocked**
+Status: **S00–S13 documented; S14 is next; all implementation gates blocked**
 
 ## Current repository state
 
@@ -25,7 +25,7 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S13–S14 are not documented. |
+| Technical specification complete | Blocked | S14 is not documented. |
 | Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
 | Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
@@ -33,22 +33,22 @@ not insert a future or guessed commit identifier into this document.
 
 ## Current checkpoint
 
-- Next block: **S13 — Agent work orders and integration**; do not begin it
-  until Leonardo approves moving to it after the S12 commit.
-- Last documented block: **S12 — Test vectors and acceptance matrix**.
+- Next block: **S14 — Consistency audit and gate packet**; do not begin it
+  until Leonardo approves moving to it after the S13 commit.
+- Last documented block: **S13 — Agent work orders and integration**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
-- Primary existing input: `../15-implementation-contract.md`, the approved
-  S01–S12 toolchain, architecture, interface, fixture, evidence, and
-  acceptance contracts, and the future work-package boundaries already named
-  there.
-- Current open issue group: `MR-IMP-OPEN-013`.
-- Next action: after committing S12, ask Leonardo whether he approves moving
-  to S13. If approved, decide exact future ownership, dependencies, worker
-  briefs, branch and commit rules, contribution records, review, and
-  integration order.
-- Prohibited next action: create package files, source directories, code,
-  assets, or deployment files.
+- Primary existing input: the complete numbered design baseline, approved
+  S00–S13 technical corpus, candidate `MR-IF-001`–`MR-IF-015`, requirement and
+  acceptance traceability, staged-content correction, and unresolved Gate-1
+  audit evidence.
+- Current open issue group: `MR-IMP-OPEN-014`.
+- Next action: after committing S13, ask Leonardo whether he approves moving
+  to S14. If approved, complete the final inventory, contradiction,
+  assumption, interface-freeze, content, privacy, licence, accessibility, and
+  gate audit packet.
+- Prohibited next action: create package, source, content, test, work-order,
+  contribution, worktree, asset, licence, remote, or deployment files.
 
 ## Durable progress summary
 
@@ -57,7 +57,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S12 are documented; S13 is next. `MR-IF-001`–`MR-IF-015` are candidate `v1`; none is frozen. |
+| Technical specification | In progress | S01–S13 are documented; S14 is next. `MR-IF-001`–`MR-IF-015` are candidate `v1`; none is frozen. |
 | Vertical slice | Not authorized | No code exists. |
 | Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
 

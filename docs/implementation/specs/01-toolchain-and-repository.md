@@ -139,9 +139,10 @@ provenance and build checks as other assets.
 Generated local paths remain inside the repository and are ignored by Git.
 They include `node_modules/`, `dist/`, `coverage/`, `playwright-report/`,
 `test-results/`, `local-artifacts/performance/`, tool caches, logs, and
-Playwright-managed browser copies. The S11 local performance path can hold
-temporary raw profiler exports; it is never part of a build or tracked
-evidence.
+Playwright-managed browser copies. S13 adds `.worktrees/` for primary-created
+isolated local assignment folders after implementation approval. The S11
+local performance path can hold temporary raw profiler exports; neither path
+is part of a build or tracked evidence.
 Editor, operating-system, secret, and `.env` files are also ignored and cannot
 control the project.
 
@@ -296,6 +297,8 @@ The following remain future evidence because implementation is not authorized:
 
 `MR-IF-001` was `not started` after S01 and is now candidate `v1` through S02
 and the connected S12 fixture contract. S02 owns the exact runtime bootstrap
-and application-lifecycle interface. No implementation worker can use this
-S01 toolchain contract until Gate 1 and the separate Gate-2 approval are
-complete.
+and application-lifecycle interface. S13 now assigns root configuration,
+`index.html`, foundation scripts, `bootstrap`, `application`, and `platform`
+to `MR-WP-00` and fixes the isolated branch, worktree, commit, review, and
+integration process. No implementation worker can use this S01 toolchain
+contract until Gate 1 and the separate Gate-2 approval are complete.

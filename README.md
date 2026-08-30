@@ -13,7 +13,7 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **implementation specification; creative design, two independent
-review passes, and S00–S12 complete; S13 is next; all implementation gates
+review passes, and S00–S13 complete; S14 is next; all implementation gates
 blocked**.
 
 This repository contains design documentation only. It contains no game
@@ -57,9 +57,14 @@ fixture and traceability contract. S12
 fixes the future strict fixture format, acceptance matrix, evidence classes,
 coverage boundary, S02–S12 case routes, connected journeys, and manual-review
 boundary. `MR-IF-001`–`MR-IF-015` remain candidates for later consistency
-review. None is frozen for implementation. No candidate creates package,
-runtime, test, or asset files. S13 will define future worker orders and
-integration.
+review. S13 fixes the future ten-package ownership,
+dependency, stored work-order, model-selection, isolated-branch, review,
+validation, contribution, integration, and recovery contract. It also permits
+an explicitly incomplete inactive content profile during slice development so
+that fallback and full prose do not need to exist before the slice is tested.
+`MR-IF-001`–`MR-IF-015` remain candidates for the S14 audit; none is frozen and
+no candidate creates package, runtime, test, content, work-order, or asset
+files.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

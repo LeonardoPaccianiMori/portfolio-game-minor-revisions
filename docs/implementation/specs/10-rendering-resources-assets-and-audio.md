@@ -531,4 +531,6 @@ S10 is documented only when:
 S11 owns browser compatibility, exact graphics-profile values, performance and
 memory budgets, profiling, diagnostics, privacy, and the response to failed
 measurements. S12 now owns the future executable fixture and acceptance
-contract. S13 is the current next technical-specification block.
+contract. S13 now assigns world and rendering to `MR-WP-03`, input and
+interaction to `MR-WP-04`, UI to `MR-WP-05`, and audio and cutscenes to
+`MR-WP-06`. S14 is the current next technical-specification block.

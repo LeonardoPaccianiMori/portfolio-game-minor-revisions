@@ -686,5 +686,7 @@ failure meanings. S10 now defines presentation resources and restoration
 without changing the S07 safe-state boundary. S11 now defines the temporary
 capability-probe separation, required storage readiness, sanitized diagnostic
 boundary, and measured resource evidence without changing S07 records or
-transactions. S12 now supplies the future fixture and acceptance contract.
-S13 is the current next technical-specification block.
+transactions. S12 supplies the future fixture and acceptance contract. S13
+now assigns persistence ownership to `MR-WP-02` and fixes its dependency,
+review, validation, and integration path. S14 is the current next technical-
+specification block.

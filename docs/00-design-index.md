@@ -18,11 +18,11 @@ gaps. It does not mean that the domain is finished.
 | `08-endings-and-state-matrix.md` | Outcomes | B10 documented | Authored draft is ready for later specification review. |
 | `09-art-audio-and-assets.md` | Presentation | B10 documented | Verified asset selection and measurements occur before integration. |
 | `10-ui-ux-accessibility.md` | Interface and access | B10 documented | Implementation verification only. |
-| `11-technical-architecture.md` | Runtime design | B10 and S11 documented | Measured browser and performance results remain future facts. |
+| `11-technical-architecture.md` | Runtime design | B10, S11, and S13 documented | Measured browser and performance results remain future facts. |
 | `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
-| `13-testing-and-evaluation.md` | Quality evidence | B10 and S12 documented | Test results are future evidence, not current claims. |
-| `14-production-plan.md` | Delivery strategy | B10 documented | Leonardo may later revise capacity or release timing. |
-| `15-implementation-contract.md` | Agent handoff | B10 documented | Work begins only after the separate gate approval. |
+| `13-testing-and-evaluation.md` | Quality evidence | B10, S12, and S13 documented | Test results are future evidence, not current claims. |
+| `14-production-plan.md` | Delivery strategy | B10 and S13 documented | Leonardo may later revise capacity or release timing. |
+| `15-implementation-contract.md` | Agent handoff | B10 and S13 documented | Work begins only after the separate gate approval. |
 | `reviews/independent-design-review-protocol.md` | External specification review | Review complete | Discuss the validated findings and record Leonardo's decisions. |
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S12 documented | Complete S13–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S13 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S12 | Add only approved decisions and preserve supersessions. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S13 documented | Complete S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S14 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S13 | Add only approved decisions and preserve supersessions. |
 | `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` candidate; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-013` active | Resolve each stable issue group in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-014` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,14 +63,13 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Next technical-specification block: **S13 — Agent work orders and
-  integration**; Leonardo's approval to begin it is pending after the S12
+- Next technical-specification block: **S14 — Consistency audit and gate
+  packet**; Leonardo's approval to begin it is pending after the S13
   commit.
-- Last documented technical block: **S12 — Test vectors and acceptance
-  matrix**.
+- Last documented technical block: **S13 — Agent work orders and integration**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-013`.
-- Technical-specification gate: **blocked**; S13–S14 remain.
+- Active issue group: `MR-IMP-OPEN-014`.
+- Technical-specification gate: **blocked**; S14 remains.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

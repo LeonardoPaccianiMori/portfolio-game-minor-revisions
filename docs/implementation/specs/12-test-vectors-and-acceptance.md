@@ -498,11 +498,18 @@ revisions, presentation receipts, and final state in causal order.
 
 ## S06 content packages
 
-S06 validator fixtures use complete test-only packages. They contain every
-required family, reference, count, profile rule, and minimal safe English
-text, but cannot enter a playable build.
+S06 validator fixtures use self-contained test-only catalogues. Every profile
+marked `complete` contains its required families, references, counts, profile
+rules, and minimal safe English text. These catalogues cannot enter a playable
+build.
 
-- `MR-S06-VAL-001-C001` is the valid full package.
+- `MR-S06-VAL-001-C001` is the valid full package with all three profiles
+  marked `complete`.
+- `MR-S06-VAL-001-C002` is the valid slice-development catalogue with slice
+  complete and fallback and full explicitly incomplete.
+- `MR-S06-VAL-001-C003` is the valid fallback-development catalogue with
+  slice and fallback complete and full explicitly incomplete.
+- `MR-S06-VAL-001-C004` rejects a non-monotonic completion combination.
 - `MR-S06-FBK-001-C001` is the exact valid fallback package.
 - `MR-S06-SLC-001-C001` is the exact valid slice package.
 
@@ -513,7 +520,9 @@ count. S12 does not invent that value.
 `MR-S06-REF-001`, `MR-S06-STR-001`, and `MR-S06-OBJ-001` start from a valid
 registered package and apply one controlled change per normal rejected case.
 Every reference, strict-object, placeholder, key, normalization, and profile
-variant has an independent case.
+variant has an independent case. Separate cases prove that full, fallback, and
+slice build requests reject an incomplete requested profile and never switch
+to another profile.
 
 The exact 6,000- and 6,001-word cases use a closed test-only word series from
 `word0001` through the required end. This provides reproducible input without
@@ -869,6 +878,12 @@ Required automated cases cannot be skipped. A skip fails the gate. Automatic
 test retries are disabled; a rerun is a separate result. Manual review and
 measurement do not run through npm.
 
+S13 assigns package-owned tests below `tests/unit/MR-WP-xx/` and
+`tests/e2e/MR-WP-xx/`. Fixtures remain grouped below their Sxx directories and
+declare their package owner. `MR-WP-09` alone owns the shared manifest,
+acceptance matrix, utilities, coverage audit, and document audit. A package
+cannot edit another package's expected result.
+
 ## Interface lifecycle and completion boundary
 
 `MR-IF-001` through `MR-IF-015` are candidate `v1`. S12 supplies the connected
@@ -886,9 +901,10 @@ S12 is complete at the specification level when:
   complete;
 - automated and manual evidence remain distinct;
 - no result or measured fact is invented; and
-- implementation controls agree that S13 is next and all gates remain
-  blocked.
+- implementation controls preserve S13 and agree that S14 is next while all
+  gates remain blocked.
 
-S13 is the next technical-specification block. It owns future agent work
-orders and integration. It cannot begin until the S12 documentation commit
-exists and Leonardo separately approves moving to S13.
+S13 now owns future agent work orders, path ownership, review, validation, and
+integration. S14 is the current next technical-specification block. It cannot
+begin until the S13 documentation commit exists and Leonardo separately
+approves moving to S14.

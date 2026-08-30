@@ -209,6 +209,9 @@ belongs in the numbered design documents.
 | 2026-08-30 | Use one strict data-only JSON fixture envelope, stable manifest, controlled shared resources and actions, exact comparisons, atomic acceptance rows, two-way traceability, and separate unit, browser, static, manual-review, and manual-measurement evidence. | Confirmed |
 | 2026-08-30 | Fix the complete S02–S12 case routes, deterministic values, coverage boundary, browser and accessibility matrices, cross-module journeys, economy and catalogue checks, private evaluation, result privacy, and release audit without claiming a fixture, test, build, or measured result exists. | Confirmed; detailed contract is `implementation/specs/12-test-vectors-and-acceptance.md` |
 | 2026-08-30 | Correct the initial safe position to recovery-anchor ID `MR-ANCHOR-REC-SHARED-DESKS`, make `MR-IF-015` candidate `v1`, resolve S12, keep every implementation gate blocked, and make S13 the next technical block. | Confirmed |
+| 2026-08-30 | Keep ten future work packages with one owner per path, fixed dependency waves, separate slice, fallback, and full approvals, and one sequentially owned content catalogue. Permit only explicitly incomplete inactive profiles during slice or fallback development; an incomplete profile cannot build. | Confirmed |
+| 2026-08-30 | Require stored work orders, exact model records, isolated local branches and worktrees, atomic commits, independent read-only review, package and wave checks, primary-agent integration, private contribution records, and plain-language Leonardo acceptance. | Confirmed; detailed contract is `implementation/specs/13-agent-work-orders-and-integration.md` |
+| 2026-08-30 | Add no runtime interface in S13, keep `MR-IF-001`–`MR-IF-015` candidate `v1`, resolve S13, keep every implementation gate blocked, and make S14 the next technical block. | Confirmed |
 
 ## Rules for future entries
 

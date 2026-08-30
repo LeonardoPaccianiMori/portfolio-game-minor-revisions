@@ -32,6 +32,8 @@ permission.
 - A **reference** is a stable ID that connects one content object to another.
 - A **profile** is an explicit list of content selected for the full game, the
   fallback, or the Week-1 vertical slice.
+- **Implementation status** says whether one source profile is complete enough
+  to build during the approved development phase. It is not runtime data.
 - **Dependency closure** means that selected content also contains every item
   that it needs.
 - **Migration** means reading an older compatible save with a newer approved
@@ -136,6 +138,7 @@ Each file under `content/profiles/` contains exactly:
 
 - `schemaVersion: 1`;
 - profile ID `full`, `fallback`, or `slice`, matching its filename;
+- `implementationStatus`, with value `complete` or `incomplete`;
 - campaign mode `campaign` for full and fallback or `evaluationSlice` for
   slice;
 - explicit, ID-sorted selections for every data family;
@@ -146,7 +149,30 @@ Each file under `content/profiles/` contains exactly:
 
 Profiles do not inherit. An empty selected family uses an explicit empty list.
 A profile cannot select a family through a wildcard, prefix, range, or
-negative exclusion. The profile file is the complete selection.
+negative exclusion. A profile marked `complete` is the complete selection. A
+profile marked `incomplete` is an explicit development record and cannot be
+selected.
+
+The only valid development-status combinations are:
+
+| Development state | Slice | Fallback | Full |
+|---|---|---|---|
+| Slice implementation | `complete` | `incomplete` | `incomplete` |
+| Fallback implementation | `complete` | `complete` | `incomplete` |
+| Full implementation | `complete` | `complete` | `complete` |
+
+An incomplete profile keeps the exact envelope and can use explicit empty or
+partial selections. Its expected counts must match those current selections,
+but they are development-present counts, not final approved profile counts.
+Its present objects, references, IDs, and strings must be structurally valid,
+but final counts, dependency closure, reachability, and English prose are not
+claimed. It cannot contain invented placeholder story text. It cannot be
+selected for a build.
+
+Completion is monotonic. Slice cannot become incomplete after fallback starts,
+and fallback cannot become incomplete after full implementation starts.
+`implementationStatus` is source-only development metadata. It never enters a
+built content package, campaign state, save, Archive record, or result.
 
 ## Stable identifier contract
 
@@ -687,17 +713,20 @@ console, or `.env` value cannot switch it.
 
 Build preparation uses this order:
 
-1. validate the complete source catalogue and all three profiles;
-2. select the requested profile;
-3. apply its direct replacement mappings where required;
-4. check dependency closure and profile reachability;
-5. select only listed data objects;
-6. select only their referenced English strings and fixed selected string
+1. validate the source catalogue and the three explicit profile envelopes;
+2. fully validate every profile marked `complete` and validate the safe
+   incomplete boundary of every profile marked `incomplete`;
+3. reject a requested profile whose implementation status is `incomplete`;
+4. select the requested complete profile;
+5. apply its direct replacement mappings where required;
+6. check dependency closure and profile reachability;
+7. select only listed data objects;
+8. select only their referenced English strings and fixed selected string
    groups;
-7. create build metadata with package ID, schema version, content version,
+9. create build metadata with package ID, schema version, content version,
    language, and selected profile ID;
-8. validate the filtered package again; and
-9. give only the final checked package to Vite.
+10. validate the filtered package again; and
+11. give only the final checked package to Vite.
 
 The finished static build contains no raw complete catalogue, unused profile,
 excluded data object, excluded English string, source profile path, or
@@ -705,7 +734,10 @@ development validation detail. Vite can apply its approved content hashes to
 generated filenames. Generated output is not a second authored source.
 
 A failed selection or post-filter check produces no usable content package.
-It cannot silently keep a stale earlier profile or switch to fallback.
+It cannot silently keep a stale earlier profile or switch to fallback. Normal
+development and `npm run build` therefore fail while full is incomplete. An
+explicit fallback or slice build also fails while that requested profile is
+incomplete.
 
 ### Generated package envelope
 
@@ -719,8 +751,9 @@ Build filtering creates one in-memory plain-data package with exactly:
 
 This generated envelope is the raw browser-startup input. It contains no
 source manifest paths, profile paths, replacement map, alternate profile, or
-unselected source object. The browser validates this complete envelope again
-before it creates runtime views.
+unselected source object. It also contains no source `implementationStatus`.
+The browser validates this complete envelope again before it creates runtime
+views.
 
 ## Fixed validation order
 
@@ -738,19 +771,23 @@ Source and build validation use this exact fail-safe order:
 9. resolve every reference and reject wrong-family targets and cycles;
 10. validate cross-content rules, forms, choices, variants, action costs,
     conditions, authored effects, windows, and invariants;
-11. validate each profile, replacement map, dependency closure, exact count,
-    and profile-specific reachability;
-12. select and filter the requested build profile;
-13. reject excluded dependencies and unreferenced shipped strings;
-14. calculate the build-specific unique English-word count;
-15. revalidate the complete filtered package; and
-16. create one new immutable `ValidatedContent` value.
+11. validate the three profile identities and permitted monotonic completion
+    combination;
+12. validate each complete profile's replacement map, dependency closure,
+    exact count, and profile-specific reachability;
+13. validate incomplete profiles without claiming final counts, closure,
+    reachability, or prose and reject selection of one;
+14. select and filter the requested complete build profile;
+15. reject excluded dependencies and unreferenced shipped strings;
+16. calculate the build-specific unique English-word count;
+17. revalidate the complete filtered package; and
+18. create one new immutable `ValidatedContent` value.
 
-Development startup, production build, and source tests run steps 1–16.
+Development startup, production build, and source tests run steps 1–18.
 Browser startup receives only the generated package envelope. It first checks
 that strict envelope, then repeats the applicable ID, shape, string,
 reference, invariant, count, reachability, word-count, and immutable-copy
-checks from steps 5–16 for its one embedded profile. It does not require or
+checks from steps 5–18 for its one embedded profile. It does not require or
 reconstruct the unshipped source manifest or other profiles.
 
 Validation never repairs, inserts a default, deletes an item, reorders
@@ -775,7 +812,7 @@ order. Every issue uses one of these closed codes:
 | `missingReference` | A referenced object, text key, requirement, or test is absent. |
 | `wrongReferenceFamily` | A reference points to an object of the wrong family. |
 | `circularReference` | A prohibited dependency, thread, or replacement cycle exists. |
-| `incompleteProfile` | A profile omits a required family, item, route, or dependency. |
+| `incompleteProfile` | A requested profile is marked incomplete, a complete profile omits a required family, item, route, or dependency, or the completion combination is not permitted. |
 | `excludedDependency` | Selected content depends on an excluded object or string. |
 | `countMismatch` | A fixed catalogue or profile count is wrong. |
 | `invariantFailure` | A cross-content, reachability, delivery, form, safety, or rule invariant fails. |
@@ -788,7 +825,8 @@ machine information.
 
 ## Required cross-content checks
 
-Automatic validation checks all of the following:
+For each profile marked `complete`, automatic validation checks all of the
+following:
 
 - every required catalogue object exists exactly once;
 - every stable form, beat, choice, cue, message, notification, record, ending,
@@ -813,8 +851,10 @@ Automatic validation checks all of the following:
 - every mandatory event, required message, basic room route, final choice, and
   selected profile completion condition is reachable in that profile.
 
-Reachability is checked separately for full, fallback, and slice. A path that
-works only because excluded content is present fails the smaller profile.
+Reachability is checked separately for every complete full, fallback, and
+slice profile. A path that works only because excluded content is present
+fails the smaller profile. An incomplete profile receives only its structural
+and present-reference checks and cannot satisfy a release or phase gate.
 
 Automatic structure checks cannot prove that prose is scientifically safe,
 non-identifying, clear, funny, or faithful to the intended causal meaning.
@@ -836,8 +876,10 @@ and content tests.
 
 The pure boundary has three operations:
 
-- `validateSourceCatalogue(rawSourceFiles)` validates the complete source and
-  returns a checked source catalogue or ordered issues;
+- `validateSourceCatalogue(rawSourceFiles)` validates the source, its exact
+  profile completion combination, every complete profile, and every safe
+  incomplete boundary, then returns one checked staged catalogue or ordered
+  issues;
 - `createBuiltContentPackage(validatedSource, requestedProfileId)` selects,
   filters, and revalidates one generated package or returns ordered issues;
   and
@@ -848,7 +890,7 @@ Each operation returns exactly one of these result forms:
 
 | Result | Required data | Meaning |
 |---|---|---|
-| `valid` | the operation's one complete checked value | Every applicable source, profile, selection, and final-package check passed. |
+| `valid` | the operation's one complete checked value | Every applicable source, complete profile, incomplete boundary, selection, and final-package check passed. |
 | `invalid` | ordered `ContentValidationIssue` values | No content value or partial view was created. |
 
 Expected bad authored input returns `invalid`; it is not an uncaught exception.
@@ -897,8 +939,9 @@ field path, and ID or key. Player-facing output contains no raw diagnostic.
 
 ## Required S06 fixture groups
 
-S12 must later encode the groups below. S06 names required evidence but does
-not claim that a fixture file, content file, build, or passing test exists.
+S12 defines the executable-format routes for the groups below. S06 names
+required evidence but does not claim that a fixture file, content file, build,
+or passing test exists.
 
 Each valid fixture contains a complete manifest, source file set, selected
 profile, expected IDs and counts, expected selected keys, expected word count,
@@ -906,7 +949,7 @@ expected view summaries, and important excluded items.
 
 | Fixture group | Required coverage |
 |---|---|
-| `MR-S06-VAL-001` | One complete valid full package, exact counts, all references, all required content, stable ordering, and deterministic repeated validation. |
+| `MR-S06-VAL-001` | The three permitted development-status combinations; refusal to select an incomplete profile; one complete valid full package; exact counts, references, required content, stable ordering, and deterministic repeated validation. |
 | `MR-S06-FBK-001` | Exact fallback cut, direct range/repair replacements, basic facility route, all mandatory content, exact counts, and no excluded text. |
 | `MR-S06-SLC-001` | Exact Week-1 slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text. |
 | `MR-S06-REF-001` | Valid references plus every missing, wrong-family, duplicate, circular, chained-replacement, and excluded-dependency rejection. |
@@ -925,9 +968,10 @@ owns the final contradiction, safety, and interface-freeze evidence.
 ## Interface lifecycle
 
 `MR-IF-006` is candidate `v1` after S06. Its owner, consumers, inputs, outputs,
-strict source boundary, profile selection, validation result, immutable views,
-failure meaning, and required fixture groups are complete at specification
-level. It is not frozen and does not authorize implementation.
+strict source boundary, monotonic complete or incomplete development-profile
+state, complete-profile selection, validation result, immutable views, failure
+meaning, and required fixture groups are complete at specification level. It
+is not frozen and does not authorize implementation.
 
 `MR-IF-002` remains candidate `v1` with exact `contentVersion` and immutable
 `buildProfileId` checks. `MR-IF-003` remains candidate `v1` with a restricted
@@ -949,7 +993,7 @@ data. No interface is frozen.
 
 S06 is documented only when:
 
-- this complete source tree, envelope, manifest, profile, object, reference,
+- this staged source tree, envelope, manifest, profile, object, reference,
   condition, effect, family, English-string, version, migration, build,
   validation, failure, interface, and fixture contract is present;
 - S03–S05 contain the approved connected refinements;
@@ -964,3 +1008,7 @@ backup, recovery, content-version migration operation, completion retention,
 and clear-data behaviour. It preserves this S06 content contract. All
 implementation gates remain blocked. S12 now supplies the future valid,
 rejected, migration, catalogue, profile, string, and acceptance case routes.
+S13 now assigns sequential root-catalogue ownership to `MR-WP-07` and
+`MR-WP-08`, permits only the three explicit monotonic completion combinations,
+and keeps every incomplete profile unbuildable. S14 owns final consistency and
+interface-freeze review.

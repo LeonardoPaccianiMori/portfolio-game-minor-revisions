@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S12 documented; S13 is next; no code authorized**
+Status: **S00–S13 documented; S14 is next; no code authorized**
 
 ## Purpose
 
@@ -130,8 +130,8 @@ full-game evaluation gates still apply during production.
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Documented |
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
 | S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Documented |
-| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Not started; next |
-| S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Not started |
+| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Documented |
+| S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Not started; next |
 
 ## Planned specification files
 
@@ -198,8 +198,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S12 documentation commit, ask Leonardo whether he approves moving to
-S13. If he approves, decide exact future path ownership, worker dependencies,
-assignment packets, branch and commit rules, contribution evidence, review,
-and integration order against candidate `MR-IF-001`–`MR-IF-015`. Do not create
-files from the planned runtime or test trees.
+After the S13 documentation commit, ask Leonardo whether he approves moving to
+S14. If he approves, audit the complete specification inventory,
+contradictions, assumptions, interfaces, content staging, traceability,
+privacy, licensing, accessibility, and gate evidence. Do not create files from
+the planned runtime, test, content, work-order, contribution, or worktree paths.
