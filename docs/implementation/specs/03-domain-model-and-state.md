@@ -13,8 +13,9 @@ the S02 ownership rule: `application` owns the only live campaign state and
 
 This document specifies future behaviour. It does not create runtime types,
 schema code, JSON files, browser storage, or measured test results. S04 owns
-commands and transition algorithms. S05 owns scheduler algorithms. S06 owns
-authored content and build-profile schemas. S07 owns persistence. S12 owns the
+commands and transition algorithms. S05 owns scheduler algorithms. S06 now
+defines authored content, build profiles, validation, and compatibility in
+`06-content-data-and-build-profiles.md`. S07 owns persistence. S12 owns the
 executable fixture format.
 
 ## Plain-data boundary
@@ -322,8 +323,10 @@ colons, or hyphens. A known family must also match its family grammar. IDs are
 unique throughout the campaign where their family can be referenced, cannot
 be reused after terminal state, and always match their record key.
 
-`contentVersion` and `buildProfileId` contain 1–64 ASCII characters with no
-space or control character. S06 freezes their allowed values.
+`contentVersion` uses the S06 `MAJOR.MINOR.PATCH` grammar and starts at
+`1.0.0`. `buildProfileId` is exactly `full`, `fallback`, or `slice`. It is
+fixed when the campaign is created and cannot change during load, content
+migration, or play.
 
 ## Numeric and validation contract
 
@@ -346,8 +349,10 @@ active-state replacement use validation. `rules` owns the canonical schema.
 
 Validation has two connected stages. The codec checks the complete campaign
 structure and internal references. Before activation, `application` also
-checks every content ID, `contentVersion`, and `buildProfileId` against the
-separately supplied `ValidatedContent` from S06.
+checks every content ID, `contentVersion`, and `buildProfileId` against S06
+`ValidatedContent.metadata` and its restricted rules view. An earlier content
+version is accepted only when the current manifest lists it exactly and S07
+successfully completes the approved S06 mapping and full-state validation.
 
 The complete campaign must also satisfy these invariants:
 
@@ -459,8 +464,9 @@ raw-record, evidence-card, PIIM-lock, content-presentation, and ending-module
 facts. S05 further refines it with the scheduler-field rename, event period
 facts, locked scene form, and final scene-presentation state. These changes
 occur before implementation and freeze, so no save migration exists.
-`MR-IF-002` remains candidate until S06 connects content validation, S07
-connects persistence, S12 supplies executable fixtures, and S14 completes the
+S06 connects exact content-version and immutable-profile validation through
+candidate `MR-IF-006`. `MR-IF-002` remains candidate until S07 connects
+persistence, S12 supplies executable fixtures, and S14 completes the
 cross-interface audit. Candidate status does not authorize implementation.
 
 ## S03 acceptance and handoff
@@ -475,7 +481,6 @@ S03 is documented when:
 - S04 is the durable next block; and
 - no code, package, asset, remote, licence, or deployment file exists.
 
-S04 now uses and refines this candidate state contract for commands, effects,
-transition results, deterministic variation, rejection order, and
-unchanged-state rules. S05 must preserve it when defining calendar, scheduler,
-event, crash, cutscene, skip, and resume order.
+S04 and S05 use and refine this candidate state contract. S06 now supplies its
+exact authored-content connection. S07 must preserve all three contracts when
+it defines persistence, backup, recovery, and migration.

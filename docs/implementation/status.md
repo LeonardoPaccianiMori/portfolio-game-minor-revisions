@@ -1,8 +1,8 @@
 # Implementation Specification Status
 
-Last updated: 2026-08-29
+Last updated: 2026-08-30
 
-Status: **S00–S05 documented; S06 is next; all implementation gates blocked**
+Status: **S00–S06 documented; S07 is next; all implementation gates blocked**
 
 ## Current repository state
 
@@ -25,7 +25,7 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S06–S14 are not documented. |
+| Technical specification complete | Blocked | S07–S14 are not documented. |
 | Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
 | Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
@@ -33,18 +33,19 @@ not insert a future or guessed commit identifier into this document.
 
 ## Current checkpoint
 
-- Current block: **S06 — Content data and build profiles**.
-- Last documented block: **S05 — Calendar, scheduler, events, and cutscenes**.
+- Next block: **S07 — Persistence and recovery**; do not begin it until
+  Leonardo approves moving to it after the S06 commit.
+- Last documented block: **S06 — Content data and build profiles**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
-- Primary existing design input: `../03-narrative-and-campaign.md`,
-  `../05-characters-and-dialogue.md`, `../10-ui-ux-accessibility.md`,
-  `../12-content-specification.md`, and the approved S03–S05 state, rule, and
-  scheduler contracts.
-- Current open issue group: `MR-IMP-OPEN-006`.
-- Next action: discuss and approve the exact S06 authored-data split, object
-  schemas, references, string contract, content versioning, validation order,
-  and full, fallback, and slice build profiles.
+- Primary existing design input: `../08-endings-and-state-matrix.md`,
+  `../10-ui-ux-accessibility.md`, `../11-technical-architecture.md`, and the
+  approved S03–S06 state, scheduler, content, and migration-meaning contracts.
+- Current open issue group: `MR-IMP-OPEN-007`.
+- Next action: after committing S06, ask Leonardo whether he approves moving
+  to S07. If approved, discuss the exact IndexedDB database, stores, keys,
+  transactions, backup, recovery, migration, completion, Archive, and
+  clear-data algorithms.
 - Prohibited next action: create package files, source directories, code,
   assets, or deployment files.
 
@@ -55,7 +56,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S05 are documented; S06 is next. `MR-IF-001`–`MR-IF-005` are candidate `v1`; the S05 part of `MR-IF-011` is draft `v1`; none is frozen. |
+| Technical specification | In progress | S01–S06 are documented; S07 is next. `MR-IF-001`–`MR-IF-006` are candidate `v1`; the S05 part of `MR-IF-011` is draft `v1`; none is frozen. |
 | Vertical slice | Not authorized | No code exists. |
 | Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
 

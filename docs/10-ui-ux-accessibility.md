@@ -266,6 +266,12 @@ is authoritative in 12-content-specification.md. A later UI implementation
 must use those text keys. It must not add a second source of player-facing
 English text or use generated wording.
 
+If S06 content validation fails, bootstrap shows
+`MR-UI-CONTENT-INVALID`: “Game content could not be verified. No saved
+campaign data was changed.” Campaign controls stay disabled. The game does not
+load, replace, or repair a save and does not switch to another build profile.
+The slice uses `MR-UI-SLICE-COMPLETE` for its separate evaluation ending.
+
 MR-TEST-UI-001 must verify the New Game flow, fixed pressure profile,
 replacement confirmation, Save and Quit, local-data clear confirmation,
 Archive headings, and glance-display priority. MR-TEST-A11Y-001 must verify the

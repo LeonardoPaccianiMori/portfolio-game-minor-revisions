@@ -314,9 +314,10 @@ discovery, automatic detection, or moral punishment.
 
 The B05 response-band and route rules determine the Week 15 state. The
 narrative calendar does not change after any Week 14 choice. After Camila's
-Week-15 contact or its expiry, one no-time private Elena notification reacts
-only to the saved `PIIM` paper state. It is not a scene, does not reveal
-Camila's private contact, and changes no route or relationship.
+Week-15 contact or its expiry, `MR-NOT-ELENA-PIIM-REACTION` delivers one
+no-time private Elena notification selected from four saved-paper-state forms.
+It is not a scene, replyable message, or `MR-CTX` item. It does not reveal
+Camila's private contact and changes no route or relationship.
 
 ## Final choice and ending boundary
 

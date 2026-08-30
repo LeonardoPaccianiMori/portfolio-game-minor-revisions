@@ -264,7 +264,10 @@ later verified implementation facts.
 `12-content-specification.md` contains the complete initial English draft for
 mandatory scenes, optional scenes, messages, reports, choices, captions,
 internal thoughts, and ending reactions. It uses text keys in the approved
-`MR-...` catalogue. `strings.en.json` will later be its runtime source.
+`MR-...` catalogue. `strings.en.json` will later be its runtime source. S06
+defines the strict separation between replyable messages and no-reply
+notifications, the saved form, beat, choice, speaker, and character IDs, and
+the immutable build-specific English map.
 
 Dialogue remains English only. A main scene has no more than two state
 variants. Each optional scene has two to four player choices, one main

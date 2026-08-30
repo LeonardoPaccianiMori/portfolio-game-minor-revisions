@@ -31,11 +31,11 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S05 documented | Complete S06–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S06 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S05 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-005` candidate; `MR-IF-011` S05 part draft; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-006` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S06 documented | Complete S07–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S07 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S06 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-006` candidate; `MR-IF-011` S05 part draft; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-007` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,11 +63,12 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Technical-specification block: **S06 — Content data and build profiles**.
-- Last documented technical block: **S05 — Calendar, scheduler, events, and cutscenes**.
+- Next technical-specification block: **S07 — Persistence and recovery**;
+  Leonardo's approval to begin it is pending after the S06 commit.
+- Last documented technical block: **S06 — Content data and build profiles**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-006`.
-- Technical-specification gate: **blocked**; S06–S14 remain.
+- Active issue group: `MR-IMP-OPEN-007`.
+- Technical-specification gate: **blocked**; S07–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

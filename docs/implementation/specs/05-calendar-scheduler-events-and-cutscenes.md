@@ -429,8 +429,10 @@ The late campaign uses this exact order:
    new time costs, calculate final choices, set `choicePending`, and make
    **06:42** due at the exit.
 
-S06 must assign Elena's reaction a stable contextual-content ID and authored
-text. It is a notification, not a scene or replyable message.
+S06 assigns Elena's reaction the stable notification ID
+`MR-NOT-ELENA-PIIM-REACTION` with four saved-paper-state forms and authored
+text keys. It is a notification, not a scene, replyable message, or one of the
+fourteen `MR-CTX` objects.
 
 ## Event delivery types
 
@@ -816,8 +818,9 @@ fixtures. S12 joins them without weakening this S05 campaign order.
 
 `MR-IF-005` is candidate `v1` after S05. Its owner, consumers, inputs,
 outputs, triggers, failures, invariants, and required fixtures are complete at
-the specification level. It is not frozen and does not authorize code. S06,
-S07, S09, S10, S12, and S14 still owe connected evidence.
+the specification level. It is not frozen and does not authorize code. S06
+now supplies its authored event, delivery, cue, form, choice, and reference
+connection. S07, S09, S10, S12, and S14 still owe connected evidence.
 
 The campaign-facing part of `MR-IF-011` is draft `v1`. It cannot become
 candidate until S10 defines presentation timelines, camera, actors, audio,
@@ -843,7 +846,6 @@ S05 is documented only when:
 - the repository control documents agree; and
 - Leonardo's approved documentation is committed.
 
-S06 is the next block. It must define the exact content-data split, schemas,
-references, delivery data, stable IDs, English strings, full/fallback/slice
-profiles, validation, and content migration rules without changing S05 order
-silently.
+S06 now defines the exact content-data split, schemas, references, delivery
+data, stable IDs, English strings, full/fallback/slice profiles, validation,
+and content migration meaning without changing this S05 order. S07 is next.

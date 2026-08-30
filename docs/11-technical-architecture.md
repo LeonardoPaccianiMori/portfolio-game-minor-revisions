@@ -138,16 +138,19 @@ random event.
 S04 also fixes the time and energy operation, experiment and evidence rules,
 manuscript and integrity truth, PIIM buckets, career-route checks, and ending
 resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
-scheduler and campaign-facing cutscene coordination. S06–S07, S09–S10, S12,
-and S14 still own their named connected contracts and freeze evidence.
+scheduler and campaign-facing cutscene coordination. S06 now defines authored
+content and candidate `MR-IF-006`. S07, S09–S10, S12, and S14 still own their
+named connected contracts and freeze evidence.
 
 ### Content and strings contract
 
 The source catalogue in 12-content-specification.md is the design authority.
-Implementation must split authored data into validated JSON objects and one
-English strings.en.json file. JSON stores IDs, conditions, effects, action
-cost IDs, dependencies, windows, expiry, and test links. The English file
-stores all player-facing text keys and values.
+S06 defines its exact subordinate `content/` tree, strict manifest and family
+files, explicit full, fallback, and slice profiles, one English
+`strings.en.json`, compatibility mappings, validation order, and candidate
+`MR-IF-006`. JSON stores IDs, conditions, effects, action-cost IDs,
+dependencies, windows, expiry, and test links. The English file stores all
+player-facing text keys and values.
 
 Every meaningful action object has one fixed forecast key. Every material
 state effect has one fixed reason key. The UI can present separate authored
@@ -157,10 +160,16 @@ contains and counts only the fallback selection; excluded content is not
 bundled as unreferenced text. Either shipped file must remain within 6,000
 unique English words.
 
-CampaignState stores a content version, selected content variants, completed
-and expired one-time content IDs, and citation unlock IDs. It stores no copied
-dialogue or report text. A content migration must preserve an existing
-selection or replace it only with an explicitly mapped compatible item.
+CampaignState stores a content version, immutable build profile, selected
+content variants, completed and expired one-time content IDs, and citation
+unlock IDs. It stores no copied dialogue or report text. A content migration
+must preserve an existing selection or replace it only with an explicitly
+mapped compatible item.
+
+Successful validation creates immutable metadata, rules, presentation, and
+string views. Rules and scheduler receive no English values. Raw JSON is not
+read outside the content module. A failed check creates no partial content,
+changes no save, and never switches build profile.
 
 The rules module may select a saved approved variant. It must not assemble
 sentences, use a language model, fill an arbitrary template, or create a new

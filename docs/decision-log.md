@@ -179,6 +179,14 @@ belongs in the numbered design documents.
 | 2026-08-29 | Make the pure one-step scheduler `MR-IF-005` candidate `v1` and the S05 campaign-facing part of cutscene `MR-IF-011` draft `v1`; keep 24 commands and five effects. | Confirmed |
 | 2026-08-29 | Require the named S05 calendar, scheduler, crash, message, room, gate, scene, skip, recovery, ending, fault, and complete-journey fixtures without claiming that tests exist or pass. | Confirmed |
 | 2026-08-29 | Use `requestScene` in two steps without adding a command or effect: lock the scene form and verify its queued pre-scene checkpoint first, then activate and start only from that exact verified revision. | Confirmed |
+| 2026-08-30 | Use one strict authored `content/` source catalogue with exact data, manifest, English-string, and full, fallback, and slice profile files. Finished builds contain only selected data and text. | Confirmed |
+| 2026-08-30 | Use globally unique stable IDs, strict family shapes, stable-ID-only references, declarative closed conditions and effects, and rules-owned campaign changes. | Confirmed |
+| 2026-08-30 | Use the exact full, fallback, and Week-1 slice selections and counts, including the slice claim rehearsal and completion item, with independent dependency and reachability checks. | Confirmed |
+| 2026-08-30 | Use one build-specific English map with strict lower-camel dot keys, a closed protagonist-placeholder set, exact selected-key closure, and the normalized 6,000-unique-word check. | Confirmed |
+| 2026-08-30 | Start content schema at `1` and content version at `1.0.0`; list compatible earlier versions exactly; preserve the campaign profile; and migrate saved content only through direct approved mappings. | Confirmed |
+| 2026-08-30 | Divide immutable validated content into metadata, rules, presentation, and string views; reject invalid content without partial data, profile switching, or saved-data change. | Confirmed |
+| 2026-08-30 | Add the fixed content-invalid message, separate messages from notifications, identify Elena's four-form Week-15 notification, and keep audio data semantic until S10. | Confirmed |
+| 2026-08-30 | Make `MR-IF-006` candidate `v1`, require the named valid and rejected S06 fixture groups without claiming test results, resolve S06, and make S07 the next technical block. | Confirmed |
 
 ## Rules for future entries
 

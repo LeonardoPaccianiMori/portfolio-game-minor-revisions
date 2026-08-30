@@ -8,6 +8,9 @@ This is the authoritative B10 catalogue and initial English draft for
 *Minor Revisions*. It defines the shipped content boundary. The later runtime
 must encode the non-text fields in validated JSON and put all player-facing
 English text only in strings.en.json. Those future files do not exist yet.
+`implementation/specs/06-content-data-and-build-profiles.md` is the subordinate
+technical authority for their exact tree, shapes, references, profiles,
+validation, and compatibility rules.
 
 No runtime system may create free-form dialogue, reports, notices, or endings.
 It can only select an approved item or an approved saved variant from this
@@ -36,13 +39,13 @@ The full game has:
 | Environmental text items | 30 | 20 selected items; no required fact depends on them |
 | One-time contextual lines | 14 | All 14 |
 
-The shipped English text must contain no more than 6,000 unique words. Count
-words after lowercasing the build-specific strings.en.json. Count names and
-contractions as words. Ignore identifiers, markup, and punctuation. A full
-build counts all full-build strings. A fallback build contains and counts only
-its selected content; excluded content is not bundled as unused text. This
-document is below the limit; the later content check must measure the generated
-string file for the build that will ship.
+The shipped English text must contain no more than 6,000 unique words. Use the
+exact S06 NFC normalization, locale-independent lowercasing, placeholder
+removal, and Unicode word-token rule. Names and contractions count as words;
+identifiers, keys, markup, and punctuation do not. Each build counts only its
+selected `strings.en.json`; excluded content is not bundled as unused text.
+The later content check must measure the generated string file for the build
+that will ship.
 
 The fallback is a coherent 90-minute game, not a damaged full game. It keeps
 the complete five-act story, all mandatory scenes, all ending types, and the
@@ -74,8 +77,21 @@ form MR-REQ-DOMAIN-NUMBER. Content objects use one of these prefixes:
 | MR-UI- | Menu, warning, or interface string |
 | MR-AUD- | Dialogue-sound, ambience, or cue role |
 | MR-MUS- | Music-stem role |
+| MR-EVT- | Scheduler event definition |
+| MR-MSG- | Replyable or deferrable message |
+| MR-NOT- | No-reply notification |
+| MR-FORM- | Saved authored form |
+| MR-BEAT- | Ordered scene beat |
+| MR-CHO- | Authored scene or message choice |
+| MR-CUE- | World or desk availability cue |
+| MR-SLICE- | Slice-only evaluation object |
+| MR-CHR- | Recurring character identity |
+| MR-SPK- | Non-character speaker role |
+| MR-LOC- | Semantic location identity |
 
-A text key is a stable lower-case dot path. Examples are
+A text key is a stable dot path with lower-camel segments. It contains 1–128
+ASCII characters and starts each segment with a lowercase ASCII letter.
+Examples are
 scene.clarified.elena.opening and record.cosmos.body. Each text key occurs
 once in strings.en.json. Content JSON refers to keys and never repeats English
 text.
@@ -92,6 +108,12 @@ Each future content object must contain:
 - text keys;
 - linked requirements; and
 - linked test IDs.
+
+S06 gives every family a strict complete shape, requires explicit `null` or an
+empty list where no value applies, and rejects unknown properties. It also
+defines the closed protagonist-placeholder set. Runtime text can substitute
+only the normalized protagonist name and the approved subject, object,
+possessive-adjective, possessive-pronoun, and reflexive pronoun forms.
 
 ## Effect notation and common action catalogue
 

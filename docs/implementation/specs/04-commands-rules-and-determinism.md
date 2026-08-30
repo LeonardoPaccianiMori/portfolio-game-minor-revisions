@@ -15,9 +15,10 @@ contract and does not create source code, authored-data files, packages, save
 storage, or test results.
 
 S05 owns safe-point, crash, scheduled-event, cutscene, skip, and resume order.
-S06 owns the exact authored-content schemas and allowed authored IDs. S07 owns
-persistence. S09 owns player-visible projections. S12 owns executable fixture
-files. S14 owns the final interface freeze and consistency audit.
+S06 now defines the exact authored-content schemas, allowed authored IDs, and
+restricted rules view. S07 owns persistence. S09 owns player-visible
+projections. S12 owns executable fixture files. S14 owns the final interface
+freeze and consistency audit.
 
 ## Rule boundary
 
@@ -30,8 +31,10 @@ does not change an input object, read browser state, use the current date or
 time, save data, play sound, start a cutscene, or call another runtime module.
 For the same valid inputs, it returns the same result.
 
-`state` is one validated S03 `CampaignState`. `validatedContent` is the
-separate S06 content view. `command` is one member of the closed command union
+`state` is one validated S03 `CampaignState`. `validatedContent` is S06
+`ValidatedContent.rules` plus the metadata needed to check content version and
+profile. It contains no English strings, raw JSON, mutable source object, or
+presentation-only data. `command` is one member of the closed command union
 below. The operation returns exactly one of these results:
 
 | Result | Required data | Meaning |
@@ -620,10 +623,10 @@ codes, and `applyRuleCommand`.
 Owner: `rules`. Consumers: application, interaction, UI projection, scheduler,
 audio, cutscenes, persistence checkpoint coordination, and tests.
 
-S05 now connects exact scheduled, scene, crash, skip, reload, and finalization
-order. The interface remains candidate until S06 connects exact content
-objects, S09 connects projections, S12 supplies executable fixtures, and S14
-completes the cross-interface audit.
+S05 connects exact scheduled, scene, crash, skip, reload, and finalization
+order. S06 now connects exact content objects, references, and the restricted
+rules view. The interface remains candidate until S09 connects projections,
+S12 supplies executable fixtures, and S14 completes the cross-interface audit.
 
 ## `MR-IF-004` candidate `v1`
 
@@ -651,6 +654,7 @@ S04 is documented when:
   and
 - no code, package, asset, remote, licence, or deployment file exists.
 
-S05 preserves the atomic results and unchanged-state guarantees above and now
+S05 preserves the atomic results and unchanged-state guarantees above and
 defines safe points, time crossings, crashes, events, cutscenes, skip, resume,
-and two-phase finalization order. S06 is the durable next block.
+and two-phase finalization order. S06 now supplies the exact authored-content
+connection. S07 is the durable next block.

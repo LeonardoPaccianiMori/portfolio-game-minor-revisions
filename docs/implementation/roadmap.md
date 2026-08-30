@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S05 documented; S06 is next; no code authorized**
+Status: **S00–S06 documented; S07 is next; no code authorized**
 
 ## Purpose
 
@@ -123,8 +123,8 @@ full-game evaluation gates still apply during production.
 | S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Documented |
 | S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Documented |
 | S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Documented |
-| S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Not started; next |
-| S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Not started |
+| S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Documented |
+| S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Not started; next |
 | S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Not started |
 | S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Not started |
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Not started |
@@ -171,6 +171,8 @@ unclear. It must register that artifact in `status.md`.
 8. Validate links, identifiers, interfaces, traceability, contradictions,
    scope, and the complete diff.
 9. Commit the block atomically, then advance the current-block pointer.
+10. Ask Leonardo whether he approves moving to the next Sxx block. Do not
+    begin that block until he approves.
 
 ## Specification quality rule
 
@@ -196,8 +198,9 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-Begin S06. Decide the exact authored-data file split, schemas, ID and reference
-rules, English-string boundary, delivery definitions, content versioning,
-validation order, migration meaning, and full, fallback, and vertical-slice
-build selection. Use the candidate S03–S05 state, rule, and scheduler
-contracts. Do not create files from the planned runtime tree.
+After the S06 documentation commit, ask Leonardo whether he approves moving to
+S07. If he approves, decide the exact IndexedDB database version, stores, keys,
+transactions, active and backup save order, content-version migration,
+corruption recovery, completion retention, Archive writes, and clear-data
+behaviour. Use the candidate S03–S06 state and content contracts. Do not create
+files from the planned runtime tree.
