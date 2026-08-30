@@ -645,14 +645,14 @@ browser evidence and the interface-freeze audit.
 `MR-IF-007` is candidate `v1` after S07. It connects candidate `MR-IF-002`
 campaign serialization, candidate `MR-IF-004` saved variation facts,
 candidate `MR-IF-005` safe points, candidate `MR-IF-006` content versions and
-mappings, and draft `MR-IF-011` scene checkpoints.
+mappings, and candidate `MR-IF-011` scene checkpoints and restoration.
 
 `MR-IF-002`, `MR-IF-004`, `MR-IF-005`, and `MR-IF-006` remain candidate `v1`.
 Their S07 persistence connections are now specified, but S12 executable
-evidence and S14 audit evidence do not exist. The S05 campaign part of
-`MR-IF-011` remains draft `v1` until S10 completes presentation ownership.
-S08 now supplies the physical mapping for saved semantic recovery and
-character-anchor IDs through draft `MR-IF-008`; S07 continues to persist only
+evidence and S14 audit evidence do not exist. `MR-IF-011` is now candidate
+`v1` through the connected S05 and S10 contracts. S08 supplies the physical
+mapping for saved semantic recovery and character-anchor IDs through candidate
+`MR-IF-008`; S07 continues to persist only
 the validated S03 IDs, never browser pose or presentation objects.
 
 No interface is frozen.
@@ -677,4 +677,6 @@ S08 defines world geometry and interaction without changing this S07
 persistence contract. S09 now defines the complete settings record,
 Continue/New Game, recovery, migration, repair, clear-data, cross-tab, and
 nine-code player-facing UI consumer without changing S07 transactions or
-failure meanings. S10 is the next technical-specification block.
+failure meanings. S10 now defines presentation resources and restoration
+without changing the S07 safe-state boundary. S11 is the next technical-
+specification block.

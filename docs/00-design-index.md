@@ -30,12 +30,12 @@ gaps. It does not mean that the domain is finished.
 | `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R07 documented | No review block remains; wait for Leonardo's next instruction. |
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
-| `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S09 documented | Complete S10–S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S10 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S09 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-007`, `MR-IF-009`, and `MR-IF-010` candidate; `MR-IF-008` and `MR-IF-011` parts draft; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-010` active | Resolve each stable issue group in its owning block. |
+| `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S10 documented | Complete S11–S14 before any implementation approval. |
+| `implementation/status.md` | Durable current state | Current; S11 next | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S10 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-013` candidate; none frozen | Draft and freeze each interface in its owning block. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-011` active | Resolve each stable issue group in its owning block. |
 
 ## Discussion roadmap
 
@@ -63,12 +63,14 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Next technical-specification block: **S10 — Rendering, resources, assets,
-  and audio**; Leonardo's approval to begin it is pending after the S09 commit.
-- Last documented technical block: **S09 — Input, UI, and accessibility**.
+- Next technical-specification block: **S11 — Browser, performance, and
+  diagnostics**; Leonardo's approval to begin it is pending after the S10
+  commit.
+- Last documented technical block: **S10 — Rendering, resources, assets, and
+  audio**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-010`.
-- Technical-specification gate: **blocked**; S10–S14 remain.
+- Active issue group: `MR-IMP-OPEN-011`.
+- Technical-specification gate: **blocked**; S11–S14 remain.
 - Vertical-slice implementation gate: **blocked**; the technical baseline is
   incomplete and Leonardo has not given separate approval.
 - Full-game implementation gate: **blocked**; the vertical slice does not

@@ -275,6 +275,14 @@ actions, values, modes, screens, settings, messages, lifecycle, layout sizes,
 contrast ratios, and complete device journeys. No S09 test or result exists
 yet.
 
+S12 must also encode the three approved S10 groups: `MR-S10-RND-001` with five
+Rendering setups, `MR-S10-SCN-001` with five Character and Cutscene setups,
+and `MR-S10-RES-001` with six Resource and Audio setups. Their attached
+lifecycle cases cover restart during loading or a cutscene, return to title
+while audio plays, late old-session results, and both graphics-context recovery
+results. They must preserve campaign truth through every presentation failure.
+No S10 test, browser result, performance result, or asset result exists yet.
+
 The compatibility flow checks WebGL2, IndexedDB, ES modules, Web Audio, pointer
 lock, and controller availability. Missing WebGL2, IndexedDB, or ES modules
 blocks a new campaign. Missing controller support retains keyboard-mouse play.

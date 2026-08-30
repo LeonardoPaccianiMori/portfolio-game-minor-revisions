@@ -14,9 +14,10 @@ calendar, scheduler, event lifecycle, and cutscene coordination. This document
 defines the authored facts that those systems can read. It does not let content
 data create a new rule or write an arbitrary campaign field.
 
-S07 will own physical save migration and recovery. S09 will own interface
-presentation. S10 will own actual asset files, rendering, audio playback, and
-cutscene presentation. S12 will encode the fixtures named here. S14 will
+S07 owns physical save migration and recovery. S09 owns interface
+presentation. S10 now owns verified-resource handoff, rendering, audio
+playback, and cutscene presentation. It selects no actual asset or codec. S12
+will encode the fixtures named here. S14 will
 perform the final content-safety and cross-interface audit.
 
 Nothing in S06 creates game code, package configuration, content JSON,
@@ -517,9 +518,10 @@ S06 adds these fixed interface items:
 
 Audio content contains semantic role and cue identities only. It can state
 that a cue means a required arrival, optional availability, warning,
-confirmation, ambience role, music role, or non-lexical dialogue role. S10
-owns actual audio files, codecs, duration, playback, priority, buses, fallback,
-captions, and resource lifecycle.
+confirmation, ambience role, music role, or non-lexical dialogue role. S10 now
+owns verified audio-resource handoff, duration, playback, priority, exactly
+four total buses, fallback, captions, and resource lifecycle. The content-
+owned role IDs and descriptions do not change.
 
 ## English-string contract
 
@@ -931,15 +933,17 @@ level. It is not frozen and does not authorize implementation.
 `buildProfileId` checks. `MR-IF-003` remains candidate `v1` with a restricted
 rules view and unchanged totals of 24 commands and five presentation effects.
 `MR-IF-005` remains candidate `v1` with final event, delivery, order, cue, and
-profile-reference checks. The campaign-facing part of `MR-IF-011` remains
-draft `v1`. S07 now connects exact stored content versions, immutable profiles,
+profile-reference checks. `MR-IF-011` is now candidate `v1` through the
+connected S05 and S10 contracts. S07 connects exact stored content versions, immutable profiles,
 saved reference validation, direct mapping, ending-card references, and
-Citation records through candidate `MR-IF-007`. S08 now maps semantic locations
-and environmental-item presentation to its draft `MR-IF-008` and target
+Citation records through candidate `MR-IF-007`. S08 maps semantic locations
+and environmental-item presentation to candidate `MR-IF-008` and the target
 contract, without adding coordinates to content data. S09 now consumes only
 the presentation and string views needed by the current UI projection. It uses
 authored text and stable reason keys without copying hidden rules or creating a
-second English source. No interface is frozen.
+second English source. S10 consumes semantic visual, cue, ambience, music, and
+dialogue-sound role IDs without renaming them or placing asset paths in content
+data. No interface is frozen.
 
 ## S06 acceptance and handoff
 

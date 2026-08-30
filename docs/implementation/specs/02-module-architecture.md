@@ -395,7 +395,8 @@ The following are deliberately deferred to their owning blocks:
 - world, movement, camera, and interaction values: S08;
 - input modes, UI models, settings, and accessibility detail: S09, now
   documented through candidate `MR-IF-009` and `MR-IF-010`;
-- rendering, asset, animation, audio, and cutscene presentation data: S10;
+- rendering, asset, animation, audio, and cutscene presentation data: S10, now
+  documented through candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`;
 - compatibility results and diagnostic fields: S11; and
 - executable fixtures and the acceptance matrix: S12.
 

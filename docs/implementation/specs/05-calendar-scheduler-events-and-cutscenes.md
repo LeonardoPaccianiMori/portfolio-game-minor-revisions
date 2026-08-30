@@ -5,15 +5,15 @@ Status: **documented technical specification; no implementation authorized**
 This specification fixes the 64-period calendar, safe-point scheduler, event
 queue, expiry, message, reminder, crash, room-event, cutscene, reload, recap,
 and final-campaign order for *Minor Revisions*. It also defines candidate
-`MR-IF-005` and the S05-owned draft part of `MR-IF-011`.
+`MR-IF-005` and the S05-owned campaign part of candidate `MR-IF-011`.
 
 The numbered design documents remain the authority for player-visible story,
 meaning, content, balance, and presentation. S03 owns stored campaign shape.
 S04 owns the closed 24-command rule boundary, its five effects, atomic
 transitions, and deterministic variation. S06 will own exact authored content
 objects, IDs not already fixed by B10, priorities, deadlines, variants, and
-text. S07 will own physical save storage and recovery. S09 will own UI and
-input presentation. S10 will own camera, animation, rendering, audio, and the
+text. S07 owns physical save storage and recovery. S09 owns UI and input
+presentation. S10 now owns camera, animation, rendering, audio, and the
 complete presentation half of the cutscene interface. S12 will encode the
 fixtures named here. S14 will perform the final cross-interface audit.
 
@@ -500,11 +500,10 @@ the scene.
 
 ## `MR-IF-011` S05 cutscene boundary
 
-The campaign-facing part of `MR-IF-011` is draft `v1`. S05 owns campaign state,
+The campaign-facing part of `MR-IF-011` is candidate `v1`. S05 owns campaign state,
 checkpoint, token, choice, skip, completion, reload, recap, and failure
-meaning. S10 must later define the timeline, camera, actor, audio, visual
-resource, and full restoration contract before the interface can become
-candidate.
+meaning. S10 now defines the timeline, camera, actor, animation, audio, visual
+resource, and full restoration contract. The complete interface is candidate.
 
 ### Presentation request
 
@@ -826,12 +825,13 @@ the specification level. It is not frozen and does not authorize code. S06
 now supplies its authored event, delivery, cue, form, choice, and reference
 connection. S07 supplies its persistence specification connection through
 candidate `MR-IF-007`; S09 supplies its UI and input connection through
-candidate `MR-IF-009` and `MR-IF-010`. S10, S12, and S14 still owe their
+candidate `MR-IF-009` and `MR-IF-010`. S10 supplies its cutscene presentation,
+resource, audio, and restoration evidence. S12 and S14 still owe their
 connected evidence.
 
-The campaign-facing part of `MR-IF-011` is draft `v1`. It cannot become
-candidate until S10 defines presentation timelines, camera, actors, audio,
-resource ownership, and full restoration fixtures.
+`MR-IF-011` is candidate `v1` through the combined S05 campaign-safe order and
+S10 presentation timeline, camera, actor, audio, resource-ownership, and full-
+restoration contract. It is not frozen and does not authorize code.
 
 `MR-IF-002` remains candidate `v1` with the approved scheduler-field rename,
 event lifecycle facts, and final scene-presentation state. `MR-IF-003` remains
@@ -847,8 +847,8 @@ S05 is documented only when:
   ending, fault, and fixture contract is present;
 - S03 and S04 contain the approved connected refinements;
 - numbered design documents contain no contradictory player-visible claim;
-- `MR-IF-005` is candidate `v1` and the S05 part of `MR-IF-011` is draft
-  `v1`;
+- `MR-IF-005` is candidate `v1`; the S05 part of `MR-IF-011` was draft after
+  S05 and the complete connected interface is now candidate through S10;
 - `MR-IMP-OPEN-005` is resolved and S06 is the durable next block;
 - the repository control documents agree; and
 - Leonardo's approved documentation is committed.

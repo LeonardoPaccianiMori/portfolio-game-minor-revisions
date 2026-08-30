@@ -14,7 +14,7 @@ returns only its nine approved failure categories. S08 owns movement, target,
 and focused-view geometry. S09 converts physical input into plain actions and
 presents read-only player-visible facts. It cannot change campaign truth.
 
-S10 still owns rendered presentation and audio resources. S11 owns measured
+S10 now owns rendered presentation and audio resources. S11 owns measured
 browser and performance limits. S12 will encode the fixtures named here. S14
 will audit and freeze connected interfaces.
 
@@ -313,6 +313,12 @@ safe browser guidance. Missing controller support is non-blocking. Muted or
 unavailable audio keeps required text and visual meaning. A required player
 action for audio or pointer capture is not a campaign action.
 
+After a valid start, suspended or unavailable audio shows one small semantic
+**Audio paused** status message. When the browser can resume audio, it includes
+one clear **Resume Audio** action. It is not a campaign action, does not change
+story timing, and does not remove captions or visible cues. The message closes
+when audio resumes or when audio is no longer available to resume.
+
 The main menu order is **Continue**, **New Game**, **Archive**, **Settings**,
 **Accessibility**, and **Credits/Licences**. Continue remains visible but is
 disabled with **No active campaign** when no usable campaign exists. Archive
@@ -384,7 +390,8 @@ facts, and temporary previews are not saved.
 
 The four audio levels use `0–100%` in `5%` steps and default to `100%`. Master
 at zero mutes all audio. Every required sound meaning also has visible meaning.
-S10 owns the safe relative mix inside each audio group.
+S10 owns the exact four-bus graph and safe relative mix inside each audio
+group.
 
 Standard graphics is default. Field of view defaults to `70°`, ranges from
 `60°` to `90°` in `1°` steps, and never changes campaign rules. The centre
@@ -716,7 +723,7 @@ S09 requires these future fixture groups:
 |---|---|
 | `MR-S09-INP-001` | Every keyboard, mouse, and controller action; defaults; remapping; conflicts; held and repeat rules; sensitivity; dead zones; active-device changes; disconnection; and labels. |
 | `MR-S09-FOC-001` | All five modes; pointer capture; focused stations; menus; dialogue; cutscenes; confirmations; hidden tabs; browser focus; small-view block; priority; and no carried input. |
-| `MR-S09-UI-001` | Every screen and overlay; navigation order; visible focus; HUD; prompts; costs; scrolling; dialogue; captions; notifications; confirmations; errors; and Archive. |
+| `MR-S09-UI-001` | Every screen and overlay; navigation order; visible focus; HUD; prompts; costs; scrolling; dialogue; captions; notifications; audio-status and Resume Audio; confirmations; errors; and Archive. |
 | `MR-S09-SET-001` | Every field, allowed value, default, immediate preview, save, failed save, invalid stored record, section reset, remapping, and Reduced Motion interaction. |
 | `MR-S09-A11Y-001` | Keyboard-only and controller-only use; semantic controls; focus; speaker names; captions; contrast ratios; colour-independent meaning; motion; flashes; assist; and manual assistive-reading check. |
 | `MR-S09-ERR-001` | All nine persistence codes; operation-specific text; safe and unsafe retry; tab conflict; screen recovery; fatal stop; reload; and sanitized output. |
@@ -743,8 +750,9 @@ UI owns the projection and semantic screen lifecycle. Application owns action
 validation and dispatch. Rules, persistence, input, content, captions, menus,
 and tests consume only their approved limited parts.
 
-Neither interface is frozen or available for implementation. S10 must complete
-presentation connections, S12 must encode executable fixtures, and S14 must
+Neither interface is frozen or available for implementation. S10 now completes
+the presentation connections through candidate `MR-IF-008` and
+`MR-IF-011`–`MR-IF-013`. S12 must encode executable fixtures, and S14 must
 complete the cross-interface audit.
 
 ## S09 acceptance and handoff
@@ -758,10 +766,11 @@ S09 is documented only when:
   input, UI, or accessibility claim;
 - `MR-IF-009` and `MR-IF-010` are candidate `v1` with all later evidence named;
 - `MR-IMP-OPEN-009` is resolved;
-- implementation controls agree that S10 is next;
+- implementation controls preserve this S09 result and now agree that S11 is
+  next after documented S10;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S10 is the next technical-specification block. It owns rendering, resources,
-assets, and audio. It cannot begin until the S09 documentation commit exists
-and Leonardo separately approves moving to S10.
+S10 now owns the documented rendering, resource, asset, and audio connection.
+S11 is the next technical-specification block. It cannot begin until the S10
+documentation commit exists and Leonardo separately approves moving to S11.

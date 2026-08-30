@@ -288,6 +288,10 @@ architecture is documented in 11-technical-architecture.md. The content
 catalogue owns notice text, cue roles, and music roles. Exact source selection,
 colour values after contrast checks, codecs, final asset identifiers, file
 names, dependency choices, and measured performance remain later verified
-facts. S06 defines semantic audio-role and cue IDs only. S10 will define actual
-files, playback, buses, priority, fallback, captions, and resource lifetime.
-This document does not authorize asset import or production implementation.
+facts. S06 defines semantic audio-role and cue IDs only. Implementation S10 now
+defines the one-pass renderer, lighting and shadow limits, candidate palette,
+materials, animation, cutscene presentation, specialist resource ownership,
+placeholder and provenance connection, exactly four total audio buses,
+playback priority, spatial sound, fallback, captions, and resource lifetime.
+It selects no actual file or codec. This document does not authorize asset
+import or production implementation.

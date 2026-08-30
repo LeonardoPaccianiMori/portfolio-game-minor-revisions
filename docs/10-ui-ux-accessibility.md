@@ -299,6 +299,13 @@ the closed screen inventory, settings, accessibility, failures, responsive
 layout, lifecycle, and complete keyboard-and-mouse and controller journeys.
 No S09 test or result exists yet.
 
+Implementation S10 connects this semantic interface to one opaque canvas,
+three camera roles, Reduced Motion rendering equivalents, complete cutscene
+restoration, the four existing audio controls, sound-caption timing, visible
+audio failure meaning, and Camila's one desk-monitor portrait. Required
+information remains outside the canvas and never depends on colour, motion, or
+sound alone. `MR-IF-010`–`MR-IF-012` are candidate `v1`; none is frozen.
+
 The UI must continue to use IndexedDB only for local game data. It must not
 use a cookie for saves, ownership, discovery, or expiry. The active save has
 no automatic expiration. Browser closure and connection loss must not advance
@@ -306,9 +313,9 @@ game time.
 
 ## Deliberate later verification
 
-11-technical-architecture.md and S09 define browser scope, controller roles, UI
-runtime architecture, pointer-capture behaviour, save schemas, migrations,
-validation, corruption recovery, interface lifecycle, and the performance
-boundary. Exact rendered layout measurements, browser results, and
-implementation evidence remain future facts. This document does not authorize
-implementation code or production assets.
+11-technical-architecture.md and S09–S10 define browser scope, controller
+roles, UI and presentation architecture, pointer-capture behaviour, save
+schemas, migrations, validation, corruption recovery, interface lifecycle,
+and the performance boundary. Exact rendered layout measurements, browser
+results, and implementation evidence remain future facts. This document does
+not authorize implementation code or production assets.

@@ -1,6 +1,6 @@
 # Asset Manifest
 
-Status: **B10 documented; no production asset selected or imported**
+Status: **B10 and implementation S10 documented; no production asset selected or imported**
 
 ## Purpose and integration gate
 
@@ -118,3 +118,17 @@ Before integration, each real record must state:
 Exact source files, codecs, hashes, final asset IDs, and browser measurements
 are deliberate later verified facts. Do not invent or pre-approve them in this
 document.
+
+## S10 resource connection
+
+`docs/implementation/specs/10-rendering-resources-assets-and-audio.md` defines
+the candidate resource, placeholder, specialist-ownership, loading, failure,
+release, and teardown contract. A future production resource record must point
+to one complete verified manifest row. A placeholder must use `PLACEHOLDER` in
+its file name and resource record and cannot become a production asset by
+renaming alone.
+
+S10 selected, downloaded, generated, and imported no asset. It created no
+manifest row. Asset feasibility, source selection, licence evidence, exact
+files, formats, hashes, integration, and measured results still require later
+approval and verification.

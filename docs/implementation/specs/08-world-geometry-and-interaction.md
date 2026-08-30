@@ -14,8 +14,8 @@ content and semantic location identities. S07 owns persistence. S08 maps those
 plain facts to one fixed navigable floor and supplies plain movement and target
 contexts. It does not give presentation code authority over campaign truth.
 
-S09 now owns device inputs, remapping, pointer capture, complete focus state,
-prompts, UI, and accessibility presentation. S10 still owns Three.js objects,
+S09 owns device inputs, remapping, pointer capture, complete focus state,
+prompts, UI, and accessibility presentation. S10 now owns Three.js objects,
 rendering, lighting, visual transitions, resources, animation, audio, and
 cutscene camera work. S12 will encode the fixtures named here. S14 will audit
 and freeze connected interfaces.
@@ -359,8 +359,8 @@ rack, **The Missing Replicate** the shared-desks stage, **Shared Instrument**
 the booking board, **Not in My Figure** its locked shared-desks or break-room
 form, **The Queue** the facility terminal, **The Archive** the service alcove,
 **The Future** the PI-office stage, and Camila's call the analysis monitor.
-Control returns at that location's permanent recovery anchor. S10 still owns
-camera shots and actor animation.
+Control returns at that location's permanent recovery anchor. S10 owns the
+documented camera shots, actor animation, and complete restoration contract.
 
 ## Player collision body and movement
 
@@ -734,11 +734,11 @@ browser evidence and interface-freeze audit. No test or result exists yet.
 
 ## Connected interface lifecycle
 
-The S08 part of `MR-IF-008` is draft `v1`. It defines the spatial plan,
+`MR-IF-008` is candidate `v1`. S08 defines the spatial plan,
 projection, semantic room detection, anchors, characters, conditional
-passage, and world lifecycle. S10 must still define renderer, resource,
-visibility, transition, and cutscene presentation before the complete
-interface can become candidate.
+passage, and world lifecycle. S10 now completes renderer, resource, visibility,
+transition, and cutscene presentation. Neither block changes the other's
+authority.
 
 `MR-IF-009` is candidate `v1`. S08 defines device-independent frame values,
 player result, collision and interaction contexts, target geometry, selection,
@@ -746,8 +746,8 @@ station-focus geometry, and S08 rejections. S09 now defines device mappings,
 remapping, pointer capture, complete focus states, prompts, and accessibility
 behaviour.
 
-`MR-IF-001`–`MR-IF-007` remain candidate `v1`. The S05 campaign-facing part of
-`MR-IF-011` remains draft `v1`. No interface is frozen, and no status authorizes
+`MR-IF-001`–`MR-IF-013` are now candidate `v1` through their owning connected
+specifications. No interface is frozen, and no status authorizes
 implementation.
 
 ## S08 acceptance and handoff
@@ -759,14 +759,15 @@ S08 is documented only when:
   lifecycle, failure, traversal, and fixture contract is present;
 - S02–S07 and the connected numbered design documents contain no
   contradictory world or interaction claim;
-- the S08 part of `MR-IF-008` remains draft `v1` with S10 work named, while the
-  connected S08–S09 `MR-IF-009` is candidate `v1`;
+- the S08 part of `MR-IF-008` was draft after S08 and the complete interface is
+  now candidate `v1` through S10, while connected `MR-IF-009` remains candidate;
 - `MR-IMP-OPEN-008` is resolved;
 - the implementation controls preserve the documented S08 result and record
-  S10 as the current next block after documented S09;
+  S11 as the current next block after documented S10;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S09 now owns the documented input, UI, and accessibility connection. S10 is the
-next technical-specification block. It cannot begin until the S09 documentation
-commit exists and Leonardo separately approves moving to S10.
+S09 owns the documented input, UI, and accessibility connection. S10 now owns
+the documented rendering, resource, asset, audio, and presentation connection.
+S11 is the next technical-specification block and cannot begin until the S10
+documentation commit exists and Leonardo separately approves moving to S11.

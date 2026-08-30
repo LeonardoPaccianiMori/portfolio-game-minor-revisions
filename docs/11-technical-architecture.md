@@ -140,8 +140,9 @@ manuscript and integrity truth, PIIM buckets, career-route checks, and ending
 resolver. `MR-IF-003` and `MR-IF-004` are candidate `v1`. S05 fixes the pure
 scheduler and campaign-facing cutscene coordination. S06 now defines authored
 content and candidate `MR-IF-006`. S07 now defines persistence and candidate
-`MR-IF-007`. S09 now defines candidate `MR-IF-009` and `MR-IF-010`. S10, S12,
-and S14 still own their named connected contracts and freeze evidence.
+`MR-IF-007`. S09 defines candidate `MR-IF-009` and `MR-IF-010`. S10 defines
+candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`. S11–S12 and S14 still own
+their named connected contracts and freeze evidence.
 
 ### Content and strings contract
 
@@ -236,9 +237,9 @@ mesh, pathfinding system, or free NPC roaming.
 S08 now fixes the exact floor plan, collision footprints, player dimensions and
 movement limits, camera values, anchors, target volumes, focused-station
 geometry, projection, no-trap rules, and related future fixtures in
-`implementation/specs/08-world-geometry-and-interaction.md`. This document
-keeps rendering, resource, animation, and cutscene presentation ownership with
-S10.
+`implementation/specs/08-world-geometry-and-interaction.md`. Implementation
+S10 now fixes rendering, resource, animation, and cutscene presentation in
+`implementation/specs/10-rendering-resources-assets-and-audio.md`.
 
 Use Three.js animation mixers for reusable animation clips. A small
 code-owned cutscene timeline controls camera, actor movement, dialogue,
@@ -249,8 +250,10 @@ Rules retain all authority for choices, time, scene results, and campaign
 state. One temporary presentation token connects one active request to its
 responses. Skip before a required choice advances only to that choice. After a
 saved result, interruption uses closing or recap recovery and never reapplies
-the result. S05 defines the draft campaign-facing part of `MR-IF-011`; S10 must
-still define camera, actor, audio, resource, and full restoration behaviour.
+the result. S05 defines the campaign-facing part of `MR-IF-011`; S10 completes
+its camera, actor, animation, audio, resource, and full-restoration behaviour.
+The combined interface is candidate `v1` and remains unavailable for
+implementation until later freeze evidence exists.
 
 ## Interface, input, and audio runtime
 
@@ -283,6 +286,13 @@ One Web Audio API Audio Manager owns Master, Music, Ambience/Effects, and
 Dialogue Sounds buses. It starts only after player interaction. Required
 meaning remains available through text, captions, icons, or visible state when
 audio is unavailable or muted.
+
+S10 fixes this as exactly four total buses, including Master. It also fixes the
+one-context lifecycle, specialist audio-resource ownership, eight base
+ambience roles, three cue roles, six exact music IDs, five character-specific
+eight-sound palettes, spatial-source values, priority, mute, suspension,
+fallback, caption, restoration, and teardown contracts. `MR-IF-012` and
+`MR-IF-013` are candidate `v1`; neither is frozen.
 
 ## Local persistence and recovery
 
