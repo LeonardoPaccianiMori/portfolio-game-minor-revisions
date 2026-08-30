@@ -387,7 +387,11 @@ The local quality commands will be `npm run check` for type, lint, format, and
 unit checks; `npm run test:e2e` for browser tests; `npm run build` for the
 production build; and `npm run verify` for the complete local gate. The B10
 coverage targets, private evaluation method, and performance pass evidence are
-defined in 13-testing-and-evaluation.md.
+defined in 13-testing-and-evaluation.md. S12 fixes one strict data-only JSON
+fixture envelope, stable case and acceptance identities, two-way traceability,
+exact expected and unchanged-data comparison, separate automated and manual
+evidence, and the complete S02–S12 case routes. Expected fixtures never contain
+future pass or fail results.
 
 After Leonardo approves a public GitHub remote, a GitHub Actions workflow may
 run the same checks on pushes and pull requests. It does not deploy the game,

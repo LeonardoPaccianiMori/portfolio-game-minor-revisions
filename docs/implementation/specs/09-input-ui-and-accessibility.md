@@ -774,14 +774,13 @@ S09 is documented only when:
   input, UI, or accessibility claim;
 - `MR-IF-009` and `MR-IF-010` are candidate `v1` with all later evidence named;
 - `MR-IMP-OPEN-009` is resolved;
-- implementation controls preserve this S09 result and now agree that S12 is
-  next after documented S11;
+- implementation controls preserve this S09 result and its connected S12
+  fixture and acceptance contract;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
 S10 now owns the documented rendering, resource, asset, and audio connection.
 S11 now owns the documented browser, graphics-budget, local advisory,
 diagnostic, privacy, and measurement connection. `MR-IF-014` is candidate
-`v1`. S12 is the next technical-specification block. It cannot begin until the
-S11 documentation commit exists and Leonardo separately approves moving to
-S12.
+`v1`. S12 now supplies the future executable fixture and acceptance contract.
+S13 is the current next technical-specification block.

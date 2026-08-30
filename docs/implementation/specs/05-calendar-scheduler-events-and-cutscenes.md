@@ -856,4 +856,6 @@ S05 is documented only when:
 S06 now defines the exact content-data split, schemas, references, delivery
 data, stable IDs, English strings, full/fallback/slice profiles, validation,
 and content migration meaning without changing this S05 order. S07 now
-defines physical storage and recovery without changing this S05 order.
+defines physical storage and recovery without changing this S05 order. S12 now
+supplies the future fixture, journey, and acceptance contract without changing
+the scheduler order.

@@ -518,8 +518,8 @@ This result refines `MR-IF-001` startup, `MR-IF-007` temporary-probe separation,
 `MR-IF-009` pointer and controller failure use, `MR-IF-010` player-facing
 status and errors, `MR-IF-012` audio availability, and `MR-IF-013` resource
 budgets. Each remains candidate and no implementation signature is authorized.
-S12 owns executable form and expected values. S14 owns the complete browser,
-contradiction, consumer, and freeze audit.
+S12 now owns the future executable form and expected-value contract. S14 owns
+the complete browser, contradiction, consumer, and freeze audit.
 
 ## S11 acceptance and handoff
 
@@ -534,10 +534,12 @@ S11 is documented only when:
 - `MR-IF-014` is candidate `v1` and every affected candidate consumer is
   identified;
 - `MR-IMP-OPEN-011` is resolved;
-- implementation controls state that S12 is next;
+- implementation controls preserve the connected S12 fixture and acceptance
+  contract;
 - no real browser, performance, memory, size, or test result is claimed; and
 - all implementation gates remain blocked.
 
-S12 is the next technical-specification block. It owns executable-format test
-vectors, expected values, traceability, automated-versus-manual classification,
-and the complete acceptance matrix. S11 creates no implementation permission.
+S12 now owns the future executable-format test vectors, expected values,
+traceability, automated-versus-manual classification, and complete acceptance
+matrix. S13 is the current next technical-specification block. S11 and S12
+create no implementation permission.

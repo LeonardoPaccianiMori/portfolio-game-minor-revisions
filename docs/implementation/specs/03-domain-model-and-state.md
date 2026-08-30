@@ -410,8 +410,9 @@ At creation:
   period is `0`, its resolved period is `null`, all locked events have both
   period fields `null`, and the last scheduler revision is `0`;
 - both routes are locked;
-- the world uses `orderlyButOverbooked`, the shared-desks safe anchor, the
-  Week-1 early background roster, and inactive room problems;
+- the world uses `orderlyButOverbooked`, recovery anchor
+  `MR-ANCHOR-REC-SHARED-DESKS`, the Week-1 early background roster, and
+  inactive room problems;
 - content history is empty and conclusion is `unresolved`.
 
 A smaller Supported vector changes only `pressureProfile` to `supported` and

@@ -1,6 +1,6 @@
 # Testing and Evaluation
 
-Status: **B10 documented; implementation approval pending**
+Status: **B10 and S12 documented; implementation approval pending**
 
 ## Evaluation boundary
 
@@ -21,6 +21,14 @@ change the design until Leonardo accepts them. The review must be discussed
 before Leonardo considers the separate implementation-readiness approval.
 
 No test result exists yet. This document defines future evidence only.
+
+S12 now fixes the future strict JSON fixture envelope, stable manifest and
+case IDs, atomic acceptance rows, controlled shared resources and actions,
+exact comparisons, evidence classes, two-way traceability, coverage boundary,
+S02–S12 case routes, cross-module journeys, manual procedures, and private
+result records. It creates no machine-readable fixture or result. The exact
+contract is
+[`implementation/specs/12-test-vectors-and-acceptance.md`](implementation/specs/12-test-vectors-and-acceptance.md).
 
 Review findings use three evidence levels: a document fact, an inference from
 the design, or measured private play evidence. Predictions about fun, boredom,
@@ -236,11 +244,11 @@ glance rule. The other twenty require focused inspection. Live-text and SVG
 accretion must use only the existing thirty IDs and must not change collision,
 architecture, or required information.
 
-S12 must also encode `MR-S08-GEO-001`, `MR-S08-COL-001`, `MR-S08-MOV-001`,
-`MR-S08-ANC-001`, `MR-S08-TGT-001`, `MR-S08-FOC-001`, `MR-S08-WLD-001`,
-`MR-S08-TRV-001`, and `MR-S08-FLT-001` with the exact S08 geometry, player,
-target, focus, world, traversal, and unchanged-state expectations. No S08 test
-or result exists yet.
+The S12 specification encodes `MR-S08-GEO-001`, `MR-S08-COL-001`,
+`MR-S08-MOV-001`, `MR-S08-ANC-001`, `MR-S08-TGT-001`, `MR-S08-FOC-001`,
+`MR-S08-WLD-001`, `MR-S08-TRV-001`, and `MR-S08-FLT-001` with the exact S08
+geometry, player, target, focus, world, traversal, and unchanged-state
+expectations. No S08 test or result exists yet.
 
 ### Save, interruption, and technical checks
 
@@ -264,26 +272,28 @@ MR-TEST-SAVE-001 and MR-TEST-TECH-001 must show that:
 - Clear Saved Data confirms before whole-database deletion, closes connections,
   reports blocked deletion, and never claims partial success.
 
-S12 must encode `MR-S07-SAV-001`, `MR-S07-REC-001`, `MR-S07-MIG-001`,
-`MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001` with the exact S07
-inputs, results, failure codes, and unchanged-store expectations.
+The S12 specification encodes `MR-S07-SAV-001`, `MR-S07-REC-001`,
+`MR-S07-MIG-001`, `MR-S07-CMP-001`, `MR-S07-CLR-001`, and `MR-S07-FLT-001`
+with the exact S07 inputs, results, failure codes, and unchanged-store
+expectations.
 
-S12 must also encode `MR-S09-INP-001`, `MR-S09-FOC-001`, `MR-S09-UI-001`,
-`MR-S09-SET-001`, `MR-S09-A11Y-001`, `MR-S09-ERR-001`, `MR-S09-RSP-001`,
-`MR-S09-LIF-001`, and `MR-S09-JRN-001`. These fixtures use the exact S09
-actions, values, modes, screens, settings, messages, lifecycle, layout sizes,
-contrast ratios, and complete device journeys. No S09 test or result exists
-yet.
+The S12 specification also encodes `MR-S09-INP-001`, `MR-S09-FOC-001`,
+`MR-S09-UI-001`, `MR-S09-SET-001`, `MR-S09-A11Y-001`, `MR-S09-ERR-001`,
+`MR-S09-RSP-001`, `MR-S09-LIF-001`, and `MR-S09-JRN-001`. These fixtures use
+the exact S09 actions, values, modes, screens, settings, messages, lifecycle,
+layout sizes, contrast ratios, and complete device journeys. No S09 test or
+result exists yet.
 
-S12 must also encode the three approved S10 groups: `MR-S10-RND-001` with five
-Rendering setups, `MR-S10-SCN-001` with five Character and Cutscene setups,
-and `MR-S10-RES-001` with six Resource and Audio setups. Their attached
+The S12 specification also encodes the three approved S10 groups:
+`MR-S10-RND-001` with five Rendering setups, `MR-S10-SCN-001` with five
+Character and Cutscene setups, and `MR-S10-RES-001` with six Resource and
+Audio setups. Their attached
 lifecycle cases cover restart during loading or a cutscene, return to title
 while audio plays, late old-session results, and both graphics-context recovery
 results. They must preserve campaign truth through every presentation failure.
 No S10 test, browser result, performance result, or asset result exists yet.
 
-S12 must also encode the three approved S11 groups: `MR-S11-CMP-001` with
+The S12 specification also encodes the three approved S11 groups: `MR-S11-CMP-001` with
 eight Compatibility setups, `MR-S11-PERF-001` with nine Performance setups,
 and `MR-S11-DIA-001` with eight Diagnostics setups. Automated cases verify
 records, limits, calculations, privacy, lifecycle, and failure response. They

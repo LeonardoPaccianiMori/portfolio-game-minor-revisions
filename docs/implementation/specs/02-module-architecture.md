@@ -405,7 +405,7 @@ The following are deliberately deferred to their owning blocks:
   documented through candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`;
 - compatibility, graphics-budget, performance-evidence, and diagnostic fields:
   S11, now documented through candidate `MR-IF-014`; and
-- executable fixtures and the acceptance matrix: S12.
+- executable fixture format and the acceptance matrix: now documented in S12.
 
 S02 resolves `MR-IMP-OPEN-002`. S03 and `MR-IMP-OPEN-003` are next. Technical
 specification, vertical-slice implementation, full-game implementation,

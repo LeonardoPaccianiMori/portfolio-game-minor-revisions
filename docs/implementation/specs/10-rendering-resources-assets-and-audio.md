@@ -523,12 +523,12 @@ S10 is documented only when:
 - numbered design documents and S02–S09 contain no contradictory claim;
 - `MR-IF-008`, `MR-IF-011`, `MR-IF-012`, and `MR-IF-013` are candidate `v1`;
 - `MR-IMP-OPEN-010` is resolved;
-- implementation controls agree that S12 is next after documented S11;
+- implementation controls preserve the connected S12 fixture and acceptance
+  contract;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
-S11 now owns browser compatibility, exact graphics-profile values, performance
-and memory budgets, profiling, diagnostics, privacy, and the response to failed
-measurements. S12 is the next technical-specification block. It cannot begin
-until the S11 documentation commit exists and Leonardo separately approves
-moving to S12.
+S11 owns browser compatibility, exact graphics-profile values, performance and
+memory budgets, profiling, diagnostics, privacy, and the response to failed
+measurements. S12 now owns the future executable fixture and acceptance
+contract. S13 is the current next technical-specification block.

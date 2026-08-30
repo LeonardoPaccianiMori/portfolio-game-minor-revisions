@@ -46,6 +46,13 @@ retest contract. Standard or Low performance failure, a retained-resource
 leak, unavailable valid evidence, or an unapproved hard-limit exception blocks
 the private release candidate.
 
+All future test work follows the candidate S12 fixture and traceability
+contract. Foundation work prepares the format and self-checks. Each later
+phase supplies only the fixtures and evidence in its approved scope. Expected
+fixtures, raw reports, durable private summaries, and Leonardo's play reviews
+remain separate. No phase can mark an unrun case as passed or change an
+expected result to hide an implementation failure.
+
 Before the vertical slice, Phase 1 must also test asset feasibility for every
 planning role. Record its likely reusable or original source route, licence and
 redistribution risk, estimated non-LLM direct cost, estimated original-work

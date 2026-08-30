@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S11 documented; S12 is next; no code authorized**
+Status: **S00–S12 documented; S13 is next; no code authorized**
 
 ## Purpose
 
@@ -129,8 +129,8 @@ full-game evaluation gates still apply during production.
 | S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Documented |
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Documented |
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
-| S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Not started; next |
-| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Not started |
+| S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Documented |
+| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Not started; next |
 | S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Not started |
 
 ## Planned specification files
@@ -198,9 +198,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S11 documentation commit, ask Leonardo whether he approves moving to
-S12. If he approves, decide the exact executable fixture format and values,
-cross-module journeys, requirement and interface traceability, coverage and
-rejection rules, browser and accessibility checks, manual-evidence boundary,
-and acceptance matrix. Use all candidate S03–S11 contracts, including
-`MR-IF-015`. Do not create files from the planned runtime tree.
+After the S12 documentation commit, ask Leonardo whether he approves moving to
+S13. If he approves, decide exact future path ownership, worker dependencies,
+assignment packets, branch and commit rules, contribution evidence, review,
+and integration order against candidate `MR-IF-001`–`MR-IF-015`. Do not create
+files from the planned runtime or test trees.

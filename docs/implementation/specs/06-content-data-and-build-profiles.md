@@ -962,4 +962,5 @@ S06 is documented only when:
 S07 now defines the exact IndexedDB stores, keys, transactions, validation,
 backup, recovery, content-version migration operation, completion retention,
 and clear-data behaviour. It preserves this S06 content contract. All
-implementation gates remain blocked.
+implementation gates remain blocked. S12 now supplies the future valid,
+rejected, migration, catalogue, profile, string, and acceptance case routes.

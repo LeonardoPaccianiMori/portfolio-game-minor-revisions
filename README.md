@@ -13,7 +13,7 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **implementation specification; creative design, two independent
-review passes, and S00–S11 complete; S12 is next; all implementation gates
+review passes, and S00–S12 complete; S13 is next; all implementation gates
 blocked**.
 
 This repository contains design documentation only. It contains no game
@@ -52,10 +52,14 @@ S10 freezes the documented renderer, scene, camera, lighting, material,
 animation, effect, cutscene-presentation, specialist-resource, provenance, and
 four-bus audio contract. S11 freezes the documented compatibility, graphics-
 profile, frame, processor, workload, memory, download, profiling, diagnostic,
-privacy, and failed-measurement contract. `MR-IF-001`–`MR-IF-014` are
-candidates for later consistency review. None is frozen for implementation.
-No candidate creates package, runtime, or asset files. S12 will define
-executable test vectors and the acceptance matrix.
+privacy, and failed-measurement contract. S12 adds candidate `MR-IF-015`, the
+fixture and traceability contract. S12
+fixes the future strict fixture format, acceptance matrix, evidence classes,
+coverage boundary, S02–S12 case routes, connected journeys, and manual-review
+boundary. `MR-IF-001`–`MR-IF-015` remain candidates for later consistency
+review. None is frozen for implementation. No candidate creates package,
+runtime, test, or asset files. S13 will define future worker orders and
+integration.
 No code can begin until the technical baseline is complete and Leonardo gives
 separate vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).

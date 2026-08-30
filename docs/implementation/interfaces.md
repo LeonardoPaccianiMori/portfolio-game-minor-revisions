@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-014` candidate; no interface frozen**
+Status: **`MR-IF-001`–`MR-IF-015` candidate; no interface frozen**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -23,7 +23,7 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 
 | ID | Interface | Owning block | Planned consumers | State | Version and owner | Required freeze evidence |
 |---|---|---|---|---|---|---|
-| MR-IF-001 | Runtime bootstrap and application lifecycle | S01–S02 | All runtime modules, UI, tests | Candidate | `v1`; controller owner: `application`; browser-entry owner: `bootstrap` | `MR-S02-FIX-001`–`010`; connected executable format pending S12; cross-interface audit pending S14 |
+| MR-IF-001 | Runtime bootstrap and application lifecycle | S01–S02 | All runtime modules, UI, tests | Candidate | `v1`; controller owner: `application`; browser-entry owner: `bootstrap` | `MR-S02-FIX-001`–`010`; connected S12 fixture contract; cross-interface audit pending S14 |
 | MR-IF-002 | `CampaignState` and serializable domain types | S03–S07 | Rules, scheduler, content, persistence, UI, cutscenes, tests | Candidate | `v1`; owner: `rules` | Complete schema and invariants; exact experiment variation, raw-record, evidence-card, PIIM-lock, content-history, ending-module, scheduler-event, locked-scene-form, final-presentation, content-version, immutable-profile, canonical persistence round-trip, envelope agreement, and 1 MiB facts; `MR-S03-FIX-001`; `MR-S03-REJ-001`–`005`; `MR-S07-SAV-001` and connected variants; S12 executable format; S14 audit |
 | MR-IF-003 | Rule command, rejection, effect, and transition result | S04–S06 | Application, interaction, UI, scheduler, audio, cutscenes, persistence coordination, tests | Candidate | `v1`; owner: `rules` | One valid vector for all 24 commands; all 15 rejections and six faults; unchanged-state, atomicity, rule-table, route, ending, scheduler, scene, two-phase finalization, and restricted-content-view fixtures; S09 and S12 connections; S14 audit |
 | MR-IF-004 | Stateless deterministic variation | S04 and S07 | Experiment rules, PIIM rules, persistence through campaign facts, tests | Candidate | `v1`; owner: `rules` | Exact UTF-8/FNV-1a/Mulberry32 vectors; bucket boundaries; namespace isolation; reload, retry, unrelated-command, rejected-command, and no-redraw fixtures; saved canonical round trip and migration preservation in `MR-S07-SAV-001` and `MR-S07-MIG-001`; S12 executable format; S14 audit |
@@ -37,7 +37,7 @@ compatibility and migration review, updated fixtures, and Leonardo's approval.
 | MR-IF-012 | Audio bus, cue, and dialogue-sound request | S10 | UI, rules effects, world, cutscenes, settings, tests | Candidate | `v1`; owner: `audio` | One context; exactly four total buses; exact volume, mute, ambience, spatial-source, cue-priority, music-role, dialogue-palette, caption, unavailable, suspended-context, restoration, and teardown contract; `MR-S10-SCN-001` and `MR-S10-RES-001`; S11 compatibility consumers; S12 executable format; S14 audit |
 | MR-IF-013 | Asset and resource ownership lifecycle | S10 | Application, world, renderer, UI, cutscenes, audio, bootstrap diagnostics, tests | Candidate | `v1`; preparation-order owner: `application`; visual-resource owner: `rendering`; audio-resource owner: `audio`; DOM-presentation owner: `ui`; provenance owner: asset manifest | Specialist ownership; stable plain records; initial preparation; sharing inside one resource owner; already-loaded background preparation; required and optional failure; cancellation; late result; release; placeholder; provenance; context loss; and teardown; `MR-S10-RND-001`, `MR-S10-SCN-001`, and `MR-S10-RES-001`; S11 resource-budget consumers; S12 executable format; S14 audit |
 | MR-IF-014 | Compatibility, performance, and sanitized diagnostic record | S11 | Bootstrap, platform, persistence boundary, rendering, input, audio, settings, UI, tests, private evaluation | Candidate | `v1`; compatibility owner: `platform`; graphics-budget owner: `rendering`; diagnostic-conversion owner: bootstrap's private diagnostic adapter; evidence owner: private evaluation | Exact six-capability report, temporary probe lifecycle, three profiles, frame, processor, workload, memory, loading and download budgets, measurement and failure rules, sanitized 2-KiB record, and `MR-S11-CMP-001`, `MR-S11-PERF-001`, `MR-S11-DIA-001`; S12 executable format; S14 audit |
-| MR-IF-015 | Test fixture and traceability format | S12 | Every module and future worker | Not started | Pending S12 | Schema check plus requirement, interface, content, and expected-result links |
+| MR-IF-015 | Test fixture and traceability format | S12 | Every module, future work package, reviewer, and test suite | Candidate | `v1`; future owner: `MR-WP-09 Quality and release preparation` | Strict fixture envelope, stable manifest, shared-resource rules, closed steps, exact expectations, atomic acceptance rows, two-way requirement/test/interface/content/specification traceability, evidence classification, fixture self-checks, S02–S12 case routes, and S14 audit |
 
 ## Current freeze state
 
@@ -58,9 +58,11 @@ are candidate `v1` through
 `specs/10-rendering-resources-assets-and-audio.md`. `MR-IF-014` is candidate
 `v1` through `specs/11-browser-performance-and-diagnostics.md`, including its
 startup, persistence-boundary, rendering, input, audio, UI, diagnostic, and
-private-evaluation consumers. S12 must create the connected executable
-fixtures. S14 must complete the cross-interface audit before an applicable
-interface can become frozen.
+private-evaluation consumers. `MR-IF-015` is candidate `v1` through
+`specs/12-test-vectors-and-acceptance.md`. S12 supplies the connected future
+fixture format, case routes, acceptance matrix, and evidence boundary. It does
+not claim that a machine-readable fixture or result exists. S14 must complete
+the cross-interface audit before an applicable interface can become frozen.
 
 No interface is frozen. No implementation worker can use candidate status as
 permission to create a signature or source file. A change to any candidate

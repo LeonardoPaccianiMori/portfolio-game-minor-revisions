@@ -294,6 +294,8 @@ The following remain future evidence because implementation is not authorized:
   quality; and
 - any remote, release, or deployment result.
 
-`MR-IF-001` remains `not started`. S02 owns the exact runtime bootstrap and
-application-lifecycle interface. No implementation worker can use this S01
-toolchain contract until Gate 1 and the separate Gate-2 approval are complete.
+`MR-IF-001` was `not started` after S01 and is now candidate `v1` through S02
+and the connected S12 fixture contract. S02 owns the exact runtime bootstrap
+and application-lifecycle interface. No implementation worker can use this
+S01 toolchain contract until Gate 1 and the separate Gate-2 approval are
+complete.

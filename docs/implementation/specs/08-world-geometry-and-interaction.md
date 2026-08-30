@@ -269,61 +269,61 @@ nearby substitute.
 
 All recovery anchors use `Y = 0`:
 
-| Semantic location | `X` | `Z` | Facing |
-|---|---:|---:|---|
-| Tissue culture | `-7.65` | `+2.00` | North |
-| Main laboratory | `0.00` | `0.00` | North |
-| PI office | `-3.00` | `-6.80` | North |
-| Shared desks | `+0.50` | `-5.70` | East |
-| Imaging | `+7.50` | `-0.50` | East |
-| Facility | `+9.70` | `-2.40` | North |
-| Break room | `-7.00` | `+7.50` | East |
-| General corridor connector | `-7.65` | `+4.40` | East |
-| South corridor | `+1.00` | `+5.40` | East |
-| Exit vestibule | `+10.15` | `+8.00` | South |
+| Anchor ID | Semantic location | `X` | `Z` | Facing |
+|---|---|---:|---:|---|
+| `MR-ANCHOR-REC-TISSUE-CULTURE` | Tissue culture | `-7.65` | `+2.00` | North |
+| `MR-ANCHOR-REC-MAIN-LAB` | Main laboratory | `0.00` | `0.00` | North |
+| `MR-ANCHOR-REC-PI-OFFICE` | PI office | `-3.00` | `-6.80` | North |
+| `MR-ANCHOR-REC-SHARED-DESKS` | Shared desks | `+0.50` | `-5.70` | East |
+| `MR-ANCHOR-REC-IMAGING` | Imaging | `+7.50` | `-0.50` | East |
+| `MR-ANCHOR-REC-FACILITY` | Facility | `+9.70` | `-2.40` | North |
+| `MR-ANCHOR-REC-BREAK-ROOM` | Break room | `-7.00` | `+7.50` | East |
+| `MR-ANCHOR-REC-CORRIDOR` | General corridor connector | `-7.65` | `+4.40` | East |
+| `MR-ANCHOR-REC-SOUTH-CORRIDOR` | South corridor | `+1.00` | `+5.40` | East |
+| `MR-ANCHOR-REC-EXIT-VESTIBULE` | Exit vestibule | `+10.15` | `+8.00` | South |
 
 ### Core station approach anchors
 
 All station approach anchors use `Y = 0`:
 
-| Station | `X` | `Z` | Facing |
-|---|---:|---:|---|
-| Sample bench | `-2.65` | `-2.35` | North |
-| Experiment setup | `+2.30` | `+2.05` | South |
-| Active rack | `-8.35` | `0.00` | West |
-| Imaging bay | `+10.10` | `+1.00` | East |
-| Analysis workstation | `+2.60` | `-7.40` | North |
-| Manuscript desk | `+6.60` | `-7.40` | North |
+| Anchor ID | Station | `X` | `Z` | Facing |
+|---|---|---:|---:|---|
+| `MR-ANCHOR-STATION-SAMPLE-BENCH` | Sample bench | `-2.65` | `-2.35` | North |
+| `MR-ANCHOR-STATION-EXPERIMENT-SETUP` | Experiment setup | `+2.30` | `+2.05` | South |
+| `MR-ANCHOR-STATION-ACTIVE-RACK` | Active rack | `-8.35` | `0.00` | West |
+| `MR-ANCHOR-STATION-IMAGING-BAY` | Imaging bay | `+10.10` | `+1.00` | East |
+| `MR-ANCHOR-STATION-ANALYSIS` | Analysis workstation | `+2.60` | `-7.40` | North |
+| `MR-ANCHOR-STATION-MANUSCRIPT` | Manuscript desk | `+6.60` | `-7.40` | North |
 
 Supporting interaction anchors use `Y = 0`:
 
-| Interaction | `X` | `Z` | Facing |
-|---|---:|---:|---|
-| Facility queue terminal | `+10.10` | `-2.45` | North |
-| Imaging booking board | `+6.90` | `-3.00` | North |
-| Imaging service alcove | `+7.10` | `+2.10` | West |
-| PI-office scene point | `-3.00` | `-6.20` | North |
-| Protected break | `-8.10` | `+7.80` | West |
-| Exit interaction | `+10.15` | `+8.90` | South |
-| Exit access panel | `+11.45` | `+8.40` | East |
+| Anchor ID | Interaction | `X` | `Z` | Facing |
+|---|---|---:|---:|---|
+| `MR-ANCHOR-SUPPORT-FACILITY-TERMINAL` | Facility queue terminal | `+10.10` | `-2.45` | North |
+| `MR-ANCHOR-SUPPORT-BOOKING-BOARD` | Imaging booking board | `+6.90` | `-3.00` | North |
+| `MR-ANCHOR-SUPPORT-SERVICE-ALCOVE` | Imaging service alcove | `+7.10` | `+2.10` | West |
+| `MR-ANCHOR-SUPPORT-PI-OFFICE-SCENE` | PI-office scene point | `-3.00` | `-6.20` | North |
+| `MR-ANCHOR-SUPPORT-PROTECTED-BREAK` | Protected break | `-8.10` | `+7.80` | West |
+| `MR-ANCHOR-SUPPORT-EXIT-INTERACTION` | Exit interaction | `+10.15` | `+8.90` | South |
+| `MR-ANCHOR-SUPPORT-EXIT-PANEL` | Exit access panel | `+11.45` | `+8.40` | East |
 
 ### Character and step-aside anchors
 
 Physical characters use authored anchors and short authored paths. Camila has
 no physical anchor.
 
-| Character and location | Normal `X, Z` | Step-aside `X, Z` |
-|---|---:|---:|
-| Elena, PI office | `-3.80, -7.80` | `-4.30, -7.80` |
-| Elena, main laboratory | `+3.70, +0.60` | `+4.35, +0.60` |
-| Haoran, tissue culture | `-6.40, -1.00` | `-6.00, -1.60` |
-| Haoran, main laboratory | `-3.20, +1.60` | `-3.90, +1.60` |
-| Haoran, shared desks | `+4.20, -5.60` | `+4.90, -5.60` |
-| Samira, shared desks | `+8.80, -6.30` | `+9.45, -6.30` |
-| Samira, break room | `-8.50, +8.40` | `-9.20, +8.40` |
-| Samira, imaging | `+7.60, +2.40` | `+6.90, +2.40` |
-| Gabriel, facility | `+11.25, -2.25` | `+11.55, -2.80` |
-| Gabriel, imaging | `+8.20, +1.60` | `+7.50, +1.60` |
+| Character and location | Normal anchor and `X, Z` | Step-aside anchor and `X, Z` |
+|---|---|---|
+| Elena, PI office | `MR-ANCHOR-CHARACTER-ELENA-PI-OFFICE`; `-3.80, -7.80` | `MR-ANCHOR-STEP-ASIDE-ELENA-PI-OFFICE`; `-4.30, -7.80` |
+| Elena, main laboratory | `MR-ANCHOR-CHARACTER-ELENA-MAIN-LAB`; `+3.70, +0.60` | `MR-ANCHOR-STEP-ASIDE-ELENA-MAIN-LAB`; `+4.35, +0.60` |
+| Haoran, tissue culture | `MR-ANCHOR-CHARACTER-HAORAN-TISSUE-CULTURE`; `-6.40, -1.00` | `MR-ANCHOR-STEP-ASIDE-HAORAN-TISSUE-CULTURE`; `-6.00, -1.60` |
+| Haoran, main laboratory | `MR-ANCHOR-CHARACTER-HAORAN-MAIN-LAB`; `-3.20, +1.60` | `MR-ANCHOR-STEP-ASIDE-HAORAN-MAIN-LAB`; `-3.90, +1.60` |
+| Haoran, shared desks | `MR-ANCHOR-CHARACTER-HAORAN-SHARED-DESKS`; `+4.20, -5.60` | `MR-ANCHOR-STEP-ASIDE-HAORAN-SHARED-DESKS`; `+4.90, -5.60` |
+| Samira, shared desks | `MR-ANCHOR-CHARACTER-SAMIRA-SHARED-DESKS`; `+8.80, -6.30` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-SHARED-DESKS`; `+9.45, -6.30` |
+| Samira, break room | `MR-ANCHOR-CHARACTER-SAMIRA-BREAK-ROOM`; `-8.50, +8.40` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-BREAK-ROOM`; `-9.20, +8.40` |
+| Samira, imaging | `MR-ANCHOR-CHARACTER-SAMIRA-IMAGING`; `+7.60, +2.40` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-IMAGING`; `+6.90, +2.40` |
+| Gabriel, facility | `MR-ANCHOR-CHARACTER-GABRIEL-FACILITY`; `+11.25, -2.25` | `MR-ANCHOR-STEP-ASIDE-GABRIEL-FACILITY`; `+11.55, -2.80` |
+| Gabriel, imaging | `MR-ANCHOR-CHARACTER-GABRIEL-IMAGING`; `+8.20, +1.60` | `MR-ANCHOR-STEP-ASIDE-GABRIEL-IMAGING`; `+7.50, +1.60` |
 
 A physical character has a soft `0.35 m` horizontal boundary. When the player
 comes within `1.20 m` and the character obstructs movement, the character uses
@@ -336,11 +336,11 @@ visible character can never trap the player.
 
 Required scenes reuse five fixed stages:
 
-- tissue-rack stage: active-rack approach anchor;
-- main-laboratory stage: `X +0.50, Z -1.50`, facing north;
-- PI-office stage: PI-office scene point;
-- shared-desks stage: `X +4.80, Z -5.70`, facing north; and
-- exit stage: exit-vestibule recovery anchor.
+- `MR-ANCHOR-SCENE-TISSUE-RACK`: active-rack approach anchor;
+- `MR-ANCHOR-SCENE-MAIN-LAB`: `X +0.50, Z -1.50`, facing north;
+- `MR-ANCHOR-SCENE-PI-OFFICE`: PI-office scene point;
+- `MR-ANCHOR-SCENE-SHARED-DESKS`: `X +4.80, Z -5.70`, facing north; and
+- `MR-ANCHOR-SCENE-EXIT`: exit-vestibule recovery anchor.
 
 Required stage and recovery sequences are:
 
@@ -746,7 +746,7 @@ station-focus geometry, and S08 rejections. S09 now defines device mappings,
 remapping, pointer capture, complete focus states, prompts, and accessibility
 behaviour.
 
-`MR-IF-001`–`MR-IF-014` are now candidate `v1` through their owning connected
+`MR-IF-001`–`MR-IF-015` are now candidate `v1` through their owning connected
 specifications. No interface is frozen, and no status authorizes
 implementation.
 
@@ -762,14 +762,14 @@ S08 is documented only when:
 - the S08 part of `MR-IF-008` was draft after S08 and the complete interface is
   now candidate `v1` through S10, while connected `MR-IF-009` remains candidate;
 - `MR-IMP-OPEN-008` is resolved;
-- the implementation controls preserve the documented S08 result and record
-  S12 as the current next block after documented S11;
+- the implementation controls preserve the documented S08 result and its
+  connected S12 fixture contract;
 - every implementation gate remains blocked; and
 - Leonardo's approved documentation is committed.
 
 S09 owns the documented input, UI, and accessibility connection. S10 now owns
 the documented rendering, resource, asset, audio, and presentation connection.
-S11 now owns the measured browser, profile, frame, visibility, resource, and
-diagnostic connection without changing S08 movement or campaign time. S12 is
-the next technical-specification block and cannot begin until the S11
-documentation commit exists and Leonardo separately approves moving to S12.
+S11 owns the measured browser, profile, frame, visibility, resource, and
+diagnostic connection without changing S08 movement or campaign time. S12 now
+owns the future executable fixture and expected-value contract. S13 is the
+current next technical-specification block.

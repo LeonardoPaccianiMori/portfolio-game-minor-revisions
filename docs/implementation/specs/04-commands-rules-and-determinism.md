@@ -644,8 +644,9 @@ stored campaign facts, and tests.
 
 S07 now preserves every saved draw through canonical round trip, backup,
 recovery, migration, and exact retry without a redraw. It remains candidate
-until S12 supplies exact executable vectors and S14 completes the
-cross-interface audit.
+until the S12 exact future executable-vector contract and the S14
+cross-interface audit are complete. S12 is now documented; no fixture or result
+exists.
 
 ## S04 acceptance and handoff
 
