@@ -17,8 +17,8 @@ contexts. It does not give presentation code authority over campaign truth.
 S09 owns device inputs, remapping, pointer capture, complete focus state,
 prompts, UI, and accessibility presentation. S10 now owns Three.js objects,
 rendering, lighting, visual transitions, resources, animation, audio, and
-cutscene camera work. S12 will encode the fixtures named here. S14 will audit
-and freeze connected interfaces.
+cutscene camera work. S12 later defines the fixture contract named here. S14
+later audits and freezes the connected interfaces.
 
 Nothing in S08 creates game code, package configuration, runtime geometry,
 production assets, test evidence, a licence, a remote, deployment, or
@@ -747,8 +747,8 @@ remapping, pointer capture, complete focus states, prompts, and accessibility
 behaviour.
 
 `MR-IF-001`–`MR-IF-015` are now candidate `v1` through their owning connected
-specifications. No interface is frozen, and no status authorizes
-implementation.
+specifications. At S08 documentation, no interface was frozen, and no status
+authorized implementation.
 
 ## S08 acceptance and handoff
 
@@ -771,5 +771,14 @@ S09 owns the documented input, UI, and accessibility connection. S10 now owns
 the documented rendering, resource, asset, audio, and presentation connection.
 S11 owns the measured browser, profile, frame, visibility, resource, and
 diagnostic connection without changing S08 movement or campaign time. S12 now
-owns the future executable fixture and expected-value contract. S13 is the
-current next technical-specification block.
+owns the future executable fixture and expected-value contract. S13 later
+fixed work ownership, and S14 completed the programme audit.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

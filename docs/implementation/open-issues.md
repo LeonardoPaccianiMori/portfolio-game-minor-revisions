@@ -1,6 +1,6 @@
 # Implementation Specification Open Issues
 
-Status: **S01–S13 resolved; S14 issue group active; no issue silently resolved**
+Status: **S01–S14 resolved; no active issue group; no issue silently resolved**
 
 This is the durable clarification ledger for technical specification. It
 tracks missing or undecided material information. It does not contain casual
@@ -34,7 +34,7 @@ ideas or measured results that do not exist yet.
 | MR-IMP-OPEN-011 | S11 | Exact compatibility detection, graphics-profile values, CPU/GPU and memory budgets, download budgets, profiling method, diagnostics format, privacy boundary, and response to failed measurements | Resolved | `specs/11-browser-performance-and-diagnostics.md`; MR-IMP-DEC-197–220; MR-IF-014 candidate `v1` |
 | MR-IMP-OPEN-012 | S12 | Exact fixture format and expected values for rules, scheduler, persistence, UI, content, accessibility, browser, performance, cutscene, resource, and end-to-end acceptance | Resolved | `specs/12-test-vectors-and-acceptance.md`; MR-IMP-DEC-221–240; `MR-IF-015` candidate `v1` |
 | MR-IMP-OPEN-013 | S13 | Exact future source ownership, worker dependency graph, assignment packets, branch and commit workflow, integration order, review evidence, and contribution records | Resolved | `specs/13-agent-work-orders-and-integration.md`; MR-IMP-DEC-241–260 |
-| MR-IMP-OPEN-014 | S14 | Final contradiction, assumption, traceability, interface-freeze, content-boundary, licence, privacy, accessibility, and gate audit results | Open; next | Pending `specification-audit.md` |
+| MR-IMP-OPEN-014 | S14 | Final contradiction, assumption, traceability, interface-freeze, content-boundary, licence, privacy, accessibility, and gate audit results | Resolved | `specification-audit.md`; MR-IMP-DEC-261–287; `MR-S14-FIND-001`–`021`; `MR-IF-001`–`015` frozen `v1` |
 
 ## Issue protocol
 
@@ -46,4 +46,5 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-The current active group is `MR-IMP-OPEN-014`.
+There is no active issue group. A later material conflict must receive a new
+stable issue ID before dependent work continues.

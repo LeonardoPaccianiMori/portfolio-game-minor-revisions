@@ -17,8 +17,8 @@ data create a new rule or write an arbitrary campaign field.
 S07 owns physical save migration and recovery. S09 owns interface
 presentation. S10 now owns verified-resource handoff, rendering, audio
 playback, and cutscene presentation. It selects no actual asset or codec. S12
-will encode the fixtures named here. S14 will
-perform the final content-safety and cross-interface audit.
+later defines the fixture contract named here. S14 later completes the final
+content-safety and cross-interface audit.
 
 Nothing in S06 creates game code, package configuration, content JSON,
 production text files, assets, saves, test evidence, or implementation
@@ -858,7 +858,7 @@ and present-reference checks and cannot satisfy a release or phase gate.
 
 Automatic structure checks cannot prove that prose is scientifically safe,
 non-identifying, clear, funny, or faithful to the intended causal meaning.
-S14 must manually review selected English text for:
+The S14 audit manually reviews selected English text for:
 
 - false claims that the repair state causes recovery;
 - actionable real laboratory instructions;
@@ -987,7 +987,7 @@ the presentation and string views needed by the current UI projection. It uses
 authored text and stable reason keys without copying hidden rules or creating a
 second English source. S10 consumes semantic visual, cue, ambience, music, and
 dialogue-sound role IDs without renaming them or placing asset paths in content
-data. No interface is frozen.
+data. At S06 documentation, no interface was frozen.
 
 ## S06 acceptance and handoff
 
@@ -1010,5 +1010,14 @@ implementation gates remain blocked. S12 now supplies the future valid,
 rejected, migration, catalogue, profile, string, and acceptance case routes.
 S13 now assigns sequential root-catalogue ownership to `MR-WP-07` and
 `MR-WP-08`, permits only the three explicit monotonic completion combinations,
-and keeps every incomplete profile unbuildable. S14 owns final consistency and
-interface-freeze review.
+and keeps every incomplete profile unbuildable. S14 completes final
+consistency and interface-freeze review.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

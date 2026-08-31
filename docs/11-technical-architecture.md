@@ -1,13 +1,13 @@
 # Technical Architecture
 
-Status: **B10 and S13 documented; implementation approval pending**
+Status: **B10 and S01–S14 documented; Gate 1 approval pending**
 
 ## Scope and boundary
 
 This document defines the approved technical direction for the first release.
 It does not authorize game code, package files, production assets, a remote,
-or deployment work. B10 is documented, but the implementation gate remains
-blocked until Leonardo gives separate approval.
+or deployment work. The technical baseline is documented, but Gate 1 is only
+ready for Leonardo's separate approval. Gate 2 remains blocked.
 
 S02 defines the exact subordinate module graph, public ports, lifecycle,
 ownership, frame order, and error boundaries in
@@ -142,7 +142,8 @@ scheduler and campaign-facing cutscene coordination. S06 now defines authored
 content and candidate `MR-IF-006`. S07 now defines persistence and candidate
 `MR-IF-007`. S09 defines candidate `MR-IF-009` and `MR-IF-010`. S10 defines
 candidate `MR-IF-008` and `MR-IF-011`–`MR-IF-013`. S11 defines candidate
-`MR-IF-014`. S12 and S14 still own executable fixtures and freeze evidence.
+`MR-IF-014`. S12 defines the future executable fixture contract, and S14
+records the completed cross-interface freeze audit.
 
 ### Content and strings contract
 
@@ -292,7 +293,7 @@ one-context lifecycle, specialist audio-resource ownership, eight base
 ambience roles, three cue roles, six exact music IDs, five character-specific
 eight-sound palettes, spatial-source values, priority, mute, suspension,
 fallback, caption, restoration, and teardown contracts. `MR-IF-012` and
-`MR-IF-013` are candidate `v1`; neither is frozen.
+`MR-IF-013` were candidate `v1` at S10; S14 later froze both.
 
 ## Local persistence and recovery
 
@@ -417,5 +418,10 @@ attribution boundary.
 - A future external Safari test service could provide direct Safari evidence,
   but it is not part of the approved first-release plan.
 
-Nothing in this document authorizes implementation before the design-index
-gate is explicitly approved.
+S14 freezes `MR-IF-001`–`MR-IF-015` as `v1`. Earlier candidate statements in
+this document record their lifecycle before S14. Freeze does not claim that a
+source signature, executable fixture, browser result, or performance result
+exists.
+
+Nothing in this document authorizes implementation before Gate 1 and the
+separate design-index Gate-2 approval are explicitly approved.

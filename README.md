@@ -12,9 +12,8 @@ survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **implementation specification; creative design, two independent
-review passes, and S00–S13 complete; S14 is next; all implementation gates
-blocked**.
+Status: **S00–S14 technical specification documented; Gate 1 is ready for
+Leonardo's separate approval; no implementation authorized**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
@@ -52,21 +51,21 @@ S10 freezes the documented renderer, scene, camera, lighting, material,
 animation, effect, cutscene-presentation, specialist-resource, provenance, and
 four-bus audio contract. S11 freezes the documented compatibility, graphics-
 profile, frame, processor, workload, memory, download, profiling, diagnostic,
-privacy, and failed-measurement contract. S12 adds candidate `MR-IF-015`, the
-fixture and traceability contract. S12
+privacy, and failed-measurement contract. S12 adds `MR-IF-015`, the fixture and
+traceability contract. S12
 fixes the future strict fixture format, acceptance matrix, evidence classes,
 coverage boundary, S02–S12 case routes, connected journeys, and manual-review
-boundary. `MR-IF-001`–`MR-IF-015` remain candidates for later consistency
-review. S13 fixes the future ten-package ownership,
+boundary. S13 fixes the future ten-package ownership,
 dependency, stored work-order, model-selection, isolated-branch, review,
 validation, contribution, integration, and recovery contract. It also permits
 an explicitly incomplete inactive content profile during slice development so
 that fallback and full prose do not need to exist before the slice is tested.
-`MR-IF-001`–`MR-IF-015` remain candidates for the S14 audit; none is frozen and
-no candidate creates package, runtime, test, content, work-order, or asset
-files.
-No code can begin until the technical baseline is complete and Leonardo gives
-separate vertical-slice approval through
+S14 records the complete inventory, corrects requirement traceability and the
+fallback/full gate split, resolves the final issue group, and freezes
+`MR-IF-001`–`MR-IF-015` as `v1`. The freeze creates no package, runtime, test,
+content, work-order, or asset file. Gate 1 is only ready for Leonardo's
+separate approval. No code can begin until Leonardo approves Gate 1 and then
+gives separate Gate-2 vertical-slice approval through
 [`docs/00-design-index.md`](docs/00-design-index.md).
 
 Target experience:

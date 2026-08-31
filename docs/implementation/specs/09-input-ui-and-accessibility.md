@@ -16,8 +16,8 @@ presents read-only player-visible facts. It cannot change campaign truth.
 
 S10 now owns rendered presentation and audio resources. S11 now owns exact
 browser capability results, graphics values, local performance advice,
-sanitized diagnostics, and measured-performance limits. S12 will encode the
-fixtures named here. S14 will audit and freeze connected interfaces.
+sanitized diagnostics, and measured-performance limits. S12 later defines the
+fixture contract named here. S14 later audits and freezes connected interfaces.
 
 Nothing in S09 creates game code, package configuration, runtime UI, tests,
 production assets, a licence, a remote, deployment, or implementation
@@ -758,10 +758,11 @@ UI owns the projection and semantic screen lifecycle. Application owns action
 validation and dispatch. Rules, persistence, input, content, captions, menus,
 and tests consume only their approved limited parts.
 
-Neither interface is frozen or available for implementation. S10 now completes
+At S09 documentation, neither interface was frozen or available for
+implementation. S10 later completes
 the presentation connections through candidate `MR-IF-008` and
-`MR-IF-011`–`MR-IF-013`. S12 must encode executable fixtures, and S14 must
-complete the cross-interface audit.
+`MR-IF-011`–`MR-IF-013`. S12 defines the future executable-fixture contract,
+and S14 later completes the cross-interface audit.
 
 ## S09 acceptance and handoff
 
@@ -784,5 +785,14 @@ S11 now owns the documented browser, graphics-budget, local advisory,
 diagnostic, privacy, and measurement connection. `MR-IF-014` is candidate
 `v1`. S12 now supplies the future executable fixture and acceptance contract.
 S13 now assigns `input`, `player`, and `interaction` to `MR-WP-04` and semantic
-UI, CSS, and accessibility to `MR-WP-05`. S14 is the current next technical-
-specification block.
+UI, CSS, and accessibility to `MR-WP-05`. S14 later completed the technical-
+specification programme.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

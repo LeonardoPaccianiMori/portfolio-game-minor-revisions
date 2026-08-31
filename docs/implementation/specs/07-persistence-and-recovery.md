@@ -15,8 +15,8 @@ S07 stores those approved facts. It does not create a new campaign rule,
 content item, ending, or player-visible meaning.
 
 S09 will own the exact screens, focus order, confirmation presentation, and
-player-facing error text. S12 will encode the fixtures named here. S14 will
-perform browser evidence review and the final interface audit.
+player-facing error text. S12 later defines the fixture contract named here.
+S14 later completes the browser-evidence boundary and final interface audit.
 
 Nothing in S07 creates game code, package configuration, runtime save data,
 production assets, test evidence, a licence, a remote, deployment, or
@@ -653,14 +653,14 @@ candidate `MR-IF-005` safe points, candidate `MR-IF-006` content versions and
 mappings, and candidate `MR-IF-011` scene checkpoints and restoration.
 
 `MR-IF-002`, `MR-IF-004`, `MR-IF-005`, and `MR-IF-006` remain candidate `v1`.
-Their S07 persistence connections are now specified, but S12 executable
-evidence and S14 audit evidence do not exist. `MR-IF-011` is now candidate
+Their S07 persistence connections are now specified. S12 executable evidence
+does not exist; S14 audit evidence now exists. `MR-IF-011` was candidate
 `v1` through the connected S05 and S10 contracts. S08 supplies the physical
 mapping for saved semantic recovery and character-anchor IDs through candidate
 `MR-IF-008`; S07 continues to persist only
 the validated S03 IDs, never browser pose or presentation objects.
 
-No interface is frozen.
+At S07 documentation, no interface was frozen.
 
 ## S07 acceptance and handoff
 
@@ -688,5 +688,14 @@ capability-probe separation, required storage readiness, sanitized diagnostic
 boundary, and measured resource evidence without changing S07 records or
 transactions. S12 supplies the future fixture and acceptance contract. S13
 now assigns persistence ownership to `MR-WP-02` and fixes its dependency,
-review, validation, and integration path. S14 is the current next technical-
-specification block.
+review, validation, and integration path. S14 later completed the technical-
+specification programme.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

@@ -1,0 +1,140 @@
+# S14 — Specification Audit and Gate Packet
+
+Status: **documented; Gate 1 awaits Leonardo's separate approval; no implementation authorized**
+
+## Purpose and authority
+
+This document closes the S00–S14 technical-specification programme. It audits
+the approved design and implementation documents at baseline commit
+`52e7a778dd0a24ccd55ab359b897154d7949c7a3`. It records corrections, freezes
+the shared `v1` interface contracts, resolves `MR-IMP-OPEN-014`, and supplies
+the packet that Leonardo can use for a separate Gate-1 decision.
+
+This audit is documentation evidence only. It does not claim that a package,
+source file, test, asset, work order, build, browser run, performance result,
+or play result exists. It does not authorize implementation.
+
+## Finding contract
+
+Every finding uses stable ID `MR-S14-FIND-nnn` and one of these states:
+
+| State | Meaning |
+|---|---|
+| `pass` | The audited documents agree and the named evidence is present. |
+| `corrected` | The audit found a documentation defect and this S14 change corrects it. |
+| `measured later` | The method, target, and response rule exist, but a build or later production fact is required. |
+| `blocked` | A material conflict or missing decision prevents Gate-1 readiness. |
+
+A `pass` is not an execution result. A `measured later` item cannot be changed
+to `pass` without the named later evidence. Any `blocked` item keeps Gate 1
+blocked.
+
+## Controlled inventory
+
+The audit covers:
+
+| Inventory | Count | Audit boundary |
+|---|---:|---|
+| Numbered design documents | 16 | `docs/00-design-index.md` through `docs/15-implementation-contract.md` |
+| Implementation specifications | 13 | `docs/implementation/specs/01-...` through `13-...` |
+| Registered requirements | 22 | `MR-REQ-...` rows in `docs/15-implementation-contract.md` |
+| Top-level tests | 13 | Registered `MR-TEST-...` obligations |
+| Shared interfaces | 15 | `MR-IF-001` through `MR-IF-015` |
+| Pre-S14 implementation decisions | 260 | `MR-IMP-DEC-001` through `MR-IMP-DEC-260` |
+| Implementation issue groups | 14 | `MR-IMP-OPEN-001` through `MR-IMP-OPEN-014` |
+| S12 acceptance rows | 45 | `MR-S12-ACC-001` through `MR-S12-ACC-045` |
+
+The two advisory Opus 5 review sets and their recommendation register were
+checked as supporting history. They do not override Leonardo's later approved
+numbered design or implementation decisions.
+
+## Audit results
+
+| Finding | Area | State | Evidence and result |
+|---|---|---|---|
+| `MR-S14-FIND-001` | Baseline and inventory | `pass` | Git baseline and the eight controlled counts above are fixed and reproducible. |
+| `MR-S14-FIND-002` | Internal links | `pass` | Every repository-relative Markdown link resolves to an existing file or directory. |
+| `MR-S14-FIND-003` | Authoritative tables | `pass` | Numbered design, implementation-control, specification, and asset tables have consistent columns and no blank-line interruption. Advisory review tables are excluded from this structural gate. |
+| `MR-S14-FIND-004` | Stable IDs | `pass` | Registered requirement, test, interface, decision, issue, fixture-group, work-package, and acceptance-row IDs have no duplicate or unintended gap in their controlled ranges. |
+| `MR-S14-FIND-005` | Requirement traceability | `corrected` | All 22 requirement rows now state sources, tests, S12 acceptance rows, interfaces, dependencies, one primary owner, and `approved; not implemented` status. The earlier five-column rows omitted required dependency and status facts. |
+| `MR-S14-FIND-006` | Interface consumers | `pass` | Every `MR-IF-001`–`MR-IF-015` owner, consumer, input, output, failure, invariant, fixture route, and affected connection is specified across S01–S13. |
+| `MR-S14-FIND-007` | Interface freeze | `pass` | No unresolved contradiction remains. `MR-IF-001`–`MR-IF-015` are frozen as `v1` in the Git commit that contains this audit and interface register. Freeze does not authorize use before Gates 1 and 2. |
+| `MR-S14-FIND-008` | Gate sequence | `corrected` | Gate 3 now authorizes fallback work only after slice acceptance. New Gate 4 authorizes full-game work only after fallback acceptance. The earlier roadmap combined both approvals under Gate 3. |
+| `MR-S14-FIND-009` | Content profiles | `pass` | Slice, fallback, and full content remain one catalogue with monotonic completion. An inactive profile can be explicitly incomplete during an earlier phase, but an incomplete profile cannot build. |
+| `MR-S14-FIND-010` | Content meaning and fiction safety | `pass` | The specification keeps one authored English source, no generated story text, no real-person or real-institution copy, no actionable wet-lab protocol, and no causal regenerative claim. Later final prose still requires its named manual review. |
+| `MR-S14-FIND-011` | Privacy and diagnostics | `pass` | The game remains local and account-free, with no telemetry or automatic reporting. Diagnostics exclude campaign, storage, identity, typed-input, path, raw-error, stack, and personal facts. Evidence records have the same privacy boundary. |
+| `MR-S14-FIND-012` | Assets, licences, and provenance | `pass` | No production asset or public licence file exists. Every later asset needs a verified manifest record before integration. Remote, source release, licence creation, and publication remain separately approved actions. |
+| `MR-S14-FIND-013` | Accessibility | `pass` | Keyboard, controller, semantic HTML, focus, captions, scale, contrast, reduced motion, colour redundancy, Interaction Assist, responsive blocking, and manual assistive-reading acceptance routes agree across design, S09, S10, and S12. |
+| `MR-S14-FIND-014` | Numeric contracts | `pass` | Key duration, campaign, content-count, experiment, scene, ending, asset, word, geometry, audio, storage, diagnostic, browser, and performance targets agree across authoritative documents. |
+| `MR-S14-FIND-015` | Ownership and phase scope | `pass` | Ten work packages have non-overlapping planned ownership, a fixed dependency order, a future stored-work-order requirement, independent review, controlled integration, and separate slice, fallback, and full authority. |
+| `MR-S14-FIND-016` | Future-path boundary | `pass` | No planned package, source, content, test, work-order, contribution, worktree, production-asset, licence, remote, deployment, or runtime-result path exists. |
+| `MR-S14-FIND-017` | Result claims | `pass` | No implementation, build, browser, performance, play-duration, player-comprehension, or release result is claimed. Specification fixtures remain expected future evidence. |
+| `MR-S14-FIND-018` | Toolchain and automated checks | `measured later` | Gate 2 must recheck versions and licences, create the package baseline, install cleanly, and run the approved commands. Failure reopens the affected contract. |
+| `MR-S14-FIND-019` | Browser and performance evidence | `measured later` | S11 fixes direct-browser, reference-device, three-run, memory, loading, transfer, and long-session methods, targets, and failure responses. Results require an applicable build. |
+| `MR-S14-FIND-020` | Play quality and duration | `measured later` | Leonardo's private slice, fallback, and full-game reviews plus the clean-context comprehension check remain required at their named acceptance gates. |
+| `MR-S14-FIND-021` | Asset files and public rights | `measured later` | Exact sources, codecs, hashes, final asset IDs, credits, and redistribution evidence are verified before integration and again before release preparation. |
+
+There is no `blocked` S14 finding.
+
+## Interface freeze record
+
+`MR-IF-001` through `MR-IF-015` are frozen as version `v1`. The owner,
+consumers, evidence routes, and specification source for each interface remain
+in `interfaces.md`. The freeze commit is the Git commit that contains this
+audit, the updated interface register, and the S14 decision entries.
+
+Freeze means that a future worker cannot change the shared contract by local
+preference. A change requires the affected-consumer list, evidence and impact,
+compatibility or migration analysis, updated fixtures and traceability, and
+Leonardo's approval. Freeze does not mean implemented, tested, or approved for
+code work.
+
+## Independent review record
+
+The fresh-context read-only reviewer used OpenAI `gpt-5.6-sol`, high reasoning,
+on 2026-08-31. Its scope was the complete S14 working-tree diff against
+baseline `52e7a778dd0a24ccd55ab359b897154d7949c7a3` and the authoritative
+numbered, implementation, control, asset, traceability, interface, and gate
+documents needed to verify it.
+
+The first review found no blocker and four required documentation corrections:
+
+1. make the 45-row S12 matrix show its promised requirement, top-level-test,
+   interface, and evidence-state fields;
+2. correct current-state candidate, pending-audit, and all-gates-blocked labels;
+3. replace `MR-S12-ACC-018`'s old “applicable expansion gate” label with exact
+   slice and fallback timing; and
+4. replace a false implication that stored future work orders already exist.
+
+The primary agent verified all four findings against the cited documents and
+corrected them. The re-review confirmed three corrections and found one
+remaining required traceability correction: each acceptance row also needed
+its `MR-REQ-TEST-001` reverse link, and `MR-TEST-A11Y-001` was missing from
+four linked rows. The primary agent verified and corrected both omissions. The
+final narrow re-review confirmed all 45 reverse links, all four accessibility-
+test links, all 13 top-level test IDs, and every eight-column acceptance row.
+It found no blocker, required, or advisory finding. The reviewer verdict is
+ready.
+
+## Gate packet
+
+The S00–S14 documentation baseline is complete and `MR-IMP-OPEN-014` is
+resolved. Gate 1 is **ready for Leonardo's approval**, not approved.
+
+| Gate | Required prior acceptance | Authority if Leonardo separately approves it | Current state |
+|---|---|---|---|
+| Gate 1 — Technical baseline | Complete S00–S14 audit with no blocker | Confirms the frozen technical baseline only | Ready for Leonardo approval |
+| Gate 2 — Vertical-slice implementation | Gate 1 approved | Authorizes only `MR-WP-00`–`MR-WP-07` and slice-scoped `MR-WP-09` quality work | Blocked pending Gate 1 and separate approval |
+| Gate 3 — Fallback implementation | Slice acceptance, including `MR-S12-ACC-038` | Authorizes the fallback assignment of `MR-WP-08` and fallback-scoped quality work | Blocked; no slice exists |
+| Gate 4 — Full-game implementation | Fallback acceptance, including `MR-S12-ACC-039` | Authorizes the full-game assignment of `MR-WP-08` and full-scoped quality work | Blocked; no fallback exists |
+
+Full-game acceptance, including `MR-S12-ACC-040`, is required before
+release-candidate work. No gate authorizes a remote, licence, public release,
+deployment, portfolio publication, or unsupported completion claim.
+
+## Completion statement
+
+S14 adds no S15 block. After the S14 documentation commit, all Sxx decision
+groups are complete. The next action is to tell Leonardo that result and wait
+for his instructions. Do not infer Gate-1 approval from his approval of this
+documentation plan.

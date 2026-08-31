@@ -1,6 +1,6 @@
 # S04 — Commands, Rules, and Determinism
 
-Status: **documented specification; `MR-IF-003` and `MR-IF-004` candidate `v1`; no implementation authorized**
+Status: **documented specification; `MR-IF-003` and `MR-IF-004` frozen `v1` by S14; no implementation authorized**
 
 ## Purpose and authority
 
@@ -669,3 +669,12 @@ connection. S07 now supplies the exact persistence connection without changing
 any rule result. S08 supplies typed world targets, and S09 supplies only
 revision-safe semantic requests and factual presentation of applied, rejected,
 or fault results.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

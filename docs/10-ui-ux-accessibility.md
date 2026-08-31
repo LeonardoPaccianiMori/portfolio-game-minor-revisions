@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **B10 documented; implementation approval pending**
+Status: **B10 and S14 documented; implementation approval pending**
 
 ## Interaction principles
 
@@ -308,7 +308,9 @@ sound alone. Implementation S11 adds the exact combined blocking-capability
 reasons, non-blocking controller message, player-selected graphics profiles,
 once-per-session local performance advice, and warning, recoverable, and fatal
 diagnostic presentation. It adds no screen outside the S09 inventory.
-`MR-IF-010`–`MR-IF-012` and `MR-IF-014` are candidate `v1`; none is frozen.
+S14 completed the connected audit. `MR-IF-010`–`MR-IF-012` and `MR-IF-014`
+are frozen `v1`. Their frozen status does not authorize implementation, and
+the later browser, accessibility, audio, and presentation checks still apply.
 
 The UI must continue to use IndexedDB only for local game data. It must not
 use a cookie for saves, ownership, discovery, or expiry. The active save has

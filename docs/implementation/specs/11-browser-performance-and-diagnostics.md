@@ -17,8 +17,8 @@ The numbered design documents remain authoritative for player-visible meaning.
 S01 owns the toolchain and planned repository paths. S02 owns bootstrap and
 module lifecycle. S07 owns game persistence. S08 owns movement timing. S09 owns
 screens, input, settings, and accessibility. S10 owns rendering, resources,
-graphics-context recovery, and audio. S12 will encode the fixtures named here.
-S14 will perform the final contradiction and interface-freeze audit.
+graphics-context recovery, and audio. S12 later defines the fixture contract
+named here. S14 later completes the contradiction and interface-freeze audit.
 
 ## Plain-language terms
 
@@ -542,5 +542,14 @@ S11 is documented only when:
 S12 now owns the future executable-format test vectors, expected values,
 traceability, automated-versus-manual classification, and complete acceptance
 matrix. S13 now fixes future package ownership, validation cadence, review,
-evidence, and integration. S14 is the current next technical-specification
-block. S11–S13 create no implementation permission.
+evidence, and integration. S14 later completed the technical-specification
+programme. S11–S14 create no implementation permission.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

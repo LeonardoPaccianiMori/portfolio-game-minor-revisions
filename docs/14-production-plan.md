@@ -1,6 +1,6 @@
 # Production Plan
 
-Status: **B10 and S13 documented; implementation approval pending**
+Status: **B10 and S13–S14 documented; Gate 1 approval pending**
 
 ## Production boundary
 
@@ -24,7 +24,7 @@ hosting, server, database, telemetry, or runtime external service.
 
 | Phase | Main output | Gate before next phase |
 |---|---|---|
-| 0. Design closure | Approved implementation-readiness gate, requirements, and work packages | Leonardo explicitly authorizes implementation |
+| 0. Design closure | S00–S14 baseline, frozen interfaces, requirements, and work packages | Leonardo approves Gate 1, then separately approves Gate 2 |
 | 1. Foundation and provenance | Toolchain record, content-data foundation, asset audit, floor proof, save proof | No unverified asset; core technical checks pass |
 | 2. Vertical slice | Week-1 20–30-minute slice | Private slice gate in 13-testing-and-evaluation.md passes |
 | 3. Minimum-complete fallback | Coherent 90-minute game with stated cut line | Private fallback gate passes |
@@ -46,7 +46,7 @@ retest contract. Standard or Low performance failure, a retained-resource
 leak, unavailable valid evidence, or an unapproved hard-limit exception blocks
 the private release candidate.
 
-All future test work follows the candidate S12 fixture and traceability
+All future test work follows the frozen S12 fixture and traceability
 contract. Foundation work prepares the format and self-checks. Each later
 phase supplies only the fixtures and evidence in its approved scope. Expected
 fixtures, raw reports, durable private summaries, and Leonardo's play reviews
@@ -57,7 +57,10 @@ S13 now fixes ten future work packages, dependency waves, stored work orders,
 isolated local branches and worktrees, independent review, primary-agent
 integration, and contribution records. Vertical-slice approval can cover only
 `MR-WP-00`–`MR-WP-07` and slice quality work. Fallback and full expansion use
-separate later approvals.
+separate later approvals. Slice acceptance is required before Gate 3 can
+authorize fallback work. Fallback acceptance is required before Gate 4 can
+authorize full work. Full-game acceptance is required before release-candidate
+work.
 
 The root content catalogue remains one source. During slice production, slice
 content must be complete while fallback and full profiles can be explicitly
@@ -179,6 +182,6 @@ or a new plan.
 
 ## Current next action
 
-The current action is a complete specification review and a separate decision
-on the implementation-readiness gate. No code, assets, package files,
-deployment configuration, remote, or public release work is authorized.
+The S00–S14 specification review is complete. Gate 1 is ready for Leonardo's
+separate decision, not approved. No code, assets, package files, deployment
+configuration, remote, or public release work is authorized.

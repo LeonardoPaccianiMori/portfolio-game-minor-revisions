@@ -464,11 +464,18 @@ test passes only when both parts pass.
 
 ## Fallback and full-game evaluation
 
-Before full expansion, the 90-minute fallback must pass the same private
-quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo checks
+Before Gate 4 and full expansion, the 90-minute fallback must pass the same
+private quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo
+checks
 its complete campaign, one constrained evidence path, one weakened path, one
 available career route, one no-route result, and an ending-card Archive result.
 Codex runs the full automated matrix and private technical review.
+
+The gate order is exact. Slice acceptance is required before Gate 3 can
+authorize fallback implementation. Fallback acceptance is required before
+Gate 4 can authorize full-game implementation. Full-game acceptance is
+required before release-candidate work. Passing one gate does not approve the
+next gate or any remote, licence, release, deployment, or publication action.
 
 For every documentation change before implementation, check that Markdown
 tables have no blank-line interruption, text keys are unique inside the

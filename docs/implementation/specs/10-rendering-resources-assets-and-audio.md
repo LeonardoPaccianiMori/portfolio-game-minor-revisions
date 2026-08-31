@@ -1,6 +1,6 @@
 # S10 Rendering, Resources, Assets, and Audio
 
-Status: **documented; all implementation gates blocked**
+Status: **documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 This specification fixes the rendering, visual-resource, animation, cutscene
 presentation, asset-provenance, and audio contracts for *Minor Revisions*. It
@@ -504,8 +504,9 @@ across application, rendering, audio, world, cutscenes, and bootstrap's private
 diagnostic adapter. Each specialist keeps its browser objects and loaded
 resources private.
 
-No interface is frozen or available for implementation. S11 now adds candidate
-`MR-IF-014` compatibility, graphics-profile, resource-budget, diagnostic, and
+At S10 documentation, no interface was frozen or available for implementation.
+S11 later adds candidate `MR-IF-014` compatibility, graphics-profile,
+resource-budget, diagnostic, and
 measured-evidence consumers. S12 adds executable fixtures. S14 performs the
 cross-interface freeze audit.
 
@@ -533,4 +534,13 @@ memory budgets, profiling, diagnostics, privacy, and the response to failed
 measurements. S12 now owns the future executable fixture and acceptance
 contract. S13 now assigns world and rendering to `MR-WP-03`, input and
 interaction to `MR-WP-04`, UI to `MR-WP-05`, and audio and cutscenes to
-`MR-WP-06`. S14 is the current next technical-specification block.
+`MR-WP-06`. S14 later completed the technical-specification programme.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

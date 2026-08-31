@@ -1,8 +1,8 @@
 # Implementation Specification Status
 
-Last updated: 2026-08-30
+Last updated: 2026-08-31
 
-Status: **S00–S13 documented; S14 is next; all implementation gates blocked**
+Status: **S00–S14 documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 ## Current repository state
 
@@ -25,28 +25,26 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Technical specification complete | Blocked | S14 is not documented. |
-| Vertical-slice implementation approved | Blocked | Technical specification is incomplete and Leonardo has not given separate approval. |
-| Full-game implementation approved | Blocked | The vertical slice does not exist and has not been evaluated. |
+| Gate 1 — technical baseline | Ready for Leonardo approval | S00–S14 are documented with no blocked audit finding; Leonardo has not separately approved Gate 1. |
+| Gate 2 — vertical-slice implementation | Blocked | Gate 1 is not approved and Leonardo has not given separate slice approval. |
+| Gate 3 — fallback implementation | Blocked | The vertical slice does not exist and has not passed acceptance. |
+| Gate 4 — full-game implementation | Blocked | The fallback does not exist and has not passed acceptance. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
 | Public release or portfolio deployment | Blocked | No implementation, release evidence, or separate publication approval exists. |
 
 ## Current checkpoint
 
-- Next block: **S14 — Consistency audit and gate packet**; do not begin it
-  until Leonardo approves moving to it after the S13 commit.
-- Last documented block: **S13 — Agent work orders and integration**.
+- Next block: none; **S00–S14 are complete and no S15 is planned**.
+- Last documented block: **S14 — Consistency audit and gate packet**.
 - Required current documents: `roadmap.md`, `decisions.md`, `interfaces.md`,
   and `open-issues.md`.
 - Primary existing input: the complete numbered design baseline, approved
-  S00–S13 technical corpus, candidate `MR-IF-001`–`MR-IF-015`, requirement and
-  acceptance traceability, staged-content correction, and unresolved Gate-1
-  audit evidence.
-- Current open issue group: `MR-IMP-OPEN-014`.
-- Next action: after committing S13, ask Leonardo whether he approves moving
-  to S14. If approved, complete the final inventory, contradiction,
-  assumption, interface-freeze, content, privacy, licence, accessibility, and
-  gate audit packet.
+  S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
+  requirement and acceptance traceability, and the S14 gate packet.
+- Current open issue group: none; `MR-IMP-OPEN-001`–`014` are resolved.
+- Next action: after the S14 documentation commit, tell Leonardo that all Sxx
+  decision groups are complete and wait for his instructions. Gate 1 remains a
+  separate decision.
 - Prohibited next action: create package, source, content, test, work-order,
   contribution, worktree, asset, licence, remote, or deployment files.
 
@@ -57,9 +55,9 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
-| Technical specification | In progress | S01–S13 are documented; S14 is next. `MR-IF-001`–`MR-IF-015` are candidate `v1`; none is frozen. |
+| Technical specification | Documented | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 is ready, not approved. |
 | Vertical slice | Not authorized | No code exists. |
-| Fallback and full game | Not authorized | They follow slice evaluation and a separate approval. |
+| Fallback and full game | Not authorized | Fallback follows slice acceptance and Gate 3; full work follows fallback acceptance and Gate 4. |
 
 ## Session-resume procedure
 

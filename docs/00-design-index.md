@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design and R00–R07 documented; technical specification in progress; no implementation authorized**
+Status: **creative design, R00–R07, and S00–S14 documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -17,12 +17,12 @@ gaps. It does not mean that the domain is finished.
 | `07-systems-and-balance.md` | State and rules | B10 documented | Bounded post-slice tuning only. |
 | `08-endings-and-state-matrix.md` | Outcomes | B10 documented | Authored draft is ready for later specification review. |
 | `09-art-audio-and-assets.md` | Presentation | B10 documented | Verified asset selection and measurements occur before integration. |
-| `10-ui-ux-accessibility.md` | Interface and access | B10 documented | Implementation verification only. |
-| `11-technical-architecture.md` | Runtime design | B10, S11, and S13 documented | Measured browser and performance results remain future facts. |
+| `10-ui-ux-accessibility.md` | Interface and access | B10 and S14 documented | Implementation verification only. |
+| `11-technical-architecture.md` | Runtime design | B10 and S01–S14 documented | Measured browser and performance results remain future facts. |
 | `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
-| `13-testing-and-evaluation.md` | Quality evidence | B10, S12, and S13 documented | Test results are future evidence, not current claims. |
-| `14-production-plan.md` | Delivery strategy | B10 and S13 documented | Leonardo may later revise capacity or release timing. |
-| `15-implementation-contract.md` | Agent handoff | B10 and S13 documented | Work begins only after the separate gate approval. |
+| `13-testing-and-evaluation.md` | Quality evidence | B10 and S12–S14 documented | Test results are future evidence, not current claims. |
+| `14-production-plan.md` | Delivery strategy | B10 and S13–S14 documented | Leonardo may later revise capacity or release timing. |
+| `15-implementation-contract.md` | Agent handoff | B10 and S13–S14 documented | Work begins only after Gate 1 and separate Gate-2 approval. |
 | `reviews/independent-design-review-protocol.md` | External specification review | Review complete | Discuss the validated findings and record Leonardo's decisions. |
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
@@ -31,11 +31,12 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S13 documented | Complete S14 before any implementation approval. |
-| `implementation/status.md` | Durable current state | Current; S14 next | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through S13 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` candidate; none frozen | Draft and freeze each interface in its owning block. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-014` active | Resolve each stable issue group in its owning block. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S14 documented | Gate 1 awaits Leonardo's separate approval. |
+| `implementation/status.md` | Durable current state | Current; Sxx complete | Update in every specification commit. |
+| `implementation/decisions.md` | Technical and process decisions | Current through S14 | Add only approved decisions and preserve supersessions. |
+| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`014` resolved | Register any later material issue before dependent work. |
+| `implementation/specification-audit.md` | S14 audit and gate packet | Documented | Gate 1 is ready, not approved. |
 
 ## Discussion roadmap
 
@@ -63,17 +64,17 @@ status, and the next place to resume.
 
 - Creative workshop: **B00–B10 documented**.
 - Independent review decisions: **R00–R07 documented**.
-- Next technical-specification block: **S14 — Consistency audit and gate
-  packet**; Leonardo's approval to begin it is pending after the S13
-  commit.
-- Last documented technical block: **S13 — Agent work orders and integration**.
+- Technical-specification blocks: **S00–S14 documented; no S15 is planned**.
+- Last documented technical block: **S14 — Consistency audit and gate packet**.
 - Durable technical resume point: `implementation/status.md`.
-- Active issue group: `MR-IMP-OPEN-014`.
-- Technical-specification gate: **blocked**; S14 remains.
-- Vertical-slice implementation gate: **blocked**; the technical baseline is
-  incomplete and Leonardo has not given separate approval.
-- Full-game implementation gate: **blocked**; the vertical slice does not
-  exist and has not been evaluated.
+- Active issue group: none; `MR-IMP-OPEN-001`–`014` are resolved.
+- Gate 1, technical baseline: **ready for Leonardo's separate approval**.
+- Gate 2, vertical-slice implementation: **blocked**; Gate 1 is not approved
+  and Leonardo has not given separate slice approval.
+- Gate 3, fallback implementation: **blocked**; the slice does not exist or
+  have acceptance.
+- Gate 4, full-game implementation: **blocked**; the fallback does not exist
+  or have acceptance.
 - No code, package configuration, production asset, deployment configuration,
   remote, or public licence is authorized.
 
@@ -472,5 +473,5 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current gate: **blocked pending Leonardo's separate implementation-readiness
-approval; no implementation authorized**.
+Current Gate 1 state: **ready for Leonardo's separate approval; not approved;
+no implementation authorized**.

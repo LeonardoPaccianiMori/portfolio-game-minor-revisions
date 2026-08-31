@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S13 documented; S14 is next; no code authorized**
+Status: **S00–S14 documented; Gate 1 ready for Leonardo approval; no code authorized**
 
 ## Purpose
 
@@ -107,11 +107,24 @@ contracts. Any change must state its evidence, affected interfaces, consumers,
 migration needs, tests, and approval. Do not treat an agent preference as
 evidence.
 
-### Gate 3 — Full-game implementation approved
+### Gate 3 — Fallback implementation approved
 
-After the slice review, Leonardo can authorize the fallback and full-game
-implementation against the revised frozen baseline. The existing fallback and
-full-game evaluation gates still apply during production.
+After the slice passes its required acceptance, Leonardo can separately
+authorize only the 90-minute fallback assignment of `MR-WP-08` and the
+fallback-scoped quality work. Slice acceptance is required before Gate 3.
+
+### Phase D — Build and evaluate the fallback
+
+Build the approved fallback without assuming that the full target is
+authorized. The fallback must pass its automated, private-play, vision,
+content, route, ending, accessibility, save, and recovery acceptance.
+
+### Gate 4 — Full-game implementation approved
+
+After the fallback passes its required acceptance, Leonardo can separately
+authorize the full-game assignment of `MR-WP-08` and full-scoped quality work
+against the reviewed frozen baseline. Fallback acceptance is required before
+Gate 4. Full-game acceptance is required before release-candidate work.
 
 ## Specification blocks
 
@@ -131,7 +144,7 @@ full-game evaluation gates still apply during production.
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
 | S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Documented |
 | S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Documented |
-| S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Not started; next |
+| S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Documented |
 
 ## Planned specification files
 
@@ -198,8 +211,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-After the S13 documentation commit, ask Leonardo whether he approves moving to
-S14. If he approves, audit the complete specification inventory,
-contradictions, assumptions, interfaces, content staging, traceability,
-privacy, licensing, accessibility, and gate evidence. Do not create files from
-the planned runtime, test, content, work-order, contribution, or worktree paths.
+S00–S14 are documented, and no S15 is planned. After the S14 documentation
+commit, tell Leonardo that all Sxx decision groups are complete and wait for
+his instructions. Gate 1 is ready for his separate approval; it is not
+approved by the S14 documentation decision. Do not create files from the
+planned runtime, test, content, work-order, contribution, or worktree paths.

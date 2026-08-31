@@ -212,6 +212,11 @@ belongs in the numbered design documents.
 | 2026-08-30 | Keep ten future work packages with one owner per path, fixed dependency waves, separate slice, fallback, and full approvals, and one sequentially owned content catalogue. Permit only explicitly incomplete inactive profiles during slice or fallback development; an incomplete profile cannot build. | Confirmed |
 | 2026-08-30 | Require stored work orders, exact model records, isolated local branches and worktrees, atomic commits, independent read-only review, package and wave checks, primary-agent integration, private contribution records, and plain-language Leonardo acceptance. | Confirmed; detailed contract is `implementation/specs/13-agent-work-orders-and-integration.md` |
 | 2026-08-30 | Add no runtime interface in S13, keep `MR-IF-001`–`MR-IF-015` candidate `v1`, resolve S13, keep every implementation gate blocked, and make S14 the next technical block. | Confirmed |
+| 2026-08-31 | Complete the S14 audit against baseline commit `52e7a778dd0a24ccd55ab359b897154d7949c7a3` with stable findings, controlled inventory, contradiction, assumption, traceability, content, privacy, licence, accessibility, and result-claim checks. | Confirmed; detailed record is `implementation/specification-audit.md` |
+| 2026-08-31 | Correct the 22-row requirement map so every requirement states sources, tests, S12 acceptance rows, interfaces, dependencies, one primary owner, and `approved; not implemented` status. | Confirmed |
+| 2026-08-31 | Freeze `MR-IF-001`–`MR-IF-015` as `v1` after the cross-interface audit; preserve Gate 1 and separate Gate-2 approval as required before code. | Confirmed; frozen is not implemented |
+| 2026-08-31 | Split later production authority into Gate 3 for fallback work after slice acceptance and Gate 4 for full-game work after fallback acceptance; require full-game acceptance before release-candidate work. | Confirmed; supersedes the earlier combined Gate-3 wording |
+| 2026-08-31 | Resolve `MR-IMP-OPEN-014`, complete S00–S14 with no S15 planned, make Gate 1 ready for Leonardo's separate approval, and authorize no implementation or public action. | Confirmed |
 
 ## Rules for future entries
 

@@ -1,6 +1,6 @@
 # Asset Manifest
 
-Status: **B10 and implementation S10 documented; no production asset selected or imported**
+Status: **B10 and implementation S10–S14 documented; no production asset selected or imported**
 
 ## Purpose and integration gate
 
@@ -132,3 +132,8 @@ S10 selected, downloaded, generated, and imported no asset. It created no
 manifest row. Asset feasibility, source selection, licence evidence, exact
 files, formats, hashes, integration, and measured results still require later
 approval and verification.
+
+S14 confirms this boundary in `MR-S14-FIND-012` and
+`MR-S14-FIND-021`. The documentation audit passes because the plan, manifest
+fields, ownership, and stop rules are complete. Exact asset and public-rights
+facts remain measured later; no candidate is pre-approved by S14.

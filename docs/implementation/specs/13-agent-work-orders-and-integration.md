@@ -17,9 +17,9 @@ change one of those contracts.
 
 This document defines future paths. It does not create a package, worktree,
 work order, contribution record, source file, test, content file, asset,
-licence, remote, build, deployment, or result. S14 must complete the final
-audit and Leonardo must separately approve vertical-slice implementation
-before any implementation work can start.
+licence, remote, build, deployment, or result. S14 later completes the final
+audit. Leonardo must approve Gate 1 and separately approve Gate 2 before any
+implementation work can start.
 
 ## Plain-language terms
 
@@ -554,14 +554,14 @@ These are future static or unit check groups. No check or result exists now.
 All seven groups link to `MR-REQ-TECH-001` and `MR-REQ-TEST-001`.
 `MR-S13-GATE-001` also links to `MR-REQ-RELEASE-001`.
 `MR-S13-OWN-001`, `MR-S13-WO-001`, and `MR-S13-CON-001` include static
-privacy and outside-path rejection. S14 must verify their complete
-requirement, interface, and acceptance links before Gate 1.
+privacy and outside-path rejection. S14 verifies their complete requirement,
+interface, and acceptance links before Gate 1.
 
 ## Interface lifecycle and completion
 
-S13 adds no runtime interface. `MR-IF-001` through `MR-IF-015` remain candidate
-`v1`. The staged-content correction refines candidate `MR-IF-006` before its
-S14 audit. No interface is frozen by this document.
+S13 added no runtime interface. `MR-IF-001` through `MR-IF-015` remained
+candidate `v1` after S13. The staged-content correction refined candidate
+`MR-IF-006` before its S14 audit. S13 did not freeze an interface.
 
 S13 is documented only when:
 
@@ -575,7 +575,15 @@ S13 is documented only when:
 - `MR-IMP-OPEN-013` is resolved and `MR-IMP-OPEN-014` is active; and
 - every implementation gate remains blocked.
 
-S14 is the next technical-specification block. It owns the complete inventory,
-contradiction and assumption audit, interface-freeze record, open-issue result,
-and Gate-1 approval packet. S14 cannot begin until the S13 documentation commit
-exists and Leonardo separately approves moving to S14.
+S14 later records the complete inventory, contradiction and assumption audit,
+interface-freeze result, resolved issue, and Gate-1 packet. Gate 1 remains a
+separate Leonardo decision.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.

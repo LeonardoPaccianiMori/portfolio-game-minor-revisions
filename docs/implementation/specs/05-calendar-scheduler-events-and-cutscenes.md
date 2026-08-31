@@ -14,8 +14,8 @@ transitions, and deterministic variation. S06 will own exact authored content
 objects, IDs not already fixed by B10, priorities, deadlines, variants, and
 text. S07 owns physical save storage and recovery. S09 owns UI and input
 presentation. S10 now owns camera, animation, rendering, audio, and the
-complete presentation half of the cutscene interface. S12 will encode the
-fixtures named here. S14 will perform the final cross-interface audit.
+complete presentation half of the cutscene interface. S12 later defines the
+fixture contract named here. S14 later completes the cross-interface audit.
 
 Nothing in S05 creates game code, package configuration, a production asset,
 save data, test evidence, or implementation permission.
@@ -826,8 +826,8 @@ now supplies its authored event, delivery, cue, form, choice, and reference
 connection. S07 supplies its persistence specification connection through
 candidate `MR-IF-007`; S09 supplies its UI and input connection through
 candidate `MR-IF-009` and `MR-IF-010`. S10 supplies its cutscene presentation,
-resource, audio, and restoration evidence. S12 and S14 still owe their
-connected evidence.
+resource, audio, and restoration evidence. S12 later supplies its connected
+fixture contract, and S14 completes the audit evidence.
 
 `MR-IF-011` is candidate `v1` through the combined S05 campaign-safe order and
 S10 presentation timeline, camera, actor, audio, resource-ownership, and full-
@@ -836,7 +836,8 @@ restoration contract. It is not frozen and does not authorize code.
 `MR-IF-002` remains candidate `v1` with the approved scheduler-field rename,
 event lifecycle facts, and final scene-presentation state. `MR-IF-003` remains
 candidate `v1` with clarified scheduler and scene use. Its command total stays
-24 and its effect total stays five. No interface is frozen.
+24 and its effect total stays five. At S05 documentation, no interface was
+frozen.
 
 ## S05 acceptance and handoff
 
@@ -859,3 +860,12 @@ and content migration meaning without changing this S05 order. S07 now
 defines physical storage and recovery without changing this S05 order. S12 now
 supplies the future fixture, journey, and acceptance contract without changing
 the scheduler order.
+
+## S14 audit record
+
+The S14 cross-interface and contradiction audit is complete. Every shared
+interface defined or connected by this specification is frozen `v1` through
+the interface register and `specification-audit.md`. Earlier candidate-state
+statements preserve the interface lifecycle before S14; they are not the
+current state. No executable fixture or measured result exists. Gate 1 is
+ready for Leonardo's separate approval, and no implementation is authorized.
