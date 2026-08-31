@@ -7,7 +7,7 @@ Status: **B10 and S01–S14 documented; Gate 1 approval pending**
 This document defines the approved technical direction for the first release.
 It does not authorize game code, package files, production assets, a remote,
 or deployment work. The technical baseline is documented, but Gate 1 is only
-ready for Leonardo's separate approval. Gate 2 remains blocked.
+ready for Leonardo's separate approval. Step 1 remains blocked.
 
 S02 defines the exact subordinate module graph, public ports, lifecycle,
 ownership, frame order, and error boundaries in
@@ -30,7 +30,7 @@ separate rights and provenance review.
   locally. Do not load a runtime dependency from a CDN.
 - Use `npm` and commit its lockfile. S01 freezes the exact Node LTS, npm,
   package, configuration, and command baseline in
-  `implementation/specs/01-toolchain-and-repository.md`. Gate 2 requires a
+  `implementation/specs/01-toolchain-and-repository.md`. Step 1 requires a
   fresh compatibility, security, licence, clean-install, and verification
   check; a failed check reopens the affected S01 contract.
 - Do not add a service worker in the first release. Normal browser caching is
@@ -411,7 +411,7 @@ attribution boundary.
 ## Deliberate later verification
 
 - Exact Node and package versions are frozen in S01 before implementation and
-  rechecked before Gate 2. Actual installation and command results remain
+  rechecked during Step 1. Actual installation and command results remain
   future evidence.
 - Exact source assets, audio codecs, source file hashes, and measured
   performance are verified before their integration or public claim.
@@ -423,5 +423,5 @@ this document record their lifecycle before S14. Freeze does not claim that a
 source signature, executable fixture, browser result, or performance result
 exists.
 
-Nothing in this document authorizes implementation before Gate 1 and the
-separate design-index Gate-2 approval are explicitly approved.
+Nothing in this document authorizes implementation before Gate 1 and the exact
+Step-1 plan are explicitly approved. No approval carries to a later step.

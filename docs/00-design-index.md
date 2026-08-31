@@ -22,7 +22,7 @@ gaps. It does not mean that the domain is finished.
 | `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
 | `13-testing-and-evaluation.md` | Quality evidence | B10 and S12–S14 documented | Test results are future evidence, not current claims. |
 | `14-production-plan.md` | Delivery strategy | B10 and S13–S14 documented | Leonardo may later revise capacity or release timing. |
-| `15-implementation-contract.md` | Agent handoff | B10 and S13–S14 documented | Work begins only after Gate 1 and separate Gate-2 approval. |
+| `15-implementation-contract.md` | Agent handoff | B10 and S13–S14 plus incremental workflow documented | Work begins only after Gate 1 and the exact Step-1 plan approval. |
 | `reviews/independent-design-review-protocol.md` | External specification review | Review complete | Discuss the validated findings and record Leonardo's decisions. |
 | `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
 | `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
@@ -35,8 +35,11 @@ gaps. It does not mean that the domain is finished.
 | `implementation/status.md` | Durable current state | Current; Sxx complete | Update in every specification commit. |
 | `implementation/decisions.md` | Technical and process decisions | Current through S14 | Add only approved decisions and preserve supersessions. |
 | `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`014` resolved | Register any later material issue before dependent work. |
+| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`015` resolved | Register any later material issue before dependent work. |
 | `implementation/specification-audit.md` | S14 audit and gate packet | Documented | Gate 1 is ready, not approved. |
+| `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented | Steps 1–70 each require a separate approved plan and accepted predecessor. |
+| `implementation/development-status.md` | Durable implementation resume point | Step 0 complete | Gate 1 and Step 1 await separate approval. |
+| `implementation/step-acceptance-log.md` | Leonardo and agent evidence index | Initialized | No implementation step is accepted. |
 
 ## Discussion roadmap
 
@@ -66,15 +69,14 @@ status, and the next place to resume.
 - Independent review decisions: **R00–R07 documented**.
 - Technical-specification blocks: **S00–S14 documented; no S15 is planned**.
 - Last documented technical block: **S14 — Consistency audit and gate packet**.
-- Durable technical resume point: `implementation/status.md`.
-- Active issue group: none; `MR-IMP-OPEN-001`–`014` are resolved.
+- Durable implementation resume point: `implementation/development-status.md`.
+- Active issue group: none; `MR-IMP-OPEN-001`–`015` are resolved.
 - Gate 1, technical baseline: **ready for Leonardo's separate approval**.
-- Gate 2, vertical-slice implementation: **blocked**; Gate 1 is not approved
-  and Leonardo has not given separate slice approval.
-- Gate 3, fallback implementation: **blocked**; the slice does not exist or
-  have acceptance.
-- Gate 4, full-game implementation: **blocked**; the fallback does not exist
-  or have acceptance.
+- Incremental implementation start: **blocked**; Gate 1 and the exact Step-1
+  plan are not approved.
+- Vertical-slice acceptance: **blocked**; Steps 1–30 do not exist.
+- Fallback acceptance: **blocked**; Steps 32–52 do not exist.
+- Full local-game acceptance: **blocked**; Steps 54–69 do not exist.
 - No code, package configuration, production asset, deployment configuration,
   remote, or public licence is authorized.
 
@@ -475,3 +477,11 @@ the latest complete specification and all of the following are true:
 
 Current Gate 1 state: **ready for Leonardo's separate approval; not approved;
 no implementation authorized**.
+
+The former one-shot vertical-slice production sequence is superseded by the
+collaborative workflow in `implementation/development-roadmap.md`. After Gate
+1, Leonardo approves only one exact step plan at a time. Steps 1–30 build the
+slice, Step 31 accepts it, Step 53 accepts the fallback, and Step 70 accepts the
+complete local game. Each step includes technical checks, a Leonardo test or
+result review, corrections, durable attribution, and explicit acceptance.
+Public actions remain separate.

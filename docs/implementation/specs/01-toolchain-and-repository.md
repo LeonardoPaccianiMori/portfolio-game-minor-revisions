@@ -12,11 +12,12 @@ documents.
 
 This document does not authorize game code, package files, source or content
 directories, production assets, deployment configuration, a remote, a public
-licence, or a release. Those files can exist only after Gate 1 is complete and
-Leonardo separately approves Gate 2.
+licence, or a release. Package files can exist only after Gate 1 is complete
+and Leonardo separately approves the exact Step-1 plan. Later files require
+their own step plans.
 
 The exact versions below were verified against official Node and npm registry
-metadata on 2026-08-29. S01 fixes them before code. Gate 2 requires a fresh
+metadata on 2026-08-29. S01 fixes them before code. Step 1 requires a fresh
 compatibility, security, licence, clean-install, and verification check.
 
 ## Leonardo's working boundary
@@ -84,7 +85,7 @@ analytics, telemetry, or automatic error reporting.
 | `globals` | `17.11.0` | MIT | Explicit browser and Node global-variable sets. |
 
 Official registry metadata marked none of these exact versions as deprecated on
-2026-08-29. This metadata check is not a substitute for the Gate-2 clean
+2026-08-29. This metadata check is not a substitute for the Step-1 clean
 installation, security audit, or licence review.
 
 ## Package and lockfile policy
@@ -262,7 +263,7 @@ outcomes.
 
 ## Update and revalidation policy
 
-Recheck versions before Gate 2, before each later production phase, after a
+Recheck versions during Step 1, before each later production phase, after a
 security warning, after any approved dependency change, and before a release.
 An update must:
 
@@ -275,7 +276,7 @@ An update must:
 6. review the complete dependency and file diff; and
 7. receive Leonardo's approval when it changes a frozen S01 contract.
 
-If Gate-2 installation or verification fails, reopen the affected S01
+If Step-1 installation or verification fails, reopen the affected S01
 decision. Do not use a global package, a hidden version override, a disabled
 check, an undocumented patch, or an external local path as a workaround.
 
@@ -301,7 +302,7 @@ and application-lifecycle interface. S13 now assigns root configuration,
 `index.html`, foundation scripts, `bootstrap`, `application`, and `platform`
 to `MR-WP-00` and fixes the isolated branch, worktree, commit, review, and
 integration process. No implementation worker can use this S01 toolchain
-contract until Gate 1 and the separate Gate-2 approval are complete.
+contract until Gate 1 and the exact Step-1 approval are complete.
 
 ## S14 audit record
 

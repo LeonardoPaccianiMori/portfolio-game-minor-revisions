@@ -4,11 +4,12 @@ These rules apply to the entire repository.
 
 ## Current phase
 
-The repository is in implementation specification, which remains design and
-evaluation work. Do not create game code, package configuration, production
-assets, or deployment configuration until the technical-specification gate is
-complete and `docs/00-design-index.md` records Leonardo's separate approval for
-vertical-slice implementation.
+The repository has a complete S00–S14 implementation specification and an
+incremental Step 0–70 development roadmap. Read
+`docs/implementation/development-status.md` for the exact resume point. Do not
+create game code, package configuration, tests, production assets, or
+deployment configuration until Gate 1 is separately approved and Leonardo
+approves the exact next-step plan. Approval never carries to a later step.
 
 ## Leonardo context and communication
 
@@ -30,6 +31,12 @@ For implementation-specification work, also read
 `docs/implementation/decisions.md`, `docs/implementation/interfaces.md`, and
 `docs/implementation/open-issues.md`. Resume the current block in `status.md`
 unless Leonardo explicitly changes the order.
+
+For incremental development, asset research, testing, repair, or acceptance,
+also read `docs/implementation/development-status.md`,
+`docs/implementation/development-roadmap.md`, and
+`docs/implementation/step-acceptance-log.md`. These are the primary resume
+records after S14. Do not infer a current step from conversation memory.
 
 ## Design authority
 
@@ -93,3 +100,26 @@ primary agent creates work orders, isolated branches and worktrees, integrates
 reviewed commits, updates control documents, and communicates with Leonardo.
 Workers cannot delegate, contact Leonardo, edit another owner's path, change a
 frozen interface, use a remote, or begin from an informal chat instruction.
+
+## Incremental development and Leonardo review
+
+- Implement one approved roadmap step at a time.
+- Before each step, give Leonardo the exact repository plan and wait for his
+  explicit approval.
+- Run technical checks and independent review before asking Leonardo to accept
+  a player-visible result.
+- Start the game locally when direct review is required. Give Leonardo simple
+  controls, actions, expected results, reporting guidance, and a safe recovery
+  step. Leonardo does not debug code.
+- Correct defects before dependent work. A material scope, design, frozen
+  interface, or roadmap change needs a new plan and approval.
+- Record Leonardo's creative, selection, testing, observation, approval, and
+  acceptance contributions separately from agent planning, code, tests,
+  research, review, integration, and documentation.
+- Temporary shapes, colours, text, and synthetic sounds are permitted only
+  when the approved step identifies them as temporary.
+- External or generated asset candidates need source, licence, redistribution,
+  modification, attribution, cost, and technical review before Leonardo
+  approves integration. Modified candidates return to Leonardo for review.
+- Step 70 is complete local-game acceptance. A remote, licence, release,
+  deployment, or portfolio change remains outside the roadmap.

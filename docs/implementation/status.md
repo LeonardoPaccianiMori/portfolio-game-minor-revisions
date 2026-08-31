@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-31
 
-Status: **S00–S14 documented; Gate 1 ready for Leonardo approval; no implementation authorized**
+Status: **S00–S14 documented; incremental roadmap documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 ## Current repository state
 
@@ -26,9 +26,10 @@ not insert a future or guessed commit identifier into this document.
 | Gate | State | Blocking condition |
 |---|---|---|
 | Gate 1 — technical baseline | Ready for Leonardo approval | S00–S14 are documented with no blocked audit finding; Leonardo has not separately approved Gate 1. |
-| Gate 2 — vertical-slice implementation | Blocked | Gate 1 is not approved and Leonardo has not given separate slice approval. |
-| Gate 3 — fallback implementation | Blocked | The vertical slice does not exist and has not passed acceptance. |
-| Gate 4 — full-game implementation | Blocked | The fallback does not exist and has not passed acceptance. |
+| Incremental implementation start | Blocked | Gate 1 and the exact Step-1 plan are not approved. |
+| Vertical-slice acceptance | Blocked | Steps 1–30 do not exist and Step 31 cannot run. |
+| Fallback acceptance | Blocked | Steps 32–52 do not exist and Step 53 cannot run. |
+| Full local-game acceptance | Blocked | Steps 54–69 do not exist and Step 70 cannot run. |
 | Remote creation or push | Blocked | Leonardo has not authorized a remote. |
 | Public release or portfolio deployment | Blocked | No implementation, release evidence, or separate publication approval exists. |
 
@@ -41,10 +42,11 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current open issue group: none; `MR-IMP-OPEN-001`–`014` are resolved.
-- Next action: after the S14 documentation commit, tell Leonardo that all Sxx
-  decision groups are complete and wait for his instructions. Gate 1 remains a
-  separate decision.
+- Current open issue group: none; `MR-IMP-OPEN-001`–`015` are resolved.
+- Incremental resume record: `development-status.md`.
+- Incremental sequence: `development-roadmap.md`, Steps 0–70.
+- Next action: request Leonardo's separate Gate-1 decision. If approved,
+  prepare the exact Step-1 plan and wait for its separate approval.
 - Prohibited next action: create package, source, content, test, work-order,
   contribution, worktree, asset, licence, remote, or deployment files.
 
@@ -56,8 +58,9 @@ not insert a future or guessed commit identifier into this document.
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
 | Technical specification | Documented | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 is ready, not approved. |
-| Vertical slice | Not authorized | No code exists. |
-| Fallback and full game | Not authorized | Fallback follows slice acceptance and Gate 3; full work follows fallback acceptance and Gate 4. |
+| Incremental implementation | Not authorized | Step 0 is documentation only. Steps 1–70 each require an approved plan and accepted dependencies. |
+| Vertical slice | Not authorized | Steps 1–30 assemble it and Step 31 accepts it; no code exists. |
+| Fallback and full game | Not authorized | Step 53 accepts the fallback; Step 70 accepts the full local game. |
 
 ## Session-resume procedure
 
@@ -71,6 +74,9 @@ For any non-trivial specification session:
 6. Read only the existing design and specification files needed for that
    block.
 7. Do not infer completion from conversation memory or an agent summary.
+
+For implementation or test work, use `development-status.md` as the first
+resume record after the repository instructions.
 
 ## State-update rule
 

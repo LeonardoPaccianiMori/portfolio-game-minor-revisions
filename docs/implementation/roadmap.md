@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Gate 1 ready for Leonardo approval; no code authorized**
+Status: **S00–S14 documented; incremental implementation roadmap added; Gate 1 ready for Leonardo approval; no code authorized**
 
 ## Purpose
 
@@ -88,17 +88,20 @@ Leonardo can approve this gate only when:
 Approval of Gate 1 confirms the technical baseline. It does not authorize
 code.
 
-### Gate 2 — Vertical-slice implementation approved
+### Incremental implementation start
 
-After Gate 1, Leonardo can separately authorize only the foundation and the
-20–30-minute Week-1 vertical slice. Work must follow frozen interfaces and
-scope-limited agent assignments.
+The earlier one-approval slice authority is superseded. After Gate 1, Leonardo
+can approve only the exact next step in `development-roadmap.md`. Step 1 does
+not authorize Step 2. Steps 1–30 build the foundation and Week-1 slice through
+separate plans, checks, local reviews, corrections, and acceptances. Step 31 is
+Leonardo's private slice acceptance.
 
-### Phase B — Build and evaluate the vertical slice
+### Phase B — Build and evaluate the vertical slice incrementally
 
-Build the foundation in dependency order. Parallel work starts only after the
-shared interfaces used by those workers are frozen and ownership does not
-overlap. Integrate and run the approved private slice evaluation.
+Build Steps 1–30 in dependency order. A plan can use parallel read-only review
+or non-overlapping worker lanes only inside that one approved step. Integrate,
+test, and obtain Leonardo's acceptance before the dependent step. Step 31 runs
+the approved private slice evaluation.
 
 ### Phase C — Evidence-led specification review
 
@@ -107,11 +110,12 @@ contracts. Any change must state its evidence, affected interfaces, consumers,
 migration needs, tests, and approval. Do not treat an agent preference as
 evidence.
 
-### Gate 3 — Fallback implementation approved
+### Vertical-slice acceptance milestone
 
-After the slice passes its required acceptance, Leonardo can separately
-authorize only the 90-minute fallback assignment of `MR-WP-08` and the
-fallback-scoped quality work. Slice acceptance is required before Gate 3.
+After Step 31 passes slice acceptance, later fallback work remains divided
+across Steps 32–52. Leonardo approves one step at a time. Step 53 is the
+fallback acceptance test. Slice acceptance does not authorize the fallback as
+one batch.
 
 ### Phase D — Build and evaluate the fallback
 
@@ -119,12 +123,20 @@ Build the approved fallback without assuming that the full target is
 authorized. The fallback must pass its automated, private-play, vision,
 content, route, ending, accessibility, save, and recovery acceptance.
 
-### Gate 4 — Full-game implementation approved
+### Fallback acceptance milestone
 
-After the fallback passes its required acceptance, Leonardo can separately
-authorize the full-game assignment of `MR-WP-08` and full-scoped quality work
-against the reviewed frozen baseline. Fallback acceptance is required before
-Gate 4. Full-game acceptance is required before release-candidate work.
+After Step 53 passes fallback acceptance, full work remains divided across
+Steps 54–69. Leonardo approves one step at a time. Step 70 is the complete
+local-game playthrough and acceptance. Fallback acceptance does not authorize
+the full game as one batch. Step 70 acceptance is required before any later
+release-candidate discussion.
+
+### Incremental roadmap authority
+
+`development-roadmap.md` is the implementation sequence and
+`development-status.md` is the durable resume point. A roadmap change requires
+an evidence and impact explanation plus Leonardo's prior approval. It does not
+change a frozen interface or creative decision silently.
 
 ## Specification blocks
 

@@ -18,8 +18,9 @@ change one of those contracts.
 This document defines future paths. It does not create a package, worktree,
 work order, contribution record, source file, test, content file, asset,
 licence, remote, build, deployment, or result. S14 later completes the final
-audit. Leonardo must approve Gate 1 and separately approve Gate 2 before any
-implementation work can start.
+audit. Leonardo must approve Gate 1 and separately approve the exact Step-1
+plan before any implementation work can start. Later steps need their own
+plans.
 
 ## Plain-language terms
 
@@ -41,11 +42,12 @@ Three conditions are required before the first package can start:
 
 1. S14 is documented and the technical-specification gate is approved;
 2. every interface used by the package is frozen; and
-3. Leonardo separately approves vertical-slice implementation.
+3. Leonardo separately approves the exact Step-1 plan.
 
-That approval can authorize only `MR-WP-00` through `MR-WP-07` and the
-slice-related part of `MR-WP-09`. It cannot authorize fallback or full-game
-content, a remote, a licence, deployment, release, or portfolio publication.
+The former batch slice approval is superseded. One step plan can authorize only
+the work-package paths and checks required by that step. It cannot authorize a
+later step, fallback or full-game batch, remote, licence, deployment, release,
+or portfolio publication.
 
 ## Work-package inventory
 
@@ -537,6 +539,14 @@ interfaces, storage, browsers, tests, and technical limits. A technical choice
 that needs Leonardo's approval includes a recommendation and its visible
 effect without assuming software-engineering or Three.js knowledge.
 
+`../development-roadmap.md` divides package delivery into small player-review
+checkpoints. After each player-visible integrated step, the primary agent runs
+the game locally and supplies the objective, controls, actions, expected
+results, reporting request, and safe recovery action. The step remains open
+until Leonardo accepts it. Contribution evidence separates Leonardo's design,
+selection, testing, observations, approvals, and acceptance from agent code,
+tests, research, review, repair, integration, and documentation.
+
 ## S13 acceptance groups
 
 These are future static or unit check groups. No check or result exists now.
@@ -549,7 +559,7 @@ These are future static or unit check groups. No check or result exists now.
 | `MR-S13-GIT-001` | Branch, worktree, base, atomic-commit, dirty-state, ownership, integration-order, conflict, repair, revert, and cleanup cases follow S13 without a remote or history rewrite. |
 | `MR-S13-REV-001` | Submission checks, controlled reviewer packet, independent-review identity, complete checklist, finding classes, correction, re-review, package checks, and wave checks are present and cannot be skipped. |
 | `MR-S13-CON-001` | Contribution front matter, required headings, commit mapping, actual results, reviewer findings, corrections, limitations, privacy exclusions, integration, and Leonardo acceptance remain complete and distinct. |
-| `MR-S13-GATE-001` | Gate 2 permits only slice packages and slice quality work; fallback, full, licence, remote, deployment, release, publication, and completion remain blocked without their separate approvals. |
+| `MR-S13-GATE-001` | Gate 1 plus one exact step approval permits only that step's paths and quality work; every later step, licence, remote, deployment, release, publication, and completion remains blocked without its separate approval. |
 
 All seven groups link to `MR-REQ-TECH-001` and `MR-REQ-TEST-001`.
 `MR-S13-GATE-001` also links to `MR-REQ-RELEASE-001`.

@@ -394,6 +394,12 @@ or narrative review.
 
 ## Vertical-slice evaluation
 
+The slice is not implemented in one assignment. Steps 1–30 in
+`implementation/development-roadmap.md` build and verify it incrementally.
+Leonardo receives a direct test at every player-visible checkpoint. Step 31
+runs the complete slice procedure below. Earlier step acceptance is evidence
+for the slice but does not replace this complete play review.
+
 The vertical slice is the Week-1-only 20–30-minute evaluation build. It
 contains the opening, laser/sham loop, Gabriel queue choice, analysis, compact
 manuscript claim choice, and safe save/resume flow.
@@ -464,18 +470,28 @@ test passes only when both parts pass.
 
 ## Fallback and full-game evaluation
 
-Before Gate 4 and full expansion, the 90-minute fallback must pass the same
+The fallback is assembled through Steps 32–52 and accepted at Step 53. The
+full game is assembled through Steps 54–69 and accepted at Step 70. Each
+player-visible step requires a plain-language Leonardo test packet and durable
+result. A later milestone test cannot silently waive a failed earlier result.
+
+Every test packet states the objective, exact controls and actions, expected
+result, what Leonardo reports, and the safe stop or recovery action. Leonardo
+judges clarity, humour, feel, comfort, aesthetics, and overall play. Agents own
+technical commands, diagnosis, repair, browser evidence, and internal limits.
+
+Before Step 54 and full expansion, the 90-minute fallback must pass the same
 private quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo
 checks
 its complete campaign, one constrained evidence path, one weakened path, one
 available career route, one no-route result, and an ending-card Archive result.
 Codex runs the full automated matrix and private technical review.
 
-The gate order is exact. Slice acceptance is required before Gate 3 can
-authorize fallback implementation. Fallback acceptance is required before
-Gate 4 can authorize full-game implementation. Full-game acceptance is
-required before release-candidate work. Passing one gate does not approve the
-next gate or any remote, licence, release, deployment, or publication action.
+The order is exact. Step 31 slice acceptance is required before Step 32. Step
+53 fallback acceptance is required before Step 54. Step 70 full local-game
+acceptance is required before release-candidate work. Passing one milestone
+does not approve the next step or any remote, licence, release, deployment, or
+publication action.
 
 For every documentation change before implementation, check that Markdown
 tables have no blank-line interruption, text keys are unique inside the

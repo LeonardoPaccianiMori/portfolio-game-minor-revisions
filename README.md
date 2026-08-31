@@ -12,8 +12,8 @@ survival loop without being presented as a perfect life.
 
 ## Repository status
 
-Status: **S00–S14 technical specification documented; Gate 1 is ready for
-Leonardo's separate approval; no implementation authorized**.
+Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
+and Step 1 await separate approval; no implementation authorized**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
@@ -31,9 +31,11 @@ The controlled
 [`recommendation register`](docs/reviews/recommendation-register.md) preserves
 duplicates, conflicts, new findings, and decision status. R00 through R07 are
 documented, and no review block remains. The
-[`implementation roadmap`](docs/implementation/roadmap.md) now controls a
-separate technical-specification programme. Its
-[`current status`](docs/implementation/status.md) is the durable resume point.
+[`implementation roadmap`](docs/implementation/roadmap.md) records the
+completed technical-specification programme. Its Sxx
+[`status`](docs/implementation/status.md) remains current. The primary future
+resume point is
+[`development-status.md`](docs/implementation/development-status.md).
 S01 freezes the toolchain and repository contract. S02 freezes the documented
 module-architecture contract. S03 freezes the documented campaign-state,
 validation, canonical JSON, and fixture contract. S04 freezes the documented
@@ -65,8 +67,12 @@ fallback/full gate split, resolves the final issue group, and freezes
 `MR-IF-001`–`MR-IF-015` as `v1`. The freeze creates no package, runtime, test,
 content, work-order, or asset file. Gate 1 is only ready for Leonardo's
 separate approval. No code can begin until Leonardo approves Gate 1 and then
-gives separate Gate-2 vertical-slice approval through
-[`docs/00-design-index.md`](docs/00-design-index.md).
+approves the exact Step-1 plan. Each later step needs its own plan, local test
+or result review, correction cycle, and explicit acceptance. The durable
+resume point is
+[`development-status.md`](docs/implementation/development-status.md), and the
+complete sequence is
+[`development-roadmap.md`](docs/implementation/development-roadmap.md).
 
 Target experience:
 
@@ -76,6 +82,13 @@ Target experience:
 - a 20–30-minute vertical slice before full production;
 - local, account-free save and resume;
 - eventual deployment on Leonardo's portfolio website.
+
+Development is collaborative. Codex plans, implements, runs technical checks,
+operates the local game, debugs, and records evidence. Leonardo controls
+creative direction, approves each plan, reviews asset and aesthetic choices,
+performs the supplied play tests, reports observations, and accepts each step.
+The [`step acceptance log`](docs/implementation/step-acceptance-log.md) keeps
+those contributions distinct.
 
 ## Documentation
 

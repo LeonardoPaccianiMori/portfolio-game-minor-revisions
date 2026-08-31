@@ -1,13 +1,14 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Gate 1 ready for Leonardo approval; code prohibited**
+Status: **B10 and S01–S14 documented; incremental roadmap documented; Gate 1 ready for Leonardo approval; code prohibited**
 
 ## Authorization gate
 
 No agent or contributor may implement game code until Leonardo separately
-approves Gate 1 and `00-design-index.md` records his separate Gate-2
-vertical-slice implementation approval. Completion of S00–S14 and interface
-freeze do not grant either approval.
+approves Gate 1 and then approves the exact next-step plan in
+`implementation/development-roadmap.md`. Completion of S00–S14, interface
+freeze, roadmap documentation, or one accepted step does not approve a later
+step.
 
 No agent may create a remote, push a remote, publish a release, deploy the
 game, add a public licence file, import an unverified asset, or change a
@@ -83,13 +84,20 @@ work-order state, review, validation, integration, and recovery.
 | MR-WP-08 Campaign content integration | Separately approved fallback and full content data, scene wiring, records, endings, English text, and campaign journeys | Accepted MR-WP-07 gate, then accepted fallback gate | Content counts, route matrix, Citation and ending checks |
 | MR-WP-09 Quality and release preparation | Own future `MR-IF-015`, fixture schema, manifest, acceptance matrix, shared test utilities, performance audit, asset/dependency audit, private evidence, and release checklist | Shared preparation after MR-WP-00; final evidence after applicable packages | Fixture and documentation self-checks, complete traceability, verify command output, and approved release-boundary audit |
 
-MR-WP-07 is the first integration target. The fallback assignment of MR-WP-08
-begins only after slice acceptance and separate Gate-3 approval. Its full-game
-assignment begins only after fallback acceptance and separate Gate-4 approval.
-MR-WP-09 can prepare shared checks during an authorized phase, but it cannot
-publish, create a remote, or deploy.
+MR-WP-07 remains the slice-integration owner, but its work is divided among the
+approved roadmap steps that need it. The fallback assignment of MR-WP-08 begins
+only after Step 31 and an approved Step-32 plan. Its full-game assignment begins
+only after Step 53 and an approved Step-54 plan. MR-WP-09 can prepare only the
+checks named by an authorized step; it cannot publish, create a remote, or
+deploy.
 
 ## Worker-assignment contract
+
+One implementation work order belongs to one approved incremental step. A
+step can use more than one non-overlapping work order only when its approved
+plan names each owner and integration order. A work order cannot claim the
+authority of a complete phase merely because its work package appears in a
+later milestone.
 
 Every future worker assignment is stored under
 `docs/implementation/work-orders/` with the exact S13 lifecycle and must
@@ -140,6 +148,11 @@ or pushes a remote.
 
 ## Requirement-level definition of done
 
+Requirement completion remains a final scope fact. Incremental step acceptance
+means only that the approved subset works and its stated evidence passes. Keep
+partially implemented requirements explicit until every linked final
+acceptance condition passes.
+
 A requirement or work package is done only when:
 
 1. its approved behaviour and failure path are implemented;
@@ -173,5 +186,5 @@ The S14 audit freezes `MR-IF-001`–`MR-IF-015` as `v1` and corrects the
 requirement traceability above. Gate 1 remains ready for Leonardo's separate
 approval, not approved.
 
-Nothing in this contract authorizes implementation before Gate 1 and the
-separate design-index Gate-2 approval are explicitly approved.
+Nothing in this contract authorizes implementation before Gate 1 and the exact
+Step-1 plan are explicitly approved. No approval carries to a later step.

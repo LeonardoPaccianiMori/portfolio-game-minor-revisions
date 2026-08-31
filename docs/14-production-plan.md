@@ -1,6 +1,6 @@
 # Production Plan
 
-Status: **B10 and S13–S14 documented; Gate 1 approval pending**
+Status: **B10 and S13–S14 documented; incremental Step 0–70 workflow documented; Gate 1 approval pending**
 
 ## Production boundary
 
@@ -22,13 +22,17 @@ hosting, server, database, telemetry, or runtime external service.
 
 ## Confirmed phase sequence
 
+The phase outcomes below remain scope milestones. They are not batch
+implementation approvals. `implementation/development-roadmap.md` divides them
+into separately approved and accepted Steps 1–70.
+
 | Phase | Main output | Gate before next phase |
 |---|---|---|
-| 0. Design closure | S00–S14 baseline, frozen interfaces, requirements, and work packages | Leonardo approves Gate 1, then separately approves Gate 2 |
-| 1. Foundation and provenance | Toolchain record, content-data foundation, asset audit, floor proof, save proof | No unverified asset; core technical checks pass |
-| 2. Vertical slice | Week-1 20–30-minute slice | Private slice gate in 13-testing-and-evaluation.md passes |
-| 3. Minimum-complete fallback | Coherent 90-minute game with stated cut line | Private fallback gate passes |
-| 4. Full target | Six-template, three-hour first playthrough | Full content and test matrix pass |
+| 0. Design closure | S00–S14 baseline, frozen interfaces, requirements, work packages, and incremental roadmap | Leonardo separately approves Gate 1, then the exact Step-1 plan |
+| 1. Foundation and provenance | Steps 1–26: toolchain, content-data foundation, temporary floor, save proof, and core loop | Each step is separately accepted; no unverified asset |
+| 2. Vertical slice | Steps 27–31: approved benchmark aesthetic and Week-1 20–30-minute slice | Step 31 private slice gate passes |
+| 3. Minimum-complete fallback | Steps 32–53: coherent 90-minute game with stated cut line | Step 53 private fallback gate passes |
+| 4. Full target | Steps 54–70: six-template, approximately three-hour first playthrough | Step 70 full content, test, and local acceptance passes |
 | 5. Private release candidate | Accessibility, performance, licensing, and public-boundary evidence | Release-candidate gate passes |
 | 6. Public handoff, if chosen | Remote, source release, and later portfolio integration | Separate Leonardo approvals for each public action |
 
@@ -55,12 +59,10 @@ expected result to hide an implementation failure.
 
 S13 now fixes ten future work packages, dependency waves, stored work orders,
 isolated local branches and worktrees, independent review, primary-agent
-integration, and contribution records. Vertical-slice approval can cover only
-`MR-WP-00`–`MR-WP-07` and slice quality work. Fallback and full expansion use
-separate later approvals. Slice acceptance is required before Gate 3 can
-authorize fallback work. Fallback acceptance is required before Gate 4 can
-authorize full work. Full-game acceptance is required before release-candidate
-work.
+integration, and contribution records. One approved step can use only the
+paths and checks named in that step plan. Step 31 slice acceptance is required
+before Step 32. Step 53 fallback acceptance is required before Step 54. Step
+70 full local-game acceptance is required before release-candidate work.
 
 The root content catalogue remains one source. During slice production, slice
 content must be complete while fallback and full profiles can be explicitly
@@ -154,6 +156,12 @@ bounded work packages only after authorization. Their contribution records
 must state the date, model, reasoning effort, requirements, owned files,
 instructions, output, tests, review, Leonardo's corrections, and final commit.
 
+For each incremental step, record Leonardo's decisions, aesthetic selections,
+play actions, observed results, requested corrections, approval, and acceptance
+separately from agent plans, code, tests, asset research, debugging, reviews,
+integration, and documentation. Do not describe AI-written code as Leonardo's
+manual coding contribution.
+
 Agents are not a substitute for the game. The game must remain coherent,
 playable, accessible, and reviewable on its own. Private conversations remain
 private. A later public case study can use selected safe evidence after a
@@ -182,6 +190,8 @@ or a new plan.
 
 ## Current next action
 
-The S00–S14 specification review is complete. Gate 1 is ready for Leonardo's
-separate decision, not approved. No code, assets, package files, deployment
-configuration, remote, or public release work is authorized.
+The S00–S14 specification review and Step 0 workflow documentation are
+complete. Gate 1 is ready for Leonardo's separate decision, not approved. If
+Gate 1 is approved, the next action is an exact Step-1 plan, not a batch slice
+approval. No code, assets, package files, deployment configuration, remote, or
+public release work is authorized.
