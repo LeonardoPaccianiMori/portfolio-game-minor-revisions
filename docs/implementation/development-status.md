@@ -8,6 +8,10 @@ Status: **Step 0 complete; Gate 1 and Step 1 not approved**
 
 - Current step: `0`, complete in the commit that contains this record.
 - Current workflow state: `awaiting separate Gate-1 decision`.
+- Current governance: explicit model routing, focused project-local worker,
+  independent reviewer, and asset-researcher roles, a two-subagent limit, and
+  mandatory delegation-table evidence are documented. This does not approve a
+  work order or an implementation step.
 - Last accepted implementation step: none.
 - Next possible step: Step 1, but only after separate Gate-1 approval and an
   approved Step-1 implementation plan.
@@ -17,7 +21,7 @@ Status: **Step 0 complete; Gate 1 and Step 1 not approved**
 - Active player test: none.
 - Active correction cycle: none.
 - Last committed resume checkpoint: the commit that contains this Step-0
-  record.
+  record and the approved model-routed governance amendment.
 - Roadmap deviation request: none.
 - Blocking technical issue: none known; implementation authority is absent.
 

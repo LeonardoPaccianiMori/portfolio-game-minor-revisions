@@ -2,7 +2,7 @@
 
 Last updated: 2026-08-31
 
-Status: **S00–S14 documented; incremental roadmap documented; Gate 1 ready for Leonardo approval; no implementation authorized**
+Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 ## Current repository state
 
@@ -45,6 +45,10 @@ not insert a future or guessed commit identifier into this document.
 - Current open issue group: none; `MR-IMP-OPEN-001`–`015` are resolved.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
+- Subagent governance: explicit Sol, Terra, and Luna routing; focused worker,
+  reviewer, and asset-researcher roles; at most two subagents; and mandatory
+  delegation-table evidence. This amendment does not alter an interface or
+  authorize implementation.
 - Next action: request Leonardo's separate Gate-1 decision. If approved,
   prepare the exact Step-1 plan and wait for its separate approval.
 - Prohibited next action: create package, source, content, test, work-order,
@@ -56,7 +60,7 @@ not insert a future or guessed commit identifier into this document.
 |---|---|---|
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
-| Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, and issue protocol are recorded. |
+| Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
 | Technical specification | Documented | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 is ready, not approved. |
 | Incremental implementation | Not authorized | Step 0 is documentation only. Steps 1–70 each require an approved plan and accepted dependencies. |
 | Vertical slice | Not authorized | Steps 1–30 assemble it and Step 31 accepts it; no code exists. |

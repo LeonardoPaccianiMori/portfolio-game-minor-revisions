@@ -24,7 +24,11 @@ the order and size of implementation increments.
 - A step cannot start from this roadmap alone.
 - Before each step, the primary agent gives Leonardo an exact implementation
   plan with purpose, owned files, requirements, tests, local run method,
-  Leonardo test, known exclusions, and proposed commit message.
+  Leonardo test, known exclusions, proposed commit message, and a delegation
+  table. The table names each task, role, owned paths, dependencies, exact
+  model, reasoning effort, selection reason, focused source packet, and whether
+  it runs in parallel or sequence. When the primary agent retains an
+  implementation task, the table states why a worker would not improve it.
 - Leonardo must explicitly approve that one plan.
 - Approval of one step does not approve a later step.
 - A later step waits for every stated dependency and Leonardo's acceptance of
@@ -45,7 +49,9 @@ Every Step 1–70 uses this cycle, including evaluation-only Steps 31, 53, and
    documents for the step.
 2. Inspect Git state and all accepted dependencies.
 3. Present the exact step plan and wait for Leonardo's approval.
-4. Create the required stored work order and contribution record.
+4. Create the required stored work order and contribution record. Select and
+   pass the exact model and reasoning effort in the S13 routing matrix to every
+   spawned subagent; do not rely on inherited defaults.
 5. Implement only the approved scope in the controlled local Git workflow.
 6. Run the step's automated, static, browser, and integration checks.
 7. Obtain independent read-only review and correct every blocker or required
@@ -89,6 +95,20 @@ AI contribution records must describe the actual agent work. They must not
 present Leonardo as the manual author of code that an agent wrote. Leonardo's
 creative direction, design decisions, test observations, approvals, and
 acceptance remain his contributions.
+
+## Delegation and model routing
+
+Delegation is useful when work is independent, bounded, and improves speed,
+coverage, or context isolation. It is not useful merely because an agent is
+available. The primary agent owns the plan, Leonardo communication, decisions,
+integration, validation, and durable records. It can use the controlled worker
+for one non-overlapping implementation assignment, the fresh-context reviewer
+for every controlled change, and the asset researcher before Leonardo selects a
+candidate. Each receives a focused source packet rather than the complete chat.
+
+The exact Sol, Terra, Luna, reasoning-effort, unavailable-model, `max`, and
+`ultra` rules are authoritative in S13. A step may run at most two subagents
+at once. A worker cannot review its own work or spawn another agent.
 
 ## Temporary and final assets
 

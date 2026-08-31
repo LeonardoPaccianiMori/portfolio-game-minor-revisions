@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, and S00–S14 documented; Gate 1 ready for Leonardo approval; no implementation authorized**
+Status: **creative design, R00–R07, S00–S14, and model-routed subagent governance documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -31,12 +31,12 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S14 documented | Gate 1 awaits Leonardo's separate approval. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S14 and model-routed subagent governance documented | Gate 1 awaits Leonardo's separate approval. |
 | `implementation/status.md` | Durable current state | Current; Sxx complete | Update in every specification commit. |
 | `implementation/decisions.md` | Technical and process decisions | Current through S14 | Add only approved decisions and preserve supersessions. |
 | `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
 | `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`015` resolved | Register any later material issue before dependent work. |
-| `implementation/specification-audit.md` | S14 audit and gate packet | Documented | Gate 1 is ready, not approved. |
+| `implementation/specification-audit.md` | S14 audit and gate packet | Documented with governance amendment audit | Gate 1 is ready, not approved. |
 | `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented | Steps 1–70 each require a separate approved plan and accepted predecessor. |
 | `implementation/development-status.md` | Durable implementation resume point | Step 0 complete | Gate 1 and Step 1 await separate approval. |
 | `implementation/step-acceptance-log.md` | Leonardo and agent evidence index | Initialized | No implementation step is accepted. |
@@ -72,6 +72,8 @@ status, and the next place to resume.
 - Durable implementation resume point: `implementation/development-status.md`.
 - Active issue group: none; `MR-IMP-OPEN-001`–`015` are resolved.
 - Gate 1, technical baseline: **ready for Leonardo's separate approval**.
+- Subagent governance: **documented**; future plans must use explicit model
+  routing and focused delegation records.
 - Incremental implementation start: **blocked**; Gate 1 and the exact Step-1
   plan are not approved.
 - Vertical-slice acceptance: **blocked**; Steps 1–30 do not exist.

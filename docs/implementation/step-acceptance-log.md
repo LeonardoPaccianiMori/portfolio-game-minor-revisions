@@ -24,7 +24,7 @@ hidden model reasoning.
 
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
-| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, diff, and independent review passed | Not applicable | Workflow documentation approved by Leonardo on 2026-08-31 | Containing commit | Records the workflow only; Gate 1 remains separately pending and no implementation is approved. |
+| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records the workflow only; Gate 1 remains separately pending and no implementation is approved. |
 | 1–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Required accepted-step entry

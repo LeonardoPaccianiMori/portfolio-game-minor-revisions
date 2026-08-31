@@ -101,11 +101,26 @@ reviewed commits, updates control documents, and communicates with Leonardo.
 Workers cannot delegate, contact Leonardo, edit another owner's path, change a
 frozen interface, use a remote, or begin from an informal chat instruction.
 
+Use the project-local roles in `.codex/agents/` when their bounded purpose
+matches the approved work. A worker, reviewer, or researcher receives a
+focused approved source packet, not a full conversation-history fork. Before
+spawning it, the primary agent must select and pass the exact model and
+reasoning effort required by the S13 routing matrix, then record the actual
+selection in the work-order and contribution evidence. If no useful,
+non-overlapping delegation exists, the primary agent records why; it still
+obtains the required independent review. Do not silently substitute an
+unavailable model or reasoning level.
+
 ## Incremental development and Leonardo review
 
 - Implement one approved roadmap step at a time.
 - Before each step, give Leonardo the exact repository plan and wait for his
   explicit approval.
+- Include a delegation table in that plan. It names each task, role, owned
+  paths, dependencies, model, reasoning effort, selection reason, focused
+  source packet, and whether it is parallel or sequential. A plan that keeps
+  implementation with the primary agent states why a worker would not improve
+  that step.
 - Run technical checks and independent review before asking Leonardo to accept
   a player-visible result.
 - Start the game locally when direct review is required. Give Leonardo simple

@@ -76,6 +76,27 @@ numbered design or implementation decisions.
 
 There is no `blocked` S14 finding.
 
+## Post-S14 model-routed governance amendment
+
+Leonardo approved this documentation-only amendment on 2026-08-31. It adds
+project-local Codex configuration and makes the future S13 model-selection
+rules explicit. It does not reopen an Sxx decision group, alter a numbered
+design document or frozen interface, or authorize Gate 1, Step 1, code,
+package configuration, tests, assets, work orders, contributions, network
+actions, a remote, a licence, deployment, or a runtime result.
+
+| Check | Required result |
+|---|---|
+| Configuration scope | `.codex/config.toml` permits at most two subagents and contains no game-runtime configuration. The three role files define only the controlled worker, independent reviewer, and asset researcher. |
+| Model authority | S13, AGENTS, the incremental roadmap, status, decision, acceptance, and index records agree that the primary agent passes and records an explicit model and reasoning effort. An inherited or silent replacement is invalid. |
+| Role boundary | The worker has no fixed model because each work order selects it; the reviewer is read-only Sol `xhigh`; the asset researcher is read-only Terra `high`; no role can contact Leonardo, delegate again, integrate, or accept work. |
+| Future validation | `MR-S13-WO-001`, together with the linked approved step delegation table, requires every later assignment to prove matching model, effort, source packet, role, path boundary, selection reason, and contribution evidence. |
+| Technical and authority boundary | No source, package, test, asset, interface, work order, contribution, remote, licence, deployment, or result path is created; Gate 1 and Step 1 stay blocked. |
+
+The primary agent must parse the TOML, review the complete documentation diff,
+and obtain a fresh-context Sol `xhigh` read-only review before committing this
+amendment. The independent-review result is recorded below.
+
 ## Interface freeze record
 
 `MR-IF-001` through `MR-IF-015` are frozen as version `v1`. The owner,
@@ -90,6 +111,34 @@ Leonardo's approval. Freeze does not mean implemented, tested, or approved for
 code work.
 
 ## Independent review record
+
+### Model-routed governance amendment
+
+The first fresh-context read-only reviewer used OpenAI `gpt-5.6-sol` with
+`xhigh` reasoning on 2026-08-31. It reviewed only the approved governance
+amendment paths: the four `.codex` TOML files, `AGENTS.md`, `README.md`, the
+named index, decision, roadmap, status, acceptance, audit, and S13 documents.
+It excluded game code, package configuration, assets, external research,
+Career Center, remotes, licences, deployment, and every outside path.
+
+The reviewer parsed all four TOML files with `tomllib`, ran `git diff --check`,
+confirmed all 26 Markdown tables in the allowed files, resolved the new README
+link to S13, checked the current official OpenAI configuration and model
+guidance, and confirmed that the working tree contained only the approved
+documentation and `.codex` paths. It found no blocker and no governance defect.
+It found one required record-completion correction: this audit must not call the
+review pending while the Step-0 acceptance record says the independent review
+passed. This text made that record consistent.
+
+A second fresh-context read-only reviewer used OpenAI `gpt-5.6-sol` with
+`xhigh` reasoning on 2026-08-31 to review the correction and complete allowed
+diff against `HEAD`. It parsed all four TOML files with `tomllib`, ran
+`git diff --check`, checked all 26 Markdown tables, resolved 12 local Markdown
+links, and confirmed that all 16 changed or new paths were within the approved
+scope. It found no blocker, required, or advisory finding. Its verdict is
+**pass**.
+
+### S14 baseline review
 
 The fresh-context read-only reviewer used OpenAI `gpt-5.6-sol`, high reasoning,
 on 2026-08-31. Its scope was the complete S14 working-tree diff against

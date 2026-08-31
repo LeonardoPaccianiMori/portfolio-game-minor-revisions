@@ -90,6 +90,15 @@ performs the supplied play tests, reports observations, and accepts each step.
 The [`step acceptance log`](docs/implementation/step-acceptance-log.md) keeps
 those contributions distinct.
 
+When an approved step benefits from delegation, the primary Codex agent uses a
+focused, project-local worker, independent reviewer, or asset/licence
+researcher. Every assignment records its exact model and reasoning effort in
+the work order and contribution evidence. The authoritative routing matrix,
+including the use of Sol, Terra, and Luna, is in
+[`S13`](docs/implementation/specs/13-agent-work-orders-and-integration.md).
+The configuration exists only to control future work; it does not authorize a
+step, code, package, asset, network action, or Gate 1.
+
 ## Documentation
 
 The numbered documents divide the design into implementation-owned domains.

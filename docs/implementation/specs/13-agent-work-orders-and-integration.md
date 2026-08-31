@@ -264,13 +264,46 @@ current assignment. The primary agent prepares a revised or new work order.
 
 Every order records the exact model, provider, reasoning level, and assignment
 date. If the selected model is unavailable, no silent substitute is allowed.
-The primary agent revises the work order first.
+The primary agent revises the work order and obtains any required new approval
+first. The written value alone is insufficient: before spawning the agent, the
+primary agent passes that exact model and reasoning effort to the Codex agent
+configuration. The contribution record and independent-review record preserve
+the actual selection. A default inherited model is not a valid substitute for
+an omitted selection.
 
-New architecture, rules, persistence, Three.js, accessibility, integration,
-and test-system work uses the strongest suitable coding model available with
-high reasoning. A faster model is allowed only for a small mechanical task
-with exact inputs and expected output. It cannot decide design or shared
-contracts.
+The current OpenAI routing matrix is:
+
+| Assignment class | Exact default selection | Boundary |
+|---|---|---|
+| Architecture, shared contracts, persistence, Three.js, accessibility, integration, or difficult debugging | `gpt-5.6-sol`, `high` or `xhigh` | Use `xhigh` when the work has several difficult connected trade-offs. |
+| Final independent implementation or governance review | `gpt-5.6-sol`, `xhigh` | The reviewer is fresh-context and read-only. |
+| Normal bounded implementation, tests, tools, or UI work | `gpt-5.6-terra`, `medium` or `high` | Use `high` when the task must trace several modules or edge cases. |
+| Asset, licence, and provenance research | `gpt-5.6-terra`, `high` | Escalate a materially ambiguous rights or provenance question to Sol under a new or revised work order. |
+| Mechanical transformation, inventory, fixture conversion, or repeatable check with known input and output | `gpt-5.6-luna`, `low` or `medium` | It cannot decide design, a shared contract, or an approval question. |
+
+`max` is reserved for an exceptional, documented quality-first single-agent
+problem after the primary agent explains why `xhigh` is insufficient. Do not
+assign `ultra` to a worker, reviewer, or researcher: it uses subagents while
+this project forbids a delegated worker from delegating again. The primary
+agent may use a supported higher-effort setting only when the approved plan
+states its purpose and it does not bypass this routing, ownership, review, or
+approval contract. These named defaults are rechecked for availability before
+each assignment; a changed provider or model family needs a revised work order
+and Leonardo's approval when it changes the selected assignment.
+
+The project-local configuration has three focused roles:
+
+| Role | Configuration path | Use |
+|---|---|---|
+| Controlled implementation worker | `.codex/agents/minor-revisions-implementation-worker.toml` | One approved assignment with exclusive owned paths. Its model stays unset in the profile so the primary agent must pass the matrix-selected value for the exact work. |
+| Independent reviewer | `.codex/agents/minor-revisions-independent-reviewer.toml` | Fresh-context, read-only review using Sol `xhigh`. |
+| Asset researcher | `.codex/agents/minor-revisions-asset-researcher.toml` | Focused candidate, licence, and provenance research using Terra `high`. |
+
+At most two subagents can run at the same time under `.codex/config.toml`. The
+primary agent uses parallel work only when paths, inputs, and decisions do not
+overlap. It explains in the step plan why no worker delegation is useful when
+it retains an implementation task in the primary context. The independent
+review remains required.
 
 The implementation worker cannot provide the final independent review. A
 fresh-context agent performs that review. Earlier Claude Opus 5 design reviews
@@ -372,9 +405,11 @@ The worker's word `finished` means only `submitted`.
 
 ## Independent review
 
-The reviewer receives only the approved work order, starting and final branch
-commits, complete diff, relevant specifications and interfaces, test results,
-and recorded limitations. The reviewer is read-only.
+The reviewer receives only the approved work order, its explicit model-routing
+and delegation data, starting and final branch commits, complete diff, relevant
+specifications and interfaces, test results, and recorded limitations. The
+reviewer is read-only and starts from a focused packet rather than the full
+conversation history.
 
 The review checks:
 
@@ -555,7 +590,7 @@ These are future static or unit check groups. No check or result exists now.
 |---|---|
 | `MR-S13-OWN-001` | Every planned source, content, test, configuration, control, work-order, contribution, asset, and evidence path has one permitted owner at one time; no simultaneous overlap exists. |
 | `MR-S13-DAG-001` | The package graph contains exactly `MR-WP-00`–`MR-WP-09`, has no cycle, reproduces the approved waves, and blocks every package whose accepted dependency or phase approval is absent. |
-| `MR-S13-WO-001` | Valid work-order front matter, headings, IDs, model facts, base commit, paths, traceability, non-goals, checks, and handoff pass; every missing, unknown, conflicting, outside, or unsafe value fails. |
+| `MR-S13-WO-001` | Valid work-order front matter, headings, IDs, explicit supported spawned model and reasoning selection, base commit, paths, traceability, non-goals, checks, and handoff pass; its linked approved step delegation table records the focused source packet, role, path boundary, and selection reason. An inherited, unavailable, conflicting, missing, silently substituted, outside, or unsafe value fails. |
 | `MR-S13-GIT-001` | Branch, worktree, base, atomic-commit, dirty-state, ownership, integration-order, conflict, repair, revert, and cleanup cases follow S13 without a remote or history rewrite. |
 | `MR-S13-REV-001` | Submission checks, controlled reviewer packet, independent-review identity, complete checklist, finding classes, correction, re-review, package checks, and wave checks are present and cannot be skipped. |
 | `MR-S13-CON-001` | Contribution front matter, required headings, commit mapping, actual results, reviewer findings, corrections, limitations, privacy exclusions, integration, and Leonardo acceptance remain complete and distinct. |
@@ -563,9 +598,9 @@ These are future static or unit check groups. No check or result exists now.
 
 All seven groups link to `MR-REQ-TECH-001` and `MR-REQ-TEST-001`.
 `MR-S13-GATE-001` also links to `MR-REQ-RELEASE-001`.
-`MR-S13-OWN-001`, `MR-S13-WO-001`, and `MR-S13-CON-001` include static
-privacy and outside-path rejection. S14 verifies their complete requirement,
-interface, and acceptance links before Gate 1.
+`MR-S13-OWN-001`, `MR-S13-WO-001`, and `MR-S13-CON-001` include static privacy
+and outside-path rejection. S14 verifies their complete requirement, interface,
+and acceptance links before Gate 1.
 
 ## Interface lifecycle and completion
 

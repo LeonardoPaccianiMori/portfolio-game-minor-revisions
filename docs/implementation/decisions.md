@@ -1,6 +1,6 @@
 # Implementation Specification Decision Register
 
-Status: **current through S13**
+Status: **current through S14 and the approved model-routed subagent governance amendment**
 
 This register records approved process and technical decisions for the
 implementation-specification programme. It does not replace the detailed
@@ -313,6 +313,11 @@ specification files or the creative decision log.
 | MR-IMP-DEC-293 | 2026-08-31 | Change the definite roadmap only through an evidence and impact explanation plus Leonardo's prior approval; use corrections inside one approved step only when purpose and file scope do not materially change. | Confirmed | Unexpected evidence cannot silently expand work. |
 | MR-IMP-DEC-294 | 2026-08-31 | Preserve separate attribution: Leonardo owns creative direction, selection, private testing, observations, approvals, acceptance, and public decisions; agents own their actual planning, code, tests, research, debugging, review, integration, and documentation work. | Confirmed | Do not present AI-written code as Leonardo's manual coding. |
 | MR-IMP-DEC-295 | 2026-08-31 | Keep Gate 1 pending after this documentation approval. After separate Gate-1 approval, authorize only an approved Step-1 plan; Steps 31, 53, and 70 are the slice, fallback, and complete local-game acceptance milestones. | Confirmed | Documentation-plan approval is not Gate-1 or Step-1 approval. |
+| MR-IMP-DEC-296 | 2026-08-31 | Route future bounded assignments explicitly: Sol high or xhigh for complex technical work, Sol xhigh for final independent review, Terra medium or high for normal implementation, Terra high for asset/licence research, and Luna low or medium only for clear repeatable mechanical work. | Confirmed | The primary agent passes the exact selected model and effort at spawn, records the actual result, and never silently substitutes an unavailable choice. |
+| MR-IMP-DEC-297 | 2026-08-31 | Add project-local controlled-worker, independent-reviewer, and asset-researcher profiles plus a two-subagent concurrency limit; give each a focused source packet rather than a full conversation-history fork. | Confirmed | The worker profile deliberately has no fixed model so the exact task-specific routing remains mandatory. |
+| MR-IMP-DEC-298 | 2026-08-31 | Require every future step plan to include a delegation table with task, role, paths, dependencies, selected model and effort, reason, source packet, and parallel or sequential execution. | Confirmed | If the primary agent retains implementation, it explains why a worker would not improve that step; independent review remains required. |
+| MR-IMP-DEC-299 | 2026-08-31 | Reserve `max` for an exceptional documented quality-first single-agent problem and do not assign `ultra` to a worker, reviewer, or researcher because those roles cannot delegate again. | Confirmed | Higher effort cannot bypass ownership, approval, privacy, or independent-review rules. |
+| MR-IMP-DEC-300 | 2026-08-31 | Keep Gate 1 and Step 1 unapproved after the model-routed governance amendment. | Confirmed | This adds no game code, package, test, work order, contribution, asset, remote, licence, deployment, or runtime result. |
 
 ## Entry rule
 

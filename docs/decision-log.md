@@ -222,6 +222,7 @@ belongs in the numbered design documents.
 | 2026-08-31 | Define Step 70 as the complete locally working game accepted by Leonardo. Keep licence, remote, release, deployment, and portfolio work outside Steps 0–70 and separately approved. | Confirmed |
 | 2026-08-31 | Permit evidence-led roadmap corrections or added intermediate steps only after the primary agent explains the impact and Leonardo approves the roadmap change. | Confirmed |
 | 2026-08-31 | Record Leonardo's creative direction, selection, testing, observations, approvals, and acceptance separately from agent planning, code, tests, research, debugging, review, integration, and documentation. | Confirmed |
+| 2026-08-31 | Add explicit Sol, Terra, and Luna routing, project-local controlled worker, independent reviewer, and asset researcher roles, focused source packets, a two-subagent limit, mandatory delegation tables, and no silent model substitution. | Confirmed; Gate 1 and Step 1 remain unapproved |
 
 ## Rules for future entries
 
