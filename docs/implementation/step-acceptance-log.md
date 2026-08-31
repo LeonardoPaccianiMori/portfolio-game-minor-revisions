@@ -7,6 +7,10 @@ supports them. It contains concise summaries, not raw private conversations,
 save payloads, names entered during testing, raw errors, machine paths, or
 hidden model reasoning.
 
+[`ai-use-log.md`](ai-use-log.md) is the separate private record for actual
+primary-session and completed-subagent model use. It applies only to *Minor
+Revisions* and does not replace Leonardo's approval or acceptance evidence.
+
 ## State values
 
 - `not started`: no approved plan exists.
@@ -24,7 +28,7 @@ hidden model reasoning.
 
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
-| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records the workflow only; Gate 1 remains separately pending and no implementation is approved. |
+| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; Gate 1 remains separately pending and no implementation is approved. |
 | 1–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Required accepted-step entry
@@ -48,6 +52,8 @@ The entry must distinguish:
   accepted;
 - what each named agent planned, wrote, generated, tested, reviewed, repaired,
   integrated, and documented;
+- the matching actual primary-session and completed-subagent entries in
+  `ai-use-log.md`;
 - expected results from actual results;
 - temporary material from accepted final material; and
 - accepted current scope from absent future work.

@@ -45,8 +45,8 @@ the order and size of implementation increments.
 Every Step 1–70 uses this cycle, including evaluation-only Steps 31, 53, and
 70:
 
-1. Read `development-status.md` and the authoritative design and technical
-   documents for the step.
+1. Read `development-status.md`, `ai-use-log.md`, and the authoritative design
+   and technical documents for the step.
 2. Inspect Git state and all accepted dependencies.
 3. Present the exact step plan and wait for Leonardo's approval.
 4. Create the required stored work order and contribution record. Select and
@@ -68,9 +68,10 @@ Every Step 1–70 uses this cycle, including evaluation-only Steps 31, 53, and
     testing until the result is acceptable.
 11. Leonardo explicitly accepts the step. Technical checks cannot replace his
     player-experience judgment.
-12. Update `development-status.md`, `step-acceptance-log.md`, the work order,
-    contribution record, evidence summaries, and affected control documents.
-    Commit the accepted state locally. No remote action occurs.
+12. Update `development-status.md`, `step-acceptance-log.md`,
+    `ai-use-log.md`, the work order, contribution record, evidence summaries,
+    and affected control documents. Commit the accepted state locally. No
+    remote action occurs.
 
 The primary agent also creates a local committed resume checkpoint whenever a
 step enters `plan approved`, `implementing`, `technical review`, `Leonardo

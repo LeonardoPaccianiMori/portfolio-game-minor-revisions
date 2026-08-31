@@ -1,0 +1,71 @@
+# AI Use Log
+
+Status: **current; private; project-specific**
+
+Last updated: 2026-08-31
+
+## Purpose and scope
+
+This is the detailed private source of truth for AI contributions that completed
+work for *Minor Revisions*. It records the provider, exact model, reasoning
+effort, role, completed work, project phase or step, and supporting evidence.
+
+Every historical entry in this file applies **only** to *Minor Revisions*.
+In particular, the B00–B10 design workshop, R00–R07 decisions, S01–S14
+technical-specification work, and Step-0 work are not a history of model use
+for Career Center, another Leonardo project, the public portfolio, or any
+other Codex work.
+
+The linked Opus metadata remains the source for its exact token and cost data.
+This log does not duplicate those figures, raw prompts, raw private
+conversation, hidden reasoning, credentials, personal data, or machine paths.
+
+## Recording rule
+
+For future *Minor Revisions* work, add one entry for every primary Codex
+session that completes project work and one entry for every completed subagent
+contribution. Each entry must state:
+
+- the date or date range;
+- provider, exact model, and actual reasoning effort;
+- role and completed work;
+- project phase or step; and
+- durable supporting evidence, such as a work order, contribution record,
+  review record, accepted commit, or named control document.
+
+Record the actual session values. If the exact model or reasoning effort is
+genuinely unavailable, write `unknown`; do not infer it from a configuration
+default. If a model changes during one session, create separate entries for
+the work completed by each model. Do not add failed, interrupted, abandoned,
+considered, or unused runs.
+
+The older primary-agent history below is grouped by phase because exact
+historical session boundaries were not recorded. That grouping exception does
+not apply to future sessions.
+
+## Completed history
+
+| Date or range | Provider | Exact model | Reasoning effort | Role | Completed work | Project phase or step | Supporting evidence |
+|---|---|---|---|---|---|---|---|
+| 2026-08-26 to 2026-08-28 | OpenAI | `gpt-5.6-sol` | `high` | Primary Codex agent | Completed the B00–B10 creative-design workshop records. | B00–B10 design work | User-confirmed history; [design index](../00-design-index.md); commits `dafb5e43bc6341f05d3c904de86548af71d3453d` through `ea7e95d0ad33c7c9fd76466ea25bf726a4fb3ee8`. |
+| 2026-08-28 | Anthropic | `claude-opus-5` | Adaptive thinking with high effort | Advisory reviewer | Completed the two advisory review programmes: design alignment and system incentives, then identity, fun hypothesis, narrative, artistic direction, and expectations. | Independent design-review programmes | [First review metadata](../reviews/2026-08-28-opus-5/review-metadata.md); [holistic review metadata](../reviews/2026-08-28-opus-5-holistic/review-metadata.md); the reports remain advisory. |
+| 2026-08-28 to 2026-08-29 | OpenAI | `gpt-5.6-sol` | `high` | Primary Codex agent | Documented the R00–R07 review decisions after Leonardo decided the responses. | R00–R07 review decisions | User-confirmed history; [decision log](../decision-log.md); [recommendation register](../reviews/recommendation-register.md); commits `51c5ddd728cb77070f9020664331d104fd02c925` through `6d0ca9a755ad94843936b7e4b97d9e79cd70eee4`. |
+| 2026-08-29 to 2026-08-31 | OpenAI | `gpt-5.6-sol` | `high` | Primary Codex agent | Completed the S01–S14 technical-specification records. | S01–S14 specification work | User-confirmed history; [implementation roadmap](roadmap.md); [specification audit](specification-audit.md); commits `661357dc69951eaaafecaf46dee20e5961519740` through `5b868bbc713d05b8393e5dfc8c8c196aa5330dbe`. |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `high` | Independent reviewer | Completed the independent S14 baseline review. | S14 baseline review | User-confirmed history; [S14 independent review record](specification-audit.md#independent-review-record); baseline `52e7a778dd0a24ccd55ab359b897154d7949c7a3`. |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `high` | Primary Codex agent | Completed the Step-0 incremental roadmap and governance documentation. | Step 0 roadmap and governance | User-confirmed history; [development roadmap](development-roadmap.md); [development status](development-status.md); commits `6e0c4cc3ed478d598c800998bcb2edbe84728705` and `c492bac5ad6c5525bef8ededa89bcf332513cc1d`. |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Completed the first governance-amendment review. | Step-0 governance amendment | User-confirmed history; [governance-amendment review record](specification-audit.md#model-routed-governance-amendment); commit `c492bac5ad6c5525bef8ededa89bcf332513cc1d`. |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Completed the governance-amendment re-review after the required correction. | Step-0 governance amendment | User-confirmed history; [governance-amendment review record](specification-audit.md#model-routed-governance-amendment); commit `c492bac5ad6c5525bef8ededa89bcf332513cc1d`. |
+| 2026-08-31 | OpenAI | `unknown` | `unknown` | Primary Codex agent | Created this private AI-use log and updated the related documentation controls. This was documentation work only. | AI-use provenance documentation | This file and the local Git commit that contains it. Exact current-session model and reasoning metadata were unavailable, so neither was inferred. |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Reviewed the AI-use documentation diff and found two required record corrections: use the verified Opus date and exclude uncompleted runs by category only. | AI-use provenance documentation | [AI-use documentation independent review](specification-audit.md#ai-use-documentation-independent-review). |
+| 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Re-reviewed the corrected AI-use documentation diff and returned `pass` with no blocker, required, or advisory finding. | AI-use provenance documentation | [AI-use documentation independent review](specification-audit.md#ai-use-documentation-independent-review). |
+
+The completed history excludes failed, interrupted, abandoned, considered, and
+unused runs.
+
+## Relationship to future implementation evidence
+
+This log complements, but does not replace, S13 work orders, contribution
+records, review evidence, or the step-acceptance log. A future implementation
+record must link the matching entries here. No entry in this file authorizes a
+game step, changes Gate 1 or Step 1, or claims that Leonardo manually wrote
+agent-produced code.

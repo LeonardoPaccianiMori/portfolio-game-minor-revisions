@@ -17,6 +17,8 @@ Status: **S00–S14 documented; incremental roadmap and model-routed subagent go
 - Deployment configuration: none.
 - Design workshop: B00–B10 documented.
 - Independent review decisions: R00–R07 documented.
+- AI-use provenance: `ai-use-log.md` is current and applies only to *Minor
+  Revisions*.
 
 Git history is the authority for the commit that contains this status file. Do
 not insert a future or guessed commit identifier into this document.
@@ -72,12 +74,13 @@ For any non-trivial specification session:
 
 1. Read repository `AGENTS.md` and `README.md`.
 2. Read `../00-design-index.md` and `../decision-log.md`.
-3. Read this file and `roadmap.md`.
+3. Read `ai-use-log.md`, this file, and `roadmap.md`.
 4. Read `decisions.md`, `interfaces.md`, and `open-issues.md`.
 5. Resume the current block shown above unless Leonardo changes the order.
 6. Read only the existing design and specification files needed for that
    block.
-7. Do not infer completion from conversation memory or an agent summary.
+7. Do not infer completion or actual model use from conversation memory, an
+   agent summary, or a configuration default.
 
 For implementation or test work, use `development-status.md` as the first
 resume record after the repository instructions.

@@ -155,7 +155,7 @@ change a frozen interface or creative decision silently.
 | S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Documented |
 | S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
 | S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Documented |
-| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, explicit Sol/Terra/Luna routing, focused context, branch and commit rules, contribution records, review, and integration sequence | S01–S12 | Documented; governance amendment approved |
+| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, explicit Sol/Terra/Luna routing, focused context, branch and commit rules, contribution records, project-only AI-use records, review, and integration sequence | S01–S12 | Documented; governance amendment approved |
 | S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Documented |
 
 ## Planned specification files
@@ -180,6 +180,10 @@ Each block S01–S13 creates one authoritative file under
 S14 writes `docs/implementation/specification-audit.md`. A block can also add
 a narrowly scoped diagram or fixture document when the main file would become
 unclear. It must register that artifact in `status.md`.
+
+`ai-use-log.md` is a separate private implementation-control record. It does
+not add an Sxx block or change a frozen contract. It records only completed
+work for *Minor Revisions* and must be read during normal session bootstrap.
 
 ## Block workflow
 

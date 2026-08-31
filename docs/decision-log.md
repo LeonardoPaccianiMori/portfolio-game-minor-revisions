@@ -223,6 +223,7 @@ belongs in the numbered design documents.
 | 2026-08-31 | Permit evidence-led roadmap corrections or added intermediate steps only after the primary agent explains the impact and Leonardo approves the roadmap change. | Confirmed |
 | 2026-08-31 | Record Leonardo's creative direction, selection, testing, observations, approvals, and acceptance separately from agent planning, code, tests, research, debugging, review, integration, and documentation. | Confirmed |
 | 2026-08-31 | Add explicit Sol, Terra, and Luna routing, project-local controlled worker, independent reviewer, and asset researcher roles, focused source packets, a two-subagent limit, mandatory delegation tables, and no silent model substitution. | Confirmed; Gate 1 and Step 1 remain unapproved |
+| 2026-08-31 | Maintain a private, project-only AI-use log. Preserve the user-confirmed completed *Minor Revisions* history; for every future primary Codex session and completed subagent contribution, record actual provider, model, reasoning effort, role, date, completed work, phase or step, and evidence. Use `unknown` only when a value is genuinely unavailable, never a default. | Confirmed; does not apply the B00–B10, R00–R07, S01–S14, or Step-0 history to another project; does not authorize implementation or change any gate |
 
 ## Rules for future entries
 

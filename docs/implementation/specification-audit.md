@@ -91,11 +91,31 @@ actions, a remote, a licence, deployment, or a runtime result.
 | Model authority | S13, AGENTS, the incremental roadmap, status, decision, acceptance, and index records agree that the primary agent passes and records an explicit model and reasoning effort. An inherited or silent replacement is invalid. |
 | Role boundary | The worker has no fixed model because each work order selects it; the reviewer is read-only Sol `xhigh`; the asset researcher is read-only Terra `high`; no role can contact Leonardo, delegate again, integrate, or accept work. |
 | Future validation | `MR-S13-WO-001`, together with the linked approved step delegation table, requires every later assignment to prove matching model, effort, source packet, role, path boundary, selection reason, and contribution evidence. |
+| AI-use provenance | `ai-use-log.md` is a private *Minor Revisions*-only record of actual completed AI work. It records future primary sessions and completed subagents separately, uses `unknown` only for genuinely unavailable session metadata, and does not infer a default. |
 | Technical and authority boundary | No source, package, test, asset, interface, work order, contribution, remote, licence, deployment, or result path is created; Gate 1 and Step 1 stay blocked. |
 
 The primary agent must parse the TOML, review the complete documentation diff,
 and obtain a fresh-context Sol `xhigh` read-only review before committing this
 amendment. The independent-review result is recorded below.
+
+The AI-use documentation is a later provenance-control update. It does not
+reopen S14, change an Sxx decision, alter a frozen interface, or change Gate 1
+or Step 1.
+
+## AI-use documentation independent review
+
+A fresh-context, read-only independent reviewer used OpenAI `gpt-5.6-sol`
+with `xhigh` reasoning on 2026-08-31 to review the AI-use documentation diff.
+It found no blocker. It required two record corrections: the two completed
+Opus review programmes must use their verified 2026-08-28 date, and the log
+must exclude uncompleted runs by category without naming individual models.
+
+The primary agent corrected both records. A second fresh-context, read-only
+independent reviewer used OpenAI `gpt-5.6-sol` with `xhigh` reasoning on
+2026-08-31 to review the corrected diff. It returned **pass** with no blocker,
+required, or advisory finding. The two reviews covered only the approved
+documentation paths and confirmed that Gate 1, Step 1, code, assets, licence,
+remote, deployment, and runtime state did not change.
 
 ## Interface freeze record
 

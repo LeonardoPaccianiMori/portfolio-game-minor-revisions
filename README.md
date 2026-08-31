@@ -99,6 +99,13 @@ including the use of Sol, Terra, and Luna, is in
 The configuration exists only to control future work; it does not authorize a
 step, code, package, asset, network action, or Gate 1.
 
+The private [`AI-use log`](docs/implementation/ai-use-log.md) records the
+actual model, reasoning effort, role, completed work, and evidence for this
+game's completed AI contributions. Its B00–B10, R00–R07, S01–S14, and Step-0
+history applies only to *Minor Revisions*. Future entries record each primary
+Codex session and completed subagent contribution. A configuration default is
+never used as evidence of the actual session model or reasoning effort.
+
 ## Documentation
 
 The numbered documents divide the design into implementation-owned domains.

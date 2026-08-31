@@ -309,6 +309,28 @@ The implementation worker cannot provide the final independent review. A
 fresh-context agent performs that review. Earlier Claude Opus 5 design reviews
 remain design evidence; they are not automatic implementation reviews.
 
+## Project AI-use log
+
+[`ai-use-log.md`](../ai-use-log.md) is the private, detailed source of truth
+for actual AI contributions to *Minor Revisions*. It is limited to this game;
+its historical entries do not make a claim about AI use for any other Leonardo
+project.
+
+For every future primary Codex session that completes project work, and every
+completed subagent contribution, the primary agent adds one entry with the
+date or range, provider, exact model, actual reasoning effort, role, completed
+work, phase or step, and durable evidence. A model change during a session
+creates separate entries. The actual session values must be recorded; a
+configuration default is not evidence. If the exact model or reasoning effort
+is genuinely unavailable, write `unknown` rather than infer it.
+
+Do not add failed, interrupted, abandoned, considered, or unused runs. The
+log contains durable summaries only. It does not duplicate model cost or token
+figures that already exist in linked provider metadata, and it excludes raw
+conversation, hidden reasoning, credentials, personal data, and machine paths.
+It complements, but does not replace, the exact model-selection requirement in
+a future work order, contribution record, and independent-review record.
+
 ## Branch and worktree contract
 
 Local `main` remains the integration branch. The primary agent creates one

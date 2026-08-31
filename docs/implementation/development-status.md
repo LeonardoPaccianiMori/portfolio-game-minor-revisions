@@ -12,6 +12,8 @@ Status: **Step 0 complete; Gate 1 and Step 1 not approved**
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. This does not approve a
   work order or an implementation step.
+- AI-use log: `ai-use-log.md` records completed project-specific AI work. It
+  does not describe model use for another project.
 - Last accepted implementation step: none.
 - Next possible step: Step 1, but only after separate Gate-1 approval and an
   approved Step-1 implementation plan.
@@ -59,12 +61,13 @@ For any non-trivial future session:
 
 1. Read repository `AGENTS.md` and `README.md`.
 2. Read `docs/00-design-index.md` and `docs/decision-log.md`.
-3. Read this file and `development-roadmap.md` first.
+3. Read `ai-use-log.md`, this file, and `development-roadmap.md` first.
 4. Read `step-acceptance-log.md` and the latest entry for the current and last
    accepted steps.
 5. Read `status.md`, `roadmap.md`, `decisions.md`, `interfaces.md`, and
    `open-issues.md` for the frozen technical baseline.
-6. Inspect Git state. Do not infer progress from conversation memory.
+6. Inspect Git state. Do not infer progress or actual model use from
+   conversation memory or a configuration default.
 7. Resume only the current approved cycle shown here. If no cycle is approved,
    prepare the next step plan and wait.
 8. Read only the design, specification, work-order, contribution, and evidence

@@ -37,6 +37,7 @@ gaps. It does not mean that the domain is finished.
 | `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
 | `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`015` resolved | Register any later material issue before dependent work. |
 | `implementation/specification-audit.md` | S14 audit and gate packet | Documented with governance amendment audit | Gate 1 is ready, not approved. |
+| `implementation/ai-use-log.md` | Private, project-only AI model and contribution provenance | Current | Future primary sessions and completed subagent contributions record actual model and reasoning evidence. |
 | `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented | Steps 1–70 each require a separate approved plan and accepted predecessor. |
 | `implementation/development-status.md` | Durable implementation resume point | Step 0 complete | Gate 1 and Step 1 await separate approval. |
 | `implementation/step-acceptance-log.md` | Leonardo and agent evidence index | Initialized | No implementation step is accepted. |
@@ -74,6 +75,8 @@ status, and the next place to resume.
 - Gate 1, technical baseline: **ready for Leonardo's separate approval**.
 - Subagent governance: **documented**; future plans must use explicit model
   routing and focused delegation records.
+- AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
+  S01–S14, and Step-0 model history belongs only to *Minor Revisions*.
 - Incremental implementation start: **blocked**; Gate 1 and the exact Step-1
   plan are not approved.
 - Vertical-slice acceptance: **blocked**; Steps 1–30 do not exist.

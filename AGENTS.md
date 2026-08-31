@@ -25,6 +25,8 @@ or acceptance requirements.
 
 Before non-trivial work, read `README.md`, `docs/00-design-index.md`,
 `docs/decision-log.md`, and every domain document relevant to the task.
+Also read `docs/implementation/ai-use-log.md`. It is a private record for
+*Minor Revisions* only; it does not describe AI use for any other project.
 
 For implementation-specification work, also read
 `docs/implementation/status.md`, `docs/implementation/roadmap.md`,
@@ -111,6 +113,16 @@ non-overlapping delegation exists, the primary agent records why; it still
 obtains the required independent review. Do not silently substitute an
 unavailable model or reasoning level.
 
+For every future primary Codex session that completes *Minor Revisions* work,
+and every completed subagent contribution, update
+`docs/implementation/ai-use-log.md`. Record the actual provider, exact model,
+reasoning effort, role, date or range, completed work, phase or step, and
+supporting evidence. If the exact model or reasoning effort is genuinely
+unavailable, record `unknown`; never infer it from a default. Split an entry
+when a model changes during a session. Do not record failed, interrupted,
+abandoned, considered, or unused runs. This is a project-specific rule and
+does not assign this history to another Leonardo project.
+
 ## Incremental development and Leonardo review
 
 - Implement one approved roadmap step at a time.
@@ -131,6 +143,8 @@ unavailable model or reasoning level.
 - Record Leonardo's creative, selection, testing, observation, approval, and
   acceptance contributions separately from agent planning, code, tests,
   research, review, integration, and documentation.
+- Link the actual primary-session and completed-subagent entries in
+  `docs/implementation/ai-use-log.md` from the relevant step evidence.
 - Temporary shapes, colours, text, and synthetic sounds are permitted only
   when the approved step identifies them as temporary.
 - External or generated asset candidates need source, licence, redistribution,
