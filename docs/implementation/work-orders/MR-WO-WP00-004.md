@@ -1,9 +1,9 @@
 ---
-id: MR-WO-WP00-003
+id: MR-WO-WP00-004
 type: implementation-work-order
-status: superseded
+status: approved
 work_package: MR-WP-00
-sequence: 3
+sequence: 4
 created: 2026-09-01
 updated: 2026-09-01
 base_commit: 43f868e64b80c88dc46832b676af6d2929f081c2
@@ -13,39 +13,32 @@ reasoning_level: high
 model_selected: 2026-09-01
 branch: work/MR-WP-00-startup-safety-review-fixes
 worktree: .worktrees/MR-WP-00-startup-safety-review-fixes/
-supersedes: MR-WO-WP00-002
+supersedes: MR-WO-WP00-003
 ---
 
-# MR-WO-WP00-003 — Startup-safety review corrections
+# MR-WO-WP00-004 — Complete startup-safety review corrections
 
 ## Objective
 
-Correct only the three independent-review findings in the submitted Step-2
-startup-safety result. Add the required public platform entrance, make the
-diagnostic fault set closed and internally consistent, and replace real unit-
-test timers and browser event objects with controlled fakes. Preserve every
-approved Step-2 behaviour and every frozen interface.
-
-Primary source inspection after activation found a third direct private
-platform import in `src/bootstrap/startup-screen.ts`. This path is outside the
-owned list. The order is blocked before worker edits because its exact scope
-cannot satisfy S02. A later approved order must own that file and supersede
-this order before correction work resumes.
-
-Leonardo approved `MR-WO-WP00-004` on 2026-09-01. It adds only the missing
-`src/bootstrap/startup-screen.ts` ownership and supersedes this order. This
-record remains historical evidence of the clean scope block.
+Correct only the three independent-review finding groups in the submitted
+Step-2 startup-safety result. Add the required public platform entrance, route
+all three bootstrap cross-module imports through it, make the diagnostic fault
+set closed and internally consistent, and replace real unit-test timers and
+browser event objects with controlled fakes. Preserve every approved Step-2
+behaviour and every frozen interface.
 
 ## Plain-language effect
 
-This correction does not add a new player feature. It makes the existing
-browser-start checks follow the planned module boundary, prevents a diagnostic
-from combining unrelated fault details, and makes unit tests fully controlled
-and repeatable. Real browser behaviour remains covered by Playwright.
+This correction does not add a new player feature. It makes every existing
+browser-start file use the planned public platform entrance, prevents a
+diagnostic from combining unrelated fault details, and makes unit tests fully
+controlled and repeatable. Real browser behaviour remains covered by
+Playwright.
 
 ## Owned paths
 
 - `src/bootstrap/diagnostics.ts`
+- `src/bootstrap/startup-screen.ts`
 - `src/bootstrap/startup.ts`
 - `src/platform/index.ts`
 - `tests/unit/MR-WP-00/compatibility.test.ts`
@@ -67,7 +60,6 @@ and repeatable. Real browser behaviour remains covered by Playwright.
 - `src/application/`
 - `src/audio/`
 - `src/bootstrap/main.ts`
-- `src/bootstrap/startup-screen.ts`
 - `src/bootstrap/startup.css`
 - `src/content/`
 - `src/cutscenes/`
@@ -99,8 +91,10 @@ and repeatable. Real browser behaviour remains covered by Playwright.
 - `docs/implementation/step-acceptance-log.md`
 - `docs/implementation/work-orders/MR-WO-WP00-002.md`
 - `docs/implementation/work-orders/MR-WO-WP00-003.md`
+- `docs/implementation/work-orders/MR-WO-WP00-004.md`
 - `package.json`
 - `src/bootstrap/diagnostics.ts`
+- `src/bootstrap/startup-screen.ts`
 - `src/bootstrap/startup.ts`
 - `src/platform/compatibility.ts`
 - `tests/e2e/MR-WP-00/start-page.spec.ts`
@@ -118,9 +112,9 @@ and repeatable. Real browser behaviour remains covered by Playwright.
   bootstrap-owned startup and fatal presentation subset of frozen `MR-IF-010`,
   the compatibility and sanitized-diagnostic subset of frozen `MR-IF-014`, and
   the applicable evidence boundary of frozen `MR-IF-015`.
-- S02 route: correct the public-entrance violation under `MR-S02-FIX-002`; do
-  not add a new module, revise the dependency graph, or claim the complete
-  application lifecycle exists.
+- S02 route: correct every verified public-entrance violation under
+  `MR-S02-FIX-002`; do not add a new module, revise the dependency graph, or
+  claim the complete application lifecycle exists.
 - S11 groups: correct the closed diagnostic contract in `MR-S11-DIA-001` and
   preserve the submitted `MR-S11-CMP-001` behaviour; do not implement or claim
   `MR-S11-PERF-001`.
@@ -129,7 +123,7 @@ and repeatable. Real browser behaviour remains covered by Playwright.
   files or claim a complete cross-system acceptance row.
 - S13 groups: `MR-S13-CON-001`, `MR-S13-GATE-001`, `MR-S13-GIT-001`,
   `MR-S13-OWN-001`, `MR-S13-REV-001`, and `MR-S13-WO-001`.
-- Step authority: Leonardo approved this exact revised Step-2 correction plan
+- Step authority: Leonardo approved this exact complete Step-2 correction plan
   on 2026-09-01. Step 3 and every public action remain blocked.
 - Content IDs: none.
 
@@ -142,11 +136,14 @@ and repeatable. Real browser behaviour remains covered by Playwright.
   exists at `43f868e64b80c88dc46832b676af6d2929f081c2`.
 - Independent review found one blocker and two required findings and no
   advisory finding.
-- Leonardo approved this exact revised Step-2 correction plan on 2026-09-01.
-- `MR-WO-WP00-002` is superseded; its submission remains historical evidence.
+- Primary activation inspection proved that all three bootstrap private imports
+  need correction and that `MR-WO-WP00-003` omitted one required path.
+- Leonardo approved this exact complete Step-2 correction plan on 2026-09-01.
+- `MR-WO-WP00-002` and `MR-WO-WP00-003` are superseded; their submitted and
+  blocked states remain historical evidence.
 - Node `24.20.0`, npm `11.19.0`, and the accepted lockfile remain unchanged.
-- The primary agent creates the exact branch and worktree before the worker
-  starts.
+- The exact branch and worktree already exist, are clean, and remain at the
+  exact base commit.
 
 ## Tasks
 
@@ -154,9 +151,9 @@ and repeatable. Real browser behaviour remains covered by Playwright.
    npm version, and absent remote before editing.
 2. Add `src/platform/index.ts` as the S02 public entrance for the existing
    platform compatibility exports that bootstrap is permitted to use.
-3. Route all cross-module platform imports in the owned bootstrap files through
-   `src/platform/index.ts`. Do not change compatibility behaviour or create a
-   second platform implementation.
+3. Route every cross-module platform import in `diagnostics.ts`,
+   `startup-screen.ts`, and `startup.ts` through `src/platform/index.ts`. Do not
+   change compatibility behaviour or create a second platform implementation.
 4. Define one closed Step-2 diagnostic fault catalogue. Each permitted fault
    code must select exactly one approved module, phase, operation, severity,
    and recovery form.
@@ -170,7 +167,7 @@ and repeatable. Real browser behaviour remains covered by Playwright.
 7. Preserve real event, focus, clipboard, reload-control, failure, retry, and
    no-external-request behaviour in the existing Playwright tests. Do not
    modify those tests.
-8. Update the foundation and focused unit tests so they reject a private
+8. Update the foundation and focused unit tests so they reject every private
    cross-module platform import, prove the public entrance, prove every closed
    diagnostic mapping and invalid combination, and prove deterministic timer
    and event control.
@@ -200,8 +197,8 @@ and repeatable. Real browser behaviour remains covered by Playwright.
 
 - Run the four focused Vitest files for compatibility, diagnostics, foundation,
   and startup behaviour.
-- Run static architecture and import inspection for the public platform
-  entrance and all cross-module imports.
+- Run static architecture and import inspection across all bootstrap files for
+  the public platform entrance and every cross-module import.
 - Run focused diagnostic inspection for the closed catalogue, exact metadata
   mapping, unknown and inconsistent input rejection, privacy exclusions,
   explicit copy, memory-only life, fixed fallback, key order, and 2-KiB limit.
@@ -249,4 +246,4 @@ failures, addressed requirements, interfaces, S11, S12, and S13 groups, known
 limitations, bounded private implementation choices, and any requested
 primary-owned correction. The word `submitted` does not mean reviewed,
 integrated, tested by Leonardo, or accepted. The primary agent creates
-`MR-CONTRIB-WP00-003` only after the real submission.
+`MR-CONTRIB-WP00-004` only after the real submission.

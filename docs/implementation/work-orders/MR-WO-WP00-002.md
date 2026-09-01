@@ -26,10 +26,12 @@ the factual Checking browser and Ready states, blocking compatibility messages,
 and the safe fatal-error presentation. Preserve the accepted Step-1 package
 baseline and every frozen interface.
 
-This work order is historical evidence. Leonardo approved
-`MR-WO-WP00-003` on 2026-09-01 after independent review found one ownership
-blocker and two technical findings. `MR-WO-WP00-003` supersedes this order and
-is the only authority for the review corrections.
+This work order is historical evidence. Leonardo first approved
+`MR-WO-WP00-003` after independent review found one ownership blocker and two
+technical findings. Primary activation inspection then found another unowned
+private import. Leonardo approved `MR-WO-WP00-004` on 2026-09-01. It
+supersedes the incomplete correction order and is the only authority for the
+review corrections.
 
 ## Plain-language effect
 
