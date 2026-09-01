@@ -4,6 +4,7 @@ import {
   createDiagnosticConverterForTests,
   type DiagnosticFault,
 } from '../../../src/bootstrap/diagnostics';
+import type { CompatibilityReport } from '../../../src/platform';
 
 type TestAdapters = Parameters<typeof createDiagnosticConverterForTests>[0];
 
@@ -16,7 +17,20 @@ const adapters = (overrides: Partial<TestAdapters> = {}): TestAdapters => ({
   ...overrides,
 });
 
-const validFault = (overrides: Partial<DiagnosticFault> = {}): DiagnosticFault => ({
+type FaultInput = Readonly<{
+  code: string;
+  severity: string;
+  phase: string;
+  module: string;
+  operation: string;
+  contentVersion: string | null;
+  graphicsProfile: string | null;
+  compatibility: CompatibilityReport | null;
+  contextCodes: readonly string[];
+  recoveryActions: readonly string[];
+}>;
+
+const validFault = (overrides: Partial<FaultInput> = {}): FaultInput => ({
   code: 'MRD1-BOOTSTRAP-START_FAILED',
   severity: 'fatal',
   phase: 'startup',
@@ -29,6 +43,81 @@ const validFault = (overrides: Partial<DiagnosticFault> = {}): DiagnosticFault =
   recoveryActions: ['reloadPage'],
   ...overrides,
 });
+
+const catalogueCases = [
+  {
+    code: 'MRD1-BOOTSTRAP-START_WARNING',
+    severity: 'warning',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: [],
+  },
+  {
+    code: 'MRD1-PLATFORM-CHECK_RETRY',
+    severity: 'recoverable',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: ['retryCheck'],
+  },
+  {
+    code: 'MRD1-PLATFORM-CHECK_FAILED',
+    severity: 'recoverable',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: [],
+  },
+  {
+    code: 'MRD1-BOOTSTRAP-START_FAILED',
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: ['reloadPage'],
+  },
+  {
+    code: 'MRD1-BOOTSTRAP-PRESENTATION_FAILED',
+    severity: 'fatal',
+    phase: 'presentation',
+    module: 'BOOTSTRAP',
+    operation: 'PRESENT_STARTUP',
+    recoveryActions: ['reloadPage'],
+  },
+  {
+    code: 'MRD1-BOOTSTRAP-UNEXPECTED',
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: ['reloadPage'],
+  },
+  {
+    code: 'MRD1-PLATFORM-UNEXPECTED',
+    severity: 'fatal',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: ['reloadPage'],
+  },
+  {
+    code: 'MRD1-DIAGNOSTICS-UNEXPECTED',
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'DIAGNOSTICS',
+    operation: 'CREATE_DIAGNOSTIC',
+    recoveryActions: ['reloadPage'],
+  },
+  {
+    code: 'MRD1-DIAGNOSTICS-CREATION_FAILED',
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'DIAGNOSTICS',
+    operation: 'CREATE_DIAGNOSTIC',
+    recoveryActions: ['reloadPage'],
+  },
+] as const;
 
 const validCompatibility = () => ({
   schemaVersion: 1,
@@ -44,32 +133,27 @@ const validCompatibility = () => ({
 });
 
 describe('MR-S11-DIA-001 diagnostics', () => {
-  it.each([
-    ['warning', []],
-    ['recoverable', ['retryCheck']],
-    ['recoverable', []],
-    ['fatal', ['reloadPage']],
-  ] as const)('converts the closed %s recovery form', (severity, recoveryActions) => {
+  it.each(catalogueCases)('converts the exact closed catalogue mapping for $code', (mapping) => {
     const diagnostic = createDiagnosticConverterForTests(adapters()).create(
-      validFault({ severity, recoveryActions }),
+      validFault(mapping),
       'BOOTSTRAP',
     );
 
-    expect(diagnostic.record.severity).toBe(severity);
-    expect(diagnostic.record.recoveryActions).toEqual(recoveryActions);
+    expect(diagnostic.record).toMatchObject(mapping);
     expect(Object.isFrozen(diagnostic.record)).toBe(true);
   });
 
   it.each([
-    ['warning', ['retryCheck']],
-    ['warning', ['reloadPage']],
-    ['recoverable', ['reloadPage']],
-    ['recoverable', ['retryCheck', 'reloadPage']],
-    ['fatal', []],
-    ['fatal', ['retryCheck']],
-  ] as const)('rejects the invalid %s recovery form %#', (severity, recoveryActions) => {
+    { code: 'MRD1-BOOTSTRAP-NOT_CATALOGUED' },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', module: 'PLATFORM' },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', phase: 'presentation' },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', operation: 'PRESENT_STARTUP' },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', severity: 'recoverable' },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', recoveryActions: [] },
+    { code: 'MRD1-BOOTSTRAP-START_FAILED', recoveryActions: ['retryCheck'] },
+  ])('rejects an unknown or inconsistent catalogue combination %#', (override) => {
     const diagnostic = createDiagnosticConverterForTests(adapters()).create(
-      validFault({ severity, recoveryActions }),
+      validFault(override),
       'BOOTSTRAP',
     );
 
@@ -241,7 +325,7 @@ describe('MR-S11-DIA-001 diagnostics', () => {
   it('rejects a hostile top-level accessor without invoking or copying it', () => {
     let reads = 0;
     const arbitrary = 'PRIVATE-TOP-LEVEL-VALUE';
-    const input = validFault() as DiagnosticFault & { compatibility: unknown };
+    const input = validFault();
     Object.defineProperty(input, 'code', {
       configurable: true,
       enumerable: true,
@@ -282,7 +366,7 @@ describe('MR-S11-DIA-001 diagnostics', () => {
 
   it('rejects a throwing accessor without invoking it', () => {
     let reads = 0;
-    const input = validFault() as DiagnosticFault & { compatibility: unknown };
+    const input = validFault();
     Object.defineProperty(input, 'compatibility', {
       configurable: true,
       enumerable: true,

@@ -1,8 +1,4 @@
-import type {
-  CapabilityId,
-  CapabilityStatus,
-  CompatibilityReport,
-} from '../platform';
+import type { CapabilityId, CapabilityStatus, CompatibilityReport } from '../platform';
 
 declare global {
   interface ImportMeta {
@@ -20,18 +16,98 @@ export type DiagnosticContextCode =
   'STARTUP_INTERRUPTED' | 'COMPATIBILITY_BLOCKED' | 'PRESENTATION_FAILED' | 'CLEANUP_FAILED';
 export type RecoveryAction = 'retryCheck' | 'reloadPage';
 
-export type DiagnosticFault = Readonly<{
-  code: `MRD1-${string}`;
+type DiagnosticFaultMetadata = Readonly<{
   severity: DiagnosticSeverity;
   phase: DiagnosticPhase;
   module: DiagnosticModule;
   operation: DiagnosticOperation;
+  recoveryActions: readonly RecoveryAction[];
+}>;
+
+const diagnosticFaultCatalogue = Object.freeze({
+  'MRD1-BOOTSTRAP-START_WARNING': Object.freeze({
+    severity: 'warning',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: Object.freeze([] as const),
+  }),
+  'MRD1-PLATFORM-CHECK_RETRY': Object.freeze({
+    severity: 'recoverable',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: Object.freeze(['retryCheck'] as const),
+  }),
+  'MRD1-PLATFORM-CHECK_FAILED': Object.freeze({
+    severity: 'recoverable',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: Object.freeze([] as const),
+  }),
+  'MRD1-BOOTSTRAP-START_FAILED': Object.freeze({
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+  'MRD1-BOOTSTRAP-PRESENTATION_FAILED': Object.freeze({
+    severity: 'fatal',
+    phase: 'presentation',
+    module: 'BOOTSTRAP',
+    operation: 'PRESENT_STARTUP',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+  'MRD1-BOOTSTRAP-UNEXPECTED': Object.freeze({
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'BOOTSTRAP',
+    operation: 'START_BOOTSTRAP',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+  'MRD1-PLATFORM-UNEXPECTED': Object.freeze({
+    severity: 'fatal',
+    phase: 'compatibility',
+    module: 'PLATFORM',
+    operation: 'CHECK_COMPATIBILITY',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+  'MRD1-DIAGNOSTICS-UNEXPECTED': Object.freeze({
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'DIAGNOSTICS',
+    operation: 'CREATE_DIAGNOSTIC',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+  'MRD1-DIAGNOSTICS-CREATION_FAILED': Object.freeze({
+    severity: 'fatal',
+    phase: 'startup',
+    module: 'DIAGNOSTICS',
+    operation: 'CREATE_DIAGNOSTIC',
+    recoveryActions: Object.freeze(['reloadPage'] as const),
+  }),
+} as const satisfies Readonly<Record<`MRD1-${string}`, DiagnosticFaultMetadata>>);
+
+export type DiagnosticFaultCode = keyof typeof diagnosticFaultCatalogue;
+
+type DiagnosticFaultFor<Code extends DiagnosticFaultCode> = Readonly<{
+  code: Code;
+  severity: (typeof diagnosticFaultCatalogue)[Code]['severity'];
+  phase: (typeof diagnosticFaultCatalogue)[Code]['phase'];
+  module: (typeof diagnosticFaultCatalogue)[Code]['module'];
+  operation: (typeof diagnosticFaultCatalogue)[Code]['operation'];
   contentVersion: string | null;
   graphicsProfile: GraphicsProfile | null;
   compatibility: CompatibilityReport | null;
   contextCodes: readonly DiagnosticContextCode[];
-  recoveryActions: readonly RecoveryAction[];
+  recoveryActions: (typeof diagnosticFaultCatalogue)[Code]['recoveryActions'];
 }>;
+
+export type DiagnosticFault = {
+  [Code in DiagnosticFaultCode]: DiagnosticFaultFor<Code>;
+}[DiagnosticFaultCode];
 
 export type CapabilityStatuses = Readonly<Record<CapabilityId, CapabilityStatus>>;
 
@@ -65,7 +141,6 @@ type DiagnosticAdapters = Readonly<{
 
 const BUILD_VERSION = '0.0.0' as const;
 const MAX_COPY_BYTES = 2_048;
-const codePattern = /^MRD1-[A-Z0-9_]+-[A-Z0-9_]+$/u;
 const capabilityOrder: readonly CapabilityId[] = Object.freeze([
   'esModules',
   'webgl2',
@@ -91,19 +166,20 @@ const reasonPrefixByCapability: Readonly<Record<CapabilityId, string>> = Object.
   controller: 'CONTROLLER',
 });
 
+const fixedFallbackMetadata = diagnosticFaultCatalogue['MRD1-DIAGNOSTICS-CREATION_FAILED'];
 const fixedFallbackRecord: DiagnosticRecord = Object.freeze({
   schemaVersion: 1,
   code: 'MRD1-DIAGNOSTICS-CREATION_FAILED',
-  severity: 'fatal',
-  phase: 'startup',
-  module: 'DIAGNOSTICS',
-  operation: 'CREATE_DIAGNOSTIC',
+  severity: fixedFallbackMetadata.severity,
+  phase: fixedFallbackMetadata.phase,
+  module: fixedFallbackMetadata.module,
+  operation: fixedFallbackMetadata.operation,
   buildVersion: BUILD_VERSION,
   contentVersion: null,
   graphicsProfile: null,
   capabilities: null,
   contextCodes: Object.freeze([] as DiagnosticContextCode[]),
-  recoveryActions: Object.freeze(['reloadPage'] as RecoveryAction[]),
+  recoveryActions: fixedFallbackMetadata.recoveryActions,
 });
 const fixedFallback: SanitizedDiagnostic = Object.freeze({
   record: fixedFallbackRecord,
@@ -111,7 +187,7 @@ const fixedFallback: SanitizedDiagnostic = Object.freeze({
 });
 
 type NormalizedDiagnosticFault = Readonly<{
-  code: `MRD1-${string}`;
+  code: DiagnosticFaultCode;
   severity: DiagnosticSeverity;
   phase: DiagnosticPhase;
   module: DiagnosticModule;
@@ -265,16 +341,17 @@ const normalizeDiagnosticFault = (value: unknown): NormalizedDiagnosticFault | n
   const compatibility = normalizeCompatibility(candidate.compatibility);
   const contextCodes = readClosedArray(candidate.contextCodes, 8);
   const recoveryActions = readClosedArray(candidate.recoveryActions, 1);
+  const code = candidate.code;
+  const metadata =
+    typeof code === 'string' && Object.hasOwn(diagnosticFaultCatalogue, code)
+      ? diagnosticFaultCatalogue[code as DiagnosticFaultCode]
+      : undefined;
   if (
-    typeof candidate.code === 'string' &&
-    candidate.code.length <= 64 &&
-    codePattern.test(candidate.code) &&
-    ['warning', 'recoverable', 'fatal'].some((allowed) => allowed === candidate.severity) &&
-    ['startup', 'compatibility', 'presentation'].some((allowed) => allowed === candidate.phase) &&
-    ['BOOTSTRAP', 'PLATFORM', 'DIAGNOSTICS'].some((allowed) => allowed === candidate.module) &&
-    ['START_BOOTSTRAP', 'CHECK_COMPATIBILITY', 'PRESENT_STARTUP', 'CREATE_DIAGNOSTIC'].includes(
-      candidate.operation as string,
-    ) &&
+    metadata !== undefined &&
+    candidate.severity === metadata.severity &&
+    candidate.phase === metadata.phase &&
+    candidate.module === metadata.module &&
+    candidate.operation === metadata.operation &&
     (candidate.contentVersion === null || candidate.contentVersion === BUILD_VERSION) &&
     (candidate.graphicsProfile === null ||
       ['low', 'standard', 'high'].some((allowed) => allowed === candidate.graphicsProfile)) &&
@@ -291,44 +368,31 @@ const normalizeDiagnosticFault = (value: unknown): NormalizedDiagnosticFault | n
         ].some((allowed) => allowed === code),
     ) &&
     recoveryActions !== null &&
-    recoveryActions.every(
-      (action) =>
-        typeof action === 'string' &&
-        ['retryCheck', 'reloadPage'].some((allowed) => allowed === action),
-    )
+    recoveryActions.length === metadata.recoveryActions.length &&
+    recoveryActions.every((action, index) => action === metadata.recoveryActions[index])
   ) {
-    const severity = candidate.severity as DiagnosticSeverity;
-    const recoveryIsValid =
-      (severity === 'warning' && recoveryActions.length === 0) ||
-      (severity === 'recoverable' &&
-        (recoveryActions.length === 0 ||
-          (recoveryActions.length === 1 && recoveryActions[0] === 'retryCheck'))) ||
-      (severity === 'fatal' && recoveryActions.length === 1 && recoveryActions[0] === 'reloadPage');
-    if (!recoveryIsValid) {
-      return null;
-    }
-
     return Object.freeze({
-      code: candidate.code as `MRD1-${string}`,
-      severity,
-      phase: candidate.phase as DiagnosticPhase,
-      module: candidate.module as DiagnosticModule,
-      operation: candidate.operation as DiagnosticOperation,
+      code: code as DiagnosticFaultCode,
+      severity: metadata.severity,
+      phase: metadata.phase,
+      module: metadata.module,
+      operation: metadata.operation,
       contentVersion: candidate.contentVersion,
       graphicsProfile: candidate.graphicsProfile as GraphicsProfile | null,
       capabilities: compatibility,
       contextCodes: contextCodes as readonly DiagnosticContextCode[],
-      recoveryActions: recoveryActions as readonly RecoveryAction[],
+      recoveryActions: metadata.recoveryActions,
     });
   }
   return null;
 };
 
-const operationForModule: Readonly<Record<DiagnosticModule, DiagnosticOperation>> = Object.freeze({
-  BOOTSTRAP: 'START_BOOTSTRAP',
-  PLATFORM: 'CHECK_COMPATIBILITY',
-  DIAGNOSTICS: 'CREATE_DIAGNOSTIC',
-});
+const unexpectedCodeForModule: Readonly<Record<DiagnosticModule, DiagnosticFaultCode>> =
+  Object.freeze({
+    BOOTSTRAP: 'MRD1-BOOTSTRAP-UNEXPECTED',
+    PLATFORM: 'MRD1-PLATFORM-UNEXPECTED',
+    DIAGNOSTICS: 'MRD1-DIAGNOSTICS-UNEXPECTED',
+  });
 
 class DiagnosticConverter {
   public constructor(private readonly adapters: DiagnosticAdapters) {}
@@ -365,17 +429,19 @@ class DiagnosticConverter {
   }
 
   private unknownFault(module: DiagnosticModule): NormalizedDiagnosticFault {
+    const code = unexpectedCodeForModule[module];
+    const metadata = diagnosticFaultCatalogue[code];
     return Object.freeze({
-      code: `MRD1-${module}-UNEXPECTED`,
-      severity: 'fatal',
-      phase: 'startup',
-      module,
-      operation: operationForModule[module],
+      code,
+      severity: metadata.severity,
+      phase: metadata.phase,
+      module: metadata.module,
+      operation: metadata.operation,
       contentVersion: null,
       graphicsProfile: null,
       capabilities: null,
       contextCodes: Object.freeze(['STARTUP_INTERRUPTED'] as DiagnosticContextCode[]),
-      recoveryActions: Object.freeze(['reloadPage'] as RecoveryAction[]),
+      recoveryActions: metadata.recoveryActions,
     });
   }
 }
