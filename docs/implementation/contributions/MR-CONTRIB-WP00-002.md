@@ -20,8 +20,9 @@ The controlled implementation worker submitted the approved Step-2 browser
 compatibility checks, startup diagnostics, factual loading and Ready states,
 complete blocking messages, retry control, and safe fatal-error presentation.
 The submission has no Three.js scene, game system, package change, asset,
-remote, licence, deployment, or public result. It is correcting and is not
-reviewed, integrated, tested by Leonardo, or accepted.
+remote, licence, deployment, or public result. All consolidated primary-audit
+corrections and complete primary validation pass. It is not reviewed,
+integrated, tested by Leonardo, or accepted.
 
 ## Changed files
 
@@ -59,7 +60,12 @@ action remain blocked.
 compatibility probes`; `cd65be843275d329c044f5898e461c8160a1d968` —
 `MR-WP-00 add sanitized diagnostics`; and
 `601eb8ed44368ed744ad2f91ea7607c48d417375` — `MR-WP-00 present safe
-startup states`.
+startup states`; `9e042af395c4a093d071e42b0b847e919bbf2ff8` — `MR-WP-00
+harden probe cleanup`; `4b06ebdcf508653d221ff8c251069e4c9a9946a7` — `MR-WP-00
+harden fatal diagnostics`; `948a39ce993b4b949051070f6ccb08d4cb2c70cf` —
+`MR-WP-00 normalize diagnostic snapshots`; and
+`43f868e64b80c88dc46832b676af6d2929f081c2` — `MR-WP-00 serialize
+IndexedDB probe retries`.
 
 ## Integrated commits
 
@@ -73,10 +79,12 @@ and found zero vulnerabilities. The accepted Step-1 Playwright browser files
 were reused locally without network access. No tracked file changed during
 environment preparation.
 
-The worker's final `npm run check` passed typecheck, lint, formatting, and 35
-unit tests. `npm run build` passed with nine transformed modules. The focused
-Playwright command passed 15 flows across Chromium, Firefox, and WebKit.
-`git diff --check` passed, and the worker branch was clean.
+The worker's corrected `npm run check` passed typecheck, lint, formatting, and
+83 unit tests. `npm run verify` passed with 96.48 percent line coverage, 92.68
+percent branch coverage, a production build, and 15 Playwright flows across
+Chromium, Firefox, and WebKit. A separate build, focused browser command,
+production privacy inspection, `git diff --check`, and clean-worktree check
+passed.
 
 The primary agent's first combined check passed typecheck, lint, and formatting
 before the sandbox blocked Vitest from writing its ignored temporary cache.
@@ -87,11 +95,21 @@ the required 90 percent and 56.52 percent branch coverage against the required
 85 percent. Build, browser, audit, production, network, and later checks did
 not run in that chained command after the coverage failure.
 
+After correction, the primary agent repeated `npm run check`; all 83 unit tests
+passed. Primary `npm run verify` passed lint, formatting, 96.10 percent
+statement coverage, 92.68 percent branch coverage, 95.28 percent function
+coverage, 96.48 percent line coverage, production build, and all 15 configured
+browser flows. A separate primary build passed with nine transformed modules.
+Production, privacy, external-network, package, configuration, scope, remote,
+whitespace, and clean-worktree inspections passed. The production build has
+only relative local files. Its only `fetch` token is Vite's local
+module-preload helper. Browser evidence recorded no external request.
+
 ## Independent review
 
-Not yet available. A complete primary audit and corrected combined validation
-must pass before the approved fresh OpenAI `gpt-5.6-sol` reviewer using
-`xhigh` reasoning receives the controlled packet.
+Not yet available. The complete primary audit and corrected combined validation
+passed. The approved fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh`
+reasoning can now receive the controlled packet.
 
 ## Corrections
 
@@ -115,11 +133,13 @@ The consolidated primary audit found the complete required correction set:
 - handled browser errors and unhandled rejections do not prevent default raw
   browser output, which does not meet the production sanitized-only boundary.
 
-These are technical corrections inside the approved source and test paths.
-The same worker must correct them together, add honest executable coverage
-without changing configuration, exclusions, ignore directives, or frozen
-thresholds, and then repeat focused and complete checks. The corrected result
-requires completion of the primary audit and a fresh independent review.
+The worker corrected these findings and two connected primary-audit details:
+diagnostic values now come from one immutable normalized snapshot with closed
+severity and recovery forms, and IndexedDB Ready now requires an empty probe
+with terminal cleanup before retry. It added executable tests only. It did not
+change configuration, exclusions, ignore directives, frozen thresholds, or
+authority. Complete worker and primary checks now pass. Fresh independent
+review remains required.
 
 ## Known limitations
 
@@ -131,8 +151,11 @@ requires completion of the primary audit and a fresh independent review.
   scene, audio context, pointer-lock request, or controller-data read.
 - Automated module-capable browsers do not prove the static fallback in a
   browser that cannot execute modules.
-- Coverage and the consolidated technical findings do not yet pass, so the
-  submission cannot enter independent review or integration.
+- If IndexedDB reports `blocked` and never later reports success or error, the
+  check and retry remain pending. This prevents an old cleanup operation from
+  overlapping a newer probe.
+- Independent review has not started, so the submission cannot enter
+  integration.
 
 ## Leonardo decision
 

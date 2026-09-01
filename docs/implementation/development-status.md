@@ -7,10 +7,9 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approve
 ## Durable resume point
 
 - Current step: `2`, plan approved on 2026-09-01.
-- Current workflow state: `correcting; MR-WO-WP00-002 has one submitted
-implementation, but the consolidated primary audit found incomplete coverage,
-closed-diagnostic validation, fatal cleanup, browser-error suppression, and
-temporary IndexedDB lifecycle handling`.
+- Current workflow state: `awaiting independent review; the controlled worker
+corrected every consolidated primary-audit finding, complete primary
+validation passed, and the Step-2 result remains isolated and unintegrated`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -22,10 +21,9 @@ temporary IndexedDB lifecycle handling`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: return the complete consolidated finding set to the
-  same controlled OpenAI `gpt-5.6-sol` worker using `high` reasoning for
-  correction inside the approved owned paths, then repeat all applicable
-  checks.
+- Next possible action: give the corrected complete packet to one fresh
+  independent OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning and require
+  one report with all findings together.
 - Active approved implementation plan: Step 2 compatibility checks, startup
   diagnostics, loading state, and safe error screens, approved by Leonardo on
   2026-09-01.
@@ -35,22 +33,22 @@ temporary IndexedDB lifecycle handling`.
   `.worktrees/MR-WP-00-startup-safety/`, and exact base commit
   `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`.
 - Active contribution record: `MR-CONTRIB-WP00-002`, status `submitted`;
-  three worker commits exist, but the consolidated corrections are pending.
+  seven worker commits exist, complete primary validation passed, and review
+  remains pending.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: primary `npm run verify` found 49.62 percent line
-  coverage against the frozen 90-percent threshold and 56.52 percent branch
-  coverage against the frozen 85-percent threshold. The consolidated audit
-  also found incomplete runtime validation of copied capability statuses,
-  incomplete fatal cancellation and listener cleanup, incomplete suppression
-  of raw browser error output, and IndexedDB blocked, cancellation, and cleanup
-  paths that do not always settle safely. The correction is limited to
-  approved Step-2 source and test paths and changes no authority.
+- Active correction cycle: complete. The worker corrected frozen-coverage,
+  diagnostic-normalization, fatal-cleanup, raw-browser-output, and IndexedDB
+  lifecycle findings inside approved paths. Primary `npm run check`,
+  `npm run verify`, separate build, production and network inspection, scope
+  checks, and Git checks passed. Coverage is 96.48 percent lines and 92.68
+  percent branches. No authority changed.
 - Last committed resume checkpoint: this acceptance checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: not started for Step 2. Corrected complete validation and one
-  complete primary pre-review audit must pass before the reviewer starts.
+- Review gate: ready. One complete primary pre-review audit passed on corrected
+  worker head `43f868e64b80c88dc46832b676af6d2929f081c2`. The fresh
+  independent review has not started.
 
 ## Repository facts
 
