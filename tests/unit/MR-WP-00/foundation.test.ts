@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -159,6 +159,46 @@ describe('MR-WP-00 foundation', () => {
     expect(page).toContain('<script type="module" src="/src/bootstrap/main.ts"></script>');
     expect(page).not.toMatch(/three(?:\.js)?/i);
     expect(page).not.toMatch(/>\s*(Continue|New Game)\s*</i);
+  });
+
+  it('routes every bootstrap platform import through the public platform entrance', async () => {
+    const bootstrapDirectory = resolve(repositoryRoot, 'src/bootstrap');
+    const bootstrapFiles = (await readdir(bootstrapDirectory))
+      .filter((name) => name.endsWith('.ts'))
+      .sort();
+    const bootstrapSources = await Promise.all(
+      bootstrapFiles.map(async (name) => ({
+        name,
+        source: await readFile(resolve(bootstrapDirectory, name), 'utf8'),
+      })),
+    );
+    const platformEntrance = await readFile(
+      resolve(repositoryRoot, 'src/platform/index.ts'),
+      'utf8',
+    );
+
+    expect(bootstrapFiles).toEqual([
+      'diagnostics.ts',
+      'main.ts',
+      'startup-screen.ts',
+      'startup.ts',
+    ]);
+    for (const { name, source } of bootstrapSources) {
+      expect(source, name).not.toMatch(/from ['"]\.\.\/platform\//u);
+    }
+    expect(
+      bootstrapSources
+        .filter(({ source }) => /from ['"]\.\.\/platform['"]/u.test(source))
+        .map(({ name }) => name),
+    ).toEqual(['diagnostics.ts', 'startup-screen.ts', 'startup.ts']);
+    expect(platformEntrance).toBe(`export { cancelCompatibilityCheck, checkCompatibility } from './compatibility';
+export type {
+  CapabilityId,
+  CapabilityStatus,
+  CompatibilityCheckResult,
+  CompatibilityReport,
+} from './compatibility';
+`);
   });
 
   it('keeps the remaining frozen S01 tool configuration and lockfile-root facts exact', async () => {

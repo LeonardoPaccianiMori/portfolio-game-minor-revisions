@@ -2,7 +2,7 @@ import type {
   CapabilityId,
   CapabilityStatus,
   CompatibilityReport,
-} from '../platform/compatibility';
+} from '../platform';
 
 declare global {
   interface ImportMeta {

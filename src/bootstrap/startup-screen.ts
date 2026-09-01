@@ -1,4 +1,4 @@
-import type { CompatibilityReport } from '../platform/compatibility';
+import type { CompatibilityReport } from '../platform';
 import type { SanitizedDiagnostic } from './diagnostics';
 
 const blockingText: Readonly<Record<string, string>> = Object.freeze({

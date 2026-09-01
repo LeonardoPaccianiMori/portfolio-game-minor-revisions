@@ -2,7 +2,7 @@ import {
   cancelCompatibilityCheck,
   checkCompatibility,
   type CompatibilityCheckResult,
-} from '../platform/compatibility';
+} from '../platform';
 import { createUnexpectedDiagnostic, type SanitizedDiagnostic } from './diagnostics';
 import { StartupScreen } from './startup-screen';
 
