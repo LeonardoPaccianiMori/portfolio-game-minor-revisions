@@ -115,6 +115,14 @@ current control and evidence records. Leonardo approved the correction and
 integration plan on 2026-09-01. A fresh re-review remains required after the
 corrections.
 
+The next fresh OpenAI `gpt-5.6-sol` re-review using `xhigh` reasoning confirmed
+that those corrections and combined checks were present. It found no blocker
+or advisory issue. It required the package, TypeScript, and lockfile-root tests
+to reject prohibited extra configuration and required the status record to
+distinguish completed automated browser flows from absent direct support,
+performance, and play evidence. Correction, repeated checks, and another fresh
+re-review remain required before integration.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -161,13 +169,19 @@ one 407-byte semantic `index.html` with no script, Three.js reference, or
 external address. The browser test observed no external request, and the Git
 whitespace check passed. The validation worktree remained clean.
 
+The next approved correction remains inside the same owned test file and
+primary-owned Step-1 records. It changes no frozen configuration, runtime,
+dependency, interface, player-visible behaviour, asset, or public boundary.
+
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
 system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
-Integration, Leonardo testing, and acceptance remain pending until the
-approved final-review corrections pass repeated checks and fresh re-review.
+Automated three-browser foundation flows exist, but direct browser-support
+assessment, performance measurement, Leonardo testing, and acceptance do not.
+Integration remains pending until the exactness correction passes repeated
+checks and fresh re-review.
 
 ## Leonardo decision
 

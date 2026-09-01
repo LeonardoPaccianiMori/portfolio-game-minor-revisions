@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 technical review; no implementation step accepted**
+Status: **Step 1 correcting; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                             | Notes                                                             |
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                                  | Records documentation only; no implementation is approved.        |
-|    1 | Technical review        | 2026-09-01    | The formatting recovery, wider baseline test, primary records, and corrected combined validation passed                                                                                          | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Fresh combined re-review remains required before integration.     |
+|    1 | Correcting              | 2026-09-01    | Corrected combined validation passed; second fresh review requires closed-object baseline assertions and current status records                                                                  | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Another correction and fresh re-review are required.              |
 | 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                                  | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -148,6 +148,14 @@ the high-severity audit with zero vulnerabilities, production and external-
 request inspections, and the Git whitespace check. Fresh re-review remains
 pending.
 
+The next fresh OpenAI `gpt-5.6-sol` re-review using `xhigh` reasoning found no
+blocker or advisory issue. It required the package manifest, TypeScript
+options, and lockfile-root tests to reject prohibited extra settings. It also
+required the status record to distinguish the passing automated browser flows
+from browser-support, performance, and direct-play evidence that does not yet
+exist. These corrections remain inside the approved test and control-record
+paths.
+
 ### Acceptance decision
 
 Not yet available. Technical results and the local page test cannot replace
@@ -157,8 +165,10 @@ Leonardo's explicit Step-1 acceptance.
 
 No game system, Three.js scene, source directory, content, production asset,
 remote, licence, deployment, or public result exists. Step 1 cannot integrate
-or proceed to Leonardo testing until the approved final-review correction,
-repeated checks, and fresh re-review pass. Step 2 remains blocked.
+or proceed to Leonardo testing until the exactness and status corrections,
+repeated checks, and another fresh re-review pass. Automated browser flows are
+technical evidence, not Leonardo's direct test or Step-1 acceptance. Step 2
+remains blocked.
 
 ## Required accepted-step entry
 

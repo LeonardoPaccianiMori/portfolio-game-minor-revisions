@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 technical review**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `technical review; the approved final-review corrections and combined validation passed and await fresh independent re-review`.
+- Current workflow state: `correcting; combined validation passed, while the second fresh review requires closed-object baseline assertions and two current-status corrections`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,30 +15,28 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: obtain the required fresh independent re-review of the
-  corrected combined result and current evidence.
+- Next possible action: complete the exactness and status corrections, repeat
+  combined validation, and obtain another fresh independent re-review.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, submitted after the approved test
+- Active work order: `MR-WO-WP00-001`, active for the approved exactness
   correction on `work/MR-WP-00-foundation`; its commits are not integrated.
 - Active contribution record: `MR-CONTRIB-WP00-001`, submitted with correction
   commit `f18c17c`; combined validation passed, while re-review, integration,
   Leonardo test, and acceptance are pending.
 - Active player test: none.
-- Active correction cycle: the controlled worker completed only the approved
-  test-file expansion; the primary agent completed the README and project-
-  control corrections. No configuration or runtime file changed.
+- Active correction cycle: the same controlled worker owns only closed-object
+  assertions in the existing test. The primary agent owns only current Step-1
+  records. No configuration or runtime change is required.
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking review issue: formatting commit `9faf211` resolved the 58-file
-  Prettier gate. Combined validation then passed all required checks, the
-  high-severity audit, production and network inspection, and the Git
-  whitespace-error inspection. The fresh final review found no game, scope, dependency, privacy,
-  accessibility, asset, network, creative, or shared-contract issue, but it
-  requires wider exact-baseline test coverage and current README and evidence
-  records. Integration remains stopped until correction, repeated checks, and
-  a fresh re-review pass.
+- Blocking review issue: the second fresh review found no blocker or advisory
+  issue. It requires the package, TypeScript, and lockfile-root tests to reject
+  prohibited extra configuration. It also requires this record to distinguish
+  completed automated browser evidence from absent direct play, performance,
+  and support evidence. Integration remains stopped until correction,
+  repeated checks, and a fresh re-review pass.
 
 ## Repository facts
 
@@ -54,7 +52,10 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - Production assets: none.
 - Local deployment configuration: none.
 - Public licence: none.
-- Runtime, browser, performance, and play results: none.
+- Automated foundation results: one production-page build and passing
+  Chromium, Firefox, and WebKit flows with no external request.
+- Direct Leonardo test, browser-support assessment, performance measurement,
+  and play results: none.
 
 Git history is the authority for the commit that contains this file. Do not
 insert a future or guessed commit identifier.
