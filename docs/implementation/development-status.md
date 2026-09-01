@@ -2,13 +2,13 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; complete Step 2 correction plan approved**
+Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 record reconciliation blocked**
 
 ## Durable resume point
 
 - Current step: `2`, complete correction plan approved on 2026-09-01.
-- Current workflow state: `technical review; the complete primary audit passed
-with no new finding and the fresh independent review is next`.
+- Current workflow state: `blocked after technical review; the code passed but
+one required current-record reconciliation needs an exact approved scope`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,12 +20,12 @@ with no new finding and the fresh independent review is next`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: assign one fresh read-only OpenAI `gpt-5.6-sol`
-  reviewer using `xhigh` reasoning with the complete reconciled packet.
+- Next possible action: Leonardo decides whether to approve the exact narrow
+  correction of four stale authority records plus the current evidence records.
 - Active approved implementation plan: the exact complete Step-2 correction
   plan for all three S02 private imports, the closed diagnostic fault catalogue,
   and deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-004`, status `submitted`, OpenAI
+- Active work order: `MR-WO-WP00-004`, status `blocked`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
   `work/MR-WP-00-startup-safety-review-fixes`, worktree
   `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
@@ -41,8 +41,9 @@ with no new finding and the fresh independent review is next`.
   successful build, 15 passing browser flows, exact scope, public imports,
   closed diagnostics, controlled unit substitutes, production privacy, and a
   clean worker head at `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`.
-  Fresh independent review remains pending. No frozen interface changed.
-- Last committed resume checkpoint: this primary-audit checkpoint; Git history is
+  The fresh review found no technical issue and one required record
+  reconciliation. No frozen interface changed.
+- Last committed resume checkpoint: this review-blocked checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: failed on the historical submission. The fresh OpenAI
@@ -55,6 +56,11 @@ with no new finding and the fresh independent review is next`.
   imports. Leonardo approved the exact addition of
   `src/bootstrap/startup-screen.ts` to `MR-WO-WP00-004`. The worker reports the
   complete approved correction submitted.
+- Review result: technical pass, governance correction required. Stale
+  no-Step-2-plan text remains in `AGENTS.md`, `docs/15-implementation-contract.md`,
+  S13, and `interfaces.md`. The current acceptance evidence also needs the
+  corrected 91-test and 92.30-percent branch figures. Integration remains
+  blocked.
 
 ## Repository facts
 
@@ -79,15 +85,15 @@ insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority                                       | State                                | Exact boundary                                                                                                                                                        |
-| ----------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Documentation workflow                          | Approved for documentation           | Records the 70-step incremental plan only.                                                                                                                            |
-| Gate 1 — frozen technical baseline              | Approved on 2026-09-01               | Confirms S01–S14; authorizes no code.                                                                                                                                 |
-| Step 1                                          | Accepted on 2026-09-01               | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                                |
-| Step 2                                          | Complete plan approved on 2026-09-01 | Only `MR-WO-WP00-004`, its eight correction paths, checks, controlled worker, primary audit, fresh independent review, integration, and Leonardo test are authorized. |
-| Steps 3–70                                      | Blocked                              | Every later step needs accepted dependencies and its own approved plan.                                                                                               |
-| Asset research and integration                  | Blocked until its named step         | Candidate research and integration remain separate approvals.                                                                                                         |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70       | Each needs a later separate plan and approval.                                                                                                                        |
+| Authority                                       | State                                   | Exact boundary                                                                                                                                                             |
+| ----------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Documentation workflow                          | Approved for documentation              | Records the 70-step incremental plan only.                                                                                                                                 |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01                  | Confirms S01–S14; authorizes no code.                                                                                                                                      |
+| Step 1                                          | Accepted on 2026-09-01                  | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                                     |
+| Step 2                                          | Record correction blocked on 2026-09-01 | The complete technical correction passed review. Four stale authority records and current evidence text need one exact approved record-only correction before integration. |
+| Steps 3–70                                      | Blocked                                 | Every later step needs accepted dependencies and its own approved plan.                                                                                                    |
+| Asset research and integration                  | Blocked until its named step            | Candidate research and integration remain separate approvals.                                                                                                              |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70          | Each needs a later separate plan and approval.                                                                                                                             |
 
 ## Session-resume procedure
 

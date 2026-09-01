@@ -21,8 +21,9 @@ corrections. The public platform entrance exists; all three bootstrap imports
 use it; the Step-2 diagnostic catalogue is closed and internally consistent;
 and Vitest uses controlled timing, event, event-target, and abort substitutes.
 The worker reports that all required checks pass. The complete primary audit
-also passes with no new blocker or required correction. The result is not yet
-independently reviewed, integrated, tested by Leonardo, or accepted.
+also passes with no new blocker or required correction. Fresh independent
+review passed the technical correction but found one required current-record
+reconciliation. The result is not integrated, tested by Leonardo, or accepted.
 
 ## Changed files
 
@@ -97,8 +98,23 @@ change.
 
 ## Independent review
 
-Not yet available. The complete primary audit passed. A fresh OpenAI
-`gpt-5.6-sol` reviewer using `xhigh` reasoning is now required.
+On 2026-09-01, a fresh independent OpenAI `gpt-5.6-sol` reviewer using
+`xhigh` reasoning reviewed main authority commit
+`ecf0e9c7fe021650e33014291c196fedfa789c52` and corrected range
+`43f868e64b80c88dc46832b676af6d2929f081c2` through
+`51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`. It found no blocker or advisory
+finding. It found one required governance correction: `AGENTS.md`,
+`docs/15-implementation-contract.md`, S13, and the interface register retain
+stale statements that Step 2 has no approved plan. It also required the current
+status and acceptance record to remove older execution-state sentences and
+show the corrected 91-test and 92.30-percent branch result.
+
+The reviewer found the code technically ready. Integration is blocked until
+Leonardo approves the exact additional record scope and the primary agent
+completes the applicable record-only validation. The governance amendment does
+not require a further independent review for a narrow current-state and
+reference correction that changes no authority, evidence meaning, or technical
+claim.
 
 ## Corrections
 
@@ -121,6 +137,8 @@ real timer. All later checks passed.
   check and retry remain pending to prevent an old cleanup operation from
   overlapping a newer probe.
 - A future diagnostic code requires an approved catalogue extension.
+- Four authority records need current-state reconciliation before integration;
+  this does not change a frozen interface or the correction code.
 
 ## Leonardo decision
 

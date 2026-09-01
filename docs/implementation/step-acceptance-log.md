@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 accepted; complete Step 2 correction plan approved**
+Status: **Step 1 accepted; Step 2 record reconciliation blocked**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`     | The accepted result is the static local foundation, not a game system. |
-|    2 | Technical review        | 2026-09-01    | Complete primary audit confirms 91 unit tests, threshold coverage, build, 15 browser flows, scope, architecture, diagnostics, controlled tests, privacy, and clean Git checks                    | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Fresh independent review remains pending.                              |
+|    2 | Blocked                 | 2026-09-01    | Technical pass: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, and review passed; one current-record reconciliation is required                                        | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Integration waits for approved record-only correction and validation.  |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -344,10 +344,12 @@ contribution record is `MR-CONTRIB-WP00-004`.
 
 ### Automated and review evidence
 
-Corrected worker and primary checks passed. Primary `npm run check` passed all
-83 unit tests. Primary `npm run verify` passed lint, formatting, coverage,
-production build, and 15 browser flows across Chromium, Firefox, and WebKit.
-Coverage is 96.48 percent lines and 92.68 percent branches. A separate primary
+Corrected worker and primary checks passed. The historical pre-review result
+passed 83 unit tests with 96.48 percent lines and 92.68 percent branches. The
+complete correction result passed 91 unit tests with 96.48 percent lines and
+92.30 percent branches. Primary `npm run verify` passed lint, formatting,
+coverage, production build, and 15 browser flows across Chromium, Firefox, and
+WebKit. A separate primary
 build also passed. Production, privacy, network, package, configuration, scope,
 remote, whitespace, and clean-worktree checks passed. The independent review
 then found the unresolved authority and technical issues below.
@@ -422,6 +424,13 @@ The primary audit confirms those three corrections and all recorded limits.
 This is not independent-review, integration, Leonardo-test, or acceptance
 evidence.
 
+The fresh independent reviewer returned a technical pass with no blocker or
+advisory finding. Its one required finding is record-only: four authority files
+still state that Step 2 has no approved plan, and current resume text must show
+the completed correction and audit. Integration is blocked until Leonardo
+approves that exact additional record scope and focused primary validation
+passes.
+
 ### Acceptance decision
 
 Not accepted. Plan approval is implementation authority only and does not
@@ -429,13 +438,13 @@ accept a result.
 
 ### Known limitations and next boundary
 
-The submitted Step-2 code exists on the preserved original worker branch and
-as the exact base of the approved correction order. It is not corrected,
-integrated, tested by Leonardo, or accepted. If IndexedDB reports a
+The corrected Step-2 code exists on the isolated correction branch and passed
+the complete primary audit and fresh technical review. It is not integrated,
+tested by Leonardo, or accepted. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
 remain pending so old cleanup cannot overlap new work. The next permitted
-action is the active checkpoint for `MR-WO-WP00-004`, followed by its controlled
-worker correction. Step 3 and every public action remain blocked.
+action is Leonardo's decision on the exact current-record correction plan. Step
+3 and every public action remain blocked.
 
 ## Required accepted-step entry
 

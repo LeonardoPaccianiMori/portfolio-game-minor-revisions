@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-004
 type: implementation-work-order
-status: submitted
+status: blocked
 work_package: MR-WP-00
 sequence: 4
 created: 2026-09-01
@@ -26,6 +26,12 @@ all three bootstrap cross-module imports through it, make the diagnostic fault
 set closed and internally consistent, and replace real unit-test timers and
 browser event objects with controlled fakes. Preserve every approved Step-2
 behaviour and every frozen interface.
+
+Fresh independent review passed the complete technical correction with no
+blocker or advisory finding. It found one required current-record
+reconciliation across four primary-owned authority files outside this order's
+approved record-update list. Integration is blocked until Leonardo approves
+that exact record-only correction and focused primary validation passes.
 
 ## Plain-language effect
 
