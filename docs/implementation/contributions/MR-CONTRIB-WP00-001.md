@@ -64,8 +64,19 @@ and `npm run build` passed. The initial sandboxed package installation did not
 create a lockfile, and the first check therefore could not find TypeScript; an
 approved retry completed the installation. The worker corrected its owned ESLint
 scope and ignored only the pre-existing unowned formatting paths before the
-passing results. Primary clean-install, browser, audit, full-verification,
-network-boundary, and diff evidence is not yet available.
+passing results.
+
+Primary verification also passed under the same exact Node and npm versions:
+`npm ci` installed 158 packages and audited 159 with no vulnerabilities;
+`npm run setup:browsers` installed the local Chromium, Firefox, and WebKit
+test browsers; `npm run check` passed; `npm run verify` passed its coverage,
+production-build, and three browser flows; `npm audit --audit-level=high`
+reported no vulnerabilities; the direct dependency tree matched S01; and
+`git diff --check` passed. The production output was one semantic `index.html`
+file with no script, Three.js reference, or external address. The browser-flow
+test also observed no external request. The in-app visual browser connection
+was unavailable in this session, so the three passing automated browser flows
+are the visual evidence before Leonardo's own direct local-page check.
 
 ## Independent review
 

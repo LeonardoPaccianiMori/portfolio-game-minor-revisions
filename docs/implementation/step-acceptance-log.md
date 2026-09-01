@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 implementing; no implementation step accepted**
+Status: **Step 1 in technical review; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
 | 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Implementing | 2026-09-01 | Not yet available | Not yet available | Not yet available | Plan-approved and implementing checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
+| 1 | Technical review | 2026-09-01 | Clean install, browser setup, exact-version, dependency, audit, check, verify, production, network-boundary, and diff checks passed; independent review pending | Not yet available | Not yet available | Plan-approved, implementing, submission, and technical-review checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
 | 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -74,13 +74,15 @@ worker submission because S13 permits no draft contribution-record state.
 ### Automated and review evidence
 
 The worker reported a passing `npm install`, `npm run check`, and `npm run
-build` under the exact Node and npm versions. Primary evidence is not yet
-available. It must include exact Node and npm verification, fresh package
-compatibility, security, licence, deprecation, and peer review, `npm ci`,
-local Playwright-browser setup, `npm run check`, `npm run verify`, production
-build inspection, no-runtime-external-request review,
-`npm audit --audit-level=high`, `git diff --check`, and a fresh independent
-read-only review.
+build` under the exact Node and npm versions. Primary verification then passed
+with Node `v24.20.0` and npm `11.19.0`: fresh registry compatibility, licence,
+deprecation, and peer review; `npm ci` (158 packages and no vulnerabilities);
+local Playwright-browser setup; `npm run check`; `npm run verify` (one unit
+test, coverage command, production build, and Chromium, Firefox, and WebKit
+start-page flows); `npm audit --audit-level=high` (no vulnerabilities);
+dependency-tree inspection; production-output inspection; no-runtime-external-
+request inspection; and `git diff --check`. A fresh independent read-only
+review is pending.
 
 ### Leonardo test packet
 

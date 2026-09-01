@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 implementing**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 in technical review**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `implementing; MR-WP-00 submitted and awaiting primary verification`.
+- Current workflow state: `technical review; primary verification passed and fresh independent review is pending`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,13 +15,13 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 imp
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: run the primary clean-install, browser, audit, full
-  verification, build, network-boundary, and diff checks; then obtain fresh
-  independent read-only review.
+- Next possible action: obtain a fresh independent read-only review of the
+  controlled worker diff and recorded primary validation evidence.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
 - Active work order: `MR-WO-WP00-001`, submitted from
-  `work/MR-WP-00-foundation`; primary verification and review are pending.
+  `work/MR-WP-00-foundation`; primary verification passed and review is
+  pending.
 - Active contribution record: `MR-CONTRIB-WP00-001`, submitted; primary
   verification, review, integration, and Leonardo acceptance are pending.
 - Active player test: none.
@@ -29,9 +29,8 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 imp
 - Last committed resume checkpoint: this plan-approved checkpoint; Git history
   is authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking technical issue: none known. A failed required environment or
-  verification check will block Step 1 and requires a recorded restart
-  condition.
+- Blocking technical issue: none known. Required technical checks passed; an
+  independent-review finding can still require correction and re-review.
 
 ## Repository facts
 
