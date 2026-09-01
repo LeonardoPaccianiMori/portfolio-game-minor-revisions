@@ -2,19 +2,19 @@
 
 Supplied files, each read completely:
 
-| File | Status |
-|---|---|
+| File                                    | Status                                     |
+| --------------------------------------- | ------------------------------------------ |
 | `docs/02-player-experience-and-loop.md` | Read completely. Substantive, untruncated. |
-| `docs/03-narrative-and-campaign.md` | Read completely. Substantive, untruncated. |
-| `docs/04-science-and-experiments.md` | Read completely. Substantive, untruncated. |
-| `docs/05-characters-and-dialogue.md` | Read completely. Substantive, untruncated. |
-| `docs/06-world-and-level-design.md` | Read completely. Substantive, untruncated. |
-| `docs/07-systems-and-balance.md` | Read completely. Substantive, untruncated. |
-| `docs/08-endings-and-state-matrix.md` | Read completely. Substantive, untruncated. |
-| `docs/09-art-audio-and-assets.md` | Read completely. Substantive, untruncated. |
-| `docs/10-ui-ux-accessibility.md` | Read completely. Substantive, untruncated. |
-| `docs/11-technical-architecture.md` | Read completely. Substantive, untruncated. |
-| `docs/12-content-specification.md` | Read completely. Substantive, untruncated. |
+| `docs/03-narrative-and-campaign.md`     | Read completely. Substantive, untruncated. |
+| `docs/04-science-and-experiments.md`    | Read completely. Substantive, untruncated. |
+| `docs/05-characters-and-dialogue.md`    | Read completely. Substantive, untruncated. |
+| `docs/06-world-and-level-design.md`     | Read completely. Substantive, untruncated. |
+| `docs/07-systems-and-balance.md`        | Read completely. Substantive, untruncated. |
+| `docs/08-endings-and-state-matrix.md`   | Read completely. Substantive, untruncated. |
+| `docs/09-art-audio-and-assets.md`       | Read completely. Substantive, untruncated. |
+| `docs/10-ui-ux-accessibility.md`        | Read completely. Substantive, untruncated. |
+| `docs/11-technical-architecture.md`     | Read completely. Substantive, untruncated. |
+| `docs/12-content-specification.md`      | Read completely. Substantive, untruncated. |
 
 Notes on corpus boundaries (not blocking): the numbering implies missing
 documents `01`, `13` (`13-testing-and-evaluation.md`), `14`, and
@@ -27,7 +27,7 @@ documents are treated as unverifiable pointers, and I flag them in §11.
 
 # 2. Reconstructed game (300–500 words)
 
-*Minor Revisions* is a first-person, single-player, browser-based narrative
+_Minor Revisions_ is a first-person, single-player, browser-based narrative
 management game about the last sixteen weeks of a fixed-term postdoctoral
 contract. The player is a lightly authored developmental biologist (player-chosen
 name and pronouns) on one ~400 m² university research floor at fictional
@@ -56,7 +56,7 @@ The second half is a manuscript card board rather than a text editor. The player
 arranges evidence, figures, claims, controls, and authorship cards, and chooses a
 claim level — careful, strong, or inflated — under contradictory pressure from
 Professor Elena Markovic. A fixed submission ladder (The Common Archive preprint,
-*Cosmos*, *Knowledge*, *Developmental Systems Letters*, then `PIIM`) leads to one
+_Cosmos_, _Knowledge_, _Developmental Systems Letters_, then `PIIM`) leads to one
 major-revision round with three conflicting reviewers and three response cards.
 The player may report honestly, omit, alter, or invent — as explicit, confirmed
 narrative actions, never as a simulated forgery minigame.
@@ -79,7 +79,7 @@ Target length is roughly three hours, entirely local, English-only, no accounts.
 
 ## Core fantasy
 
-**Explicit / high confidence.** The fantasy is *not* scientific discovery or
+**Explicit / high confidence.** The fantasy is _not_ scientific discovery or
 mastery of laboratory technique. `04-science-and-experiments.md` states "The
 player does not discover a real laboratory protocol" (via `02`), forbids
 operational quantities, and abstracts timing into "same shift, next day, several
@@ -107,7 +107,7 @@ More precisely, three overlapping fantasies:
 
 **The game as honest institution.** (`interpretation`, high) Every design
 decision points the same way: the game itself behaves with the integrity the
-fictional university lacks. It shows time and energy cost *before* commitment
+fictional university lacks. It shows time and energy cost _before_ commitment
 (`02`, `10`), never interrupts an active experiment with a message (`02`, `03`,
 `07`), never lets browser closure advance time (`10`, `11`), never allows a
 missed monitoring window without a clear warning, and states expiries "rather
@@ -118,7 +118,7 @@ player is squeezed by the fiction and protected by the system.
 **The game as record-keeper rather than judge.** (`explicit`, high) "The game
 does not show a moral score" (`05`); integrity warnings are "factual and do not
 give a moral label" (`07`); citation MR-CIT-07 (Selective Transparency
-Distinction) fires for correction *or* omission *or* alteration *or* fabrication
+Distinction) fires for correction _or_ omission _or_ alteration _or_ fabrication
 and "the archive retains no moral rank" (`12`). The game watches, records
 permanently (`FLAG:` flags survive trust recovery), and declines to condemn.
 
@@ -198,7 +198,7 @@ comedy should arise from plausible language, euphemism, contradiction, and
 self-justification." The drafted text confirms the register precisely — Form 18B
 asks "permission to treat a temporary arrangement as temporary"
 (`env.bureaucracy.01`); the wellness notice recommends a pause "after submitting
-the form that records why you could not pause" (`env.bureaucracy.05`); *Knowledge*
+the form that records why you could not pause" (`env.bureaucracy.05`); _Knowledge_
 declines because "direct proof has not yet agreed to exist"
 (`record.knowledge.body`). The joke is always institutional language colliding
 with material reality. Nobody is a buffoon.
@@ -241,13 +241,13 @@ protagonist never speaks aloud, preserving projection after name/pronoun choice.
 `implied`/`interpretation`, high, from the `03` beat sheet, `06` act states, `07`
 period-budget estimates, and `09` lighting/music progression:
 
-| Weeks | Act | Designed feeling |
-|---|---|---|
-| 1–4 | Supplementary data | Competence and mild pride. The result is real. Requests seem finite. Facility friction and colleague needs appear as manageable texture. Floor is "orderly but overbooked." |
-| 5–7 | Manuscript hell | Vertigo and absurdity. Elena permits writing regardless of packet quality, then contradicts herself; **What We Had** returns the paper "close to its original careful version." Light turns colder; revision clutter accumulates. |
-| 8–9 | Submission | Exposure, then serial deflation. Preprint becomes public in every run; three rejections arrive; Camila's email offers an exit. The exit light starts becoming inviting for everyone. |
-| 10–14 | Competing futures | Grinding pressure and moral squeeze. Three contradictory reviewers, mandatory oxygen-loss work, an unmeetable "address all concerns" instruction, and the explicit integrity fork in Week 14. |
-| 15–16 | Decision | Emptiness and quiet agency. Emptier rooms, cleared desks, most inviting exit. 06:42 returns; the choice is small, personal, and unrewarded by the institution. |
+| Weeks | Act                | Designed feeling                                                                                                                                                                                                                  |
+| ----- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1–4   | Supplementary data | Competence and mild pride. The result is real. Requests seem finite. Facility friction and colleague needs appear as manageable texture. Floor is "orderly but overbooked."                                                       |
+| 5–7   | Manuscript hell    | Vertigo and absurdity. Elena permits writing regardless of packet quality, then contradicts herself; **What We Had** returns the paper "close to its original careful version." Light turns colder; revision clutter accumulates. |
+| 8–9   | Submission         | Exposure, then serial deflation. Preprint becomes public in every run; three rejections arrive; Camila's email offers an exit. The exit light starts becoming inviting for everyone.                                              |
+| 10–14 | Competing futures  | Grinding pressure and moral squeeze. Three contradictory reviewers, mandatory oxygen-loss work, an unmeetable "address all concerns" instruction, and the explicit integrity fork in Week 14.                                     |
+| 15–16 | Decision           | Emptiness and quiet agency. Emptier rooms, cleared desks, most inviting exit. 06:42 returns; the choice is small, personal, and unrewarded by the institution.                                                                    |
 
 **Cyclical rather than climactic closure.** `explicit`, high. The semester starts
 and ends at 06:42 (`03` invariant; `scene.0642.internal.opening`: "The clock says
@@ -313,7 +313,7 @@ buys evidence with trust — a quiet, elegant coupling. (`implied`, high.)
 starting segments, no night surcharge, breaks restoring 3 instead of 2/1. The
 night-work dilemma partly evaporates in Supported: the trust-versus-evidence
 tension weakens because working nights becomes cheap. This is a real, unremarked
-divergence in *thematic* experience between profiles even though narrative content
+divergence in _thematic_ experience between profiles even though narrative content
 is identical (`interpretation`, medium).
 
 **The crash is the game's only involuntary event, and it is carefully fenced.**
@@ -327,7 +327,7 @@ So the crash is priced as a bad trade, not a death — and its epilogue module
 
 **The gates and the clock create a specific and unusual failure texture.**
 `interpretation`, high. Because Week 5, 8, 10, 14, 15, 16 fire regardless, running
-out of time does not stall the player — it *arrives at the scene under-equipped*.
+out of time does not stall the player — it _arrives at the scene under-equipped_.
 Combined with "A Complete Narrative" explicitly permitting manuscript work on a
 Thin packet, the game's characteristic bad outcome is not "you failed to reach the
 event" but "you reached the event with a paper you know is inadequate, and Elena
@@ -394,7 +394,7 @@ the expensive attention — the closest thing this game has to combat.
 
 **Two career routes, two different gating philosophies.** `explicit`, high.
 Aldercroft (`08`) = one timed task (research plan before Week 12) + two of three
-{Coherent+ evidence, Supportive+ PI confidence, Elena trust ≥41} + no *visible*
+{Coherent+ evidence, Supportive+ PI confidence, Elena trust ≥41} + no _visible_
 evidence concern. Morrow = reply + video call + public preprint + Developing+
 evidence + Camila trust ≥41 + no fabrication confession. Academia measures
 institutional standing and PI alignment; industry measures communication,
@@ -405,14 +405,14 @@ in the same run, which is the structural argument the game is making.
 Repeatedly: "A hidden integrity problem alone does not block Aldercroft"; "Hidden
 integrity alone does not close it; a visible conflict or confession can" (`07`,
 `08`); "Fabrication can remain undiscovered" (`03`, `05`). Integrity is thus
-*not* a gate — it is an ending modifier and a social-risk surface. The system
+_not_ a gate — it is an ending modifier and a social-risk surface. The system
 therefore encodes a specific claim about academia: dishonesty is punished by
 exposure, not by dishonesty.
 
 **PI confidence and integrity are engineered as an inverse pair, softly.**
 `explicit`, high. Inflated claims give P+10 and I-45; careful claims give P-5.
 `07` states the tension plainly ("PI confidence can rise while integrity falls,
-and vice versa"). But note the asymmetry: PI confidence is a *route requirement*
+and vice versa"). But note the asymmetry: PI confidence is a _route requirement_
 (Supportive/Invested is one of Aldercroft's three conditions) while integrity is
 not. Mechanically, sacrificing integrity buys route access; keeping integrity
 buys only a better epilogue label and lower social risk. (`interpretation`,
@@ -449,7 +449,7 @@ back half of the campaign — the strongest instance of relationship-as-mechanic
 **A permanent raw record plus a mutable presentation layer.** `explicit`, high.
 `07`: "The raw laboratory record is permanent and locked." `04`: omitting a card
 "can weaken a manuscript or reviewer response, but cannot erase the scientific
-record." The player edits only what is *reported*. This is the mechanical core of
+record." The player edits only what is _reported_. This is the mechanical core of
 the game's ethics: the truth persists and remains discoverable, so dishonesty is
 a bet on nobody looking.
 
@@ -462,7 +462,7 @@ publish" (`03`). The system is built so that outcome is not desert.
 
 **Reviewer 3 is a designed unwinnable objection.** `implied`, high. `03` fixes
 Reviewer 3's position: laser injury is artificial and the repair state is a stress
-response — and `04` establishes as *fiction-level truth* that the repair state is
+response — and `04` establishes as _fiction-level truth_ that the repair state is
 associated with recovery and cannot be shown to cause it. Reviewer 3 is therefore
 correct, and the editor asks the player to "address all concerns" including
 conflicting ones (`record.piimEditor.body`: "complete, concise, and persuasive").
@@ -484,7 +484,7 @@ unsupported result is permanently "seriously undermined."
 
 **Public-record withdrawal is the game's only self-inflicted total loss.**
 `explicit`, high. It closes both routes and forces **End of Contract** (`07`,
-`08`). Notably it is the *most* scrupulous available action — retracting a paper
+`08`). Notably it is the _most_ scrupulous available action — retracting a paper
 you no longer trust — and it is mechanically the worst. Whether that is intended
 irony is unstated; it reads as deliberate given the epilogue text
 (`ending.paper.rejected`: "The preprint link remains, or its absence remains
@@ -501,13 +501,13 @@ and no energy, they are the cheapest meaningful actions in the game.
 
 Payoff ranking (`implied`, high):
 
-| Scene | Mechanical value |
-|---|---|
-| `MR-OPT-CAMILA-INITIAL` / `-VIDEO` / `-OFFER` | Route-critical. Ignoring both emails closes Morrow permanently. |
-| `MR-OPT-GABRIEL-QUEUE` | Unlocks the shortcut (Gabriel 60→70) plus queue state. |
-| `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE` | EV+1 on choices A *and* B, plus `FLAG:samiraCoauthor`. |
-| `MR-OPT-ELENA-FUTURE` | Elena trust, after-hours only (energy-surcharge context). |
-| `MR-OPT-HAORAN-*`, `MR-OPT-SAMIRA-SHARED-INSTRUMENT`, `MR-OPT-GABRIEL-ARCHIVE` | Trust and permanent flags; no direct evidence or route effect. |
+| Scene                                                                          | Mechanical value                                                |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| `MR-OPT-CAMILA-INITIAL` / `-VIDEO` / `-OFFER`                                  | Route-critical. Ignoring both emails closes Morrow permanently. |
+| `MR-OPT-GABRIEL-QUEUE`                                                         | Unlocks the shortcut (Gabriel 60→70) plus queue state.          |
+| `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE`                                               | EV+1 on choices A _and_ B, plus `FLAG:samiraCoauthor`.          |
+| `MR-OPT-ELENA-FUTURE`                                                          | Elena trust, after-hours only (energy-surcharge context).       |
+| `MR-OPT-HAORAN-*`, `MR-OPT-SAMIRA-SHARED-INSTRUMENT`, `MR-OPT-GABRIEL-ARCHIVE` | Trust and permanent flags; no direct evidence or route effect.  |
 
 **The mid-game concern scenes are conditional on the player's own record.**
 `explicit`, high. `MR-OPT-HAORAN-MISSING-REPLICATE` and `MR-OPT-GABRIEL-ARCHIVE`
@@ -521,7 +521,7 @@ options (-20 or -10, plus a concern flag). These are the game's redemption doors
 medium-high. Samira's credit choice gives EV+1 for one period and no energy —
 strictly cheaper than any experiment path to a support point (which costs ≥4
 periods and ≥3 energy). Gabriel's shortcut saves walking for eight weeks for one
-period. So the socially generous player is *also* the efficient player, which is
+period. So the socially generous player is _also_ the efficient player, which is
 a striking alignment given the game's theme. The documents never claim this;
 `07`'s pressure list frames relationships as a competitor for resources ("Extra
 work can improve evidence while consuming the resources needed to finish the
@@ -575,7 +575,7 @@ Against ~180 minutes total, non-interactive content is ~9%.
 `strings.en.json`.** `explicit`, high. This is a very tight budget for 7 mandatory
 scenes with variants, 10 optional scenes, 20 primary records with up to 3 result
 forms each, 30 environmental items, 29 ending modules, 12 citations, and the full
-UI/tutorial string set. It is a *unique*-word cap rather than total wordcount, so
+UI/tutorial string set. It is a _unique_-word cap rather than total wordcount, so
 reuse is unlimited — but it strongly implies a consistent, narrow, controlled
 diction, which matches the flat institutional register of the drafted text.
 
@@ -588,7 +588,7 @@ length is thus achieved by pacing and staging rather than volume of dialogue.
 `interpretation`, medium. If ~59 work periods are available and a run uses 48–62,
 then a period plus its travel and station interaction occupies roughly 2.5–3.5
 minutes of real time. That is a plausible cadence for walk-plus-focused-view, and
-it means the *entire* game is about 60 discrete decisions plus travel plus 16
+it means the _entire_ game is about 60 discrete decisions plus travel plus 16
 minutes of cinematics. This is a very small number of decisions for a three-hour
 game, which puts enormous weight on each one being legible and consequential — a
 requirement the pre-commitment cost disclosure and stated-reason feedback are
@@ -607,9 +607,9 @@ Week-1-only vertical slice is also specified.
 permanent week/period/energy HUD; pre-commitment time and energy cost; Research
 Status with stated reasons and non-spoiling route feedback ("Aldercroft needs a
 stronger research case," `MR-UI-ROUTE-FEEDBACK`); the desk work queue mirroring
-rack state; explicit expiry statements. The player does *not* get: a task list,
+rack state; explicit expiry statements. The player does _not_ get: a task list,
 objective arrows, minimap, completion percentage, hidden formulas, or raw flags.
-So planning is a *mental* activity fed by honest but coarse information.
+So planning is a _mental_ activity fed by honest but coarse information.
 
 **Two-sided asymmetry in what is hidden.** `implied`, high. Bars and labels are
 visible (evidence packet label, PI confidence label, integrity segments, five
@@ -626,7 +626,7 @@ replacement; seed and outcome bands locked at experiment start so reloading
 cannot reroll (`07`, `08`, `10`, `11`). Combined with a `activeCampaignBackup`
 store, forward-only migrations, and a recovery path that "never overwrites the
 failing source record before the player accepts it," the persistence design is
-notably protective *and* notably anti-undo. The player is protected from loss and
+notably protective _and_ notably anti-undo. The player is protected from loss and
 denied retries.
 
 **Pressure profile is locked at New Game and content-identical.** `explicit`,
@@ -651,7 +651,7 @@ integrity, and human modules "provide subtitle context without creating a moral
 ranking of endings."
 
 **End of Contract is not selectable.** `explicit`, high. `07`/`08`: it "occurs
-only when no route remains." The player can *fail into* it but cannot *choose*
+only when no route remains." The player can _fail into_ it but cannot _choose_
 it — the game refuses to let despair be a stated preference, while Out of Scope
 provides a dignified voluntary exit.
 
@@ -710,7 +710,7 @@ save-scumming, guarantees causal learnability, and makes variance feel like
 biology rather than dice.
 
 **6. Locked raw record + mutable reported record.** `explicit`, high (`04`, `07`).
-The precondition for the integrity system to be about *presentation* rather than
+The precondition for the integrity system to be about _presentation_ rather than
 forgery.
 
 **7. Visibility-gated consequences for misconduct.** `explicit`, high (`03`, `05`,
@@ -894,7 +894,7 @@ stance that no document articulates.
 **10.1 "Survival game" versus "no failure state."** `explicit` tension, high.
 `02` calls Standard "the intended survival-game profile," but no early failure
 ends the game, there is no game-over before Week 16, gates always open a route
-forward, and even the crash restores energy. The survival is *qualitative* — you
+forward, and even the crash restores energy. The survival is _qualitative_ — you
 survive with a worse record — which is coherent but sits uneasily with the genre
 word chosen. Players arriving on "survival" may find the stakes diffuse.
 
@@ -929,7 +929,7 @@ work queue with per-group status words, a capped active-request list (2 required
 3 optional), stated deadlines and expiries, a project notebook explaining current
 requests, Research Status route feedback, Interaction Assist highlighting, and
 three navigational landmarks. Functionally this is close to a quest log
-distributed diegetically. The disclaimer is about *presentation*, not about
+distributed diegetically. The disclaimer is about _presentation_, not about
 information availability — a mixed signal about how much orientation work the
 player actually does.
 
@@ -953,7 +953,7 @@ tension, medium. Seven mandatory scenes with variants, ten optional scenes with
 4–6 lines each, 20 records with up to 3 result forms, 30 environmental items, 29
 ending modules, 12 citations with three text fields each, ~9 tutorial prompts,
 ~35 UI strings. `12` claims "This document is below that limit," which is
-plausible for the *drafted* text, but the cap is on the final generated string
+plausible for the _drafted_ text, but the cap is on the final generated string
 file and leaves little headroom for expansion, requirements panels, forecast
 strings, warning texts, or Research Status reason strings — many of which are
 specified as required but not drafted.
@@ -981,7 +981,7 @@ analysis (which must complete before W14). The Week 14 schedule is extremely
 tight, and no document notes this.
 
 **10.12 Elena's low-evidence variant may make Thin packets narratively
-*preferable*.** `interpretation`, low-medium. The low-evidence forms of
+_preferable_.** `interpretation`, low-medium. The low-evidence forms of
 **A Complete Narrative** and **Helpful Comments** contain some of the sharpest
 satirical lines in the draft ("enough of a narrative to begin repairing it in
 public"). A player optimising for tonal payoff rather than outcomes has a mild
@@ -1021,7 +1021,7 @@ to the withheld documents.
 
 **Configuration semantics.** `explicit` gap, high. Every experiment offers goal,
 control quality, and observation focus (structure / rhythm / both), plus one
-family-specific qualitative choice. No document states what these options *do* —
+family-specific qualitative choice. No document states what these options _do_ —
 how control quality maps onto the robust/mixed/compromised band, whether
 observation focus restricts which evidence views resolve, or what the
 family-specific choices actually are beyond one-line themes. This is the primary
@@ -1127,55 +1127,55 @@ content is removed from the file or merely unreferenced is unaddressed.
 
 # 12. Evidence table
 
-| # | Conclusion | Class | Conf. | Sources / design objects |
-|---:|---|---|---|---|
-| 1 | First-person, single-player, static browser game on one continuous ~400 m² floor; ~3 hours | explicit | high | `06` floor plan & acceptance criteria; `07` "Approximately three hours"; `11` scope, static build, one continuous Three.js scene |
-| 2 | 16-week / 64-period fixed calendar starting and ending at 06:42; 7 mandatory scenes in fixed weeks every run | explicit | high | `02` campaign time; `03` invariants + beat sheet; `12` scene table |
-| 3 | Gates never wait for unfinished work; weak work changes the paper path, not the calendar | explicit | high | `03` invariants; `07` requests/gates; `02` workload and soft failure |
-| 4 | No game-over before Week 16; failure is informational | explicit | high | `02` outcome principles; `07` soft failure; `03` invariants |
-| 5 | Costs (time + energy) always shown before commitment; walking, reading, ordinary dialogue are free | explicit | high | `02` B08 contract & cost table; `07` time/pacing; `10` interaction principles |
-| 6 | Energy, not periods, is the binding constraint; protected breaks are effectively mandatory | interpretation | medium-high | Arithmetic over `02` cost table + `07` break rules + `12` action IDs vs 64-period budget |
-| 7 | Crash is the sole involuntary event; fenced from equipment actions/cutscenes; never required by any route | explicit | high | `02` energy section; `07` pressure profiles |
-| 8 | Night/after-hours convert energy into time at the cost of people-access | implied | high | `02`; `07` period schedule; `05`/`06` schedule tables (Elena absent except **The Future**) |
-| 9 | Supported profile is content-identical and dissolves the night-work dilemma | explicit / interpretation | high / medium | `02`; `07` profiles; `MR-UI-PROFILE-SUPPORTED`, `MR-UI-PROFILE-LOCK` |
-| 10 | Five-stage experiment loop, max 3 concurrent groups, monitoring requires physical presence | explicit | high | `02` loop; `04` B04 contract; `06` functional-location placement; `07` interaction state |
-| 11 | Two-layer results: biological result + evidence quality, from different input sets | explicit | high | `02` feedback model; `04` B05 contract; `07` experiment resolution |
-| 12 | Preparation sets an outcome band (80/20/0, 20/60/20, 0/20/80); seed locks variation at start; reload cannot reroll | explicit | high | `07` B10 outcome-band table; `11` PRNG/determinism |
-| 13 | Evidence saturates easily: 5 required templates × 2 + starting 3 ≥ 12 cap | interpretation | medium-high | `07` support scale & starting value; `04` B05 point rules; `12` six templates |
-| 14 | Claim level trades PI confidence against integrity and reviewer difficulty; overstatement can weaken the claim-scope card | explicit | high | `07` PI confidence rules & PIIM band; `04` claim table; `08` response contract |
-| 15 | Raw record permanent; only the reported record is mutable; no falsification method provided | explicit | high | `07` integrity/irreversible loss; `04` B05 contract; `03` integrity choices; `12` response fork |
-| 16 | Misconduct is gated by *visibility*, not detection certainty; fabrication can publish, honest work can fail | explicit | high | `03` peer review + integrity; `07` career readiness; `08` route-unlock + PIIM contracts |
-| 17 | Integrity gates no route; PI confidence does — the most moral number is the least coupled | implied | high | `07`/`08` route conditions vs integrity rules |
-| 18 | Two routes reward different behaviours: Aldercroft = standing/alignment; Morrow = responsiveness/clarity | explicit | high | `03` Morrow & Aldercroft; `08` B05 route-unlock contract |
-| 19 | Samira and Camila both start at 40, one below the 41 gate — must be actively earned | implied | high | `05`/`07` starting values & thresholds; `12` `optional.samira.figure.credit`, `optional.camila.initial.careful` |
-| 20 | Gabriel trust ≥61 unlocks a physical shortcut — the only relationship-as-geometry mechanic | explicit | high | `06` routes/sightlines; `12` `MR-OPT-GABRIEL-QUEUE` (+10 from 60) |
-| 21 | Optional scenes cost 1 period / 0 energy; several are strictly efficient (Samira EV+1; Gabriel shortcut) | implied | medium-high | `12` `MR-ACT-RELATIONSHIP`; `optional.samira.figure.*` effects; vs 4-period experiment cycles |
-| 22 | Honest play yields *less* content: two optional scenes and one citation require a visible record mismatch | interpretation | high | `12` `MR-OPT-HAORAN-MISSING-REPLICATE`, `MR-OPT-GABRIEL-ARCHIVE`, `MR-CIT-08` |
-| 23 | Reviewer 3's objection is fiction-level correct and unanswerable; the honest response is to concede | implied | high | `03` reviewer table; `04` repair state "does not cause recovery"; `record.piimEditor.body` |
-| 24 | Preprint posts in every run regardless of packet quality — guaranteed irreversible complicity beat | explicit | high | `03` submission ladder; `12` `MR-SCN-PUBLIC-RECORD` ("The preprint posts in every run") |
-| 25 | Public-record withdrawal is the most scrupulous act and forces the worst ending | explicit | high | `03` Week 14 table; `07` B06 resolution; `08` compatibility contract |
-| 26 | End of Contract cannot be chosen; Out of Scope is the dignified voluntary exit | explicit | high | `07` B06 final-state; `08` B06 contract; `MR-CIT-11`/`MR-CIT-12` |
-| 27 | Endings modular: 4 labels + 29 modules, no moral ranking, no post-Week-16 randomness | explicit | high | `03` B06 epilogue; `08` modular structure + inventory; `12` ending draft |
-| 28 | Replay driven only by 12 Institutional Citations; ≥3 runs needed for all 12; no carryover advantage | explicit / interpretation | high | `08` archive rules; `12` citation table (MR-CIT-09/10/11/12 mutually exclusive); `10` archive/replay |
-| 29 | Environment is a budgeted mood instrument; environmental text is never load-bearing | explicit | high | `06` act states, change limits, B10 boundary; `12` environmental catalogue |
-| 30 | Exit becomes inviting from Week 8 for every player, independent of route | explicit | high | `06` semester states; `09` lighting |
-| 31 | Exploration is not a discovery mechanic: no inventory, pickups, hidden objects, minimap, or arrows | explicit | high | `06` stations/objects; `02`; `10` interaction principles |
-| 32 | Non-interactive content ~16 min (14:45 scenes + 75 s epilogue) of ~180 min | explicit | high | `12` scene durations; `02`/`03` 14–18-min target and 22-min maximum |
-| 33 | Content is bounded, counted, and non-generative (6/7/10/20/29/12/30; ≤6,000 unique words) | explicit | high | `12` authority table + `MR-TEST-CONT-001`; `11` content/strings contract; `05` dialogue boundary |
-| 34 | ~60 total meaningful decisions across 3 hours, placing heavy weight on legibility per decision | interpretation | medium | `07` period budgets vs `07` three-hour principle; `02` cost tables |
-| 35 | A pre-authored 90-minute fallback and a Week-1 vertical slice exist as scope contingencies | explicit | high | `12` fallback/slice sections |
-| 36 | Save design is protective but anti-undo: one active save, safe points only, locked seeds, no rewind | explicit | high | `07` continuity; `08` local-data contract; `10` save/archive; `11` persistence + backup store |
-| 37 | Real time never advances game state; no idle pressure | explicit | high | `10`; `11` safe-point scheduler + CampaignState prohibitions |
-| 38 | The game behaves with the integrity the institution lacks (disclosure, no surprise interruption, stated expiries) | interpretation | high | `02` interruptions/continuity; `03` invariants; `07` gates; `10` UI rules |
-| 39 | No moral score anywhere; integrity warnings factual; citations un-ranked | explicit | high | `05` dialogue principles; `07` integrity display; `08`/`12` `MR-CIT-07` |
-| 40 | Aesthetic = stylized institutional realism with an explicit prohibited-style list; organoids and data are the only advanced visuals; PI office is warmer | explicit | high | `09` thesis, palette, effects; `06` PI-office note & floor presentation |
-| 41 | Humour = bureaucratic euphemism and self-justification; no villains; satire aimed upward with protected groups excluded | explicit | high | `05` dialogue principles + Elena/Camila rules; `12` env text & `MR-OPT-ELENA-FUTURE`; `06`/`12` B10 environmental boundary |
-| 42 | No voice acting; text-led dialogue; 5 × 8 non-lexical palettes; silent protagonist | explicit | high | `05` B08 contract; `09` dialogue sound boundary; `12` audio roles |
-| 43 | Accessibility is route-neutral and extensive; no timed, drag, hold, or precision input anywhere | explicit | high | `10` baseline + acceptance criteria; `04` B08 science access; `09` presets rule; `11` graphics-profile boundary |
-| 44 | Target player skews academic/ex-academic, narrative-systems literate, reading-tolerant | interpretation | medium-high | `12` env & record satire specificity; `03` submission ladder; `05` voice; `10` English-only, desktop-only |
-| 45 | Explicitly not: simulation, mastery game, optimiser, romance, mobile, localized, moral-scored, or open-ended | explicit | high | `04` safety boundary; `05` no romance; `10` device/language scope; `07` balance principles; `08` no ranking |
-| 46 | Core loop mechanics (configuration effects, band assignment, evidence-quality rules, monitoring counts, sample/equipment state) are unspecified | explicit gap | high | Absence across `02`, `04`, `07`; inputs named without mappings |
-| 47 | The protected break has no action ID, cost entry, or content object despite being high-frequency | implied gap | medium | `02`/`07` break rules vs `12` action table omission |
-| 48 | Optional PI requests, equipment events, Research Status reason strings, and action forecasts are required but not catalogued | implied gap | medium-high | `07` hybrid request system & causal feedback vs `12` ten `MR-TASK-*` items |
-| 49 | Fabrication's prose weight far exceeds its interactive footprint (essentially one priced menu plus a confession option) | implied | medium-high | Extensive treatment in `03`/`04`/`05`/`07`/`08` vs `12` `MR-SCN-A-REASONABLE-RESPONSE` + `optional.camila.video.confess` |
-| 50 | Week 14 is arithmetically near-saturated (scene period + 3-period response = 4 of 4 periods) | implied | medium | `12` scene table note "later response action costs 3/2"; `02` 4-periods-per-week structure |
+|   # | Conclusion                                                                                                                                               | Class                     | Conf.         | Sources / design objects                                                                                                         |
+| --: | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+|   1 | First-person, single-player, static browser game on one continuous ~400 m² floor; ~3 hours                                                               | explicit                  | high          | `06` floor plan & acceptance criteria; `07` "Approximately three hours"; `11` scope, static build, one continuous Three.js scene |
+|   2 | 16-week / 64-period fixed calendar starting and ending at 06:42; 7 mandatory scenes in fixed weeks every run                                             | explicit                  | high          | `02` campaign time; `03` invariants + beat sheet; `12` scene table                                                               |
+|   3 | Gates never wait for unfinished work; weak work changes the paper path, not the calendar                                                                 | explicit                  | high          | `03` invariants; `07` requests/gates; `02` workload and soft failure                                                             |
+|   4 | No game-over before Week 16; failure is informational                                                                                                    | explicit                  | high          | `02` outcome principles; `07` soft failure; `03` invariants                                                                      |
+|   5 | Costs (time + energy) always shown before commitment; walking, reading, ordinary dialogue are free                                                       | explicit                  | high          | `02` B08 contract & cost table; `07` time/pacing; `10` interaction principles                                                    |
+|   6 | Energy, not periods, is the binding constraint; protected breaks are effectively mandatory                                                               | interpretation            | medium-high   | Arithmetic over `02` cost table + `07` break rules + `12` action IDs vs 64-period budget                                         |
+|   7 | Crash is the sole involuntary event; fenced from equipment actions/cutscenes; never required by any route                                                | explicit                  | high          | `02` energy section; `07` pressure profiles                                                                                      |
+|   8 | Night/after-hours convert energy into time at the cost of people-access                                                                                  | implied                   | high          | `02`; `07` period schedule; `05`/`06` schedule tables (Elena absent except **The Future**)                                       |
+|   9 | Supported profile is content-identical and dissolves the night-work dilemma                                                                              | explicit / interpretation | high / medium | `02`; `07` profiles; `MR-UI-PROFILE-SUPPORTED`, `MR-UI-PROFILE-LOCK`                                                             |
+|  10 | Five-stage experiment loop, max 3 concurrent groups, monitoring requires physical presence                                                               | explicit                  | high          | `02` loop; `04` B04 contract; `06` functional-location placement; `07` interaction state                                         |
+|  11 | Two-layer results: biological result + evidence quality, from different input sets                                                                       | explicit                  | high          | `02` feedback model; `04` B05 contract; `07` experiment resolution                                                               |
+|  12 | Preparation sets an outcome band (80/20/0, 20/60/20, 0/20/80); seed locks variation at start; reload cannot reroll                                       | explicit                  | high          | `07` B10 outcome-band table; `11` PRNG/determinism                                                                               |
+|  13 | Evidence saturates easily: 5 required templates × 2 + starting 3 ≥ 12 cap                                                                                | interpretation            | medium-high   | `07` support scale & starting value; `04` B05 point rules; `12` six templates                                                    |
+|  14 | Claim level trades PI confidence against integrity and reviewer difficulty; overstatement can weaken the claim-scope card                                | explicit                  | high          | `07` PI confidence rules & PIIM band; `04` claim table; `08` response contract                                                   |
+|  15 | Raw record permanent; only the reported record is mutable; no falsification method provided                                                              | explicit                  | high          | `07` integrity/irreversible loss; `04` B05 contract; `03` integrity choices; `12` response fork                                  |
+|  16 | Misconduct is gated by _visibility_, not detection certainty; fabrication can publish, honest work can fail                                              | explicit                  | high          | `03` peer review + integrity; `07` career readiness; `08` route-unlock + PIIM contracts                                          |
+|  17 | Integrity gates no route; PI confidence does — the most moral number is the least coupled                                                                | implied                   | high          | `07`/`08` route conditions vs integrity rules                                                                                    |
+|  18 | Two routes reward different behaviours: Aldercroft = standing/alignment; Morrow = responsiveness/clarity                                                 | explicit                  | high          | `03` Morrow & Aldercroft; `08` B05 route-unlock contract                                                                         |
+|  19 | Samira and Camila both start at 40, one below the 41 gate — must be actively earned                                                                      | implied                   | high          | `05`/`07` starting values & thresholds; `12` `optional.samira.figure.credit`, `optional.camila.initial.careful`                  |
+|  20 | Gabriel trust ≥61 unlocks a physical shortcut — the only relationship-as-geometry mechanic                                                               | explicit                  | high          | `06` routes/sightlines; `12` `MR-OPT-GABRIEL-QUEUE` (+10 from 60)                                                                |
+|  21 | Optional scenes cost 1 period / 0 energy; several are strictly efficient (Samira EV+1; Gabriel shortcut)                                                 | implied                   | medium-high   | `12` `MR-ACT-RELATIONSHIP`; `optional.samira.figure.*` effects; vs 4-period experiment cycles                                    |
+|  22 | Honest play yields _less_ content: two optional scenes and one citation require a visible record mismatch                                                | interpretation            | high          | `12` `MR-OPT-HAORAN-MISSING-REPLICATE`, `MR-OPT-GABRIEL-ARCHIVE`, `MR-CIT-08`                                                    |
+|  23 | Reviewer 3's objection is fiction-level correct and unanswerable; the honest response is to concede                                                      | implied                   | high          | `03` reviewer table; `04` repair state "does not cause recovery"; `record.piimEditor.body`                                       |
+|  24 | Preprint posts in every run regardless of packet quality — guaranteed irreversible complicity beat                                                       | explicit                  | high          | `03` submission ladder; `12` `MR-SCN-PUBLIC-RECORD` ("The preprint posts in every run")                                          |
+|  25 | Public-record withdrawal is the most scrupulous act and forces the worst ending                                                                          | explicit                  | high          | `03` Week 14 table; `07` B06 resolution; `08` compatibility contract                                                             |
+|  26 | End of Contract cannot be chosen; Out of Scope is the dignified voluntary exit                                                                           | explicit                  | high          | `07` B06 final-state; `08` B06 contract; `MR-CIT-11`/`MR-CIT-12`                                                                 |
+|  27 | Endings modular: 4 labels + 29 modules, no moral ranking, no post-Week-16 randomness                                                                     | explicit                  | high          | `03` B06 epilogue; `08` modular structure + inventory; `12` ending draft                                                         |
+|  28 | Replay driven only by 12 Institutional Citations; ≥3 runs needed for all 12; no carryover advantage                                                      | explicit / interpretation | high          | `08` archive rules; `12` citation table (MR-CIT-09/10/11/12 mutually exclusive); `10` archive/replay                             |
+|  29 | Environment is a budgeted mood instrument; environmental text is never load-bearing                                                                      | explicit                  | high          | `06` act states, change limits, B10 boundary; `12` environmental catalogue                                                       |
+|  30 | Exit becomes inviting from Week 8 for every player, independent of route                                                                                 | explicit                  | high          | `06` semester states; `09` lighting                                                                                              |
+|  31 | Exploration is not a discovery mechanic: no inventory, pickups, hidden objects, minimap, or arrows                                                       | explicit                  | high          | `06` stations/objects; `02`; `10` interaction principles                                                                         |
+|  32 | Non-interactive content ~16 min (14:45 scenes + 75 s epilogue) of ~180 min                                                                               | explicit                  | high          | `12` scene durations; `02`/`03` 14–18-min target and 22-min maximum                                                              |
+|  33 | Content is bounded, counted, and non-generative (6/7/10/20/29/12/30; ≤6,000 unique words)                                                                | explicit                  | high          | `12` authority table + `MR-TEST-CONT-001`; `11` content/strings contract; `05` dialogue boundary                                 |
+|  34 | ~60 total meaningful decisions across 3 hours, placing heavy weight on legibility per decision                                                           | interpretation            | medium        | `07` period budgets vs `07` three-hour principle; `02` cost tables                                                               |
+|  35 | A pre-authored 90-minute fallback and a Week-1 vertical slice exist as scope contingencies                                                               | explicit                  | high          | `12` fallback/slice sections                                                                                                     |
+|  36 | Save design is protective but anti-undo: one active save, safe points only, locked seeds, no rewind                                                      | explicit                  | high          | `07` continuity; `08` local-data contract; `10` save/archive; `11` persistence + backup store                                    |
+|  37 | Real time never advances game state; no idle pressure                                                                                                    | explicit                  | high          | `10`; `11` safe-point scheduler + CampaignState prohibitions                                                                     |
+|  38 | The game behaves with the integrity the institution lacks (disclosure, no surprise interruption, stated expiries)                                        | interpretation            | high          | `02` interruptions/continuity; `03` invariants; `07` gates; `10` UI rules                                                        |
+|  39 | No moral score anywhere; integrity warnings factual; citations un-ranked                                                                                 | explicit                  | high          | `05` dialogue principles; `07` integrity display; `08`/`12` `MR-CIT-07`                                                          |
+|  40 | Aesthetic = stylized institutional realism with an explicit prohibited-style list; organoids and data are the only advanced visuals; PI office is warmer | explicit                  | high          | `09` thesis, palette, effects; `06` PI-office note & floor presentation                                                          |
+|  41 | Humour = bureaucratic euphemism and self-justification; no villains; satire aimed upward with protected groups excluded                                  | explicit                  | high          | `05` dialogue principles + Elena/Camila rules; `12` env text & `MR-OPT-ELENA-FUTURE`; `06`/`12` B10 environmental boundary       |
+|  42 | No voice acting; text-led dialogue; 5 × 8 non-lexical palettes; silent protagonist                                                                       | explicit                  | high          | `05` B08 contract; `09` dialogue sound boundary; `12` audio roles                                                                |
+|  43 | Accessibility is route-neutral and extensive; no timed, drag, hold, or precision input anywhere                                                          | explicit                  | high          | `10` baseline + acceptance criteria; `04` B08 science access; `09` presets rule; `11` graphics-profile boundary                  |
+|  44 | Target player skews academic/ex-academic, narrative-systems literate, reading-tolerant                                                                   | interpretation            | medium-high   | `12` env & record satire specificity; `03` submission ladder; `05` voice; `10` English-only, desktop-only                        |
+|  45 | Explicitly not: simulation, mastery game, optimiser, romance, mobile, localized, moral-scored, or open-ended                                             | explicit                  | high          | `04` safety boundary; `05` no romance; `10` device/language scope; `07` balance principles; `08` no ranking                      |
+|  46 | Core loop mechanics (configuration effects, band assignment, evidence-quality rules, monitoring counts, sample/equipment state) are unspecified          | explicit gap              | high          | Absence across `02`, `04`, `07`; inputs named without mappings                                                                   |
+|  47 | The protected break has no action ID, cost entry, or content object despite being high-frequency                                                         | implied gap               | medium        | `02`/`07` break rules vs `12` action table omission                                                                              |
+|  48 | Optional PI requests, equipment events, Research Status reason strings, and action forecasts are required but not catalogued                             | implied gap               | medium-high   | `07` hybrid request system & causal feedback vs `12` ten `MR-TASK-*` items                                                       |
+|  49 | Fabrication's prose weight far exceeds its interactive footprint (essentially one priced menu plus a confession option)                                  | implied                   | medium-high   | Extensive treatment in `03`/`04`/`05`/`07`/`08` vs `12` `MR-SCN-A-REASONABLE-RESPONSE` + `optional.camila.video.confess`         |
+|  50 | Week 14 is arithmetically near-saturated (scene period + 3-period response = 4 of 4 periods)                                                             | implied                   | medium        | `12` scene table note "later response action costs 3/2"; `02` 4-periods-per-week structure                                       |

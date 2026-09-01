@@ -14,13 +14,13 @@
 Costs use Anthropic's standard price of USD 5 per million input tokens and USD
 25 per million output tokens. There was no cache use.
 
-| Stage | Input tokens | Output tokens | Thinking tokens included in output | Stop reason | Estimated cost (USD) |
-|---|---:|---:|---:|---|---:|
-| Stage 1 — blind identity and appeal | 82,521 | 23,238 | 0 | `end_turn` | 0.993555 |
-| Stage 2 — latent expectations | 145,302 | 36,249 | 8,908 | `end_turn` | 1.632735 |
-| Stage 3 — holistic critique | 182,460 | 39,509 | 9,809 | `end_turn` | 1.900025 |
-| Stage 4 — review reconciliation | 173,553 | 47,882 | 14,563 | `end_turn` | 2.064815 |
-| **Total** | **583,836** | **146,878** | **33,280** |  | **6.591130** |
+| Stage                               | Input tokens | Output tokens | Thinking tokens included in output | Stop reason | Estimated cost (USD) |
+| ----------------------------------- | -----------: | ------------: | ---------------------------------: | ----------- | -------------------: |
+| Stage 1 — blind identity and appeal |       82,521 |        23,238 |                                  0 | `end_turn`  |             0.993555 |
+| Stage 2 — latent expectations       |      145,302 |        36,249 |                              8,908 | `end_turn`  |             1.632735 |
+| Stage 3 — holistic critique         |      182,460 |        39,509 |                              9,809 | `end_turn`  |             1.900025 |
+| Stage 4 — review reconciliation     |      173,553 |        47,882 |                             14,563 | `end_turn`  |             2.064815 |
+| **Total**                           |  **583,836** |   **146,878** |                         **33,280** |             |         **6.591130** |
 
 Leonardo reported USD 9.67 of available console credit before the paid calls.
 The local cost estimate therefore implies approximately USD 3.08 remained

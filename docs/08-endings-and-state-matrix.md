@@ -95,12 +95,12 @@ limited record with its caveat, and Not Met when absent, omitted, visibly
 unsupported, or visibly contradicted. Claim scope uses the approved Careful,
 Strong, and Inflated board requirements in `07-systems-and-balance.md`.
 
-| Response band | Possible Week 15 state |
-|---|---|
-| All three cards Met with no visible evidence contradiction | Published or accepted pending final work |
+| Response band                                                                   | Possible Week 15 state                      |
+| ------------------------------------------------------------------------------- | ------------------------------------------- |
+| All three cards Met with no visible evidence contradiction                      | Published or accepted pending final work    |
 | At least one card Met, all other cards Partly Met, and no visible contradiction | Accepted pending final work or under review |
-| Any card Not Met, all three cards only Partly Met, or a visible contradiction | Under review or rejected |
-| Journal or public-record withdrawal | Rejected or withdrawn |
+| Any card Not Met, all three cards only Partly Met, or a visible contradiction   | Under review or rejected                    |
+| Journal or public-record withdrawal                                             | Rejected or withdrawn                       |
 
 The stored campaign seed selects only between adjacent outcomes in the earned
 response band. It cannot turn strong work into rejection or weak work into
@@ -126,12 +126,12 @@ Keeping both routes open has no additional cost. The final choice is
 irreversible and states the concrete gains and losses of each available route
 before confirmation.
 
-| Career result | Ending label | Valid paper condition | Six-month consequence |
-|---|---|---|---|
-| Aldercroft chosen | **Pending Appointment** | Any except public-record withdrawal | A temporary bridge appointment and further committee delay; the interview is not proof of a permanent job. |
-| Morrow chosen | **Transferable Skills** | Any except public-record withdrawal | Employment at Morrow with stability and product pressure; one scientific question from the paper is now outside the protagonist's control. |
-| Deliberate departure | **Out of Scope** | Any except public-record withdrawal | Uncertainty, relief, and an open future. |
-| No viable route | **End of Contract** | Any | The fixed term ends, but the protagonist still has agency beyond the university. |
+| Career result        | Ending label            | Valid paper condition               | Six-month consequence                                                                                                                      |
+| -------------------- | ----------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Aldercroft chosen    | **Pending Appointment** | Any except public-record withdrawal | A temporary bridge appointment and further committee delay; the interview is not proof of a permanent job.                                 |
+| Morrow chosen        | **Transferable Skills** | Any except public-record withdrawal | Employment at Morrow with stability and product pressure; one scientific question from the paper is now outside the protagonist's control. |
+| Deliberate departure | **Out of Scope**        | Any except public-record withdrawal | Uncertainty, relief, and an open future.                                                                                                   |
+| No viable route      | **End of Contract**     | Any                                 | The fixed term ends, but the protagonist still has agency beyond the university.                                                           |
 
 Morrow can coexist with journal rejection or journal withdrawal, because the
 public preprint can remain. Aldercroft can coexist with every paper state
@@ -166,12 +166,12 @@ remains rejected or withdrawn. Published work becomes an item in another
 request or meeting; accepted work remains in an administrative loop; and a
 withdrawn public record has a clear cost.
 
-| Integrity state | Epilogue response |
-|---|---|
-| Defensible | No altered or unsupported report; honest work, including a corrected omission, remains defensible. |
-| Compromised | An unresolved omission remains an explicit limitation. |
-| Seriously undermined, undiscovered | Private unease, a fragile record, or future risk. |
-| Seriously undermined, visible | Direct professional or relationship consequence. |
+| Integrity state                    | Epilogue response                                                                                  |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Defensible                         | No altered or unsupported report; honest work, including a corrected omission, remains defensible. |
+| Compromised                        | An unresolved omission remains an explicit limitation.                                             |
+| Seriously undermined, undiscovered | Private unease, a fragile record, or future risk.                                                  |
+| Seriously undermined, visible      | Direct professional or relationship consequence.                                                   |
 
 Fatigue appears only after a crash or an ending energy value of zero or one.
 It changes scene tone, visual detail, and the relationship afterbeat, but not

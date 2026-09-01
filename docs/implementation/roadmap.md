@@ -52,13 +52,13 @@ conflict stops the affected work and enters `open-issues.md`.
 
 ## Decision classes
 
-| Class | Meaning | Change rule |
-|---|---|---|
-| Locked design | Creative intent, game behaviour, content, balance, visual identity, accessibility meaning, and failure meaning | Change only after Leonardo approves an update to the authoritative design document. |
-| Locked technical contract | Shared interface, schema, dependency, data owner, state transition, algorithm with observable effects, coordinate contract, or acceptance fixture | Change only through impact review, updated consumers and tests, and Leonardo's approval. |
-| Bounded implementation discretion | Private and reversible implementation detail with no contract or observable effect | A worker may choose it and must record a material choice in its contribution record. |
-| Measured fact | Performance, browser behaviour, build size, play quality, or another result that cannot exist before execution | Define the method, target, and response rule now; record the result only after measurement. |
-| Open issue | Missing, conflicting, or undecided material information | Stop dependent work and resolve the registered issue. |
+| Class                             | Meaning                                                                                                                                           | Change rule                                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Locked design                     | Creative intent, game behaviour, content, balance, visual identity, accessibility meaning, and failure meaning                                    | Change only after Leonardo approves an update to the authoritative design document.         |
+| Locked technical contract         | Shared interface, schema, dependency, data owner, state transition, algorithm with observable effects, coordinate contract, or acceptance fixture | Change only through impact review, updated consumers and tests, and Leonardo's approval.    |
+| Bounded implementation discretion | Private and reversible implementation detail with no contract or observable effect                                                                | A worker may choose it and must record a material choice in its contribution record.        |
+| Measured fact                     | Performance, browser behaviour, build size, play quality, or another result that cannot exist before execution                                    | Define the method, target, and response rule now; record the result only after measurement. |
+| Open issue                        | Missing, conflicting, or undecided material information                                                                                           | Stop dependent work and resolve the registered issue.                                       |
 
 ## Programme sequence and gates
 
@@ -140,23 +140,23 @@ change a frozen interface or creative decision silently.
 
 ## Specification blocks
 
-| Block | Subject | Main output | Depends on | Status |
-|---|---|---|---|---|
-| S00 | Governance and durable state | Roadmap, status, decisions, interfaces, open issues, authority, and gates | B00–B10 and R00–R07 | Documented |
-| S01 | Toolchain and repository | Exact runtime and development versions, package policy, scripts, directories, configuration, and environment rules | S00 | Documented |
-| S02 | Module architecture | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries | S01 | Documented |
-| S03 | Domain model and campaign state | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values | S02 | Documented |
-| S04 | Commands, rules, and determinism | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables | S03 | Documented |
-| S05 | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines | S03–S04 | Documented |
-| S06 | Content data and build profiles | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules | S03–S05 | Documented |
-| S07 | Persistence and recovery | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms | S03–S06 | Documented |
-| S08 | World geometry and interaction | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts | S02–S03 | Documented |
-| S09 | Input, UI, and accessibility | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance | S02–S06 and S08 | Documented |
-| S10 | Rendering, resources, assets, and audio | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour | S01–S03 and S08–S09 | Documented |
-| S11 | Browser, performance, and diagnostics | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules | S01–S03 and S08–S10 | Documented |
-| S12 | Test vectors and acceptance matrix | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks | S03–S11 | Documented |
-| S13 | Agent work orders and integration | Final file ownership, dependency graph, worker briefs, explicit Sol/Terra/Luna routing, focused context, branch and commit rules, contribution records, project-only AI-use records, review, and integration sequence | S01–S12 | Documented; governance amendment approved |
-| S14 | Consistency audit and gate packet | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet | S00–S13 | Documented |
+| Block | Subject                                    | Main output                                                                                                                                                                                                           | Depends on          | Status                                    |
+| ----- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------------------------------------- |
+| S00   | Governance and durable state               | Roadmap, status, decisions, interfaces, open issues, authority, and gates                                                                                                                                             | B00–B10 and R00–R07 | Documented                                |
+| S01   | Toolchain and repository                   | Exact runtime and development versions, package policy, scripts, directories, configuration, and environment rules                                                                                                    | S00                 | Documented                                |
+| S02   | Module architecture                        | Exact module graph, dependency directions, ownership, public interfaces, lifecycle, and error boundaries                                                                                                              | S01                 | Documented                                |
+| S03   | Domain model and campaign state            | Exact types, state shape, invariants, identifiers, serialization boundary, and derived versus stored values                                                                                                           | S02                 | Documented                                |
+| S04   | Commands, rules, and determinism           | Command and effect unions, validation order, rejection rules, PRNG contract, rule algorithms, and truth tables                                                                                                        | S03                 | Documented                                |
+| S05   | Calendar, scheduler, events, and cutscenes | Ordering, safe points, scene queue, expiry, interruption, skip, resume, and time-transition state machines                                                                                                            | S03–S04             | Documented                                |
+| S06   | Content data and build profiles            | File split, schemas, references, English strings, full/fallback/slice selection, validation, and migration rules                                                                                                      | S03–S05             | Documented                                |
+| S07   | Persistence and recovery                   | Database version, stores, keys, transactions, validation, backup, migration, corruption, completion, and clear-data algorithms                                                                                        | S03–S06             | Documented                                |
+| S08   | World geometry and interaction             | Coordinate system, floor dimensions, room geometry, collision, player controller, anchors, raycasts, stations, and camera contracts                                                                                   | S02–S03             | Documented                                |
+| S09   | Input, UI, and accessibility               | Action map, focus and pointer-lock state, every screen and overlay, UI view model, responsive behaviour, and accessibility acceptance                                                                                 | S02–S06 and S08     | Documented                                |
+| S10   | Rendering, resources, assets, and audio    | Render pipeline, scene graph, lighting, material and animation rules, resource lifecycle, placeholder and provenance policy, audio graph, and cue behaviour                                                           | S01–S03 and S08–S09 | Documented                                |
+| S11   | Browser, performance, and diagnostics      | Compatibility checks, graphics profiles, budgets, profiling method, diagnostics, failure display, and measurement response rules                                                                                      | S01–S03 and S08–S10 | Documented                                |
+| S12   | Test vectors and acceptance matrix         | Executable-format fixtures for valid and rejected paths, cross-module flows, traceability, coverage, and manual checks                                                                                                | S03–S11             | Documented                                |
+| S13   | Agent work orders and integration          | Final file ownership, dependency graph, worker briefs, explicit Sol/Terra/Luna routing, focused context, branch and commit rules, contribution records, project-only AI-use records, review, and integration sequence | S01–S12             | Documented; governance amendment approved |
+| S14   | Consistency audit and gate packet          | Complete inventory, contradiction and assumption audit, interface freeze record, open-issue result, and Gate-1 approval packet                                                                                        | S00–S13             | Documented                                |
 
 ## Planned specification files
 
@@ -183,7 +183,7 @@ unclear. It must register that artifact in `status.md`.
 
 `ai-use-log.md` is a separate private implementation-control record. It does
 not add an Sxx block or change a frozen contract. It records only completed
-work for *Minor Revisions* and must be read during normal session bootstrap.
+work for _Minor Revisions_ and must be read during normal session bootstrap.
 
 ## Block workflow
 

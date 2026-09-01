@@ -4,7 +4,7 @@ Status: **B00 and B10 documented; implementation approval pending**
 
 ## Confirmed vision
 
-*Minor Revisions* is a first-person, bitterly comic academic-survival game. The
+_Minor Revisions_ is a first-person, bitterly comic academic-survival game. The
 player is a developmental-biology postdoc in the last semester of a fixed-term
 position. A PI describes the remaining work on a promising cardiac-organoid
 result as only a few supplementary experiments. The player must decide how to
@@ -21,7 +21,7 @@ vertical slice.
 
 ## Title
 
-The approved working title is *Minor Revisions*. It refers to supposedly minor
+The approved working title is _Minor Revisions_. It refers to supposedly minor
 scientific and editorial demands, manuscript revision, and the protagonist's
 possible revision of their career.
 
@@ -75,7 +75,7 @@ feedback.
 ## Confirmed format
 
 - Three.js web game intended for later portfolio deployment alongside
-  *Wanderer*.
+  _Wanderer_.
 - First-person exploration with occasional external cinematic shots.
 - No login; local save and resume.
 - Stylized institutional realism.
@@ -160,7 +160,7 @@ decisions. The private evaluation thresholds are approved in
 
 ## Public position
 
-Public material must present *Minor Revisions* first as a complete narrative
+Public material must present _Minor Revisions_ first as a complete narrative
 game. Agent use is a second layer of the project. Public material must not call
 the game “made by AI.” It must not present the game as a simple Three.js
 learning exercise.

@@ -5,7 +5,7 @@ Status: **review completed; findings discussion pending**
 ## Purpose
 
 This protocol defines an independent frontier-LLM review of the complete
-*Minor Revisions* design before Leonardo considers implementation approval. It
+_Minor Revisions_ design before Leonardo considers implementation approval. It
 does not ask whether the project is a generally good or commercially attractive
 game. It asks whether the documented mechanics, incentives, progression,
 narrative, presentation, pacing, and content would produce the game that

@@ -2,45 +2,45 @@
 
 Status: **creative design, R00–R07, S00–S14, and model-routed subagent governance documented; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
 
-This index is the completeness contract for *Minor Revisions*. `Seeded` means
+This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
 gaps. It does not mean that the domain is finished.
 
-| Document | Domain | Status | Principal unresolved work |
-|---|---|---|---|
-| `01-vision-and-pillars.md` | Thesis, tone, scope | B10 documented | Later public wording and release execution require separate approval. |
-| `02-player-experience-and-loop.md` | Moment-to-moment play | B10 documented | Implementation evidence and later tuning only. |
-| `03-narrative-and-campaign.md` | Five-act story | B10 documented | Authored draft is ready for later specification review. |
-| `04-science-and-experiments.md` | Fictional science | B10 documented | Asset production and later implementation evidence only. |
-| `05-characters-and-dialogue.md` | Cast and voice | B10 documented | Authored draft is ready for later specification review. |
-| `06-world-and-level-design.md` | University research floor | B10 documented | Asset production and performance evidence only. |
-| `07-systems-and-balance.md` | State and rules | B10 documented | Bounded post-slice tuning only. |
-| `08-endings-and-state-matrix.md` | Outcomes | B10 documented | Authored draft is ready for later specification review. |
-| `09-art-audio-and-assets.md` | Presentation | B10 documented | Verified asset selection and measurements occur before integration. |
-| `10-ui-ux-accessibility.md` | Interface and access | B10 and S14 documented | Implementation verification only. |
-| `11-technical-architecture.md` | Runtime design | B10 and S01–S14 documented | Measured browser and performance results remain future facts. |
-| `12-content-specification.md` | Content inventory | B10 documented | Implementation evidence and later content revisions only. |
-| `13-testing-and-evaluation.md` | Quality evidence | B10 and S12–S14 documented | Test results are future evidence, not current claims. |
-| `14-production-plan.md` | Delivery strategy | B10 and S13–S14 documented | Leonardo may later revise capacity or release timing. |
-| `15-implementation-contract.md` | Agent handoff | B10 and S13–S14 plus incremental workflow documented | Work begins only after Gate 1 and the exact Step-1 plan approval. |
-| `reviews/independent-design-review-protocol.md` | External specification review | Review complete | Discuss the validated findings and record Leonardo's decisions. |
-| `reviews/2026-08-28-opus-5/` | Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/holistic-game-assessment-protocol.md` | Identity, fun-hypothesis, direction, and expectations review | Review complete | Preserve document-only quality claims as hypotheses until private play evidence exists. |
-| `reviews/2026-08-28-opus-5-holistic/` | Holistic Opus 5 reports and validation | Stored; advisory | No recommendation is accepted until Leonardo decides it. |
-| `reviews/recommendation-register.md` | Cross-review recommendation status | Current; R00–R07 documented | No review block remains; wait for Leonardo's next instruction. |
-| `decision-log.md` | Approved decisions | Current | Continue for every material choice |
-| `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
-| `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S14, Gate 1, and model-routed subagent governance documented | Gate 1 and the exact Step-1 plan are approved; only the assigned Step-1 foundation paths may proceed. |
-| `implementation/status.md` | Durable current state | Current; Sxx complete | Update in every specification commit. |
-| `implementation/decisions.md` | Technical and process decisions | Current through Gate 1 | Add only approved decisions and preserve supersessions. |
-| `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
-| `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`015` resolved | Register any later material issue before dependent work. |
-| `implementation/specification-audit.md` | S14 audit and gate packet | Documented with governance amendment audit | Gate 1 approved on 2026-09-01; it authorizes no code. |
-| `implementation/ai-use-log.md` | Private, project-only AI model and contribution provenance | Current | Future primary sessions and completed subagent contributions record actual model and reasoning evidence. |
-| `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented; Step 1 plan approved | Steps 2–70 each require a separate approved plan and accepted predecessor. |
-| `implementation/development-status.md` | Durable implementation resume point | Step 1 plan approved | Complete only the approved Step-1 foundation cycle. |
-| `implementation/step-acceptance-log.md` | Leonardo and agent evidence index | Initialized | No implementation step is accepted. |
+| Document                                        | Domain                                                       | Status                                                           | Principal unresolved work                                                                                |
+| ----------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `01-vision-and-pillars.md`                      | Thesis, tone, scope                                          | B10 documented                                                   | Later public wording and release execution require separate approval.                                    |
+| `02-player-experience-and-loop.md`              | Moment-to-moment play                                        | B10 documented                                                   | Implementation evidence and later tuning only.                                                           |
+| `03-narrative-and-campaign.md`                  | Five-act story                                               | B10 documented                                                   | Authored draft is ready for later specification review.                                                  |
+| `04-science-and-experiments.md`                 | Fictional science                                            | B10 documented                                                   | Asset production and later implementation evidence only.                                                 |
+| `05-characters-and-dialogue.md`                 | Cast and voice                                               | B10 documented                                                   | Authored draft is ready for later specification review.                                                  |
+| `06-world-and-level-design.md`                  | University research floor                                    | B10 documented                                                   | Asset production and performance evidence only.                                                          |
+| `07-systems-and-balance.md`                     | State and rules                                              | B10 documented                                                   | Bounded post-slice tuning only.                                                                          |
+| `08-endings-and-state-matrix.md`                | Outcomes                                                     | B10 documented                                                   | Authored draft is ready for later specification review.                                                  |
+| `09-art-audio-and-assets.md`                    | Presentation                                                 | B10 documented                                                   | Verified asset selection and measurements occur before integration.                                      |
+| `10-ui-ux-accessibility.md`                     | Interface and access                                         | B10 and S14 documented                                           | Implementation verification only.                                                                        |
+| `11-technical-architecture.md`                  | Runtime design                                               | B10 and S01–S14 documented                                       | Measured browser and performance results remain future facts.                                            |
+| `12-content-specification.md`                   | Content inventory                                            | B10 documented                                                   | Implementation evidence and later content revisions only.                                                |
+| `13-testing-and-evaluation.md`                  | Quality evidence                                             | B10 and S12–S14 documented                                       | Test results are future evidence, not current claims.                                                    |
+| `14-production-plan.md`                         | Delivery strategy                                            | B10 and S13–S14 documented                                       | Leonardo may later revise capacity or release timing.                                                    |
+| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented             | Work begins only after Gate 1 and the exact Step-1 plan approval.                                        |
+| `reviews/independent-design-review-protocol.md` | External specification review                                | Review complete                                                  | Discuss the validated findings and record Leonardo's decisions.                                          |
+| `reviews/2026-08-28-opus-5/`                    | Opus 5 reports and validation                                | Stored; advisory                                                 | No recommendation is accepted until Leonardo decides it.                                                 |
+| `reviews/holistic-game-assessment-protocol.md`  | Identity, fun-hypothesis, direction, and expectations review | Review complete                                                  | Preserve document-only quality claims as hypotheses until private play evidence exists.                  |
+| `reviews/2026-08-28-opus-5-holistic/`           | Holistic Opus 5 reports and validation                       | Stored; advisory                                                 | No recommendation is accepted until Leonardo decides it.                                                 |
+| `reviews/recommendation-register.md`            | Cross-review recommendation status                           | Current; R00–R07 documented                                      | No review block remains; wait for Leonardo's next instruction.                                           |
+| `decision-log.md`                               | Approved decisions                                           | Current                                                          | Continue for every material choice                                                                       |
+| `glossary.md`                                   | Shared terminology                                           | B10 documented                                                   | Expand only when a new approved term needs definition.                                                   |
+| `../assets/ASSET_MANIFEST.md`                   | Asset provenance                                             | B10 and S10 documented                                           | No production asset source is selected or verified yet.                                                  |
+| `implementation/roadmap.md`                     | Technical-specification programme                            | S00–S14, Gate 1, and model-routed subagent governance documented | Gate 1 and the exact Step-1 plan are approved; only the assigned Step-1 foundation paths may proceed.    |
+| `implementation/status.md`                      | Durable current state                                        | Current; Sxx complete                                            | Update in every specification commit.                                                                    |
+| `implementation/decisions.md`                   | Technical and process decisions                              | Current through Gate 1                                           | Add only approved decisions and preserve supersessions.                                                  |
+| `implementation/interfaces.md`                  | Shared-interface lifecycle                                   | `MR-IF-001`–`MR-IF-015` frozen `v1`                              | Changes require impact review and Leonardo's approval.                                                   |
+| `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`015` resolved                                 | Register any later material issue before dependent work.                                                 |
+| `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit                       | Gate 1 approved on 2026-09-01; it authorizes no code.                                                    |
+| `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                          | Future primary sessions and completed subagent contributions record actual model and reasoning evidence. |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Step 0 documented; Step 1 plan approved                          | Steps 2–70 each require a separate approved plan and accepted predecessor.                               |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step 1 plan approved                                             | Complete only the approved Step-1 foundation cycle.                                                      |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Initialized                                                      | No implementation step is accepted.                                                                      |
 
 ## Discussion roadmap
 
@@ -76,7 +76,7 @@ status, and the next place to resume.
 - Subagent governance: **documented**; future plans must use explicit model
   routing and focused delegation records.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
-  S01–S14, and Step-0 model history belongs only to *Minor Revisions*.
+  S01–S14, and Step-0 model history belongs only to _Minor Revisions_.
 - Incremental implementation start: **Step 1 plan approved**; only the
   `MR-WP-00` foundation work order and its approved checks may proceed.
 - Vertical-slice acceptance: **blocked**; Steps 1–30 do not exist.
@@ -156,9 +156,9 @@ status, and the next place to resume.
   El-Masri, Dr. Gabriel da Silva, and Dr. Camila Torres. Each has a distinct
   institutional pressure and a relationship arc that can support help,
   conflict, or both. The Common Archive hosts the preprint. Morrow Biotech is
-  the interested company. The journal sequence is *Cosmos*, *Knowledge*,
-  *Developmental Systems Letters*, and *Proceedings of the International
-  Institute of Morphodynamics*. The first three reject the paper; the fourth
+  the interested company. The journal sequence is _Cosmos_, _Knowledge_,
+  _Developmental Systems Letters_, and _Proceedings of the International
+  Institute of Morphodynamics_. The first three reject the paper; the fourth
   sends it to peer review.
 - **Deferred outside B02:** B03 owns exact scene order, rejection text,
   reviewer reports, personal-history reveals, and character reactions. B05
@@ -181,7 +181,7 @@ status, and the next place to resume.
   five acts. It begins and ends at 06:42. The player remains in a continuous
   day-and-night work loop without a home or sleep action. Seven mandatory
   scenes and ten optional character scenes provide the fixed campaign backbone.
-  *Cosmos*, *Knowledge*, and *Developmental Systems Letters* reject the paper;
+  _Cosmos_, _Knowledge_, and _Developmental Systems Letters_ reject the paper;
   `PIIM`, edited by Dr. Leila Haddad, gives one major-revision round with three
   fixed reviewer positions. Morrow Biotech and Aldercroft University provide
   competing, uncertain career routes. The player can make defensible,
@@ -227,7 +227,7 @@ status, and the next place to resume.
 - **Complete when:** each repeated player action, outcome, feedback signal, and
   transition can be described without inventing mechanics during implementation.
 - **Completion record:** `Complete Minor Revisions B04 laboratory and
-  manuscript gameplay`.
+manuscript gameplay`.
 
 ### B05 — Time, resources, relationships, and balance
 
@@ -272,8 +272,8 @@ status, and the next place to resume.
 - **Approved decision set:** all endings use a 60–90-second epilogue set six
   months after Week 16. It contains a career scene, paper-aftershock,
   relationship afterbeat, final image, and summary. The four career labels are
-  *Pending Appointment*, *Transferable Skills*, *Out of Scope*, and *End of
-  Contract*. Paper state has no new random outcome after Week 16. Integrity,
+  _Pending Appointment_, _Transferable Skills_, _Out of Scope_, and _End of
+  Contract_. Paper state has no new random outcome after Week 16. Integrity,
   fatigue, relationship-selection, and route-precedence rules are approved.
   Each completion records a local ending card and satirical Institutional
   Citations. A new campaign has a separate seed and no gameplay carry-over.
@@ -341,6 +341,7 @@ status, and the next place to resume.
   no-account privacy boundary, cutscene recap, and data-clear behaviour are
   approved. Captions and speaker names default on, with the approved scaling,
   contrast, motion, cue, Interaction Assist, and browser-view requirements.
+
 - **Deferred outside B08:** B09 defines the stack, browser scope and baseline
   class, renderer/loading/audio pipeline, controller roles, UI and save runtime
   architecture, save schema/migrations, collision, and authored-character
@@ -394,6 +395,7 @@ status, and the next place to resume.
   Use Vitest, Playwright, ESLint, Prettier, local quality commands, a future
   non-deploying GitHub Actions workflow after remote approval, a build-size
   audit, manual performance evidence, and intentional dependency review.
+
 - **Deferred outside B09:** B10 resolves content identifiers, data instances,
   private evaluation targets, licence plan, requirement traceability, and
   implementation work packages. Exact Node and package versions, verified
@@ -435,11 +437,12 @@ status, and the next place to resume.
   are in `15-implementation-contract.md`. Exact package versions, verified
   asset sources and codecs, and measured performance are deliberate future
   implementation facts. They do not authorize code now.
+
 - **Complete when:** the vertical slice, 90-minute fallback, and full game have
   bounded content, evidence, budget, stop criteria, and agent-owned work
   packages traceable to approved requirements.
 - **Completion record:** `Complete Minor Revisions B10 content, evaluation,
-  and handoff`.
+and handoff`.
 
 ### Progress protocol
 

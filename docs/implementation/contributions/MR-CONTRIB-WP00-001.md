@@ -18,7 +18,7 @@ reasoning_level: high
 
 The controlled implementation worker completed the approved S01 package
 baseline, semantic static local foundation page, and package-owned foundation
-tests. The page identifies *Minor Revisions* as a local foundation and states
+tests. The page identifies _Minor Revisions_ as a local foundation and states
 that game systems are not yet available. This is not a game implementation,
 Three.js scene, final visual design, or Step-1 acceptance.
 

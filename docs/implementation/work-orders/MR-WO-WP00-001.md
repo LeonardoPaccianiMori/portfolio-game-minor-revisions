@@ -28,7 +28,7 @@ isolated worktree.
 ## Plain-language effect
 
 This creates the small local starting point for the game project. It can open a
-page that says *Minor Revisions* without pretending that a game, a Three.js
+page that says _Minor Revisions_ without pretending that a game, a Three.js
 scene, or final visual design already exists.
 
 ## Owned paths
@@ -102,7 +102,7 @@ scene, or final visual design already exists.
    Vite ports, local Playwright browser path, linting, formatting, ignored
    generated paths, and no environment-file loading.
 4. Make `index.html` a semantic, plain local foundation page that identifies
-   *Minor Revisions* and states that game systems are not yet available. Do
+   _Minor Revisions_ and states that game systems are not yet available. Do
    not add a source directory, JavaScript entry module, Three.js import,
    stylesheet, control, asset, or final visual treatment.
 5. Add one Node-only foundation test and one local Playwright start-page test.

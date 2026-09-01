@@ -32,14 +32,14 @@ acquire new narrative meaning.
 B04 fixes six functional locations. B07 decides their room placement,
 dimensions, adjacency, and visual form.
 
-| Location | Player use |
-|---|---|
-| Sample bench | Select, label, and configure a sample group. |
-| Experiment setup station | Start a laser, oxygen-loss, or drug-exposure experiment. |
-| Active sample rack | Read the physical label and current state of each active group. |
-| Imaging and monitoring bay | Inspect evidence views and make a monitoring decision. |
-| Analysis workstation | Interpret results and create evidence cards. |
-| Manuscript desk | Arrange paper cards, respond to requests, and commit revisions. |
+| Location                   | Player use                                                      |
+| -------------------------- | --------------------------------------------------------------- |
+| Sample bench               | Select, label, and configure a sample group.                    |
+| Experiment setup station   | Start a laser, oxygen-loss, or drug-exposure experiment.        |
+| Active sample rack         | Read the physical label and current state of each active group. |
+| Imaging and monitoring bay | Inspect evidence views and make a monitoring decision.          |
+| Analysis workstation       | Interpret results and create evidence cards.                    |
+| Manuscript desk            | Arrange paper cards, respond to requests, and commit revisions. |
 
 The desk work queue can show status from elsewhere on the floor, but it cannot
 operate equipment. This supports repeated movement through a compact laboratory
@@ -50,14 +50,14 @@ without requiring a general item inventory.
 These are broad location contracts. The B07 schedule below gives the exact
 period anchors:
 
-| Character | Main physical or communication locations |
-|---|---|
-| Elena Markovic | PI office, main laboratory, and planned walk-throughs |
-| Haoran Zhao | Tissue-culture room, main laboratory bench, and shared desk area |
-| Samira El-Masri | Imaging room, shared desk area, and break room |
-| Gabriel da Silva | Facility station, imaging room, and shared equipment areas |
-| Camila Torres | Email and video calls at the protagonist's desk |
-| Editor and reviewers | Messages and reports only |
+| Character            | Main physical or communication locations                         |
+| -------------------- | ---------------------------------------------------------------- |
+| Elena Markovic       | PI office, main laboratory, and planned walk-throughs            |
+| Haoran Zhao          | Tissue-culture room, main laboratory bench, and shared desk area |
+| Samira El-Masri      | Imaging room, shared desk area, and break room                   |
+| Gabriel da Silva     | Facility station, imaging room, and shared equipment areas       |
+| Camila Torres        | Email and video calls at the protagonist's desk                  |
+| Editor and reviewers | Messages and reports only                                        |
 
 Camila, the editor, and the reviewers do not need physical navigation or 3D
 models during the playable semester. Camila's Week 10 call uses the protagonist
@@ -127,15 +127,15 @@ Tissue culture ─── Main laboratory ─── Imaging / facility
 Break room ─────── South corridor ─── Exit vestibule
 ```
 
-| Space | Approximate size | Primary use |
-|---|---:|---|
-| Main laboratory | 10 m × 8.5 m, 85 m² | Sample preparation and experiment setup. |
-| Tissue-culture room | 5 m × 7 m, 35 m² | Active sample rack and tissue health. |
-| Imaging and facility room | 7 m × 8 m, about 55 m² | Monitoring bay, imaging, and service work. |
-| Shared desks | 11 m × 5 m, 55 m² | Analysis, manuscript, messages, and desk scenes. |
-| PI office | 4 m × 5 m, 20 m² | Elena's meetings and required scenes. |
-| Break room | 6 m × 5 m, 30 m² | Protected break, small talk, and notices. |
-| Corridor, exit, and utility | about 120 m² | South corridor, exit vestibule, door recesses, and non-playable service space. |
+| Space                       |       Approximate size | Primary use                                                                    |
+| --------------------------- | ---------------------: | ------------------------------------------------------------------------------ |
+| Main laboratory             |    10 m × 8.5 m, 85 m² | Sample preparation and experiment setup.                                       |
+| Tissue-culture room         |       5 m × 7 m, 35 m² | Active sample rack and tissue health.                                          |
+| Imaging and facility room   | 7 m × 8 m, about 55 m² | Monitoring bay, imaging, and service work.                                     |
+| Shared desks                |      11 m × 5 m, 55 m² | Analysis, manuscript, messages, and desk scenes.                               |
+| PI office                   |       4 m × 5 m, 20 m² | Elena's meetings and required scenes.                                          |
+| Break room                  |       6 m × 5 m, 30 m² | Protected break, small talk, and notices.                                      |
+| Corridor, exit, and utility |           about 120 m² | South corridor, exit vestibule, door recesses, and non-playable service space. |
 
 The main laboratory and shared desks use glass partitions. Tissue culture and
 imaging are enclosed glass rooms. Gabriel's facility station is immediately
@@ -202,26 +202,26 @@ hunt. Each room has one main functional station cluster and no more than two
 optional inspectable or social objects. The player can inspect an object for
 story or start a stated interaction. It does not enter an inventory.
 
-| Room | Main station cluster | Optional objects and story support |
-|---|---|---|
-| Main laboratory | Sample bench and experiment setup station | Booking screen; equipment labels. |
-| Tissue culture | Active sample rack | Status display; maintenance notice. |
-| Imaging and facility | Imaging and monitoring bay | Queue terminal; service alcove. |
-| Shared desks | Analysis workstation and manuscript desk | Haoran's moving thesis list; Samira's sketchbook. |
-| PI office | Required scene area | Grant calendar; revision stack. |
-| Break room | Protected-break interaction | Noticeboard; damaged coffee machine. |
-| Corridor and exit | Exit boundary and access terminal | Posters; access panel; changing notices. |
+| Room                 | Main station cluster                      | Optional objects and story support                |
+| -------------------- | ----------------------------------------- | ------------------------------------------------- |
+| Main laboratory      | Sample bench and experiment setup station | Booking screen; equipment labels.                 |
+| Tissue culture       | Active sample rack                        | Status display; maintenance notice.               |
+| Imaging and facility | Imaging and monitoring bay                | Queue terminal; service alcove.                   |
+| Shared desks         | Analysis workstation and manuscript desk  | Haoran's moving thesis list; Samira's sketchbook. |
+| PI office            | Required scene area                       | Grant calendar; revision stack.                   |
+| Break room           | Protected-break interaction               | Noticeboard; damaged coffee machine.              |
+| Corridor and exit    | Exit boundary and access terminal         | Posters; access panel; changing notices.          |
 
 The six B04 functional locations therefore have fixed placement:
 
-| Functional location | B07 location |
-|---|---|
-| Sample bench | Main laboratory. |
-| Experiment setup station | Main laboratory. |
-| Active sample rack | Tissue-culture room. |
-| Imaging and monitoring bay | Imaging room. |
-| Analysis workstation | Shared desks. |
-| Manuscript desk | Shared desks. |
+| Functional location        | B07 location         |
+| -------------------------- | -------------------- |
+| Sample bench               | Main laboratory.     |
+| Experiment setup station   | Main laboratory.     |
+| Active sample rack         | Tissue-culture room. |
+| Imaging and monitoring bay | Imaging room.        |
+| Analysis workstation       | Shared desks.        |
+| Manuscript desk            | Shared desks.        |
 
 The desk can show a work queue from elsewhere, but cannot operate equipment.
 Meaningful monitoring, intervention, and equipment work still require the
@@ -238,15 +238,15 @@ block time-costing work. Optional scenes remain available through their stated
 deadline. Temporary character absence pauses physical access but does not
 extend a deadline; required content keeps an authored desk or world fallback.
 
-| Scene | B07 spatial staging |
-|---|---|
-| **Clarified** | Tissue-culture rack to main laboratory, then PI office. Control returns at shared desks. |
-| **A Complete Narrative** | PI office, called by its warm light and revision stack. |
-| **What We Had** | Shared desks, then PI office. |
-| **Public Record** | Shared-desk manuscript station. |
-| **Helpful Comments** | Shared desks, then PI office. |
-| **A Reasonable Response** | Shared desks, then PI office. |
-| **06:42** | Research floor to the glass exit vestibule. |
+| Scene                     | B07 spatial staging                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| **Clarified**             | Tissue-culture rack to main laboratory, then PI office. Control returns at shared desks. |
+| **A Complete Narrative**  | PI office, called by its warm light and revision stack.                                  |
+| **What We Had**           | Shared desks, then PI office.                                                            |
+| **Public Record**         | Shared-desk manuscript station.                                                          |
+| **Helpful Comments**      | Shared desks, then PI office.                                                            |
+| **A Reasonable Response** | Shared desks, then PI office.                                                            |
+| **06:42**                 | Research floor to the glass exit vestibule.                                              |
 
 The optional-scene anchors are fixed: **Borrowed Time** is in tissue culture;
 **The Missing Replicate** at shared desks; **Shared Instrument** at the imaging
@@ -263,23 +263,23 @@ simulated crowd. A short authored walk can occur in a scene. A campaign beat,
 optional scene, equipment event, or relationship result overrides the normal
 anchor.
 
-| Character | Early | Late | Night | After-hours |
-|---|---|---|---|---|
-| Elena | PI office | Main laboratory or PI office | Scene only | Absent except **The Future** |
-| Haoran | Tissue culture | Main laboratory or shared desks | Rare desk scene | Absent |
-| Samira | Shared desks or break room | Imaging room | Scene only | Absent |
-| Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
-| Camila | Remote only | Remote only | Remote only | Remote only |
+| Character | Early                      | Late                             | Night                  | After-hours                  |
+| --------- | -------------------------- | -------------------------------- | ---------------------- | ---------------------------- |
+| Elena     | PI office                  | Main laboratory or PI office     | Scene only             | Absent except **The Future** |
+| Haoran    | Tissue culture             | Main laboratory or shared desks  | Rare desk scene        | Absent                       |
+| Samira    | Shared desks or break room | Imaging room                     | Scene only             | Absent                       |
+| Gabriel   | Facility station           | Facility station or imaging room | Remote or on-call only | Absent                       |
+| Camila    | Remote only                | Remote only                      | Remote only            | Remote only                  |
 
 The eligible anchors use this exact background roster:
 
-| Weeks | Early | Late | Night | After-hours |
-|---|---|---|---|---|
-| 1–4 | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None |
-| 5–7 | Haoran, Gabriel | Elena, Samira | Haoran | None, except **The Future** |
-| 8–9 | Haoran, Gabriel | Elena, Samira | None | None, except **The Future** |
-| 10–14 | Gabriel | Samira | None | None |
-| 15–16 | None | None | None | None |
+| Weeks | Early                   | Late                   | Night  | After-hours                 |
+| ----- | ----------------------- | ---------------------- | ------ | --------------------------- |
+| 1–4   | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None                        |
+| 5–7   | Haoran, Gabriel         | Elena, Samira          | Haoran | None, except **The Future** |
+| 8–9   | Haoran, Gabriel         | Elena, Samira          | None   | None, except **The Future** |
+| 10–14 | Gabriel                 | Samira                 | None   | None                        |
+| 15–16 | None                    | None                   | None   | None                        |
 
 A required scene, optional scene, operational room state, or support result
 overrides the roster for its needed character. It does not add a simulated
@@ -299,13 +299,13 @@ campaign state have been checked.
 The floor has five persistent act states. They alter room function and story
 meaning, not the room plan.
 
-| Weeks | State | Floor change |
-|---|---|---|
-| 1–4 | Orderly but overbooked | Booking pressure, early maintenance, and working equipment. |
-| 5–7 | Manuscript clutter | Revision piles, contradictory notes, and increasingly cold shared work. |
-| 8–9 | Rejection and public record | Preprint and rejection traces appear. The exit begins to look more inviting. |
-| 10–14 | Review pressure | Colder light, repairs, warnings, queue pressure, and accumulated clutter. |
-| 15–16 | Decision horizon | Emptier rooms, accumulated debris, cleared desk traces, and the most inviting exit. |
+| Weeks | State                       | Floor change                                                                        |
+| ----- | --------------------------- | ----------------------------------------------------------------------------------- |
+| 1–4   | Orderly but overbooked      | Booking pressure, early maintenance, and working equipment.                         |
+| 5–7   | Manuscript clutter          | Revision piles, contradictory notes, and increasingly cold shared work.             |
+| 8–9   | Rejection and public record | Preprint and rejection traces appear. The exit begins to look more inviting.        |
+| 10–14 | Review pressure             | Colder light, repairs, warnings, queue pressure, and accumulated clutter.           |
+| 15–16 | Decision horizon            | Emptier rooms, accumulated debris, cleared desk traces, and the most inviting exit. |
 
 The colder and emptier later states increase pressure, but they do not remove
 interactive comedy. Queue text, notices, contextual responses, and changed
@@ -314,11 +314,11 @@ and institutional consequence, not a replacement for play.
 
 The time-of-day layer combines with the act state:
 
-| Period | Functional lighting and activity |
-|---|---|
-| Early | Blue-grey exterior light and normal service. |
-| Late | Flat daylight and full fluorescent activity. |
-| Night | Dark windows, quiet rooms, and equipment light pools. |
+| Period      | Functional lighting and activity                                  |
+| ----------- | ----------------------------------------------------------------- |
+| Early       | Blue-grey exterior light and normal service.                      |
+| Late        | Flat daylight and full fluorescent activity.                      |
+| Night       | Dark windows, quiet rooms, and equipment light pools.             |
 | After-hours | Reduced lighting, emptier corridors, and limited shared services. |
 
 The PI office stays warmer than the surrounding floor. From Week 8, the exit
@@ -350,11 +350,11 @@ content family. Each state appears visibly before commitment and offers at
 least two routes. A room notice that is not in this table is presentation only
 and cannot block work.
 
-| State | Window and place | Visible condition | Clear routes and different costs |
-|---|---|---|---|
-| `MR-ROOM-FACILITY-QUEUE` | Weeks 1–4, facility station and imaging bay | The shared slot is overbooked; equipment is Unavailable until the player responds. | Wait one period for Ready equipment; use the limited slot now and enter with Limited equipment; or complete the optional **The Queue** scene for its stated Ready or Limited result and Gabriel-trust effect. |
-| `MR-ROOM-IMAGING-BOOKING` | Weeks 2–5, imaging booking board | Samira and the player have one overlapping booking. | Wait one period for Ready equipment; use the limited observation route now and enter with Limited equipment; or complete the optional **Shared Instrument** scene for its stated Ready or Limited result and Samira-trust effect. |
-| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Weeks 10–14, imaging bay and service alcove | A visible service limit makes normal imaging Unavailable. | Wait one period with no energy cost and restore Ready equipment; use the limited service path immediately and enter with Limited equipment; or use Gabriel's earned support after the respectful queue choice to restore Ready equipment without an extra period. |
+| State                           | Window and place                            | Visible condition                                                                  | Clear routes and different costs                                                                                                                                                                                                                                  |
+| ------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-ROOM-FACILITY-QUEUE`        | Weeks 1–4, facility station and imaging bay | The shared slot is overbooked; equipment is Unavailable until the player responds. | Wait one period for Ready equipment; use the limited slot now and enter with Limited equipment; or complete the optional **The Queue** scene for its stated Ready or Limited result and Gabriel-trust effect.                                                     |
+| `MR-ROOM-IMAGING-BOOKING`       | Weeks 2–5, imaging booking board            | Samira and the player have one overlapping booking.                                | Wait one period for Ready equipment; use the limited observation route now and enter with Limited equipment; or complete the optional **Shared Instrument** scene for its stated Ready or Limited result and Samira-trust effect.                                 |
+| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Weeks 10–14, imaging bay and service alcove | A visible service limit makes normal imaging Unavailable.                          | Wait one period with no energy cost and restore Ready equipment; use the limited service path immediately and enter with Limited equipment; or use Gabriel's earned support after the respectful queue choice to restore Ready equipment without an extra period. |
 
 The limited route never hides its Mixed-preparation consequence. Waiting uses
 the authored room-response action and advances exactly one period. A character

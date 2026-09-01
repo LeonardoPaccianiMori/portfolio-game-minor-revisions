@@ -3,7 +3,7 @@
 Status: **documented; Gate 1 ready for Leonardo approval; no implementation authorized**
 
 This specification fixes the rendering, visual-resource, animation, cutscene
-presentation, asset-provenance, and audio contracts for *Minor Revisions*. It
+presentation, asset-provenance, and audio contracts for _Minor Revisions_. It
 does not select an asset, create source code, or report a measured browser or
 performance result.
 
@@ -131,10 +131,10 @@ soft-shadow method. No more than twelve moving objects cast shadows at one
 time. Shadow quality is:
 
 | Graphics quality | Directional shadow map |
-|---|---:|
-| Low | Off |
-| Standard | `1024 x 1024` |
-| High | `2048 x 2048` |
+| ---------------- | ---------------------: |
+| Low              |                    Off |
+| Standard         |          `1024 x 1024` |
+| High             |          `2048 x 2048` |
 
 S11 now owns the exact measured-performance method and response. A worker
 cannot silently change these values in response to an unrecorded observation.
@@ -164,17 +164,17 @@ slot. Stable object IDs determine their draw order.
 
 The candidate S10 colour values are:
 
-| Role | Value |
-|---|---|
-| Paper beige | `#D8CFB8` |
-| Cool blue-grey | `#6F7C85` |
+| Role                | Value     |
+| ------------------- | --------- |
+| Paper beige         | `#D8CFB8` |
+| Cool blue-grey      | `#6F7C85` |
 | Institutional green | `#55705D` |
-| Charcoal | `#24282C` |
-| Soft amber | `#D6A15B` |
+| Charcoal            | `#24282C` |
+| Soft amber          | `#D6A15B` |
 | Organoid coral-pink | `#D46F82` |
-| Data teal | `#2F8F97` |
-| Attention amber | `#C98224` |
-| Serious-fault red | `#A84444` |
+| Data teal           | `#2F8F97` |
+| Attention amber     | `#C98224` |
+| Serious-fault red   | `#A84444` |
 
 Teal means scientific or neutral data. Amber means attention. Red means a
 serious fault. Green does not mean success. Text, icon, sound, shape, or object
@@ -395,14 +395,14 @@ hostile alarms, constant noise, and horror presentation.
 
 Music uses the six existing content roles without renaming them:
 
-| ID | Role |
-|---|---|
-| `MR-MUS-01` | Opening pulse: dry, low electronic motion |
+| ID          | Role                                           |
+| ----------- | ---------------------------------------------- |
+| `MR-MUS-01` | Opening pulse: dry, low electronic motion      |
 | `MR-MUS-02` | Orderly pressure: restrained laboratory rhythm |
-| `MR-MUS-03` | Manuscript loop: thin formal melody |
-| `MR-MUS-04` | Public record: bright institutional swell |
-| `MR-MUS-05` | Review pressure: colder reduced pulse |
-| `MR-MUS-06` | Exit horizon: sparse open chord |
+| `MR-MUS-03` | Manuscript loop: thin formal melody            |
+| `MR-MUS-04` | Public record: bright institutional swell      |
+| `MR-MUS-05` | Review pressure: colder reduced pulse          |
+| `MR-MUS-06` | Exit horizon: sparse open chord                |
 
 Story and presentation request a stable role ID, never an audio file path.
 Only one music role can play. A role change uses a `2.0 s` crossfade. Requesting
@@ -464,11 +464,11 @@ control, and follows the S02 fatal-failure route.
 
 S10 requires these future fixture groups:
 
-| Fixture group | Required coverage |
-|---|---|
-| `MR-S10-RND-001` — Rendering | Exactly five setups: base renderer; quality levels; lighting transition; layered papers and decals; and Reduced Motion effects. Together they also check canvas resize, colour handling, materials, shadows, palette roles, science effects, and the absence of custom shaders. |
-| `MR-S10-SCN-001` — Character and Cutscene | Exactly five setups: shared animation roles; missing animation; focused-view transition; complete cutscene; and skipped cutscene with full restoration. Together they also check camera limits, Camila's monitor portrait, one active token, audio and UI restoration, stale responses, and controlled failure. |
-| `MR-S10-RES-001` — Resource and Audio | Exactly six setups: shared resource loading; optional-resource failure; required-resource failure; four audio-bus routes; room-ambience transition; and suspended audio. Together they also check specialist ownership, initial preparation, provenance and placeholders, music and dialogue roles, cue priority, spatial sound, mute, cancellation, release, and teardown. |
+| Fixture group                             | Required coverage                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-S10-RND-001` — Rendering              | Exactly five setups: base renderer; quality levels; lighting transition; layered papers and decals; and Reduced Motion effects. Together they also check canvas resize, colour handling, materials, shadows, palette roles, science effects, and the absence of custom shaders.                                                                                             |
+| `MR-S10-SCN-001` — Character and Cutscene | Exactly five setups: shared animation roles; missing animation; focused-view transition; complete cutscene; and skipped cutscene with full restoration. Together they also check camera limits, Camila's monitor portrait, one active token, audio and UI restoration, stale responses, and controlled failure.                                                             |
+| `MR-S10-RES-001` — Resource and Audio     | Exactly six setups: shared resource loading; optional-resource failure; required-resource failure; four audio-bus routes; room-ambience transition; and suspended audio. Together they also check specialist ownership, initial preparation, provenance and placeholders, music and dialogue roles, cue priority, spatial sound, mute, cancellation, release, and teardown. |
 
 The lifecycle fault cases attach to these three groups. They cover restart
 during loading, restart during a cutscene, return to title while audio plays,

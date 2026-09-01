@@ -1,6 +1,6 @@
 # Minor Revisions
 
-*Minor Revisions* is a planned first-person Three.js academic-survival game
+_Minor Revisions_ is a planned first-person Three.js academic-survival game
 about a developmental-biology postdoc trying to turn a promising cardiac
 organoid result into a publishable paper before a final semester ends.
 
@@ -107,7 +107,7 @@ step, code, package, asset, or network action.
 The private [`AI-use log`](docs/implementation/ai-use-log.md) records the
 actual model, reasoning effort, role, completed work, and evidence for this
 game's completed AI contributions. Its B00–B10, R00–R07, S01–S14, and Step-0
-history applies only to *Minor Revisions*. Future entries record each primary
+history applies only to _Minor Revisions_. Future entries record each primary
 Codex session and completed subagent contribution. A configuration default is
 never used as evidence of the actual session model or reasoning effort.
 

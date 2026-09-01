@@ -4,9 +4,9 @@
 
 ## 1. Direct verdict
 
-**Does *Minor Revisions* currently look like a good game design on its own terms?**
+**Does _Minor Revisions_ currently look like a good game design on its own terms?**
 
-Yes, with one large qualification. It is a good *systems and narrative* design and an incomplete *play* design. Across eleven documents it converts its theme into mechanism with unusual completeness — the claim triad, the two-layer result, the unbending calendar, unscored undetectable misconduct, the trust-gated shortcut, the deflationary endings. Almost nothing in it is decorative. But the layer between the player's hands and those systems — what a station view actually is, what the manuscript board actually does, what a corridor walk actually contains — has never been designed. It has only been constrained. The design knows in precise detail what the player will *decide* and almost nothing about what the player will *do*.
+Yes, with one large qualification. It is a good _systems and narrative_ design and an incomplete _play_ design. Across eleven documents it converts its theme into mechanism with unusual completeness — the claim triad, the two-layer result, the unbending calendar, unscored undetectable misconduct, the trust-gated shortcut, the deflationary endings. Almost nothing in it is decorative. But the layer between the player's hands and those systems — what a station view actually is, what the manuscript board actually does, what a corridor walk actually contains — has never been designed. It has only been constrained. The design knows in precise detail what the player will _decide_ and almost nothing about what the player will _do_.
 
 That is a real deficiency, not a documentation lag. The roadmap in `00-design-index.md` runs B00–B10 and contains no block for moment-to-moment interaction feel. B04 ("Laboratory and manuscript gameplay") specifies structure, costs, and prohibitions; B08 specifies presentation limits. Neither asks what the repeated action feels like the fortieth time.
 
@@ -43,7 +43,7 @@ Two identity elements are currently weaker than the documents imply:
 
 I separate this by scale, preserving Stage 1's assessments.
 
-**Moment-to-moment: not yet credible.** The reliable pleasure is *reading* — environmental notices, journal rejections, reviewer reports, Elena's dialogue. `12`'s draft proves that pleasure exists. The unreliable pleasure is *doing*. Strip the fiction and the repeated action is: walk 5–20 m, open a station view, select from ≤3 qualitative options, read a cost preview, confirm, walk away. Sixty-plus times. Two design decisions produce this and both are defensible in isolation — `01` pillar 1 and its dexterity non-goal remove motor skill deliberately, and `10` removes drag/hold/timed/precision input for accessibility. But nothing was put in their place, and no document treats that as a question. This is the design's principal fun risk and it is a *missing decision*, not a weak one.
+**Moment-to-moment: not yet credible.** The reliable pleasure is _reading_ — environmental notices, journal rejections, reviewer reports, Elena's dialogue. `12`'s draft proves that pleasure exists. The unreliable pleasure is _doing_. Strip the fiction and the repeated action is: walk 5–20 m, open a station view, select from ≤3 qualitative options, read a cost preview, confirm, walk away. Sixty-plus times. Two design decisions produce this and both are defensible in isolation — `01` pillar 1 and its dexterity non-goal remove motor skill deliberately, and `10` removes drag/hold/timed/precision input for accessibility. But nothing was put in their place, and no document treats that as a question. This is the design's principal fun risk and it is a _missing decision_, not a weak one.
 
 **Short loop (1–2 periods): credible in Weeks 1–5 and 10–13.** The asynchronous three-slot structure is genuinely well built. `02`'s "waiting creates competing decisions rather than dead time" is delivered by real mechanism: monitoring points force returns, the desk queue cannot operate equipment, windows expire, and night periods carry an energy surcharge. A Week-3 slice has a real decision shape.
 
@@ -65,7 +65,7 @@ Three structural achievements deserve naming because they are theme-as-mechanism
 
 - **The Week 6–7 pair.** Elena removes cautious wording, then asks for it back, and the paper returns near its original form: "Yes. But now it has been revised by history" (`12` `scene.whatWeHad.elena.answer`). That is the whole game in two beats.
 - **Reviewer 2 versus Reviewer 3 with Editor Haddad asking for both** (`03`; `12` `record.reviewer2`, `record.reviewer3`, `record.piimEditor`). The impossibility is structural, not authorial complaint.
-- **Morrow opens because academia rejects you.** `MR-OPT-CAMILA-INITIAL` is gated on the *Knowledge* rejection. The industry route is a consequence of failure, not a reward for success.
+- **Morrow opens because academia rejects you.** `MR-OPT-CAMILA-INITIAL` is gated on the _Knowledge_ rejection. The industry route is a consequence of failure, not a reward for success.
 
 Four weaknesses:
 
@@ -78,7 +78,7 @@ Four weaknesses:
 
 ## 5. Artistic and audio-direction verdict
 
-**Artistic: clear, with one contradiction.** `09` defines stylized institutional realism positively and negatively, specifies nine palette roles with functions and non-colour redundancy, and makes the sharpest presentation decision in the project: *the organoid and its data displays are the only visibly advanced things in the world.* That single contrast carries the satire visually. The asset limits (one kit, ≤24 prop families, 4 NPCs, 1K textures, ≤75 MB) are coherent with the €150 ceiling.
+**Artistic: clear, with one contradiction.** `09` defines stylized institutional realism positively and negatively, specifies nine palette roles with functions and non-colour redundancy, and makes the sharpest presentation decision in the project: _the organoid and its data displays are the only visibly advanced things in the world._ That single contrast carries the satire visually. The asset limits (one kit, ≤24 prop families, 4 NPCs, 1K textures, ≤75 MB) are coherent with the €150 ceiling.
 
 The contradiction: `README` says the institution becomes "increasingly surreal" and `01` pillar 2 says "increasingly absurd," while `09` bans distorted architecture, giant props, slapstick, and glitch effects, and `06` caps floor change at one major and two minor items per phase across the entire 400 m². The approved act-state progression is entirely realistic: booking pressure → revision piles → preprint traces → colder light → emptier rooms. **The design currently delivers escalating institutional realism, not surrealism.** Textual-only surrealism is a legitimate and probably correct direction; the problem is that two top-level documents describe a different game. See HGA-R13.
 
@@ -92,17 +92,17 @@ Secondary artistic concern: twenty lighting presets (5 act states × 4 periods) 
 
 Alignment is high. Stage 2 established the expectation map; the concrete design satisfies most of it. The exceptions:
 
-| Expectation | Status |
-|---|---|
-| E2 pillar 6: "the game must remain fun and absurdist throughout" | **Not met by the design's own apparatus.** No roadmap block, no requirement, no test, no criterion. `13`'s twelve test IDs, twelve slice items, and eight experience criteria contain no engagement or pacing check. `01`'s criterion "The first part can make the player laugh" is the only affective criterion and it covers humour, not engagement. HGA-R02. |
-| E10 criteria 1, 2, 4, 5, 8 | **Unverifiable under E13.** Criterion 1 requires "a player without academic experience"; `13` names Leonardo the sole human evaluator and the corpus's own premise is that the material comes from his experience. This is a methodological contradiction inside the approved plan, not merely a limitation. HGA-R03. |
-| E5 (no academic knowledge required) | Probably met by the text, unverifiable by the method. Same as above. |
-| `README`/`01` surrealism promise | **Contradicted by `09`/`06`.** HGA-R13. |
-| E2 pillar 2 (intelligible causes) | **Contradicted by the outcome-band mechanism at the available sample size.** HGA-R05. |
-| P1 (epistemic honesty about the project's own claims) | Fully met and unusually thorough. Note the pleasing structural fact that a game about the gap between record and claim is being documented by a process that refuses to let a plan pose as evidence. |
-| E11 (~3 hours) | Intent clear; arithmetic never performed. HGA-R04. |
-| E14 (€150, 6–8 h/week) | Coherent, and the tightest constraint in the project. Four rigged NPCs and forty original vocal sounds are the roles most likely to force original creation or role removal. |
-| E21–E23 (agent-direction demonstration without an AI showcase in the fiction) | **Fully met.** `01`'s separation is clean: fiction never references production; evidence lives in repository history, requirement traceability, and contribution records. The `MR-REQ-…`/`MR-WP-…`/`MR-TEST-…` lattice in `15` is genuinely strong portfolio evidence *because* it is not in the game. No change needed. |
+| Expectation                                                                   | Status                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| E2 pillar 6: "the game must remain fun and absurdist throughout"              | **Not met by the design's own apparatus.** No roadmap block, no requirement, no test, no criterion. `13`'s twelve test IDs, twelve slice items, and eight experience criteria contain no engagement or pacing check. `01`'s criterion "The first part can make the player laugh" is the only affective criterion and it covers humour, not engagement. HGA-R02. |
+| E10 criteria 1, 2, 4, 5, 8                                                    | **Unverifiable under E13.** Criterion 1 requires "a player without academic experience"; `13` names Leonardo the sole human evaluator and the corpus's own premise is that the material comes from his experience. This is a methodological contradiction inside the approved plan, not merely a limitation. HGA-R03.                                           |
+| E5 (no academic knowledge required)                                           | Probably met by the text, unverifiable by the method. Same as above.                                                                                                                                                                                                                                                                                            |
+| `README`/`01` surrealism promise                                              | **Contradicted by `09`/`06`.** HGA-R13.                                                                                                                                                                                                                                                                                                                         |
+| E2 pillar 2 (intelligible causes)                                             | **Contradicted by the outcome-band mechanism at the available sample size.** HGA-R05.                                                                                                                                                                                                                                                                           |
+| P1 (epistemic honesty about the project's own claims)                         | Fully met and unusually thorough. Note the pleasing structural fact that a game about the gap between record and claim is being documented by a process that refuses to let a plan pose as evidence.                                                                                                                                                            |
+| E11 (~3 hours)                                                                | Intent clear; arithmetic never performed. HGA-R04.                                                                                                                                                                                                                                                                                                              |
+| E14 (€150, 6–8 h/week)                                                        | Coherent, and the tightest constraint in the project. Four rigged NPCs and forty original vocal sounds are the roles most likely to force original creation or role removal.                                                                                                                                                                                    |
+| E21–E23 (agent-direction demonstration without an AI showcase in the fiction) | **Fully met.** `01`'s separation is clean: fiction never references production; evidence lives in repository history, requirement traceability, and contribution records. The `MR-REQ-…`/`MR-WP-…`/`MR-TEST-…` lattice in `15` is genuinely strong portfolio evidence _because_ it is not in the game. No change needed.                                        |
 
 ---
 
@@ -128,19 +128,20 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R01 — Specify the manuscript board as a system before any work package touches it
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
-**Problem.** The board is where the game's central verb lives and it has no specified behaviour. `07` "Manuscript system" names seven card types (figure, evidence, claim, control, authorship, request, supplementary), a requirements panel, and commit snapshots. `12` supplies three claim strings and three requirements strings. Nothing states how many cards attach where, what conflicts, or what the player is solving. Under `15`'s definition of done item 1 ("its approved behaviour and failure path are implemented") and its source-of-truth order, an implementation worker on `MR-WP-05`/`MR-WP-08` would have to escalate rather than build. This is a *missing decision*, and it sits at the centre of Weeks 5–8 and Week 14.
+**Problem.** The board is where the game's central verb lives and it has no specified behaviour. `07` "Manuscript system" names seven card types (figure, evidence, claim, control, authorship, request, supplementary), a requirements panel, and commit snapshots. `12` supplies three claim strings and three requirements strings. Nothing states how many cards attach where, what conflicts, or what the player is solving. Under `15`'s definition of done item 1 ("its approved behaviour and failure path are implemented") and its source-of-truth order, an implementation worker on `MR-WP-05`/`MR-WP-08` would have to escalate rather than build. This is a _missing decision_, and it sits at the centre of Weeks 5–8 and Week 14.
 
 **Sources.** `07` "Manuscript system"; `12` `manuscript.requirements.*`, `MR-TASK-MANUSCRIPT`, `MR-SCN-WHAT-WE-HAD`, `MR-SCN-A-REASONABLE-RESPONSE`; `15` `MR-REQ-UI-001`, `MR-WP-05`, `MR-WP-08`.
 
 **Likely player effect if unresolved.** Weeks 5–8 — a fifth of the campaign and the entire "Manuscript hell" act — degrade into clicking a claim toggle and a Commit button. The three integrity acts (`scene.response.stronger.omit/.alter/.fabricate`) become menu items rather than physical removals of something a claim needed. The satire's participatory dimension is lost: the player watches inflation happen rather than performing it.
 
-**Smallest change.** Specify the board as a small constraint-satisfaction surface with a fixed vocabulary, using only existing card types: each claim level declares a required number of support slots by card type (careful < strong < inflated support burden is *inverted* — the inflated claim requires the *most* support and therefore visibly lacks it); the requirements panel enumerates unmet slots and conflicts in plain text; committing with unmet slots is permitted and recorded. Omitting a valid card physically empties a slot a claim depends on. No typing, no new card types, no new UI class.
+**Smallest change.** Specify the board as a small constraint-satisfaction surface with a fixed vocabulary, using only existing card types: each claim level declares a required number of support slots by card type (careful < strong < inflated support burden is _inverted_ — the inflated claim requires the _most_ support and therefore visibly lacks it); the requirements panel enumerates unmet slots and conflicts in plain text; committing with unmet slots is permitted and recorded. Omitting a valid card physically empties a slot a claim depends on. No typing, no new card types, no new UI class.
 
 **Preserves.** `07`'s card-based no-typing board, requirements panel, commit snapshots without free undo, and the careful/strong/inflated triad; `01`'s non-goal against simulated word processing; `10`'s no-drag/no-timed input rule (slots are selection-and-confirm).
 
-**Risks and costs.** A constraint puzzle can become fiddly or can make the inflated claim *mechanically* punished, which would violate `07`'s no-moral-score principle — the slot deficit must read as "unsupported," not as "wrong." Adds one authoring pass over the evidence-card tag vocabulary.
+**Risks and costs.** A constraint puzzle can become fiddly or can make the inflated claim _mechanically_ punished, which would violate `07`'s no-moral-score principle — the slot deficit must read as "unsupported," not as "wrong." Adds one authoring pass over the evidence-card tag vocabulary.
 
 **Affected.** `07` (manuscript system), `12` (`manuscript.*` strings and requirements text), `10` (station-view spec), `15` (`MR-REQ-UI-001` acceptance criteria).
 
@@ -149,6 +150,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R02 — Make "fun and absurdist throughout" a testable criterion with a named owner
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
 **Problem.** `01` pillar 6 and decision log 2026-08-27 make engagement a positive obligation across the whole runtime; `07` restates it ("escalation, not repetitive grinding"). `13` contains twelve test IDs, twelve slice-completion items, and eight experience criteria — and no engagement, pacing, or repetition check. Seven of the eight criteria are comprehension or meaning criteria; the eighth covers humour. The approved evaluation apparatus would pass a game that is legible, meaningful, funny, well-tested, accessible, private, and tedious. `00`'s roadmap has no block that ever owned this question.
@@ -170,6 +172,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R03 — Resolve the comprehension criteria that the sole-evaluator rule cannot verify
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
 **Problem.** `01`'s criterion 1 is "A player without academic experience can explain the main objective"; criterion 2 concerns whether each experiment's purpose is understandable. `13` forbids recruiting external players and names Leonardo the only human evaluator, and decision log 2026-08-23 records that the material derives from his own experience. He cannot proxy for a non-academic reader. At least criteria 1, 2, and arguably 4, 5, and 8 are structurally unverifiable under the approved method. `13` acknowledges an adjacent limit ("not a claim about a general audience") without resolving the dependency.
@@ -182,7 +185,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 
 **Preserves.** E13 exactly — no participants, no data collection, no consent, no surveys, only Leonardo and Codex; and P1's discipline of not overclaiming what the evidence supports.
 
-**Risks and costs.** An LLM cold reader is not a human non-academic and will over-perform on jargon and under-perform on affect. The protocol must therefore be limited to *comprehension*, never to humour or emotional criteria — which means criteria 4, 5, and 8 remain judged by Leonardo alone and should be labelled as such.
+**Risks and costs.** An LLM cold reader is not a human non-academic and will over-perform on jargon and under-perform on affect. The protocol must therefore be limited to _comprehension_, never to humour or emotional criteria — which means criteria 4, 5, and 8 remain judged by Leonardo alone and should be labelled as such.
 
 **Affected.** `01` ("Experience success criteria"), `13` (new test flow under `MR-TEST-CONT-001` or a new ID), `00` (gate criteria).
 
@@ -191,6 +194,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R04 — Close the time and energy economy on paper before implementation
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
 **Problem.** The campaign's central engine — triage among five competing goods across 64 periods — has never been arithmetically closed, and three inputs are undefined. (a) **Monitoring points per run:** `02` says "a meaningful monitoring point" (singular), `07` says "meaningful points" (plural), and `12` charges per monitor; total demand swings by 10–20 periods on this alone. (b) **The protected break has no `MR-ACT-` ID** despite costing one period, while `02` states "No later agent may add a new time-costing action class without a requirement change" — the energy economy's only recovery mechanism is currently unimplementable. (c) **Diminishing returns on repeats are unquantified** (`07` "Later repeats have diminishing returns"), so the reachability of a Substantial packet — an Aldercroft condition — is unknown. Stage 1's estimate of ~70–80 periods of demand against 64 available may be right, but the design cannot currently tell. Separately, the break economics (first-in-week restores 2, later restore 1) create a degenerate incentive to take exactly one break early each week, flattening the recovery rhythm the crash system implies.
@@ -212,6 +216,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R05 — Make the earned outcome band visible so causality is actually learnable
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
 **Problem.** `01` pillar 2 promises intelligible causes; `02` states "The player must be able to learn causal patterns even when information is incomplete"; `07` repeats it. The mechanism is `07`'s three-band table — Robust 80/20/0, Mixed 20/60/20, Compromised 0/20/80 — sampled across roughly 8–12 experiment resolutions per campaign. At that sample size the Mixed band is indistinguishable from noise. `07`'s tuning clause permits changing only the three percentages, which cannot fix a sample-size problem. This is a weak decision, not a missing one.
@@ -220,7 +225,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 
 **Likely player effect if unresolved.** A player who prepares carefully and receives a Limited result cannot tell whether they erred or were unlucky. Perceived arbitrariness in a game whose entire subject is the relationship between preparation and defensible evidence. It also silently punishes the honest-careful playstyle the design otherwise rewards.
 
-**Smallest change.** Do not change the bands. Change what is shown. At the start-confirmation step, name the earned band in plain language alongside the existing cost preview: "Preparation: mixed. Result likely limited." After resolution, the existing stated-reason line names the band as the cause: "Mixed preparation; limited result." The player then learns the *deterministic* causal model (inputs → band) with certainty, while the outcome inside the band retains its locked variation. This requires no new system: `02` already mandates "a short plain-language forecast of the likely trade-off" before a meaningful action and `07` already mandates a stated reason after every material change.
+**Smallest change.** Do not change the bands. Change what is shown. At the start-confirmation step, name the earned band in plain language alongside the existing cost preview: "Preparation: mixed. Result likely limited." After resolution, the existing stated-reason line names the band as the cause: "Mixed preparation; limited result." The player then learns the _deterministic_ causal model (inputs → band) with certainty, while the outcome inside the band retains its locked variation. This requires no new system: `02` already mandates "a short plain-language forecast of the likely trade-off" before a meaningful action and `07` already mandates a stated reason after every material change.
 
 **Preserves.** The band table, the stored seed, the no-reroll-on-reload rule, `07`'s prohibition on hiding a player-caused problem, and `10`'s no-hidden-formulas rule (a band name is a label, not a formula).
 
@@ -233,9 +238,10 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R06 — Decide station-view interaction texture, and enrich two stations rather than all six
+
 **CRITICAL · DOCUMENT-SUPPORTED**
 
-**Problem.** No document specifies what a focused station view *is*, beyond: it stops movement, costs nothing to leave, shows one action with its costs, and uses ordinary selection (`02`, `04`, `10`). Six functional stations are visited 60+ times per run. The absence is a missing decision at the exact point where Stage 1 located the game's largest fun risk. `01` pillar 1 and the dexterity non-goal removed motor skill deliberately; nothing was put in its place.
+**Problem.** No document specifies what a focused station view _is_, beyond: it stops movement, costs nothing to leave, shows one action with its costs, and uses ordinary selection (`02`, `04`, `10`). Six functional stations are visited 60+ times per run. The absence is a missing decision at the exact point where Stage 1 located the game's largest fun risk. `01` pillar 1 and the dexterity non-goal removed motor skill deliberately; nothing was put in its place.
 
 **Sources.** `02` "Station, sample, and feedback rules"; `04` "B04 interaction contract" and "B08 science presentation and access contract"; `06` "B07 functional stations and room objects"; `10` "Supported devices and controls"; `00` roadmap (no block owns interaction feel).
 
@@ -258,6 +264,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R07 — Close the Weeks 8–9 mechanical vacuum
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** Every experiment window in `12` closes by W6; oxygen-loss opens at W10. Weeks 8–9 offer the preprint commit, three rejections, `MR-TASK-RESEARCH-PLAN`, and Camila's first contact. The short loop that carries Weeks 1–5 and 10–13 has nothing to run.
@@ -272,6 +279,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R08 — Decide the floor-population axis and align the documents to it
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `02` and `06` justify mandatory physical travel because stations are "far enough apart that a queue, a colleague, or a changed room state can become meaningful." But walking costs zero periods, the floor has a fixed brisk speed with no traversal challenge, authored anchors are the only NPC presence, and `06` caps visible change at one major and two minor items per phase across 400 m². The rationale and the budget describe different floors.
@@ -286,6 +294,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R09 — Decide whether complicity is meant to be broadly experienced
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `01`'s emotional arc names "uncomfortable complicity" as its middle stage. The mechanism is three explicit, labelled, single-confirmation choices with stated costs inside one scene (`12` `scene.response.stronger.omit/.alter/.fabricate`), plus optional omission at the board. Whether most players ever face this meaningfully depends entirely on whether the honest path fits in 64 periods — which HGA-R04 will determine. The design has never stated its intent.
@@ -300,12 +309,13 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R10 — Define "visible evidence concern" operationally
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** Both career routes gate on it — Aldercroft requires "no serious evidence concern visible to Aldercroft or Elena," Morrow closes on "a visible conflict" — and no document maps which of `12`'s flags (`haoranConcern`, `gabrielConcern`, `morrowConcern`, `omission`, `alteredReading`, `fabrication`, `correction`) constitute visibility to whom. `MR-TEST-CHAR-001` must prove "a hidden integrity problem alone does not create an unsupported route block," which is untestable without the definition.
 **Sources.** `07` "Career-route readiness"; `08` "B05 route-unlock contract"; `12` flag set; `13` `MR-TEST-CHAR-001`.
 **Effect.** This is the hinge of the entire ethical system — the difference between "fabrication can go unpunished" and "fabrication silently closes your future." Without a definition, the outcome is whatever the implementer guesses.
-**Smallest change.** One table in `07`: for each flag, state whether it is visible to Elena, to Aldercroft, to Camila, or to none. The obvious reading, consistent with `03` and `05`, is that only a *confronted and unresolved* record mismatch (`haoranConcern`/`gabrielConcern` surviving to Week 13) and a disclosure to Camila are visible; raw integrity deltas are not.
+**Smallest change.** One table in `07`: for each flag, state whether it is visible to Elena, to Aldercroft, to Camila, or to none. The obvious reading, consistent with `03` and `05`, is that only a _confronted and unresolved_ record mismatch (`haoranConcern`/`gabrielConcern` surviving to Week 13) and a disclosure to Camila are visible; raw integrity deltas are not.
 **Preserves.** `08`'s core commitment that hidden misconduct alone blocks neither route; the detection-gated-on-visible-record rule.
 **Risks.** A too-narrow definition makes fabrication almost cost-free; a too-broad one makes it deterministically fatal and converts the system into a hidden morality gate.
 **Affected.** `07`, `08`, `12` (flag semantics), `15` (`MR-REQ-CHAR-001`, `MR-REQ-END-001`).
@@ -314,12 +324,13 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R11 — Give non-nihilism more than one afterbeat slot
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `01` forbids nihilism and names solidarity as the counterweight. The concrete counterweight is one relationship afterbeat per run selected from fifteen modules, of which five are `*-SUPPORT`, plus `MR-CIT-05`. All four career modules are deflationary; the warmest line in the corpus is `ending.career.leave`. Four of five relationships resolve only as a bar and a status line.
 **Sources.** `01` "Emotional experience promise"; `08` "Modular epilogue structure" and afterbeat selection order; `12` career and relationship modules.
 **Effect.** After three hours of investment in Haoran or Samira, their arc may resolve as a number. The ending risks reading as nihilistic despite an explicit instruction not to be — a meaning failure, not a fun failure.
-**Smallest change.** No new modules and no epilogue lengthening. `08` already specifies that the summary's **People** section shows "the five final working-trust bars and short status lines." Author those five status lines as *consequence sentences* rather than status labels, so every relationship resolves in one line and the selected afterbeat remains the only dramatised one. Cost: five short strings per relationship state, well inside the 6,000-word cap.
+**Smallest change.** No new modules and no epilogue lengthening. `08` already specifies that the summary's **People** section shows "the five final working-trust bars and short status lines." Author those five status lines as _consequence sentences_ rather than status labels, so every relationship resolves in one line and the selected afterbeat remains the only dramatised one. Cost: five short strings per relationship state, well inside the 6,000-word cap.
 **Preserves.** The 60–90-second budget, the 29-module count, `08`'s single-afterbeat selection order, the deflationary career endings, and the no-moral-ranking rule.
 **Risks.** Slightly lengthens the ending card read; five × three states is fifteen short strings to author well, and badly written ones would read as consolation.
 **Affected.** `08` (ending summary), `12` (ending-module draft, new `ending.people.*` keys), `15` (`MR-REQ-END-001`).
@@ -328,6 +339,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R12 — Give the Morrow route proportionate weight without adding a character model
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** Morrow is mechanically parallel to Aldercroft — a route gate, a Week-15 offer, an ending label — but is delivered by a character with no model, no floor presence, and three contacts (`MR-OPT-CAMILA-INITIAL`, `-VIDEO`, `-OFFER`). Pillar 4 ("the exit is meaningful, not utopian") rests on her. Aldercroft, by contrast, is reinforced by Elena in five of seven mandatory scenes.
@@ -342,6 +354,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R13 — Resolve where absurdity escalates, and give it one cheap channel
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `README` promises an "increasingly surreal" institution and `01` pillar 2 promises "increasingly absurd," while `09` bans distorted architecture, giant props, slapstick, and glitch effects, and `06` caps visible change at one major and two minor items per phase across the whole floor. The approved act progression is entirely realistic. Two top-level documents describe a game the presentation documents forbid.
@@ -356,6 +369,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R14 — Stop the three evidence views from collapsing into a lookup table
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** Structure, rhythm, and repatterning-index views resolve to strong / unclear / mixed / failed (`04`). Once a player maps the combinations to a classification, analysis becomes a two-second read. With ~8–12 analyses per campaign, mastery arrives around the fourth. Analysis is one of only two interpretive pleasures in the game.
@@ -363,13 +377,14 @@ These are load-bearing and correct. Recommendations below are constrained by the
 **Effect.** The station that should reward judgement becomes the station that rewards recall.
 **Smallest change.** In the **Limited** band only, permit the three views to disagree, and require the evidence card to record which view the player treats as primary plus a caveat tag. `04` already specifies that the card records "the research question, controls, available evidence views, evidence quality, and caveats" — so the field exists. The recorded primary view then becomes something Reviewer 3 or a later concern scene can legitimately reference, because it is part of the visible record.
 **Preserves.** The two-layer result model, the four qualitative states, the no-raw-data rule, the band contract, and `07`'s promise that poor results give useful information (a disagreement is information).
-**Risks.** Adds one authored decision to every Limited analysis, consuming periods if it is charged and player attention if it is not. Must not become a way to be *wrong*, which would collide with P4.
+**Risks.** Adds one authored decision to every Limited analysis, consuming periods if it is charged and player attention if it is not. Must not become a way to be _wrong_, which would collide with P4.
 **Affected.** `02`, `04`, `07`, `12` (evidence-card strings, possibly one new caveat vocabulary), `15` (`MR-REQ-EXP-001`).
 **Test.** Codex fixture: for each template at Limited band, assert at least one view-disagreement configuration and that the recorded primary view persists into the manuscript and the concern-scene entry conditions.
 
 ---
 
 ### HGA-R15 — Author the Week-6 contradictory-revision beat
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `03`'s beat sheet requires "Elena removes cautious wording, then asks for it back" in Week 6; `MR-SCN-WHAT-WE-HAD` (Week 7) depends on it having happened; `MR-REQ-NARR-001` requires the fixed campaign in the approved order. `12` contains no content object for it. This is arguably the campaign's signature joke and it does not exist.
@@ -384,6 +399,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R16 — Quantify repeats, diminishing returns, and Substantial reachability
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `04` permits one repeat each for laser/sham, range, batch, and repair-state. `07` says later repeats have diminishing returns and that the game states when a further repeat will not help — without a number. It is also unstated whether a repeat can upgrade a weak result. Evidence starts at 3 of 12; Coherent (6–8) or Substantial (9–12) is an Aldercroft condition. The evidence economy's reachability is therefore unknown.
@@ -398,6 +414,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R17 — Make the authored equipment-fault system exist
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `02`, `04`, and `07` all promise that equipment queues, faults, and access limits are authored situations offering a stated decision space — wait, negotiate, ask Gabriel, use a limited alternative, or change the plan. `12` contains one instance: `MR-OPT-GABRIEL-QUEUE`. A system described in three documents has one authored occurrence.
@@ -412,9 +429,10 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R18 — Define PIIM response-card satisfaction
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
-**Problem.** `07` and `08` specify three cards (batch evidence, oxygen-loss, claim scope), each met / partly met / not met, mapping to four response bands. Neither states what *makes* a card met. `MR-CIT-03`'s trigger — "meet all three PIIM response cards, **or** state all three limits clearly in a defensible response" — implies that an honestly stated limitation can substitute for evidence, which would be a significant and thematically excellent rule. No systems document says so.
+**Problem.** `07` and `08` specify three cards (batch evidence, oxygen-loss, claim scope), each met / partly met / not met, mapping to four response bands. Neither states what _makes_ a card met. `MR-CIT-03`'s trigger — "meet all three PIIM response cards, **or** state all three limits clearly in a defensible response" — implies that an honestly stated limitation can substitute for evidence, which would be a significant and thematically excellent rule. No systems document says so.
 **Sources.** `07` "PIIM response band"; `08` "B05 PIIM response contract"; `12` `MR-CIT-03`.
 **Effect.** The Week-14 climax's outcome logic is undefined. It also determines whether the honest-weak path has a real route to publication, which is central to `01` pillar 3.
 **Smallest change.** One table: for each card, state the conditions for met / partly met / not met, including whether a clearly stated limitation counts as partly met. Confirm or reject the `MR-CIT-03` implication explicitly.
@@ -426,10 +444,11 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R19 — Decide replay intent and stop the Archive from implying more than exists
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** The Archive keeps twelve ending cards and twelve persistent citations, implying a collection loop. The content permits little: fixed calendar, all seven mandatory scenes every run, ≤2 variants per scene, preprint always posted, journal ladder invariant, ~25–30 authored decision points. Run 3 is a reread.
-**Sources.** `08` "B08 ending presentation and local-data contract"; `10` "Local save, archive, and replay"; `03`/`05`/`12` variant caps; `01` "Branching and replayability *may* add longevity."
+**Sources.** `08` "B08 ending presentation and local-data contract"; `10` "Local save, archive, and replay"; `03`/`05`/`12` variant caps; `01` "Branching and replayability _may_ add longevity."
 **Effect.** A player who takes the Archive as an invitation will find run 3 thin and read the design as having overpromised — the one place where this otherwise scrupulously non-overclaiming project does so.
 **Smallest change.** Decide the intent and align the presentation. If the work is a one-to-two-run piece, keep the Archive but frame it in its own satirical register — an institutional record of your departures, not a completion grid — and ensure no UI element implies a set to complete. `01`'s "may" already hedges correctly; the Archive's twelve-card capacity is the only artefact suggesting otherwise.
 **Preserves.** The Archive, the twelve citations, the no-carry-over rule, the no-chapter-rewind rule, `08`'s no-completion-percentage rule.
@@ -440,6 +459,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R20 — Define the 61+ bounded support action for each character
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** `05` and `07` both state that at 61 working trust or above, "a character can offer one bounded support action in the related scene." Nothing defines what those actions are for Elena, Haoran, or Samira. Gabriel's is the pass-through (`06`); Samira's is arguably `EV+1` in `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE`, but that is available at any trust level. The trust system's main upside payoff is therefore undefined for three of five characters.
@@ -454,12 +474,13 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R21 — Make the two Elena meters legible or merge them
+
 **SIGNIFICANT · DOCUMENT-SUPPORTED**
 
 **Problem.** Elena has two 0–100 meters — PI confidence (starts 45) and working trust (starts 60) — and both appear in the Aldercroft 2-of-3 condition set. They respond to different inputs (requests and claim commits versus optional-scene stances) but are nowhere distinguished for the player. Research Status shows both without explaining why the same person has two numbers.
 **Sources.** `07` "State model and player visibility", "Evidence, PI confidence…", "Career-route readiness"; `08` "B05 route-unlock contract"; `05` working-trust contract.
 **Effect.** Confusion at the panel where the design promises "stated reasons for material changes," and a route condition set in which two of three items measure the same relationship. This is complexity not earning a player-facing result.
-**Smallest change.** Do not change the formulas. Change the labels: PI confidence becomes explicitly *confidence in the paper*; working trust becomes explicitly *willingness to back you*. Research Status states the distinction in one line. `07`'s existing bands (Cautious/Conditional/Supportive/Invested versus Damaged/Strained/Working/Trusted/Strong) already read differently; the labels should complete the separation.
+**Smallest change.** Do not change the formulas. Change the labels: PI confidence becomes explicitly _confidence in the paper_; working trust becomes explicitly _willingness to back you_. Research Status states the distinction in one line. `07`'s existing bands (Cautious/Conditional/Supportive/Invested versus Damaged/Strained/Working/Trusted/Strong) already read differently; the labels should complete the separation.
 **Preserves.** Both meters, all deltas, the Aldercroft condition set, the no-hidden-formulas rule.
 **Risks.** If the distinction cannot be stated in one sentence, that is evidence the two meters should merge — in which case the Aldercroft 2-of-3 needs a replacement third condition, a larger change.
 **Affected.** `07`, `10` (Research Status), `12` (`ui.*` strings), `15` (`MR-REQ-UI-001`).
@@ -472,9 +493,10 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R22 — Decide whether Supported is a fairness setting or a second reading
+
 **OPTIONAL · DOCUMENT-SUPPORTED**
 
-**Problem.** `07` guarantees Supported keeps the same calendar, narrative, routes, and endings, and `10` insists it is "not called easy" and carries no stigma. Nothing addresses whether the *work means the same thing* when attrition is largely removed (extra segment, no night surcharge, three-segment breaks, extra warnings). For a game whose theme is attrition, that is a live artistic question.
+**Problem.** `07` guarantees Supported keeps the same calendar, narrative, routes, and endings, and `10` insists it is "not called easy" and carries no stigma. Nothing addresses whether the _work means the same thing_ when attrition is largely removed (extra segment, no night surcharge, three-segment breaks, extra warnings). For a game whose theme is attrition, that is a live artistic question.
 **Sources.** `02` "Energy, pressure, and recovery"; `07` pressure profiles; `10` "Menus, onboarding, and pressure profile".
 **Effect.** Supported players may experience a coherent but materially different work — arguably one closer to `01`'s non-nihilism instruction, since the institution rather than the body carries the damage.
 **Smallest change.** Record the intent in `01` or `02` in one sentence. No mechanical change.
@@ -486,6 +508,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R23 — Specification hygiene bundle
+
 **OPTIONAL · DOCUMENT-SUPPORTED**
 
 **Problem.** Three small defects, all in named source-of-truth artefacts. (a) `decision-log.md` records "15–20 minutes, with a 22-minute maximum" for non-interactive scene time (2026-08-26) while `02`/`03` state 14–18 and `12` plans 14:45 — an unrecorded supersession, breaching the log's own rule and the roadmap's supersession protocol. (b) `15`'s `MR-REQ-EXP-001` requires "six templates" unconditionally while the approved fallback ships four; the requirement lacks the fallback qualifier that `MR-REQ-CONTENT-002` has. (c) A blank line splits the decision-log table before the 2026-08-28 B10 rows, breaking the Markdown table in a document that sits fourth in `15`'s authority order. Separately, `09` states both "no more than 24 core reusable 3D prop families" and "twenty reusable prop families" without cross-reference.
@@ -500,6 +523,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R24 — Make environmental text readable without a focused view
+
 **OPTIONAL · PROTOTYPE-REQUIRED**
 
 **Problem.** Thirty environmental items exist, cost no time, are one-time-full-text, room- and act-windowed, and have no markers. `10` forbids objective arrows and bounds Interaction Assist. Stage 1 rated these the game's most reliable micro-pleasure and predicted many players will not find them, especially from Week 8 when attention narrows.
@@ -514,6 +538,7 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R25 — Make "stop the experiment" legible as triage rather than as a dead option
+
 **OPTIONAL · DOCUMENT-SUPPORTED**
 
 **Problem.** The monitoring choice set is continue / quality-check-or-stabilize / stop. Stopping loses the group and the elapsed time, while raw records are permanent anyway and weak records still yield information and a repeat reason (`04`, `07`). Its only real use is freeing one of three slots when a window is closing — a legitimate triage function that is never presented as such.
@@ -528,12 +553,13 @@ These are load-bearing and correct. Recommendations below are constrained by the
 ---
 
 ### HGA-R26 — Increase internal-thought density within the word budget
+
 **OPTIONAL · DOCUMENT-SUPPORTED**
 
 **Problem.** The protagonist is deliberately light (`05`), has no spoken performance, and appears only as a silhouette. All interiority rests on internal thought, of which the drafted scenes contain typically one to two lines each. `05` permits one short internal thought before an important spoken choice; nothing provides interiority during the ~60 station actions where the player spends most of the game.
 **Sources.** `05` "Narrative voice" and "Dialogue principles"; `09` protagonist silhouette boundary; `12` scene drafts.
 **Effect.** The character who is losing a career may be less present in the player's experience than the notices on the walls. The internal voice is also the game's second-best comic instrument after institutional language and is currently under-used.
-**Smallest change.** Author a small bounded set of internal lines attached to *state thresholds* rather than to locations — first zero-energy push-through, first Compromised integrity state, first missed monitoring window, first night period, first act transition. Perhaps eight to twelve lines total, well inside the 6,000-word cap, one-time each, non-repeating.
+**Smallest change.** Author a small bounded set of internal lines attached to _state thresholds_ rather than to locations — first zero-energy push-through, first Compromised integrity state, first missed monitoring window, first night period, first act transition. Perhaps eight to twelve lines total, well inside the 6,000-word cap, one-time each, non-repeating.
 **Preserves.** The light-authoring principle, the no-constant-jokes rule in `05`, the ≤2-variant discipline, the no-generated-text rule, the word cap.
 **Risks.** Word budget; risk of the "detached narrator who cannot care about other people" that `05` explicitly warns against; must not become a nag channel.
 **Affected.** `05`, `12` (new `internal.*` keys and count), `10` (internal-thought text style already specified).
@@ -547,43 +573,43 @@ Several questions the corpus treats as prototype questions are not. I separate t
 
 ### 11.1 Closeable now, without code
 
-| Question | Method | Owner |
-|---|---|---|
-| Does the 64-period budget close for three archetype runs? | Spreadsheet (HGA-R04) | Leonardo |
-| Can Substantial evidence be reached, and how? | Same spreadsheet (HGA-R16) | Leonardo |
-| Is the main objective comprehensible without design documents? | Cold read of the `12` draft (HGA-R03) | Codex |
-| Do the three evidence views, PIIM cards, and Research Status labels read clearly? | Cold read (HGA-R03, HGA-R21) | Codex |
-| Does the assembled ending card read as bitter-but-human across 4 × 3 combinations? | Paper assembly review (HGA-R11) | Leonardo |
-| Does the Week-3 versus Week-13 environment read as escalation? | Paper assembly from the item list (HGA-R13) | Leonardo |
-| Does every claim level × packet band produce a legible requirements state? | Paper enumeration (HGA-R01) | Leonardo |
-| Are the 30 environmental items and 12 citations free of nationality, disability, or precarity mockery? | `MR-TEST-CONT-001` scan, already required | Codex |
+| Question                                                                                               | Method                                      | Owner    |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------- | -------- |
+| Does the 64-period budget close for three archetype runs?                                              | Spreadsheet (HGA-R04)                       | Leonardo |
+| Can Substantial evidence be reached, and how?                                                          | Same spreadsheet (HGA-R16)                  | Leonardo |
+| Is the main objective comprehensible without design documents?                                         | Cold read of the `12` draft (HGA-R03)       | Codex    |
+| Do the three evidence views, PIIM cards, and Research Status labels read clearly?                      | Cold read (HGA-R03, HGA-R21)                | Codex    |
+| Does the assembled ending card read as bitter-but-human across 4 × 3 combinations?                     | Paper assembly review (HGA-R11)             | Leonardo |
+| Does the Week-3 versus Week-13 environment read as escalation?                                         | Paper assembly from the item list (HGA-R13) | Leonardo |
+| Does every claim level × packet band produce a legible requirements state?                             | Paper enumeration (HGA-R01)                 | Leonardo |
+| Are the 30 environmental items and 12 citations free of nationality, disability, or precarity mockery? | `MR-TEST-CONT-001` scan, already required   | Codex    |
 
 ### 11.2 Genuinely prototype-required, testable in the Week-1 slice
 
-| # | Question | Minimum test | Pre-registered pass condition |
-|---|---|---|---|
-| PQ1 | Does a station view feel like operating a laboratory or like filling a form? | Build the imaging bay in both variants (HGA-R06); run the laser/sham monitoring decision four times each | The instrument variant changes at least one decision |
-| PQ2 | What share of session time is traversal? | Instrument the slice (HGA-R02) | Below a threshold Leonardo commits to in writing before playing |
-| PQ3 | How many confirmations per minute does the loop demand? | Same instrumentation | Below a pre-registered threshold |
-| PQ4 | Does the manuscript board produce a non-trivial arrangement decision? | Slice's compact claim choice with the HGA-R01 slot rules | Leonardo can articulate unprompted why one arrangement is weaker |
-| PQ5 | Are the three evidence views interpretively interesting on first contact? | Slice analysis step | He looks at all three before classifying, twice |
-| PQ6 | Do the non-lexical vocal palettes charm or irritate? | Gabriel's eight sounds across the queue scene, repeated four times | He does not reach for the Dialogue Sounds slider |
-| PQ7 | Does stylized institutional realism read as intentional or as low-budget? | One finished room (main laboratory) at Standard preset | Judgement, recorded as pass or specific change |
-| PQ8 | Are environmental items discovered without markers? | Count Week-1 items read (HGA-R24) | Pre-registered fraction |
-| PQ9 | Does required UI survive 150% scale at 1280×720? | `MR-TEST-A11Y-001`, already required | As specified |
-| PQ10 | Does the band display teach the causal rule? | Three laser/sham runs at different preparation (HGA-R05) | He states the rule without consulting `07` |
+| #    | Question                                                                     | Minimum test                                                                                             | Pre-registered pass condition                                    |
+| ---- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| PQ1  | Does a station view feel like operating a laboratory or like filling a form? | Build the imaging bay in both variants (HGA-R06); run the laser/sham monitoring decision four times each | The instrument variant changes at least one decision             |
+| PQ2  | What share of session time is traversal?                                     | Instrument the slice (HGA-R02)                                                                           | Below a threshold Leonardo commits to in writing before playing  |
+| PQ3  | How many confirmations per minute does the loop demand?                      | Same instrumentation                                                                                     | Below a pre-registered threshold                                 |
+| PQ4  | Does the manuscript board produce a non-trivial arrangement decision?        | Slice's compact claim choice with the HGA-R01 slot rules                                                 | Leonardo can articulate unprompted why one arrangement is weaker |
+| PQ5  | Are the three evidence views interpretively interesting on first contact?    | Slice analysis step                                                                                      | He looks at all three before classifying, twice                  |
+| PQ6  | Do the non-lexical vocal palettes charm or irritate?                         | Gabriel's eight sounds across the queue scene, repeated four times                                       | He does not reach for the Dialogue Sounds slider                 |
+| PQ7  | Does stylized institutional realism read as intentional or as low-budget?    | One finished room (main laboratory) at Standard preset                                                   | Judgement, recorded as pass or specific change                   |
+| PQ8  | Are environmental items discovered without markers?                          | Count Week-1 items read (HGA-R24)                                                                        | Pre-registered fraction                                          |
+| PQ9  | Does required UI survive 150% scale at 1280×720?                             | `MR-TEST-A11Y-001`, already required                                                                     | As specified                                                     |
+| PQ10 | Does the band display teach the causal rule?                                 | Three laser/sham runs at different preparation (HGA-R05)                                                 | He states the rule without consulting `07`                       |
 
 ### 11.3 Requires more than a Week-1 slice — and therefore should be planned for the fallback gate, not deferred to the full build
 
-| # | Question | Earliest honest test |
-|---|---|---|
-| PQ11 | Does repetition set in, and when? | 90-minute fallback (`14` phase 3) |
-| PQ12 | Does the Weeks 8–9 stretch sag? | Fallback |
-| PQ13 | Is the crash rate dramatic or punitive in Standard? | Fallback |
-| PQ14 | Does the 60–90-second epilogue land after a full campaign? | Fallback |
-| PQ15 | Does the pressure read as anxiety or as a schedule? | Fallback, both profiles |
-| PQ16 | Is run 2 a replay or a reread? | Fallback, played twice |
-| PQ17 | Do twenty lighting presets convey sixteen weeks? | Fallback with at least three act states built |
+| #    | Question                                                                     | Earliest honest test                                 |
+| ---- | ---------------------------------------------------------------------------- | ---------------------------------------------------- |
+| PQ11 | Does repetition set in, and when?                                            | 90-minute fallback (`14` phase 3)                    |
+| PQ12 | Does the Weeks 8–9 stretch sag?                                              | Fallback                                             |
+| PQ13 | Is the crash rate dramatic or punitive in Standard?                          | Fallback                                             |
+| PQ14 | Does the 60–90-second epilogue land after a full campaign?                   | Fallback                                             |
+| PQ15 | Does the pressure read as anxiety or as a schedule?                          | Fallback, both profiles                              |
+| PQ16 | Is run 2 a replay or a reread?                                               | Fallback, played twice                               |
+| PQ17 | Do twenty lighting presets convey sixteen weeks?                             | Fallback with at least three act states built        |
 | PQ18 | Can the asset plan be delivered under €150 with the licence boundary intact? | Phase 1, before the slice, as `14` already sequences |
 
 `13`'s fallback gate currently checks "one constrained evidence path, one weakened path, one available career route, one no-route result, and an ending-card Archive result" — all correctness checks. PQ11–PQ17 are the fallback gate's real value and are not in it. This is the same gap as HGA-R02, one phase later.
@@ -600,7 +626,7 @@ These are the choices most likely to attract "but players expect…" pressure du
 4. **No game-over before Week 16** (`02`, `03`, `07`).
 5. **The involuntary crash with its fair-play carve-outs** (`02`). Do not make it avoidable by a stat purchase or convert it into a fail state.
 6. **No quest markers, minimap, objective arrows, or training room** (`02`, `06`, `10`).
-7. **No dexterity, timed input, drag, or hold anywhere** (`01`, `10`). HGA-R06 enriches *reading*, not input.
+7. **No dexterity, timed input, drag, or hold anywhere** (`01`, `10`). HGA-R06 enriches _reading_, not input.
 8. **Institutional Citations in the institution's voice, none requiring unethical play** (`08`, `12`).
 9. **The 06:42 bookend and the single continuous floor with no home scene** (`03`, `06`).
 10. **Elena as a non-villain with her own panel** (`05`, `12` `MR-OPT-ELENA-FUTURE`).
@@ -650,12 +676,12 @@ Floor population, complicity reach, ending temperature, Morrow weight, replay in
 
 ## 14. Final risk statement
 
-The dominant risk in *Minor Revisions* is not that it will be incoherent, unfair, inaccessible, legally exposed, or thematically confused. The documentation has protected it against all of those with unusual thoroughness, and the decision log shows that protection was built deliberately over eleven blocks.
+The dominant risk in _Minor Revisions_ is not that it will be incoherent, unfair, inaccessible, legally exposed, or thematically confused. The documentation has protected it against all of those with unusual thoroughness, and the decision log shows that protection was built deliberately over eleven blocks.
 
 The dominant risk is that it will be **admirable and inert** — a game whose every system is correct, legible, and thematically earned, and whose repeated physical act is walking twelve metres to press a confirm button. That risk exists because the design process never opened a block on interaction feel, because two of its most important interaction surfaces (the manuscript board and the station view) were never specified, and because the approved evaluation apparatus contains twelve test IDs, twelve slice items, and eight experience criteria that between them cannot detect tedium.
 
 The second risk is arithmetic. The campaign's best engine — triage among five competing goods across 64 periods — has never been computed, and three of its inputs are undefined. If it is loose, the game's tension and its complicity arc both evaporate. If it is impossible, `07`'s promise that no viable route requires a crash is false. Both failures are silent and both are discoverable this week with a spreadsheet.
 
-The third risk is capacity. Roughly 380–620 hours, at €150, must produce a full TypeScript/Three.js codebase across ten work packages, one continuous 400 m² floor, an IndexedDB layer with backup and migration, a semantic accessible UI, twenty prop families, four rigged NPCs, forty original vocal sounds, six music stems, and a test suite at 90% line and 85% branch coverage with Playwright flows in three engines. `14`'s stop, pause, and reframe rules already treat this honestly, and the 90-minute fallback is more likely to be the terminal deliverable than the three-hour target. That is not a failure condition: a coherent 90-minute *Minor Revisions* that delivers its claim triad, its reviewer contradiction, its unscored fabrication, and its 06:42 would be a complete and unusual work.
+The third risk is capacity. Roughly 380–620 hours, at €150, must produce a full TypeScript/Three.js codebase across ten work packages, one continuous 400 m² floor, an IndexedDB layer with backup and migration, a semantic accessible UI, twenty prop families, four rigged NPCs, forty original vocal sounds, six music stems, and a test suite at 90% line and 85% branch coverage with Playwright flows in three engines. `14`'s stop, pause, and reframe rules already treat this honestly, and the 90-minute fallback is more likely to be the terminal deliverable than the three-hour target. That is not a failure condition: a coherent 90-minute _Minor Revisions_ that delivers its claim triad, its reviewer contradiction, its unscored fabrication, and its 06:42 would be a complete and unusual work.
 
 Against those risks, the project has an asset that most designs at this stage do not: a body of authored text that already proves the tone works, and a documentation discipline whose refusal to let a plan pose as evidence is the same discipline the game's protagonist may fail to keep. That parallel is the most interesting thing in the corpus. It also means the corpus can be trusted when it says what it does not yet know — which is precisely why the six critical recommendations above concern things it has not yet noticed it does not know.

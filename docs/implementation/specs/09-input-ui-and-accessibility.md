@@ -6,7 +6,7 @@ This specification fixes the device-independent action map, keyboard, mouse,
 and controller behaviour, pointer capture, input modes, screen inventory,
 interface navigation, settings, responsive layout, accessibility acceptance,
 player-facing persistence failures, UI lifecycle, and required future fixtures
-for *Minor Revisions*.
+for _Minor Revisions_.
 
 S02 owns application order, lifecycle, and failure boundaries. S03–S06 own
 campaign truth, rules, scheduling, and authored text. S07 owns local storage and
@@ -60,17 +60,17 @@ hidden extra action.
 
 ### Default bindings
 
-| Action | Keyboard and mouse | Controller |
-|---|---|---|
-| Move | `WASD` or arrow keys | Left stick |
-| Look | Mouse movement | Right stick |
-| UI Navigate | Arrow keys; `Tab` and `Shift+Tab` move between controls | Directional pad |
-| Primary Action | `E` to interact; `Enter` or `Space` to confirm | South face button |
-| Back/Pause | `Escape` | Menu button |
-| Research Status | `Tab` | View button |
-| Previous Panel | `Q` | Left shoulder button |
-| Next Panel | `R` | Right shoulder button |
-| Interaction Assist | `F` | West face button |
+| Action             | Keyboard and mouse                                      | Controller            |
+| ------------------ | ------------------------------------------------------- | --------------------- |
+| Move               | `WASD` or arrow keys                                    | Left stick            |
+| Look               | Mouse movement                                          | Right stick           |
+| UI Navigate        | Arrow keys; `Tab` and `Shift+Tab` move between controls | Directional pad       |
+| Primary Action     | `E` to interact; `Enter` or `Space` to confirm          | South face button     |
+| Back/Pause         | `Escape`                                                | Menu button           |
+| Research Status    | `Tab`                                                   | View button           |
+| Previous Panel     | `Q`                                                     | Left shoulder button  |
+| Next Panel         | `R`                                                     | Right shoulder button |
+| Interaction Assist | `F`                                                     | West face button      |
 
 Mouse clicks can use visible interface controls. The same action meaning is
 used on each device.
@@ -122,13 +122,13 @@ and controller vertical inversion are separate and off by default.
 
 Input has exactly five modes:
 
-| Mode | Permitted input |
-|---|---|
-| Disabled | No player action. |
-| Free Movement | Move, Look, Primary Action, Research Status, Back/Pause, and Interaction Assist. |
-| Focused Interface | Interface navigation, Primary Action, Back, and approved panel changes. |
+| Mode              | Permitted input                                                                    |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| Disabled          | No player action.                                                                  |
+| Free Movement     | Move, Look, Primary Action, Research Status, Back/Pause, and Interaction Assist.   |
+| Focused Interface | Interface navigation, Primary Action, Back, and approved panel changes.            |
 | Overlay Interface | Interface navigation, Primary Action, Back when permitted, and approved shortcuts. |
-| Cutscene | Advance, choice navigation, Pause, and approved skip handling. |
+| Cutscene          | Advance, choice navigation, Pause, and approved skip handling.                     |
 
 A mode change clears held keys and buttons, controller-stick values, repeat
 timers, and pending movement before the new mode accepts input. Failure keeps
@@ -605,16 +605,16 @@ boundary.
 
 S07 returns one of nine codes. S09 maps them without raw browser errors:
 
-| Code | Player-facing behaviour |
-|---|---|
+| Code                        | Player-facing behaviour                                                                                                                                                                                  |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `notStarted`, `unavailable` | At startup: **Saved data is not available.** During a failed campaign save add: **Your latest action was not saved.** Offer Try Again and Return to Main Menu; campaign-changing actions remain blocked. |
-| `blocked` | **Another Minor Revisions tab is preventing access to saved data. Close the other tab, then try again.** Offer Try Again and Return to Main Menu. |
-| `quotaExceeded` | **The browser does not have enough storage to save this campaign. Existing saved data is unchanged.** Offer Try Again and Return to Main Menu. Delete nothing automatically. |
-| `unsupportedVersion` | **This saved data was created by a newer version of Minor Revisions and cannot be opened safely.** Preserve data and offer Reload Game and Return to Main Menu. |
-| `invalidData` | **This saved campaign cannot be read safely.** Route to valid backup recovery, or to Main Menu and the separate confirmed discard. Never guess a repair. |
-| `incompatibleContent` | **This campaign uses game content that this version cannot load.** Route to a compatible backup if one exists; otherwise return to Main Menu. Never change content version or build profile silently. |
-| `revisionConflict` | Open the cross-tab conflict screen below. Never use a normal save retry. |
-| `transactionFailed` | **The save did not complete. Existing saved data is unchanged.** Offer Try Again only when S07 marks the exact retry safe. Otherwise offer Load Latest Save and Return to Main Menu. |
+| `blocked`                   | **Another Minor Revisions tab is preventing access to saved data. Close the other tab, then try again.** Offer Try Again and Return to Main Menu.                                                        |
+| `quotaExceeded`             | **The browser does not have enough storage to save this campaign. Existing saved data is unchanged.** Offer Try Again and Return to Main Menu. Delete nothing automatically.                             |
+| `unsupportedVersion`        | **This saved data was created by a newer version of Minor Revisions and cannot be opened safely.** Preserve data and offer Reload Game and Return to Main Menu.                                          |
+| `invalidData`               | **This saved campaign cannot be read safely.** Route to valid backup recovery, or to Main Menu and the separate confirmed discard. Never guess a repair.                                                 |
+| `incompatibleContent`       | **This campaign uses game content that this version cannot load.** Route to a compatible backup if one exists; otherwise return to Main Menu. Never change content version or build profile silently.    |
+| `revisionConflict`          | Open the cross-tab conflict screen below. Never use a normal save retry.                                                                                                                                 |
+| `transactionFailed`         | **The save did not complete. Existing saved data is unchanged.** Offer Try Again only when S07 marks the exact retry safe. Otherwise offer Load Latest Save and Return to Main Menu.                     |
 
 A settings-save failure is non-blocking. Its value stays active for the current
 session and the UI says: **This setting is active now, but it was not saved.**
@@ -727,17 +727,17 @@ select the last verified state.
 
 S09 requires these future fixture groups:
 
-| Fixture group | Required coverage |
-|---|---|
-| `MR-S09-INP-001` | Every keyboard, mouse, and controller action; defaults; remapping; conflicts; held and repeat rules; sensitivity; dead zones; active-device changes; disconnection; and labels. |
-| `MR-S09-FOC-001` | All five modes; pointer capture; focused stations; menus; dialogue; cutscenes; confirmations; hidden tabs; browser focus; small-view block; priority; and no carried input. |
-| `MR-S09-UI-001` | Every screen and overlay; navigation order; visible focus; HUD; prompts; costs; scrolling; dialogue; captions; notifications; audio-status and Resume Audio; confirmations; errors; and Archive. |
-| `MR-S09-SET-001` | Every field, allowed value, default, immediate preview, save, failed save, invalid stored record, section reset, remapping, and Reduced Motion interaction. |
+| Fixture group     | Required coverage                                                                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-S09-INP-001`  | Every keyboard, mouse, and controller action; defaults; remapping; conflicts; held and repeat rules; sensitivity; dead zones; active-device changes; disconnection; and labels.                     |
+| `MR-S09-FOC-001`  | All five modes; pointer capture; focused stations; menus; dialogue; cutscenes; confirmations; hidden tabs; browser focus; small-view block; priority; and no carried input.                         |
+| `MR-S09-UI-001`   | Every screen and overlay; navigation order; visible focus; HUD; prompts; costs; scrolling; dialogue; captions; notifications; audio-status and Resume Audio; confirmations; errors; and Archive.    |
+| `MR-S09-SET-001`  | Every field, allowed value, default, immediate preview, save, failed save, invalid stored record, section reset, remapping, and Reduced Motion interaction.                                         |
 | `MR-S09-A11Y-001` | Keyboard-only and controller-only use; semantic controls; focus; speaker names; captions; contrast ratios; colour-independent meaning; motion; flashes; assist; and manual assistive-reading check. |
-| `MR-S09-ERR-001` | All nine persistence codes; operation-specific text; safe and unsafe retry; tab conflict; screen recovery; fatal stop; reload; and sanitized output. |
-| `MR-S09-RSP-001` | `16:9`, wide, and `4:3`; three scales; `960 × 540` at `100%`; `1280 × 720` with both scales at `150%`; responsive comparison; vertical scrolling; and too-small blocking. |
-| `MR-S09-LIF-001` | Startup; partial failure; screen replacement; repeated close; campaign replacement; owned cleanup; capture release; recoverable retry; fatal stop; and reload recovery. |
-| `MR-S09-JRN-001` | Keyboard-and-mouse and controller journeys through startup, New Game, tutorial, focused action, Research Status, Settings, Pause, Save and Quit, and Continue. |
+| `MR-S09-ERR-001`  | All nine persistence codes; operation-specific text; safe and unsafe retry; tab conflict; screen recovery; fatal stop; reload; and sanitized output.                                                |
+| `MR-S09-RSP-001`  | `16:9`, wide, and `4:3`; three scales; `960 × 540` at `100%`; `1280 × 720` with both scales at `150%`; responsive comparison; vertical scrolling; and too-small blocking.                           |
+| `MR-S09-LIF-001`  | Startup; partial failure; screen replacement; repeated close; campaign replacement; owned cleanup; capture release; recoverable retry; fatal stop; and reload recovery.                             |
+| `MR-S09-JRN-001`  | Keyboard-and-mouse and controller journeys through startup, New Game, tutorial, focused action, Research Status, Settings, Pause, Save and Quit, and Continue.                                      |
 
 Fixtures also prove that reading, input transitions, layout changes, hidden-tab
 time, and browser-focus loss never advance campaign truth. No test or result

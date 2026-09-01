@@ -37,11 +37,11 @@ profile. It contains no English strings, raw JSON, mutable source object, or
 presentation-only data. `command` is one member of the closed command union
 below. The operation returns exactly one of these results:
 
-| Result | Required data | Meaning |
-|---|---|---|
-| `applied` | complete new `state`; ordered `effects` | The command passed every check and changed campaign truth once. |
-| `rejected` | one rejection `code`; safe factual context | The command is valid in shape but is not allowed in the current campaign state. |
-| `fault` | one fault `code`; sanitized field path or rule context when safe | A supplied contract or the rule operation is invalid. This is not an in-world failure. |
+| Result     | Required data                                                    | Meaning                                                                                |
+| ---------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `applied`  | complete new `state`; ordered `effects`                          | The command passed every check and changed campaign truth once.                        |
+| `rejected` | one rejection `code`; safe factual context                       | The command is valid in shape but is not allowed in the current campaign state.        |
+| `fault`    | one fault `code`; sanitized field path or rule context when safe | A supplied contract or the rule operation is invalid. This is not an in-world failure. |
 
 An applied result increments `stateRevision` exactly once and creates all
 required S03 change records in one atomic change. A rejected or fault result
@@ -55,13 +55,13 @@ contain raw save values, player-facing prose, stack traces, or a partial state.
 
 The closed effect union has five members:
 
-| Effect | Required data | Consumer |
-|---|---|---|
-| `saveCheckpoint` | checkpoint reason ID and resulting `stateRevision` | application and persistence |
-| `showNotice` | authored notice key and reason key | UI |
-| `startCutscene` | cutscene or scene ID | scheduler and cutscenes |
-| `playAudioCue` | approved cue ID | audio |
-| `completeCampaign` | ending card facts and resulting revision | application and persistence |
+| Effect             | Required data                                      | Consumer                    |
+| ------------------ | -------------------------------------------------- | --------------------------- |
+| `saveCheckpoint`   | checkpoint reason ID and resulting `stateRevision` | application and persistence |
+| `showNotice`       | authored notice key and reason key                 | UI                          |
+| `startCutscene`    | cutscene or scene ID                               | scheduler and cutscenes     |
+| `playAudioCue`     | approved cue ID                                    | audio                       |
+| `completeCampaign` | ending card facts and resulting revision           | application and persistence |
 
 An effect requests presentation or browser work. It never changes campaign
 truth. The returned list keeps the causal order produced by the rule. S05 and
@@ -77,45 +77,45 @@ allowed only where the row states them. Unknown fields are contract faults.
 
 ### Experiment commands
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `configureExperiment` | experiment template, goal, control, observation, family-choice, sample-condition, and equipment IDs | Create one configured run and occupy one active slot. |
-| `startExperiment` | configured run ID | Lock the run's variation and projected band, pay the action cost, and make the run active. |
-| `respondToMonitoring` | running run ID and `continue`, `qualityCheck`, `stabilize`, or `stop` | Record the response and its complete time, energy, sample, observation, and stop consequences. |
-| `analyseExperiment` | ready run ID, selected reading ID, and at least one relevant caveat ID | Create the immutable raw record and evidence card, award support, and free the active slot. |
+| Command               | Required payload                                                                                    | Main result                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `configureExperiment` | experiment template, goal, control, observation, family-choice, sample-condition, and equipment IDs | Create one configured run and occupy one active slot.                                          |
+| `startExperiment`     | configured run ID                                                                                   | Lock the run's variation and projected band, pay the action cost, and make the run active.     |
+| `respondToMonitoring` | running run ID and `continue`, `qualityCheck`, `stabilize`, or `stop`                               | Record the response and its complete time, energy, sample, observation, and stop consequences. |
+| `analyseExperiment`   | ready run ID, selected reading ID, and at least one relevant caveat ID                              | Create the immutable raw record and evidence card, award support, and free the active slot.    |
 
 ### Manuscript commands
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `commitInitialManuscript` | complete board proposal and confirmations required by the proposal | Create the first immutable snapshot and apply its effects once. |
-| `commitManuscriptRevision` | revision-task ID, complete board proposal, and required confirmations | Create the next immutable snapshot and apply the revision and integrity effects once. |
-| `commitPiimResponse` | response choice, complete board proposal when committing, and required confirmations | Commit the PIIM response or withdraw; withdrawal creates no outcome draw. |
+| Command                    | Required payload                                                                     | Main result                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| `commitInitialManuscript`  | complete board proposal and confirmations required by the proposal                   | Create the first immutable snapshot and apply its effects once.                       |
+| `commitManuscriptRevision` | revision-task ID, complete board proposal, and required confirmations                | Create the next immutable snapshot and apply the revision and integrity effects once. |
+| `commitPiimResponse`       | response choice, complete board proposal when committing, and required confirmations | Commit the PIIM response or withdraw; withdrawal creates no outcome draw.             |
 
 ### Communication and relationship commands
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `reportToElena` | active request ID and response ID | Resolve the request and apply paper-confidence and authored trust effects once. |
-| `completeCareerTask` | Aldercroft-plan or Morrow-call task ID and choice ID | Store the completed career preparation and its authored effects. |
-| `replyToMessage` | available message ID and reply ID | Store the reply, expiry, route, and authored relationship effects. |
-| `respondToConcern` | concern ID and `correct`, `deny`, `defer`, or `ignoreReminder` | Preserve the response history and apply the exact trust and correction rules. |
-| `useCharacterSupport` | recurring-character ID and eligible target ID | Consume that character's one campaign support result. |
+| Command               | Required payload                                               | Main result                                                                     |
+| --------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `reportToElena`       | active request ID and response ID                              | Resolve the request and apply paper-confidence and authored trust effects once. |
+| `completeCareerTask`  | Aldercroft-plan or Morrow-call task ID and choice ID           | Store the completed career preparation and its authored effects.                |
+| `replyToMessage`      | available message ID and reply ID                              | Store the reply, expiry, route, and authored relationship effects.              |
+| `respondToConcern`    | concern ID and `correct`, `deny`, `defer`, or `ignoreReminder` | Preserve the response history and apply the exact trust and correction rules.   |
+| `useCharacterSupport` | recurring-character ID and eligible target ID                  | Consume that character's one campaign support result.                           |
 
 ### Calendar and room commands
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `takeProtectedBreak` | the approved break action ID | Advance one period and restore profile-specific energy. |
-| `resolveRoomState` | active room-state ID, response ID, and an affected run ID only when the response needs one | Apply the authored wait, limited-use, support, or other approved room response. |
+| Command              | Required payload                                                                           | Main result                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `takeProtectedBreak` | the approved break action ID                                                               | Advance one period and restore profile-specific energy.                         |
+| `resolveRoomState`   | active room-state ID, response ID, and an affected run ID only when the response needs one | Apply the authored wait, limited-use, support, or other approved room response. |
 
 ### Scene commands
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `requestScene` | scene ID selected by the current active cue, or initial **Clarified**; verified checkpoint revision only for step two | In step one, lock the authored form and request its pre-scene checkpoint; after verification, step two makes the same scene and event active. |
-| `chooseSceneOption` | in-progress scene ID, available option ID, and `playRemaining` or `skipRemaining` | Atomically apply the authored choice, result, cost, final scene state, event completion, active-event clearing, and recap fact. |
-| `skipScene` | skippable in-progress scene ID with no unresolved choice | Record the approved no-choice skipped state; it cannot select a required choice. |
+| Command             | Required payload                                                                                                      | Main result                                                                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `requestScene`      | scene ID selected by the current active cue, or initial **Clarified**; verified checkpoint revision only for step two | In step one, lock the authored form and request its pre-scene checkpoint; after verification, step two makes the same scene and event active. |
+| `chooseSceneOption` | in-progress scene ID, available option ID, and `playRemaining` or `skipRemaining`                                     | Atomically apply the authored choice, result, cost, final scene state, event completion, active-event clearing, and recap fact.               |
+| `skipScene`         | skippable in-progress scene ID with no unresolved choice                                                              | Record the approved no-choice skipped state; it cannot select a required choice.                                                              |
 
 `requestScene` is one command with two state-dependent steps. Step one omits a
 checkpoint revision. It validates the current cue or initial **Clarified**,
@@ -131,8 +131,8 @@ checkpoint without another campaign command.
 
 ### Conclusion command
 
-| Command | Required payload | Main result |
-|---|---|---|
+| Command                   | Required payload                                    | Main result                                                                      |
+| ------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------- |
 | `confirmConclusionChoice` | available final-choice ID and explicit confirmation | Store the irreversible career choice and its declined alternative when required. |
 
 ### System commands
@@ -140,14 +140,14 @@ checkpoint without another campaign command.
 These commands are sent only by the named application or scheduler boundary.
 They are still validated by rules and cannot bypass state prerequisites.
 
-| Command | Required payload | Main result |
-|---|---|---|
-| `applyScheduledTransition` | eligible scheduled-event ID | Apply one authored scheduled transition. |
-| `resolvePendingCrash` | no additional payload | Clear one pending crash, advance one period, restore energy to 2, preserve its recovery anchor, and record all approved crossed-period facts. |
-| `resolvePiimOutcome` | no additional payload | Save the one deterministic PIIM result after a committed response. |
-| `evaluateCareerRoute` | `aldercroft` or `morrow` | Perform that route's single fixed-time eligibility check. |
-| `finalizeCampaign` | no additional payload | In phase one, select the five ending modules and begin the epilogue; in phase two, complete the saved epilogue and campaign. |
-| `recordContentPresentation` | content ID and `messageRead`, `contextualContent`, `environmentalText`, `sceneClosing`, or `sceneRecap` | Record reading or one-time presentation so that reload cannot repeat it. |
+| Command                     | Required payload                                                                                        | Main result                                                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `applyScheduledTransition`  | eligible scheduled-event ID                                                                             | Apply one authored scheduled transition.                                                                                                      |
+| `resolvePendingCrash`       | no additional payload                                                                                   | Clear one pending crash, advance one period, restore energy to 2, preserve its recovery anchor, and record all approved crossed-period facts. |
+| `resolvePiimOutcome`        | no additional payload                                                                                   | Save the one deterministic PIIM result after a committed response.                                                                            |
+| `evaluateCareerRoute`       | `aldercroft` or `morrow`                                                                                | Perform that route's single fixed-time eligibility check.                                                                                     |
+| `finalizeCampaign`          | no additional payload                                                                                   | In phase one, select the five ending modules and begin the epilogue; in phase two, complete the saved epilogue and campaign.                  |
+| `recordContentPresentation` | content ID and `messageRead`, `contextualContent`, `environmentalText`, `sceneClosing`, or `sceneRecap` | Record reading or one-time presentation so that reload cannot repeat it.                                                                      |
 
 `recordContentPresentation` is the only rule command for a message read, a
 one-time contextual line or reaction, environmental text consumption, a
@@ -186,23 +186,23 @@ availability is a projection for the player, not rule authority.
 The 15 rejection codes are listed in priority order. A well-formed command
 that has more than one rejection condition returns the first applicable code.
 
-| Priority | Rejection code | Meaning |
-|---:|---|---|
-| 1 | `campaignComplete` | The campaign is terminal and accepts no further campaign command. |
-| 2 | `commandUnavailable` | This command family is not available at the current campaign point. |
-| 3 | `targetUnavailable` | The referenced valid target is locked, expired, terminal, absent from the current window, or already resolved. |
-| 4 | `choiceUnavailable` | The referenced valid option is not available for this target and state. |
-| 5 | `prerequisiteNotMet` | A required experiment, record, snapshot, task, message, scene, route, or state fact is missing. |
-| 6 | `insufficientEnergy` | The action cannot use the focused-or-intense push-through rule and cannot pay its cost. |
-| 7 | `activeRunLimitReached` | Three experiment runs already occupy the active slots. |
-| 8 | `experimentStageMismatch` | The run exists but is not in the stage required by the command. |
-| 9 | `monitoringWindowUnavailable` | The requested monitoring response has no current open window. |
-| 10 | `analysisRequirementsMissing` | Analysis lacks a recorded reading, a required observation, or at least one relevant caveat. |
-| 11 | `confirmationRequired` | An omission, altered or unsupported reading, withdrawal, stop, or final choice needs explicit confirmation. |
-| 12 | `contentAlreadyRecorded` | One-time presentation, read state, result, outcome, effect, or support was already stored. |
-| 13 | `supportUnavailable` | The character support is unearned, already consumed, blocked by breach or trust, or invalid for the target. |
-| 14 | `routeUnavailable` | The requested career route is locked, closed, declined, already checked, or not available for choice. |
-| 15 | `conclusionUnavailable` | The conclusion, ending-module, or campaign-finalization prerequisites are not complete. |
+| Priority | Rejection code                | Meaning                                                                                                        |
+| -------: | ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
+|        1 | `campaignComplete`            | The campaign is terminal and accepts no further campaign command.                                              |
+|        2 | `commandUnavailable`          | This command family is not available at the current campaign point.                                            |
+|        3 | `targetUnavailable`           | The referenced valid target is locked, expired, terminal, absent from the current window, or already resolved. |
+|        4 | `choiceUnavailable`           | The referenced valid option is not available for this target and state.                                        |
+|        5 | `prerequisiteNotMet`          | A required experiment, record, snapshot, task, message, scene, route, or state fact is missing.                |
+|        6 | `insufficientEnergy`          | The action cannot use the focused-or-intense push-through rule and cannot pay its cost.                        |
+|        7 | `activeRunLimitReached`       | Three experiment runs already occupy the active slots.                                                         |
+|        8 | `experimentStageMismatch`     | The run exists but is not in the stage required by the command.                                                |
+|        9 | `monitoringWindowUnavailable` | The requested monitoring response has no current open window.                                                  |
+|       10 | `analysisRequirementsMissing` | Analysis lacks a recorded reading, a required observation, or at least one relevant caveat.                    |
+|       11 | `confirmationRequired`        | An omission, altered or unsupported reading, withdrawal, stop, or final choice needs explicit confirmation.    |
+|       12 | `contentAlreadyRecorded`      | One-time presentation, read state, result, outcome, effect, or support was already stored.                     |
+|       13 | `supportUnavailable`          | The character support is unearned, already consumed, blocked by breach or trust, or invalid for the target.    |
+|       14 | `routeUnavailable`            | The requested career route is locked, closed, declined, already checked, or not available for choice.          |
+|       15 | `conclusionUnavailable`       | The conclusion, ending-module, or campaign-finalization prerequisites are not complete.                        |
 
 The six fault codes are closed:
 
@@ -298,16 +298,16 @@ run ID under S03 and checks template, repeat, equipment, and active-slot rules.
 `startExperiment` rejects unavailable equipment. It calculates preparation
 problems as follows:
 
-| Input | Problem |
-|---|---:|
-| Stable sample | 0 |
-| Stressed sample | +1 |
-| Failing sample | severe |
-| Ready equipment | 0 |
-| Limited equipment | +1 |
-| Unavailable equipment | start is rejected until an authored room response resolves it |
-| Higher-risk family choice | +1 |
-| Each missed biological monitoring window | +1 |
+| Input                                    |                                                       Problem |
+| ---------------------------------------- | ------------------------------------------------------------: |
+| Stable sample                            |                                                             0 |
+| Stressed sample                          |                                                            +1 |
+| Failing sample                           |                                                        severe |
+| Ready equipment                          |                                                             0 |
+| Limited equipment                        |                                                            +1 |
+| Unavailable equipment                    | start is rejected until an authored room response resolves it |
+| Higher-risk family choice                |                                                            +1 |
+| Each missed biological monitoring window |                                                            +1 |
 
 Haoran support removes one Stressed-sample problem before start. It cannot
 remove an equipment, risk, missed-window, or severe problem. During a run,
@@ -324,11 +324,11 @@ change the band.
 
 The experiment bucket maps inside the final band:
 
-| Final band | Bucket 0–19 | Bucket 20–79 | Bucket 80–99 |
-|---|---|---|---|
-| `robust` | Strong | Strong | Limited |
-| `mixed` | Strong | Limited | Weak |
-| `compromised` | Limited | Weak | Weak |
+| Final band    | Bucket 0–19 | Bucket 20–79 | Bucket 80–99 |
+| ------------- | ----------- | ------------ | ------------ |
+| `robust`      | Strong      | Strong       | Limited      |
+| `mixed`       | Strong      | Limited      | Weak         |
+| `compromised` | Limited     | Weak         | Weak         |
 
 This is the approved 80/20, 20/60/20, and 0/20/80 table. Validated content maps
 Strong, Limited, and Weak to the family-specific biological result. It cannot
@@ -364,13 +364,13 @@ outcome.
 
 Support points are awarded once when analysis archives the result:
 
-| Evidence result | Points |
-|---|---:|
-| Original Usable result with matched control and all required observation coverage | 2 |
-| Original Usable result with an honest narrowed reading, limited control, or limited coverage | 1 |
-| Usable repeat | 1 maximum |
-| Suspicious, Worth repeating, or Inconclusive | 0 |
-| Properly credited Samira contribution | 1 once per campaign |
+| Evidence result                                                                              |              Points |
+| -------------------------------------------------------------------------------------------- | ------------------: |
+| Original Usable result with matched control and all required observation coverage            |                   2 |
+| Original Usable result with an honest narrowed reading, limited control, or limited coverage |                   1 |
+| Usable repeat                                                                                |           1 maximum |
+| Suspicious, Worth repeating, or Inconclusive                                                 |                   0 |
+| Properly credited Samira contribution                                                        | 1 once per campaign |
 
 Evidence is capped at 12, never decreases, and cannot be awarded twice for one
 source. A later repeat cannot give more than one point.
@@ -390,11 +390,11 @@ For each requirement, the resolver uses this priority:
 
 The claim truth table is:
 
-| Claim | Requirements |
-|---|---|
-| Careful | One supported figure/evidence pair, one relevant control, and one selected caveat. |
-| Strong | Two supported pairs from different templates, structure and rhythm coverage, one matched control, and one selected caveat. |
-| Inflated | Every Strong requirement plus causal support. Honest campaign evidence cannot supply causal support. |
+| Claim    | Requirements                                                                                                               |
+| -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Careful  | One supported figure/evidence pair, one relevant control, and one selected caveat.                                         |
+| Strong   | Two supported pairs from different templates, structure and rhythm coverage, one matched control, and one selected caveat. |
+| Inflated | Every Strong requirement plus causal support. Honest campaign evidence cannot supply causal support.                       |
 
 Visible reported support is separate from permanent raw truth and integrity
 truth. An altered or unsupported reported reading can appear to meet a visible
@@ -409,15 +409,15 @@ the required confirmation.
 
 Elena paper confidence changes once for each request or committed revision:
 
-| Event | Change |
-|---|---:|
-| Complete active request | +10 |
-| Partial active request | +5 |
-| Deferred, refused, or expired active request | -10 |
-| Careful claim commit | -5 |
-| Strong claim commit | +5 |
-| Inflated claim commit | +10 |
-| Explicit packet weakness for that revision | -10 instead of the normal claim change |
+| Event                                        |                                 Change |
+| -------------------------------------------- | -------------------------------------: |
+| Complete active request                      |                                    +10 |
+| Partial active request                       |                                     +5 |
+| Deferred, refused, or expired active request |                                    -10 |
+| Careful claim commit                         |                                     -5 |
+| Strong claim commit                          |                                     +5 |
+| Inflated claim commit                        |                                    +10 |
+| Explicit packet weakness for that revision   | -10 instead of the normal claim change |
 
 Each result is limited to 0–100. An explicit weakness replacement and the
 normal claim change cannot both apply to one revision.
@@ -426,11 +426,11 @@ normal claim change cannot both apply to one revision.
 
 Integrity starts from the S03 value and uses these event changes:
 
-| Event | Change |
-|---|---:|
-| Omit valid evidence | -10 |
-| Alter a reported reading | -25 |
-| Add an unsupported reading | -45 |
+| Event                                                 |                                     Change |
+| ----------------------------------------------------- | -----------------------------------------: |
+| Omit valid evidence                                   |                                        -10 |
+| Alter a reported reading                              |                                        -25 |
+| Add an unsupported reading                            |                                        -45 |
 | Restore omitted evidence or correct the current draft | recovery within the campaign maximum below |
 
 Campaign recovery is capped at +10 in total. A correction preserves every
@@ -440,15 +440,14 @@ of act creates a new event and applies a new loss. Every integrity effect is
 applied once and integrity remains from 0 through 100.
 
 Working-trust changes come only from approved authored effects with values
-`-20`, `-10`, `0`, `+10`, or `+20`. They never drift and remain from 0 through
-100. A concern response applies:
+`-20`, `-10`, `0`, `+10`, or `+20`. They never drift and remain from 0 through 100. A concern response applies:
 
-| Response | Trust change | Other result |
-|---|---:|---|
-| Correction | +10 once | Resolve the concern, preserve history, and allow remaining integrity recovery. |
-| Denial | -20 | End the immediate discussion and leave the concern unresolved. |
-| Deferral | -10 | Leave it unresolved and schedule one no-cost reminder. |
-| Ignore the reminder | -10 more | Leave it unresolved and create no second reminder. |
+| Response            | Trust change | Other result                                                                   |
+| ------------------- | -----------: | ------------------------------------------------------------------------------ |
+| Correction          |     +10 once | Resolve the concern, preserve history, and allow remaining integrity recovery. |
+| Denial              |          -20 | End the immediate discussion and leave the concern unresolved.                 |
+| Deferral            |          -10 | Leave it unresolved and schedule one no-cost reminder.                         |
+| Ignore the reminder |     -10 more | Leave it unresolved and create no second reminder.                             |
 
 A concern grants its correction trust and recovery at most once. A later high
 trust value cannot erase a permanent breach.
@@ -467,19 +466,19 @@ Working or higher trust at use time, and unused support. Its effects are fixed:
 
 Batch and oxygen cards use the same exact rule:
 
-| State | Rule |
-|---|---|
-| `met` | Include a relevant Usable record with its control and caveat. |
-| `partlyMet` | Include a valid limited, Inconclusive, or Worth repeating record with its stated limitation. |
-| `notMet` | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
+| State       | Rule                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------- |
+| `met`       | Include a relevant Usable record with its control and caveat.                                           |
+| `partlyMet` | Include a valid limited, Inconclusive, or Worth repeating record with its stated limitation.            |
+| `notMet`    | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
 
 The claim card uses:
 
-| State | Rule |
-|---|---|
-| `met` | A Careful or Strong claim meets all board requirements. |
-| `partlyMet` | A Careful or Strong claim has exactly one missing support requirement and states that limitation. |
-| `notMet` | Two or more requirements are missing, an honest Inflated claim lacks causal support, or a visible contradiction remains. |
+| State       | Rule                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `met`       | A Careful or Strong claim meets all board requirements.                                                                  |
+| `partlyMet` | A Careful or Strong claim has exactly one missing support requirement and states that limitation.                        |
+| `notMet`    | Two or more requirements are missing, an honest Inflated claim lacks causal support, or a visible contradiction remains. |
 
 An altered or unsupported visible report can make a card appear Met when no
 visible evidence contradicts it. This does not edit raw truth or repair
@@ -487,19 +486,19 @@ integrity.
 
 The three cards create one response band:
 
-| Band | Exact condition |
-|---|---|
-| Top | All three cards Met and there is no visible evidence contradiction. |
+| Band   | Exact condition                                                                                  |
+| ------ | ------------------------------------------------------------------------------------------------ |
+| Top    | All three cards Met and there is no visible evidence contradiction.                              |
 | Middle | At least one card is Met, all other cards are Partly Met, and there is no visible contradiction. |
-| Weak | Any card is Not Met, all three are only Partly Met, or a visible contradiction exists. |
+| Weak   | Any card is Not Met, all three are only Partly Met, or a visible contradiction exists.           |
 
 The saved PIIM bucket maps as follows:
 
-| Band | Bucket 0–19 | Bucket 20–49 | Bucket 50–79 | Bucket 80–99 |
-|---|---|---|---|---|
-| Top | Published | Published | Published | Accepted pending final work |
-| Middle | Accepted pending final work | Accepted pending final work | Under review | Under review |
-| Weak | Under review | Rejected | Rejected | Rejected |
+| Band   | Bucket 0–19                 | Bucket 20–49                | Bucket 50–79 | Bucket 80–99                |
+| ------ | --------------------------- | --------------------------- | ------------ | --------------------------- |
+| Top    | Published                   | Published                   | Published    | Accepted pending final work |
+| Middle | Accepted pending final work | Accepted pending final work | Under review | Under review                |
+| Weak   | Under review                | Rejected                    | Rejected     | Rejected                    |
 
 Therefore Top is 80/20, Middle is 50/50, and Weak is 20/80. The result is
 stored once. Retry, reload, unrelated commands, or later hidden facts cannot

@@ -5,7 +5,7 @@ Status: **documented technical specification; no implementation authorized**
 This specification fixes the coordinate system, floor plan, walkable geometry,
 collision, player movement, camera limits, semantic locations, anchors,
 interaction targets, focused-station geometry, room-state presentation, world
-projection, faults, and required future fixtures for *Minor Revisions*.
+projection, faults, and required future fixtures for _Minor Revisions_.
 
 S02 owns the module graph, public ports, frame order, lifecycle, and failure
 boundaries. S03 owns saved semantic world facts. S04 owns campaign commands and
@@ -51,12 +51,12 @@ runs north to south. Normal walkable floor is `Y = 0`.
 The origin `(0, 0, 0)` is the centre of the main laboratory. Authored compass
 headings use:
 
-| Heading | Direction |
-|---:|---|
-| `0°` | North, toward decreasing `Z`. |
-| `90°` | East, toward increasing `X`. |
-| `180°` | South, toward increasing `Z`. |
-| `270°` | West, toward decreasing `X`. |
+| Heading | Direction                     |
+| ------: | ----------------------------- |
+|    `0°` | North, toward decreasing `Z`. |
+|   `90°` | East, toward increasing `X`.  |
+|  `180°` | South, toward increasing `Z`. |
+|  `270°` | West, toward decreasing `X`.  |
 
 One fixed plain spatial plan owns rooms, circulation, walls, openings,
 collision footprints, anchors, station placement, and interaction targets.
@@ -91,14 +91,14 @@ result.
 
 The six clear room interiors are exact:
 
-| Room | `X` range | `Z` range | Clear size | Area |
-|---|---:|---:|---:|---:|
-| Main laboratory | `-5.00` to `+5.00` | `-4.25` to `+4.25` | `10 × 8.5 m` | `85 m²` |
-| Tissue culture | `-10.15` to `-5.15` | `-3.50` to `+3.50` | `5 × 7 m` | `35 m²` |
-| Imaging and facility | `+5.15` to `+12.15` | `-4.25` to `+3.75` | `7 × 8 m` | `56 m²` |
-| PI office | `-5.00` to `-1.00` | `-9.40` to `-4.40` | `4 × 5 m` | `20 m²` |
-| Shared desks | `-0.85` to `+10.15` | `-9.40` to `-4.40` | `11 × 5 m` | `55 m²` |
-| Break room | `-10.15` to `-4.15` | `+5.15` to `+10.15` | `6 × 5 m` | `30 m²` |
+| Room                 |           `X` range |           `Z` range |   Clear size |    Area |
+| -------------------- | ------------------: | ------------------: | -----------: | ------: |
+| Main laboratory      |  `-5.00` to `+5.00` |  `-4.25` to `+4.25` | `10 × 8.5 m` | `85 m²` |
+| Tissue culture       | `-10.15` to `-5.15` |  `-3.50` to `+3.50` |    `5 × 7 m` | `35 m²` |
+| Imaging and facility | `+5.15` to `+12.15` |  `-4.25` to `+3.75` |    `7 × 8 m` | `56 m²` |
+| PI office            |  `-5.00` to `-1.00` |  `-9.40` to `-4.40` |    `4 × 5 m` | `20 m²` |
+| Shared desks         | `-0.85` to `+10.15` |  `-9.40` to `-4.40` |   `11 × 5 m` | `55 m²` |
+| Break room           | `-10.15` to `-4.15` | `+5.15` to `+10.15` |    `6 × 5 m` | `30 m²` |
 
 The rooms total `281 m²`. The nominal circulation, exit, recess, and service
 allocation is `119 m²`, for the approved approximately `400 m²` floor.
@@ -115,12 +115,12 @@ Core doors are `1.10 m` wide and `2.10 m` high.
 
 Playable circulation uses these rectangles:
 
-| Area | `X` range | `Z` range | Area |
-|---|---:|---:|---:|
-| West connector | `-10.15` to `-5.15` | `+3.65` to `+5.15` | `7.50 m²` |
-| South corridor | `-4.00` to `+12.15` | `+4.40` to `+6.40` | `32.30 m²` |
-| South circulation return | `-4.00` to `+5.20` | `+6.55` to `+10.05` | `32.20 m²` |
-| Exit vestibule | `+8.15` to `+12.15` | `+6.55` to `+9.55` | `12.00 m²` |
+| Area                     |           `X` range |           `Z` range |       Area |
+| ------------------------ | ------------------: | ------------------: | ---------: |
+| West connector           | `-10.15` to `-5.15` |  `+3.65` to `+5.15` |  `7.50 m²` |
+| South corridor           | `-4.00` to `+12.15` |  `+4.40` to `+6.40` | `32.30 m²` |
+| South circulation return |  `-4.00` to `+5.20` | `+6.55` to `+10.05` | `32.20 m²` |
+| Exit vestibule           | `+8.15` to `+12.15` |  `+6.55` to `+9.55` | `12.00 m²` |
 
 These four rectangles total `84 m²`.
 
@@ -163,19 +163,19 @@ wide at `X +1.00, Z +6.475`.
 
 Automatic-door centres are:
 
-| Connection | Centre `X` | Centre `Z` |
-|---|---:|---:|
-| PI office to northwest connector | `-5.075` | `-6.50` |
-| Tissue culture to northwest connector | `-5.90` | `-3.575` |
-| PI office to shared desks | `-0.925` | `-7.00` |
-| Shared desks to main laboratory | `+2.50` | `-4.325` |
-| Tissue culture to main laboratory | `-5.075` | `+1.25` |
-| Main laboratory to imaging | `+5.075` | `-1.25` |
-| Main laboratory to south corridor | `-1.50` | `+4.325` |
-| Tissue culture to west connector | `-7.65` | `+3.575` |
-| Break room to south corridor | `-4.075` | `+5.75` |
-| Break room to south return | `-4.075` | `+8.00` |
-| South corridor to exit vestibule | `+10.15` | `+6.475` |
+| Connection                            | Centre `X` | Centre `Z` |
+| ------------------------------------- | ---------: | ---------: |
+| PI office to northwest connector      |   `-5.075` |    `-6.50` |
+| Tissue culture to northwest connector |    `-5.90` |   `-3.575` |
+| PI office to shared desks             |   `-0.925` |    `-7.00` |
+| Shared desks to main laboratory       |    `+2.50` |   `-4.325` |
+| Tissue culture to main laboratory     |   `-5.075` |    `+1.25` |
+| Main laboratory to imaging            |   `+5.075` |    `-1.25` |
+| Main laboratory to south corridor     |    `-1.50` |   `+4.325` |
+| Tissue culture to west connector      |    `-7.65` |   `+3.575` |
+| Break room to south corridor          |   `-4.075` |    `+5.75` |
+| Break room to south return            |   `-4.075` |    `+8.00` |
+| South corridor to exit vestibule      |   `+10.15` |   `+6.475` |
 
 Normal automatic-door collision openings remain permanently clear. A visual
 door trigger extends `1.25 m` from each side of its opening. S10 can animate a
@@ -220,16 +220,16 @@ boundary.
 
 The large functional furniture footprints are:
 
-| Station | `X` range | `Z` range |
-|---|---:|---:|
-| Sample bench | `-4.30` to `-1.00` | `-3.85` to `-3.10` |
-| Experiment setup | `+0.30` to `+4.30` | `+2.80` to `+3.60` |
-| Active sample rack | `-9.75` to `-9.10` | `-1.50` to `+1.50` |
-| Imaging bay | `+10.85` to `+11.75` | `-0.75` to `+2.75` |
-| Facility station | `+9.00` to `+11.20` | `-3.95` to `-3.25` |
-| Service alcove | `+5.55` to `+6.35` | `+1.00` to `+3.25` |
-| Analysis workstation | `+1.00` to `+4.20` | `-8.95` to `-8.15` |
-| Manuscript desk | `+5.00` to `+8.20` | `-8.95` to `-8.15` |
+| Station              |            `X` range |          `Z` range |
+| -------------------- | -------------------: | -----------------: |
+| Sample bench         |   `-4.30` to `-1.00` | `-3.85` to `-3.10` |
+| Experiment setup     |   `+0.30` to `+4.30` | `+2.80` to `+3.60` |
+| Active sample rack   |   `-9.75` to `-9.10` | `-1.50` to `+1.50` |
+| Imaging bay          | `+10.85` to `+11.75` | `-0.75` to `+2.75` |
+| Facility station     |  `+9.00` to `+11.20` | `-3.95` to `-3.25` |
+| Service alcove       |   `+5.55` to `+6.35` | `+1.00` to `+3.25` |
+| Analysis workstation |   `+1.00` to `+4.20` | `-8.95` to `-8.15` |
+| Manuscript desk      |   `+5.00` to `+8.20` | `-8.95` to `-8.15` |
 
 Each core station retains its approved clear approach area of at least
 `1.20 m` width and `1.50 m` depth. Analysis and manuscript are separate
@@ -269,61 +269,61 @@ nearby substitute.
 
 All recovery anchors use `Y = 0`:
 
-| Anchor ID | Semantic location | `X` | `Z` | Facing |
-|---|---|---:|---:|---|
-| `MR-ANCHOR-REC-TISSUE-CULTURE` | Tissue culture | `-7.65` | `+2.00` | North |
-| `MR-ANCHOR-REC-MAIN-LAB` | Main laboratory | `0.00` | `0.00` | North |
-| `MR-ANCHOR-REC-PI-OFFICE` | PI office | `-3.00` | `-6.80` | North |
-| `MR-ANCHOR-REC-SHARED-DESKS` | Shared desks | `+0.50` | `-5.70` | East |
-| `MR-ANCHOR-REC-IMAGING` | Imaging | `+7.50` | `-0.50` | East |
-| `MR-ANCHOR-REC-FACILITY` | Facility | `+9.70` | `-2.40` | North |
-| `MR-ANCHOR-REC-BREAK-ROOM` | Break room | `-7.00` | `+7.50` | East |
-| `MR-ANCHOR-REC-CORRIDOR` | General corridor connector | `-7.65` | `+4.40` | East |
-| `MR-ANCHOR-REC-SOUTH-CORRIDOR` | South corridor | `+1.00` | `+5.40` | East |
-| `MR-ANCHOR-REC-EXIT-VESTIBULE` | Exit vestibule | `+10.15` | `+8.00` | South |
+| Anchor ID                      | Semantic location          |      `X` |     `Z` | Facing |
+| ------------------------------ | -------------------------- | -------: | ------: | ------ |
+| `MR-ANCHOR-REC-TISSUE-CULTURE` | Tissue culture             |  `-7.65` | `+2.00` | North  |
+| `MR-ANCHOR-REC-MAIN-LAB`       | Main laboratory            |   `0.00` |  `0.00` | North  |
+| `MR-ANCHOR-REC-PI-OFFICE`      | PI office                  |  `-3.00` | `-6.80` | North  |
+| `MR-ANCHOR-REC-SHARED-DESKS`   | Shared desks               |  `+0.50` | `-5.70` | East   |
+| `MR-ANCHOR-REC-IMAGING`        | Imaging                    |  `+7.50` | `-0.50` | East   |
+| `MR-ANCHOR-REC-FACILITY`       | Facility                   |  `+9.70` | `-2.40` | North  |
+| `MR-ANCHOR-REC-BREAK-ROOM`     | Break room                 |  `-7.00` | `+7.50` | East   |
+| `MR-ANCHOR-REC-CORRIDOR`       | General corridor connector |  `-7.65` | `+4.40` | East   |
+| `MR-ANCHOR-REC-SOUTH-CORRIDOR` | South corridor             |  `+1.00` | `+5.40` | East   |
+| `MR-ANCHOR-REC-EXIT-VESTIBULE` | Exit vestibule             | `+10.15` | `+8.00` | South  |
 
 ### Core station approach anchors
 
 All station approach anchors use `Y = 0`:
 
-| Anchor ID | Station | `X` | `Z` | Facing |
-|---|---|---:|---:|---|
-| `MR-ANCHOR-STATION-SAMPLE-BENCH` | Sample bench | `-2.65` | `-2.35` | North |
-| `MR-ANCHOR-STATION-EXPERIMENT-SETUP` | Experiment setup | `+2.30` | `+2.05` | South |
-| `MR-ANCHOR-STATION-ACTIVE-RACK` | Active rack | `-8.35` | `0.00` | West |
-| `MR-ANCHOR-STATION-IMAGING-BAY` | Imaging bay | `+10.10` | `+1.00` | East |
-| `MR-ANCHOR-STATION-ANALYSIS` | Analysis workstation | `+2.60` | `-7.40` | North |
-| `MR-ANCHOR-STATION-MANUSCRIPT` | Manuscript desk | `+6.60` | `-7.40` | North |
+| Anchor ID                            | Station              |      `X` |     `Z` | Facing |
+| ------------------------------------ | -------------------- | -------: | ------: | ------ |
+| `MR-ANCHOR-STATION-SAMPLE-BENCH`     | Sample bench         |  `-2.65` | `-2.35` | North  |
+| `MR-ANCHOR-STATION-EXPERIMENT-SETUP` | Experiment setup     |  `+2.30` | `+2.05` | South  |
+| `MR-ANCHOR-STATION-ACTIVE-RACK`      | Active rack          |  `-8.35` |  `0.00` | West   |
+| `MR-ANCHOR-STATION-IMAGING-BAY`      | Imaging bay          | `+10.10` | `+1.00` | East   |
+| `MR-ANCHOR-STATION-ANALYSIS`         | Analysis workstation |  `+2.60` | `-7.40` | North  |
+| `MR-ANCHOR-STATION-MANUSCRIPT`       | Manuscript desk      |  `+6.60` | `-7.40` | North  |
 
 Supporting interaction anchors use `Y = 0`:
 
-| Anchor ID | Interaction | `X` | `Z` | Facing |
-|---|---|---:|---:|---|
-| `MR-ANCHOR-SUPPORT-FACILITY-TERMINAL` | Facility queue terminal | `+10.10` | `-2.45` | North |
-| `MR-ANCHOR-SUPPORT-BOOKING-BOARD` | Imaging booking board | `+6.90` | `-3.00` | North |
-| `MR-ANCHOR-SUPPORT-SERVICE-ALCOVE` | Imaging service alcove | `+7.10` | `+2.10` | West |
-| `MR-ANCHOR-SUPPORT-PI-OFFICE-SCENE` | PI-office scene point | `-3.00` | `-6.20` | North |
-| `MR-ANCHOR-SUPPORT-PROTECTED-BREAK` | Protected break | `-8.10` | `+7.80` | West |
-| `MR-ANCHOR-SUPPORT-EXIT-INTERACTION` | Exit interaction | `+10.15` | `+8.90` | South |
-| `MR-ANCHOR-SUPPORT-EXIT-PANEL` | Exit access panel | `+11.45` | `+8.40` | East |
+| Anchor ID                             | Interaction             |      `X` |     `Z` | Facing |
+| ------------------------------------- | ----------------------- | -------: | ------: | ------ |
+| `MR-ANCHOR-SUPPORT-FACILITY-TERMINAL` | Facility queue terminal | `+10.10` | `-2.45` | North  |
+| `MR-ANCHOR-SUPPORT-BOOKING-BOARD`     | Imaging booking board   |  `+6.90` | `-3.00` | North  |
+| `MR-ANCHOR-SUPPORT-SERVICE-ALCOVE`    | Imaging service alcove  |  `+7.10` | `+2.10` | West   |
+| `MR-ANCHOR-SUPPORT-PI-OFFICE-SCENE`   | PI-office scene point   |  `-3.00` | `-6.20` | North  |
+| `MR-ANCHOR-SUPPORT-PROTECTED-BREAK`   | Protected break         |  `-8.10` | `+7.80` | West   |
+| `MR-ANCHOR-SUPPORT-EXIT-INTERACTION`  | Exit interaction        | `+10.15` | `+8.90` | South  |
+| `MR-ANCHOR-SUPPORT-EXIT-PANEL`        | Exit access panel       | `+11.45` | `+8.40` | East   |
 
 ### Character and step-aside anchors
 
 Physical characters use authored anchors and short authored paths. Camila has
 no physical anchor.
 
-| Character and location | Normal anchor and `X, Z` | Step-aside anchor and `X, Z` |
-|---|---|---|
-| Elena, PI office | `MR-ANCHOR-CHARACTER-ELENA-PI-OFFICE`; `-3.80, -7.80` | `MR-ANCHOR-STEP-ASIDE-ELENA-PI-OFFICE`; `-4.30, -7.80` |
-| Elena, main laboratory | `MR-ANCHOR-CHARACTER-ELENA-MAIN-LAB`; `+3.70, +0.60` | `MR-ANCHOR-STEP-ASIDE-ELENA-MAIN-LAB`; `+4.35, +0.60` |
-| Haoran, tissue culture | `MR-ANCHOR-CHARACTER-HAORAN-TISSUE-CULTURE`; `-6.40, -1.00` | `MR-ANCHOR-STEP-ASIDE-HAORAN-TISSUE-CULTURE`; `-6.00, -1.60` |
-| Haoran, main laboratory | `MR-ANCHOR-CHARACTER-HAORAN-MAIN-LAB`; `-3.20, +1.60` | `MR-ANCHOR-STEP-ASIDE-HAORAN-MAIN-LAB`; `-3.90, +1.60` |
-| Haoran, shared desks | `MR-ANCHOR-CHARACTER-HAORAN-SHARED-DESKS`; `+4.20, -5.60` | `MR-ANCHOR-STEP-ASIDE-HAORAN-SHARED-DESKS`; `+4.90, -5.60` |
-| Samira, shared desks | `MR-ANCHOR-CHARACTER-SAMIRA-SHARED-DESKS`; `+8.80, -6.30` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-SHARED-DESKS`; `+9.45, -6.30` |
-| Samira, break room | `MR-ANCHOR-CHARACTER-SAMIRA-BREAK-ROOM`; `-8.50, +8.40` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-BREAK-ROOM`; `-9.20, +8.40` |
-| Samira, imaging | `MR-ANCHOR-CHARACTER-SAMIRA-IMAGING`; `+7.60, +2.40` | `MR-ANCHOR-STEP-ASIDE-SAMIRA-IMAGING`; `+6.90, +2.40` |
-| Gabriel, facility | `MR-ANCHOR-CHARACTER-GABRIEL-FACILITY`; `+11.25, -2.25` | `MR-ANCHOR-STEP-ASIDE-GABRIEL-FACILITY`; `+11.55, -2.80` |
-| Gabriel, imaging | `MR-ANCHOR-CHARACTER-GABRIEL-IMAGING`; `+8.20, +1.60` | `MR-ANCHOR-STEP-ASIDE-GABRIEL-IMAGING`; `+7.50, +1.60` |
+| Character and location  | Normal anchor and `X, Z`                                    | Step-aside anchor and `X, Z`                                 |
+| ----------------------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| Elena, PI office        | `MR-ANCHOR-CHARACTER-ELENA-PI-OFFICE`; `-3.80, -7.80`       | `MR-ANCHOR-STEP-ASIDE-ELENA-PI-OFFICE`; `-4.30, -7.80`       |
+| Elena, main laboratory  | `MR-ANCHOR-CHARACTER-ELENA-MAIN-LAB`; `+3.70, +0.60`        | `MR-ANCHOR-STEP-ASIDE-ELENA-MAIN-LAB`; `+4.35, +0.60`        |
+| Haoran, tissue culture  | `MR-ANCHOR-CHARACTER-HAORAN-TISSUE-CULTURE`; `-6.40, -1.00` | `MR-ANCHOR-STEP-ASIDE-HAORAN-TISSUE-CULTURE`; `-6.00, -1.60` |
+| Haoran, main laboratory | `MR-ANCHOR-CHARACTER-HAORAN-MAIN-LAB`; `-3.20, +1.60`       | `MR-ANCHOR-STEP-ASIDE-HAORAN-MAIN-LAB`; `-3.90, +1.60`       |
+| Haoran, shared desks    | `MR-ANCHOR-CHARACTER-HAORAN-SHARED-DESKS`; `+4.20, -5.60`   | `MR-ANCHOR-STEP-ASIDE-HAORAN-SHARED-DESKS`; `+4.90, -5.60`   |
+| Samira, shared desks    | `MR-ANCHOR-CHARACTER-SAMIRA-SHARED-DESKS`; `+8.80, -6.30`   | `MR-ANCHOR-STEP-ASIDE-SAMIRA-SHARED-DESKS`; `+9.45, -6.30`   |
+| Samira, break room      | `MR-ANCHOR-CHARACTER-SAMIRA-BREAK-ROOM`; `-8.50, +8.40`     | `MR-ANCHOR-STEP-ASIDE-SAMIRA-BREAK-ROOM`; `-9.20, +8.40`     |
+| Samira, imaging         | `MR-ANCHOR-CHARACTER-SAMIRA-IMAGING`; `+7.60, +2.40`        | `MR-ANCHOR-STEP-ASIDE-SAMIRA-IMAGING`; `+6.90, +2.40`        |
+| Gabriel, facility       | `MR-ANCHOR-CHARACTER-GABRIEL-FACILITY`; `+11.25, -2.25`     | `MR-ANCHOR-STEP-ASIDE-GABRIEL-FACILITY`; `+11.55, -2.80`     |
+| Gabriel, imaging        | `MR-ANCHOR-CHARACTER-GABRIEL-IMAGING`; `+8.20, +1.60`       | `MR-ANCHOR-STEP-ASIDE-GABRIEL-IMAGING`; `+7.50, +1.60`       |
 
 A physical character has a soft `0.35 m` horizontal boundary. When the player
 comes within `1.20 m` and the character obstructs movement, the character uses
@@ -344,15 +344,15 @@ Required scenes reuse five fixed stages:
 
 Required stage and recovery sequences are:
 
-| Scene | Stages | Control returns at |
-|---|---|---|
-| **Clarified** | Tissue rack, main laboratory, PI office | Shared-desks recovery anchor |
-| **A Complete Narrative** | PI office | PI-office recovery anchor |
-| **What We Had** | Shared desks, PI office | PI-office recovery anchor |
-| **Public Record** | Manuscript desk | Shared-desks recovery anchor |
-| **Helpful Comments** | Shared desks, PI office | PI-office recovery anchor |
-| **A Reasonable Response** | Shared desks, PI office | PI-office recovery anchor |
-| **06:42** | Shared desks, exit stage | Exit-vestibule recovery anchor |
+| Scene                     | Stages                                  | Control returns at             |
+| ------------------------- | --------------------------------------- | ------------------------------ |
+| **Clarified**             | Tissue rack, main laboratory, PI office | Shared-desks recovery anchor   |
+| **A Complete Narrative**  | PI office                               | PI-office recovery anchor      |
+| **What We Had**           | Shared desks, PI office                 | PI-office recovery anchor      |
+| **Public Record**         | Manuscript desk                         | Shared-desks recovery anchor   |
+| **Helpful Comments**      | Shared desks, PI office                 | PI-office recovery anchor      |
+| **A Reasonable Response** | Shared desks, PI office                 | PI-office recovery anchor      |
+| **06:42**                 | Shared desks, exit stage                | Exit-vestibule recovery anchor |
 
 Optional scenes reuse existing anchors: **Borrowed Time** uses the active
 rack, **The Missing Replicate** the shared-desks stage, **Shared Instrument**
@@ -377,15 +377,15 @@ height-changing movement.
 
 Movement values are:
 
-| Value | Contract |
-|---|---:|
-| Maximum speed | `2.40 m/s` |
-| Acceleration | `12 m/s²` |
-| Stopping rate | `18 m/s²` |
-| Maximum processed frame delta | `0.05 s` |
-| Maximum full-speed request per processed frame | `0.12 m` |
-| Wall safety gap | `0.02 m` |
-| Maximum collision contacts per frame | `4` |
+| Value                                          |   Contract |
+| ---------------------------------------------- | ---------: |
+| Maximum speed                                  | `2.40 m/s` |
+| Acceleration                                   |  `12 m/s²` |
+| Stopping rate                                  |  `18 m/s²` |
+| Maximum processed frame delta                  |   `0.05 s` |
+| Maximum full-speed request per processed frame |   `0.12 m` |
+| Wall safety gap                                |   `0.02 m` |
+| Maximum collision contacts per frame           |        `4` |
 
 Forward, backward, and sideways speed are equal. Diagonal input is normalized
 so it is not faster. A controller stick can request partial speed. Wall
@@ -439,14 +439,14 @@ level pitch, and zero speed.
 Core station focus cameras use the approach anchor at normal eye height and
 look at these points:
 
-| Station | Look point `X, Y, Z` |
-|---|---:|
-| Sample bench | `-2.65, 0.90, -3.45` |
-| Experiment setup | `+2.30, 0.95, +3.20` |
-| Active rack | `-9.42, 1.20, 0.00` |
-| Imaging bay | `+11.30, 1.20, +1.00` |
-| Analysis workstation | `+2.60, 1.10, -8.55` |
-| Manuscript desk | `+6.60, 0.95, -8.55` |
+| Station              |  Look point `X, Y, Z` |
+| -------------------- | --------------------: |
+| Sample bench         |  `-2.65, 0.90, -3.45` |
+| Experiment setup     |  `+2.30, 0.95, +3.20` |
+| Active rack          |   `-9.42, 1.20, 0.00` |
+| Imaging bay          | `+11.30, 1.20, +1.00` |
+| Analysis workstation |  `+2.60, 1.10, -8.55` |
+| Manuscript desk      |  `+6.60, 0.95, -8.55` |
 
 The fixed focus camera uses the player's selected field of view. It does not
 move the physical collision body.
@@ -571,11 +571,11 @@ slots or targets.
 
 The three approved operational room states map to:
 
-| Room state | Physical targets |
-|---|---|
-| `MR-ROOM-FACILITY-QUEUE` | Facility terminal and imaging bay |
-| `MR-ROOM-IMAGING-BOOKING` | Booking board and imaging bay |
-| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Service alcove and imaging bay |
+| Room state                      | Physical targets                  |
+| ------------------------------- | --------------------------------- |
+| `MR-ROOM-FACILITY-QUEUE`        | Facility terminal and imaging bay |
+| `MR-ROOM-IMAGING-BOOKING`       | Booking board and imaging bay     |
+| `MR-ROOM-IMAGING-SERVICE-LIMIT` | Service alcove and imaging bay    |
 
 The condition, forecast, expiry, and response routes are readable at those
 targets before commitment. An unresolved state changes the relevant
@@ -712,17 +712,17 @@ tests, not a runtime navigation system.
 
 S08 requires these future fixture groups:
 
-| Fixture group | Required coverage |
-|---|---|
-| `MR-S08-GEO-001` | Units, construction bounds, all rooms and circulation, service allocations, areas, walls, openings, and floor union. |
-| `MR-S08-COL-001` | Wall and furniture contact, corners, sliding, equal-hit IDs, opposing surfaces, four-contact limit, and boundary containment. |
-| `MR-S08-MOV-001` | Speed, acceleration, stopping, diagonal normalization, partial movement, delta limit, interruption zero frame, permission loss, and no catch-up. |
-| `MR-S08-ANC-001` | Every recovery, station, supporting, character, step-aside, and scene anchor; clear space; exact restoration; and invalid-anchor rejection. |
-| `MR-S08-TGT-001` | Range boundaries, target sizes, blocked sight, surface attachment, deterministic selection, environmental priority, room membership, and stale revision. |
-| `MR-S08-FOC-001` | Every focus camera, unchanged physical pose, free exit, one-focus rule, invalid entry, rejected command, applied-command order, and crash or cutscene priority. |
+| Fixture group    | Required coverage                                                                                                                                                    |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-S08-GEO-001` | Units, construction bounds, all rooms and circulation, service allocations, areas, walls, openings, and floor union.                                                 |
+| `MR-S08-COL-001` | Wall and furniture contact, corners, sliding, equal-hit IDs, opposing surfaces, four-contact limit, and boundary containment.                                        |
+| `MR-S08-MOV-001` | Speed, acceleration, stopping, diagonal normalization, partial movement, delta limit, interruption zero frame, permission loss, and no catch-up.                     |
+| `MR-S08-ANC-001` | Every recovery, station, supporting, character, step-aside, and scene anchor; clear space; exact restoration; and invalid-anchor rejection.                          |
+| `MR-S08-TGT-001` | Range boundaries, target sizes, blocked sight, surface attachment, deterministic selection, environmental priority, room membership, and stale revision.             |
+| `MR-S08-FOC-001` | Every focus camera, unchanged physical pose, free exit, one-focus rule, invalid entry, rejected command, applied-command order, and crash or cutscene priority.      |
 | `MR-S08-WLD-001` | Semantic locations, complete projection application, retry and revision rules, act and period changes, room-state targets, character placement, and Gabriel passage. |
-| `MR-S08-TRV-001` | Full-cylinder traversal for all routes, anchors, stations, roster and scene variants, room states, and both shortcut states. |
-| `MR-S08-FLT-001` | Every normal rejection and fatal fault, with exact unchanged pose, projection, focus, and campaign expectations. |
+| `MR-S08-TRV-001` | Full-cylinder traversal for all routes, anchors, stations, roster and scene variants, room states, and both shortcut states.                                         |
+| `MR-S08-FLT-001` | Every normal rejection and fatal fault, with exact unchanged pose, projection, focus, and campaign expectations.                                                     |
 
 Fixtures also prove that physical walking and looking never change campaign
 state, that hidden-tab or pause time never creates movement, that presentation

@@ -22,18 +22,18 @@ named here. S14 later completes the contradiction and interface-freeze audit.
 
 ## Plain-language terms
 
-| Term | Meaning |
-|---|---|
-| Compatibility probe | A small temporary check that asks whether a browser feature is present and usable. |
-| Pixel ratio | The internal drawing resolution relative to the visible browser area. It does not change HTML text clarity. |
-| Frame | One visual update. Campaign time does not advance because a frame occurs. |
-| Draw call | One instruction that sends a group of objects to the graphics processor. |
-| Rendered triangle | One basic 3D surface processed for a frame, including applicable shadow work. |
-| Warm-up | A short period before recording results, so one-time start work does not distort normal-play evidence. |
-| Slowest 1 percent | The average rate across the slowest one percent of recorded frames. It reveals stutter that a simple average can hide. |
-| Sanitized | Restricted to approved safe fields, with private or uncontrolled technical text removed. |
-| MiB | 1,048,576 bytes. |
-| GiB | 1,073,741,824 bytes. |
+| Term                | Meaning                                                                                                                |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Compatibility probe | A small temporary check that asks whether a browser feature is present and usable.                                     |
+| Pixel ratio         | The internal drawing resolution relative to the visible browser area. It does not change HTML text clarity.            |
+| Frame               | One visual update. Campaign time does not advance because a frame occurs.                                              |
+| Draw call           | One instruction that sends a group of objects to the graphics processor.                                               |
+| Rendered triangle   | One basic 3D surface processed for a frame, including applicable shadow work.                                          |
+| Warm-up             | A short period before recording results, so one-time start work does not distort normal-play evidence.                 |
+| Slowest 1 percent   | The average rate across the slowest one percent of recorded frames. It reveals stutter that a simple average can hide. |
+| Sanitized           | Restricted to approved safe fields, with private or uncontrolled technical text removed.                               |
+| MiB                 | 1,048,576 bytes.                                                                                                       |
+| GiB                 | 1,073,741,824 bytes.                                                                                                   |
 
 ## Supported browser boundary
 
@@ -68,14 +68,14 @@ Each entry contains only:
 - `status`: `ready`, `unavailable`, or `failed`; and
 - one stable safe reason code or `null`.
 
-| Order | Capability ID | Required | Ready meaning |
-|---:|---|---:|---|
-| 1 | `esModules` | Yes | The module entry executed. |
-| 2 | `webgl2` | Yes | A temporary WebGL2 context was created. |
-| 3 | `indexedDb` | Yes | An empty temporary database was created, closed, and deleted. |
-| 4 | `webAudio` | Yes | The standard browser audio interface is present. |
-| 5 | `pointerLock` | Yes | The standard request and exit functions are present. |
-| 6 | `controller` | No | The standard controller interface is present. |
+| Order | Capability ID | Required | Ready meaning                                                 |
+| ----: | ------------- | -------: | ------------------------------------------------------------- |
+|     1 | `esModules`   |      Yes | The module entry executed.                                    |
+|     2 | `webgl2`      |      Yes | A temporary WebGL2 context was created.                       |
+|     3 | `indexedDb`   |      Yes | An empty temporary database was created, closed, and deleted. |
+|     4 | `webAudio`    |      Yes | The standard browser audio interface is present.              |
+|     5 | `pointerLock` |      Yes | The standard request and exit functions are present.          |
+|     6 | `controller`  |       No | The standard controller interface is present.                 |
 
 All required entries ready gives `supported`. A controller entry that is not
 ready while every required entry is ready gives `degraded`. Any required entry
@@ -130,12 +130,12 @@ path. It cannot change campaign truth or silently restart the application.
 The S09 boot screen retains its approved stages and blocking-screen shape. The
 required capability reasons are:
 
-| Capability | Plain reason |
-|---|---|
-| `webgl2` | **3D graphics are not available.** |
-| `indexedDb` | **Local saved data is not available.** |
-| `esModules` | **This browser cannot run this version of Minor Revisions.** |
-| `webAudio` | **Required browser audio is not available.** |
+| Capability    | Plain reason                                                            |
+| ------------- | ----------------------------------------------------------------------- |
+| `webgl2`      | **3D graphics are not available.**                                      |
+| `indexedDb`   | **Local saved data is not available.**                                  |
+| `esModules`   | **This browser cannot run this version of Minor Revisions.**            |
+| `webAudio`    | **Required browser audio is not available.**                            |
 | `pointerLock` | **The browser cannot provide the mouse control required for movement.** |
 
 The screen states that campaign data did not change. It offers **Retry Check**
@@ -152,11 +152,11 @@ The canvas drawing ratio is the smaller of the browser device-pixel ratio and
 the profile cap. The cap does not enlarge a low-density display beyond its
 native density.
 
-| Profile | Pixel-ratio cap | Full-detail rooms | Cosmetic particles | Directional shadow map | Frame ceiling |
-|---|---:|---:|---:|---:|---:|
-| Low | `0.75` | 2 | 100 | Off | 30 fps |
-| Standard | `1.00` | 2 | 300 | `1024 x 1024` | 60 fps |
-| High | `1.50` | 3 | 500 | `2048 x 2048` | 60 fps |
+| Profile  | Pixel-ratio cap | Full-detail rooms | Cosmetic particles | Directional shadow map | Frame ceiling |
+| -------- | --------------: | ----------------: | -----------------: | ---------------------: | ------------: |
+| Low      |          `0.75` |                 2 |                100 |                    Off |        30 fps |
+| Standard |          `1.00` |                 2 |                300 |          `1024 x 1024` |        60 fps |
+| High     |          `1.50` |                 3 |                500 |          `2048 x 2048` |        60 fps |
 
 Required objects, station state, science meaning, interaction targets,
 captions, warnings, accessibility content, and semantic HTML remain present in
@@ -174,11 +174,11 @@ change.
 The approved reference class is an 11th-generation Intel i5 with Intel Iris Xe
 graphics and 16 GB RAM. Future evidence must identify the actual device model.
 
-| Profile | Viewport | Average pass floor | Slowest-1-percent floor | Central-processor 95-percent limit | Graphics-processor 95-percent limit |
-|---|---:|---:|---:|---:|---:|
-| Low | `1280 x 720` | 29 fps | 24 fps | 12 ms | 28 ms |
-| Standard | `1920 x 1080` | 57 fps | 45 fps | 8 ms | 14 ms |
-| High | `1920 x 1080` | 29 fps | 24 fps | 12 ms | 28 ms |
+| Profile  |      Viewport | Average pass floor | Slowest-1-percent floor | Central-processor 95-percent limit | Graphics-processor 95-percent limit |
+| -------- | ------------: | -----------------: | ----------------------: | ---------------------------------: | ----------------------------------: |
+| Low      |  `1280 x 720` |             29 fps |                  24 fps |                              12 ms |                               28 ms |
+| Standard | `1920 x 1080` |             57 fps |                  45 fps |                               8 ms |                               14 ms |
+| High     | `1920 x 1080` |             29 fps |                  24 fps |                              12 ms |                               28 ms |
 
 Low and High therefore target 30 fps; Standard targets 60 fps. The pass floors
 allow normal display timing near 29.97 or 59.94 while preserving the intended
@@ -193,11 +193,11 @@ A display above 60 Hz does not make the game draw extra frames. A display below
 
 The budgets include the main render and applicable shadow work.
 
-| Profile | Draw calls per frame | Rendered triangles per frame |
-|---|---:|---:|
-| Low | 150 | 250,000 |
-| Standard | 250 | 500,000 |
-| High | 350 | 750,000 |
+| Profile  | Draw calls per frame | Rendered triangles per frame |
+| -------- | -------------------: | ---------------------------: |
+| Low      |                  150 |                      250,000 |
+| Standard |                  250 |                      500,000 |
+| High     |                  350 |                      750,000 |
 
 At one time, the renderer owns no more than:
 
@@ -219,12 +219,12 @@ is visible and produces no pop-in or campaign-time change.
 
 After initial loading on the reference computer, the targets are:
 
-| Resource | Limit |
-|---|---:|
-| JavaScript working memory | 192 MiB |
+| Resource                            |   Limit |
+| ----------------------------------- | ------: |
+| JavaScript working memory           | 192 MiB |
 | Calculated owned graphics resources | 384 MiB |
-| Decoded audio | 96 MiB |
-| Complete browser-tab working set | 1 GiB |
+| Decoded audio                       |  96 MiB |
+| Complete browser-tab working set    |   1 GiB |
 
 Browsers do not expose a portable exact graphics-memory value. The graphics
 figure is calculated from owned texture formats and dimensions, geometry
@@ -236,11 +236,11 @@ bytes. It includes every file required before Continue or New Game becomes
 available. Source maps, tests, reports, and local evidence are not shipped and
 do not count. Browser cache does not reduce the clean-first-visit result.
 
-| Initial transfer | Result |
-|---|---|
-| At or below 75 MB | Pass. |
+| Initial transfer           | Result                                                            |
+| -------------------------- | ----------------------------------------------------------------- |
+| At or below 75 MB          | Pass.                                                             |
 | Above 75 MB through 100 MB | Target failure; optimize or obtain a separate approved exception. |
-| Above 100 MB | Blocked until Leonardo renews approval. |
+| Above 100 MB               | Blocked until Leonardo renews approval.                           |
 
 IndexedDB remains game-data storage and is not an asset cache.
 
@@ -428,11 +428,11 @@ or saved data. Production output exposes only the sanitized record.
 
 ## Diagnostic severity and recovery
 
-| Severity | Player result |
-|---|---|
-| Warning | Play continues and one quiet notice appears. |
-| Recoverable | The affected operation stops, the last valid state remains, and only safe recovery actions appear. |
-| Fatal | Campaign control stops and one semantic full-screen message offers **Copy Diagnostic** and **Reload Page**. |
+| Severity    | Player result                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------- |
+| Warning     | Play continues and one quiet notice appears.                                                                |
+| Recoverable | The affected operation stops, the last valid state remains, and only safe recovery actions appear.          |
+| Fatal       | Campaign control stops and one semantic full-screen message offers **Copy Diagnostic** and **Reload Page**. |
 
 **Try Again** appears only when repeating the operation is proven idempotent
 and cannot duplicate or damage data. A fatal application cannot restart its

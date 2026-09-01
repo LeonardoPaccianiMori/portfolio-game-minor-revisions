@@ -25,21 +25,21 @@ The following are asset roles and counts, not selected asset records. Do not
 turn them into manifest rows until a real source or original-work record is
 available and verified.
 
-| Planning role | Count or limit | Source status |
-|---|---:|---|
-| Modular floor kit | 1 | No source selected |
-| Reusable prop families | 20 planned; 24 is the hard substitution maximum | No source selected |
-| Functional station kits | 6 | No source selected |
-| Physical NPC models | 4 | No source selected |
-| Protagonist silhouette | 1 | No source selected |
-| Camila desk-monitor portrait | 1 original 2D portrait | No source selected |
-| Reusable interface templates | Bounded reusable set | No source selected |
-| Room-ambience roles | 8 | No source selected |
-| System-cue roles | 3 | No source selected |
-| Non-lexical dialogue palettes | 5 palettes with 8 sounds each | No source selected |
-| Music-stem roles | 6 | No source selected |
-| Lighting presets | 20 | Authored settings, not a third-party asset |
-| Live text and SVG notices | Author-authored content | No source selected |
+| Planning role                 |                                  Count or limit | Source status                              |
+| ----------------------------- | ----------------------------------------------: | ------------------------------------------ |
+| Modular floor kit             |                                               1 | No source selected                         |
+| Reusable prop families        | 20 planned; 24 is the hard substitution maximum | No source selected                         |
+| Functional station kits       |                                               6 | No source selected                         |
+| Physical NPC models           |                                               4 | No source selected                         |
+| Protagonist silhouette        |                                               1 | No source selected                         |
+| Camila desk-monitor portrait  |                          1 original 2D portrait | No source selected                         |
+| Reusable interface templates  |                            Bounded reusable set | No source selected                         |
+| Room-ambience roles           |                                               8 | No source selected                         |
+| System-cue roles              |                                               3 | No source selected                         |
+| Non-lexical dialogue palettes |                   5 palettes with 8 sounds each | No source selected                         |
+| Music-stem roles              |                                               6 | No source selected                         |
+| Lighting presets              |                                              20 | Authored settings, not a third-party asset |
+| Live text and SVG notices     |                         Author-authored content | No source selected                         |
 
 The approved planned prop families are: desk, chair, storage unit, shelf,
 laboratory bench, stool, glass partition, automatic door, generic monitor,
@@ -85,25 +85,25 @@ person's likeness or voice as input.
 
 Before integration, each real record must state:
 
-| Field | Required information |
-|---|---|
-| Asset ID | Stable final identifier. Do not use a planning-role label as an asset ID. |
-| File or files | Exact future repository path and source-format details. |
-| Purpose | Approved game role and linked content or requirement IDs. |
-| Creator | Individual, organisation, or Leonardo. |
-| Source | Exact source URL or original-work record. |
-| Licence | Exact licence name, version, and relevant terms link. |
-| Attribution | Exact credit text and Credits/Licences placement. |
-| Modification | All expected or completed changes. |
-| Redistribution | Evidence for public repository and deployed-game redistribution. |
+| Field           | Required information                                                                         |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| Asset ID        | Stable final identifier. Do not use a planning-role label as an asset ID.                    |
+| File or files   | Exact future repository path and source-format details.                                      |
+| Purpose         | Approved game role and linked content or requirement IDs.                                    |
+| Creator         | Individual, organisation, or Leonardo.                                                       |
+| Source          | Exact source URL or original-work record.                                                    |
+| Licence         | Exact licence name, version, and relevant terms link.                                        |
+| Attribution     | Exact credit text and Credits/Licences placement.                                            |
+| Modification    | All expected or completed changes.                                                           |
+| Redistribution  | Evidence for public repository and deployed-game redistribution.                             |
 | Technical facts | Format, codec where relevant, texture size, source version, and file hash after integration. |
-| Verification | Verification date, reviewer, and any remaining uncertainty. |
+| Verification    | Verification date, reviewer, and any remaining uncertainty.                                  |
 
 ## Current verified asset records
 
-| Asset ID | File(s) | Purpose | Creator | Source | Licence | Attribution | Modification | Redistribution | Technical facts | Verification |
-|---|---|---|---|---|---|---|---|---|---|---|
-| None | None | This design repository contains no production assets. | None | None | None | None | None | None | None | 2026-08-28 confirmed |
+| Asset ID | File(s) | Purpose                                               | Creator | Source | Licence | Attribution | Modification | Redistribution | Technical facts | Verification         |
+| -------- | ------- | ----------------------------------------------------- | ------- | ------ | ------- | ----------- | ------------ | -------------- | --------------- | -------------------- |
+| None     | None    | This design repository contains no production assets. | None    | None   | None    | None        | None         | None           | None            | 2026-08-28 confirmed |
 
 ## Required check before integration
 

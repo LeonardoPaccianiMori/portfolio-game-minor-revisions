@@ -42,11 +42,11 @@ The game does not show raw biological data or operational protocol values.
 
 ## Scientific language
 
-| Use | Approved term |
-|---|---|
-| Player-facing language | repair state; recovery |
-| Paper-facing language | spatial-rhythmic recovery; transient repatterning state |
-| PI oversell language | reconstructive rhythmogenesis |
+| Use                    | Approved term                                           |
+| ---------------------- | ------------------------------------------------------- |
+| Player-facing language | repair state; recovery                                  |
+| Paper-facing language  | spatial-rhythmic recovery; transient repatterning state |
+| PI oversell language   | reconstructive rhythmogenesis                           |
 
 The PI term is deliberately inflated. It does not describe a proven mechanism.
 
@@ -101,14 +101,14 @@ Paired observation needs the quality-check monitoring action to produce full
 paired coverage. Each template also gives one authored fictional choice
 without giving a real protocol:
 
-| Template | Baseline-preserving choice | Higher-risk biological choice |
-|---|---|---|
-| Laser/sham | Prioritize the matched comparison. | Include the broader injury case. |
-| Damage range | Stay inside the observed recovery range. | Test the recovery edge. |
-| Batch check | Use the established batch context. | Use the newly available batch context. |
-| Repair state | Observe the association beside recovery. | Challenge the association in a broader condition. |
-| Oxygen loss | Prioritize the interpretable recovery condition. | Prioritize the broader reviewer condition. |
-| Drug exposure | Use the established assay context. | Use the exploratory assay context. |
+| Template      | Baseline-preserving choice                       | Higher-risk biological choice                     |
+| ------------- | ------------------------------------------------ | ------------------------------------------------- |
+| Laser/sham    | Prioritize the matched comparison.               | Include the broader injury case.                  |
+| Damage range  | Stay inside the observed recovery range.         | Test the recovery edge.                           |
+| Batch check   | Use the established batch context.               | Use the newly available batch context.            |
+| Repair state  | Observe the association beside recovery.         | Challenge the association in a broader condition. |
+| Oxygen loss   | Prioritize the interpretable recovery condition. | Prioritize the broader reviewer condition.        |
+| Drug exposure | Use the established assay context.               | Use the exploratory assay context.                |
 
 The baseline-preserving choice adds no biological preparation issue. The
 higher-risk choice adds one issue, but can provide its stated broader or more
@@ -204,12 +204,12 @@ result. The four labels below apply to individual sample conditions. A
 multi-condition template summarizes the full record with its authored strong,
 limited, or weak result string.
 
-| Biological result | Meaning |
-|---|---|
+| Biological result | Meaning                                       |
+| ----------------- | --------------------------------------------- |
 | Complete recovery | Tissue pattern and coordinated rhythm return. |
-| Partial recovery | Only tissue pattern or rhythm returns. |
-| Failed recovery | Neither tissue pattern nor rhythm returns. |
-| Unreliable result | Sample or equipment data is unclear. |
+| Partial recovery  | Only tissue pattern or rhythm returns.        |
+| Failed recovery   | Neither tissue pattern nor rhythm returns.    |
+| Unreliable result | Sample or equipment data is unclear.          |
 
 Partial and failed recovery can still give useful information. An unreliable
 result can require a repeat or a different control. Results are not only
@@ -217,11 +217,11 @@ success or failure.
 
 The manuscript board offers three claim levels:
 
-| Claim level | Paper wording | Main effect |
-|---|---|---|
-| Careful | Recovery is linked to the repair state. | Protects integrity but can make publication harder. |
-| Strong | The repair state supports recovery. | Can increase Elena's paper confidence. |
-| Inflated | Treat the repair state as if it drives recovery. This is unsupported. | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
+| Claim level | Paper wording                                                         | Main effect                                                                               |
+| ----------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Careful     | Recovery is linked to the repair state.                               | Protects integrity but can make publication harder.                                       |
+| Strong      | The repair state supports recovery.                                   | Can increase Elena's paper confidence.                                                    |
+| Inflated    | Treat the repair state as if it drives recovery. This is unsupported. | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
 
 The main paper claim is that a controlled cardiac tissue model can enter a
 repeatable repair state after limited damage and show spatial-rhythmic recovery.
@@ -278,14 +278,14 @@ monitoring, fatigue, and the saved campaign seed choose only the approved
 strong, limited, or weak band. These bands never provide laboratory quantities
 or operational instruction.
 
-| Template | Strong result | Limited result | Weak result |
-|---|---|---|---|
-| Laser/sham | Clear recovery and a stable sham record. | Partial recovery or an unclear control. | An unreliable record. |
-| Damage range | A clear recovery boundary. | A mixed recovery range. | No useful range. |
-| Batch check | A similar response in another batch. | A partial or mixed second batch. | A mismatch or unreliable batch. |
-| Repair state | Repatterning tracks recovery. | It tracks only part of recovery. | The stress signal is unclear. |
-| Oxygen loss | Constrained recovery after the challenge. | Delayed or mixed recovery. | No usable recovery. |
-| Drug exposure | A useful condition-dependent response. | A mixed response. | An unreliable response. |
+| Template      | Strong result                             | Limited result                          | Weak result                     |
+| ------------- | ----------------------------------------- | --------------------------------------- | ------------------------------- |
+| Laser/sham    | Clear recovery and a stable sham record.  | Partial recovery or an unclear control. | An unreliable record.           |
+| Damage range  | A clear recovery boundary.                | A mixed recovery range.                 | No useful range.                |
+| Batch check   | A similar response in another batch.      | A partial or mixed second batch.        | A mismatch or unreliable batch. |
+| Repair state  | Repatterning tracks recovery.             | It tracks only part of recovery.        | The stress signal is unclear.   |
+| Oxygen loss   | Constrained recovery after the challenge. | Delayed or mixed recovery.              | No usable recovery.             |
+| Drug exposure | A useful condition-dependent response.    | A mixed response.                       | An unreliable response.         |
 
 The repair state is present while tissue pattern and rhythm can recover. It is
 associated with recovery and can support a careful or strong paper claim. It

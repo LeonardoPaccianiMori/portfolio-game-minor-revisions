@@ -46,21 +46,21 @@ Do not present a design-review prediction as a measured result.
 
 ## Test identifiers and required evidence
 
-| Test ID | Scope | Required future evidence |
-|---|---|---|
-| MR-TEST-VISION-001 | Comprehension, engagement, comedy, and pacing | Clean-context comprehension result plus Leonardo's slice, fallback, and full-game vision checks |
-| MR-TEST-CONT-001 | Content data and English strings | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan |
-| MR-TEST-EXP-001 | Experiment actions and outcomes | Unit fixtures for all six full-build templates or the approved four-template fallback composition, repeats, bands, monitoring, and result/evidence separation |
-| MR-TEST-NARR-001 | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate |
-| MR-TEST-CHAR-001 | Optional scenes and career routes | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures |
-| MR-TEST-WORLD-001 | Floor states and environmental content | Exact S08 floor, collision, anchors, act rosters, scene anchors, target and environmental display, room-state routes, and no-trapping traversal |
-| MR-TEST-END-001 | Ending resolver and Archive | All valid route states, 29 modules, 12 Citations, exact compact cards, newest-first order, and 12-card retention |
-| MR-TEST-SAVE-001 | IndexedDB persistence and recovery | S07 save, recovery, migration, completion, clearing, concurrency, repair, and failure fixture groups |
-| MR-TEST-UI-001 | Main menu, status, prompts, and save controls | Keyboard flow, controller roles where available, text keys, and confirmations |
-| MR-TEST-A11Y-001 | Accessibility baseline | Captions, scale, contrast, motion, Interaction Assist, and browser-view checks |
-| MR-TEST-TECH-001 | Compatibility and deterministic rules | WebGL2, storage, modules, deterministic seed, no elapsed-time advance, and sanitized errors |
-| MR-TEST-PERF-001 | Build size and manual performance | Compressed size audit, reference-device notes, frame samples, and resource-session notes |
-| MR-TEST-RELEASE-001 | Public-release boundary | Dependency, licence, asset, privacy, title, and release-package audit |
+| Test ID             | Scope                                               | Required future evidence                                                                                                                                      |
+| ------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MR-TEST-VISION-001  | Comprehension, engagement, comedy, and pacing       | Clean-context comprehension result plus Leonardo's slice, fallback, and full-game vision checks                                                               |
+| MR-TEST-CONT-001    | Content data and English strings                    | Validated IDs, references, counts, text keys, word count, and fiction-boundary scan                                                                           |
+| MR-TEST-EXP-001     | Experiment actions and outcomes                     | Unit fixtures for all six full-build templates or the approved four-template fallback composition, repeats, bands, monitoring, and result/evidence separation |
+| MR-TEST-NARR-001    | Calendar, mandatory scenes, records, and manuscript | Unit and browser paths for every required scene and fixed gate                                                                                                |
+| MR-TEST-CHAR-001    | Optional scenes and career routes                   | Window, expiry, trust, concern, credit, contextual-line, and Morrow/Aldercroft fixtures                                                                       |
+| MR-TEST-WORLD-001   | Floor states and environmental content              | Exact S08 floor, collision, anchors, act rosters, scene anchors, target and environmental display, room-state routes, and no-trapping traversal               |
+| MR-TEST-END-001     | Ending resolver and Archive                         | All valid route states, 29 modules, 12 Citations, exact compact cards, newest-first order, and 12-card retention                                              |
+| MR-TEST-SAVE-001    | IndexedDB persistence and recovery                  | S07 save, recovery, migration, completion, clearing, concurrency, repair, and failure fixture groups                                                          |
+| MR-TEST-UI-001      | Main menu, status, prompts, and save controls       | Keyboard flow, controller roles where available, text keys, and confirmations                                                                                 |
+| MR-TEST-A11Y-001    | Accessibility baseline                              | Captions, scale, contrast, motion, Interaction Assist, and browser-view checks                                                                                |
+| MR-TEST-TECH-001    | Compatibility and deterministic rules               | WebGL2, storage, modules, deterministic seed, no elapsed-time advance, and sanitized errors                                                                   |
+| MR-TEST-PERF-001    | Build size and manual performance                   | Compressed size audit, reference-device notes, frame samples, and resource-session notes                                                                      |
+| MR-TEST-RELEASE-001 | Public-release boundary                             | Dependency, licence, asset, privacy, title, and release-package audit                                                                                         |
 
 Every implementation requirement must link to at least one of these test IDs.
 Every content object must link to a requirement and a test. A failed test has a

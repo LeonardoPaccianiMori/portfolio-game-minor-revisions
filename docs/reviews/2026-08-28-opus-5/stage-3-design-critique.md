@@ -19,7 +19,7 @@ mechanism**:
    "Observation: … Interpretation: …"). The player selects experiments and reads
    verdicts. The stated meaningful challenge — "choosing what to do, what
    evidence to trust, and what cost to accept" (`02`) — has no object that
-   represents *the player's* reading.
+   represents _the player's_ reading.
 
 2. **"Difficulty from ethical choices" / "uncomfortable complicity."** Integrity
    gates nothing. Inflation pays **+10 PI confidence**, which is a genuine
@@ -38,7 +38,7 @@ mechanism**:
 
 There is also one dominant strategy that inverts a pillar: **the
 minimum-effort playthrough produces the Morrow offer.** Morrow requires
-"at least a Developing evidence packet," and `07` states the campaign *starts* at
+"at least a Developing evidence packet," and `07` states the campaign _starts_ at
 Developing. A player who runs no successful experiments, drafts the paper, posts
 the automatic preprint, and answers two emails is eligible; the same player fails
 Aldercroft. Combined with Camila being the only warmly written character and
@@ -86,7 +86,7 @@ punishment.
 **2.5 Locked raw record with a mutable reported record, and no falsification
 method.**
 `04`, `07`, `03`. This is the precondition for the entire integrity theme being
-about *presentation* rather than forgery, and it is what keeps the game inside
+about _presentation_ rather than forgery, and it is what keeps the game inside
 its Teen/12+ and safety boundaries.
 
 **2.6 Visibility-gated misconduct: fabrication can publish; honest work can
@@ -108,7 +108,7 @@ satirising its own reward is a genuinely good move.
 while keeping it dignified. This guard is doing more work than it looks like.
 
 **2.10 The pre-authored fallback and the €150/stop-rule production discipline.**
-`12`, `14`. The existence of a *designed* contraction rather than an improvised
+`12`, `14`. The existence of a _designed_ contraction rather than an improvised
 one is the main reason the project's ambition is credible. Only its cut line
 needs attention (see 3.1), not its existence.
 
@@ -163,6 +163,7 @@ fallback already keeps.
 
 **Smallest sufficient change.**
 Two edits:
+
 1. Give `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE` (retained in fallback; already at shared
    desks; window W6–12) its permitted single conditional variant: when a visible
    record, reported reading, or authorship state supports concern, Samira raises
@@ -182,7 +183,7 @@ Systems: optional-scene selection, permanent flags, citation unlock.
 currently frames around competition and credit rather than record integrity.
 Mitigated by `05`'s existing latitude ("rival, ally, or exhausted
 co-conspirator") and by the fact that her scene is already conditional on the
-player *using her evidence*, which makes a record concern natural.
+player _using her evidence_, which makes a record concern natural.
 
 **Test / prototype.** `MR-TEST-CHAR-001` fixture matrix: run the fallback
 content set with `FLAG:alteredReading` set and assert that exactly one discovery
@@ -234,7 +235,7 @@ epilogue is a bridge appointment and another committee document. Effort correlat
 inversely with epilogue comfort, and industry becomes rescue.
 
 **Recommendation.**
-Make Morrow's gate test *demonstrated experimental judgement* rather than a
+Make Morrow's gate test _demonstrated experimental judgement_ rather than a
 packet label. This is thematically exact: `04` states Morrow is "interested in
 the method and the protagonist's culture, microscopy, image analysis,
 perturbation, failure-diagnosis, and quality-control skills," and
@@ -260,7 +261,7 @@ three analysed records and lose both routes, producing **End of Contract**. That
 is consistent with `08` ("A poor run may leave neither route viable"), but it
 raises the floor for the worst ending. Three analysed records is reached by any
 run that completes even the first three required templates, so the risk is low.
-Second risk: strengthening Morrow's gate could make it feel *more* prestigious
+Second risk: strengthening Morrow's gate could make it feel _more_ prestigious
 rather than differently valued; the honest-limitation clause is what prevents
 this, because it rewards reporting a weak result, not producing a strong one.
 
@@ -307,7 +308,7 @@ free PI confidence and that Research Status never converts integrity into a
 warning about route access. Ethics becomes a roleplay preference expressed against
 the grain of the mechanics. The sincere player has the mirror-image problem: their
 restraint costs PI confidence and buys a label. Neither experience is
-*uncomfortable*; one is unpunished and the other is unrewarded. This is the
+_uncomfortable_; one is unpunished and the other is unrewarded. This is the
 listed failure mode "an ethical system that becomes a simple resource
 calculation," in its worst form — a calculation whose answer is always the same.
 
@@ -319,6 +320,7 @@ maintenance.
 
 **Smallest sufficient change.**
 Two edits:
+
 1. Add one authored consequence: when `FLAG:alteredReading` or
    `FLAG:fabrication` is set, one **record-consistency task** becomes required at
    the desk in each remaining act (`MR-TASK-RECORD-CONSISTENCY`, resolved by an
@@ -339,7 +341,7 @@ strings, `MR-TEST-EXP-001`/`MR-TEST-NARR-001` links), `02` (action-cost table
 note). Systems: request queue, safe-point scheduler, response-card evaluation.
 
 **Risk created.** `02` states "No later agent may add a new time-costing action
-class without a requirement change." The recommendation adds a *task*, not a new
+class without a requirement change." The recommendation adds a _task_, not a new
 cost class — it reuses light/focused costs — but this must be recorded as an
 explicit decision or it will be read as a violation. Second risk: the maintenance
 task could feel like a punishment tax rather than satire if its text is neutral;
@@ -349,7 +351,7 @@ warning register.
 **Test / prototype.** Vitest fixture: run two identical campaigns, one careful and
 one inflating-and-altering, and compare available productive periods at Week 14
 and route availability at Week 16. The desired result is that dishonesty buys PI
-confidence *and* costs periods, so both paths can reach a route by different
+confidence _and_ costs periods, so both paths can reach a route by different
 sacrifices. If the dishonest run still has more slack, the maintenance cadence is
 too light.
 
@@ -392,7 +394,7 @@ light and thinner music.
 **Likely player experience.**
 Act 1 is funny, as intended. Acts 2–4 become bookkeeping performed inside a
 progressively colder building, with humour arriving in occasional authored bursts
-rather than from play. The vision's most distinctive claim — comedy *through*
+rather than from play. The vision's most distinctive claim — comedy _through_
 systems — is the one most likely to be missing from the finished game.
 
 **Recommendation.**
@@ -402,6 +404,7 @@ be a decision.
 
 **Smallest sufficient change.**
 Three edits, all cheap:
+
 1. Catalogue the protected break as an action (`MR-ACT-BREAK`, 1 period, energy
    restore per `07`) with one act-state-indexed break-room line — five strings,
    reusing the `MR-ENV-*` display mechanism. The break room already has an
@@ -433,7 +436,7 @@ be typographically subordinate and must not appear in the HUD.
 the tutorials. Instrument it to record: number of monitoring visits, number of
 visits that presented no choice, real time per period, and periods spent on
 breaks. Then apply `13`'s experience criterion 4 ("The first part can make the
-player laugh") to the slice *with* and *without* the break and queue flavour
+player laugh") to the slice _with_ and _without_ the break and queue flavour
 lines, since those are the only comic surfaces present in a Week-1 build besides
 `Clarified`, the Gabriel queue, and the rejection records.
 
@@ -485,6 +488,7 @@ selections.
 
 **Smallest sufficient change.**
 Four edits:
+
 1. Split each primary-record string into `record.X.observation` (shipped) and
    remove the fused interpretation sentence. Word count is roughly neutral.
 2. At `MR-ACT-ANALYSE`, present 2–4 authored caveat tags per record variant; the
@@ -788,7 +792,7 @@ in particular is unfalsifiable by one evaluator who wrote the jokes. This is a
 genuine limit of the approved no-external-testing boundary and the change reduces
 rather than eliminates it.
 
-**Test.** The change *is* a test. Its own validation is whether the slice gate
+**Test.** The change _is_ a test. Its own validation is whether the slice gate
 produces at least one recorded change request on tonal grounds; if it never does,
 the item is decorative.
 
@@ -806,14 +810,15 @@ narrative, routes, and endings… Supported has no stigma or content penalty");
 
 **Evidence.** Standard: 4 starting segments, +1 energy for night/after-hours
 focused or intense work, first weekly break restores 2 and later breaks restore
+
 1. Supported: 5 segments, no night surcharge, every break restores 3. `07`
-states productive-period budgets (48–52 / 52–56 / 58–62) **only for Standard**,
-with no Supported equivalent.
+   states productive-period budgets (48–52 / 52–56 / 58–62) **only for Standard**,
+   with no Supported equivalent.
 
 **Causal mechanism.** Stage-1 arithmetic identifies break scheduling as the
 game's dominant recurring constraint. Supported reduces break frequency by
 roughly half while removing the night-work energy dilemma. The narrative content
-is identical, but the *pressure structure* — which `02` calls "the intended
+is identical, but the _pressure structure_ — which `02` calls "the intended
 survival-game profile" — is materially different, and no budget exists to confirm
 the profile is tuned rather than merely loosened.
 
@@ -896,23 +901,23 @@ scan will flag orphaned state. Confidence: high.
 These will cause divergence between the documents and the build, or will cause
 an implementer to invent a mechanic. Ordered by divergence risk.
 
-| # | Undefined decision | Divergence risk | Where it must land |
-|---:|---|---|---|
-| 1 | **Configuration → outcome band mapping.** `07` names the inputs (configuration, equipment state, monitoring, fatigue, quality choices) and the three band probabilities but no weighting, threshold, or worked example. The three preparation choices (goal, control quality, observation focus) plus one family-specific choice have no stated effect at all. | Very high — this is the primary moment-to-moment decision in the core loop. Two implementers will build two different games. | `04` B04/B05, `07` outcome-band contract |
-| 2 | **Evidence-quality resolution and the meaning of "suspicious."** Four states responding to six factors, with no rule. "Suspicious" is never defined anywhere in the corpus. | Very high — it feeds the `PIIM` cards and the integrity system. | `04` B05, `07` |
-| 3 | **`PIIM` response-card scoring.** Three cards × three states feed four bands, but nothing states what evidence meets, partly meets, or fails a card, or how claim scope is scored against the committed claim level. | High — determines Week 15 for every run. | `07` PIIM band, `08` B05 response contract |
-| 4 | **"Serious evidence concern visible to Aldercroft or Elena."** An Aldercroft gate condition with no definition of which flags are visible to an external committee. Interacts directly with C3, since it is the only guard against inflation buying Aldercroft. | High | `07`, `08` |
-| 5 | **Monitoring window count, distribution, and penalty magnitude.** Windows exist, are announced, persist, and can be missed with a warning; nothing states how many per experiment or what missing one costs. | High — sets the travel cadence and therefore the felt pacing. | `04`, `07` |
-| 6 | **Protected break has no action ID, cost row, text key, or content object**, despite being structurally mandatory. | High — an implementer will invent it. | `02` cost table, `12` action catalogue |
-| 7 | **Sample health/history and equipment condition.** Both are named outcome inputs and both appear in `CampaignState` (`11`); neither has a scale, a degradation rule, an observation channel, or a recovery cost, though `02` prices "sample or equipment recovery" as intense-class work. | Medium-high | `04`, `07`, `11` |
-| 8 | **Fatigue's effect on results.** Listed as an evidence-quality input with no threshold or magnitude; unclear whether it degrades continuously or only at zero. | Medium-high | `07` |
-| 9 | **Research Status reason strings and pre-action forecast strings.** `07` mandates a stated reason for every material change and a plain-language forecast before every meaningful action; `12` supplies one generic route string and no forecast text — inside a word cap `12` says is nearly met. | Medium-high — a required feature with no content and no budget. | `12`, `07` |
-| 10 | **Optional PI request pool.** `07` specifies three optional desk slots filled from authored conditional sets; `12` catalogues none. (See S4.1.) | Medium-high | `12` |
-| 11 | **Manuscript board interaction rules.** Card types are enumerated and commits create snapshots, but how cards connect, what the requirements panel checks, and how many commits a campaign expects are unspecified. `MR-ACT-MANUSCRIPT-COMMIT` is one ID covering an unbounded number of events. | Medium-high | `07` manuscript system, `12` |
-| 12 | **Camila's video-call presentation.** She gates an entire ending and has an eight-sound palette including a "call-end tone," yet `05` and `09` forbid a Camila model or in-person appearance. No document states how the call is presented. | Medium | `05`, `09`, `10` |
-| 13 | **Sample-group supply.** The player "selects" a labelled group; the pool, its limits, and the effect of losing a group are unstated, though `04` says a cancelled group is lost. | Medium | `04`, `07` |
-| 14 | **Non-interactive scene time has three conflicting approved values.** `decision-log` (2026-08-26, never superseded): 15–20 minutes. `02`/`03`: 14–18 minutes. `12`: exactly 14:45 + 75 s. The content spec is below the decision log's floor. | Medium — a documentation contradiction that `AGENTS.md` forbids resolving silently. | `decision-log`, `02`, `03`, `12` |
-| 15 | **Word-count measurement scope.** The 6,000-unique-word cap applies to the generated `strings.en.json`, but items 9, 10, C5, S4.1, and S4.3 all add required strings, and it is unstated whether fallback-excluded content is removed from the file or merely unreferenced. | Medium | `12`, `13` |
+|   # | Undefined decision                                                                                                                                                                                                                                                                                                                                             | Divergence risk                                                                                                              | Where it must land                         |
+| --: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+|   1 | **Configuration → outcome band mapping.** `07` names the inputs (configuration, equipment state, monitoring, fatigue, quality choices) and the three band probabilities but no weighting, threshold, or worked example. The three preparation choices (goal, control quality, observation focus) plus one family-specific choice have no stated effect at all. | Very high — this is the primary moment-to-moment decision in the core loop. Two implementers will build two different games. | `04` B04/B05, `07` outcome-band contract   |
+|   2 | **Evidence-quality resolution and the meaning of "suspicious."** Four states responding to six factors, with no rule. "Suspicious" is never defined anywhere in the corpus.                                                                                                                                                                                    | Very high — it feeds the `PIIM` cards and the integrity system.                                                              | `04` B05, `07`                             |
+|   3 | **`PIIM` response-card scoring.** Three cards × three states feed four bands, but nothing states what evidence meets, partly meets, or fails a card, or how claim scope is scored against the committed claim level.                                                                                                                                           | High — determines Week 15 for every run.                                                                                     | `07` PIIM band, `08` B05 response contract |
+|   4 | **"Serious evidence concern visible to Aldercroft or Elena."** An Aldercroft gate condition with no definition of which flags are visible to an external committee. Interacts directly with C3, since it is the only guard against inflation buying Aldercroft.                                                                                                | High                                                                                                                         | `07`, `08`                                 |
+|   5 | **Monitoring window count, distribution, and penalty magnitude.** Windows exist, are announced, persist, and can be missed with a warning; nothing states how many per experiment or what missing one costs.                                                                                                                                                   | High — sets the travel cadence and therefore the felt pacing.                                                                | `04`, `07`                                 |
+|   6 | **Protected break has no action ID, cost row, text key, or content object**, despite being structurally mandatory.                                                                                                                                                                                                                                             | High — an implementer will invent it.                                                                                        | `02` cost table, `12` action catalogue     |
+|   7 | **Sample health/history and equipment condition.** Both are named outcome inputs and both appear in `CampaignState` (`11`); neither has a scale, a degradation rule, an observation channel, or a recovery cost, though `02` prices "sample or equipment recovery" as intense-class work.                                                                      | Medium-high                                                                                                                  | `04`, `07`, `11`                           |
+|   8 | **Fatigue's effect on results.** Listed as an evidence-quality input with no threshold or magnitude; unclear whether it degrades continuously or only at zero.                                                                                                                                                                                                 | Medium-high                                                                                                                  | `07`                                       |
+|   9 | **Research Status reason strings and pre-action forecast strings.** `07` mandates a stated reason for every material change and a plain-language forecast before every meaningful action; `12` supplies one generic route string and no forecast text — inside a word cap `12` says is nearly met.                                                             | Medium-high — a required feature with no content and no budget.                                                              | `12`, `07`                                 |
+|  10 | **Optional PI request pool.** `07` specifies three optional desk slots filled from authored conditional sets; `12` catalogues none. (See S4.1.)                                                                                                                                                                                                                | Medium-high                                                                                                                  | `12`                                       |
+|  11 | **Manuscript board interaction rules.** Card types are enumerated and commits create snapshots, but how cards connect, what the requirements panel checks, and how many commits a campaign expects are unspecified. `MR-ACT-MANUSCRIPT-COMMIT` is one ID covering an unbounded number of events.                                                               | Medium-high                                                                                                                  | `07` manuscript system, `12`               |
+|  12 | **Camila's video-call presentation.** She gates an entire ending and has an eight-sound palette including a "call-end tone," yet `05` and `09` forbid a Camila model or in-person appearance. No document states how the call is presented.                                                                                                                    | Medium                                                                                                                       | `05`, `09`, `10`                           |
+|  13 | **Sample-group supply.** The player "selects" a labelled group; the pool, its limits, and the effect of losing a group are unstated, though `04` says a cancelled group is lost.                                                                                                                                                                               | Medium                                                                                                                       | `04`, `07`                                 |
+|  14 | **Non-interactive scene time has three conflicting approved values.** `decision-log` (2026-08-26, never superseded): 15–20 minutes. `02`/`03`: 14–18 minutes. `12`: exactly 14:45 + 75 s. The content spec is below the decision log's floor.                                                                                                                  | Medium — a documentation contradiction that `AGENTS.md` forbids resolving silently.                                          | `decision-log`, `02`, `03`, `12`           |
+|  15 | **Word-count measurement scope.** The 6,000-unique-word cap applies to the generated `strings.en.json`, but items 9, 10, C5, S4.1, and S4.3 all add required strings, and it is unstated whether fallback-excluded content is removed from the file or merely unreferenced.                                                                                    | Medium                                                                                                                       | `12`, `13`                                 |
 
 ---
 
@@ -926,7 +931,7 @@ Touches the most systems for the least new machinery: evidence cards already hav
 caveat tags; the requirements panel already exists; the `PIIM` claim-scope card
 already exists. It converts analysis from a collection step into the game's second
 core decision, gives pillar 1's "interpretation" clause an object, makes the
-inflated claim *tempting* rather than signposted, and creates a graduated
+inflated claim _tempting_ rather than signposted, and creates a graduated
 integrity action (omitting a caveat) below the current cliff at −10.
 Simultaneously fixes underspecified items 2 and 3 by forcing a definition of what
 a card "meets."
@@ -1017,24 +1022,24 @@ or Vitest fixtures. None requires external participants.
 
 ## 9. Prioritized recommendation table
 
-| Pri. | ID | Issue | Severity | Smallest sufficient change | Cost | Vision impact | Conf. |
-|---:|---|---|---|---|---|---|---|
-| 1 | C3 | Integrity inert; inflation is the cheapest route currency | CRITICAL | One record-consistency task per remaining act on `alteredReading`/`fabrication`; make the Inflated → claim-scope-not-met rule explicit | 1 task ID, ~3 strings, 2 rule edits | Restores ethics as a difficulty axis without breaking the "can publish" thesis | High |
-| 2 | C2 | Minimum-effort play yields Morrow | CRITICAL | Replace "at least Developing" with "≥3 analysed primary records, ≥1 honest limited/weak result"; add one cost line to `ending.career.morrow` | 2 clause edits, 1 string | Removes the dominant strategy; makes industry a trade-off rather than an escape | High |
-| 3 | C1 | Fallback deletes complicity's social layer; `MR-CIT-08` unreachable | CRITICAL | Conditional variant on `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE`; widen `MR-CIT-08` to "a colleague" | 1 variant (~5 strings), 1 trigger edit | Protects the emotional arc in the likely shipped build; resolves 2 contradictions | High |
-| 4 | C5 | Records arrive pre-interpreted | CRITICAL | Split observation from interpretation; player selects caveat tags at analysis; requirements panel and claim-scope card read them | ~3 tags × 18 variants; 4 rule edits | Gives pillar 1's interpretation clause an object; makes inflation tempting | High diag. / Med-high remedy |
-| 5 | C4 | Mid-game is administrative; comedy absent from repeated actions | CRITICAL | Catalogue `MR-ACT-BREAK` with 5 act-indexed lines; 5 act-indexed queue lines; require ≥2 options per monitoring window | 10 strings, 1 action ID, 1 rule | Cheapest defence of pillar 6 across the game's longest stretch | High struct. / Med magnitude |
-| 6 | S4.3 | Two trust bars gate nothing; promised support actions unauthored | SIGNIFICANT | Author the five ≥61 bounded support actions | 5 entries, ~10 strings | Makes all five relationships mechanically real | High |
-| 7 | S4.1 | Institutional obstruction promised but uncatalogued | SIGNIFICANT | Add 6 `MR-OBS-*` objects (fallback keeps 2) to the counted families | 6 objects, ~12 strings | Restores the institution as an active system, not a backdrop | High |
-| 8 | S4.2 | Evidence saturates; optional sources do no work | SIGNIFICANT | Start at 2; oxygen-loss feeds the `PIIM` card, not support points | 2 figures | Makes four packet tiers and optional work meaningful | High arith. / Med pricing |
-| 9 | S4.5 | Tone validated after the last reframing gate | SIGNIFICANT | Move `01` criteria 1, 2, 4 into the slice gate; add the strings-only comprehension proxy | 3 gate items | Only mechanism by which a tonal miss can be caught in time | High gap / Low proxy |
-| 10 | S4.4 | Satire is optional, one-shot, skippable | SIGNIFICANT | Make 10 of 30 `MR-ENV-*` items ambient on first safe room entry | 1 rule edit | Lets the floor speak without interrogation | Med-high |
-| 11 | S4.6 | Supported profile alters the dominant loop | SIGNIFICANT | Add a Supported productive-period budget to `07`; then decide which concession carries tolerance | 1 measurement, 1 figure | Keeps the profile a tolerance setting rather than a different argument | Med-high |
-| 12 | O1 | End of Contract conflates principled withdrawal with collapse | OPTIONAL | One ending variant keyed to `FLAG:publicWithdrawal` | 2 strings | Preserves the meaning of the game's boldest choice | High |
-| 13 | O4 | Pre-W16 exit voiced once | OPTIONAL | Index the exit response to the five act states | 5 strings | Cheapest emotional throughline for pillar 4 | High |
-| 14 | O2 | Honest player cannot complete the citation set | OPTIONAL | Add the defensible alternative trigger `12`'s own rule requires | 1 string, 1 condition | Removes a self-contradiction | Med-high |
-| 15 | O3 | Reviewer reports static | OPTIONAL | One variant each keyed to packet or claim | 3 strings | Sharpens the `PIIM` act's central objects | Med |
-| 16 | O5 | `FLAG:openingCaution` orphaned | OPTIONAL | Reference it in `A Complete Narrative` variant selection, or remove | 1 edit | Prevents a content-scan failure | High |
+| Pri. | ID   | Issue                                                               | Severity    | Smallest sufficient change                                                                                                                   | Cost                                   | Vision impact                                                                     | Conf.                        |
+| ---: | ---- | ------------------------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------- |
+|    1 | C3   | Integrity inert; inflation is the cheapest route currency           | CRITICAL    | One record-consistency task per remaining act on `alteredReading`/`fabrication`; make the Inflated → claim-scope-not-met rule explicit       | 1 task ID, ~3 strings, 2 rule edits    | Restores ethics as a difficulty axis without breaking the "can publish" thesis    | High                         |
+|    2 | C2   | Minimum-effort play yields Morrow                                   | CRITICAL    | Replace "at least Developing" with "≥3 analysed primary records, ≥1 honest limited/weak result"; add one cost line to `ending.career.morrow` | 2 clause edits, 1 string               | Removes the dominant strategy; makes industry a trade-off rather than an escape   | High                         |
+|    3 | C1   | Fallback deletes complicity's social layer; `MR-CIT-08` unreachable | CRITICAL    | Conditional variant on `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE`; widen `MR-CIT-08` to "a colleague"                                                  | 1 variant (~5 strings), 1 trigger edit | Protects the emotional arc in the likely shipped build; resolves 2 contradictions | High                         |
+|    4 | C5   | Records arrive pre-interpreted                                      | CRITICAL    | Split observation from interpretation; player selects caveat tags at analysis; requirements panel and claim-scope card read them             | ~3 tags × 18 variants; 4 rule edits    | Gives pillar 1's interpretation clause an object; makes inflation tempting        | High diag. / Med-high remedy |
+|    5 | C4   | Mid-game is administrative; comedy absent from repeated actions     | CRITICAL    | Catalogue `MR-ACT-BREAK` with 5 act-indexed lines; 5 act-indexed queue lines; require ≥2 options per monitoring window                       | 10 strings, 1 action ID, 1 rule        | Cheapest defence of pillar 6 across the game's longest stretch                    | High struct. / Med magnitude |
+|    6 | S4.3 | Two trust bars gate nothing; promised support actions unauthored    | SIGNIFICANT | Author the five ≥61 bounded support actions                                                                                                  | 5 entries, ~10 strings                 | Makes all five relationships mechanically real                                    | High                         |
+|    7 | S4.1 | Institutional obstruction promised but uncatalogued                 | SIGNIFICANT | Add 6 `MR-OBS-*` objects (fallback keeps 2) to the counted families                                                                          | 6 objects, ~12 strings                 | Restores the institution as an active system, not a backdrop                      | High                         |
+|    8 | S4.2 | Evidence saturates; optional sources do no work                     | SIGNIFICANT | Start at 2; oxygen-loss feeds the `PIIM` card, not support points                                                                            | 2 figures                              | Makes four packet tiers and optional work meaningful                              | High arith. / Med pricing    |
+|    9 | S4.5 | Tone validated after the last reframing gate                        | SIGNIFICANT | Move `01` criteria 1, 2, 4 into the slice gate; add the strings-only comprehension proxy                                                     | 3 gate items                           | Only mechanism by which a tonal miss can be caught in time                        | High gap / Low proxy         |
+|   10 | S4.4 | Satire is optional, one-shot, skippable                             | SIGNIFICANT | Make 10 of 30 `MR-ENV-*` items ambient on first safe room entry                                                                              | 1 rule edit                            | Lets the floor speak without interrogation                                        | Med-high                     |
+|   11 | S4.6 | Supported profile alters the dominant loop                          | SIGNIFICANT | Add a Supported productive-period budget to `07`; then decide which concession carries tolerance                                             | 1 measurement, 1 figure                | Keeps the profile a tolerance setting rather than a different argument            | Med-high                     |
+|   12 | O1   | End of Contract conflates principled withdrawal with collapse       | OPTIONAL    | One ending variant keyed to `FLAG:publicWithdrawal`                                                                                          | 2 strings                              | Preserves the meaning of the game's boldest choice                                | High                         |
+|   13 | O4   | Pre-W16 exit voiced once                                            | OPTIONAL    | Index the exit response to the five act states                                                                                               | 5 strings                              | Cheapest emotional throughline for pillar 4                                       | High                         |
+|   14 | O2   | Honest player cannot complete the citation set                      | OPTIONAL    | Add the defensible alternative trigger `12`'s own rule requires                                                                              | 1 string, 1 condition                  | Removes a self-contradiction                                                      | Med-high                     |
+|   15 | O3   | Reviewer reports static                                             | OPTIONAL    | One variant each keyed to packet or claim                                                                                                    | 3 strings                              | Sharpens the `PIIM` act's central objects                                         | Med                          |
+|   16 | O5   | `FLAG:openingCaution` orphaned                                      | OPTIONAL    | Reference it in `A Complete Narrative` variant selection, or remove                                                                          | 1 edit                                 | Prevents a content-scan failure                                                   | High                         |
 
 Items 1–5 should be resolved before Phase 1 begins, because each changes a rule
 that `MR-WP-01` (rules and content schema) will encode. Items 6–8 and 10 should be

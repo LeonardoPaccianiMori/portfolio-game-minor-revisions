@@ -6,7 +6,7 @@ Status: **frozen; S01 approved and documented; no implementation authorized**
 
 This specification fixes the development toolchain, package policy,
 repository layout, configuration, commands, and local-environment boundary for
-*Minor Revisions*. It implements the approved technical direction in
+_Minor Revisions_. It implements the approved technical direction in
 `../../11-technical-architecture.md` and is subordinate to the numbered design
 documents.
 
@@ -22,7 +22,7 @@ compatibility, security, licence, clean-install, and verification check.
 
 ## Leonardo's working boundary
 
-Leonardo is not a software engineer or game developer. *Minor Revisions* is a
+Leonardo is not a software engineer or game developer. _Minor Revisions_ is a
 hobby project, and he has no prior Three.js coding experience. Documentation
 and future agent handoffs must:
 
@@ -38,12 +38,12 @@ review requirements.
 
 ## Exact environment
 
-| Component | Frozen version or boundary | Purpose |
-|---|---|---|
-| Node.js | `24.20.0` LTS, Krypton | Runs development and build tools. |
-| npm | `11.19.0` | Installs the exact package graph and runs project commands. |
-| TypeScript | `6.0.3` | Checks strict source types. TypeScript 7.0.2 is excluded because the approved TypeScript ESLint version supports TypeScript below 6.1. |
-| Browser language target | `ES2022` with DOM and DOM iterable libraries | Gives current desktop browsers a stable modern target without experimental language features. |
+| Component               | Frozen version or boundary                   | Purpose                                                                                                                                |
+| ----------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Node.js                 | `24.20.0` LTS, Krypton                       | Runs development and build tools.                                                                                                      |
+| npm                     | `11.19.0`                                    | Installs the exact package graph and runs project commands.                                                                            |
+| TypeScript              | `6.0.3`                                      | Checks strict source types. TypeScript 7.0.2 is excluded because the approved TypeScript ESLint version supports TypeScript below 6.1. |
+| Browser language target | `ES2022` with DOM and DOM iterable libraries | Gives current desktop browsers a stable modern target without experimental language features.                                          |
 
 Node `26` is not approved because it is not an LTS line on the S01 verification
 date. `.nvmrc` records `24.20.0`. `package.json` records the exact Node engine
@@ -57,11 +57,11 @@ Every project-owned input and output lives under
 
 ### Shipped runtime dependencies
 
-| Package | Version | Licence | Approved use |
-|---|---:|---|---|
-| `three` | `0.185.1` | MIT | Direct Three.js rendering and 3D presentation. |
-| `idb` | `8.0.3` | ISC | Typed IndexedDB access for local persistence. |
-| `zod` | `4.5.2` | MIT | Runtime validation of authored and saved data. |
+| Package |   Version | Licence | Approved use                                   |
+| ------- | --------: | ------- | ---------------------------------------------- |
+| `three` | `0.185.1` | MIT     | Direct Three.js rendering and 3D presentation. |
+| `idb`   |   `8.0.3` | ISC     | Typed IndexedDB access for local persistence.  |
+| `zod`   |   `4.5.2` | MIT     | Runtime validation of authored and saved data. |
 
 No other runtime dependency is approved. The game cannot use React, React
 Three Fiber, a game engine, a runtime CDN, a service worker, a runtime API,
@@ -69,20 +69,20 @@ analytics, telemetry, or automatic error reporting.
 
 ### Development-only dependencies
 
-| Package | Version | Licence | Approved use |
-|---|---:|---|---|
-| `typescript` | `6.0.3` | Apache-2.0 | Strict type checking. |
-| `vite` | `8.2.2` | MIT | Local server and static production build. |
-| `vitest` | `4.1.11` | MIT | Deterministic unit tests. |
-| `@vitest/coverage-v8` | `4.1.11` | MIT | Formal coverage reports. |
-| `@playwright/test` | `1.62.1` | Apache-2.0 | Chromium, Firefox, and WebKit browser flows. |
-| `eslint` | `10.9.1` | MIT | JavaScript and TypeScript safety checks. |
-| `typescript-eslint` | `8.68.0` | MIT | Type-aware TypeScript lint rules. |
-| `@eslint/js` | `10.0.1` | MIT | ESLint JavaScript rules. |
-| `prettier` | `3.9.6` | MIT | Stable formatting. |
-| `@types/node` | `24.13.3` | MIT | Node types aligned with the Node 24 line. |
-| `cross-env` | `10.1.0` | MIT | Portable local Playwright-browser paths. |
-| `globals` | `17.11.0` | MIT | Explicit browser and Node global-variable sets. |
+| Package               |   Version | Licence    | Approved use                                    |
+| --------------------- | --------: | ---------- | ----------------------------------------------- |
+| `typescript`          |   `6.0.3` | Apache-2.0 | Strict type checking.                           |
+| `vite`                |   `8.2.2` | MIT        | Local server and static production build.       |
+| `vitest`              |  `4.1.11` | MIT        | Deterministic unit tests.                       |
+| `@vitest/coverage-v8` |  `4.1.11` | MIT        | Formal coverage reports.                        |
+| `@playwright/test`    |  `1.62.1` | Apache-2.0 | Chromium, Firefox, and WebKit browser flows.    |
+| `eslint`              |  `10.9.1` | MIT        | JavaScript and TypeScript safety checks.        |
+| `typescript-eslint`   |  `8.68.0` | MIT        | Type-aware TypeScript lint rules.               |
+| `@eslint/js`          |  `10.0.1` | MIT        | ESLint JavaScript rules.                        |
+| `prettier`            |   `3.9.6` | MIT        | Stable formatting.                              |
+| `@types/node`         | `24.13.3` | MIT        | Node types aligned with the Node 24 line.       |
+| `cross-env`           |  `10.1.0` | MIT        | Portable local Playwright-browser paths.        |
+| `globals`             | `17.11.0` | MIT        | Explicit browser and Node global-variable sets. |
 
 Official registry metadata marked none of these exact versions as deprecated on
 2026-08-29. This metadata check is not a substitute for the Step-1 clean
@@ -130,7 +130,7 @@ not pre-empt those contracts.
 There is one npm project at repository root. Do not create a nested `game/`
 project, workspace, submodule, linked package, symbolic link to an external
 project input, or second implementation repository. The build and tests cannot
-read Career Center, the portfolio repository, *Unpaid*, or another local
+read Career Center, the portfolio repository, _Unpaid_, or another local
 folder.
 
 Do not create a general Vite `public/` directory as an unchecked asset area.
@@ -225,23 +225,23 @@ installed project dependencies. `cross-env` applies that setting portably.
 
 ## Exact command contract
 
-| Command | Exact future action | Meaning for Leonardo |
-|---|---|---|
-| `npm install` | Install from the exact manifest and update only a consistent lockfile. | Prepare the project normally. |
-| `npm ci` | Recreate exact installed dependencies from the committed lockfile. | Agent and future automatic clean installation. |
-| `npm run setup:browsers` | `cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium firefox webkit` | One-time installation of local automated-test browsers. |
-| `npm run dev` | `vite` | Start the local game at `http://localhost:5173`. |
-| `npm run build` | `npm run typecheck && vite build` | Create checked static files in `dist/`. |
-| `npm run preview` | `vite preview` | Inspect the built files at `http://localhost:4173`. |
-| `npm run typecheck` | `tsc --noEmit` | Find TypeScript safety errors. |
-| `npm run lint` | `eslint .` | Find code-quality and unsafe-code errors. |
-| `npm run format:check` | `prettier --check .` | Report formatting differences without editing. |
-| `npm run format` | `prettier --write .` | Apply formatting explicitly. |
-| `npm test` | `vitest run` | Run the fast deterministic tests once. |
-| `npm run test:coverage` | `vitest run --coverage` | Run formal coverage evidence. |
-| `npm run test:e2e` | `cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright test` | Run local browser flows. |
-| `npm run check` | `npm run typecheck && npm run lint && npm run format:check && npm test` | Run the fast local gate. |
-| `npm run verify` | `npm run lint && npm run format:check && npm run test:coverage && npm run build && npm run test:e2e` | Run the complete local gate without duplicate unit-test execution. |
+| Command                  | Exact future action                                                                                  | Meaning for Leonardo                                               |
+| ------------------------ | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `npm install`            | Install from the exact manifest and update only a consistent lockfile.                               | Prepare the project normally.                                      |
+| `npm ci`                 | Recreate exact installed dependencies from the committed lockfile.                                   | Agent and future automatic clean installation.                     |
+| `npm run setup:browsers` | `cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium firefox webkit`                    | One-time installation of local automated-test browsers.            |
+| `npm run dev`            | `vite`                                                                                               | Start the local game at `http://localhost:5173`.                   |
+| `npm run build`          | `npm run typecheck && vite build`                                                                    | Create checked static files in `dist/`.                            |
+| `npm run preview`        | `vite preview`                                                                                       | Inspect the built files at `http://localhost:4173`.                |
+| `npm run typecheck`      | `tsc --noEmit`                                                                                       | Find TypeScript safety errors.                                     |
+| `npm run lint`           | `eslint .`                                                                                           | Find code-quality and unsafe-code errors.                          |
+| `npm run format:check`   | `prettier --check .`                                                                                 | Report formatting differences without editing.                     |
+| `npm run format`         | `prettier --write .`                                                                                 | Apply formatting explicitly.                                       |
+| `npm test`               | `vitest run`                                                                                         | Run the fast deterministic tests once.                             |
+| `npm run test:coverage`  | `vitest run --coverage`                                                                              | Run formal coverage evidence.                                      |
+| `npm run test:e2e`       | `cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright test`                                               | Run local browser flows.                                           |
+| `npm run check`          | `npm run typecheck && npm run lint && npm run format:check && npm test`                              | Run the fast local gate.                                           |
+| `npm run verify`         | `npm run lint && npm run format:check && npm run test:coverage && npm run build && npm run test:e2e` | Run the complete local gate without duplicate unit-test execution. |
 
 Each failed command must return a non-zero exit status and provide a concise
 plain-language next action. A worker cannot make a failing check pass by

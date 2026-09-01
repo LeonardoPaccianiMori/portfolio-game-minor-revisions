@@ -4,14 +4,14 @@ Status: **B10 documented; implementation approval pending**
 
 ## State model and player visibility
 
-| State | Internal representation | Player-facing feedback |
-|---|---|---|
-| Semester time | 64 work periods across 16 weeks | Current week and early, late, night, or after-hours period on the permanent HUD |
-| Energy | 0–5 segments | Five-segment bar on the permanent HUD |
-| Evidence | 0–12 support points | Thin, Developing, Coherent, or Substantial packet label in Research Status |
-| Elena's paper confidence | 0–100 | Cautious, Conditional, Supportive, or Invested desk label and Elena's response |
-| Research integrity | 0–100 plus permanent history flags | Five-segment bar and factual warnings in Research Status |
-| Working trust | 0–100 for each main character plus permanent flags | One five-segment bar for Elena, Haoran, Samira, Gabriel, and Camila |
+| State                    | Internal representation                            | Player-facing feedback                                                          |
+| ------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Semester time            | 64 work periods across 16 weeks                    | Current week and early, late, night, or after-hours period on the permanent HUD |
+| Energy                   | 0–5 segments                                       | Five-segment bar on the permanent HUD                                           |
+| Evidence                 | 0–12 support points                                | Thin, Developing, Coherent, or Substantial packet label in Research Status      |
+| Elena's paper confidence | 0–100                                              | Cautious, Conditional, Supportive, or Invested desk label and Elena's response  |
+| Research integrity       | 0–100 plus permanent history flags                 | Five-segment bar and factual warnings in Research Status                        |
+| Working trust            | 0–100 for each main character plus permanent flags | One five-segment bar for Elena, Haoran, Samira, Gabriel, and Camila             |
 
 The player can open Research Status at any time. It contains evidence, Elena's
 paper confidence, integrity, working trust, current route feedback, and the reason
@@ -49,12 +49,12 @@ each of 16 weeks. Walking, reading, and ordinary dialogue cost no period.
 Meaningful actions cost one, two, or three periods, and state the cost before
 commitment.
 
-| Action class | Time cost | Standard energy cost |
-|---|---:|---:|
-| Light work | 1 period | 0 |
-| Focused work | 1 period | 1 |
-| Intense work | 2 periods | 2 |
-| Rare major commitment | 3 periods | 2 |
+| Action class          | Time cost | Standard energy cost |
+| --------------------- | --------: | -------------------: |
+| Light work            |  1 period |                    0 |
+| Focused work          |  1 period |                    1 |
+| Intense work          | 2 periods |                    2 |
+| Rare major commitment | 3 periods |                    2 |
 
 Normal experiment, analysis, manuscript, and communication work normally use
 the focused class. Demanding work, repeats, difficult revisions, and sample or
@@ -97,22 +97,22 @@ Every run has one monitoring action, except oxygen loss, which has two. The
 maximizing fixture uses the one allowed repeat of laser/sham, damage range,
 batch check, and repair-state work.
 
-| Action | Minimum defensible | Thorough honest | Maximizing |
-|---|---:|---:|---:|
-| Configure sample group | 5 | 6 | 10 |
-| Start focused experiment | 2 | 3 | 3 |
-| Start intense experiment or repeat | 3 | 3 | 7 |
-| Monitor | 6 | 7 | 11 |
-| Analyse | 5 | 6 | 10 |
-| Report to Elena | 5 | 5 | 6 |
-| Initial manuscript draft | 1 | 1 | 1 |
-| PI revision or preprint commit | 3 | 3 | 3 |
-| PIIM response commit | 1 | 1 | 1 |
-| Research-plan or Morrow video action | 1 | 2 | 2 |
-| Morrow or local relationship action | 0 | 7 | 9 |
-| Mandatory scene period advances | 5 | 5 | 5 |
-| **Non-break period demand** | **44** | **56** | **79** |
-| **Energy before late-work surcharge** | **26** | **30** | **46** |
+| Action                                | Minimum defensible | Thorough honest | Maximizing |
+| ------------------------------------- | -----------------: | --------------: | ---------: |
+| Configure sample group                |                  5 |               6 |         10 |
+| Start focused experiment              |                  2 |               3 |          3 |
+| Start intense experiment or repeat    |                  3 |               3 |          7 |
+| Monitor                               |                  6 |               7 |         11 |
+| Analyse                               |                  5 |               6 |         10 |
+| Report to Elena                       |                  5 |               5 |          6 |
+| Initial manuscript draft              |                  1 |               1 |          1 |
+| PI revision or preprint commit        |                  3 |               3 |          3 |
+| PIIM response commit                  |                  1 |               1 |          1 |
+| Research-plan or Morrow video action  |                  1 |               2 |          2 |
+| Morrow or local relationship action   |                  0 |               7 |          9 |
+| Mandatory scene period advances       |                  5 |               5 |          5 |
+| **Non-break period demand**           |             **44** |          **56** |     **79** |
+| **Energy before late-work surcharge** |             **26** |          **30** |     **46** |
 
 The minimum fixture completes the five required experiment templates, their
 reports, the required manuscript path, and the Aldercroft research plan. The
@@ -129,21 +129,21 @@ therefore saves exactly one period against the waiting route. The support does
 not remove an experiment's normal configure or start cost. The economy fixture
 must report both adjustments:
 
-| Imaging-service route | Period adjustment to the selected base fixture |
-|---|---:|
-| Wait for normal service | +1 |
-| Use earned Gabriel support | +0 |
+| Imaging-service route      | Period adjustment to the selected base fixture |
+| -------------------------- | ---------------------------------------------: |
+| Wait for normal service    |                                             +1 |
+| Use earned Gabriel support |                                             +0 |
 
 The break counts below are optimistic lower bounds. They assume that every
 restored segment is useful, assign no focused or intense action to night or
 after-hours, and ignore the five-segment cap between actions. A real schedule
 can need more breaks, not fewer.
 
-| Fixture | Standard breaks | Standard total / slack | Supported breaks | Supported total / slack |
-|---|---:|---:|---:|---:|
-| Minimum defensible | 11 | 55 / 9 | 7 | 51 / 13 |
-| Thorough honest | 13 | 69 / -5 | 9 | 65 / -1 |
-| Maximizing | 21 | 100 / -36 | 14 | 93 / -29 |
+| Fixture            | Standard breaks | Standard total / slack | Supported breaks | Supported total / slack |
+| ------------------ | --------------: | ---------------------: | ---------------: | ----------------------: |
+| Minimum defensible |              11 |                 55 / 9 |                7 |                 51 / 13 |
+| Thorough honest    |              13 |                69 / -5 |                9 |                 65 / -1 |
+| Maximizing         |              21 |              100 / -36 |               14 |                93 / -29 |
 
 The result does not confirm the earlier balance claim. The minimum route fits
 both profiles. The thorough-honest fixture cannot fit either profile even
@@ -181,13 +181,13 @@ The following normal anchors apply to every named work period unless an
 authored campaign beat, optional scene, equipment event, or relationship result
 overrides them. They are location rules, not simulated crowd behaviour.
 
-| Character | Early | Late | Night | After-hours |
-|---|---|---|---|---|
-| Elena | PI office | Main laboratory or PI office | Scene only | Absent except **The Future** |
-| Haoran | Tissue culture | Main laboratory or shared desks | Rare desk scene | Absent |
-| Samira | Shared desks or break room | Imaging room | Scene only | Absent |
-| Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
-| Camila | Remote only | Remote only | Remote only | Remote only |
+| Character | Early                      | Late                             | Night                  | After-hours                  |
+| --------- | -------------------------- | -------------------------------- | ---------------------- | ---------------------------- |
+| Elena     | PI office                  | Main laboratory or PI office     | Scene only             | Absent except **The Future** |
+| Haoran    | Tissue culture             | Main laboratory or shared desks  | Rare desk scene        | Absent                       |
+| Samira    | Shared desks or break room | Imaging room                     | Scene only             | Absent                       |
+| Gabriel   | Facility station           | Facility station or imaging room | Remote or on-call only | Absent                       |
+| Camila    | Remote only                | Remote only                      | Remote only            | Remote only                  |
 
 Early and late retain full normal service. Night and after-hours retain
 laboratory and desk work, but reduce access to people and shared services.
@@ -238,15 +238,15 @@ handling. Control quality cannot change biological reality.
 
 The biological preparation calculation uses issue counts:
 
-| Input | Biological issue effect |
-|---|---|
-| Stable sample or Ready equipment | None |
-| Stressed sample or Limited equipment | Add one issue each |
-| Failing sample | One severe issue; band is Compromised |
-| Higher-risk template choice | Add one issue |
-| Each missed biological monitoring window | Add one issue |
-| Valid stabilizing action | Remove one eligible non-severe issue |
-| Unavailable equipment | Block normal start and offer only an authored room-state response |
+| Input                                    | Biological issue effect                                           |
+| ---------------------------------------- | ----------------------------------------------------------------- |
+| Stable sample or Ready equipment         | None                                                              |
+| Stressed sample or Limited equipment     | Add one issue each                                                |
+| Failing sample                           | One severe issue; band is Compromised                             |
+| Higher-risk template choice              | Add one issue                                                     |
+| Each missed biological monitoring window | Add one issue                                                     |
+| Valid stabilizing action                 | Remove one eligible non-severe issue                              |
+| Unavailable equipment                    | Block normal start and offer only an authored room-state response |
 
 Zero issues gives Robust, one gives Mixed, and two or one severe issue gives
 Compromised. The system shows the current band and plain-language reasons
@@ -273,11 +273,11 @@ issue or a major evidence problem. B10 defines each experiment baseline.
 Evidence has 12 maximum support points.
 
 | Support | Packet label |
-|---:|---|
-| 0–2 | Thin |
-| 3–5 | Developing |
-| 6–8 | Coherent |
-| 9–12 | Substantial |
+| ------: | ------------ |
+|     0–2 | Thin         |
+|     3–5 | Developing   |
+|     6–8 | Coherent     |
+|    9–12 | Substantial  |
 
 The game starts at three points, Developing. An original Usable result with a
 matched control and full required observation coverage gives two points. An
@@ -293,12 +293,12 @@ Elena's paper confidence starts at 45, Conditional. It measures her confidence
 that the paper supports its current claim. Elena working trust separately
 measures her willingness to support the protagonist as a colleague.
 
-| Value | Desk state |
-|---:|---|
-| 0–24 | Cautious |
-| 25–49 | Conditional |
-| 50–74 | Supportive |
-| 75–100 | Invested |
+|  Value | Desk state  |
+| -----: | ----------- |
+|   0–24 | Cautious    |
+|  25–49 | Conditional |
+|  50–74 | Supportive  |
+| 75–100 | Invested    |
 
 Fully answering an active PI request with useful work gives 10 points; partly
 answering it gives five. Deferring, refusing, or missing it removes 10.
@@ -315,35 +315,35 @@ omitted evidence or correcting a current draft can recover at most 10 total
 points in one run. A permanent alteration or fabrication record remains even
 if the visible value partly recovers.
 
-| Value | Visible segments |
-|---:|---:|
-| 81–100 | 5 |
-| 61–80 | 4 |
-| 41–60 | 3 |
-| 21–40 | 2 |
-| 1–20 | 1 |
-| 0 | 0 |
+|  Value | Visible segments |
+| -----: | ---------------: |
+| 81–100 |                5 |
+|  61–80 |                4 |
+|  41–60 |                3 |
+|  21–40 |                2 |
+|   1–20 |                1 |
+|      0 |                0 |
 
 Integrity displays factual warnings where needed. It does not display a moral
 label.
 
 Each recurring character has working trust on the same 0–100 scale.
 
-| Value | Working-trust status |
-|---:|---|
-| 0–20 | Damaged |
-| 21–40 | Strained |
-| 41–60 | Working |
-| 61–80 | Trusted |
-| 81–100 | Strong |
+|  Value | Working-trust status |
+| -----: | -------------------- |
+|   0–20 | Damaged              |
+|  21–40 | Strained             |
+|  41–60 | Working              |
+|  61–80 | Trusted              |
+| 81–100 | Strong               |
 
-| Character | Initial value |
-|---|---:|
-| Elena | 60 |
-| Haoran | 60 |
-| Samira | 40 |
-| Gabriel | 60 |
-| Camila | 40 when her Week 8 bar appears |
+| Character |                  Initial value |
+| --------- | -----------------------------: |
+| Elena     |                             60 |
+| Haoran    |                             60 |
+| Samira    |                             40 |
+| Gabriel   |                             60 |
+| Camila    | 40 when her Week 8 bar appears |
 
 A minor authored choice changes working trust by 10 points and a major action
 by 20. Values do not drift without a clear event. Ignoring a direct request
@@ -462,11 +462,11 @@ each, two control slots, one caveat strip, one authorship slot, one
 supplementary slot, and one active-request slot. The caveat must come from an
 included evidence card. A card can occupy only one board position in a commit.
 
-| Claim | Factual support requirements |
-|---|---|
-| Careful | One supported figure/evidence pair, one relevant control, and one selected caveat. |
-| Strong | Two supported pairs from different templates, structure and rhythm coverage, one matched control, and one selected caveat. |
-| Inflated | Every Strong requirement plus causal support. Honest campaign evidence cannot fill the causal requirement. |
+| Claim    | Factual support requirements                                                                                               |
+| -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Careful  | One supported figure/evidence pair, one relevant control, and one selected caveat.                                         |
+| Strong   | Two supported pairs from different templates, structure and rhythm coverage, one matched control, and one selected caveat. |
+| Inflated | Every Strong requirement plus causal support. Honest campaign evidence cannot fill the causal requirement.                 |
 
 An altered or unsupported reported reading can appear to fill the Inflated
 causal requirement if no visible record contradicts it. This changes the
@@ -538,23 +538,23 @@ PIIM has three visible response cards: batch evidence, oxygen-loss challenge,
 and claim scope and reviewer response. Each card is Met, Partly Met, or Not
 Met. The manuscript board shows the current reason.
 
-| Response card | Met | Partly Met | Not Met |
-|---|---|---|---|
-| Batch evidence | A relevant Usable batch record with its control and caveat is included. | A valid limited, Inconclusive, or Worth repeating batch record is included with its limitation. | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
-| Oxygen-loss challenge | A relevant Usable oxygen-loss record with its control and caveat is included. | A valid limited, Inconclusive, or Worth repeating oxygen-loss record is included with its limitation. | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading. |
-| Claim scope and reviewer response | The selected Careful or Strong claim meets all board requirements. | A Careful or Strong claim has exactly one missing support requirement and states that limitation. | Two or more requirements are missing, an honest Inflated claim lacks causal support, or a visible contradiction remains. |
+| Response card                     | Met                                                                           | Partly Met                                                                                            | Not Met                                                                                                                  |
+| --------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Batch evidence                    | A relevant Usable batch record with its control and caveat is included.       | A valid limited, Inconclusive, or Worth repeating batch record is included with its limitation.       | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading.                  |
+| Oxygen-loss challenge             | A relevant Usable oxygen-loss record with its control and caveat is included. | A valid limited, Inconclusive, or Worth repeating oxygen-loss record is included with its limitation. | The record is absent, omitted, visibly contradicted, or replaced only by a visibly unsupported reading.                  |
+| Claim scope and reviewer response | The selected Careful or Strong claim meets all board requirements.            | A Careful or Strong claim has exactly one missing support requirement and states that limitation.     | Two or more requirements are missing, an honest Inflated claim lacks causal support, or a visible contradiction remains. |
 
 An altered or invented reading can make a response card appear Met if it fills
 the visible requirement and no visible record contradicts it. This does not
 restore integrity. Clearly stating that a missing result is absent keeps its
 card Not Met, but can satisfy the separate `MR-CIT-03` transparency trigger.
 
-| Earned response band | Week 15 paper state |
-|---|---|
-| All three cards Met and no visible evidence contradiction | Published or accepted pending final work |
+| Earned response band                                                            | Week 15 paper state                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------- |
+| All three cards Met and no visible evidence contradiction                       | Published or accepted pending final work    |
 | At least one card Met, all other cards Partly Met, and no visible contradiction | Accepted pending final work or under review |
-| Any card Not Met, all three cards only Partly Met, or a visible contradiction | Under review or rejected |
-| Journal or public-record withdrawal | Rejected or withdrawn |
+| Any card Not Met, all three cards only Partly Met, or a visible contradiction   | Under review or rejected                    |
+| Journal or public-record withdrawal                                             | Rejected or withdrawn                       |
 
 The stored seed chooses only between the adjacent outcomes in the earned band.
 It cannot turn a strong response into rejection or a weak response into
@@ -612,10 +612,10 @@ rejected or withdrawn. Evidence has no separate epilogue module because its
 effects already appear through paper state and route readiness. The ending
 summary still shows the final evidence-packet label.
 
-| Integrity state | Ending rule |
-|---|---|
-| Defensible | Honest reporting, or a corrected omission, with no changed reported reading or unsupported result. |
-| Compromised | An unresolved omission, with no changed reported reading or unsupported result. |
+| Integrity state      | Ending rule                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------- |
+| Defensible           | Honest reporting, or a corrected omission, with no changed reported reading or unsupported result. |
+| Compromised          | An unresolved omission, with no changed reported reading or unsupported result.                    |
 | Seriously undermined | Any changed reported reading or unsupported result, whether or not another character discovers it. |
 
 An undiscovered seriously undermined record produces private unease, a fragile
@@ -644,11 +644,11 @@ projected preparation band. The final earned band locks at the last monitoring
 or resolution point. Reloading cannot change the variation or any earned state
 change.
 
-| Earned band | Strong | Limited | Weak |
-|---|---:|---:|---:|
-| Robust preparation | 80% | 20% | 0% |
-| Mixed preparation | 20% | 60% | 20% |
-| Compromised preparation | 0% | 20% | 80% |
+| Earned band             | Strong | Limited | Weak |
+| ----------------------- | -----: | ------: | ---: |
+| Robust preparation      |    80% |     20% |   0% |
+| Mixed preparation       |    20% |     60% |  20% |
+| Compromised preparation |     0% |     20% |  80% |
 
 Sample condition, equipment state, the family-specific choice, and biological
 monitoring set the band through the issue-count rules above. Controls,

@@ -5,7 +5,7 @@ Status: **documented technical specification; no implementation authorized**
 This specification fixes the authored-content package, strict data shapes,
 stable identifiers, references, English-string boundary, full, fallback, and
 vertical-slice profiles, validation order, compatibility rules, and candidate
-`MR-IF-006` for *Minor Revisions*.
+`MR-IF-006` for _Minor Revisions_.
 
 The numbered design documents remain the authority for player-visible story,
 meaning, text, balance, and content counts. S03 owns stored campaign shape. S04
@@ -155,11 +155,11 @@ selected.
 
 The only valid development-status combinations are:
 
-| Development state | Slice | Fallback | Full |
-|---|---|---|---|
-| Slice implementation | `complete` | `incomplete` | `incomplete` |
-| Fallback implementation | `complete` | `complete` | `incomplete` |
-| Full implementation | `complete` | `complete` | `complete` |
+| Development state       | Slice      | Fallback     | Full         |
+| ----------------------- | ---------- | ------------ | ------------ |
+| Slice implementation    | `complete` | `incomplete` | `incomplete` |
+| Fallback implementation | `complete` | `complete`   | `incomplete` |
+| Full implementation     | `complete` | `complete`   | `complete`   |
 
 An incomplete profile keeps the exact envelope and can use explicit empty or
 partial selections. Its expected counts must match those current selections,
@@ -185,19 +185,19 @@ choice, cue, record, or outcome.
 
 S06 confirms the existing content prefixes and adds these exact prefixes:
 
-| Prefix | Use |
-|---|---|
-| `MR-EVT-` | Scheduler event definition |
-| `MR-MSG-` | Message definition |
-| `MR-NOT-` | No-reply notification definition |
-| `MR-FORM-` | Saved scene or message form |
-| `MR-BEAT-` | Ordered authored scene beat |
-| `MR-CHO-` | Scene or message choice |
-| `MR-CUE-` | World or desk availability cue |
-| `MR-SLICE-` | Slice-only evaluation object |
-| `MR-CHR-` | Recurring character identity |
-| `MR-SPK-` | Non-character speaker role |
-| `MR-LOC-` | Semantic location identity |
+| Prefix      | Use                              |
+| ----------- | -------------------------------- |
+| `MR-EVT-`   | Scheduler event definition       |
+| `MR-MSG-`   | Message definition               |
+| `MR-NOT-`   | No-reply notification definition |
+| `MR-FORM-`  | Saved scene or message form      |
+| `MR-BEAT-`  | Ordered authored scene beat      |
+| `MR-CHO-`   | Scene or message choice          |
+| `MR-CUE-`   | World or desk availability cue   |
+| `MR-SLICE-` | Slice-only evaluation object     |
+| `MR-CHR-`   | Recurring character identity     |
+| `MR-SPK-`   | Non-character speaker role       |
+| `MR-LOC-`   | Semantic location identity       |
 
 Requirement IDs, test IDs, implementation decisions, interfaces, generated
 campaign-local IDs, and text keys keep their separate grammars. They do not
@@ -293,26 +293,26 @@ The fields below are required in addition to the applicable common fields.
 `ID` means one stable object ID of the named family. `TextKey` means one valid
 key in `strings.en.json`. A list is always present, including when empty.
 
-| Family | Required family data |
-|---|---|
-| `characters` | Character ID, display-name key, role key, physical-or-remote role, speaker role, and relationship identity or explicit `null` |
-| `locations` | Location ID, display-name key, semantic room type, allowed cue roles, and S08 mapping key |
-| `actions` | Action ID, display-name key, work class, period cost, base energy cost, S04 command type, forecast key, and reason keys |
-| `experiments` | Experiment ID, experiment family, allowed goals, controls, observations, sample states, equipment states, stage actions, monitoring windows, readings, caveats, record outputs, and evidence outputs |
-| `tasks` | Task ID, task family, completion command, available choices, result references, and active request or explicit `null` |
-| `roomStates` | Room-state ID, location ID, affected work, activation event, forecast key, route choices, route costs, and expiry fallback |
-| `events` | Event ID, status, priority, authored order, delivery type, delivery target, cue or `null`, fallback or `null`, and thread ID or `null` |
-| `scenes` | Scene ID, event ID, location ID or `null`, cue or `null`, base form, conditional form or `null`, ordered beats, choices, period effect, closing key, and recap key |
-| `messages` | Message ID, event ID, sender, thread ID, subject key, body forms, reply choices, deferral rule, follow-up events, and expiry result |
-| `notifications` | Notification ID, event ID, sender, thread ID or `null`, body forms, presentation kind, and follow-up event IDs |
-| `records` | Record ID, record family, title key, body forms, source experiment or event, saved selection rule, and repeat-note keys |
-| `endings` | Ending ID, career, paper, relationship, integrity, or fatigue family, selection conditions, body key, and approved variants |
-| `citations` | Citation ID, title key, body key, unlock conditions, permanent unlock rule, and Archive presentation data |
-| `environmentalItems` | Item ID, location ID, act availability, glance or focused presentation, text keys, and one-time or repeat rule |
-| `contextualLines` | Line ID, internal or character speaker, window, context conditions, text key, and one-time rule |
-| `tutorials` | Tutorial ID, trigger conditions, heading and body keys, acknowledgement rule, and input-action references |
-| `interface` | Interface ID, semantic purpose, text keys, confirmation meaning, availability, and dynamic-field roles |
-| `audio` | Audio or music role ID, semantic role, cue meaning, required visual or text duplicate, and S10 handoff role |
+| Family               | Required family data                                                                                                                                                                                 |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `characters`         | Character ID, display-name key, role key, physical-or-remote role, speaker role, and relationship identity or explicit `null`                                                                        |
+| `locations`          | Location ID, display-name key, semantic room type, allowed cue roles, and S08 mapping key                                                                                                            |
+| `actions`            | Action ID, display-name key, work class, period cost, base energy cost, S04 command type, forecast key, and reason keys                                                                              |
+| `experiments`        | Experiment ID, experiment family, allowed goals, controls, observations, sample states, equipment states, stage actions, monitoring windows, readings, caveats, record outputs, and evidence outputs |
+| `tasks`              | Task ID, task family, completion command, available choices, result references, and active request or explicit `null`                                                                                |
+| `roomStates`         | Room-state ID, location ID, affected work, activation event, forecast key, route choices, route costs, and expiry fallback                                                                           |
+| `events`             | Event ID, status, priority, authored order, delivery type, delivery target, cue or `null`, fallback or `null`, and thread ID or `null`                                                               |
+| `scenes`             | Scene ID, event ID, location ID or `null`, cue or `null`, base form, conditional form or `null`, ordered beats, choices, period effect, closing key, and recap key                                   |
+| `messages`           | Message ID, event ID, sender, thread ID, subject key, body forms, reply choices, deferral rule, follow-up events, and expiry result                                                                  |
+| `notifications`      | Notification ID, event ID, sender, thread ID or `null`, body forms, presentation kind, and follow-up event IDs                                                                                       |
+| `records`            | Record ID, record family, title key, body forms, source experiment or event, saved selection rule, and repeat-note keys                                                                              |
+| `endings`            | Ending ID, career, paper, relationship, integrity, or fatigue family, selection conditions, body key, and approved variants                                                                          |
+| `citations`          | Citation ID, title key, body key, unlock conditions, permanent unlock rule, and Archive presentation data                                                                                            |
+| `environmentalItems` | Item ID, location ID, act availability, glance or focused presentation, text keys, and one-time or repeat rule                                                                                       |
+| `contextualLines`    | Line ID, internal or character speaker, window, context conditions, text key, and one-time rule                                                                                                      |
+| `tutorials`          | Tutorial ID, trigger conditions, heading and body keys, acknowledgement rule, and input-action references                                                                                            |
+| `interface`          | Interface ID, semantic purpose, text keys, confirmation meaning, availability, and dynamic-field roles                                                                                               |
+| `audio`              | Audio or music role ID, semantic role, cue meaning, required visual or text duplicate, and S10 handoff role                                                                                          |
 
 An S08 mapping key remains semantic in content data. S08 now owns its exact
 geometry and anchor mapping. An S10 handoff role identifies meaning only until
@@ -333,26 +333,26 @@ A condition group contains all three explicit lists:
 
 The exact condition-leaf discriminants are:
 
-| Discriminant | Permitted comparison |
-|---|---|
-| `periodInWindow` | Inclusive opening and final period |
-| `actIs` | One approved act state |
-| `pressureProfileIs` | `standard` or `supported` |
-| `enumIs` | One approved enum family and value |
-| `booleanIs` | One approved Boolean fact family and value |
-| `integerInRange` | One approved safe-integer fact family and inclusive bounds |
-| `idPresenceIs` | One approved ID collection, target ID, and present-or-absent value |
-| `contentStateIs` | One content ID and approved completion, expiry, selection, or presentation state |
-| `experimentStateIs` | One experiment or run reference and approved state |
-| `manuscriptStateIs` | One approved manuscript, reviewer, reading, caveat, or snapshot state |
-| `concernStateIs` | One concern reference and approved state |
-| `routeStateIs` | Aldercroft or Morrow and approved route state |
-| `relationshipStateIs` | One recurring character and approved saved relationship fact |
-| `piimStateIs` | One approved PIIM response or outcome fact |
-| `paperStateIs` | One approved paper state |
-| `fatigueStateIs` | One approved crash or ending-energy fact |
-| `conclusionStateIs` | One approved final-choice or completion state |
-| `countInRange` | One approved collection and inclusive count bounds |
+| Discriminant          | Permitted comparison                                                             |
+| --------------------- | -------------------------------------------------------------------------------- |
+| `periodInWindow`      | Inclusive opening and final period                                               |
+| `actIs`               | One approved act state                                                           |
+| `pressureProfileIs`   | `standard` or `supported`                                                        |
+| `enumIs`              | One approved enum family and value                                               |
+| `booleanIs`           | One approved Boolean fact family and value                                       |
+| `integerInRange`      | One approved safe-integer fact family and inclusive bounds                       |
+| `idPresenceIs`        | One approved ID collection, target ID, and present-or-absent value               |
+| `contentStateIs`      | One content ID and approved completion, expiry, selection, or presentation state |
+| `experimentStateIs`   | One experiment or run reference and approved state                               |
+| `manuscriptStateIs`   | One approved manuscript, reviewer, reading, caveat, or snapshot state            |
+| `concernStateIs`      | One concern reference and approved state                                         |
+| `routeStateIs`        | Aldercroft or Morrow and approved route state                                    |
+| `relationshipStateIs` | One recurring character and approved saved relationship fact                     |
+| `piimStateIs`         | One approved PIIM response or outcome fact                                       |
+| `paperStateIs`        | One approved paper state                                                         |
+| `fatigueStateIs`      | One approved crash or ending-energy fact                                         |
+| `conclusionStateIs`   | One approved final-choice or completion state                                    |
+| `countInRange`        | One approved collection and inclusive count bounds                               |
 
 A leaf names its approved fact family and supplies the exact typed comparison
 for that family. It cannot read player text, real time, browser state,
@@ -366,14 +366,14 @@ Authored effects are declarative instructions consumed only through an
 approved S04 command or scheduled transition. The exact closed operation
 discriminants are:
 
-| Discriminant | Permitted result |
-|---|---|
-| `adjustMetric` | Apply one approved fixed safe-integer delta through its owning rule. |
-| `setFact` | Set one approved Boolean or enum fact to one allowed value through its owning rule. |
-| `recordHistory` | Add one approved stable ID to one permanent factual history. |
-| `applyDomainResult` | Create or update one approved request, task, route, relationship, manuscript, experiment, record, citation, or conclusion fact through its owning rule. |
-| `applyActionCost` | Advance time and charge or restore energy through one approved action ID. |
-| `requestPresentation` | Request one of the five existing S04 presentation effects with one valid authored reference. |
+| Discriminant          | Permitted result                                                                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adjustMetric`        | Apply one approved fixed safe-integer delta through its owning rule.                                                                                    |
+| `setFact`             | Set one approved Boolean or enum fact to one allowed value through its owning rule.                                                                     |
+| `recordHistory`       | Add one approved stable ID to one permanent factual history.                                                                                            |
+| `applyDomainResult`   | Create or update one approved request, task, route, relationship, manuscript, experiment, record, citation, or conclusion fact through its owning rule. |
+| `applyActionCost`     | Advance time and charge or restore energy through one approved action ID.                                                                               |
+| `requestPresentation` | Request one of the five existing S04 presentation effects with one valid authored reference.                                                            |
 
 Each operation names an exact approved target family, value, reason key, and
 owning S04 rule. It cannot contain executable code, a calculation, an arbitrary
@@ -395,13 +395,13 @@ repeat or calculate rule algorithms.
 
 The exact work classes are:
 
-| Work class | Actions |
-|---|---|
-| `recovery` | Protected break |
-| `light` | Routine monitor, Elena report, relationship action, and room wait |
-| `focused` | Configure, focused start, quality monitor, analysis, manuscript revision, and career action |
-| `intense` | Intensive start and initial manuscript draft |
-| `major` | PIIM response |
+| Work class | Actions                                                                                     |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| `recovery` | Protected break                                                                             |
+| `light`    | Routine monitor, Elena report, relationship action, and room wait                           |
+| `focused`  | Configure, focused start, quality monitor, analysis, manuscript revision, and career action |
+| `intense`  | Intensive start and initial manuscript draft                                                |
+| `major`    | PIIM response                                                                               |
 
 Only focused and intense work can use the S04 night surcharge or push-through
 rule. A content object cannot reclassify an action for one scene or profile.
@@ -641,17 +641,17 @@ leaves the active save and backup unchanged.
 The full profile selects the complete source catalogue required by B10. Its
 counted families are exactly:
 
-| Family | Count |
-|---|---:|
-| Experiment templates | 6 |
-| Operational room states | 3 |
-| Mandatory scenes | 7 |
-| Optional scenes or contacts | 10 |
-| Primary records | 20 |
-| Ending modules | 29 |
-| Institutional Citations | 12 |
-| Environmental items | 30 |
-| Contextual lines | 14 |
+| Family                      | Count |
+| --------------------------- | ----: |
+| Experiment templates        |     6 |
+| Operational room states     |     3 |
+| Mandatory scenes            |     7 |
+| Optional scenes or contacts |    10 |
+| Primary records             |    20 |
+| Ending modules              |    29 |
+| Institutional Citations     |    12 |
+| Environmental items         |    30 |
+| Contextual lines            |    14 |
 
 The profile also explicitly selects all required actions, tasks, events,
 forms, choices, messages, notifications, tutorial items, interface items,
@@ -662,17 +662,17 @@ inferred from a filename or prefix.
 
 The fallback is a coherent campaign profile. Its counted families are exactly:
 
-| Family | Selection |
-|---|---|
-| Experiment templates | 4: laser/sham, combined range/repair, batch, oxygen |
-| Operational room states | 2 |
-| Mandatory scenes | all 7 |
-| Optional scenes or contacts | 7 |
-| Primary records | 18 |
-| Ending modules | all 29 |
-| Institutional Citations | all 12 |
-| Environmental items | the approved 20-item subset |
-| Contextual lines | all 14 |
+| Family                      | Selection                                           |
+| --------------------------- | --------------------------------------------------- |
+| Experiment templates        | 4: laser/sham, combined range/repair, batch, oxygen |
+| Operational room states     | 2                                                   |
+| Mandatory scenes            | all 7                                               |
+| Optional scenes or contacts | 7                                                   |
+| Primary records             | 18                                                  |
+| Ending modules              | all 29                                              |
+| Institutional Citations     | all 12                                              |
+| Environmental items         | the approved 20-item subset                         |
+| Contextual lines            | all 14                                              |
 
 The combined range/repair experiment and record use the approved fallback-only
 IDs and direct replacements. The profile keeps the basic facility-queue route
@@ -799,24 +799,24 @@ changes profile, or returns a partial package.
 An invalid result contains one or more issues in deterministic validation
 order. Every issue uses one of these closed codes:
 
-| Code | Meaning |
-|---|---|
-| `malformedJson` | A required file is not valid permitted JSON. |
-| `invalidManifest` | The source manifest or one listed path is invalid. |
-| `invalidProfile` | A profile envelope, identity, field, or mapping is invalid. |
-| `invalidObject` | A family object has a wrong shape, type, value, or range. |
-| `invalidId` | An object ID, requirement ID, test ID, or text key has an invalid grammar. |
-| `invalidText` | An English value, placeholder, or fixed string group is invalid. |
-| `duplicateId` | Two authored objects use one global stable ID. |
-| `duplicateTextKey` | A text key occurs more than once or has conflicting meaning. |
-| `missingReference` | A referenced object, text key, requirement, or test is absent. |
-| `wrongReferenceFamily` | A reference points to an object of the wrong family. |
-| `circularReference` | A prohibited dependency, thread, or replacement cycle exists. |
-| `incompleteProfile` | A requested profile is marked incomplete, a complete profile omits a required family, item, route, or dependency, or the completion combination is not permitted. |
-| `excludedDependency` | Selected content depends on an excluded object or string. |
-| `countMismatch` | A fixed catalogue or profile count is wrong. |
-| `invariantFailure` | A cross-content, reachability, delivery, form, safety, or rule invariant fails. |
-| `wordLimitExceeded` | The selected English file contains more than 6,000 unique words. |
+| Code                   | Meaning                                                                                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `malformedJson`        | A required file is not valid permitted JSON.                                                                                                                      |
+| `invalidManifest`      | The source manifest or one listed path is invalid.                                                                                                                |
+| `invalidProfile`       | A profile envelope, identity, field, or mapping is invalid.                                                                                                       |
+| `invalidObject`        | A family object has a wrong shape, type, value, or range.                                                                                                         |
+| `invalidId`            | An object ID, requirement ID, test ID, or text key has an invalid grammar.                                                                                        |
+| `invalidText`          | An English value, placeholder, or fixed string group is invalid.                                                                                                  |
+| `duplicateId`          | Two authored objects use one global stable ID.                                                                                                                    |
+| `duplicateTextKey`     | A text key occurs more than once or has conflicting meaning.                                                                                                      |
+| `missingReference`     | A referenced object, text key, requirement, or test is absent.                                                                                                    |
+| `wrongReferenceFamily` | A reference points to an object of the wrong family.                                                                                                              |
+| `circularReference`    | A prohibited dependency, thread, or replacement cycle exists.                                                                                                     |
+| `incompleteProfile`    | A requested profile is marked incomplete, a complete profile omits a required family, item, route, or dependency, or the completion combination is not permitted. |
+| `excludedDependency`   | Selected content depends on an excluded object or string.                                                                                                         |
+| `countMismatch`        | A fixed catalogue or profile count is wrong.                                                                                                                      |
+| `invariantFailure`     | A cross-content, reachability, delivery, form, safety, or rule invariant fails.                                                                                   |
+| `wordLimitExceeded`    | The selected English file contains more than 6,000 unique words.                                                                                                  |
 
 Each issue contains only its code, repository-relative file path, JSON field
 path, and stable object ID or text key when available. It contains no complete
@@ -888,10 +888,10 @@ The pure boundary has three operations:
 
 Each operation returns exactly one of these result forms:
 
-| Result | Required data | Meaning |
-|---|---|---|
-| `valid` | the operation's one complete checked value | Every applicable source, complete profile, incomplete boundary, selection, and final-package check passed. |
-| `invalid` | ordered `ContentValidationIssue` values | No content value or partial view was created. |
+| Result    | Required data                              | Meaning                                                                                                    |
+| --------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `valid`   | the operation's one complete checked value | Every applicable source, complete profile, incomplete boundary, selection, and final-package check passed. |
+| `invalid` | ordered `ContentValidationIssue` values    | No content value or partial view was created.                                                              |
 
 Expected bad authored input returns `invalid`; it is not an uncaught exception.
 An unexpected internal failure is handled by the S02 fatal boundary and does
@@ -899,12 +899,12 @@ not expose raw input.
 
 `ValidatedContent` contains four deeply immutable plain-data views:
 
-| View | Contents | Consumers |
-|---|---|---|
-| `metadata` | Package, schema, content version, language, profile, compatibility, and expected counts | application, persistence coordination, tests |
-| `rules` | Conditions, costs, rule parameters, references, windows, effects, experiment, task, route, ending, and record facts | rules and scheduler |
-| `presentation` | Approved semantic labels, scene structure, messages, notifications, cue roles, tutorial, interface, environment, and audio-role references | UI, world projections, cutscenes, audio |
-| `strings` | Selected text-key-to-English-value map | presentation consumers only |
+| View           | Contents                                                                                                                                   | Consumers                                    |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- |
+| `metadata`     | Package, schema, content version, language, profile, compatibility, and expected counts                                                    | application, persistence coordination, tests |
+| `rules`        | Conditions, costs, rule parameters, references, windows, effects, experiment, task, route, ending, and record facts                        | rules and scheduler                          |
+| `presentation` | Approved semantic labels, scene structure, messages, notifications, cue roles, tutorial, interface, environment, and audio-role references | UI, world projections, cutscenes, audio      |
+| `strings`      | Selected text-key-to-English-value map                                                                                                     | presentation consumers only                  |
 
 Rules and scheduler receive only `rules` plus the metadata fields required to
 check profile and version. They never receive English values. Other modules
@@ -947,16 +947,16 @@ Each valid fixture contains a complete manifest, source file set, selected
 profile, expected IDs and counts, expected selected keys, expected word count,
 expected view summaries, and important excluded items.
 
-| Fixture group | Required coverage |
-|---|---|
+| Fixture group    | Required coverage                                                                                                                                                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `MR-S06-VAL-001` | The three permitted development-status combinations; refusal to select an incomplete profile; one complete valid full package; exact counts, references, required content, stable ordering, and deterministic repeated validation. |
-| `MR-S06-FBK-001` | Exact fallback cut, direct range/repair replacements, basic facility route, all mandatory content, exact counts, and no excluded text. |
-| `MR-S06-SLC-001` | Exact Week-1 slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text. |
-| `MR-S06-REF-001` | Valid references plus every missing, wrong-family, duplicate, circular, chained-replacement, and excluded-dependency rejection. |
-| `MR-S06-STR-001` | Key grammar, placeholders, selected-key closure, normalized unique-word vectors, exact 6,000 boundary, and 6,001 rejection. |
-| `MR-S06-OBJ-001` | Every strict family shape, explicit null and empty-list use, unknown fields, value ranges, forms, choices, conditions, and effects. |
-| `MR-S06-MIG-001` | Exact current version, listed compatible version, retained selections, direct replacement, profile mismatch, missing mapping, and unchanged state after failure. |
-| `MR-S06-FLT-001` | At least one case for every closed issue code, deterministic issue location, no partial content, no profile switch, and safe startup message. |
+| `MR-S06-FBK-001` | Exact fallback cut, direct range/repair replacements, basic facility route, all mandatory content, exact counts, and no excluded text.                                                                                             |
+| `MR-S06-SLC-001` | Exact Week-1 slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text.                                                                                  |
+| `MR-S06-REF-001` | Valid references plus every missing, wrong-family, duplicate, circular, chained-replacement, and excluded-dependency rejection.                                                                                                    |
+| `MR-S06-STR-001` | Key grammar, placeholders, selected-key closure, normalized unique-word vectors, exact 6,000 boundary, and 6,001 rejection.                                                                                                        |
+| `MR-S06-OBJ-001` | Every strict family shape, explicit null and empty-list use, unknown fields, value ranges, forms, choices, conditions, and effects.                                                                                                |
+| `MR-S06-MIG-001` | Exact current version, listed compatible version, retained selections, direct replacement, profile mismatch, missing mapping, and unchanged state after failure.                                                                   |
+| `MR-S06-FLT-001` | At least one case for every closed issue code, deterministic issue location, no partial content, no profile switch, and safe startup message.                                                                                      |
 
 Every rejected fixture expects the exact issue code, repository-relative file,
 field path, and ID or key when applicable. It also identifies the source and

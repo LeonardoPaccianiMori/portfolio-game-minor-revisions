@@ -7,7 +7,7 @@ Status: **documented technical specification; no implementation authorized**
 This specification fixes future work-package ownership, dependency order,
 agent work orders, model selection, isolated Git work, review, validation,
 integration, contribution evidence, recovery, and approval boundaries for
-*Minor Revisions*.
+_Minor Revisions_.
 
 The numbered design documents remain authoritative for player-visible meaning.
 S01 through S12 remain authoritative for the toolchain, modules, state, rules,
@@ -24,17 +24,17 @@ plans.
 
 ## Plain-language terms
 
-| Term | Meaning |
-|---|---|
-| Work package | One bounded part of future implementation with fixed ownership. |
-| Work order | The stored instructions for one agent assignment. |
-| Owner | The only assignment allowed to edit one path at that time. |
-| Dependency | Earlier accepted work that another package needs. |
-| Worktree | An isolated local project folder connected to the same Git history. |
-| Integration | Copying reviewed package commits onto local `main` in the approved order. |
-| Contribution record | The durable private record of one assignment and its evidence. |
-| Interface | A fixed contract that lets two modules exchange plain data. |
-| Dependency wave | Packages that can proceed together because their paths do not overlap. |
+| Term                | Meaning                                                                   |
+| ------------------- | ------------------------------------------------------------------------- |
+| Work package        | One bounded part of future implementation with fixed ownership.           |
+| Work order          | The stored instructions for one agent assignment.                         |
+| Owner               | The only assignment allowed to edit one path at that time.                |
+| Dependency          | Earlier accepted work that another package needs.                         |
+| Worktree            | An isolated local project folder connected to the same Git history.       |
+| Integration         | Copying reviewed package commits onto local `main` in the approved order. |
+| Contribution record | The durable private record of one assignment and its evidence.            |
+| Interface           | A fixed contract that lets two modules exchange plain data.               |
+| Dependency wave     | Packages that can proceed together because their paths do not overlap.    |
 
 ## Fixed implementation boundary
 
@@ -54,18 +54,18 @@ or portfolio publication.
 The ten existing packages remain exact. A large package can use several
 smaller assignments, but its ownership boundary does not change.
 
-| Package | Exclusive future responsibility | Starts after |
-|---|---|---|
-| `MR-WP-00` Foundation | Root package and tool configuration, `index.html`, foundation and architecture-check scripts, `src/bootstrap/`, `src/application/`, and `src/platform/` | Gate approval and frozen foundation interfaces |
-| `MR-WP-01` Rules and content system | `src/rules/`, `src/content/`, state and command logic, deterministic variation, content schemas, validation, profile selection, and related unit tests | Accepted `MR-WP-00` |
-| `MR-WP-02` Persistence | `src/persistence/`, persistence unit tests, real browser-storage tests, and S07 persistence fixtures | Accepted `MR-WP-00` and the accepted `MR-WP-01` state/content boundary |
-| `MR-WP-03` World and rendering | `src/world/`, `src/rendering/`, world geometry, collision, anchors, visual resources, drawing, S08 world tests, S10 rendering tests, and later approved `assets/` files | Accepted `MR-WP-00`; verified asset records before any asset enters |
-| `MR-WP-04` Input and interaction | `src/input/`, `src/player/`, `src/interaction/`, device conversion, movement, targeting, interaction, and related tests | Accepted `MR-WP-00` and the accepted `MR-WP-03` world/target boundary |
-| `MR-WP-05` UI and accessibility | `src/ui/`, UI-specific CSS, semantic screens, menus, overlays, captions, errors, layout, input-navigation, and accessibility tests | Accepted `MR-WP-01`, `MR-WP-02`, and `MR-WP-04` interfaces |
-| `MR-WP-06` Audio and cutscenes | `src/audio/`, `src/cutscenes/`, audio resources, cutscene presentation, restoration, and related tests | Accepted `MR-WP-01`, `MR-WP-03`, and `MR-WP-05` interfaces |
-| `MR-WP-07` Vertical-slice integration | Slice content during the slice phase, slice integration checks, complete slice journeys, save/recovery evidence, and the private slice packet | Accepted `MR-WP-00` through `MR-WP-06` and their required checks |
-| `MR-WP-08` Campaign content integration | Root `content/` after the slice gate, fallback and full content, English text, campaign journeys, counts, routes, and ending evidence | Accepted slice plus separate fallback approval; accepted fallback plus separate full approval |
-| `MR-WP-09` Quality and release preparation | Fixture schema and manifest, acceptance matrix, shared test utilities, coverage, document, performance, dependency, asset, privacy, and release audits, and `docs/evidence/` summaries | Shared quality preparation after `MR-WP-00`; later checks only when their inputs exist |
+| Package                                    | Exclusive future responsibility                                                                                                                                                        | Starts after                                                                                  |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `MR-WP-00` Foundation                      | Root package and tool configuration, `index.html`, foundation and architecture-check scripts, `src/bootstrap/`, `src/application/`, and `src/platform/`                                | Gate approval and frozen foundation interfaces                                                |
+| `MR-WP-01` Rules and content system        | `src/rules/`, `src/content/`, state and command logic, deterministic variation, content schemas, validation, profile selection, and related unit tests                                 | Accepted `MR-WP-00`                                                                           |
+| `MR-WP-02` Persistence                     | `src/persistence/`, persistence unit tests, real browser-storage tests, and S07 persistence fixtures                                                                                   | Accepted `MR-WP-00` and the accepted `MR-WP-01` state/content boundary                        |
+| `MR-WP-03` World and rendering             | `src/world/`, `src/rendering/`, world geometry, collision, anchors, visual resources, drawing, S08 world tests, S10 rendering tests, and later approved `assets/` files                | Accepted `MR-WP-00`; verified asset records before any asset enters                           |
+| `MR-WP-04` Input and interaction           | `src/input/`, `src/player/`, `src/interaction/`, device conversion, movement, targeting, interaction, and related tests                                                                | Accepted `MR-WP-00` and the accepted `MR-WP-03` world/target boundary                         |
+| `MR-WP-05` UI and accessibility            | `src/ui/`, UI-specific CSS, semantic screens, menus, overlays, captions, errors, layout, input-navigation, and accessibility tests                                                     | Accepted `MR-WP-01`, `MR-WP-02`, and `MR-WP-04` interfaces                                    |
+| `MR-WP-06` Audio and cutscenes             | `src/audio/`, `src/cutscenes/`, audio resources, cutscene presentation, restoration, and related tests                                                                                 | Accepted `MR-WP-01`, `MR-WP-03`, and `MR-WP-05` interfaces                                    |
+| `MR-WP-07` Vertical-slice integration      | Slice content during the slice phase, slice integration checks, complete slice journeys, save/recovery evidence, and the private slice packet                                          | Accepted `MR-WP-00` through `MR-WP-06` and their required checks                              |
+| `MR-WP-08` Campaign content integration    | Root `content/` after the slice gate, fallback and full content, English text, campaign journeys, counts, routes, and ending evidence                                                  | Accepted slice plus separate fallback approval; accepted fallback plus separate full approval |
+| `MR-WP-09` Quality and release preparation | Fixture schema and manifest, acceptance matrix, shared test utilities, coverage, document, performance, dependency, asset, privacy, and release audits, and `docs/evidence/` summaries | Shared quality preparation after `MR-WP-00`; later checks only when their inputs exist        |
 
 ### Specialist ownership
 
@@ -181,23 +181,23 @@ No agent starts from an informal conversation instruction alone.
 
 Every work order starts with YAML front matter using exactly these fields:
 
-| Field | Exact value or rule |
-|---|---|
-| `id` | Stable `MR-WO-WP<two digits>-<three digits>` ID |
-| `type` | `implementation-work-order` |
-| `status` | One S13 work-order state |
-| `work_package` | One `MR-WP-00`–`MR-WP-09` ID matching `id` |
-| `sequence` | Safe integer matching the three-digit ID suffix |
-| `created` | Real ISO date |
-| `updated` | Real ISO date, not earlier than `created` |
-| `base_commit` | Exact 40-character lowercase Git object ID |
-| `provider` | Exact approved provider name |
-| `model` | Exact approved model name |
-| `reasoning_level` | Exact provider-supported reasoning label |
-| `model_selected` | Real ISO date |
-| `branch` | Exact S13 branch path |
-| `worktree` | Exact repository-relative S13 worktree path |
-| `supersedes` | Earlier valid work-order ID or `null` |
+| Field             | Exact value or rule                             |
+| ----------------- | ----------------------------------------------- |
+| `id`              | Stable `MR-WO-WP<two digits>-<three digits>` ID |
+| `type`            | `implementation-work-order`                     |
+| `status`          | One S13 work-order state                        |
+| `work_package`    | One `MR-WP-00`–`MR-WP-09` ID matching `id`      |
+| `sequence`        | Safe integer matching the three-digit ID suffix |
+| `created`         | Real ISO date                                   |
+| `updated`         | Real ISO date, not earlier than `created`       |
+| `base_commit`     | Exact 40-character lowercase Git object ID      |
+| `provider`        | Exact approved provider name                    |
+| `model`           | Exact approved model name                       |
+| `reasoning_level` | Exact provider-supported reasoning label        |
+| `model_selected`  | Real ISO date                                   |
+| `branch`          | Exact S13 branch path                           |
+| `worktree`        | Exact repository-relative S13 worktree path     |
+| `supersedes`      | Earlier valid work-order ID or `null`           |
 
 Unknown or missing front-matter fields fail validation. The body uses these
 headings in order:
@@ -241,18 +241,18 @@ permits a narrow read-only use.
 
 One work order has one state:
 
-| State | Meaning |
-|---|---|
-| `draft` | Not approved and cannot start. |
-| `approved` | Exact scope is authorized but work has not started. |
-| `active` | The assigned worker is working. |
-| `blocked` | A named condition prevents safe progress. |
-| `submitted` | The worker has supplied commits and its handoff. |
-| `reviewed` | Independent review and required corrections are complete. |
-| `integrated` | Approved commits are on local `main`. |
-| `accepted` | Leonardo accepted the integrated package. |
-| `superseded` | A later work order replaces this one. |
-| `abandoned` | Work stopped with reason and restart conditions recorded. |
+| State        | Meaning                                                   |
+| ------------ | --------------------------------------------------------- |
+| `draft`      | Not approved and cannot start.                            |
+| `approved`   | Exact scope is authorized but work has not started.       |
+| `active`     | The assigned worker is working.                           |
+| `blocked`    | A named condition prevents safe progress.                 |
+| `submitted`  | The worker has supplied commits and its handoff.          |
+| `reviewed`   | Independent review and required corrections are complete. |
+| `integrated` | Approved commits are on local `main`.                     |
+| `accepted`   | Leonardo accepted the integrated package.                 |
+| `superseded` | A later work order replaces this one.                     |
+| `abandoned`  | Work stopped with reason and restart conditions recorded. |
 
 Only the primary agent changes state. A worker cannot mark its own order
 `reviewed`, `integrated`, or `accepted`.
@@ -273,13 +273,13 @@ an omitted selection.
 
 The current OpenAI routing matrix is:
 
-| Assignment class | Exact default selection | Boundary |
-|---|---|---|
-| Architecture, shared contracts, persistence, Three.js, accessibility, integration, or difficult debugging | `gpt-5.6-sol`, `high` or `xhigh` | Use `xhigh` when the work has several difficult connected trade-offs. |
-| Final independent implementation or governance review | `gpt-5.6-sol`, `xhigh` | The reviewer is fresh-context and read-only. |
-| Normal bounded implementation, tests, tools, or UI work | `gpt-5.6-terra`, `medium` or `high` | Use `high` when the task must trace several modules or edge cases. |
-| Asset, licence, and provenance research | `gpt-5.6-terra`, `high` | Escalate a materially ambiguous rights or provenance question to Sol under a new or revised work order. |
-| Mechanical transformation, inventory, fixture conversion, or repeatable check with known input and output | `gpt-5.6-luna`, `low` or `medium` | It cannot decide design, a shared contract, or an approval question. |
+| Assignment class                                                                                          | Exact default selection             | Boundary                                                                                                |
+| --------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Architecture, shared contracts, persistence, Three.js, accessibility, integration, or difficult debugging | `gpt-5.6-sol`, `high` or `xhigh`    | Use `xhigh` when the work has several difficult connected trade-offs.                                   |
+| Final independent implementation or governance review                                                     | `gpt-5.6-sol`, `xhigh`              | The reviewer is fresh-context and read-only.                                                            |
+| Normal bounded implementation, tests, tools, or UI work                                                   | `gpt-5.6-terra`, `medium` or `high` | Use `high` when the task must trace several modules or edge cases.                                      |
+| Asset, licence, and provenance research                                                                   | `gpt-5.6-terra`, `high`             | Escalate a materially ambiguous rights or provenance question to Sol under a new or revised work order. |
+| Mechanical transformation, inventory, fixture conversion, or repeatable check with known input and output | `gpt-5.6-luna`, `low` or `medium`   | It cannot decide design, a shared contract, or an approval question.                                    |
 
 `max` is reserved for an exceptional, documented quality-first single-agent
 problem after the primary agent explains why `xhigh` is insufficient. Do not
@@ -293,11 +293,11 @@ and Leonardo's approval when it changes the selected assignment.
 
 The project-local configuration has three focused roles:
 
-| Role | Configuration path | Use |
-|---|---|---|
+| Role                             | Configuration path                                         | Use                                                                                                                                                                   |
+| -------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Controlled implementation worker | `.codex/agents/minor-revisions-implementation-worker.toml` | One approved assignment with exclusive owned paths. Its model stays unset in the profile so the primary agent must pass the matrix-selected value for the exact work. |
-| Independent reviewer | `.codex/agents/minor-revisions-independent-reviewer.toml` | Fresh-context, read-only review using Sol `xhigh`. |
-| Asset researcher | `.codex/agents/minor-revisions-asset-researcher.toml` | Focused candidate, licence, and provenance research using Terra `high`. |
+| Independent reviewer             | `.codex/agents/minor-revisions-independent-reviewer.toml`  | Fresh-context, read-only review using Sol `xhigh`.                                                                                                                    |
+| Asset researcher                 | `.codex/agents/minor-revisions-asset-researcher.toml`      | Focused candidate, licence, and provenance research using Terra `high`.                                                                                               |
 
 At most two subagents can run at the same time under `.codex/config.toml`. The
 primary agent uses parallel work only when paths, inputs, and decisions do not
@@ -312,7 +312,7 @@ remain design evidence; they are not automatic implementation reviews.
 ## Project AI-use log
 
 [`ai-use-log.md`](../ai-use-log.md) is the private, detailed source of truth
-for actual AI contributions to *Minor Revisions*. It is limited to this game;
+for actual AI contributions to _Minor Revisions_. It is limited to this game;
 its historical entries do not make a claim about AI use for any other Leonardo
 project.
 
@@ -447,10 +447,10 @@ The review checks:
 
 Findings use:
 
-| Level | Response |
-|---|---|
-| `blocker` | Integration stops. |
-| `required` | Correct and review again before integration. |
+| Level      | Response                                                        |
+| ---------- | --------------------------------------------------------------- |
+| `blocker`  | Integration stops.                                              |
+| `required` | Correct and review again before integration.                    |
 | `advisory` | Record the improvement and its owner; defer only with a reason. |
 
 A general statement that code looks good is not a review. A finding cannot be
@@ -494,19 +494,19 @@ and performance measurement remain separate future evidence.
 
 Every contribution record starts with YAML front matter using exactly:
 
-| Field | Exact value or rule |
-|---|---|
-| `id` | Matching `MR-CONTRIB-WP<two digits>-<three digits>` ID |
-| `type` | `implementation-contribution` |
-| `status` | `submitted`, `reviewed`, `integrated`, `accepted`, or `abandoned` |
-| `work_order` | The matching valid work-order ID |
-| `work_package` | Matching `MR-WP-00`–`MR-WP-09` ID |
-| `created` | Real ISO date |
-| `updated` | Real ISO date, not earlier than `created` |
-| `base_commit` | The work order's exact 40-character Git object ID |
-| `provider` | Exact worker provider |
-| `model` | Exact worker model |
-| `reasoning_level` | Exact worker reasoning label |
+| Field             | Exact value or rule                                               |
+| ----------------- | ----------------------------------------------------------------- |
+| `id`              | Matching `MR-CONTRIB-WP<two digits>-<three digits>` ID            |
+| `type`            | `implementation-contribution`                                     |
+| `status`          | `submitted`, `reviewed`, `integrated`, `accepted`, or `abandoned` |
+| `work_order`      | The matching valid work-order ID                                  |
+| `work_package`    | Matching `MR-WP-00`–`MR-WP-09` ID                                 |
+| `created`         | Real ISO date                                                     |
+| `updated`         | Real ISO date, not earlier than `created`                         |
+| `base_commit`     | The work order's exact 40-character Git object ID                 |
+| `provider`        | Exact worker provider                                             |
+| `model`           | Exact worker model                                                |
+| `reasoning_level` | Exact worker reasoning label                                      |
 
 Unknown or missing front-matter fields fail validation. The body uses these
 headings in order: `Scope and result`, `Changed files`, `Authority`, `Worker
@@ -608,15 +608,15 @@ tests, research, review, repair, integration, and documentation.
 
 These are future static or unit check groups. No check or result exists now.
 
-| Group | Exact future acceptance |
-|---|---|
-| `MR-S13-OWN-001` | Every planned source, content, test, configuration, control, work-order, contribution, asset, and evidence path has one permitted owner at one time; no simultaneous overlap exists. |
-| `MR-S13-DAG-001` | The package graph contains exactly `MR-WP-00`–`MR-WP-09`, has no cycle, reproduces the approved waves, and blocks every package whose accepted dependency or phase approval is absent. |
-| `MR-S13-WO-001` | Valid work-order front matter, headings, IDs, explicit supported spawned model and reasoning selection, base commit, paths, traceability, non-goals, checks, and handoff pass; its linked approved step delegation table records the focused source packet, role, path boundary, and selection reason. An inherited, unavailable, conflicting, missing, silently substituted, outside, or unsafe value fails. |
-| `MR-S13-GIT-001` | Branch, worktree, base, atomic-commit, dirty-state, ownership, integration-order, conflict, repair, revert, and cleanup cases follow S13 without a remote or history rewrite. |
-| `MR-S13-REV-001` | Submission checks, controlled reviewer packet, independent-review identity, complete checklist, finding classes, correction, re-review, package checks, and wave checks are present and cannot be skipped. |
-| `MR-S13-CON-001` | Contribution front matter, required headings, commit mapping, actual results, reviewer findings, corrections, limitations, privacy exclusions, integration, and Leonardo acceptance remain complete and distinct. |
-| `MR-S13-GATE-001` | Gate 1 plus one exact step approval permits only that step's paths and quality work; every later step, licence, remote, deployment, release, publication, and completion remains blocked without its separate approval. |
+| Group             | Exact future acceptance                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-S13-OWN-001`  | Every planned source, content, test, configuration, control, work-order, contribution, asset, and evidence path has one permitted owner at one time; no simultaneous overlap exists.                                                                                                                                                                                                                          |
+| `MR-S13-DAG-001`  | The package graph contains exactly `MR-WP-00`–`MR-WP-09`, has no cycle, reproduces the approved waves, and blocks every package whose accepted dependency or phase approval is absent.                                                                                                                                                                                                                        |
+| `MR-S13-WO-001`   | Valid work-order front matter, headings, IDs, explicit supported spawned model and reasoning selection, base commit, paths, traceability, non-goals, checks, and handoff pass; its linked approved step delegation table records the focused source packet, role, path boundary, and selection reason. An inherited, unavailable, conflicting, missing, silently substituted, outside, or unsafe value fails. |
+| `MR-S13-GIT-001`  | Branch, worktree, base, atomic-commit, dirty-state, ownership, integration-order, conflict, repair, revert, and cleanup cases follow S13 without a remote or history rewrite.                                                                                                                                                                                                                                 |
+| `MR-S13-REV-001`  | Submission checks, controlled reviewer packet, independent-review identity, complete checklist, finding classes, correction, re-review, package checks, and wave checks are present and cannot be skipped.                                                                                                                                                                                                    |
+| `MR-S13-CON-001`  | Contribution front matter, required headings, commit mapping, actual results, reviewer findings, corrections, limitations, privacy exclusions, integration, and Leonardo acceptance remain complete and distinct.                                                                                                                                                                                             |
+| `MR-S13-GATE-001` | Gate 1 plus one exact step approval permits only that step's paths and quality work; every later step, licence, remote, deployment, release, publication, and completion remains blocked without its separate approval.                                                                                                                                                                                       |
 
 All seven groups link to `MR-REQ-TECH-001` and `MR-REQ-TEST-001`.
 `MR-S13-GATE-001` also links to `MR-REQ-RELEASE-001`.

@@ -17,23 +17,23 @@ Status: **S00–S14 documented; incremental roadmap and model-routed subagent go
 - Deployment configuration: none.
 - Design workshop: B00–B10 documented.
 - Independent review decisions: R00–R07 documented.
-- AI-use provenance: `ai-use-log.md` is current and applies only to *Minor
-  Revisions*.
+- AI-use provenance: `ai-use-log.md` is current and applies only to _Minor
+  Revisions_.
 
 Git history is the authority for the commit that contains this status file. Do
 not insert a future or guessed commit identifier into this document.
 
 ## Gate state
 
-| Gate | State | Blocking condition |
-|---|---|---|
-| Gate 1 — technical baseline | Approved on 2026-09-01 | Leonardo accepted the frozen S01–S14 baseline; this authorizes no code. |
-| Incremental implementation start | Step 1 plan approved on 2026-09-01 | Only the approved `MR-WP-00` foundation paths and checks may proceed; Step 2 remains blocked. |
-| Vertical-slice acceptance | Blocked | Steps 1–30 do not exist and Step 31 cannot run. |
-| Fallback acceptance | Blocked | Steps 32–52 do not exist and Step 53 cannot run. |
-| Full local-game acceptance | Blocked | Steps 54–69 do not exist and Step 70 cannot run. |
-| Remote creation or push | Blocked | Leonardo has not authorized a remote. |
-| Public release or portfolio deployment | Blocked | No implementation, release evidence, or separate publication approval exists. |
+| Gate                                   | State                              | Blocking condition                                                                            |
+| -------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------- |
+| Gate 1 — technical baseline            | Approved on 2026-09-01             | Leonardo accepted the frozen S01–S14 baseline; this authorizes no code.                       |
+| Incremental implementation start       | Step 1 plan approved on 2026-09-01 | Only the approved `MR-WP-00` foundation paths and checks may proceed; Step 2 remains blocked. |
+| Vertical-slice acceptance              | Blocked                            | Steps 1–30 do not exist and Step 31 cannot run.                                               |
+| Fallback acceptance                    | Blocked                            | Steps 32–52 do not exist and Step 53 cannot run.                                              |
+| Full local-game acceptance             | Blocked                            | Steps 54–69 do not exist and Step 70 cannot run.                                              |
+| Remote creation or push                | Blocked                            | Leonardo has not authorized a remote.                                                         |
+| Public release or portfolio deployment | Blocked                            | No implementation, release evidence, or separate publication approval exists.                 |
 
 ## Current checkpoint
 
@@ -61,15 +61,15 @@ not insert a future or guessed commit identifier into this document.
 
 ## Durable progress summary
 
-| Work group | State | Result |
-|---|---|---|
-| Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
-| Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
-| Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 was approved on 2026-09-01. |
-| Incremental implementation | Step 1 plan approved; not yet started | Step 0 is documentation only. Step 1 alone has an approved plan; Steps 2–70 each require an approved plan and accepted dependencies. |
-| Vertical slice | Not authorized | Steps 1–30 assemble it and Step 31 accepts it; no code exists. |
-| Fallback and full game | Not authorized | Step 53 accepts the fallback; Step 70 accepts the full local game. |
+| Work group                 | State                                                  | Result                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                             |
+| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
+| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 was approved on 2026-09-01.                                                  |
+| Incremental implementation | Step 1 plan approved; not yet started                  | Step 0 is documentation only. Step 1 alone has an approved plan; Steps 2–70 each require an approved plan and accepted dependencies.                 |
+| Vertical slice             | Not authorized                                         | Steps 1–30 assemble it and Step 31 accepts it; no code exists.                                                                                       |
+| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 
 ## Session-resume procedure
 

@@ -28,13 +28,13 @@ The first release targets desktop and laptop browsers only. Mobile and tablet
 play are outside this release scope. The game supports keyboard and mouse and
 a standard controller. Every core action has an option on both input systems.
 
-| Function | Keyboard and mouse | Controller |
-|---|---|---|
-| Move | \`WASD\` or arrow keys | Left stick |
-| Look | Mouse | Right stick |
-| Interact or confirm | \`E\` | Normal confirm button |
-| Research Status | \`Tab\` | Normal view button |
-| Pause or go back | \`Escape\` | Normal menu button |
+| Function            | Keyboard and mouse     | Controller            |
+| ------------------- | ---------------------- | --------------------- |
+| Move                | \`WASD\` or arrow keys | Left stick            |
+| Look                | Mouse                  | Right stick           |
+| Interact or confirm | \`E\`                  | Normal confirm button |
+| Research Status     | \`Tab\`                | Normal view button    |
+| Pause or go back    | \`Escape\`             | Normal menu button    |
 
 The exact controller-button labels can adapt to the detected controller, but
 the move, look, confirm, view, and menu roles must remain consistent. Settings
@@ -63,11 +63,11 @@ screen, settings, accessibility, responsive-layout, and failure behaviour.
 
 The permanent HUD is quiet and has three fixed areas:
 
-| Area | Content | Rule |
-|---|---|---|
-| Upper left | Current week, named work period, and five-segment energy bar. | Always readable; it does not show hidden formulas. |
-| Lower centre | Current interaction prompt. | Shows only for a valid nearby target. |
-| Upper right | Quiet new-message and safe-notification indicators. | An indicator does not force an immediate response. |
+| Area         | Content                                                       | Rule                                               |
+| ------------ | ------------------------------------------------------------- | -------------------------------------------------- |
+| Upper left   | Current week, named work period, and five-segment energy bar. | Always readable; it does not show hidden formulas. |
+| Lower centre | Current interaction prompt.                                   | Shows only for a valid nearby target.              |
+| Upper right  | Quiet new-message and safe-notification indicators.           | An indicator does not force an immediate response. |
 
 Ten designated short environmental items can also use the lower-centre area as
 a close-range glance surface. When the player looks at one and no

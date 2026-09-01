@@ -6,7 +6,7 @@ Status: **approved technical contract; no implementation authorized**
 
 This specification defines the runtime module graph, public boundaries,
 ownership, lifecycle, request ordering, visual-frame ordering, and error
-boundaries for *Minor Revisions*. It is subordinate to the numbered design
+boundaries for _Minor Revisions_. It is subordinate to the numbered design
 documents and to the S01 toolchain and repository contract.
 
 This file does not authorize source code, package files, assets, a remote,
@@ -17,38 +17,38 @@ formats remain with S03–S12.
 
 ## Plain-language terms
 
-| Term | Meaning in this specification |
-|---|---|
-| Module | One part of the game with one named responsibility. |
-| Coordinator | The application module that controls the order of campaign requests and presentation work. |
-| Port | A small named list of operations that the application is allowed to use on another module. |
-| Adapter | A browser-facing module that implements one port. |
-| Projection | Read-only plain data prepared for presentation. It is not the complete campaign state. |
-| Bootstrap | The startup code that checks the environment, creates modules, and transfers ownership to the application. |
-| Lifecycle | The allowed states and transitions from creation through shutdown. |
-| Frame | One visual screen update. It does not advance campaign time. |
+| Term        | Meaning in this specification                                                                              |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| Module      | One part of the game with one named responsibility.                                                        |
+| Coordinator | The application module that controls the order of campaign requests and presentation work.                 |
+| Port        | A small named list of operations that the application is allowed to use on another module.                 |
+| Adapter     | A browser-facing module that implements one port.                                                          |
+| Projection  | Read-only plain data prepared for presentation. It is not the complete campaign state.                     |
+| Bootstrap   | The startup code that checks the environment, creates modules, and transfers ownership to the application. |
+| Lifecycle   | The allowed states and transitions from creation through shutdown.                                         |
+| Frame       | One visual screen update. It does not advance campaign time.                                               |
 
 ## Module inventory
 
 Runtime source uses exactly these public modules. Tests remain under `tests/`
 and are not a runtime module.
 
-| Module | Primary responsibility | Explicit exclusion |
-|---|---|---|
-| `bootstrap` | Establish the fatal-error boundary, prepare startup UI, create dependencies, and start the application. | Does not contain campaign rules. |
-| `application` | Coordinate requests, own the active in-memory `CampaignState`, and send projections and effects to ports. | Does not own browser objects. |
-| `platform` | Check browser capabilities and report page visibility. | Does not inspect campaign or saved data. |
-| `rules` | Validate campaign commands and return a new state and typed effects. | Imports no runtime module and uses no browser object. |
-| `content` | Validate and expose authored content through stable plain-data contracts. | Does not render or mutate campaign state. |
-| `persistence` | Read, validate, save, recover, complete, and clear local records. | Does not retain the application’s live state object. |
-| `world` | Maintain plain world presentation and provide bounded movement and interaction context. | Owns no Three.js, DOM, audio, or storage object. |
-| `rendering` | Own Three.js objects, required visual resources, graphics settings, and drawing. | Does not decide campaign outcomes. |
-| `input` | Own raw keyboard, mouse, controller, pointer-lock, and binding events. | Does not change campaign state directly. |
-| `player` | Calculate movement and viewing direction from plain input and collision data. | Owns no Three.js camera and does not change campaign state. |
-| `interaction` | Identify the current valid target and turn an action into a typed application request. | Cannot apply the request. |
-| `ui` | Own semantic HTML and CSS screens, menus, prompts, captions, and player-facing errors. | Receives projections, not `CampaignState`. |
-| `audio` | Own audio buffers, audio nodes, buses, settings, and spatial audio updates. | Cannot carry required meaning without a non-audio alternative. |
-| `cutscenes` | Run presentation timelines and return plain camera, actor, dialogue, choice, and completion instructions. | Cannot advance campaign rules or campaign time directly. |
+| Module        | Primary responsibility                                                                                    | Explicit exclusion                                             |
+| ------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `bootstrap`   | Establish the fatal-error boundary, prepare startup UI, create dependencies, and start the application.   | Does not contain campaign rules.                               |
+| `application` | Coordinate requests, own the active in-memory `CampaignState`, and send projections and effects to ports. | Does not own browser objects.                                  |
+| `platform`    | Check browser capabilities and report page visibility.                                                    | Does not inspect campaign or saved data.                       |
+| `rules`       | Validate campaign commands and return a new state and typed effects.                                      | Imports no runtime module and uses no browser object.          |
+| `content`     | Validate and expose authored content through stable plain-data contracts.                                 | Does not render or mutate campaign state.                      |
+| `persistence` | Read, validate, save, recover, complete, and clear local records.                                         | Does not retain the application’s live state object.           |
+| `world`       | Maintain plain world presentation and provide bounded movement and interaction context.                   | Owns no Three.js, DOM, audio, or storage object.               |
+| `rendering`   | Own Three.js objects, required visual resources, graphics settings, and drawing.                          | Does not decide campaign outcomes.                             |
+| `input`       | Own raw keyboard, mouse, controller, pointer-lock, and binding events.                                    | Does not change campaign state directly.                       |
+| `player`      | Calculate movement and viewing direction from plain input and collision data.                             | Owns no Three.js camera and does not change campaign state.    |
+| `interaction` | Identify the current valid target and turn an action into a typed application request.                    | Cannot apply the request.                                      |
+| `ui`          | Own semantic HTML and CSS screens, menus, prompts, captions, and player-facing errors.                    | Receives projections, not `CampaignState`.                     |
+| `audio`       | Own audio buffers, audio nodes, buses, settings, and spatial audio updates.                               | Cannot carry required meaning without a non-audio alternative. |
+| `cutscenes`   | Run presentation timelines and return plain camera, actor, dialogue, choice, and completion instructions. | Cannot advance campaign rules or campaign time directly.       |
 
 Do not create broad `shared`, `utils`, `services`, or `managers` runtime
 folders. A private helper stays with the module that owns its purpose.
@@ -120,13 +120,13 @@ No browser module can retain or mutate `CampaignState`.
 `application` exports `createApplication(dependencies, validatedContent)`. The
 factory returns an unstarted `ApplicationController`.
 
-| Operation | Contract |
-|---|---|
-| `start()` | Start application-owned services and enter `ready`, or return a typed failure. |
-| `stop()` | Stop input and loops first, release all owned resources, and return a typed result. Repetition is harmless. |
-| `submit(request)` | Put one typed discrete request through the ordered application path and return its completed result. |
-| `updateFrame(frame)` | Perform one visual update. It cannot apply a campaign rule or start unfinished background work. |
-| `getStatus()` | Return read-only lifecycle and availability information. It returns no campaign state. |
+| Operation            | Contract                                                                                                    |
+| -------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `start()`            | Start application-owned services and enter `ready`, or return a typed failure.                              |
+| `stop()`             | Stop input and loops first, release all owned resources, and return a typed result. Repetition is harmless. |
+| `submit(request)`    | Put one typed discrete request through the ordered application path and return its completed result.        |
+| `updateFrame(frame)` | Perform one visual update. It cannot apply a campaign rule or start unfinished background work.             |
+| `getStatus()`        | Return read-only lifecycle and availability information. It returns no campaign state.                      |
 
 `ApplicationRequest` is a closed family, not an arbitrary message. Its outer
 categories are campaign creation or continuation, campaign rule commands,
@@ -150,11 +150,11 @@ campaign-state reference.
 
 ### Platform, timing, and diagnostics
 
-| Port | Public operations |
-|---|---|
-| `PlatformPort` | `checkCompatibility()`, `startVisibilityWatch(handler)`, `stopVisibilityWatch()` |
-| `TimingPort` | `startFrameLoop(handler)`, `pauseFrameLoop()`, `resumeFrameLoop()`, `stopFrameLoop()` |
-| `DiagnosticsPort` | `createDiagnostic(fault)` |
+| Port              | Public operations                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| `PlatformPort`    | `checkCompatibility()`, `startVisibilityWatch(handler)`, `stopVisibilityWatch()`      |
+| `TimingPort`      | `startFrameLoop(handler)`, `pauseFrameLoop()`, `resumeFrameLoop()`, `stopFrameLoop()` |
+| `DiagnosticsPort` | `createDiagnostic(fault)`                                                             |
 
 `TimingPort` rejects a second permanent loop. Repeated pause and stop are
 safe. S11 makes `checkCompatibility()` one single-active asynchronous
@@ -166,11 +166,11 @@ does not add a public runtime module.
 
 ### Persistence, input, and UI
 
-| Port | Public operations |
-|---|---|
-| `PersistencePort` | `start()`, `readStartupData()`, `loadCampaign(source)`, `saveCampaign(snapshot)`, `completeCampaign(completion)`, `saveSettings(settings)`, `clearSavedData()`, `stop()` |
-| `InputControlPort` | `start()`, `setMode(mode)`, `readFrameInput()`, `applyBindings(bindings)`, `stop()` |
-| `UiPort` | `start()`, `showBoot(status)`, `showStartMenu(data)`, `openCampaign(projection)`, `present(projection)`, `updateFrame(frameData)`, `closeCampaign()`, `showFatal(diagnostic)`, `stop()` |
+| Port               | Public operations                                                                                                                                                                       |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PersistencePort`  | `start()`, `readStartupData()`, `loadCampaign(source)`, `saveCampaign(snapshot)`, `completeCampaign(completion)`, `saveSettings(settings)`, `clearSavedData()`, `stop()`                |
+| `InputControlPort` | `start()`, `setMode(mode)`, `readFrameInput()`, `applyBindings(bindings)`, `stop()`                                                                                                     |
+| `UiPort`           | `start()`, `showBoot(status)`, `showStartMenu(data)`, `openCampaign(projection)`, `present(projection)`, `updateFrame(frameData)`, `closeCampaign()`, `showFatal(diagnostic)`, `stop()` |
 
 Persistence operations return the S07 common asynchronous success-or-failure
 result. S07 fixes their exact inputs, outputs, queue, records, transaction
@@ -185,11 +185,11 @@ through candidate `MR-IF-009` and `MR-IF-010`.
 
 ### Player, world, and interaction
 
-| Port | Public operations |
-|---|---|
-| `PlayerPort` | `start()`, `openCampaign(projection)`, `updateFrame(frameInput, movementContext)`, `closeCampaign()`, `stop()` |
-| `WorldPort` | `start()`, `openCampaign(projection)`, `present(projection)`, `getMovementContext(playerData)`, `updateFrame(frameData)`, `getInteractionContext(playerData)`, `closeCampaign()`, `stop()` |
-| `InteractionPort` | `start()`, `openCampaign(projection)`, `updateFrame(playerData, interactionContext)`, `resolveAction(action)`, `closeCampaign()`, `stop()` |
+| Port              | Public operations                                                                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `PlayerPort`      | `start()`, `openCampaign(projection)`, `updateFrame(frameInput, movementContext)`, `closeCampaign()`, `stop()`                                                                             |
+| `WorldPort`       | `start()`, `openCampaign(projection)`, `present(projection)`, `getMovementContext(playerData)`, `updateFrame(frameData)`, `getInteractionContext(playerData)`, `closeCampaign()`, `stop()` |
+| `InteractionPort` | `start()`, `openCampaign(projection)`, `updateFrame(playerData, interactionContext)`, `resolveAction(action)`, `closeCampaign()`, `stop()`                                                 |
 
 Player results contain plain position and view data. Movement and interaction
 contexts contain only the collision or target information required for the
@@ -201,11 +201,11 @@ and accessibility use. Their connected `MR-IF-009` is candidate `v1`.
 
 ### Rendering, audio, and cutscenes
 
-| Port | Public operations |
-|---|---|
-| `RenderingPort` | `start()`, `prepareRequiredResources(profile)`, `openCampaign(projection)`, `present(projection)`, `applyGraphicsSettings(settings)`, `render(frameData)`, `closeCampaign()`, `stop()` |
-| `AudioPort` | `start()`, `prepareRequiredResources()`, `unlockAfterPlayerAction()`, `openCampaign(projection)`, `present(audioRequests)`, `applyAudioSettings(settings)`, `updateFrame(listenerData)`, `closeCampaign()`, `stop()` |
-| `CutscenePort` | `start()`, `openCampaign(projection)`, `play(request)`, `updateFrame(frameData)`, `handleAction(action)`, `closeCampaign()`, `stop()` |
+| Port            | Public operations                                                                                                                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RenderingPort` | `start()`, `prepareRequiredResources(profile)`, `openCampaign(projection)`, `present(projection)`, `applyGraphicsSettings(settings)`, `render(frameData)`, `closeCampaign()`, `stop()`                               |
+| `AudioPort`     | `start()`, `prepareRequiredResources()`, `unlockAfterPlayerAction()`, `openCampaign(projection)`, `present(audioRequests)`, `applyAudioSettings(settings)`, `updateFrame(listenerData)`, `closeCampaign()`, `stop()` |
+| `CutscenePort`  | `start()`, `openCampaign(projection)`, `play(request)`, `updateFrame(frameData)`, `handleAction(action)`, `closeCampaign()`, `stop()`                                                                                |
 
 Rendering owns every Three.js resource. Audio owns every audio buffer and
 node. Cutscenes return plain presentation instructions and cannot apply rules.
@@ -338,11 +338,11 @@ partial startup or failure.
 
 There are three outcomes:
 
-| Outcome | Meaning | Campaign guarantee |
-|---|---|---|
-| Rejected player action | The request is valid in shape but not allowed by current rules. | State is unchanged. |
-| Recoverable failure | One module operation failed, but the application can return to a known safe state. | Browser failure cannot change state; a failed save cannot damage the prior safe save. |
-| Fatal failure | Campaign integrity is uncertain, an essential module is unavailable, or required cleanup failed. | Campaign commands and input are disabled. |
+| Outcome                | Meaning                                                                                          | Campaign guarantee                                                                    |
+| ---------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| Rejected player action | The request is valid in shape but not allowed by current rules.                                  | State is unchanged.                                                                   |
+| Recoverable failure    | One module operation failed, but the application can return to a known safe state.               | Browser failure cannot change state; a failed save cannot damage the prior safe save. |
+| Fatal failure          | Campaign integrity is uncertain, an essential module is unavailable, or required cleanup failed. | Campaign commands and input are disabled.                                             |
 
 Expected failures return typed results. Unexpected exceptions are caught at
 the module call boundary and converted into typed faults. The failing module
@@ -374,18 +374,18 @@ separate.
 
 S12 will encode the following S02 scenarios in its executable fixture format:
 
-| Fixture ID | Required scenario | Expected result |
-|---|---|---|
-| `MR-S02-FIX-001` | Complete supported startup | Exact startup order; one ready controller and one frame loop. |
-| `MR-S02-FIX-002` | Required capability missing | No campaign or application start; safe compatibility result and reverse bootstrap cleanup. |
-| `MR-S02-FIX-003` | Invalid authored content | No campaign start; fatal development result and reverse bootstrap cleanup. |
-| `MR-S02-FIX-004` | Failure after some modules start | The failing owner cleans partial work; completed owners stop in reverse order. |
-| `MR-S02-FIX-005` | Normal and repeated stop | Input and loop stop first; every owned resource cleans once; later stop is harmless. |
-| `MR-S02-FIX-006` | Two campaign requests arrive together | The second begins only after the first and its required effects complete. |
-| `MR-S02-FIX-007` | Visual frames during queued asynchronous work | Frames can present the current stable projection but cannot change campaign state. |
-| `MR-S02-FIX-008` | Replace or load a campaign | The prior campaign closes completely before fresh projections open. |
-| `MR-S02-FIX-009` | Unexpected frame or port exception | It becomes a typed fault; fatal conditions disable input and campaign requests. |
-| `MR-S02-FIX-010` | Architecture import scan | Forbidden, circular, private-file, and browser-object boundary violations are rejected. |
+| Fixture ID       | Required scenario                             | Expected result                                                                            |
+| ---------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `MR-S02-FIX-001` | Complete supported startup                    | Exact startup order; one ready controller and one frame loop.                              |
+| `MR-S02-FIX-002` | Required capability missing                   | No campaign or application start; safe compatibility result and reverse bootstrap cleanup. |
+| `MR-S02-FIX-003` | Invalid authored content                      | No campaign start; fatal development result and reverse bootstrap cleanup.                 |
+| `MR-S02-FIX-004` | Failure after some modules start              | The failing owner cleans partial work; completed owners stop in reverse order.             |
+| `MR-S02-FIX-005` | Normal and repeated stop                      | Input and loop stop first; every owned resource cleans once; later stop is harmless.       |
+| `MR-S02-FIX-006` | Two campaign requests arrive together         | The second begins only after the first and its required effects complete.                  |
+| `MR-S02-FIX-007` | Visual frames during queued asynchronous work | Frames can present the current stable projection but cannot change campaign state.         |
+| `MR-S02-FIX-008` | Replace or load a campaign                    | The prior campaign closes completely before fresh projections open.                        |
+| `MR-S02-FIX-009` | Unexpected frame or port exception            | It becomes a typed fault; fatal conditions disable input and campaign requests.            |
+| `MR-S02-FIX-010` | Architecture import scan                      | Forbidden, circular, private-file, and browser-object boundary violations are rejected.    |
 
 These are specification fixtures, not measured test results. No implementation
 or executable test exists yet.

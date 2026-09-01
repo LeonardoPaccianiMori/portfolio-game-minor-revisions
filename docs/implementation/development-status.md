@@ -59,14 +59,14 @@ insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority | State | Exact boundary |
-|---|---|---|
-| Documentation workflow | Approved for documentation | Records the 70-step incremental plan only. |
-| Gate 1 — frozen technical baseline | Approved on 2026-09-01 | Confirms S01–S14; authorizes no code. |
-| Step 1 | Plan approved on 2026-09-01 | Only `MR-WP-00` paths and the stated S01 environment, package, page, test, review, and local-test actions are authorized. Acceptance is still required. |
-| Steps 2–70 | Blocked | Each needs accepted dependencies and its own approved plan. |
-| Asset research and integration | Blocked until its named step | Candidate research and integration remain separate approvals. |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval. |
+| Authority                                       | State                          | Exact boundary                                                                                                                                          |
+| ----------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                              |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                   |
+| Step 1                                          | Plan approved on 2026-09-01    | Only `MR-WP-00` paths and the stated S01 environment, package, page, test, review, and local-test actions are authorized. Acceptance is still required. |
+| Steps 2–70                                      | Blocked                        | Each needs accepted dependencies and its own approved plan.                                                                                             |
+| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                           |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                          |
 
 ## Session-resume procedure
 

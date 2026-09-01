@@ -14,25 +14,25 @@
 Costs use Anthropic's published standard price of USD 5 per million input
 tokens and USD 25 per million output tokens. There was no cache use.
 
-| Stage | Input tokens | Output tokens | Stop reason | Estimated cost (USD) |
-|---|---:|---:|---|---:|
-| Stage 1 — blind reconstruction | 82,304 | 28,778 | `end_turn` | 1.130970 |
-| Stage 2 — vision alignment | 150,703 | 26,401 | `end_turn` | 1.413540 |
-| Stage 3 — constrained critique | 177,964 | 32,966 | `end_turn` | 1.713970 |
-| Stage 4A — blind incentives | 82,211 | 11,972 | `end_turn` | 0.710355 |
-| Stage 4B — vision comparison | 97,281 | 14,798 | `end_turn` | 0.856355 |
-| **Fresh-run total** | **590,463** | **114,915** |  | **5.825190** |
+| Stage                          | Input tokens | Output tokens | Stop reason | Estimated cost (USD) |
+| ------------------------------ | -----------: | ------------: | ----------- | -------------------: |
+| Stage 1 — blind reconstruction |       82,304 |        28,778 | `end_turn`  |             1.130970 |
+| Stage 2 — vision alignment     |      150,703 |        26,401 | `end_turn`  |             1.413540 |
+| Stage 3 — constrained critique |      177,964 |        32,966 | `end_turn`  |             1.713970 |
+| Stage 4A — blind incentives    |       82,211 |        11,972 | `end_turn`  |             0.710355 |
+| Stage 4B — vision comparison   |       97,281 |        14,798 | `end_turn`  |             0.856355 |
+| **Fresh-run total**            |  **590,463** |   **114,915** |             |         **5.825190** |
 
 ## Abandoned-run accounting
 
 An earlier run used an incorrect 24,000-token Stage-1 response limit. It is
 abandoned and is not used as review evidence.
 
-| Completed abandoned call | Input tokens | Output tokens | Stop reason | Estimated cost (USD) |
-|---|---:|---:|---|---:|
-| Initial Stage 1 | 82,304 | 24,000 | `max_tokens` | 1.011520 |
-| Stage-1 continuation | 106,423 | 7,458 | `end_turn` | 0.718565 |
-| **Known abandoned-call total** | **188,727** | **31,458** |  | **1.730085** |
+| Completed abandoned call       | Input tokens | Output tokens | Stop reason  | Estimated cost (USD) |
+| ------------------------------ | -----------: | ------------: | ------------ | -------------------: |
+| Initial Stage 1                |       82,304 |        24,000 | `max_tokens` |             1.011520 |
+| Stage-1 continuation           |      106,423 |         7,458 | `end_turn`   |             0.718565 |
+| **Known abandoned-call total** |  **188,727** |    **31,458** |              |         **1.730085** |
 
 The abandoned workflow started a Stage-2 request. Codex interrupted the local
 connection before it received a response. No response ID or usage record is

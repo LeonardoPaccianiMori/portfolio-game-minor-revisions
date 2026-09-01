@@ -4,7 +4,7 @@ Status: **documented technical specification; no implementation authorized**
 
 This specification fixes the 64-period calendar, safe-point scheduler, event
 queue, expiry, message, reminder, crash, room-event, cutscene, reload, recap,
-and final-campaign order for *Minor Revisions*. It also defines candidate
+and final-campaign order for _Minor Revisions_. It also defines candidate
 `MR-IF-005` and the S05-owned campaign part of candidate `MR-IF-011`.
 
 The numbered design documents remain the authority for player-visible story,
@@ -147,13 +147,13 @@ trigger scheduler processing.
 
 The operation returns exactly one of these results:
 
-| Result | Required data | Meaning |
-|---|---|---|
-| `command` | One complete S04 system command and scheduler reason key | Apply one automatic campaign change through S04. |
-| `notification` | Event ID and authored content reference | Present one approved no-time notification. |
-| `sceneCue` | Event ID, scene ID, cue reference, required flag, and approved access facts | Make one queued scene due through the world or desk. |
-| `settled` | Current campaign revision and scheduler revision | No automatic change or delivery is pending. |
-| `fault` | One S05 fault code and sanitized context | Scheduler or cutscene coordination is invalid. |
+| Result         | Required data                                                               | Meaning                                              |
+| -------------- | --------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `command`      | One complete S04 system command and scheduler reason key                    | Apply one automatic campaign change through S04.     |
+| `notification` | Event ID and authored content reference                                     | Present one approved no-time notification.           |
+| `sceneCue`     | Event ID, scene ID, cue reference, required flag, and approved access facts | Make one queued scene due through the world or desk. |
+| `settled`      | Current campaign revision and scheduler revision                            | No automatic change or delivery is pending.          |
+| `fault`        | One S05 fault code and sanitized context                                    | Scheduler or cutscene coordination is invalid.       |
 
 A scheduler result never contains player-facing prose, a partial campaign
 state, a Three.js object, camera data, a save payload, or an audio object.
@@ -369,11 +369,11 @@ The fixed causal chain is:
 7. commit its required follow-up manuscript revision;
 8. complete **Public Record** and post the preprint;
 9. record the Common Archive receipt;
-10. record the *Cosmos* rejection;
-11. record the *Knowledge* rejection;
+10. record the _Cosmos_ rejection;
+11. record the _Knowledge_ rejection;
 12. make Camila's first message eligible;
-13. at the first Week-9 safe point, record the *Developmental Systems
-    Letters* rejection and then the `PIIM` receipt;
+13. at the first Week-9 safe point, record the _Developmental Systems
+    Letters_ rejection and then the `PIIM` receipt;
 14. at the first Week-10 safe point, lock the reviewer forms and make
     **Helpful Comments** due;
 15. complete the approved reviewer work and make **A Reasonable Response** due
@@ -382,25 +382,25 @@ The fixed causal chain is:
 
 Required follow-up work costs remain separate from scene period effects:
 
-| Follow-up work | Periods | Energy |
-|---|---:|---:|
-| Initial manuscript draft | 3 | 2 |
-| Remove Caution | 1 | 1 |
-| What We Had follow-up revision | 1 | 1 |
-| Preprint commit | 1 | 1 |
-| PIIM response work | 3 | 2 |
+| Follow-up work                 | Periods | Energy |
+| ------------------------------ | ------: | -----: |
+| Initial manuscript draft       |       3 |      2 |
+| Remove Caution                 |       1 |      1 |
+| What We Had follow-up revision |       1 |      1 |
+| Preprint commit                |       1 |      1 |
+| PIIM response work             |       3 |      2 |
 
 ### Mandatory scene period effects
 
-| Scene | Periods | Energy |
-|---|---:|---:|
-| **Clarified** | 0 | 0 |
-| **A Complete Narrative** | 1 | 0 |
-| **What We Had** | 1 | 0 |
-| **Public Record** | 1 | 0 |
-| **Helpful Comments** | 1 | 0 |
-| **A Reasonable Response** | 1 | 0 |
-| **06:42** | 0 | 0 |
+| Scene                     | Periods | Energy |
+| ------------------------- | ------: | -----: |
+| **Clarified**             |       0 |      0 |
+| **A Complete Narrative**  |       1 |      0 |
+| **What We Had**           |       1 |      0 |
+| **Public Record**         |       1 |      0 |
+| **Helpful Comments**      |       1 |      0 |
+| **A Reasonable Response** |       1 |      0 |
+| **06:42**                 |       0 |      0 |
 
 Scene and follow-up costs never merge into one hidden charge.
 
@@ -770,19 +770,19 @@ Each fixture contains:
 - all expected revision and history changes; and
 - important fields that must remain unchanged.
 
-| Fixture group | Required coverage |
-|---|---|
-| `MR-S05-CAL-001` | Initial period, all four period labels, inclusive final window, multi-period crossing, expiry before unlock, and period-63 boundary. |
-| `MR-S05-SCH-001` | All four triggers, one-step processing, priority order, all tie-breakers, `settled`, no duplicates, and no real-time trigger. |
-| `MR-S05-CRS-001` | Push-through, combined warning, pending crash, period-64 rejection, recovery anchor, missed windows, and both oxygen windows missed. |
-| `MR-S05-MSG-001` | Message lifecycle, implied read, close as deferral, Camila follow-up and expiry, concern reminder, and no duplicate reminder. |
-| `MR-S05-ROOM-001` | Each authored room activation, related-work scope, optional-content expiry first, fallback once, and Week-14 imaging order. |
-| `MR-S05-GATE-001` | Week-12 plan expiry, Week-13 Aldercroft, Week-14 response cards, Week-15 PIIM and Morrow, Elena reaction, and Week-16 final preparation. |
-| `MR-S05-SCN-001` | Clarified automatic start, cue start, both `requestScene` steps, form lock, checkpoint success, failure and retry, mismatched revision, active-state invariants, all scene period effects, and separate work costs. |
-| `MR-S05-SKP-001` | Pre-choice skip, final choice with both finish modes, no-choice skip, required-choice protection, fixed recap, and no replay. |
-| `MR-S05-REC-001` | Pause, focus loss, hidden tab, small window, failure before and after save, Save and Quit, Continue, closing receipt, recap receipt, and pointer-capture confirmation. |
-| `MR-S05-END-001` | Period 63, all route combinations, irreversible confirmation, declined alternatives, two-phase finalization, epilogue play, skip, recap, and completion once. |
-| `MR-S05-FLT-001` | Every S05 fault, normal stale-request rejection, duplicate and late tokens, unchanged-state proof, disabled control, and verified-checkpoint recovery. |
+| Fixture group     | Required coverage                                                                                                                                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MR-S05-CAL-001`  | Initial period, all four period labels, inclusive final window, multi-period crossing, expiry before unlock, and period-63 boundary.                                                                                |
+| `MR-S05-SCH-001`  | All four triggers, one-step processing, priority order, all tie-breakers, `settled`, no duplicates, and no real-time trigger.                                                                                       |
+| `MR-S05-CRS-001`  | Push-through, combined warning, pending crash, period-64 rejection, recovery anchor, missed windows, and both oxygen windows missed.                                                                                |
+| `MR-S05-MSG-001`  | Message lifecycle, implied read, close as deferral, Camila follow-up and expiry, concern reminder, and no duplicate reminder.                                                                                       |
+| `MR-S05-ROOM-001` | Each authored room activation, related-work scope, optional-content expiry first, fallback once, and Week-14 imaging order.                                                                                         |
+| `MR-S05-GATE-001` | Week-12 plan expiry, Week-13 Aldercroft, Week-14 response cards, Week-15 PIIM and Morrow, Elena reaction, and Week-16 final preparation.                                                                            |
+| `MR-S05-SCN-001`  | Clarified automatic start, cue start, both `requestScene` steps, form lock, checkpoint success, failure and retry, mismatched revision, active-state invariants, all scene period effects, and separate work costs. |
+| `MR-S05-SKP-001`  | Pre-choice skip, final choice with both finish modes, no-choice skip, required-choice protection, fixed recap, and no replay.                                                                                       |
+| `MR-S05-REC-001`  | Pause, focus loss, hidden tab, small window, failure before and after save, Save and Quit, Continue, closing receipt, recap receipt, and pointer-capture confirmation.                                              |
+| `MR-S05-END-001`  | Period 63, all route combinations, irreversible confirmation, declined alternatives, two-phase finalization, epilogue play, skip, recap, and completion once.                                                       |
+| `MR-S05-FLT-001`  | Every S05 fault, normal stale-request rejection, duplicate and late tokens, unchanged-state proof, disabled control, and verified-checkpoint recovery.                                                              |
 
 ## Required complete journeys
 

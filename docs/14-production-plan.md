@@ -26,15 +26,15 @@ The phase outcomes below remain scope milestones. They are not batch
 implementation approvals. `implementation/development-roadmap.md` divides them
 into separately approved and accepted Steps 1–70.
 
-| Phase | Main output | Gate before next phase |
-|---|---|---|
-| 0. Design closure | S00–S14 baseline, frozen interfaces, requirements, work packages, and incremental roadmap | Leonardo separately approves Gate 1, then the exact Step-1 plan |
-| 1. Foundation and provenance | Steps 1–26: toolchain, content-data foundation, temporary floor, save proof, and core loop | Each step is separately accepted; no unverified asset |
-| 2. Vertical slice | Steps 27–31: approved benchmark aesthetic and Week-1 20–30-minute slice | Step 31 private slice gate passes |
-| 3. Minimum-complete fallback | Steps 32–53: coherent 90-minute game with stated cut line | Step 53 private fallback gate passes |
-| 4. Full target | Steps 54–70: six-template, approximately three-hour first playthrough | Step 70 full content, test, and local acceptance passes |
-| 5. Private release candidate | Accessibility, performance, licensing, and public-boundary evidence | Release-candidate gate passes |
-| 6. Public handoff, if chosen | Remote, source release, and later portfolio integration | Separate Leonardo approvals for each public action |
+| Phase                        | Main output                                                                                | Gate before next phase                                          |
+| ---------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| 0. Design closure            | S00–S14 baseline, frozen interfaces, requirements, work packages, and incremental roadmap  | Leonardo separately approves Gate 1, then the exact Step-1 plan |
+| 1. Foundation and provenance | Steps 1–26: toolchain, content-data foundation, temporary floor, save proof, and core loop | Each step is separately accepted; no unverified asset           |
+| 2. Vertical slice            | Steps 27–31: approved benchmark aesthetic and Week-1 20–30-minute slice                    | Step 31 private slice gate passes                               |
+| 3. Minimum-complete fallback | Steps 32–53: coherent 90-minute game with stated cut line                                  | Step 53 private fallback gate passes                            |
+| 4. Full target               | Steps 54–70: six-template, approximately three-hour first playthrough                      | Step 70 full content, test, and local acceptance passes         |
+| 5. Private release candidate | Accessibility, performance, licensing, and public-boundary evidence                        | Release-candidate gate passes                                   |
+| 6. Public handoff, if chosen | Remote, source release, and later portfolio integration                                    | Separate Leonardo approvals for each public action              |
 
 Phase 1 starts only after implementation approval. It revalidates the exact
 S01 Node and package versions, then verifies browser-tested asset codecs and

@@ -1,27 +1,28 @@
-# Reconciliation of Review Sets — *Minor Revisions*
+# Reconciliation of Review Sets — _Minor Revisions_
 
 ---
 
 ## 1. Corpus confirmation
 
-| # | Report | Read completely | Notes |
-|---|---|---|---|
-| 1 | `docs/reviews/2026-08-28-opus-5/stage-1-blind-reconstruction.md` | Yes | Substantive, untruncated. Analysis only; contains no recommendations. |
-| 2 | `docs/reviews/2026-08-28-opus-5/stage-2-vision-alignment.md` | Yes | Substantive, untruncated. Alignment findings; no prescriptions. |
-| 3 | `docs/reviews/2026-08-28-opus-5/stage-3-design-critique.md` | Yes | Substantive, untruncated. C1–C5, S4.1–S4.6, O1–O5, 15 underspecified items, 12 prototype questions, prioritized table. |
-| 4 | `docs/reviews/2026-08-28-opus-5/stage-4-revealed-game.md` | Yes | Substantive, untruncated. Contains an internal "End of report" marker followed by an appended Stage 4B section (§13–§16, R1–R11). This is an intentional append, not truncation. |
-| 5 | `docs/reviews/2026-08-28-opus-5/codex-validation-notes.md` | Yes | Substantive, untruncated. Verification checks, source-verified findings, and four qualifications. |
-| 6 | Holistic report, stage 1 (identity, fun hypothesis, quality) | Yes | Substantive, untruncated. §14 contradictions and gaps; §13 prototype claims. |
-| 7 | Holistic report, stage 2 (expectation map and alignment) | Yes | Substantive, untruncated. E1–E23, P1–P13, U1–U9, A1–A11, T1–T12, S1–S9. |
-| 8 | Holistic report, stage 3 (critique and recommendations) | Yes | Substantive, untruncated. HGA-R01–HGA-R26, PQ1–PQ18, preserve list, decision sequence. |
+| #   | Report                                                           | Read completely | Notes                                                                                                                                                                            |
+| --- | ---------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `docs/reviews/2026-08-28-opus-5/stage-1-blind-reconstruction.md` | Yes             | Substantive, untruncated. Analysis only; contains no recommendations.                                                                                                            |
+| 2   | `docs/reviews/2026-08-28-opus-5/stage-2-vision-alignment.md`     | Yes             | Substantive, untruncated. Alignment findings; no prescriptions.                                                                                                                  |
+| 3   | `docs/reviews/2026-08-28-opus-5/stage-3-design-critique.md`      | Yes             | Substantive, untruncated. C1–C5, S4.1–S4.6, O1–O5, 15 underspecified items, 12 prototype questions, prioritized table.                                                           |
+| 4   | `docs/reviews/2026-08-28-opus-5/stage-4-revealed-game.md`        | Yes             | Substantive, untruncated. Contains an internal "End of report" marker followed by an appended Stage 4B section (§13–§16, R1–R11). This is an intentional append, not truncation. |
+| 5   | `docs/reviews/2026-08-28-opus-5/codex-validation-notes.md`       | Yes             | Substantive, untruncated. Verification checks, source-verified findings, and four qualifications.                                                                                |
+| 6   | Holistic report, stage 1 (identity, fun hypothesis, quality)     | Yes             | Substantive, untruncated. §14 contradictions and gaps; §13 prototype claims.                                                                                                     |
+| 7   | Holistic report, stage 2 (expectation map and alignment)         | Yes             | Substantive, untruncated. E1–E23, P1–P13, U1–U9, A1–A11, T1–T12, S1–S9.                                                                                                          |
+| 8   | Holistic report, stage 3 (critique and recommendations)          | Yes             | Substantive, untruncated. HGA-R01–HGA-R26, PQ1–PQ18, preserve list, decision sequence.                                                                                           |
 
 No report is absent, empty, truncated, or unreadable. Proceeding.
 
 **Naming used below:**
+
 - **RA** = the first review set (opus-5 stages 1–4 plus Codex validation notes).
 - **RB** = the later holistic review set (stages 1–3).
 
-**Method note.** Where an issue is raised by only one review and the other is silent, the entry records this explicitly as *single-source* and the classification reflects only the relationship that actually exists. Predictions about player behaviour, boredom, comedy landing, or optimisation are recorded as hypotheses, never as measured behaviour, per the Codex validation boundary. No entry is accepted, rejected, deferred, or scheduled.
+**Method note.** Where an issue is raised by only one review and the other is silent, the entry records this explicitly as _single-source_ and the classification reflects only the relationship that actually exists. Predictions about player behaviour, boredom, comedy landing, or optimisation are recorded as hypotheses, never as measured behaviour, per the Codex validation boundary. No entry is accepted, rejected, deferred, or scheduled.
 
 ---
 
@@ -32,8 +33,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-001 — The 64-period time and energy economy has never been closed**
+
 - **Sources:** RA stage 1 §6.1, §9.1, evidence rows 6 and 34; RA stage 3 underspecified items 5, 6, 8; RB stage 1 §6.3, §14; RB stage 3 HGA-R04.
-- **Relationship:** REINFORCING. Both reviews independently perform period arithmetic and both conclude the budget is unresolved, but they reach *different* conclusions from it: RA concludes energy (not periods) is the binding constraint and that breaks are structurally mandatory; RB computes ~70–80 periods of demand against 64 available and concludes the schedule may not close at all. RB's HGA-R04 is a **superseding candidate** for the formulation because it converts the concern into a bounded, executable paper task.
+- **Relationship:** REINFORCING. Both reviews independently perform period arithmetic and both conclude the budget is unresolved, but they reach _different_ conclusions from it: RA concludes energy (not periods) is the binding constraint and that breaks are structurally mandatory; RB computes ~70–80 periods of demand against 64 available and concludes the schedule may not close at all. RB's HGA-R04 is a **superseding candidate** for the formulation because it converts the concern into a bounded, executable paper task.
 - **Severity:** RA: implied high (identified as "the hidden centre of the time budget," never stated by the design). RB: CRITICAL.
 - **Evidence class:** Document-supported (arithmetic over `02` cost table, `07` budgets, `12` action IDs).
 - **Shared diagnosis:** Three inputs to the campaign's central triage engine are undefined — monitoring points per experiment run, the protected break's action class and cost, and diminishing returns on repeats — so neither the design nor either reviewer can state whether the honest path fits inside 64 periods.
@@ -46,9 +48,10 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-002 — The protected break has no action ID, cost row, text key, or content object**
+
 - **Sources:** RA stage 2 §11 item 7; RA stage 3 C4 (edit 1) and underspecified item 6; RB stage 1 §14 item 6; RB stage 2 T7; RB stage 3 HGA-R04(b).
 - **Relationship:** DUPLICATE.
-- **Severity:** RA: CRITICAL (as part of C4). RB: CRITICAL (as part of HGA-R04); RB additionally notes `02`'s rule "No later agent may add a new time-costing action class without a requirement change" makes the break currently *unimplementable*.
+- **Severity:** RA: CRITICAL (as part of C4). RB: CRITICAL (as part of HGA-R04); RB additionally notes `02`'s rule "No later agent may add a new time-costing action class without a requirement change" makes the break currently _unimplementable_.
 - **Evidence class:** Document-supported.
 - **Shared diagnosis:** The energy economy's only recovery mechanism is costed in `02` and `07` but absent from `12`'s authoritative action catalogue, while every other time-costing action has an ID.
 - **Alternatives:** (a) RA: catalogue as `MR-ACT-BREAK` with five act-state-indexed break-room strings, treating the most repeated action as a comic delivery point. (b) RB: catalogue as `MR-ACT-BREAK` with cost and restore only, as a rules-completeness fix under `MR-REQ-LOOP-001`.
@@ -59,12 +62,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-003 — Monitoring window count, distribution, and miss penalty are undefined**
+
 - **Sources:** RA stage 3 underspecified item 5; RA stage 4 §11 item 5; RB stage 1 §14; RB stage 3 HGA-R04(a).
 - **Relationship:** DUPLICATE.
 - **Severity:** RA: high divergence risk. RB: part of a CRITICAL item.
 - **Evidence class:** Document-supported (`02` singular "a meaningful monitoring point" vs `07` plural "meaningful points").
 - **Shared diagnosis:** Total campaign period demand swings by roughly 10–20 periods on this single undefined value, and it also sets the travel cadence and therefore the felt pacing.
-- **Alternatives:** (a) Fix a single stated number per template. (b) RA C4 edit 3: define a window as existing *only* where at least two materially different options are available, so a visit with no decision is not a window and costs nothing — noting RA itself flags that this frees periods and loosens the calendar.
+- **Alternatives:** (a) Fix a single stated number per template. (b) RA C4 edit 3: define a window as existing _only_ where at least two materially different options are available, so a visit with no decision is not a window and costs nothing — noting RA itself flags that this frees periods and loosens the calendar.
 - **Affected:** `02`, `04`, `07`, `12`, `13` (`MR-TEST-EXP-001`).
 - **Minimum decision or test:** State the number; then measure the freed/consumed periods against `07`'s 48–62 route budgets.
 - **Status:** `unreviewed`
@@ -72,6 +76,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-004 — Break cadence produces a degenerate weekly incentive; crash pressure is uncalibrated**
+
 - **Sources:** RA stage 4 §5 ("second/third weekly breaks avoided"), §7, §12 rows 11 and 20, R5; RB stage 1 §6.3, F7; RB stage 3 HGA-R04.
 - **Relationship:** REINFORCING, with **incompatible remedy directions preserved**.
 - **Severity:** RA: medium-high (R5). RB: part of CRITICAL HGA-R04.
@@ -86,11 +91,12 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-005 — Supported profile changes the pressure structure, not only tolerance**
+
 - **Sources:** RA stage 1 §9.9; RA stage 2 row 34; RA stage 3 S4.6; RA stage 4 §7, T7, R6; RB stage 1 T4; RB stage 2 A10, U-note; RB stage 3 HGA-R22.
 - **Relationship:** REINFORCING on diagnosis; CONFLICTING on remedy scope.
 - **Severity:** RA: SIGNIFICANT (S4.6) plus a separate HIGH-confidence dominance claim (R6). RB: OPTIONAL (HGA-R22).
 - **Evidence class:** Document-supported for the rule differences; prototype-required for whether the two profiles feel like different works.
-- **Shared diagnosis:** Removing the night surcharge dissolves the trust-versus-evidence coupling (people are absent at night), and three-segment breaks make rest efficient. `07` provides productive-period budgets only for Standard. RA additionally argues Supported's *extra warnings* make it informationally dominant with no stated cost.
+- **Shared diagnosis:** Removing the night surcharge dissolves the trust-versus-evidence coupling (people are absent at night), and three-segment breaks make rest efficient. `07` provides productive-period budgets only for Standard. RA additionally argues Supported's _extra warnings_ make it informationally dominant with no stated cost.
 - **Alternatives:** (a) RA S4.6: add a Supported productive-period budget to `07` and decide which single concession carries the tolerance, with the night surcharge as a candidate to retain. (b) RA R6: move the extra warnings out of Supported into the universal contract. (c) RB HGA-R22: record the intent in one sentence with no mechanical change, treating Supported as a legitimate second reading of the work. RA notes (a) reduces tolerance for the players who most need it; RB notes naming Supported as an alternate reading risks creating the stigma `10` forbids.
 - **Affected:** `01`, `02`, `07`, `10`, `13`.
 - **Minimum decision or test:** Two fixtures running an identical decision script under each profile, reporting break periods and productive periods.
@@ -99,6 +105,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-006 — Weeks 8–9 contain no open experiment window**
+
 - **Sources:** RB stage 1 §6.2, F3; RB stage 3 HGA-R07.
 - **Relationship:** GENUINELY NEW. RA does not identify this; RA stage 1 §5 characterises Weeks 8–9 only as narrative deflation.
 - **Severity:** RB: SIGNIFICANT. RA: not raised.
@@ -112,6 +119,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-007 — Weeks 15–16 have no sink for remaining periods**
+
 - **Sources:** RA stage 4 §4 (late-game), T8, R7.
 - **Relationship:** Single-source (RA). RB stage 1 §5 makes an adjacent observation (the campaign's density is front- and mid-loaded) without proposing action.
 - **Severity:** RA: medium-high; recommendation R7.
@@ -129,6 +137,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-008 — Configuration → outcome band mapping is undefined**
+
 - **Sources:** RA stage 1 §11; RA stage 3 underspecified item 1 (rated "very high" divergence risk); RA stage 4 §11 items 2–3; RB stage 1 §14; RB stage 3 §11.1, PQ10.
 - **Relationship:** DUPLICATE.
 - **Severity:** RA: highest-listed divergence risk. RB: implicit in HGA-R05 and §11.
@@ -142,6 +151,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-009 — Evidence-quality resolution and the meaning of "suspicious" are undefined**
+
 - **Sources:** RA stage 1 §11; RA stage 3 underspecified item 2; RA stage 4 §11 item 6; RB stage 1 §14 (adjacent, via PIIM card computation).
 - **Relationship:** REINFORCING (RA is primary; RB touches it only through the PIIM card gap).
 - **Severity:** RA: "very high" divergence risk. RB: not separately rated.
@@ -155,6 +165,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-010 — The three-band outcome model may be unable to teach causality at the available sample size**
+
 - **Sources:** RB stage 1 §5, §6.2, F5, evidence row 64; RB stage 2 D4; RB stage 3 HGA-R05.
 - **Relationship:** GENUINELY NEW, and **CONFLICTING in emphasis** with RA. RA stage 1 §7 item 5 and stage 3 §2.3 list seed-locked earned bands among the design's identity-defining strengths and explicitly recommend preserving them; RA never raises the sample-size problem.
 - **Severity:** RB: CRITICAL. RA: rated a strength.
@@ -168,12 +179,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-011 — Records ship pre-interpreted, so the "interpretation" difficulty axis has no object**
+
 - **Sources:** RA stage 2 row 3, §7.1; RA stage 3 C5; RB stage 1 §6.1 (analysis-view decay F4); RB stage 3 HGA-R14.
 - **Relationship:** REINFORCING. Same diagnosis reached by two routes; two different, non-identical remedies.
 - **Severity:** RA: CRITICAL. RB: SIGNIFICANT.
 - **Evidence class:** Document-supported (`12` `record.*.strong/limited/weak` are all fused "Observation: … Interpretation: …" pairs).
 - **Shared diagnosis:** The game performs the scientific reasoning and asks the player only to select a political register for it (careful/strong/inflated). Because the record already says "needs careful wording," the inflated option is signposted as wrong rather than tempting — which weakens complicity as well as interpretation. RB adds that the three evidence views collapse into a lookup table by roughly the fourth analysis.
-- **Alternatives:** (a) RA C5: split `record.X.observation` from interpretation; present 2–4 authored caveat tags at `MR-ACT-ANALYSE` for the player to select; have the requirements panel and the PIIM claim-scope card read those selections; define caveat omission as a lesser integrity action below −10. RA flags this as its largest single change, with word-cap cost (~3 tags × 18 variants) and a raised knowledge floor. (b) RB HGA-R14: in the **Limited** band only, permit the three views to disagree and require the evidence card to record a primary view plus a caveat, which then becomes referenceable by Reviewer 3 and by concern scenes. RB flags that it must not become a way to be *wrong*.
+- **Alternatives:** (a) RA C5: split `record.X.observation` from interpretation; present 2–4 authored caveat tags at `MR-ACT-ANALYSE` for the player to select; have the requirements panel and the PIIM claim-scope card read those selections; define caveat omission as a lesser integrity action below −10. RA flags this as its largest single change, with word-cap cost (~3 tags × 18 variants) and a raised knowledge floor. (b) RB HGA-R14: in the **Limited** band only, permit the three views to disagree and require the evidence card to record a primary view plus a caveat, which then becomes referenceable by Reviewer 3 and by concern scenes. RB flags that it must not become a way to be _wrong_.
 - **Affected:** `02`, `04`, `07`, `12`, `13`, `15`.
 - **Minimum decision or test:** Build the chosen step into the vertical slice's single laser/sham analysis; check whether a first-time reader can distinguish the supported reading from the overstated one using only the observation text, and whether the choice survives a third repetition.
 - **Status:** `unreviewed`
@@ -181,8 +193,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-012 — Station-view interaction texture is unspecified**
+
 - **Sources:** RB stage 1 §5, §6.1, F2; RB stage 2 A1, §6; RB stage 3 HGA-R06, PQ1; RA stage 1 §6.2 (monitoring as "the closest thing this game has to combat"); RA stage 3 C4 (edit 3).
-- **Relationship:** REINFORCING, with RB's framing a **superseding candidate**. RA treats the symptom (monitoring visits that present no decision); RB names the underlying absence — no document ever specifies what a focused station view *is*, and `00`'s roadmap contains no block that owned interaction feel.
+- **Relationship:** REINFORCING, with RB's framing a **superseding candidate**. RA treats the symptom (monitoring visits that present no decision); RB names the underlying absence — no document ever specifies what a focused station view _is_, and `00`'s roadmap contains no block that owned interaction feel.
 - **Severity:** RA: part of CRITICAL C4. RB: CRITICAL.
 - **Evidence class:** Mixed. Document-supported that the specification is absent; prototype-required for whether the default (a confirmation surface) is tolerable across 60+ visits.
 - **Shared diagnosis:** With dexterity and precision input deliberately removed (`01` pillar 1, `10`), nothing was put in their place, and the cheapest thing to build is a confirm dialogue.
@@ -195,6 +208,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-013 — Sample health, equipment condition, sample-group supply, and fatigue effects are undefined**
+
 - **Sources:** RA stage 1 §11; RA stage 3 underspecified items 7, 8, 13; RA stage 4 §11 item 7.
 - **Relationship:** Single-source (RA). RB does not enumerate these.
 - **Severity:** RA: medium-high.
@@ -208,6 +222,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-014 — The evidence economy: saturation claim versus unknown reachability**
+
 - **Sources:** RA stage 1 §6.2, evidence row 13; RA stage 2 §3; RA stage 3 S4.2; RA stage 4 §6, §12 row 7, T5, R2; RB stage 1 §14; RB stage 3 HGA-R16.
 - **Relationship:** QUALIFYING. RA asserts saturation (5 required templates × 2 pts + starting 3 ≥ 12 cap) and proposes re-pricing. RB narrows the claim: diminishing returns on repeats are unquantified and repeat-upgrade semantics are unstated, so **whether Substantial is easily reachable, barely reachable, or requires optional work cannot currently be determined** — and re-pricing should follow quantification, not precede it.
 - **Severity:** RA: SIGNIFICANT. RB: SIGNIFICANT.
@@ -221,6 +236,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-015 — Institutional obstruction (equipment queues, faults, access limits, optional PI requests) is promised but not catalogued**
+
 - **Sources:** RA stage 2 §7.4, §7.5, §11 item 6; RA stage 3 S4.1, underspecified item 10; RA stage 4 §11 item 7; RB stage 1 §14; RB stage 3 HGA-R17.
 - **Relationship:** DUPLICATE, with two different remedy shapes.
 - **Severity:** RA: SIGNIFICANT. RB: SIGNIFICANT.
@@ -234,6 +250,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-016 — "Stop the experiment" reads as a trap rather than as triage**
+
 - **Sources:** RB stage 3 HGA-R25; RA stage 4 §5 ("costly/irrational … learned-once-then-never"), §12 row 10.
 - **Relationship:** REINFORCING. RA predicts the behaviour; RB proposes the disclosure fix.
 - **Severity:** RB: OPTIONAL. RA: not rated as a defect, recorded as a predicted behaviour.
@@ -251,12 +268,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-017 — The manuscript board has requirements and work packages but no approved behaviour**
+
 - **Sources:** RA stage 3 underspecified item 11; RA stage 4 §5, §12 row 27; RB stage 1 §5, §14, §13 item 9; RB stage 2 T6, S1, A2; RB stage 3 HGA-R01.
 - **Relationship:** REINFORCING; RB's HGA-R01 is a **superseding candidate** for the formulation, since it escalates the gap to a contract-level blocker and proposes a minimal specification.
 - **Severity:** RA: medium-high divergence risk. RB: CRITICAL, and RB notes that under `15`'s definition of done an implementation worker on `MR-WP-05`/`MR-WP-08` would have to escalate rather than build.
 - **Evidence class:** Document-supported.
 - **Shared diagnosis:** `07` names seven card types, a requirements panel, and commit snapshots; `12` supplies three claim strings and three requirements strings. Nothing states card capacity, connection rules, conflicts, what the requirements panel checks, or how many commits a campaign expects. `MR-ACT-MANUSCRIPT-COMMIT` is one ID covering an unbounded number of events. This sits at the centre of Weeks 5–8 and Week 14.
-- **Alternatives:** (a) RB HGA-R01: specify as a small constraint-satisfaction surface — each claim level declares required support slots by card type, with the inflated claim requiring the *most* support and therefore visibly lacking it; the requirements panel enumerates unmet slots in plain text; committing with unmet slots is permitted and recorded. RB warns the slot deficit must read as "unsupported," never as "wrong," or it violates the no-moral-score rule. (b) RA (implicit within C5): make the board read the player's caveat selections rather than adding slot constraints. (c) Leave as a claim toggle and record that intent.
+- **Alternatives:** (a) RB HGA-R01: specify as a small constraint-satisfaction surface — each claim level declares required support slots by card type, with the inflated claim requiring the _most_ support and therefore visibly lacking it; the requirements panel enumerates unmet slots in plain text; committing with unmet slots is permitted and recorded. RB warns the slot deficit must read as "unsupported," never as "wrong," or it violates the no-moral-score rule. (b) RA (implicit within C5): make the board read the player's caveat selections rather than adding slot constraints. (c) Leave as a claim toggle and record that intent.
 - **Affected:** `07`, `10`, `12`, `15` (`MR-REQ-UI-001`, `MR-WP-05`, `MR-WP-08`).
 - **Minimum decision or test:** RB's paper test — enumerate every claim level × packet band and confirm each produces a distinct, legible requirements state and at least one non-trivial choice; then include in the slice.
 - **Status:** `unreviewed`
@@ -264,6 +282,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-018 — PIIM response-card satisfaction rules are undefined**
+
 - **Sources:** RA stage 2 §11 item 9; RA stage 3 underspecified item 3; RA stage 4 §11 item 6; RB stage 1 §14; RB stage 3 HGA-R18.
 - **Relationship:** DUPLICATE.
 - **Severity:** RA: high divergence risk. RB: SIGNIFICANT.
@@ -277,12 +296,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-019 — Whether claim level should be bound to evidence support**
+
 - **Sources:** RA stage 3 C3 (edit 2); RA stage 4 §6, T5, R2.
 - **Relationship:** Single-source (RA) as a proposed rule; **CONFLICTING with RB's posture**, since RB (HGA-R18) treats card satisfaction as a definition to be written rather than a coupling to be introduced, and RB's preserve list forbids converting the claim triad into a mechanical judgement of the player.
 - **Severity:** RA: medium-high (R2), and an explicit component of RA's CRITICAL C3.
 - **Evidence class:** Document-supported.
 - **Shared diagnosis:** `07` states only qualitatively that "a strong but overstated claim **can** weaken the claim-scope card," so it cannot be relied on as a counterweight to inflation's +10 PI confidence.
-- **Alternatives:** (a) RA R2: claim-scope met only when the claim level is supported by the packet — Careful at Developing+, Strong at Coherent+, Inflated never met. RA notes this makes Careful strictly correct at low evidence. (b) RA C3 edit 2: Inflated sets claim scope to not met *unless* the packet is Substantial and the response omits no valid card. (c) Leave qualitative and resolve only through MR-REV-018's definition table.
+- **Alternatives:** (a) RA R2: claim-scope met only when the claim level is supported by the packet — Careful at Developing+, Strong at Coherent+, Inflated never met. RA notes this makes Careful strictly correct at low evidence. (b) RA C3 edit 2: Inflated sets claim scope to not met _unless_ the packet is Substantial and the response omits no valid card. (c) Leave qualitative and resolve only through MR-REV-018's definition table.
 - **Affected:** `07`, `08`, `12`, `15`.
 - **Minimum decision or test:** Decide alongside MR-REV-018; check the interaction with the no-moral-score rule.
 - **Status:** `unreviewed`
@@ -290,6 +310,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-020 — Reviewer reports are static while records have three result variants**
+
 - **Sources:** RA stage 2 §11; RA stage 3 O3.
 - **Relationship:** Single-source (RA). RB does not raise it.
 - **Severity:** RA: OPTIONAL (medium).
@@ -302,6 +323,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-021 — The Week-6 contradictory-revision beat is required but unauthored**
+
 - **Sources:** RB stage 1 §14 item 7; RB stage 2 T8; RB stage 3 HGA-R15.
 - **Relationship:** GENUINELY NEW. RA does not identify it.
 - **Severity:** RB: SIGNIFICANT.
@@ -319,8 +341,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-022 — Hidden integrity loss has no route-relevant counter-cost, while inflation buys PI confidence**
+
 - **Sources:** RA stage 2 rows 5, 23, §6.5; RA stage 3 C3; RA stage 4 §8, §12 rows 12–13, T2, R3; RB stage 3 §12 item 1 (preserve list); RB stage 1 §4 item 3, §6.4.
-- **Relationship:** **CONFLICTING.** RA rates this a CRITICAL defect requiring a counter-cost. RB rates unscored, undetectable, unpunished misconduct as the design's most valuable property and places it first on the do-not-normalize list ("Do not add a detection roll, a delayed exposure, or a karmic ending"). RA's proposed remedy is a *time* cost rather than detection, so it is not strictly forbidden by RB's list — but the two reviews assign opposite valence to the same rule.
+- **Relationship:** **CONFLICTING.** RA rates this a CRITICAL defect requiring a counter-cost. RB rates unscored, undetectable, unpunished misconduct as the design's most valuable property and places it first on the do-not-normalize list ("Do not add a detection roll, a delayed exposure, or a karmic ending"). RA's proposed remedy is a _time_ cost rather than detection, so it is not strictly forbidden by RB's list — but the two reviews assign opposite valence to the same rule.
 - **Severity:** RA: CRITICAL (priority 1 in RA's table). RB: rated a strength; not raised as a defect.
 - **Evidence class:** Document-supported for the numbers; prototype-required for whether players actually experience ethics as free.
 - **Shared diagnosis (partial):** Inflated claims give +10 PI confidence, which is one of Aldercroft's three conditions; omission/alteration/fabrication cost 10/25/45 integrity points that gate no route; recovery is capped at 10 per run. Both reviews agree the numbers are as stated; they disagree on whether that is a flaw.
@@ -328,11 +351,12 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 - **Affected:** `02`, `07`, `08`, `12`, `13`, `15`.
 - **Minimum decision or test:** RA's fixture — two identical campaigns, one careful and one inflating-and-altering, compared on available productive periods at Week 14 and route availability at Week 16.
 - **Status:** `unreviewed`
-- **Codex qualification:** Codex records that "integrity is mechanically inert" is **too broad**. Visible evidence conflicts and a fabrication confession can affect route access, optional scenes, trust, and ending content. The narrower supported finding is that *hidden* integrity loss has no direct route effect and is especially consequence-light in the fallback.
+- **Codex qualification:** Codex records that "integrity is mechanically inert" is **too broad**. Visible evidence conflicts and a fabrication confession can affect route access, optional scenes, trust, and ending content. The narrower supported finding is that _hidden_ integrity loss has no direct route effect and is especially consequence-light in the fallback.
 
 ---
 
 **MR-REV-023 — "Serious evidence concern visible to Aldercroft or Elena" is undefined**
+
 - **Sources:** RA stage 2 §11; RA stage 3 underspecified item 4; RA stage 4 §11 item 8; RB stage 1 §14; RB stage 3 HGA-R10.
 - **Relationship:** DUPLICATE.
 - **Severity:** RA: high divergence risk, and the only guard against inflation buying Aldercroft. RB: SIGNIFICANT, and described as "the hinge of the entire ethical system."
@@ -346,10 +370,11 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-024 — Deferral strictly dominates denial in the concern scenes**
+
 - **Sources:** RA stage 4 §8 item 6, §12 row 14, R4.
 - **Relationship:** Single-source (RA). RB does not raise it.
 - **Severity:** RA: high confidence; recommendation R4 named as one of the three highest alignment-gain-per-change items.
-- **Evidence class:** Document-supported (`12`: deny = −20 trust + concern flag; defer = −10 trust + the *same* flag).
+- **Evidence class:** Document-supported (`12`: deny = −20 trust + concern flag; defer = −10 trust + the _same_ flag).
 - **Alternatives:** (a) RA R4: give denial and deferral different flags — denial closes the concern permanently at −20; deferral leaves it live and re-raisable at the character's next window. (b) Leave as-is and accept that the confrontation collapses into arithmetic.
 - **Affected:** `12`, `05`, `07`.
 - **Minimum decision or test:** Flag-table edit plus a `MR-TEST-CHAR-001` assertion.
@@ -358,11 +383,12 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-025 — The fallback removes both mismatch-discovery scenes, leaving misconduct unwitnessed and `MR-CIT-08` unreachable**
+
 - **Sources:** RA stage 2 rows 31–33, §6.1, §11 items 2–3; RA stage 3 C1 and O2.
 - **Relationship:** Single-source (RA). RB does not analyse the fallback content cut.
 - **Severity:** RA: CRITICAL (C1), plus OPTIONAL (O2) for the citation-rule contradiction.
 - **Evidence class:** Document-supported.
-- **Shared diagnosis:** None (single-source). RA's diagnosis: `12`'s fallback excludes `MR-OPT-HAORAN-MISSING-REPLICATE` and `MR-OPT-GABRIEL-ARCHIVE` — the only two content objects where a colleague can notice a record mismatch — while retaining the full Week-14 integrity fork and claiming to retain "all ending modules and citations." `MR-CIT-08`'s trigger therefore has no fallback path, and `13`'s twelve-citation fixture cannot pass. Separately, `MR-CIT-08` may require ethically compromised play in the *full* game too, against `12`'s own rule that "No citation requires an unethical choice."
+- **Shared diagnosis:** None (single-source). RA's diagnosis: `12`'s fallback excludes `MR-OPT-HAORAN-MISSING-REPLICATE` and `MR-OPT-GABRIEL-ARCHIVE` — the only two content objects where a colleague can notice a record mismatch — while retaining the full Week-14 integrity fork and claiming to retain "all ending modules and citations." `MR-CIT-08`'s trigger therefore has no fallback path, and `13`'s twelve-citation fixture cannot pass. Separately, `MR-CIT-08` may require ethically compromised play in the _full_ game too, against `12`'s own rule that "No citation requires an unethical choice."
 - **Alternatives:** (a) RA C1: give `MR-OPT-SAMIRA-NOT-IN-MY-FIGURE` (retained in fallback) its permitted single conditional variant in which Samira raises a record concern, and widen `MR-CIT-08`'s trigger from "Haoran or Gabriel" to "a colleague." RA notes this complicates Samira's characterisation. (b) RA O2: add the defensible alternative trigger the citation rule already requires — responding to a colleague's correct concern about an honestly reported limitation. (c) Amend the fallback's stated claim to acknowledge that one citation is unreachable.
 - **Affected:** `03`, `05`, `12`, `13`, `15`.
 - **Minimum decision or test:** Run the fallback content set with each integrity flag state and assert citation reachability across the minimum number of campaigns.
@@ -372,6 +398,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-026 — Whether complicity is intended to be broadly experienced**
+
 - **Sources:** RB stage 2 U4, A5; RB stage 3 HGA-R09; RA stage 2 rows 22–23, §6.1; RA stage 3 C1, C3.
 - **Relationship:** REINFORCING, and **QUALIFYING** of RA. RA proceeds on the assumption that complicity should have mechanical weight and prescribes remedies; RB narrows the question by observing that whether most players ever face complicity meaningfully depends entirely on whether the honest path fits in 64 periods — and that the design has never recorded its intent.
 - **Severity:** RA: implicit CRITICAL (C1/C3 both assume broad complicity is intended). RB: SIGNIFICANT.
@@ -386,10 +413,11 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-027 — Correct-after-omission may be a small trust arbitrage**
+
 - **Sources:** RA stage 4 §8 item 5, §12 row 15.
 - **Relationship:** Single-source (RA), medium confidence.
 - **Severity:** RA: medium.
-- **Evidence class:** Document-supported (correction choices give +10 trust *and* allowed integrity recovery; `07` caps recovery at 10 per run).
+- **Evidence class:** Document-supported (correction choices give +10 trust _and_ allowed integrity recovery; `07` caps recovery at 10 per run).
 - **Shared diagnosis:** None. RA's observation: the sequence omit (−10 I) → get caught → correct (+10 trust, +10 I recovery) may net a trust gain at roughly zero integrity cost.
 - **Alternatives:** None proposed; RA records it as a discoverable optimisation.
 - **Affected:** `07`, `12`.
@@ -403,11 +431,12 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-028 — Morrow is reachable with the campaign's starting evidence**
+
 - **Sources:** RA stage 2 row 10, §6.2; RA stage 3 C2; RA stage 4 §9, §12 rows 5–6.
 - **Relationship:** Single-source (RA) on the specific gate; RB contributes REINFORCING adjacent reasoning through MR-REV-001 and MR-REV-014 (route thresholds rest on unclosed arithmetic).
 - **Severity:** RA: CRITICAL (priority 2).
 - **Evidence class:** Document-supported for the gate arithmetic; prototype-required for how it feels in play.
-- **Shared diagnosis:** Morrow requires "at least a Developing evidence packet," and `07` states the campaign *starts* at three points, Developing. Every other Morrow condition is a conversation or an automatic campaign event (preprint posts in every run; Camila starts at 40 with a +10 reply available). RA argues this makes industry both the cheapest route and, given Camila's warmth and `Transferable Skills`' comparative comfort, the emotionally warmest — against `01` pillar 4.
+- **Shared diagnosis:** Morrow requires "at least a Developing evidence packet," and `07` states the campaign _starts_ at three points, Developing. Every other Morrow condition is a conversation or an automatic campaign event (preprint posts in every run; Camila starts at 40 with a +10 reply available). RA argues this makes industry both the cheapest route and, given Camila's warmth and `Transferable Skills`' comparative comfort, the emotionally warmest — against `01` pillar 4.
 - **Alternatives:** (a) RA C2: replace "at least Developing" with "at least three analysed primary records, at least one reporting a limited or weak result honestly," reusing existing record state and honesty flags. RA notes this raises the floor for **End of Contract** and that the honest-limitation clause is what prevents Morrow reading as merely more prestigious. (b) RA C2 second clause: revise `ending.career.morrow` to name one concrete relinquished scientific question. (c) Leave the gate and record the intent that industry is deliberately reachable without experimental success.
 - **Affected:** `03`, `07`, `08`, `12`, `15`.
 - **Minimum decision or test:** RA's paired fixtures — a minimum-effort campaign asserting route availability at Week 16; and three analysed records including one honest weak result with a Thin packet asserting Morrow available.
@@ -417,6 +446,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-029 — Aldercroft's two-of-three gate may make experimental work optional**
+
 - **Sources:** RA stage 4 §6, §9, §12 row 4, T1, R1; RB stage 3 HGA-R21 (adjacent — two of the three conditions measure the same relationship).
 - **Relationship:** REINFORCING (RB contributes distinct reasoning via the two-Elena-meters observation without naming the gate as a defect).
 - **Severity:** RA: named as "the single most consequential incentive in the document set"; R1 named one of RA's top-three alignment-gain changes. RB: not rated as a defect.
@@ -430,12 +460,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-030 — Elena has two meters that both feed the same gate and are never distinguished**
+
 - **Sources:** RB stage 3 §2, HGA-R21.
 - **Relationship:** GENUINELY NEW. RA does not raise it.
 - **Severity:** RB: SIGNIFICANT.
 - **Evidence class:** Document-supported.
 - **Shared diagnosis:** None (single-source). RB's diagnosis: PI confidence (start 45) and Elena working trust (start 60) respond to different inputs but both appear in the Aldercroft condition set and are nowhere distinguished for the player, in a design that otherwise promises stated reasons for every material change.
-- **Alternatives:** (a) RB HGA-R21: change labels only — PI confidence as *confidence in the paper*, working trust as *willingness to back you*, with a one-line distinction in Research Status. RB notes that if the distinction cannot be stated in one sentence, that is evidence the meters should merge, which would require a replacement third Aldercroft condition.
+- **Alternatives:** (a) RB HGA-R21: change labels only — PI confidence as _confidence in the paper_, working trust as _willingness to back you_, with a one-line distinction in Research Status. RB notes that if the distinction cannot be stated in one sentence, that is evidence the meters should merge, which would require a replacement third Aldercroft condition.
 - **Affected:** `07`, `10`, `12`, `15`.
 - **Minimum decision or test:** Cold read of the Research Status panel (see MR-REV-042).
 - **Status:** `unreviewed`
@@ -443,6 +474,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-031 — Keeping both career routes open costs nothing**
+
 - **Sources:** RA stage 4 §9, T6, R8.
 - **Relationship:** Single-source (RA).
 - **Severity:** RA: medium.
@@ -456,8 +488,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-032 — End of Contract conflates principled withdrawal with collapse**
+
 - **Sources:** RA stage 1 §6.4, §9.12; RA stage 2 §10.2; RA stage 3 O1.
-- **Relationship:** Single-source (RA). RB does not raise it. Note RA is internally split: stage 3 §10.2 lists it as a *creatively coherent* risk while stage 3 O1 proposes a fix.
+- **Relationship:** Single-source (RA). RB does not raise it. Note RA is internally split: stage 3 §10.2 lists it as a _creatively coherent_ risk while stage 3 O1 proposes a fix.
 - **Severity:** RA: OPTIONAL, high confidence.
 - **Evidence class:** Document-supported.
 - **Shared diagnosis:** Public-record withdrawal — arguably the most scrupulous act available — closes both routes and forces the same ending as having run out of everything, with one shared career module and one shared paper module.
@@ -469,8 +502,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-033 — Non-nihilism rests on a single relationship afterbeat**
+
 - **Sources:** RB stage 1 §6.4, §9; RB stage 2 N1, A7; RB stage 3 HGA-R11.
-- **Relationship:** GENUINELY NEW. RA rates the modular epilogue as adequate and does not question ending temperature; RA stage 2 §5.6 lists the bitter-but-human ending as a *strong* expression of the vision.
+- **Relationship:** GENUINELY NEW. RA rates the modular epilogue as adequate and does not question ending temperature; RA stage 2 §5.6 lists the bitter-but-human ending as a _strong_ expression of the vision.
 - **Severity:** RB: SIGNIFICANT. RA: rated a strength.
 - **Evidence class:** Document-supported for the module counts; judgement-required for whether the assembled card reads as nihilistic.
 - **Shared diagnosis:** None (opposing assessments). RB's diagnosis: `01` forbids nihilism and names solidarity as the counterweight; concretely the counterweight is one afterbeat per run (five of fifteen modules are `*-SUPPORT`) plus `MR-CIT-05`, while all four career modules are deflationary and four of five relationships resolve only as a bar and a status line.
@@ -482,6 +516,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-034 — Morrow's dramatic weight and Camila's presentation are both unresolved**
+
 - **Sources:** RA stage 2 §11 item 12; RA stage 1 §10.9 (presentation unspecified); RB stage 1 §9, §12; RB stage 2 N3, A6; RB stage 3 HGA-R12.
 - **Relationship:** REINFORCING on two distinct facets — RA identifies the **presentation gap** (Camila gates an ending, has an eight-sound palette including a "call-end tone," but `05`/`09` forbid a model or in-person appearance, and no document says how the call is presented); RB identifies the **dramatic-weight gap** (an entire alternative life carried in three emails, against Elena's presence in five of seven mandatory scenes).
 - **Severity:** RA: medium (unresolved specification). RB: SIGNIFICANT.
@@ -494,6 +529,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-035 — Two of five trust bars gate nothing, and the promised ≥61 support action is unauthored**
+
 - **Sources:** RA stage 2 §7.x; RA stage 3 S4.3; RB stage 1 §4; RB stage 3 HGA-R20.
 - **Relationship:** DUPLICATE, with near-identical remedies.
 - **Severity:** RA: SIGNIFICANT. RB: SIGNIFICANT.
@@ -507,6 +543,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-036 — Visible, quantised, threshold-gated trust bars read as a score**
+
 - **Sources:** RA stage 2 row 28; RA stage 4 §10, §13.2(f), §12 row 19, R10; RB stage 3 §2 (the trust system is the design's most generic component).
 - **Relationship:** REINFORCING (RB's contribution is weaker and framed as genericness rather than as a contradiction).
 - **Severity:** RA: medium-high; recommendation R10. RB: not separately rated.
@@ -520,8 +557,9 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-037 — Replay intent versus the Archive's implied collection loop**
+
 - **Sources:** RA stage 1 §6.9; RA stage 2 §7.7, row 42; RA stage 3 §10.4; RB stage 1 §6.5; RB stage 2 U5, A11; RB stage 3 HGA-R19.
-- **Relationship:** QUALIFYING. RA treats thin replay as deliberate, coherent, and consistent with `01`'s hedged "may add longevity," and lists it among creatively coherent risks. RB narrows: the design is coherent *except* that the Archive's twelve-card capacity plus twelve citations implies a collection loop the content variance does not support — the one place where an otherwise scrupulously non-overclaiming project overpromises.
+- **Relationship:** QUALIFYING. RA treats thin replay as deliberate, coherent, and consistent with `01`'s hedged "may add longevity," and lists it among creatively coherent risks. RB narrows: the design is coherent _except_ that the Archive's twelve-card capacity plus twelve citations implies a collection loop the content variance does not support — the one place where an otherwise scrupulously non-overclaiming project overpromises.
 - **Severity:** RA: not a defect. RB: SIGNIFICANT.
 - **Evidence class:** Document-supported.
 - **Alternatives:** (a) RB HGA-R19: decide the intent and align presentation — keep the Archive but frame it as an institutional record of departures rather than a completion grid, ensuring no UI element implies a set to complete. (b) Accept RA's position that replay is deliberately thin and the Archive is already satirical.
@@ -536,12 +574,13 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-038 — The mid-campaign loop is administrative and the comic voice is absent from repeated actions**
+
 - **Sources:** RA stage 2 §6.3, §6.7, §7.2, §7.3, rows 17, 30; RA stage 3 C4; RA stage 4 §10; RB stage 1 §5, §6.2, F2, F4; RB stage 2 D1, T1; RB stage 3 §14, HGA-R02, HGA-R06, HGA-R26.
 - **Relationship:** REINFORCING. Both reviews converge on this as the design's dominant experiential risk from different directions — RA from the work-package mapping (`MR-REQ-VISION-001` → `MR-WP-08`, tested by `MR-TEST-CONT-001`, which checks no tonal property) and the deadpan-by-rule interface; RB from interaction texture and the absence of any roadmap block on feel.
 - **Severity:** RA: CRITICAL (C4). RB: named the dominant risk in its final risk statement ("admirable and inert").
 - **Evidence class:** Mixed. Document-supported for the structural absence; prototype-required for the felt monotony.
 - **Shared diagnosis:** Comedy lives in optional environmental text, five middle-act authored scenes, and twelve citations across three hours; the recurring surface — walk, confirm, break, walk — is specified as factual and non-moral, and the single most frequent action has no content object at all.
-- **Alternatives:** (a) RA C4: catalogue `MR-ACT-BREAK` with five act-state-indexed break-room lines; add five act-state-indexed flavour lines beside (never instead of) the desk work-queue status words; require every monitoring window to present ≥2 materially different options. Ten strings, one action ID, one rule. RA warns the queue line must be typographically subordinate and must not enter the HUD. (b) RB HGA-R06/HGA-R26: enrich two station views as diegetic instruments and add 8–12 one-time internal-thought lines keyed to state thresholds (first zero-energy push-through, first Compromised state, first missed window, first night period, first act transition). RB warns against a nagging channel and against the detached-narrator failure `05` forbids. (c) RB HGA-R02: treat this as primarily a *measurement* gap and install the criterion first (see MR-REV-040).
+- **Alternatives:** (a) RA C4: catalogue `MR-ACT-BREAK` with five act-state-indexed break-room lines; add five act-state-indexed flavour lines beside (never instead of) the desk work-queue status words; require every monitoring window to present ≥2 materially different options. Ten strings, one action ID, one rule. RA warns the queue line must be typographically subordinate and must not enter the HUD. (b) RB HGA-R06/HGA-R26: enrich two station views as diegetic instruments and add 8–12 one-time internal-thought lines keyed to state thresholds (first zero-energy push-through, first Compromised state, first missed window, first night period, first act transition). RB warns against a nagging channel and against the detached-narrator failure `05` forbids. (c) RB HGA-R02: treat this as primarily a _measurement_ gap and install the criterion first (see MR-REV-040).
 - **Affected:** `02`, `04`, `05`, `07`, `09`, `10`, `12`, `13`, `15`.
 - **Minimum decision or test:** Instrument the slice for station visits, traversal seconds, no-decision monitoring visits, and confirmations per minute; then run the slice with and without the added comic surfaces.
 - **Status:** `unreviewed`
@@ -550,6 +589,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-039 — Environmental satire is optional, one-shot, and skippable under time pressure**
+
 - **Sources:** RA stage 2 §6.6, §7.2; RA stage 3 S4.4; RA stage 4 §5, §12 row 24, T9, R9; RB stage 1 §6.1, §7 item 6; RB stage 3 HGA-R24.
 - **Relationship:** DUPLICATE, with three variant remedies.
 - **Severity:** RA: SIGNIFICANT (S4.4) and separately R9. RB: OPTIONAL, prototype-required.
@@ -563,6 +603,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-040 — "Increasingly surreal" is promised by the top-level documents and forbidden by the presentation documents**
+
 - **Sources:** RA stage 2 §6.6, row 7, §9 ("increasingly cold and quiet institution"); RB stage 1 §10 (A/V-1), §14; RB stage 2 T3, A8, U9; RB stage 3 HGA-R13.
 - **Relationship:** REINFORCING; RB's formulation is a **superseding candidate** because it names the contradiction as a document-level conflict requiring resolution under `AGENTS.md`'s rule that contradictions be recorded rather than silently resolved.
 - **Severity:** RA: rated a threat to the vision (medium-high). RB: SIGNIFICANT.
@@ -576,6 +617,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-041 — The floor-population axis is undecided, and traversal's stated justification may not be delivered**
+
 - **Sources:** RB stage 1 F1, §7; RB stage 2 U3, A3; RB stage 3 HGA-R08; RA stage 1 §6.6, §9.7 (travel as pacing metronome and as an unacknowledged rest mode); RA stage 3 C4 (monitoring walk repeated 20+ times).
 - **Relationship:** REINFORCING with an **interpretive divergence preserved**. RA reads free travel positively — a pacing device and a zero-cost contemplative valve the systems never name. RB reads it as the most-cited likely friction and notes that `02`/`06`'s "meaningful travel" rationale (queues, colleagues, changed room states) is contradicted by the authored-anchor budget, the no-crowd rule, and the one-major-two-minor change cap.
 - **Severity:** RA: not rated a defect. RB: SIGNIFICANT.
@@ -588,6 +630,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-042 — Small tone and content items: exit voice, drug template, orphaned flag**
+
 - **Sources:** RA stage 3 O4, O5; RA stage 4 R11; RA stage 4 §5 (neglected actions).
 - **Relationship:** Single-source (RA) in each case; grouped here because each is a one-to-five-string item.
 - **Severity:** RA: OPTIONAL (O4 high confidence, O5 high confidence, R11 medium).
@@ -605,6 +648,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-043 — No engagement, pacing, or repetition criterion exists anywhere in the evaluation plan**
+
 - **Sources:** RA stage 2 §6.7, §6.8, §11 items 4–5; RA stage 3 S4.5; RA stage 4 T-series; RB stage 1 §13; RB stage 2 T1, D2; RB stage 3 HGA-R02, §11.3, §14.
 - **Relationship:** DUPLICATE on diagnosis; complementary remedies.
 - **Severity:** RA: SIGNIFICANT (S4.5). RB: CRITICAL (HGA-R02).
@@ -618,6 +662,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-044 — The audience-breadth criteria are unverifiable under the sole-evaluator boundary**
+
 - **Sources:** RA stage 2 rows 35, §6.4, §11 item 13; RA stage 3 S4.5 (partial); RB stage 2 T2, D3; RB stage 3 HGA-R03.
 - **Relationship:** REINFORCING; RB's HGA-R03 adds a **new method proposal** inside the approved boundary.
 - **Severity:** RA: identified as a CONTRADICTION at the verification-method level (high). RB: CRITICAL.
@@ -632,6 +677,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-045 — Pillar 6 ("fun and absurdist throughout") conflicts with the approved darkening arc**
+
 - **Sources:** RA stage 2 row 18, §11 item 4; RB stage 2 T1, D1; RB stage 3 §6.
 - **Relationship:** DUPLICATE.
 - **Severity:** RA: rated a vision-internal tension (high confidence). RB: recorded as an unaddressed contradiction.
@@ -645,6 +691,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-046 — Production capacity and the €150 ceiling against the full asset and test plan**
+
 - **Sources:** RB stage 2 T10; RB stage 1 §10 (A/V-4); RB stage 3 §14.
 - **Relationship:** GENUINELY NEW as an analysed risk; RA touches scope discipline only as a strength.
 - **Severity:** RB: medium-high, recorded as the third of three dominant risks.
@@ -659,6 +706,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-047 — `MR-REQ-VISION-001` has no verifying test**
+
 - **Sources:** RA stage 2 row 36, §6.7, §11 item 5; RB stage 3 §6 (same observation, folded into HGA-R02).
 - **Relationship:** DUPLICATE; largely subsumed by MR-REV-043 but recorded separately because it is a requirement-traceability defect rather than a gate-timing one.
 - **Severity:** RA: explicit, high confidence.
@@ -676,6 +724,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-048 — Non-interactive scene time has three approved values**
+
 - **Sources:** RA stage 2 §11 item 1; RA stage 3 underspecified item 14; RB stage 1 §14 item 2; RB stage 2 T4; RB stage 3 HGA-R23(a).
 - **Relationship:** DUPLICATE; RB adds the sharper finding that the change from 15–20 to 14–18 minutes is an **unrecorded supersession**, breaching the decision log's own rule.
 - **Severity:** Both: minor in effect, notable in process. RA notes `AGENTS.md` forbids resolving it silently.
@@ -687,6 +736,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-049 — `MR-REQ-EXP-001` requires six templates; the approved fallback ships four**
+
 - **Sources:** RB stage 2 T5; RB stage 3 HGA-R23(b).
 - **Relationship:** GENUINELY NEW. RA raised a related suspicion at stage 1 that `MR-REQ-EXP-003` might conflict with the fallback, but RA's stage 2 explicitly **resolved** both of its earlier flags once `15` was supplied; RB's finding is a different, still-open one.
 - **Severity:** RB: low-to-medium.
@@ -699,6 +749,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-050 — Minor documentation defects: broken decision-log table; prop-family count stated as both 24 and 20**
+
 - **Sources:** RB stage 1 §14 item 1; RB stage 2 T12; RB stage 3 HGA-R23(c)(d).
 - **Relationship:** GENUINELY NEW (both hygiene items).
 - **Severity:** RB: trivial in effect; notable because `decision-log.md` is fourth in `15`'s authority order.
@@ -711,6 +762,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-051 — Research Status reason strings, pre-action forecast strings, and word-cap headroom**
+
 - **Sources:** RA stage 2 §11 item 11; RA stage 3 underspecified items 9 and 15; RA stage 3 C5 risk note.
 - **Relationship:** Single-source (RA). RB touches the word cap only as a general risk.
 - **Severity:** RA: medium-high (a required feature with no content and no budget).
@@ -724,6 +776,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-052 — Camila's video-call presentation is unspecified**
+
 - **Sources:** RA stage 1 §10.9; RA stage 2 §11 item 12; RA stage 3 underspecified item 12.
 - **Relationship:** Single-source (RA) on presentation; see MR-REV-034 for the adjacent weight question.
 - **Severity:** RA: medium divergence risk.
@@ -739,6 +792,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-053 — Shared do-not-normalize list**
+
 - **Sources:** RA stage 3 §2 (2.1–2.10); RB stage 3 §12 (twenty items).
 - **Relationship:** NON-ACTIONABLE OBSERVATION, and a **constraint on every other entry**.
 - **Content:** Both reviews independently converge on the same protected set: fixed gates that never wait; the preprint posting in every run; seed-locked earned bands with no reroll; no pre-Week-16 game-over; locked raw record with mutable reported record and no falsification method; visibility-gated misconduct (fabrication can publish, honest work can fail); no moral score, factual integrity warnings, un-ranked citations; solidarity as material value; Out of Scope requiring an available route; the pre-authored fallback and production stop rules. RB adds: no quest markers, no dexterity input anywhere, the 06:42 bookend and single continuous floor, Elena as non-villain, the exit's route-independent appeal, text-led dialogue with a silent protagonist, local-only telemetry-free persistence, deflationary endings, Supported with identical content, the ≤2-variant discipline and word cap, the asset-provenance gate covering prototypes, the no-participant boundary, and the separation of agent-direction evidence from the fiction.
@@ -748,6 +802,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-054 — Convergent aesthetic observation: the software behaves with the integrity the institution lacks**
+
 - **Sources:** RA stage 1 §3; RA stage 2 §8.1; RB stage 1 §11 (T1), §8 item 3.
 - **Relationship:** NON-ACTIONABLE OBSERVATION, independently reached by both reviews.
 - **Content:** Costs disclosed before commitment, no ambush messages, windows surviving browser closure, seeds that cannot be rerolled, expiries stated rather than silently applied, a backup never overwritten without consent. Both reviews note this is not a stated pillar and that it produces the corpus's most distinctive quality — while RA also notes it slightly dampens felt oppression, and RB notes the same in T1's "satire vs. system legibility" tension. Recorded as context, not as a task.
@@ -756,6 +811,7 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 ---
 
 **MR-REV-055 — Governing qualification: all behavioural claims in both reviews are hypotheses**
+
 - **Sources:** Codex validation notes, "Qualifications and external-review overstatements" and "Decision boundary."
 - **Relationship:** NON-ACTIONABLE OBSERVATION applying to the whole register.
 - **Content:** Codex records four specific limits: "fallback is the likely shipped artifact" is speculation; "integrity is mechanically inert" is too broad; "minimum-effort Morrow route" is a gate analysis, not proof of behaviour; and predicted boredom, comedy failure, player optimisation, and target-player response are hypotheses requiring private slice testing. Both review sets contain extensive behavioural prediction — RA's stage-4 player-behaviour classes and RB's stage-1 fun hypothesis — none of which is measurement. Codex further records that the reports are advisory and that no numbered design document, content object, route formula, production scope, or implementation gate may change until Leonardo reviews a finding and explicitly decides.
@@ -767,12 +823,12 @@ No report is absent, empty, truncated, or unreadable. Proceeding.
 
 Four conflicts must be decided rather than merged:
 
-| Entry | RA position | RB position |
-|---|---|---|
-| MR-REV-010 | Seed-locked earned bands are an identity-defining strength; preserve unchanged | The band model cannot teach causality at ~8–12 samples; the promise or the mechanism must change |
-| MR-REV-022 | Hidden integrity is a CRITICAL gap requiring a time-based counter-cost | Unscored, undetectable, unpunished misconduct is the design's most valuable property; do not add cost paths |
-| MR-REV-004 | Cap protected breaks at one per week (tightens pressure) | Flatten the restore value or state the intent (neutralises or loosens pressure) |
-| MR-REV-037 | Thin replay is deliberate and coherent | The Archive's capacity overpromises relative to content variance |
+| Entry      | RA position                                                                    | RB position                                                                                                 |
+| ---------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| MR-REV-010 | Seed-locked earned bands are an identity-defining strength; preserve unchanged | The band model cannot teach causality at ~8–12 samples; the promise or the mechanism must change            |
+| MR-REV-022 | Hidden integrity is a CRITICAL gap requiring a time-based counter-cost         | Unscored, undetectable, unpunished misconduct is the design's most valuable property; do not add cost paths |
+| MR-REV-004 | Cap protected breaks at one per week (tightens pressure)                       | Flatten the restore value or state the intent (neutralises or loosens pressure)                             |
+| MR-REV-037 | Thin replay is deliberate and coherent                                         | The Archive's capacity overpromises relative to content variance                                            |
 
 Two further divergences are interpretive rather than prescriptive: MR-REV-033 (RA rates the ending a vision strength; RB rates it at risk of nihilism) and MR-REV-041 (RA reads free travel as a pacing valve; RB reads it as the likeliest friction complaint).
 
@@ -795,4 +851,4 @@ These arise only from the later review or only from the reconciliation, and are 
 11. **How will the audience-breadth criteria be judged inside the sole-evaluator boundary — and is the cold-read protocol an acceptable substitute for the claim, or should the claim be re-scoped?** (MR-REV-044)
 12. **Should the ethical system acquire a non-route cost, or is its costlessness the thesis?** This is the sharpest disagreement between the two reviews and cannot be resolved by merging them. (MR-REV-022)
 
-*No entry in this register is accepted, rejected, deferred, or scheduled. No design document, content object, route formula, production scope, or implementation gate has been changed.*
+_No entry in this register is accepted, rejected, deferred, or scheduled. No design document, content object, route formula, production scope, or implementation gate has been changed._

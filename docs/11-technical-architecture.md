@@ -17,7 +17,7 @@ The game is a self-contained static browser game. It has no account, server
 data, uploaded player data, analytics, telemetry, runtime API, runtime CDN, or
 runtime network dependency after its static files are delivered. A later
 portfolio task may publish a static build only. It must not copy this source
-into the portfolio repository or reuse *Wanderer* code or assets without a
+into the portfolio repository or reuse _Wanderer_ code or assets without a
 separate rights and provenance review.
 
 ## Stack and build policy
@@ -41,22 +41,22 @@ separate rights and provenance review.
 Each module has one primary responsibility. Game rules must not import or
 depend on Three.js. Rendering code must not decide campaign outcomes.
 
-| Module | Primary responsibility | Rules boundary |
-|---|---|---|
-| Bootstrap | Prepare fatal errors and boot UI, check the environment, create modules, and transfer ownership. | It creates no campaign and contains no campaign rule. |
-| Application | Coordinate ordered requests and own the active in-memory campaign state. | It alone sends commands to rules and distributes returned state and effects. |
-| Platform | Report required browser capabilities and page visibility. | It cannot inspect campaign or saved data. |
-| Game rules | Validate typed commands and return the next serializable state plus presentation effects. | It is deterministic for a given state, command, and saved variation. |
-| Authored content | Hold validated data for experiments, events, dialogue conditions, room states, and endings. | It has stable identifiers and no rendering objects. |
-| Persistence | Validate, migrate, save, load, recover, archive, and clear local records. | It stores validated serializable snapshots only. |
-| World | Maintain plain world presentation and bounded movement and interaction context. | It owns no browser object and cannot change campaign state. |
-| Rendering | Own the Three.js renderer, visual resources, cameras, lighting, visibility, and graphics profile. | It displays state and effects only. |
-| Input | Own raw browser input, pointer lock, controller input, and remapping. | It sends requests or frame input and cannot change campaign state directly. |
-| Player | Calculate first-person movement and look from plain input and collision context. | It owns no Three.js camera and cannot change campaign state. |
-| Interaction | Resolve nearby valid targets and focused actions. | It returns a typed application request and cannot apply it. |
-| UI and accessibility | Render semantic overlays, menus, captions, settings, prompts, and browser-view safety. | It receives read-only projections and sends requests. |
-| Audio | Own audio buffers, nodes, buses, cues, and audio settings. | It consumes approved requests and cannot carry required meaning alone. |
-| Cutscenes | Own presentation timelines, skip, checkpoints, and input-restoration instructions. | It consumes approved effects and cannot advance campaign rules or time directly. |
+| Module               | Primary responsibility                                                                            | Rules boundary                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Bootstrap            | Prepare fatal errors and boot UI, check the environment, create modules, and transfer ownership.  | It creates no campaign and contains no campaign rule.                            |
+| Application          | Coordinate ordered requests and own the active in-memory campaign state.                          | It alone sends commands to rules and distributes returned state and effects.     |
+| Platform             | Report required browser capabilities and page visibility.                                         | It cannot inspect campaign or saved data.                                        |
+| Game rules           | Validate typed commands and return the next serializable state plus presentation effects.         | It is deterministic for a given state, command, and saved variation.             |
+| Authored content     | Hold validated data for experiments, events, dialogue conditions, room states, and endings.       | It has stable identifiers and no rendering objects.                              |
+| Persistence          | Validate, migrate, save, load, recover, archive, and clear local records.                         | It stores validated serializable snapshots only.                                 |
+| World                | Maintain plain world presentation and bounded movement and interaction context.                   | It owns no browser object and cannot change campaign state.                      |
+| Rendering            | Own the Three.js renderer, visual resources, cameras, lighting, visibility, and graphics profile. | It displays state and effects only.                                              |
+| Input                | Own raw browser input, pointer lock, controller input, and remapping.                             | It sends requests or frame input and cannot change campaign state directly.      |
+| Player               | Calculate first-person movement and look from plain input and collision context.                  | It owns no Three.js camera and cannot change campaign state.                     |
+| Interaction          | Resolve nearby valid targets and focused actions.                                                 | It returns a typed application request and cannot apply it.                      |
+| UI and accessibility | Render semantic overlays, menus, captions, settings, prompts, and browser-view safety.            | It receives read-only projections and sends requests.                            |
+| Audio                | Own audio buffers, nodes, buses, cues, and audio settings.                                        | It consumes approved requests and cannot carry required meaning alone.           |
+| Cutscenes            | Own presentation timelines, skip, checkpoints, and input-restoration instructions.                | It consumes approved effects and cannot advance campaign rules or time directly. |
 
 Tests stay under `tests/`. Each runtime module has one public entrance and no
 browser module can import another browser module. Rules contain no browser
@@ -300,14 +300,14 @@ fallback, caption, restoration, and teardown contracts. `MR-IF-012` and
 Use IndexedDB database `minor-revisions`, starting at layout version `1`. Its
 exact stores and singleton keys are:
 
-| Store | Contents | Retention |
-|---|---|---|
-| `settings` | `current`; audio, display, control, accessibility, and local-data preferences. | Until the player clears local data. |
-| `activeCampaign` | `current`; one validated unfinished canonical campaign envelope. | Replaced at each verified safe save. |
-| `activeCampaignBackup` | `previous`; one last-known-good campaign envelope. | Stores the prior active record that passed validation. |
-| `endingCards` | Campaign ID; compact completion records shown as **Departures**. | Keep the 12 highest completion sequences. |
-| `institutionalCitations` | `current`; Citation IDs and first-unlock sequences. | Persists between campaigns. |
-| `metadata` | `database`; layout version, direct migration history, and next completion sequence. | Managed only by persistence. |
+| Store                    | Contents                                                                            | Retention                                              |
+| ------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `settings`               | `current`; audio, display, control, accessibility, and local-data preferences.      | Until the player clears local data.                    |
+| `activeCampaign`         | `current`; one validated unfinished canonical campaign envelope.                    | Replaced at each verified safe save.                   |
+| `activeCampaignBackup`   | `previous`; one last-known-good campaign envelope.                                  | Stores the prior active record that passed validation. |
+| `endingCards`            | Campaign ID; compact completion records shown as **Departures**.                    | Keep the 12 highest completion sequences.              |
+| `institutionalCitations` | `current`; Citation IDs and first-unlock sequences.                                 | Persists between campaigns.                            |
+| `metadata`               | `database`; layout version, direct migration history, and next completion sequence. | Managed only by persistence.                           |
 
 Before a save, validate the complete canonical campaign, content references,
 profile, version, and S05 safe point. Enforce the 1 MiB canonical-JSON limit.
@@ -377,12 +377,12 @@ stack, and personal facts.
 
 Use these quality tools after implementation is authorized:
 
-| Tool | Required use |
-|---|---|
-| Vitest | Pure rules, commands, state transitions, schemas, migrations, deterministic variation, and ending-state fixtures. |
+| Tool       | Required use                                                                                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vitest     | Pure rules, commands, state transitions, schemas, migrations, deterministic variation, and ending-state fixtures.                                  |
 | Playwright | Boot, compatibility, New Game, save and reload, backup recovery, keyboard interaction, browser-view safety, UI scale, and key accessibility flows. |
-| ESLint | TypeScript code-quality checks. |
-| Prettier | Consistent TypeScript, CSS, JSON, and Markdown formatting checks where configured. |
+| ESLint     | TypeScript code-quality checks.                                                                                                                    |
+| Prettier   | Consistent TypeScript, CSS, JSON, and Markdown formatting checks where configured.                                                                 |
 
 The local quality commands will be `npm run check` for type, lint, format, and
 unit checks; `npm run test:e2e` for browser tests; `npm run build` for the

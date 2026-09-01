@@ -27,7 +27,7 @@ or acceptance requirements.
 Before non-trivial work, read `README.md`, `docs/00-design-index.md`,
 `docs/decision-log.md`, and every domain document relevant to the task.
 Also read `docs/implementation/ai-use-log.md`. It is a private record for
-*Minor Revisions* only; it does not describe AI use for any other project.
+_Minor Revisions_ only; it does not describe AI use for any other project.
 
 For implementation-specification work, also read
 `docs/implementation/status.md`, `docs/implementation/roadmap.md`,
@@ -114,7 +114,7 @@ non-overlapping delegation exists, the primary agent records why; it still
 obtains the required independent review. Do not silently substitute an
 unavailable model or reasoning level.
 
-For every future primary Codex session that completes *Minor Revisions* work,
+For every future primary Codex session that completes _Minor Revisions_ work,
 and every completed subagent contribution, update
 `docs/implementation/ai-use-log.md`. Record the actual provider, exact model,
 reasoning effort, role, date or range, completed work, phase or step, and

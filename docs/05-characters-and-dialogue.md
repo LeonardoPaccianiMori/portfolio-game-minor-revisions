@@ -88,21 +88,21 @@ trust at Morrow. The interface never shows the numeric value, numeric change,
 formula, or support threshold. It shows the descriptive state and a factual
 reason for each change.
 
-| Value | Status |
-|---:|---|
-| 0–20 | Damaged |
-| 21–40 | Strained |
-| 41–60 | Working |
-| 61–80 | Trusted |
-| 81–100 | Strong |
+|  Value | Status   |
+| -----: | -------- |
+|   0–20 | Damaged  |
+|  21–40 | Strained |
+|  41–60 | Working  |
+|  61–80 | Trusted  |
+| 81–100 | Strong   |
 
-| Character | Starting value |
-|---|---:|
-| Elena | 60 |
-| Haoran | 60 |
-| Samira | 40 |
-| Gabriel | 60 |
-| Camila | 40 when she first writes in Week 8 |
+| Character |                     Starting value |
+| --------- | ---------------------------------: |
+| Elena     |                                 60 |
+| Haoran    |                                 60 |
+| Samira    |                                 40 |
+| Gabriel   |                                 60 |
+| Camila    | 40 when she first writes in Week 8 |
 
 A minor authored action changes a bar by 10 points; a major action changes it
 by 20. Values do not drift without a stated event. Ignoring a direct request
@@ -127,11 +127,11 @@ order: a permanent consequence first, then the largest change from that
 character's starting working trust, then the most recent consequential scene
 when there is a tie. Other relationships appear only in the ending summary.
 
-| Condition for the selected character | Afterbeat mode |
-|---|---|
-| Working trust 61 or above, with no permanent breach | Support or solidarity |
-| Working trust 21–60 | Ambiguous recognition |
-| Working trust 20 or below, or any permanent breach | Distance or confrontation |
+| Condition for the selected character                | Afterbeat mode            |
+| --------------------------------------------------- | ------------------------- |
+| Working trust 61 or above, with no permanent breach | Support or solidarity     |
+| Working trust 21–60                                 | Ambiguous recognition     |
+| Working trust 20 or below, or any permanent breach  | Distance or confrontation |
 
 A permanent breach overrides a later high working-trust bar. Exact lines and
 character-specific variations remain B10 work.
@@ -141,13 +141,13 @@ character-specific variations remain B10 work.
 The player learns the following small details through optional dialogue or
 environment details. They are not biography scenes:
 
-| Character | Approved detail | Related optional scenes |
-|---|---|---|
-| Elena | A grant-renewal calendar is hidden under a stack of papers. | **The Future** in Weeks 6–9 |
-| Haoran | He keeps a private thesis-milestone list that he keeps moving forward. | **Borrowed Time** in Weeks 1–4; **The Missing Replicate** in Weeks 9–14 |
-| Samira | She keeps a sketchbook of tissue patterns that are “too subjective” for a paper. | **Shared Instrument** in Weeks 2–5; **Not in My Figure** in Weeks 6–12 |
-| Gabriel | He has a binder of old equipment failures and repairs. | **The Queue** in Weeks 1–4; **The Archive** in Weeks 10–14 |
-| Camila | She keeps the first rejection letter from her academic career as a reminder, not a wound. | Initial email and video call in Weeks 8–10; formal offer conversation in Week 15 |
+| Character | Approved detail                                                                           | Related optional scenes                                                          |
+| --------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Elena     | A grant-renewal calendar is hidden under a stack of papers.                               | **The Future** in Weeks 6–9                                                      |
+| Haoran    | He keeps a private thesis-milestone list that he keeps moving forward.                    | **Borrowed Time** in Weeks 1–4; **The Missing Replicate** in Weeks 9–14          |
+| Samira    | She keeps a sketchbook of tissue patterns that are “too subjective” for a paper.          | **Shared Instrument** in Weeks 2–5; **Not in My Figure** in Weeks 6–12           |
+| Gabriel   | He has a binder of old equipment failures and repairs.                                    | **The Queue** in Weeks 1–4; **The Archive** in Weeks 10–14                       |
+| Camila    | She keeps the first rejection letter from her academic career as a reminder, not a wound. | Initial email and video call in Weeks 8–10; formal offer conversation in Week 15 |
 
 The game must not use culture as a costume, nationality as a plot device,
 trauma as background decoration, or long biography scenes. Detailed dialogue,
@@ -185,24 +185,24 @@ Characters use authored location anchors. They do not use free simulated
 roaming. A short authored walk can support a scene, but a scene always
 overrides the normal schedule. Camila remains remote at the protagonist desk.
 
-| Character | Early | Late | Night | After-hours |
-|---|---|---|---|---|
-| Elena | PI office | Main laboratory or PI office | Scene only | Absent except **The Future** |
-| Haoran | Tissue culture | Main laboratory or shared desks | Rare desk scene | Absent |
-| Samira | Shared desks or break room | Imaging room | Scene only | Absent |
-| Gabriel | Facility station | Facility station or imaging room | Remote or on-call only | Absent |
-| Camila | Remote only | Remote only | Remote only | Remote only |
+| Character | Early                      | Late                             | Night                  | After-hours                  |
+| --------- | -------------------------- | -------------------------------- | ---------------------- | ---------------------------- |
+| Elena     | PI office                  | Main laboratory or PI office     | Scene only             | Absent except **The Future** |
+| Haoran    | Tissue culture             | Main laboratory or shared desks  | Rare desk scene        | Absent                       |
+| Samira    | Shared desks or break room | Imaging room                     | Scene only             | Absent                       |
+| Gabriel   | Facility station           | Facility station or imaging room | Remote or on-call only | Absent                       |
+| Camila    | Remote only                | Remote only                      | Remote only            | Remote only                  |
 
 The character table gives eligible anchors. The authored background roster
 becomes smaller as the semester continues:
 
-| Weeks | Early | Late | Night | After-hours |
-|---|---|---|---|---|
-| 1–4 | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None |
-| 5–7 | Haoran, Gabriel | Elena, Samira | Haoran | None, except **The Future** |
-| 8–9 | Haoran, Gabriel | Elena, Samira | None | None, except **The Future** |
-| 10–14 | Gabriel | Samira | None | None |
-| 15–16 | None | None | None | None |
+| Weeks | Early                   | Late                   | Night  | After-hours                 |
+| ----- | ----------------------- | ---------------------- | ------ | --------------------------- |
+| 1–4   | Haoran, Samira, Gabriel | Elena, Samira, Gabriel | Haoran | None                        |
+| 5–7   | Haoran, Gabriel         | Elena, Samira          | Haoran | None, except **The Future** |
+| 8–9   | Haoran, Gabriel         | Elena, Samira          | None   | None, except **The Future** |
+| 10–14 | Gabriel                 | Samira                 | None   | None                        |
+| 15–16 | None                    | None                   | None   | None                        |
 
 A required scene, optional scene, operational room state, or support result
 places its needed character even when the background roster is empty. It does

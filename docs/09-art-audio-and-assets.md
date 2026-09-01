@@ -4,7 +4,7 @@ Status: **B10 documented; implementation approval pending**
 
 ## Presentation thesis
 
-*Minor Revisions* uses **stylized institutional realism**. Bellwether
+_Minor Revisions_ uses **stylized institutional realism**. Bellwether
 University is a near-present, slightly dated university research floor. It is
 recognizable and plausible, not photorealistic. Its comedy comes from
 institutional language, bad policy, contradictory labels, temporary repairs,
@@ -29,17 +29,17 @@ surface damage. Each phase can use only the B07 allowance of one major and two
 minor physical room changes across the whole floor. Live-text or SVG notices,
 labels, paper, and stamps use the separate bounded accretion rule.
 
-| Colour role | Approved use |
-|---|---|
-| Warm paper beige | Main institutional surfaces and documents. |
-| Cool blue-grey | Architecture, windows, and neutral technical surfaces. |
+| Colour role         | Approved use                                                     |
+| ------------------- | ---------------------------------------------------------------- |
+| Warm paper beige    | Main institutional surfaces and documents.                       |
+| Cool blue-grey      | Architecture, windows, and neutral technical surfaces.           |
 | Institutional green | Secondary furniture, signs, and restrained institutional detail. |
-| Charcoal | Text, frames, and high-contrast structure. |
-| Soft amber | PI-office warmth and careful caution states. |
-| Coral-pink | Living organoids and recovery activity. |
-| Cyan or teal | Data, analysis, and readable scientific signals. |
-| Amber | Warning and attention-needed signals. |
-| Muted red | Serious faults only. |
+| Charcoal            | Text, frames, and high-contrast structure.                       |
+| Soft amber          | PI-office warmth and careful caution states.                     |
+| Coral-pink          | Living organoids and recovery activity.                          |
+| Cyan or teal        | Data, analysis, and readable scientific signals.                 |
+| Amber               | Warning and attention-needed signals.                            |
+| Muted red           | Serious faults only.                                             |
 
 Important status never depends on colour alone. Text, icons, object state, or
 sound repeats each meaning. Exact colour values are selected only after a
@@ -110,15 +110,15 @@ The following are approved limits. B10 fixes the required asset roles and
 content counts. It does not select a source asset, file, codec, or final asset
 identifier before its rights and technical facts are verified.
 
-| Asset group | B08 limit or rule |
-|---|---|
-| Building | One modular kit for the eight B07 floor spaces. |
-| Props | 20 planned core reusable 3D prop families; 24 is the hard maximum for later substitutions. |
+| Asset group           | B08 limit or rule                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------------- |
+| Building              | One modular kit for the eight B07 floor spaces.                                              |
+| Props                 | 20 planned core reusable 3D prop families; 24 is the hard maximum for later substitutions.   |
 | Narrative room detail | Reusable notices, labels, paper, screen, and decal templates; no unique model for each beat. |
-| People | Four physical NPCs plus one simple protagonist silhouette. |
-| Science | Original organoids, main laboratory stations, data views, and science VFX. |
-| Interface | Reusable 2D templates for email, manuscript cards, notices, data screens, and menus. |
-| Identity assets | Original character designs, fictional notices, main stations, and interface layouts. |
+| People                | Four physical NPCs plus one simple protagonist silhouette.                                   |
+| Science               | Original organoids, main laboratory stations, data views, and science VFX.                   |
+| Interface             | Reusable 2D templates for email, manuscript cards, notices, data screens, and menus.         |
+| Identity assets       | Original character designs, fictional notices, main stations, and interface layouts.         |
 
 Licensed generic assets can support chairs, desks, storage, cables, basic
 shelves, and minor equipment. Adapt them to the visual language when the
@@ -183,11 +183,11 @@ break-room, and exit ambience. One base ambience layer per space and work
 period changes with the act state. Do not create separate room audio for every
 week.
 
-| Cue | Use | Required duplicate channel |
-|---|---|---|
-| Routine message | Normal inbox or queue update. | Queue text and icon. |
+| Cue                  | Use                                                  | Required duplicate channel         |
+| -------------------- | ---------------------------------------------------- | ---------------------------------- |
+| Routine message      | Normal inbox or queue update.                        | Queue text and icon.               |
 | Experiment attention | A group needs monitoring or a visible state changed. | Work-queue text and station state. |
-| Required safe scene | A due scene can begin at the next safe point. | In-world cue and task state. |
+| Required safe scene  | A due scene can begin at the next safe point.        | In-world cue and task state.       |
 
 Important sounds become clearer near their source. The player never has to
 find a task by sound alone. The mix must avoid hostile alarms, constant noise,

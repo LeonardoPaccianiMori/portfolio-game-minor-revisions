@@ -64,12 +64,12 @@ Energy has five visible segments. Standard profile starts at four segments;
 Supported profile starts at five. It represents work capacity, not literal
 sleep deprivation.
 
-| Action class | Time cost | Standard energy cost |
-|---|---:|---:|
-| Light work | 1 period | 0 |
-| Focused work | 1 period | 1 |
-| Intense work | 2 periods | 2 |
-| Rare major commitment | 3 periods | 2 |
+| Action class          | Time cost | Standard energy cost |
+| --------------------- | --------: | -------------------: |
+| Light work            |  1 period |                    0 |
+| Focused work          |  1 period |                    1 |
+| Intense work          | 2 periods |                    2 |
+| Rare major commitment | 3 periods |                    2 |
 
 Normal experiment, analysis, manuscript, and communication work normally use
 the focused class. Demanding work, repeats, difficult revisions, and sample or
@@ -344,22 +344,22 @@ persistent 12-item collectible set. It gives no gameplay advantage.
 The following costs apply in Standard profile. Supported keeps the same period
 costs and uses its approved energy adjustments.
 
-| Authored action | Periods | Standard energy | Notes |
-|---|---:|---:|---|
-| Select and configure a sample group | 1 | 1 | One focused setup action. |
-| Start laser/sham, repair-state, or drug work | 1 | 1 | One focused start action. |
-| Start range, batch, oxygen-loss, or repeat work | 2 | 2 | One intense start action. |
-| Routine monitor or stop | 1 | 0 | A light deliberate check. |
-| Quality-check or stabilizing monitor | 1 | 1 | A focused monitoring choice. |
-| Analyse and create an evidence card | 1 | 1 | One focused analysis action. |
-| Report a completed request to Elena | 1 | 0 | A light desk action. |
-| Initial manuscript draft | 3 | 2 | The single rare major commitment. |
-| PI revision or preprint commit | 1 | 1 | One focused board action. |
-| `PIIM` response commit | 3 | 2 | A rare major commitment. |
-| Five-year research plan or Morrow video call | 1 | 1 | One focused career action. |
-| Morrow reply or optional local character scene | 1 | 0 | A light relationship action. |
-| Wait for an authored room response | 1 | 0 | Clears a stated room-state delay; it never creates evidence by itself. |
-| Protected break | 1 | 0 | Restores two energy in Standard or three in Supported. |
+| Authored action                                 | Periods | Standard energy | Notes                                                                  |
+| ----------------------------------------------- | ------: | --------------: | ---------------------------------------------------------------------- |
+| Select and configure a sample group             |       1 |               1 | One focused setup action.                                              |
+| Start laser/sham, repair-state, or drug work    |       1 |               1 | One focused start action.                                              |
+| Start range, batch, oxygen-loss, or repeat work |       2 |               2 | One intense start action.                                              |
+| Routine monitor or stop                         |       1 |               0 | A light deliberate check.                                              |
+| Quality-check or stabilizing monitor            |       1 |               1 | A focused monitoring choice.                                           |
+| Analyse and create an evidence card             |       1 |               1 | One focused analysis action.                                           |
+| Report a completed request to Elena             |       1 |               0 | A light desk action.                                                   |
+| Initial manuscript draft                        |       3 |               2 | The single rare major commitment.                                      |
+| PI revision or preprint commit                  |       1 |               1 | One focused board action.                                              |
+| `PIIM` response commit                          |       3 |               2 | A rare major commitment.                                               |
+| Five-year research plan or Morrow video call    |       1 |               1 | One focused career action.                                             |
+| Morrow reply or optional local character scene  |       1 |               0 | A light relationship action.                                           |
+| Wait for an authored room response              |       1 |               0 | Clears a stated room-state delay; it never creates evidence by itself. |
+| Protected break                                 |       1 |               0 | Restores two energy in Standard or three in Supported.                 |
 
 The five middle mandatory scenes—**A Complete Narrative**, **What We Had**,
 **Public Record**, **Helpful Comments**, and **A Reasonable Response**—advance

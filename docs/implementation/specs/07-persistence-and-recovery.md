@@ -4,8 +4,8 @@ Status: **documented technical specification; no implementation authorized**
 
 This specification fixes the local IndexedDB database, record shapes, save
 order, validation, backup, recovery, migration, Archive completion, settings,
-data clearing, failure behaviour, and candidate `MR-IF-007` for *Minor
-Revisions*.
+data clearing, failure behaviour, and candidate `MR-IF-007` for _Minor
+Revisions_.
 
 S03 owns the canonical campaign state and serializer. S04 owns commands,
 rules, state revisions, ending resolution, and effects. S05 owns safe points,
@@ -76,14 +76,14 @@ database.
 
 Version `1` contains exactly six stores:
 
-| Store | Key | Stored value |
-|---|---|---|
-| `settings` | `current` | One complete validated settings record. |
-| `activeCampaign` | `current` | One validated unfinished campaign envelope. |
-| `activeCampaignBackup` | `previous` | The previous validated active envelope. |
-| `endingCards` | Campaign ID | One compact completed-campaign card. |
-| `institutionalCitations` | `current` | The persistent Citation unlock record. |
-| `metadata` | `database` | Database layout, migration, and completion-sequence control facts. |
+| Store                    | Key         | Stored value                                                       |
+| ------------------------ | ----------- | ------------------------------------------------------------------ |
+| `settings`               | `current`   | One complete validated settings record.                            |
+| `activeCampaign`         | `current`   | One validated unfinished campaign envelope.                        |
+| `activeCampaignBackup`   | `previous`  | The previous validated active envelope.                            |
+| `endingCards`            | Campaign ID | One compact completed-campaign card.                               |
+| `institutionalCitations` | `current`   | The persistent Citation unlock record.                             |
+| `metadata`               | `database`  | Database layout, migration, and completion-sequence control facts. |
 
 All keys are supplied explicitly. No store uses an automatic numeric key.
 There is no temporary-save, telemetry, cache, error-report, extra save-slot,
@@ -304,13 +304,13 @@ published to application memory.
 
 Use this exact startup result:
 
-| Active | Backup | Player action |
-|---|---|---|
-| Valid | Valid or absent | Offer Continue from active. |
-| Valid | Invalid | Offer Continue. The next successful save replaces the bad backup. |
-| Invalid | Valid | Offer recovery from backup. Never select it silently. |
-| Absent | Valid | Offer recovery from backup. Never select it silently. |
-| Invalid or absent | Invalid or absent | Do not offer Continue. |
+| Active            | Backup            | Player action                                                     |
+| ----------------- | ----------------- | ----------------------------------------------------------------- |
+| Valid             | Valid or absent   | Offer Continue from active.                                       |
+| Valid             | Invalid           | Offer Continue. The next successful save replaces the bad backup. |
+| Invalid           | Valid             | Offer recovery from backup. Never select it silently.             |
+| Absent            | Valid             | Offer recovery from backup. Never select it silently.             |
+| Invalid or absent | Invalid or absent | Do not offer Continue.                                            |
 
 An accepted recovery transaction:
 
@@ -605,16 +605,16 @@ Every operation is asynchronous and returns the common success-or-failure
 result. The persistence module owns the interface. No other module imports or
 uses IndexedDB directly.
 
-| Operation | Input | Success result |
-|---|---|---|
-| `start()` | None | Ready state, created or upgraded facts, and layout version. |
-| `readStartupData()` | None | Safe settings, metadata, active, backup, ending-card, and Citation summaries. |
-| `loadCampaign(source)` | `active` or accepted `backup` | Complete validated campaign, source, campaign ID, revision, migration fact, and source-preservation fact. |
-| `saveCampaign(snapshot)` | One complete immutable snapshot and checkpoint reason | Campaign ID, saved revision, and backup revision or `none`. |
-| `completeCampaign(completion)` | Terminal snapshot, expected ID and revision, ending facts without sequence, and run Citation IDs | Campaign ID, assigned sequence, ending-card summary, and complete Citation unlock set. |
-| `saveSettings(settings)` | One complete settings payload | Saved settings schema version. |
-| `clearSavedData()` | None; confirmation belongs to application and S09 | Complete database deletion confirmation; port becomes stopped. |
-| `stop()` | None | Stopped state. |
+| Operation                      | Input                                                                                            | Success result                                                                                            |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| `start()`                      | None                                                                                             | Ready state, created or upgraded facts, and layout version.                                               |
+| `readStartupData()`            | None                                                                                             | Safe settings, metadata, active, backup, ending-card, and Citation summaries.                             |
+| `loadCampaign(source)`         | `active` or accepted `backup`                                                                    | Complete validated campaign, source, campaign ID, revision, migration fact, and source-preservation fact. |
+| `saveCampaign(snapshot)`       | One complete immutable snapshot and checkpoint reason                                            | Campaign ID, saved revision, and backup revision or `none`.                                               |
+| `completeCampaign(completion)` | Terminal snapshot, expected ID and revision, ending facts without sequence, and run Citation IDs | Campaign ID, assigned sequence, ending-card summary, and complete Citation unlock set.                    |
+| `saveSettings(settings)`       | One complete settings payload                                                                    | Saved settings schema version.                                                                            |
+| `clearSavedData()`             | None; confirmation belongs to application and S09                                                | Complete database deletion confirmation; port becomes stopped.                                            |
+| `stop()`                       | None                                                                                             | Stopped state.                                                                                            |
 
 `loadCampaign()` publishes no campaign until complete validation and any
 approved migration succeeds. `saveCampaign()` returns no modified campaign.
@@ -628,14 +628,14 @@ contract, not implementation permission.
 S12 must later encode the groups below. S07 names fixed cases and expected
 results but does not claim that a fixture file or passing test exists.
 
-| Fixture group | Required coverage |
-|---|---|
+| Fixture group    | Required coverage                                                                                                                                                                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `MR-S07-SAV-001` | First save, later backup rotation, exact round trip, idempotent retry, same-revision conflict, older-revision rejection, invalid snapshot, transaction failure, queue order, exact 1 MiB acceptance, one-byte-over-limit rejection, and unchanged stores after rejection. |
-| `MR-S07-REC-001` | Every active-and-backup status combination, accepted and declined recovery, exact backup revision, unusable-campaign discard, no silent source choice, and another-tab conflict. |
-| `MR-S07-MIG-001` | Database, metadata, settings, ending-card, Citation, campaign-schema, and content migrations; every direct success, failed validation, missing step, unsupported newer version, source preservation, active and backup behaviour, and safe metadata reconstruction. |
-| `MR-S07-CMP-001` | Atomic completion, exact retry, conflicting duplicate campaign ID, invalid ending facts, Citation merge and repeated unlock, completion sequences, newest-first summaries, thirteen completions retaining sequences 2–13, and unchanged data after failure. |
-| `MR-S07-CLR-001` | Cancelled clear, complete database deletion, version-change connection closing, blocked deletion, error preservation, stopped result, and restart with a new empty database. |
-| `MR-S07-FLT-001` | Every failure code, invalid settings, individual bad ending card, invalid Citations, confirmed Archive repair, valid and unsafe metadata repair, quota exhaustion, stopped connection, failed settings save, and generic transaction abort. |
+| `MR-S07-REC-001` | Every active-and-backup status combination, accepted and declined recovery, exact backup revision, unusable-campaign discard, no silent source choice, and another-tab conflict.                                                                                          |
+| `MR-S07-MIG-001` | Database, metadata, settings, ending-card, Citation, campaign-schema, and content migrations; every direct success, failed validation, missing step, unsupported newer version, source preservation, active and backup behaviour, and safe metadata reconstruction.       |
+| `MR-S07-CMP-001` | Atomic completion, exact retry, conflicting duplicate campaign ID, invalid ending facts, Citation merge and repeated unlock, completion sequences, newest-first summaries, thirteen completions retaining sequences 2–13, and unchanged data after failure.               |
+| `MR-S07-CLR-001` | Cancelled clear, complete database deletion, version-change connection closing, blocked deletion, error preservation, stopped result, and restart with a new empty database.                                                                                              |
+| `MR-S07-FLT-001` | Every failure code, invalid settings, individual bad ending card, invalid Citations, confirmed Archive repair, valid and unsafe metadata repair, quota exhaustion, stopped connection, failed settings save, and generic transaction abort.                               |
 
 Fixtures also prove that browser closure, connection loss, focus, visibility,
 pause, menu time, and device-clock changes do not advance campaign state.

@@ -40,18 +40,18 @@ timestamps never enter it.
 All ten sections below are required. Unknown or missing fields are rejected.
 Names in backticks are the canonical stored field names.
 
-| Section | Stored purpose |
-|---|---|
-| `metadata` | Schema, content, identity, seed, revision, build, and pressure facts. |
-| `calendar` | Semester position, crash facts, and period progression. |
-| `campaignValues` | Energy, evidence, confidence, integrity, and their permanent histories. |
-| `experiments` | Equipment, preparation, run, record, card, and stop facts. |
-| `manuscript` | Committed paper states, snapshots, review, response, and authorship facts. |
-| `narrative` | Protagonist, scenes, messages, requests, concerns, routes, and scheduler. |
-| `relationships` | One permanent working-trust record for each recurring character. |
-| `world` | Semantic floor, room, anchor, and physical-character facts. |
-| `contentHistory` | Saved variants and once-only content consumption. |
-| `conclusion` | Final choice and epilogue progress. |
+| Section          | Stored purpose                                                             |
+| ---------------- | -------------------------------------------------------------------------- |
+| `metadata`       | Schema, content, identity, seed, revision, build, and pressure facts.      |
+| `calendar`       | Semester position, crash facts, and period progression.                    |
+| `campaignValues` | Energy, evidence, confidence, integrity, and their permanent histories.    |
+| `experiments`    | Equipment, preparation, run, record, card, and stop facts.                 |
+| `manuscript`     | Committed paper states, snapshots, review, response, and authorship facts. |
+| `narrative`      | Protagonist, scenes, messages, requests, concerns, routes, and scheduler.  |
+| `relationships`  | One permanent working-trust record for each recurring character.           |
+| `world`          | Semantic floor, room, anchor, and physical-character facts.                |
+| `contentHistory` | Saved variants and once-only content consumption.                          |
+| `conclusion`     | Final choice and epilogue progress.                                        |
 
 ID-keyed records are used when identity matters. Ordered lists are used only
 when order has meaning. Every record key equals its internal `id`.
@@ -282,13 +282,13 @@ target, or focused-view fields.
 
 The five floor acts and ranges are:
 
-| Stored act | Weeks | Player-visible design name |
-|---|---:|---|
-| `orderlyButOverbooked` | 1–4 | Orderly but overbooked |
-| `manuscriptClutter` | 5–7 | Manuscript clutter |
-| `rejectionAndPublicRecord` | 8–9 | Rejection and public record |
-| `reviewPressure` | 10–14 | Review pressure |
-| `decisionHorizon` | 15–16 | Decision horizon |
+| Stored act                 | Weeks | Player-visible design name  |
+| -------------------------- | ----: | --------------------------- |
+| `orderlyButOverbooked`     |   1–4 | Orderly but overbooked      |
+| `manuscriptClutter`        |   5–7 | Manuscript clutter          |
+| `rejectionAndPublicRecord` |   8–9 | Rejection and public record |
+| `reviewPressure`           | 10–14 | Review pressure             |
+| `decisionHorizon`          | 15–16 | Decision horizon            |
 
 Elena, Haoran, Samira, and Gabriel use approved semantic anchor IDs or `null`
 when absent. Camila has no physical placement. Required scenes can temporarily
@@ -424,25 +424,25 @@ fact remain equal.
 Every rejected fixture changes one fact from `MR-S03-FIX-001` unless it is an
 explicit transition pair. S12 gives each variant an executable case ID.
 
-| Group | Required rejection |
-|---|---|
-| `MR-S03-REJ-001` | Missing required top-level section. |
-| `MR-S03-REJ-002` | Unknown field. |
-| `MR-S03-REJ-003` | Wrong value type. |
-| `MR-S03-REJ-004` | Fraction, out-of-range integer, non-finite value, or negative zero. |
-| `MR-S03-REJ-005` | Camera, pointer-lock, open-panel, or other forbidden presentation data. |
-| Identity | Key/internal-ID mismatch, duplicate ID, reused ID, or malformed family ID. |
-| Reference | Missing referenced run, raw record, evidence, content, or snapshot. |
-| Active run | Duplicate, missing, terminal, or fourth active run. |
-| History | Missing or duplicate sequence, wrong order, wrong previous value, current-value mismatch, edit, or removal. |
-| Experiment | Stage/active-list mismatch; analysed run without exactly one raw record and card; stopped run without exactly one stop log or with evidence. |
-| Evidence | Evidence source outside its matching raw record or the Samira contribution. |
-| Manuscript | Snapshot order or current-snapshot mismatch; premature reviewer or PIIM fact; public preprint without snapshot; duplicate committed effect. |
-| Scheduler | Queue/state mismatch, duplicate queue ID, active ID also queued, scene/active-event mismatch, invalid eligibility or resolved period, or scheduler revision after campaign revision. |
-| Content | Unknown, premature, repeated once-only, changed selected variant, contradictory scene-closing and recap receipts, or invalid final scene-presentation state. |
-| World | Wrong floor act, invalid anchor, early Camila introduction, or physical Camila placement. |
-| Route | Chosen route was not available, locked/closed route chosen, or missing decline of the other available route. |
-| Conclusion | Skipped or reversed state, missing choice, missing ending module, or premature completion. |
+| Group            | Required rejection                                                                                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `MR-S03-REJ-001` | Missing required top-level section.                                                                                                                                                  |
+| `MR-S03-REJ-002` | Unknown field.                                                                                                                                                                       |
+| `MR-S03-REJ-003` | Wrong value type.                                                                                                                                                                    |
+| `MR-S03-REJ-004` | Fraction, out-of-range integer, non-finite value, or negative zero.                                                                                                                  |
+| `MR-S03-REJ-005` | Camera, pointer-lock, open-panel, or other forbidden presentation data.                                                                                                              |
+| Identity         | Key/internal-ID mismatch, duplicate ID, reused ID, or malformed family ID.                                                                                                           |
+| Reference        | Missing referenced run, raw record, evidence, content, or snapshot.                                                                                                                  |
+| Active run       | Duplicate, missing, terminal, or fourth active run.                                                                                                                                  |
+| History          | Missing or duplicate sequence, wrong order, wrong previous value, current-value mismatch, edit, or removal.                                                                          |
+| Experiment       | Stage/active-list mismatch; analysed run without exactly one raw record and card; stopped run without exactly one stop log or with evidence.                                         |
+| Evidence         | Evidence source outside its matching raw record or the Samira contribution.                                                                                                          |
+| Manuscript       | Snapshot order or current-snapshot mismatch; premature reviewer or PIIM fact; public preprint without snapshot; duplicate committed effect.                                          |
+| Scheduler        | Queue/state mismatch, duplicate queue ID, active ID also queued, scene/active-event mismatch, invalid eligibility or resolved period, or scheduler revision after campaign revision. |
+| Content          | Unknown, premature, repeated once-only, changed selected variant, contradictory scene-closing and recap receipts, or invalid final scene-presentation state.                         |
+| World            | Wrong floor act, invalid anchor, early Camila introduction, or physical Camila placement.                                                                                            |
+| Route            | Chosen route was not available, locked/closed route chosen, or missing decline of the other available route.                                                                         |
+| Conclusion       | Skipped or reversed state, missing choice, missing ending module, or premature completion.                                                                                           |
 
 Transition-pair fixtures compare an earlier and later valid-looking state and
 reject removal, editing, or ID reuse of any permanent history, snapshot, raw

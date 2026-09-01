@@ -8,8 +8,8 @@ save payloads, names entered during testing, raw errors, machine paths, or
 hidden model reasoning.
 
 [`ai-use-log.md`](ai-use-log.md) is the separate private record for actual
-primary-session and completed-subagent model use. It applies only to *Minor
-Revisions* and does not replace Leonardo's approval or acceptance evidence.
+primary-session and completed-subagent model use. It applies only to _Minor
+Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## State values
 
@@ -26,17 +26,17 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
-|---:|---|---|---|---|---|---|---|
-| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Blocked | 2026-09-01 | All approved-scope corrections pass typecheck, lint, two tests, and build; required combined check fails on 57 pre-existing out-of-scope tracked files | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
-| 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                         | Notes                                                                   |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                              | Records documentation only; no implementation is approved.              |
+|    1 | Blocked                 | 2026-09-01    | All approved-scope corrections pass typecheck, lint, two tests, and build; required combined check fails on 57 pre-existing out-of-scope tracked files                                           | Not yet available | Not yet available                                                                                   | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
+| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                              | Each step needs a separate approved plan and accepted dependency.       |
 
 ## Gate decisions
 
-| Gate | State | Leonardo decision | Effect | Next boundary |
-|---|---|---|---|---|
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01 | Accepts the frozen S01–S14 baseline; the separately approved Step-1 plan is the only implementation authority | Complete the approved Step-1 cycle; Step 2 remains blocked until Step 1 is accepted and a new plan is approved |
+| Gate                               | State    | Leonardo decision | Effect                                                                                                        | Next boundary                                                                                                  |
+| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; the separately approved Step-1 plan is the only implementation authority | Complete the approved Step-1 cycle; Step 2 remains blocked until Step 1 is accepted and a new plan is approved |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -99,7 +99,7 @@ receive a new review.
 ### Leonardo test packet
 
 Not yet available. After reviewed integration, Leonardo will open the supplied
-local address, confirm that it identifies *Minor Revisions* as the local
+local address, confirm that it identifies _Minor Revisions_ as the local
 foundation with no visible error, describe what he sees, and close the page if
 he wants to stop safely.
 

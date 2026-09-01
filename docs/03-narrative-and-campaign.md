@@ -51,23 +51,23 @@ regenerative treatment.
 
 ## Semester beat sheet
 
-| Week | Act | Required campaign beat |
-|---:|---|---|
-| 1 | Supplementary data | **Clarified** opens at 06:42. Laser replication and sham work begin. |
-| 2 | Supplementary data | Damage-and-recovery range work begins. Gabriel's facility limit creates the first delay. |
-| 3 | Supplementary data | Batch evidence creates uncertainty. Samira's imaging conflict appears. |
-| 4 | Supplementary data | Repair-state evidence becomes available. Haoran's work-pressure scene can occur. |
-| 5 | Supplementary data | **A Complete Narrative** ends the act. Elena opens manuscript work, even with a weak packet. |
-| 6 | Manuscript hell | `MR-TASK-REMOVE-CAUTION` makes Elena remove cautious wording because it looks too defensive. |
-| 7 | Manuscript hell | **What We Had** confronts the player with a manuscript close to its first careful form. |
-| 8 | Submission | **Public Record** posts the preprint. *Cosmos* and *Knowledge* reject. Camila writes after the second rejection. |
-| 9 | Submission | *Developmental Systems Letters* rejects. `PIIM` receives the manuscript. |
-| 10 | Competing futures | **Helpful Comments** delivers the `PIIM` reports. Camila's video call can occur. |
-| 11–12 | Competing futures | The player answers reviewers and completes the required oxygen-loss work. |
-| 13 | Competing futures | Aldercroft sends a final-round invitation or a polite rejection. |
-| 14 | Competing futures | **A Reasonable Response** requires resubmission, journal withdrawal, or public-record withdrawal. |
-| 15 | Competing futures | `PIIM` gives its final state. Morrow makes an eligible player a formal offer or refusal. Elena then reacts privately to the saved paper result. |
-| 16 | Decision | **06:42** moves from the research floor to the exit and the final career choice. |
+|  Week | Act                | Required campaign beat                                                                                                                          |
+| ----: | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+|     1 | Supplementary data | **Clarified** opens at 06:42. Laser replication and sham work begin.                                                                            |
+|     2 | Supplementary data | Damage-and-recovery range work begins. Gabriel's facility limit creates the first delay.                                                        |
+|     3 | Supplementary data | Batch evidence creates uncertainty. Samira's imaging conflict appears.                                                                          |
+|     4 | Supplementary data | Repair-state evidence becomes available. Haoran's work-pressure scene can occur.                                                                |
+|     5 | Supplementary data | **A Complete Narrative** ends the act. Elena opens manuscript work, even with a weak packet.                                                    |
+|     6 | Manuscript hell    | `MR-TASK-REMOVE-CAUTION` makes Elena remove cautious wording because it looks too defensive.                                                    |
+|     7 | Manuscript hell    | **What We Had** confronts the player with a manuscript close to its first careful form.                                                         |
+|     8 | Submission         | **Public Record** posts the preprint. _Cosmos_ and _Knowledge_ reject. Camila writes after the second rejection.                                |
+|     9 | Submission         | _Developmental Systems Letters_ rejects. `PIIM` receives the manuscript.                                                                        |
+|    10 | Competing futures  | **Helpful Comments** delivers the `PIIM` reports. Camila's video call can occur.                                                                |
+| 11–12 | Competing futures  | The player answers reviewers and completes the required oxygen-loss work.                                                                       |
+|    13 | Competing futures  | Aldercroft sends a final-round invitation or a polite rejection.                                                                                |
+|    14 | Competing futures  | **A Reasonable Response** requires resubmission, journal withdrawal, or public-record withdrawal.                                               |
+|    15 | Competing futures  | `PIIM` gives its final state. Morrow makes an eligible player a formal offer or refusal. Elena then reacts privately to the saved paper result. |
+|    16 | Decision           | **06:42** moves from the research floor to the exit and the final career choice.                                                                |
 
 Weeks 8 and 9 deliberately have no open experiment template. This is not idle
 time. Play shifts from laboratory work to the preprint, journal rejections,
@@ -83,15 +83,15 @@ that evidence exists.
 
 ## Mandatory scenes
 
-| Scene | Week | Primary location | Required narrative function |
-|---|---:|---|---|
-| **Clarified** | 1 | Main laboratory and PI office | Elena sees the overnight result and reframes the next work as a small clarification. |
-| **A Complete Narrative** | 5 | PI office | Elena permits manuscript work regardless of packet quality. The packet changes later fragility. |
-| **What We Had** | 7 | Player desk and PI office | After the initial draft and Week-6 removal, the third contradictory revision brings the paper close to its original careful version. |
-| **Public Record** | 8 | Player desk | The player posts the preprint to The Common Archive. |
-| **Helpful Comments** | 10 | Player desk and PI office | The player receives the editor letter and three reports. Elena calls the demands manageable. |
-| **A Reasonable Response** | 14 | Player desk and PI office | The player chooses a defensible response, Elena's stronger response, or withdrawal. |
-| **06:42** | 16 | Research floor and building exit | The player confirms Aldercroft, accepts Morrow, or leaves without either route. |
+| Scene                     | Week | Primary location                 | Required narrative function                                                                                                          |
+| ------------------------- | ---: | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Clarified**             |    1 | Main laboratory and PI office    | Elena sees the overnight result and reframes the next work as a small clarification.                                                 |
+| **A Complete Narrative**  |    5 | PI office                        | Elena permits manuscript work regardless of packet quality. The packet changes later fragility.                                      |
+| **What We Had**           |    7 | Player desk and PI office        | After the initial draft and Week-6 removal, the third contradictory revision brings the paper close to its original careful version. |
+| **Public Record**         |    8 | Player desk                      | The player posts the preprint to The Common Archive.                                                                                 |
+| **Helpful Comments**      |   10 | Player desk and PI office        | The player receives the editor letter and three reports. Elena calls the demands manageable.                                         |
+| **A Reasonable Response** |   14 | Player desk and PI office        | The player chooses a defensible response, Elena's stronger response, or withdrawal.                                                  |
+| **06:42**                 |   16 | Research floor and building exit | The player confirms Aldercroft, accepts Morrow, or leaves without either route.                                                      |
 
 Scenes are real-time, skippable, captioned, and safe around checkpoints. The
 seven main scenes target 14–18 minutes and currently total 14:45. The ending
@@ -109,15 +109,15 @@ start another time-costing task before the due scene occurs. This is a time
 gate, not a room lock or teleport. The B08 presentation contract controls
 camera, animation, audio, and visual execution.
 
-| Scene | Spatial sequence and cue |
-|---|---|
-| **Clarified** | The player starts at the tissue-culture rack, sees the recovery state, walks to the main laboratory, then follows Elena to the PI office. Control returns at shared desks. |
-| **A Complete Narrative** | A warm lit PI office and revision stack call the player from the work loop. |
-| **What We Had** | A changed manuscript at shared desks calls the player to the desk, then Elena's office. |
-| **Public Record** | A desk message and the manuscript station contain the complete scene. |
-| **Helpful Comments** | The editor letter arrives at shared desks. Elena is available in the PI office after the report is read. |
-| **A Reasonable Response** | The response board at shared desks leads to the PI-office decision. |
-| **06:42** | The dark floor remains walkable. The player follows the now-bright exit route to the glass vestibule. |
+| Scene                     | Spatial sequence and cue                                                                                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Clarified**             | The player starts at the tissue-culture rack, sees the recovery state, walks to the main laboratory, then follows Elena to the PI office. Control returns at shared desks. |
+| **A Complete Narrative**  | A warm lit PI office and revision stack call the player from the work loop.                                                                                                |
+| **What We Had**           | A changed manuscript at shared desks calls the player to the desk, then Elena's office.                                                                                    |
+| **Public Record**         | A desk message and the manuscript station contain the complete scene.                                                                                                      |
+| **Helpful Comments**      | The editor letter arrives at shared desks. Elena is available in the PI office after the report is read.                                                                   |
+| **A Reasonable Response** | The response board at shared desks leads to the PI-office decision.                                                                                                        |
+| **06:42**                 | The dark floor remains walkable. The player follows the now-bright exit route to the glass vestibule.                                                                      |
 
 ## B08 scene presentation and access contract
 
@@ -146,13 +146,13 @@ maximum.
 
 The manuscript moves through four fictional journals in a fixed order.
 
-| Week | Journal or service | Campaign response |
-|---:|---|---|
-| 8 | The Common Archive | The preprint becomes public in every run. It can be defensible, weak, or compromised. |
-| 8 | *Cosmos* | It calls the result “of specialist interest” and says it does not change a broad field. |
-| 8 | *Knowledge* | It calls the claim attractive but asks for direct proof rather than inference. |
-| 9 | *Developmental Systems Letters* | It calls the observation strong but the mechanism incomplete. |
-| 9–10 | *Proceedings of the International Institute of Morphodynamics* (`PIIM`) | It sends the paper to three reviewers and begins the only major-revision round. |
+| Week | Journal or service                                                      | Campaign response                                                                       |
+| ---: | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+|    8 | The Common Archive                                                      | The preprint becomes public in every run. It can be defensible, weak, or compromised.   |
+|    8 | _Cosmos_                                                                | It calls the result “of specialist interest” and says it does not change a broad field. |
+|    8 | _Knowledge_                                                             | It calls the claim attractive but asks for direct proof rather than inference.          |
+|    9 | _Developmental Systems Letters_                                         | It calls the observation strong but the mechanism incomplete.                           |
+| 9–10 | _Proceedings of the International Institute of Morphodynamics_ (`PIIM`) | It sends the paper to three reviewers and begins the only major-revision round.         |
 
 The names parody academic status and journal escalation. Later presentation
 must not copy a real journal's logo, page design, or other protected brand
@@ -163,11 +163,11 @@ Dr. Leila Haddad is the named `PIIM` editor. She appears only through concise,
 polite messages. She calls all reports helpful and asks the player to address
 all concerns, even where the reports conflict.
 
-| Reviewer | Fixed position | Variable detail |
-|---|---|---|
-| Reviewer 1 | Enthusiastic about the observation; asks for clearer batch evidence. | Wording and examples respond to visible evidence quality. |
-| Reviewer 2 | Sees assay value; requires the oxygen-loss challenge and careful claims. | The strength of the request responds to claim level and support. |
-| Reviewer 3 | Calls laser injury artificial and the repair state a stress response. | Can identify a visible mismatch, but has no hidden knowledge of fabrication. |
+| Reviewer   | Fixed position                                                           | Variable detail                                                              |
+| ---------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| Reviewer 1 | Enthusiastic about the observation; asks for clearer batch evidence.     | Wording and examples respond to visible evidence quality.                    |
+| Reviewer 2 | Sees assay value; requires the oxygen-loss challenge and careful claims. | The strength of the request responds to claim level and support.             |
+| Reviewer 3 | Calls laser injury artificial and the repair state a stress response.    | Can identify a visible mismatch, but has no hidden knowledge of fabrication. |
 
 Each report has one base form and one conditional form. Reviewer 1 changes
 with batch-evidence quality. Reviewer 2 changes with claim strength and scope.
@@ -244,28 +244,28 @@ benefit or relationship change; it does not end the campaign. The Morrow
 email rule is the only exception. The game signals availability through normal
 desk messages, room changes, and character presence. It uses no quest markers.
 
-| Character | Scene | Window | Spatial anchor | Narrative purpose |
-|---|---|---|---|---|
-| Haoran | **Borrowed Time** | Weeks 1–4 | Tissue-culture room | He asks for help with work that is at risk. |
-| Haoran | **The Missing Replicate** | Weeks 9–14 | Shared desks | He questions missing or altered evidence where the record supports concern. |
-| Samira | **Shared Instrument** | Weeks 2–5 | Imaging booking board | The player shares, negotiates for, or takes imaging time. |
-| Samira | **Not in My Figure** | Weeks 6–12 | Shared desks or break room | She offers useful evidence and asks for proper credit. |
-| Gabriel | **The Queue** | Weeks 1–4 | Facility station | He asks the player to accept a facility delay or limit. Full game only. |
-| Gabriel | **The Archive** | Weeks 10–14 | Imaging service alcove | He notices a supported mismatch in the evidence record and can warn the player. Retained in fallback. |
-| Elena | **The Future** | Weeks 6–9 | PI office after-hours | An after-hours conversation shows grant-renewal pressure and fear. |
-| Camila | Initial email | Weeks 8–10 | Protagonist desk | The player can reply to Morrow's first approach. |
-| Camila | Video call | Week 10 | Protagonist desk | The player explains the work carefully, strongly, or dishonestly. |
-| Camila | Formal offer conversation | Week 15 | Protagonist desk | The player receives or loses the Morrow offer. |
+| Character | Scene                     | Window      | Spatial anchor             | Narrative purpose                                                                                     |
+| --------- | ------------------------- | ----------- | -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Haoran    | **Borrowed Time**         | Weeks 1–4   | Tissue-culture room        | He asks for help with work that is at risk.                                                           |
+| Haoran    | **The Missing Replicate** | Weeks 9–14  | Shared desks               | He questions missing or altered evidence where the record supports concern.                           |
+| Samira    | **Shared Instrument**     | Weeks 2–5   | Imaging booking board      | The player shares, negotiates for, or takes imaging time.                                             |
+| Samira    | **Not in My Figure**      | Weeks 6–12  | Shared desks or break room | She offers useful evidence and asks for proper credit.                                                |
+| Gabriel   | **The Queue**             | Weeks 1–4   | Facility station           | He asks the player to accept a facility delay or limit. Full game only.                               |
+| Gabriel   | **The Archive**           | Weeks 10–14 | Imaging service alcove     | He notices a supported mismatch in the evidence record and can warn the player. Retained in fallback. |
+| Elena     | **The Future**            | Weeks 6–9   | PI office after-hours      | An after-hours conversation shows grant-renewal pressure and fear.                                    |
+| Camila    | Initial email             | Weeks 8–10  | Protagonist desk           | The player can reply to Morrow's first approach.                                                      |
+| Camila    | Video call                | Week 10     | Protagonist desk           | The player explains the work carefully, strongly, or dishonestly.                                     |
+| Camila    | Formal offer conversation | Week 15     | Protagonist desk           | The player receives or loses the Morrow offer.                                                        |
 
 ## Manuscript, credit, and integrity choices
 
 The revision board has three approved title and claim forms:
 
-| Claim level | Title form |
-|---|---|
-| Careful | *Transient Repatterning Accompanies Spatial-Rhythmic Recovery in Cardiac Tissue* |
-| Strong | *Transient Repatterning Supports Spatial-Rhythmic Recovery in Cardiac Tissue* |
-| Inflated | *Reconstructive Rhythmogenesis Governs Cardiac Tissue Recovery* |
+| Claim level | Title form                                                                       |
+| ----------- | -------------------------------------------------------------------------------- |
+| Careful     | _Transient Repatterning Accompanies Spatial-Rhythmic Recovery in Cardiac Tissue_ |
+| Strong      | _Transient Repatterning Supports Spatial-Rhythmic Recovery in Cardiac Tissue_    |
+| Inflated    | _Reconstructive Rhythmogenesis Governs Cardiac Tissue Recovery_                  |
 
 Elena can force movement between these forms, then ask for the careful version
 again. She uses the phrase “minor revisions” in Week 1 and Week 7. After the
@@ -305,12 +305,12 @@ discovery, automatic detection, or moral punishment.
 
 ## Week 14 response and Week 15 consequences
 
-| Week 14 choice | Week 15 response |
-|---|---|
-| Defensible resubmission | `PIIM` gives a state based on evidence, claims, and reviewer concerns. |
-| Elena's stronger response | The player can use selective reporting, altered results, or fabrication. `PIIM` can still publish if concerns appear answered. |
-| Journal withdrawal | `PIIM` records the withdrawal. The public preprint can remain available. |
-| Public-record withdrawal | The player also removes the preprint. This closes both career routes and selects the separate public-withdrawal text variant of **End of Contract**. |
+| Week 14 choice            | Week 15 response                                                                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Defensible resubmission   | `PIIM` gives a state based on evidence, claims, and reviewer concerns.                                                                               |
+| Elena's stronger response | The player can use selective reporting, altered results, or fabrication. `PIIM` can still publish if concerns appear answered.                       |
+| Journal withdrawal        | `PIIM` records the withdrawal. The public preprint can remain available.                                                                             |
+| Public-record withdrawal  | The player also removes the preprint. This closes both career routes and selects the separate public-withdrawal text variant of **End of Contract**. |
 
 The B05 response-band and route rules determine the Week 15 state. The
 narrative calendar does not change after any Week 14 choice. After Camila's
@@ -340,12 +340,12 @@ seconds and follows one fixed order: career scene, paper-aftershock, one
 relationship afterbeat, 4–6-second final image, then the ending summary. The
 epilogue is real-time, skippable, captioned, and safe around checkpoints.
 
-| Career ending | Label | Compact non-explorable setting | Central consequence |
-|---|---|---|---|
-| Aldercroft chosen | **Pending Appointment** | Bellwether desk or PI office | A temporary bridge appointment and another committee delay; the interview does not prove a permanent job. |
-| Morrow chosen | **Transferable Skills** | Small Morrow assay room | The player has stability and product pressure, not perfect rescue, and no longer controls one scientific question from the paper. |
-| Deliberate departure | **Out of Scope** | University exit with a short outward view | The player has uncertainty, relief, and an open future. |
-| No viable route | **End of Contract** | Cleared Bellwether desk, then exit | The fixed term ends, but the player retains agency beyond the university. |
+| Career ending        | Label                   | Compact non-explorable setting            | Central consequence                                                                                                               |
+| -------------------- | ----------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Aldercroft chosen    | **Pending Appointment** | Bellwether desk or PI office              | A temporary bridge appointment and another committee delay; the interview does not prove a permanent job.                         |
+| Morrow chosen        | **Transferable Skills** | Small Morrow assay room                   | The player has stability and product pressure, not perfect rescue, and no longer controls one scientific question from the paper. |
+| Deliberate departure | **Out of Scope**        | University exit with a short outward view | The player has uncertainty, relief, and an open future.                                                                           |
+| No viable route      | **End of Contract**     | Cleared Bellwether desk, then exit        | The fixed term ends, but the player retains agency beyond the university.                                                         |
 
 The final image is an external wide shot. It shows the protagonist only from
 behind or as a silhouette, then fades to the ending card. B08 fixes the final
@@ -388,5 +388,5 @@ meaningful variants. The selection is saved and one-time content does not
 repeat in a campaign.
 
 Before a public remote exists, a title-conflict and brand check must examine
-*Minor Revisions*, the fictional journal names, and the fictional organization
+_Minor Revisions_, the fictional journal names, and the fictional organization
 names. The game must not copy real journal branding or imply real affiliation.
