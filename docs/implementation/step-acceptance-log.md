@@ -64,7 +64,9 @@ foundation package, static page, and tests in commit
 first independent review completed work. The worker submitted correction
 commit `5434ca74ab797887d68dd1a2d540eef77e7daaf7`; the fresh re-review found
 one remaining baseline-test correction and this stale record statement. The
-worker corrected them in `0323ec7151bee5551d74866df5200b40990394c9`.
+worker corrected only the baseline test in
+`0323ec7151bee5551d74866df5200b40990394c9`. The primary Codex agent corrected
+this primary-owned acceptance record in the separate current checkpoint.
 Matching entries are in `ai-use-log.md` and `MR-CONTRIB-WP00-001`.
 
 ### Files and commits
@@ -111,8 +113,9 @@ typecheck, lint, two Node-only tests, and the production build. The required
 asset-manifest files outside Step 1 scope. S01 prohibits ignoring them to make
 the check pass. Fresh independent re-review of the repair and block found the
 remaining baseline-test and acceptance-record corrections. The worker
-corrected both in `0323ec7151bee5551d74866df5200b40990394c9`; fresh final
-re-review is pending.
+corrected only the baseline test in
+`0323ec7151bee5551d74866df5200b40990394c9`; the primary Codex agent corrected
+the acceptance record separately. Fresh final re-review is pending.
 
 ### Acceptance decision
 

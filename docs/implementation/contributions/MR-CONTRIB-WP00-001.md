@@ -118,11 +118,12 @@ tracked Markdown and asset-manifest files, so integration is blocked pending a
 separate approved recovery plan. No frozen interface, dependency version,
 design, or player-visible contract changed.
 
-The exact baseline-test expansion and acceptance-record correction completed
-in `0323ec7151bee5551d74866df5200b40990394c9`. Primary tests, typecheck,
-lint, and build passed. The required combined check still fails only at
-Prettier on the same 57 pre-existing tracked files. Fresh final re-review is
-pending; integration remains blocked.
+The worker completed only the exact baseline-test expansion in
+`0323ec7151bee5551d74866df5200b40990394c9`. The primary Codex agent corrected
+the primary-owned acceptance record in a separate local checkpoint. Primary
+tests, typecheck, lint, and build passed. The required combined check still
+fails only at Prettier on the same 57 pre-existing tracked files. Fresh final
+re-review is pending; integration remains blocked.
 
 ## Known limitations
 
