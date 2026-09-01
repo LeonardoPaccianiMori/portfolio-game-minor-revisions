@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 not complete**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 implementing**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `plan approved; environment verification and controlled MR-WP-00 assignment may begin`.
+- Current workflow state: `implementing; controlled MR-WP-00 assignment active`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,12 +15,12 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 not
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: verify the exact S01 Node and npm environment, then
-  create the approved `work/MR-WP-00-foundation` branch and worktree before
-  assigning `MR-WO-WP00-001`.
+- Next possible action: receive the worker submission, run the primary
+  verification suite, and obtain fresh independent read-only review.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, approved; the worker has not started.
+- Active work order: `MR-WO-WP00-001`, active on
+  `work/MR-WP-00-foundation` in `.worktrees/MR-WP-00-foundation/`.
 - Active contribution record: none until the worker submits a commit. S13 has
   no valid pre-submission contribution-record state.
 - Active player test: none.

@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 plan approved; no implementation step accepted**
+Status: **Step 1 implementing; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
 | 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Plan approved | 2026-09-01 | Not yet available | Not yet available | Not yet available | This plan-approved checkpoint | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
+| 1 | Implementing | 2026-09-01 | Not yet available | Not yet available | Not yet available | Plan-approved and implementing checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
 | 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -56,10 +56,11 @@ boundary. He has not yet tested or accepted a result.
 
 ### Agent contribution
 
-The primary Codex agent recorded the approved plan and prepared
-`MR-WO-WP00-001`. The controlled implementation worker and independent
-reviewer have not yet completed work. The matching primary-session AI-use-log
-entry is in `ai-use-log.md`.
+The primary Codex agent recorded the approved plan, verified the exact Node and
+npm environment, created the isolated branch and worktree, and activated
+`MR-WO-WP00-001`. The controlled implementation worker is now active. The
+independent reviewer has not yet completed work. The matching primary-session
+AI-use-log entry is in `ai-use-log.md`.
 
 ### Files and commits
 
