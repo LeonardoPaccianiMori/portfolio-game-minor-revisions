@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`     | The accepted result is the static local foundation, not a game system. |
-|    2 | Technical review        | 2026-09-01    | Complete correction worker reports 91 unit tests, threshold coverage, build, 15 browser flows, scope, privacy, and clean Git checks passed                                                       | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Complete primary audit and fresh independent review remain pending.    |
+|    2 | Technical review        | 2026-09-01    | Complete primary audit confirms 91 unit tests, threshold coverage, build, 15 browser flows, scope, architecture, diagnostics, controlled tests, privacy, and clean Git checks                    | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Fresh independent review remains pending.                              |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -312,6 +312,13 @@ five clean correction commits from the exact base. The eight changed paths
 match the complete work order. Its full handoff reports all required checks
 passing. The primary audit and fresh independent review remain pending.
 
+The primary agent completed the one full pre-review audit. It independently
+repeated focused and complete checks, reconciled all eight paths, requirements,
+interfaces, import routes, catalogue mappings, test substitutes, privacy and
+network boundaries, limitations, and current records, and found no new blocker
+or required correction. Fresh independent review is now the only technical gate
+before integration.
+
 ### Files and commits
 
 The plan checkpoint is `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, the exact
@@ -410,6 +417,10 @@ checks, complete primary audit, and fresh independent review remain pending.
 
 The worker now reports all three correction groups complete within the approved
 scope. This is a submission claim, not primary-audit or review evidence.
+
+The primary audit confirms those three corrections and all recorded limits.
+This is not independent-review, integration, Leonardo-test, or acceptance
+evidence.
 
 ### Acceptance decision
 

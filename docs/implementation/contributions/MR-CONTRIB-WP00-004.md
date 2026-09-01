@@ -20,9 +20,9 @@ The controlled implementation worker submitted only the approved Step-2 review
 corrections. The public platform entrance exists; all three bootstrap imports
 use it; the Step-2 diagnostic catalogue is closed and internally consistent;
 and Vitest uses controlled timing, event, event-target, and abort substitutes.
-The worker reports that all required checks pass. The result is not yet audited
-by the primary agent, independently reviewed, integrated, tested by Leonardo,
-or accepted.
+The worker reports that all required checks pass. The complete primary audit
+also passes with no new blocker or required correction. The result is not yet
+independently reviewed, integrated, tested by Leonardo, or accepted.
 
 ## Changed files
 
@@ -78,10 +78,27 @@ unchanged focused Playwright suite passed all 15 flows across Chromium,
 Firefox, and WebKit. Production, privacy, runtime-network, changed-path,
 `git diff --check`, and final clean-worktree inspections passed.
 
+The primary agent independently repeated the four-file focused suite and all 91
+tests passed. Primary `npm run check` passed typecheck, lint, formatting, and
+all 91 tests. Primary `npm run verify` passed lint, formatting, 96.10 percent
+statement coverage, 92.30 percent branch coverage, 95.23 percent function
+coverage, 96.48 percent line coverage, the 10-module production build, and all
+15 Chromium, Firefox, and WebKit flows. A separate primary build passed.
+
+The complete primary audit verified the exact five-commit range, eight owned
+paths, clean worktree, absent remote, unchanged package, lockfile,
+configuration, thresholds, and coverage ignores, public platform entrance,
+three public bootstrap imports, no private bootstrap import, closed nine-code
+catalogue, exact metadata relationships, unknown and inconsistent input
+rejection, controlled unit substitutes, production privacy, no external
+browser request, no source map, no production console call, and Git whitespace.
+It found no new blocker, required correction, unsupported claim, or scope
+change.
+
 ## Independent review
 
-Not yet available. A fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh`
-reasoning is required after the complete primary audit.
+Not yet available. The complete primary audit passed. A fresh OpenAI
+`gpt-5.6-sol` reviewer using `xhigh` reasoning is now required.
 
 ## Corrections
 

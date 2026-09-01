@@ -7,9 +7,8 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; complete Step 2 cor
 ## Durable resume point
 
 - Current step: `2`, complete correction plan approved on 2026-09-01.
-- Current workflow state: `technical review; the worker submitted five clean
-correction commits and the primary agent must complete one full audit before
-fresh independent review`.
+- Current workflow state: `technical review; the complete primary audit passed
+with no new finding and the fresh independent review is next`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -21,9 +20,8 @@ fresh independent review`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: create and reconcile the complete primary audit across
-  scope, authority, architecture, diagnostics, tests, privacy, checks, and
-  current records.
+- Next possible action: assign one fresh read-only OpenAI `gpt-5.6-sol`
+  reviewer using `xhigh` reasoning with the complete reconciled packet.
 - Active approved implementation plan: the exact complete Step-2 correction
   plan for all three S02 private imports, the closed diagnostic fault catalogue,
   and deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
@@ -38,12 +36,13 @@ fresh independent review`.
   submission that received the blocking review.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: submitted. The worker reports 91 unit tests,
-  coverage above the frozen thresholds, a successful build, 15 passing browser
-  flows, passing scope and privacy inspections, and a clean worker head at
-  `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`. Primary verification and audit
-  remain pending. No frozen interface changed.
-- Last committed resume checkpoint: this technical-review checkpoint; Git history is
+- Active correction cycle: primary-audited. Primary verification confirms 91
+  unit tests, 96.48 percent line coverage, 92.30 percent branch coverage, a
+  successful build, 15 passing browser flows, exact scope, public imports,
+  closed diagnostics, controlled unit substitutes, production privacy, and a
+  clean worker head at `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`.
+  Fresh independent review remains pending. No frozen interface changed.
+- Last committed resume checkpoint: this primary-audit checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: failed on the historical submission. The fresh OpenAI
