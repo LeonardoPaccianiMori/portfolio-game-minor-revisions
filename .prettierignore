@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+local-artifacts/performance/
+.vite/
+.cache/
+package-lock.json
+AGENTS.md
+README.md
+assets/
+docs/

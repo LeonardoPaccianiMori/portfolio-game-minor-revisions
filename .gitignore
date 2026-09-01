@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+local-artifacts/performance/
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.worktrees/
