@@ -7,8 +7,9 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; complete Step 2 cor
 ## Durable resume point
 
 - Current step: `2`, complete correction plan approved on 2026-09-01.
-- Current workflow state: `implementing; MR-WO-WP00-004 is active and the
-controlled worker receives the exact eight-file focused packet`.
+- Current workflow state: `technical review; the worker submitted five clean
+correction commits and the primary agent must complete one full audit before
+fresh independent review`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,28 +21,29 @@ controlled worker receives the exact eight-file focused packet`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: the controlled worker corrects only the eight owned
-  paths, runs every required check, commits the result, and supplies one
-  complete handoff.
+- Next possible action: create and reconcile the complete primary audit across
+  scope, authority, architecture, diagnostics, tests, privacy, checks, and
+  current records.
 - Active approved implementation plan: the exact complete Step-2 correction
   plan for all three S02 private imports, the closed diagnostic fault catalogue,
   and deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-004`, status `active`, OpenAI
+- Active work order: `MR-WO-WP00-004`, status `submitted`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
   `work/MR-WP-00-startup-safety-review-fixes`, worktree
   `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
   `43f868e64b80c88dc46832b676af6d2929f081c2`. `MR-WO-WP00-002` is
   superseded. `MR-WO-WP00-003` is also superseded.
-- Active contribution record: none. S13 permits `MR-CONTRIB-WP00-004` only
-  after a real worker submission. `MR-CONTRIB-WP00-002` remains the historical
-  submitted result that received the blocking review.
+- Active contribution record: `MR-CONTRIB-WP00-004`, status `submitted`, with
+  five clean worker commits. `MR-CONTRIB-WP00-002` remains the historical
+  submission that received the blocking review.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: implementing. `MR-WO-WP00-004` owns all
-  three bootstrap import paths and the five previously approved correction
-  paths. Its worktree remains clean at the exact base. No frozen interface
-  changed.
-- Last committed resume checkpoint: this active-work-order checkpoint; Git history is
+- Active correction cycle: submitted. The worker reports 91 unit tests,
+  coverage above the frozen thresholds, a successful build, 15 passing browser
+  flows, passing scope and privacy inspections, and a clean worker head at
+  `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`. Primary verification and audit
+  remain pending. No frozen interface changed.
+- Last committed resume checkpoint: this technical-review checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: failed on the historical submission. The fresh OpenAI
@@ -52,8 +54,8 @@ controlled worker receives the exact eight-file focused packet`.
   fresh independent review are still required.
 - Resolved scope block: S02 applies to type-only imports as well as runtime-value
   imports. Leonardo approved the exact addition of
-  `src/bootstrap/startup-screen.ts` to `MR-WO-WP00-004`. No code correction has
-  started.
+  `src/bootstrap/startup-screen.ts` to `MR-WO-WP00-004`. The worker reports the
+  complete approved correction submitted.
 
 ## Repository facts
 

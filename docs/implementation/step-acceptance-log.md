@@ -26,12 +26,12 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                               | Notes                                                                  |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                    | Records documentation only; no implementation is approved.             |
-|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`         | The accepted result is the static local foundation, not a game system. |
-|    2 | Implementing            | 2026-09-01    | Historical submission passed primary audit; review found three correction groups; the complete plan owns all required correction paths                                                           | Not started       | Not accepted                                                                                        | Original plan `1b06ee5`; worker `d7394f9` through `43f868e`; complete plan `8eea0c7` | `MR-WO-WP00-004` is active on the clean exact-base worktree.           |
-| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                    | Each step needs a separate approved plan and accepted dependency.      |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                           | Notes                                                                  |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                | Records documentation only; no implementation is approved.             |
+|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`     | The accepted result is the static local foundation, not a game system. |
+|    2 | Technical review        | 2026-09-01    | Complete correction worker reports 91 unit tests, threshold coverage, build, 15 browser flows, scope, privacy, and clean Git checks passed                                                       | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Complete primary audit and fresh independent review remain pending.    |
+| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
@@ -307,6 +307,11 @@ The primary agent then verified the clean exact branch, worktree, base, absent
 remote, Node `v24.20.0`, and npm `11.19.0`, and activated
 `MR-WO-WP00-004`. The controlled worker assignment is the next activity.
 
+The controlled OpenAI `gpt-5.6-sol` worker using `high` reasoning submitted
+five clean correction commits from the exact base. The eight changed paths
+match the complete work order. Its full handoff reports all required checks
+passing. The primary audit and fresh independent review remain pending.
+
 ### Files and commits
 
 The plan checkpoint is `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, the exact
@@ -327,6 +332,8 @@ The complete plan checkpoint is the commit that contains this entry.
 `MR-WO-WP00-004` reuses the clean exact branch and worktree at
 `43f868e64b80c88dc46832b676af6d2929f081c2`; it creates no new code state.
 The activation checkpoint is the commit that contains the active-state update.
+Correction worker commits are `1bb03c2` through `51adc02`. The formal submitted
+contribution record is `MR-CONTRIB-WP00-004`.
 
 ### Automated and review evidence
 
@@ -400,6 +407,9 @@ approved scope is insufficient to remove every S02 private cross-module import.
 Leonardo approved the exact addition of that file in `MR-WO-WP00-004` on
 2026-09-01. The scope block is resolved. The three technical correction groups,
 checks, complete primary audit, and fresh independent review remain pending.
+
+The worker now reports all three correction groups complete within the approved
+scope. This is a submission claim, not primary-audit or review evidence.
 
 ### Acceptance decision
 
