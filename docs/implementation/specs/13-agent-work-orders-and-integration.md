@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; no implementation authorized**
+Status: **documented technical specification; Step 1 accepted; Step 2 requires a separate approved plan**
 
 ## Purpose and authority
 
@@ -15,12 +15,11 @@ scheduling, content, persistence, world, input, UI, rendering, resources,
 browser support, diagnostics, fixtures, and acceptance. A work order cannot
 change one of those contracts.
 
-This document defines future paths. It does not create a package, worktree,
-work order, contribution record, source file, test, content file, asset,
-licence, remote, build, deployment, or result. S14 later completes the final
-audit. Leonardo must approve Gate 1 and separately approve the exact Step-1
-plan before any implementation work can start. Later steps need their own
-plans.
+This document defines controlled package paths and governance. It does not
+itself authorize a package, worktree, work order, source file, asset, licence,
+remote, deployment, or public result. S14 completed the final baseline audit.
+Leonardo approved Gate 1 and accepted Step 1. Every later step still needs its
+own exact plan and approval.
 
 ## Plain-language terms
 
@@ -38,7 +37,9 @@ plans.
 
 ## Fixed implementation boundary
 
-Three conditions are required before the first package can start:
+The first package required all three conditions below; they were satisfied for
+the accepted Step-1 foundation. Every later package also needs its accepted
+dependencies and an exact separately approved step plan:
 
 1. S14 is documented and the technical-specification gate is approved;
 2. every interface used by the package is frozen; and
@@ -433,6 +434,13 @@ specifications and interfaces, test results, and recorded limitations. The
 reviewer is read-only and starts from a focused packet rather than the full
 conversation history.
 
+Before this packet is sent, the primary agent completes one pre-review audit.
+It reconciles every changed path, control record, requirement, interface,
+fixture, check result, privacy boundary, and current-state claim. The reviewer
+then reports all findings from its complete packet in one structured result;
+the primary agent must not split a review into serial searches for isolated
+wording or formatting faults.
+
 The review checks:
 
 1. owned paths and prohibited scope;
@@ -450,11 +458,28 @@ Findings use:
 | Level      | Response                                                        |
 | ---------- | --------------------------------------------------------------- |
 | `blocker`  | Integration stops.                                              |
-| `required` | Correct and review again before integration.                    |
+| `required` | Correct before integration; apply the correction cadence below. |
 | `advisory` | Record the improvement and its owner; defer only with a reason. |
 
 A general statement that code looks good is not a review. A finding cannot be
 silently removed or downgraded.
+
+### Correction and re-review cadence
+
+A correction affecting code, runtime behaviour, dependencies, security,
+privacy, accessibility, a test contract, an interface, or material governance
+requires the applicable checks and a fresh-context independent review of the
+corrected result. A correction that only updates status, references, prose, or
+mechanical formatting receives focused primary validation, `git diff --check`,
+and full diff review. It does not require another full independent review
+unless it changes authority, evidence meaning, or a technical claim that is
+not mechanically verifiable. The primary agent may request one focused
+read-only re-check when that narrow boundary is uncertain.
+
+The contribution record identifies the correction category, validation, and
+whether a fresh or focused review occurred. No cadence rule permits an
+unresolved blocker or required finding, a skipped applicable check, or a
+technical change to rely on an older review.
 
 ## Integration readiness
 
@@ -567,7 +592,9 @@ separate request that records:
 - safe recovery if the change fails.
 
 Leonardo must approve it before authority, implementation, or expected results
-change.
+change. The primary agent then marks the earlier interface version
+`superseded`, updates every affected source and traceability route, and keeps
+accepted results as historical evidence.
 
 ## Phase-specific approval
 
@@ -652,5 +679,6 @@ The S14 cross-interface and contradiction audit is complete. Every shared
 interface defined or connected by this specification is frozen `v1` through
 the interface register and `specification-audit.md`. Earlier candidate-state
 statements preserve the interface lifecycle before S14; they are not the
-current state. No executable fixture or measured result exists. Gate 1 is
-ready for Leonardo's separate approval, and no implementation is authorized.
+current state. No executable fixture or measured result exists. Leonardo
+approved Gate 1 and accepted Step 1 on 2026-09-01. Step 2 remains blocked until
+Leonardo approves its exact plan.

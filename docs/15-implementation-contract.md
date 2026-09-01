@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; incremental roadmap documented; Gate 1 ready for Leonardo approval; code prohibited**
+Status: **B10 and S01–S14 documented; Step 1 accepted; Step 2 requires a separate approved plan**
 
 ## Authorization gate
 
@@ -12,7 +12,7 @@ step.
 
 No agent may create a remote, push a remote, publish a release, deploy the
 game, add a public licence file, import an unverified asset, or change a
-creative decision without a new Leonardo instruction.
+creative or shared technical decision without the approved revision procedure.
 
 ## Source-of-truth order
 
@@ -30,6 +30,27 @@ creative decision without a new Leonardo instruction.
 Conflicts must be surfaced. An implementation specification cannot silently
 change a numbered design decision. An implementation worker may not choose a
 creative or shared technical answer merely because it is easier to code.
+
+## Revising earlier decisions
+
+Leonardo can revise or remove any earlier Bxx, Rxx, Sxx, roadmap, interface,
+or other project decision when development, testing, cost, rights,
+accessibility, technical evidence, or player experience gives a sound reason.
+`Frozen` means the current approved work can rely on the decision. It does not
+make the decision permanent.
+
+Before a material revision, the primary agent must prepare a concise packet
+that states the reason and evidence, the old decision, the proposed current
+decision or removal, affected players and visible behaviour, requirements,
+interfaces, consumers, saves or migrations, tests, content, assets, roadmap,
+risks, and whether an accepted result remains historical evidence only. The
+packet needs Leonardo's explicit approval before any dependent work starts.
+
+After approval, the primary agent updates every affected authoritative source,
+marks the prior decision or interface `superseded`, preserves the reason and
+date, updates traceability and required tests, and creates a revised work order
+when implementation is needed. An accepted step is never rewritten: a later
+revision governs future work only.
 
 ## Requirement format
 
@@ -183,8 +204,8 @@ Remote timing, public visibility, release timing, and portfolio deployment
 also remain subject to separate Leonardo instructions.
 
 The S14 audit freezes `MR-IF-001`–`MR-IF-015` as `v1` and corrects the
-requirement traceability above. Gate 1 remains ready for Leonardo's separate
-approval, not approved.
+requirement traceability above. Leonardo approved Gate 1 and separately
+accepted Step 1 on 2026-09-01.
 
-Nothing in this contract authorizes implementation before Gate 1 and the exact
-Step-1 plan are explicitly approved. No approval carries to a later step.
+Nothing in this contract authorizes Step 2 or later work until Leonardo
+separately approves that exact step plan. No approval carries to a later step.

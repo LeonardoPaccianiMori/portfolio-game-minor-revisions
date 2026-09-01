@@ -34,9 +34,9 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                                        | Next boundary                                                                                                  |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; the separately approved Step-1 plan is the only implementation authority | Complete the approved Step-1 cycle; Step 2 remains blocked until Step 1 is accepted and a new plan is approved |
+| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                                               |
+| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Complete Step 2 only after Leonardo approves its exact plan |
 
 ## Step 01 — S01 package baseline and basic local start page
 

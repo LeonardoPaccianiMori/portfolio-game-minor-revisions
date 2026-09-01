@@ -1,6 +1,6 @@
 # S14 — Specification Audit and Gate Packet
 
-Status: **documented; Gate 1 approved on 2026-09-01; Step 1 not approved; no implementation authorized**
+Status: **documented; Gate 1 approved and Step 1 accepted on 2026-09-01; Step 2 not approved**
 
 ## Purpose and authority
 
@@ -189,18 +189,19 @@ ready.
 
 The S00–S14 documentation baseline is complete and `MR-IMP-OPEN-014` is
 resolved. Leonardo approved Gate 1 on 2026-09-01 and accepted the frozen
-technical baseline. This approval authorizes no implementation.
+technical baseline. He later accepted the integrated Step-1 foundation. Step 2
+still requires its own exact plan and approval.
 
 The later approved incremental-workflow decision supersedes the original
 batch-authority columns below. Gate 1 still confirms only the frozen baseline.
-After it, Leonardo can approve only the exact Step-1 plan. Steps 31, 53, and 70
-are the slice, fallback, and complete local-game acceptance milestones. Each
-intermediate step needs a separate plan and approval.
+After it, Leonardo can approve only one exact next-step plan. Steps 31, 53, and
+70 are the slice, fallback, and complete local-game acceptance milestones.
+Each intermediate step needs a separate plan and approval.
 
 | Gate                             | Required prior acceptance                               | Authority if Leonardo separately approves it                               | Current state                   |
 | -------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------- |
 | Gate 1 — Technical baseline      | Complete S00–S14 audit with no blocker                  | Confirms the frozen technical baseline only                                | Approved on 2026-09-01          |
-| Incremental implementation start | Gate 1 approved                                         | An exact Step-1 plan can be proposed; only its approval authorizes Step 1  | Blocked pending Step-1 approval |
+| Incremental implementation start | Gate 1 approved and Step 1 accepted                     | An exact Step-2 plan can be proposed; only its approval authorizes Step 2  | Blocked pending Step-2 approval |
 | Vertical-slice acceptance        | Accepted Steps 1–30, including applicable S12 evidence  | Step 31 evaluates and can accept the slice; it does not approve Step 32    | Blocked; no slice exists        |
 | Fallback acceptance              | Accepted Steps 32–52, including applicable S12 evidence | Step 53 evaluates and can accept the fallback; it does not approve Step 54 | Blocked; no fallback exists     |
 | Full local-game acceptance       | Accepted Steps 54–69, including applicable S12 evidence | Step 70 evaluates and can accept the complete local game                   | Blocked; no full game exists    |
@@ -213,5 +214,60 @@ deployment, portfolio publication, or unsupported completion claim.
 
 S14 adds no S15 block. All Sxx decision groups are complete. The incremental
 roadmap is later governance documentation, not S15. Leonardo separately
-approved Gate 1 on 2026-09-01. The next action is preparation of the exact
-Step-1 plan; Gate 1 does not approve that plan.
+approved Gate 1 and accepted Step 1 on 2026-09-01. The next action is
+preparation of the exact Step-2 plan; no earlier decision or frozen contract
+changes without the approved evidence-led revision procedure.
+
+## Development-governance amendment
+
+Leonardo approved the 2026-09-01 development-governance amendment. It confirms
+that every prior project decision is revisable or removable when development
+evidence supports a change. The primary agent must prepare evidence and impact
+analysis, obtain Leonardo's approval, preserve the former decision as
+`superseded`, update all affected authority and traceability, and keep accepted
+results as historical evidence.
+
+The amendment also improves review cadence. The primary agent completes one
+full audit before independent review and reconciles control records before the
+reviewer sees the packet. The reviewer reports all findings from that complete
+packet in one result. A fresh independent review follows a technical or
+material-governance correction; narrow status, reference, prose, or mechanical
+formatting corrections use focused primary validation unless they change
+authority, evidence meaning, or a technical claim that cannot be mechanically
+checked.
+
+### First complete amendment review
+
+On 2026-09-01, a fresh-context, read-only independent reviewer used OpenAI
+`gpt-5.6-sol` with `xhigh` reasoning to review the complete approved
+14-document amendment packet and the current accepted state at
+`d5912ce90493ecb451dfa750728bdfab479e1e2c`. It found no blocker. It reported
+three required correction groups in one result: stale records that treated
+Step 1 as unaccepted, incomplete supersession state for the earlier Gate-1 and
+Step-1 authority, and a review-cadence contradiction.
+
+The primary agent must correct those groups together. The cadence correction
+changes material governance, so the corrected complete packet requires one
+fresh independent review. No separate reviewer round is needed for the
+record-only corrections that do not change authority, evidence meaning, or a
+non-mechanical technical claim.
+
+### Corrected-packet independent review
+
+On 2026-09-01, a second fresh-context, read-only independent reviewer used
+OpenAI `gpt-5.6-sol` with `xhigh` reasoning to review the corrected complete
+packet. It found no blocker or advisory issue. It required three remaining
+stale current-state corrections: the implementation contract still said Gate 1
+was pending, the status register could imply that the accepted S01 foundation
+did not exist, and the design index still treated the Step-1 plan as current
+permission.
+
+Those corrections are status and reference updates only. They do not change
+authority, evidence meaning, or a non-mechanical technical claim. The primary
+agent resolved them together with focused validation: `npm run check` and
+`git diff --check` passed, and complete diff review confirmed the approved
+scope. The cadence does not require a third independent review.
+
+Earlier audit sections preserve their original 2026-08-31 baseline-state
+findings. The gate packet and this amendment state the current implementation
+authority and governance.

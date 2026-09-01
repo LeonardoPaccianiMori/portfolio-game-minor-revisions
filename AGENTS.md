@@ -8,10 +8,10 @@ The repository has a complete S00–S14 implementation specification and an
 incremental Step 0–70 development roadmap. Read
 `docs/implementation/development-status.md` for the exact resume point. Gate 1
 and the exact Step-1 plan were approved on 2026-09-01. The submitted Step-1
-foundation is not yet integrated, tested by Leonardo, or accepted. Do not
-create or change game code, package configuration, tests, production assets,
-or deployment configuration outside the current approved Step-1 cycle. Step 2
-and every later step remain unapproved; approval never carries forward.
+foundation is integrated, tested by Leonardo, and accepted. Step 2 and every
+later step remain unapproved; approval never carries forward. Do not create or
+change game code, package configuration, tests, production assets, or
+deployment configuration outside an exact approved step.
 
 ## Leonardo context and communication
 
@@ -55,6 +55,10 @@ records after S14. Do not infer a current step from conversation memory.
   plausible idea into a confirmed decision.
 - Every creative or technical choice that affects implementation must be
   written in the relevant document before code depends on it.
+- An approved Bxx, Rxx, Sxx, roadmap, or other project decision is revisable.
+  `frozen` means stable for the current approved work, not permanent. A later
+  change requires evidence, impact review, Leonardo's approval, an update to
+  every affected authoritative record, and an explicit `superseded` history.
 - Preserve a universal fictional world. Do not reproduce real people,
   institutions, or Leonardo's experiences literally.
 
@@ -68,6 +72,9 @@ records after S14. Do not infer a current step from conversation memory.
   work.
 - Workers have no authority over player-visible behaviour, shared contracts,
   dependencies, schemas, assets, accessibility meaning, or acceptance rules.
+- A worker cannot revise an earlier decision or frozen interface. The primary
+  agent first prepares the approved change packet and then gives the worker a
+  revised, bounded work order only when implementation work is needed.
 - Bounded discretion applies only to private, reversible details that preserve
   all observable behaviour and frozen contracts.
 - Measured facts need an approved method, target, and response rule. Do not
@@ -84,6 +91,8 @@ records after S14. Do not infer a current step from conversation memory.
   committed with the roadmap update.
 - Update the design index and decision log when a decision changes document
   readiness or supersedes an earlier choice.
+- Preserve an accepted result as historical evidence. A later decision changes
+  future work; it does not rewrite what Leonardo previously approved.
 - Do not silently resolve contradictions. Record them and ask Leonardo.
 - Use real commit timestamps. Do not fabricate project history.
 - Keep credentials, private employer material, and unlicensed assets out of
@@ -137,6 +146,18 @@ does not assign this history to another Leonardo project.
   that step.
 - Run technical checks and independent review before asking Leonardo to accept
   a player-visible result.
+- Complete one primary pre-review audit before assigning the independent
+  reviewer. Reconcile control records, scope, requirements, tests, privacy,
+  and current-state language in that audit.
+- Require the reviewer to report all findings from its complete packet in one
+  result. Do not create serial review rounds for isolated wording or formatting
+  issues that the primary audit could check together.
+- A code, runtime, dependency, security, privacy, accessibility, test-contract,
+  interface, or material-governance correction requires the applicable checks
+  and a fresh independent review. A narrow record-only or mechanical-formatting
+  correction receives focused primary validation and diff review; it needs a
+  further independent review only when it changes authority, evidence meaning,
+  or a technical claim that cannot be mechanically checked.
 - Start the game locally when direct review is required. Give Leonardo simple
   controls, actions, expected results, reporting guidance, and a safe recovery
   step. Leonardo does not debug code.

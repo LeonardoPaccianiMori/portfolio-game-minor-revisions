@@ -10,8 +10,11 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted**
 - Current workflow state: `accepted on 2026-09-01; the reviewed foundation is integrated on local main and all required main-branch checks pass`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
-  mandatory delegation-table evidence are documented. The approved Step-1
-  plan authorizes only `MR-WO-WP00-001` and its stated paths and checks.
+  mandatory delegation-table evidence are documented. Earlier decisions and
+  frozen contracts are revisable through evidence, impact review, Leonardo's
+  approval, and explicit supersession. The review cadence requires one primary
+  pre-review audit and fresh review only after technical or material-governance
+  corrections.
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on

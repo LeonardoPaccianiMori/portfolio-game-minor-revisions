@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
+Status: **S00–S14 documented; Step 1 accepted; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -9,8 +9,9 @@ exact technical specification for implementation agents. It exists so that a
 new session can recover the complete state of the work without depending on
 conversation history.
 
-The current numbered design documents remain intact. This programme adds a
-separate technical layer. It does not replace, shorten, or reinterpret the
+The current numbered design documents remain authoritative until Leonardo
+approves a later evidence-led revision. This programme adds a separate
+technical layer. It does not silently replace, shorten, or reinterpret the
 creative design.
 
 ## Required outcome
@@ -52,13 +53,13 @@ conflict stops the affected work and enters `open-issues.md`.
 
 ## Decision classes
 
-| Class                             | Meaning                                                                                                                                           | Change rule                                                                                 |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Locked design                     | Creative intent, game behaviour, content, balance, visual identity, accessibility meaning, and failure meaning                                    | Change only after Leonardo approves an update to the authoritative design document.         |
-| Locked technical contract         | Shared interface, schema, dependency, data owner, state transition, algorithm with observable effects, coordinate contract, or acceptance fixture | Change only through impact review, updated consumers and tests, and Leonardo's approval.    |
-| Bounded implementation discretion | Private and reversible implementation detail with no contract or observable effect                                                                | A worker may choose it and must record a material choice in its contribution record.        |
-| Measured fact                     | Performance, browser behaviour, build size, play quality, or another result that cannot exist before execution                                    | Define the method, target, and response rule now; record the result only after measurement. |
-| Open issue                        | Missing, conflicting, or undecided material information                                                                                           | Stop dependent work and resolve the registered issue.                                       |
+| Class                             | Meaning                                                                                                                                           | Change rule                                                                                                     |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Current approved design           | Creative intent, game behaviour, content, balance, visual identity, accessibility meaning, and failure meaning                                    | Revise only after evidence, impact review, and Leonardo's approval update the authoritative design document.    |
+| Current frozen technical contract | Shared interface, schema, dependency, data owner, state transition, algorithm with observable effects, coordinate contract, or acceptance fixture | Revise only through impact review, updated consumers and tests, Leonardo's approval, and explicit supersession. |
+| Bounded implementation discretion | Private and reversible implementation detail with no contract or observable effect                                                                | A worker may choose it and must record a material choice in its contribution record.                            |
+| Measured fact                     | Performance, browser behaviour, build size, play quality, or another result that cannot exist before execution                                    | Define the method, target, and response rule now; record the result only after measurement.                     |
+| Open issue                        | Missing, conflicting, or undecided material information                                                                                           | Stop dependent work and resolve the registered issue.                                                           |
 
 ## Programme sequence and gates
 
@@ -228,7 +229,6 @@ keys. This prevents drift between two prose sources.
 ## Current next action
 
 S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1 and
-the exact Step-1 plan on 2026-09-01. Create only the named Step-1 control,
-worktree, S01 package, basic start-page, and foundation-test paths after the
-required local environment verification. Do not create a Step-2-or-later
-runtime, content, asset, licence, remote, deployment, or public-action path.
+accepted Step 1 on 2026-09-01. Prepare only the exact Step-2 plan and wait for
+Leonardo's separate approval. Do not create a Step-2-or-later runtime,
+content, asset, licence, remote, deployment, or public-action path.

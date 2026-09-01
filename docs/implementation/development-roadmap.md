@@ -1,6 +1,6 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
+Status: **workflow documented; Step 0 complete; Gate 1 approved and Step 1 accepted on 2026-09-01; Step 2 is not approved**
 
 Last updated: 2026-09-01
 
@@ -9,7 +9,8 @@ Last updated: 2026-09-01
 This roadmap divides local development of the complete _Minor Revisions_ game
 into 70 small implementation and evaluation steps after Step 0. It replaces a
 one-shot vertical-slice build with frequent Leonardo reviews. It does not
-change the approved game design or frozen `MR-IF-001`–`MR-IF-015` interfaces.
+silently change the approved game design or frozen `MR-IF-001`–`MR-IF-015`
+interfaces; later evidence-led revisions follow the approved governance rule.
 
 The final target remains the complete approximately three-hour game. Step 70
 means that the complete game works locally and Leonardo has accepted it.
@@ -39,6 +40,10 @@ the order and size of implementation increments.
 - A repair inside an approved step is allowed only when it stays inside that
   step's approved purpose and files. A material scope or contract change needs
   a new plan and approval.
+- Any earlier Bxx, Rxx, Sxx, roadmap, interface, or other project decision can
+  be revised or removed with evidence, impact review, Leonardo's approval,
+  authoritative-record updates, and explicit supersession. An accepted step
+  remains historical evidence.
 
 ## Standard step cycle
 
@@ -54,18 +59,22 @@ Every Step 1–70 uses this cycle, including evaluation-only Steps 31, 53, and
    spawned subagent; do not rely on inherited defaults.
 5. Implement only the approved scope in the controlled local Git workflow.
 6. Run the step's automated, static, browser, and integration checks.
-7. Obtain independent read-only review and correct every blocker or required
-   finding. Repeat the applicable checks and independent review after every
-   correction. A corrected result cannot continue on evidence from an older
-   review.
+7. Complete a primary pre-review audit, obtain one independent read-only review,
+   and correct every blocker or required finding. The reviewer reports all
+   findings from its complete packet in one result. Repeat applicable checks
+   and obtain a fresh review after a technical or material-governance
+   correction. A narrow record-only or mechanical-formatting correction uses
+   focused primary validation unless it changes authority, evidence meaning, or
+   a technical claim that cannot be mechanically checked.
 8. Integrate the reviewed result on local `main` and run the applicable full
    verification.
 9. Start the game locally when the step has a player-visible result. Give
    Leonardo one plain-language test packet with the objective, controls,
    actions, expected results, what to report, and a safe stop or recovery step.
-10. Correct approved-scope defects. After every correction, repeat the
-    applicable checks, obtain a new independent review, and repeat Leonardo
-    testing until the result is acceptable.
+10. Correct approved-scope defects. After a technical or player-visible
+    correction, repeat applicable checks, obtain a fresh independent review,
+    and repeat Leonardo testing until the result is acceptable. Record-only and
+    mechanical-formatting corrections use the narrower review rule in step 7.
 11. Leonardo explicitly accepts the step. Technical checks cannot replace his
     player-experience judgment.
 12. Update `development-status.md`, `step-acceptance-log.md`,
@@ -83,6 +92,26 @@ uncommitted conversation state.
 For a documentation-only, automated-only, or invisible foundation step,
 Leonardo's check can be a short result review instead of direct play. The step
 plan must say this before approval.
+
+## Decision revision and review cadence
+
+Any earlier project decision can be revised or removed after evidence emerges.
+The primary agent records the old and proposed decision, reason, impact on
+interfaces, consumers, saves, tests, content, assets, accessibility, privacy,
+and roadmap, then obtains Leonardo's approval before changing authoritative
+records or dependent work. The prior decision remains visible as
+`superseded`; an accepted step remains historical evidence.
+
+Before each independent review, the primary agent runs one complete audit of
+the approved scope, current records, requirements, tests, privacy, and claims.
+The reviewer receives the reconciled complete packet and reports all findings
+at once. Full fresh review is required after a correction affecting code,
+runtime behaviour, dependencies, security, privacy, accessibility,
+test-contracts, interfaces, or material governance. Narrow status, reference,
+prose, or formatting corrections that do not change authority, evidence
+meaning, or a technical claim that cannot be mechanically checked use focused
+primary validation and complete diff review. A correction that changes any of
+those things requires a full fresh independent review.
 
 ## Responsibility boundary
 
@@ -104,8 +133,11 @@ coverage, or context isolation. It is not useful merely because an agent is
 available. The primary agent owns the plan, Leonardo communication, decisions,
 integration, validation, and durable records. It can use the controlled worker
 for one non-overlapping implementation assignment, the fresh-context reviewer
-for every controlled change, and the asset researcher before Leonardo selects a
-candidate. Each receives a focused source packet rather than the complete chat.
+for each approved implementation result and technical or material-governance
+correction, and the asset researcher before Leonardo selects a candidate.
+Record-only and mechanical-formatting corrections follow the narrower review
+cadence above. Each receives a focused source packet rather than the complete
+chat.
 
 The exact Sol, Terra, Luna, reasoning-effort, unavailable-model, `max`, and
 `ultra` rules are authoritative in S13. A step may run at most two subagents
@@ -236,9 +268,9 @@ Three terms in the list have these plain-language meanings:
 ## Current position
 
 Step 0 is complete in the commit that contains this roadmap. The S00–S14
-documents and frozen interfaces are complete. Leonardo approved Gate 1 and the
-exact Step-1 plan on 2026-09-01. Step 1 alone may now perform the approved S01
-environment preparation, `MR-WP-00` package baseline, basic local start page,
-foundation tests, and required checks. Step 1 remains unaccepted. Step 2 and
-later work, asset research, a remote, licence, deployment, and public action
-remain blocked.
+documents and frozen interfaces are complete. Leonardo approved Gate 1 and
+accepted the exact Step-1 S01 foundation on 2026-09-01. That accepted result
+contains only the package baseline, basic local start page, foundation tests,
+and their required checks. Step 2 and later work, asset research, a remote,
+licence, deployment, and public action remain blocked until Leonardo approves
+the exact Step-2 plan.

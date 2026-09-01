@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; no implementation authorized**
+Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; Step 1 accepted; later interface changes require approved supersession**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -17,7 +17,11 @@ package. File-local helpers do not belong here.
 | Superseded  | A later approved version replaced it; history and migration effects remain visible.                             |
 
 Changing a candidate or frozen interface requires an affected-consumer list,
-compatibility and migration review, updated fixtures, and Leonardo's approval.
+compatibility and migration review, updated fixtures and traceability, and
+Leonardo's approval. `Frozen` means stable for the current approved work; it
+does not make an interface permanent. A later approved version supersedes the
+earlier version, preserves its history, and governs future work only. An
+accepted result remains historical evidence and is not rewritten.
 
 ## Planned interfaces
 
@@ -52,8 +56,9 @@ results. The freeze commit is the Git commit that contains this register and
 not exist now.
 
 No implementation worker can use frozen status as permission to create a
-signature or source file. Gate 1 was approved on 2026-09-01; the exact Step-1
-plan and its separate approval remain required.
+signature or source file. Gate 1 was approved and Step 1 was accepted on
+2026-09-01. Step 2 still requires its own exact plan and separate approval.
 A change to any frozen interface requires an affected-consumer list,
 compatibility and migration review, updated fixtures and traceability, and
-Leonardo's approval.
+Leonardo's approval. The later approved interface version supersedes the
+earlier version and applies to future work only.
