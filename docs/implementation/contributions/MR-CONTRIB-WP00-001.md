@@ -145,6 +145,13 @@ issue. It required README to stop saying that completed final-review
 corrections remain in progress. This primary-owned wording correction changes
 no authority, technical behaviour, or worker path ownership.
 
+The primary agent corrected only README's live-status sentence. Repeated
+combined validation then passed repository formatting, typecheck, lint, all
+three foundation tests, coverage, production build, Chromium, Firefox, and
+WebKit flows, the high-severity audit with zero vulnerabilities, external-
+request inspection, and the Git whitespace check. The validation worktree
+remained clean. Only fresh independent re-review remains before integration.
+
 The latest fresh OpenAI `gpt-5.6-sol` review using `xhigh` reasoning confirmed
 the live-boundary and closed-object findings are resolved. It found no blocker
 or advisory issue. It required three prohibited test paths in the primary-
@@ -234,8 +241,7 @@ system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration remains pending until the README live-status correction passes
-repeated checks and fresh independent re-review.
+Integration remains pending only until fresh independent re-review passes.
 
 ## Leonardo decision
 
