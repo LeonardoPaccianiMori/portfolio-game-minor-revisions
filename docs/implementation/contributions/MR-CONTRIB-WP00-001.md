@@ -146,6 +146,14 @@ owned work order to follow the frozen S13 alphabetical sort rule. This
 mechanical correction changes no authority, technical behaviour, or worker
 path ownership.
 
+The primary agent sorted only the three prohibited work-order test paths.
+Repeated combined validation then passed repository formatting, typecheck,
+lint, all three foundation tests, coverage, production build, Chromium,
+Firefox, and WebKit flows, the high-severity audit with zero vulnerabilities,
+external-request inspection, and the Git whitespace check. The validation
+worktree remained clean. Only fresh independent re-review remains before
+integration.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -220,8 +228,7 @@ system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration remains pending until the mechanical work-order correction passes
-repeated checks and fresh independent re-review.
+Integration remains pending only until fresh independent re-review passes.
 
 ## Leonardo decision
 
