@@ -67,7 +67,7 @@ const indexedDbEnvironment = (
     deleteThrows?: boolean;
   } = {},
 ) => {
-  const openRequest = request();
+  const openRequests: ControlledRequest[] = [];
   const deleteRequests: ControlledRequest[] = [];
   const openedNames: string[] = [];
   const deletedNames: string[] = [];
@@ -77,6 +77,8 @@ const indexedDbEnvironment = (
       if (options.openThrows === true) {
         throw new Error('Controlled open failure.');
       }
+      const openRequest = request();
+      openRequests.push(openRequest);
       return openRequest;
     },
     deleteDatabase: (name: string) => {
@@ -89,7 +91,22 @@ const indexedDbEnvironment = (
       return deleteRequest;
     },
   } as unknown as IDBFactory;
-  return { factory, openRequest, deleteRequests, openedNames, deletedNames };
+  return {
+    factory,
+    get openRequest() {
+      return openRequests[0]!;
+    },
+    openRequests,
+    deleteRequests,
+    openedNames,
+    deletedNames,
+  };
+};
+
+const flushMicrotasks = async (): Promise<void> => {
+  for (let index = 0; index < 8; index += 1) {
+    await Promise.resolve();
+  }
 };
 
 const lowLevelAdapters = (
@@ -279,6 +296,9 @@ describe('MR-S11-CMP-001 compatibility', () => {
 
   it('opens, closes, and deletes the exact empty IndexedDB probe before ready', async () => {
     const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
     let closes = 0;
     const handle = {
       close: () => {
@@ -287,9 +307,6 @@ describe('MR-S11-CMP-001 compatibility', () => {
       objectStoreNames: { length: 0 },
     } as unknown as IDBDatabase;
     Object.defineProperty(environment.openRequest, 'result', { value: handle });
-    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
-    );
 
     fire(environment.openRequest, 'upgradeneeded');
     fire(environment.openRequest, 'success');
@@ -302,43 +319,106 @@ describe('MR-S11-CMP-001 compatibility', () => {
     expect(environment.deletedNames).toEqual(['minor-revisions-capability-probe']);
   });
 
-  it.each(['blocked', 'error'] as const)(
-    'cleans and settles an IndexedDB open %s result',
-    async (outcome) => {
-      const environment = indexedDbEnvironment();
-      const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-        new AbortController().signal,
-      );
+  it('fails, closes, and deletes a nonempty reserved probe without inspecting stores', async () => {
+    const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
+    let closes = 0;
+    let storeInspections = 0;
+    const handle = {
+      close: () => {
+        closes += 1;
+      },
+      objectStoreNames: { length: 1 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(handle, 'transaction', {
+      get: () => {
+        storeInspections += 1;
+        throw new Error('Object stores must not be inspected.');
+      },
+    });
+    Object.defineProperty(environment.openRequest, 'result', { value: handle });
 
-      fire(environment.openRequest, outcome);
-      fire(environment.deleteRequests[0]!, 'success');
+    fire(environment.openRequest, 'success');
+    fire(environment.deleteRequests[0]!, 'success');
 
-      await expect(result).resolves.toEqual({
-        status: 'failed',
-        reasonCode: 'INDEXED_DB_FAILED',
-      });
-    },
-  );
+    await expect(result).resolves.toEqual({
+      status: 'failed',
+      reasonCode: 'INDEXED_DB_FAILED',
+    });
+    expect(closes).toBe(1);
+    expect(storeInspections).toBe(0);
+    expect(environment.openedNames).toEqual(['minor-revisions-capability-probe']);
+    expect(environment.deletedNames).toEqual(['minor-revisions-capability-probe']);
+  });
 
-  it.each(['blocked', 'error'] as const)(
-    'settles an IndexedDB deletion %s result as failed',
-    async (outcome) => {
-      const environment = indexedDbEnvironment();
-      const handle = { close: () => undefined } as unknown as IDBDatabase;
-      Object.defineProperty(environment.openRequest, 'result', { value: handle });
-      const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-        new AbortController().signal,
-      );
+  it('keeps a blocked IndexedDB open pending until a terminal error and deletion', async () => {
+    const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
+    let settled = false;
+    void result.then(() => {
+      settled = true;
+    });
 
-      fire(environment.openRequest, 'success');
-      fire(environment.deleteRequests[0]!, outcome);
+    fire(environment.openRequest, 'blocked');
+    await flushMicrotasks();
+    expect(settled).toBe(false);
+    expect(environment.deleteRequests).toHaveLength(0);
 
-      await expect(result).resolves.toEqual({
-        status: 'failed',
-        reasonCode: 'INDEXED_DB_FAILED',
-      });
-    },
-  );
+    fire(environment.openRequest, 'error');
+    fire(environment.deleteRequests[0]!, 'success');
+    await expect(result).resolves.toEqual({
+      status: 'failed',
+      reasonCode: 'INDEXED_DB_FAILED',
+    });
+  });
+
+  it('keeps a blocked IndexedDB deletion pending until terminal success', async () => {
+    const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
+    const handle = {
+      close: () => undefined,
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(environment.openRequest, 'result', { value: handle });
+    let settled = false;
+    void result.then(() => {
+      settled = true;
+    });
+
+    fire(environment.openRequest, 'success');
+    fire(environment.deleteRequests[0]!, 'blocked');
+    await flushMicrotasks();
+    expect(settled).toBe(false);
+
+    fire(environment.deleteRequests[0]!, 'success');
+    await expect(result).resolves.toEqual({ status: 'ready', reasonCode: null });
+  });
+
+  it('maps a terminal IndexedDB deletion error to typed failure', async () => {
+    const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
+    const handle = {
+      close: () => undefined,
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(environment.openRequest, 'result', { value: handle });
+
+    fire(environment.openRequest, 'success');
+    fire(environment.deleteRequests[0]!, 'error');
+
+    await expect(result).resolves.toEqual({
+      status: 'failed',
+      reasonCode: 'INDEXED_DB_FAILED',
+    });
+  });
 
   it('settles thrown open and deletion operations through the typed failure path', async () => {
     const openFailure = indexedDbEnvironment({ openThrows: true });
@@ -349,63 +429,123 @@ describe('MR-S11-CMP-001 compatibility', () => {
     await expect(openResult).resolves.toMatchObject({ status: 'failed' });
 
     const deleteFailure = indexedDbEnvironment({ deleteThrows: true });
-    const handle = { close: () => undefined } as unknown as IDBDatabase;
-    Object.defineProperty(deleteFailure.openRequest, 'result', { value: handle });
     const deleteResult = lowLevelAdapters(deleteFailure.factory).probeIndexedDb(
       new AbortController().signal,
     );
+    const handle = {
+      close: () => undefined,
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(deleteFailure.openRequest, 'result', { value: handle });
     fire(deleteFailure.openRequest, 'success');
     await expect(deleteResult).resolves.toMatchObject({ status: 'failed' });
   });
 
-  it('settles cancellation cleanup and closes a late IndexedDB handle', async () => {
+  it('waits for terminal open and deletion events after IndexedDB cancellation', async () => {
     const environment = indexedDbEnvironment();
     const controller = new AbortController();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(controller.signal);
+    let settled = false;
+    void result.then(() => {
+      settled = true;
+    });
 
     controller.abort();
+    fire(environment.openRequest, 'blocked');
+    await flushMicrotasks();
+    expect(settled).toBe(false);
+    expect(environment.deleteRequests).toHaveLength(0);
+
+    let closes = 0;
+    const lateHandle = {
+      close: () => {
+        closes += 1;
+      },
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(environment.openRequest, 'result', { value: lateHandle });
+    fire(environment.openRequest, 'success');
+    expect(closes).toBe(1);
+    fire(environment.deleteRequests[0]!, 'blocked');
+    await flushMicrotasks();
+    expect(settled).toBe(false);
+
     fire(environment.deleteRequests[0]!, 'success');
     await expect(result).resolves.toEqual({
       status: 'failed',
       reasonCode: 'INDEXED_DB_FAILED',
     });
+  });
 
-    let closes = 0;
-    const lateHandle = { close: () => (closes += 1) } as unknown as IDBDatabase;
-    Object.defineProperty(environment.openRequest, 'result', { value: lateHandle });
-    fire(environment.openRequest, 'success');
-    expect(closes).toBe(1);
+  it('keeps retry gated until old IndexedDB cleanup cannot affect the new probe', async () => {
+    const environment = indexedDbEnvironment();
+    const checker = createCompatibilityCheckerForTests(lowLevelAdapters(environment.factory));
+    const first = checker.check();
+    await flushMicrotasks();
+    expect(environment.openRequests).toHaveLength(1);
+
+    const cancellation = checker.cancel();
+    fire(environment.openRequests[0]!, 'blocked');
+    await expect(checker.check()).resolves.toEqual({ kind: 'alreadyRunning' });
+
+    let oldCloses = 0;
+    const oldHandle = {
+      close: () => {
+        oldCloses += 1;
+      },
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(environment.openRequests[0]!, 'result', { value: oldHandle });
+    fire(environment.openRequests[0]!, 'success');
+    fire(environment.deleteRequests[0]!, 'blocked');
+    await expect(checker.check()).resolves.toEqual({ kind: 'alreadyRunning' });
+
+    fire(environment.deleteRequests[0]!, 'success');
+    await cancellation;
+    await expect(first).resolves.toEqual({ kind: 'cancelled' });
+
+    const retry = checker.check();
+    await flushMicrotasks();
+    expect(environment.openRequests).toHaveLength(2);
+    fire(environment.openRequests[0]!, 'success');
+    fire(environment.openRequests[0]!, 'error');
+    fire(environment.deleteRequests[0]!, 'success');
+    expect(environment.deleteRequests).toHaveLength(1);
+
+    let retryCloses = 0;
+    const retryHandle = {
+      close: () => {
+        retryCloses += 1;
+      },
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
+    Object.defineProperty(environment.openRequests[1]!, 'result', { value: retryHandle });
+    fire(environment.openRequests[1]!, 'success');
+    fire(environment.deleteRequests[1]!, 'success');
+
+    await expect(retry).resolves.toMatchObject({ kind: 'complete' });
+    expect(oldCloses).toBe(1);
+    expect(retryCloses).toBe(1);
+    expect(environment.openedNames).toEqual([
+      'minor-revisions-capability-probe',
+      'minor-revisions-capability-probe',
+    ]);
     expect(environment.deletedNames).toEqual([
       'minor-revisions-capability-probe',
       'minor-revisions-capability-probe',
     ]);
   });
 
-  it('closes an IndexedDB handle that arrives while cancellation deletion is active', async () => {
-    const environment = indexedDbEnvironment();
-    const controller = new AbortController();
-    const result = lowLevelAdapters(environment.factory).probeIndexedDb(controller.signal);
-    controller.abort();
-
-    let closes = 0;
-    const handle = { close: () => (closes += 1) } as unknown as IDBDatabase;
-    Object.defineProperty(environment.openRequest, 'result', { value: handle });
-    fire(environment.openRequest, 'success');
-    expect(closes).toBe(1);
-    fire(environment.deleteRequests[0]!, 'success');
-    fire(environment.deleteRequests[0]!, 'success');
-    await expect(result).resolves.toMatchObject({ status: 'failed' });
-  });
-
-  it('settles initially cancelled and missing-open-result probes through deletion', async () => {
+  it('settles initially cancelled and missing-open-result probes as typed failures', async () => {
     const initiallyCancelled = indexedDbEnvironment();
     const controller = new AbortController();
     controller.abort();
     const cancelledResult = lowLevelAdapters(initiallyCancelled.factory).probeIndexedDb(
       controller.signal,
     );
-    fire(initiallyCancelled.deleteRequests[0]!, 'success');
     await expect(cancelledResult).resolves.toMatchObject({ status: 'failed' });
+    expect(initiallyCancelled.openedNames).toHaveLength(0);
+    expect(initiallyCancelled.deletedNames).toHaveLength(0);
 
     const missingResult = indexedDbEnvironment();
     const result = lowLevelAdapters(missingResult.factory).probeIndexedDb(
@@ -416,18 +556,26 @@ describe('MR-S11-CMP-001 compatibility', () => {
     await expect(result).resolves.toMatchObject({ status: 'failed' });
   });
 
-  it('contains deletion failure after an already-settled late open', async () => {
-    const environment = indexedDbEnvironment({ deleteThrows: true });
-    const controller = new AbortController();
-    const result = lowLevelAdapters(environment.factory).probeIndexedDb(controller.signal);
-    controller.abort();
-    await expect(result).resolves.toMatchObject({ status: 'failed' });
-
-    let closes = 0;
-    const handle = { close: () => (closes += 1) } as unknown as IDBDatabase;
+  it('contains an IndexedDB close failure and still deletes the reserved probe', async () => {
+    const environment = indexedDbEnvironment();
+    const result = lowLevelAdapters(environment.factory).probeIndexedDb(
+      new AbortController().signal,
+    );
+    const handle = {
+      close: () => {
+        throw new Error('Controlled close failure.');
+      },
+      objectStoreNames: { length: 0 },
+    } as unknown as IDBDatabase;
     Object.defineProperty(environment.openRequest, 'result', { value: handle });
     fire(environment.openRequest, 'success');
-    expect(closes).toBe(1);
+    fire(environment.deleteRequests[0]!, 'success');
+
+    await expect(result).resolves.toEqual({
+      status: 'failed',
+      reasonCode: 'INDEXED_DB_FAILED',
+    });
+    expect(environment.deletedNames).toEqual(['minor-revisions-capability-probe']);
   });
 
   it('maps a thrown high-level probe to the stable capability failed code', async () => {

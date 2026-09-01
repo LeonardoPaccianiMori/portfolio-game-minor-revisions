@@ -82,23 +82,27 @@ const probeIndexedDb = (
   if (factory === undefined) {
     return Promise.resolve(unavailable('INDEXED_DB_UNAVAILABLE'));
   }
+  if (signal.aborted) {
+    return Promise.resolve(failed('INDEXED_DB_FAILED'));
+  }
 
   return new Promise<ProbeResult>((resolve) => {
     let openRequest: IDBOpenDBRequest | undefined;
     let handle: IDBDatabase | undefined;
-    let cleanupActive = false;
+    let cancelled = false;
+    let openTerminal = false;
+    let deleteStarted = false;
+    let deleteTerminal = false;
     let settled = false;
 
-    const closeHandle = (): void => {
-      handle?.close();
-      handle = undefined;
-    };
-
-    const deleteAfterLateOpen = (): void => {
+    const closeHandle = (): boolean => {
       try {
-        factory.deleteDatabase(PROBE_DATABASE_NAME);
+        handle?.close();
+        return true;
       } catch {
-        // The accepted result is already settled and no handle remains owned.
+        return false;
+      } finally {
+        handle = undefined;
       }
     };
 
@@ -111,12 +115,12 @@ const probeIndexedDb = (
       resolve(result);
     };
 
-    const cleanup = (result: ProbeResult): void => {
-      closeHandle();
-      if (cleanupActive || settled) {
+    const deleteProbe = (acceptedResult: ProbeResult): void => {
+      if (deleteStarted || settled) {
         return;
       }
-      cleanupActive = true;
+      deleteStarted = true;
+      const result = closeHandle() ? acceptedResult : failed('INDEXED_DB_FAILED');
       let deleteRequest: IDBOpenDBRequest;
       try {
         deleteRequest = factory.deleteDatabase(PROBE_DATABASE_NAME);
@@ -124,46 +128,71 @@ const probeIndexedDb = (
         settle(failed('INDEXED_DB_FAILED'));
         return;
       }
-      deleteRequest.onsuccess = () => settle(result);
-      deleteRequest.onerror = () => settle(failed('INDEXED_DB_FAILED'));
-      deleteRequest.onblocked = () => settle(failed('INDEXED_DB_FAILED'));
+      deleteRequest.onsuccess = () => {
+        if (deleteTerminal) {
+          return;
+        }
+        deleteTerminal = true;
+        settle(cancelled ? failed('INDEXED_DB_FAILED') : result);
+      };
+      deleteRequest.onerror = () => {
+        if (deleteTerminal) {
+          return;
+        }
+        deleteTerminal = true;
+        settle(failed('INDEXED_DB_FAILED'));
+      };
+      deleteRequest.onblocked = () => {
+        // A blocked request can still reach success or error. Keep retry unavailable.
+      };
     };
 
     function cancel(): void {
-      cleanup(failed('INDEXED_DB_FAILED'));
+      cancelled = true;
     }
 
     signal.addEventListener('abort', cancel, { once: true });
-    if (signal.aborted) {
-      cancel();
-      return;
-    }
 
     try {
       openRequest = factory.open(PROBE_DATABASE_NAME);
     } catch {
-      cleanup(failed('INDEXED_DB_FAILED'));
+      openTerminal = true;
+      deleteProbe(failed('INDEXED_DB_FAILED'));
       return;
     }
 
     openRequest.onupgradeneeded = () => {
       // The probe database stays empty. No object store is permitted here.
     };
-    openRequest.onblocked = () => cleanup(failed('INDEXED_DB_FAILED'));
-    openRequest.onerror = () => cleanup(failed('INDEXED_DB_FAILED'));
+    openRequest.onblocked = () => {
+      // A blocked request can still reach success or error. Keep retry unavailable.
+    };
+    openRequest.onerror = () => {
+      if (openTerminal) {
+        return;
+      }
+      openTerminal = true;
+      deleteProbe(failed('INDEXED_DB_FAILED'));
+    };
     openRequest.onsuccess = () => {
-      const opened = openRequest?.result;
-      if (opened === undefined) {
-        cleanup(failed('INDEXED_DB_FAILED'));
+      if (openTerminal) {
         return;
       }
-      if (settled) {
-        opened.close();
-        deleteAfterLateOpen();
-        return;
+      openTerminal = true;
+
+      let result = failed('INDEXED_DB_FAILED');
+      try {
+        const opened = openRequest?.result;
+        if (opened !== undefined) {
+          handle = opened;
+          if (!cancelled && opened.objectStoreNames.length === 0) {
+            result = ready();
+          }
+        }
+      } catch {
+        result = failed('INDEXED_DB_FAILED');
       }
-      handle = opened;
-      cleanup(signal.aborted ? failed('INDEXED_DB_FAILED') : ready());
+      deleteProbe(result);
     };
   });
 };
