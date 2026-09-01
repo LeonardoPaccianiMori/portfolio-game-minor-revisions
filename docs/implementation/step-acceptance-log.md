@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 blocked; no implementation step accepted**
+Status: **Step 1 correcting; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -26,11 +26,11 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                         | Notes                                                                   |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                              | Records documentation only; no implementation is approved.              |
-|    1 | Blocked                 | 2026-09-01    | All approved-scope corrections pass typecheck, lint, two tests, and build; required combined check fails on 57 pre-existing out-of-scope tracked files                                           | Not yet available | Not yet available                                                                                   | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
-| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                              | Each step needs a separate approved plan and accepted dependency.       |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                 | Notes                                                               |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                      | Records documentation only; no implementation is approved.          |
+|    1 | Correcting              | 2026-09-01    | The 58-file formatting recovery and combined checks passed; fresh final review requires one wider baseline test and current primary-owned records                                                | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, and correction checkpoints | Leonardo approved the final-review correction and integration plan. |
+| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                      | Each step needs a separate approved plan and accepted dependency.   |
 
 ## Gate decisions
 
@@ -47,6 +47,12 @@ Leonardo approved this exact Step-1 plan on 2026-09-01. It permits only
 preparation, the required local checks, independent review, integration, and
 the local page test. It does not authorize Step 2, a source directory, content,
 assets, a remote, a licence, deployment, or public action.
+
+Leonardo approved the separate 58-file formatting recovery and then approved
+the final-review correction and integration plan on 2026-09-01. The current
+correction permits only the named foundation test, README, and Step-1 control
+records, followed by repeated checks, fresh independent re-review,
+integration, and the local page test.
 
 ### Leonardo contribution
 
@@ -116,7 +122,20 @@ remaining baseline-test and acceptance-record corrections. The worker
 corrected only the baseline test in
 `0323ec7151bee5551d74866df5200b40990394c9`; the primary Codex agent corrected
 the acceptance record separately. Fresh final re-review passed with no blocker,
-required, or advisory finding. The formatting block remains unchanged.
+required, or advisory finding. At that checkpoint, the formatting block
+remained unchanged.
+
+The primary agent mechanically formatted the exact 58 approved documentation
+and manifest files with Prettier `3.9.6` and committed the result as
+`9faf211`. Combined validation with the three worker commits then passed the
+exact Node and npm checks, two foundation tests, production build, Chromium,
+Firefox, and WebKit page flows, high-severity audit, production and external-
+request inspections, and `git diff --check`. A fresh OpenAI `gpt-5.6-sol`
+review using `xhigh` reasoning found no game, scope, dependency, privacy,
+accessibility, asset, network, creative, or shared-contract issue. It required
+the Node-only baseline test to cover the remaining frozen configuration and
+required README and control records to describe the current state. Leonardo
+approved that correction and integration plan on 2026-09-01.
 
 ### Acceptance decision
 
@@ -127,8 +146,8 @@ Leonardo's explicit Step-1 acceptance.
 
 No game system, Three.js scene, source directory, content, production asset,
 remote, licence, deployment, or public result exists. Step 1 cannot integrate
-or proceed to Leonardo testing until a separate approved recovery plan resolves
-the pre-existing tracked-file formatting block. Step 2 remains blocked.
+or proceed to Leonardo testing until the approved final-review correction,
+repeated checks, and fresh re-review pass. Step 2 remains blocked.
 
 ## Required accepted-step entry
 

@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-001
 type: implementation-work-order
-status: blocked
+status: active
 work_package: MR-WP-00
 sequence: 1
 created: 2026-09-01
@@ -110,6 +110,10 @@ scene, or final visual design already exists.
    external request.
 6. Run `npm run check` and `npm run build`. Report actual results and make
    small atomic commits beginning `MR-WP-00`.
+7. During the approved final-review correction cycle, extend only
+   `tests/unit/MR-WP-00/foundation.test.ts` so the Node-only test protects the
+   remaining frozen S01 configuration and lockfile-root facts. Do not change a
+   configuration file or runtime behaviour.
 
 ## Non-goals
 

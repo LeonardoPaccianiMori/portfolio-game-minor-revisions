@@ -16,10 +16,11 @@ Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate
 approved on 2026-09-01; the exact Step-1 plan approved on 2026-09-01; its
 foundation work is not yet complete**.
 
-This repository contains no game implementation result, production asset,
-package configuration, or deployment configuration yet. The approved Step-1
-work order permits only the stated S01 package baseline, basic local start
-page, and foundation tests after its required local environment checks. B10
+This repository contains no accepted game implementation result, production
+asset, or deployment configuration. The submitted Step-1 foundation contains
+only the approved S01 package baseline, basic local start page, and foundation
+tests. Its final review corrections are in progress, so it is not integrated
+or accepted. B10
 records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
@@ -130,3 +131,28 @@ No GitHub remote exists. Leonardo alone decides when to create and push a
 remote. A future public release is planned to use MIT for code and CC BY 4.0
 for Leonardo's original non-code work. No public licence file is added now.
 Every third-party asset keeps its own verified licence and attribution path.
+
+## Step-1 foundation file guide
+
+The Step-1 foundation uses these small configuration and test files:
+
+- `.gitignore` keeps generated and local-only files out of Git.
+- `.npmrc` enforces exact saved versions and the package's Node requirement.
+- `.nvmrc` records Node `24.20.0` for local version selection.
+- `.prettierignore` excludes generated output and local tool directories from
+  formatting checks.
+- `eslint.config.js` defines the JavaScript and TypeScript quality rules.
+- `index.html` is the plain local foundation page.
+- `package-lock.json` fixes the complete installed dependency tree.
+- `package.json` fixes the package versions and approved commands.
+- `playwright.config.ts` defines the three-browser local page tests.
+- `prettier.config.js` defines the repository formatting rules.
+- `tests/e2e/MR-WP-00/start-page.spec.ts` checks the page in Chromium,
+  Firefox, and WebKit without an external request.
+- `tests/unit/MR-WP-00/foundation.test.ts` checks the exact foundation
+  contract without starting a browser.
+- `tsconfig.json` defines strict TypeScript checking.
+- `vite.config.ts` defines the loopback-only local server and production
+  build.
+- `vitest.config.ts` defines the Node-only foundation test and future coverage
+  boundaries.

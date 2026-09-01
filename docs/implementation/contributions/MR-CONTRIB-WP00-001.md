@@ -102,6 +102,17 @@ It kept integration blocked on the 57-file formatting failure and found two
 remaining required corrections: extend the exact S01 baseline test and repair
 the stale acceptance-record statement. A further fresh re-review is required.
 
+After Leonardo approved the 58-file formatting recovery, the primary agent
+committed mechanical Prettier `3.9.6` output as `9faf211` and validated the
+combined documentation and three worker commits. A fresh OpenAI
+`gpt-5.6-sol` independent reviewer using `xhigh` reasoning found no blocker or
+advisory issue and found no game, scope, dependency, privacy, accessibility,
+asset, network, creative, or shared-contract problem. It required wider
+Node-only exact-baseline coverage, a plain-language README file guide, and
+current control and evidence records. Leonardo approved the correction and
+integration plan on 2026-09-01. A fresh re-review remains required after the
+corrections.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -126,15 +137,18 @@ fails only at Prettier on the same 57 pre-existing tracked files. Fresh final
 re-review passed with no blocker, required, or advisory finding; integration
 remains blocked.
 
+The formatting recovery resolved the earlier tracked-file block. The new
+approved correction cycle assigns only
+`tests/unit/MR-WP-00/foundation.test.ts` to the controlled worker and keeps
+README and all project-control records with the primary agent.
+
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
 system, content, production asset, integration, Leonardo test, or acceptance
-exists. The page is intentionally static. Local browser installation and full
-verification results exist as recorded above. The tracked-source Prettier
-exclusions were removed. The current required-check block is the 57 existing
-unowned tracked formatting differences; no integration, Leonardo test, or
-acceptance can occur until Leonardo approves a precise recovery plan.
+exists. The page is intentionally static. The formatting block is resolved.
+Integration, Leonardo testing, and acceptance remain pending until the
+approved final-review corrections pass repeated checks and fresh re-review.
 
 ## Leonardo decision
 
