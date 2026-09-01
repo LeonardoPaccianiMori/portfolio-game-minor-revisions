@@ -123,7 +123,8 @@ The worker completed only the exact baseline-test expansion in
 the primary-owned acceptance record in a separate local checkpoint. Primary
 tests, typecheck, lint, and build passed. The required combined check still
 fails only at Prettier on the same 57 pre-existing tracked files. Fresh final
-re-review is pending; integration remains blocked.
+re-review passed with no blocker, required, or advisory finding; integration
+remains blocked.
 
 ## Known limitations
 

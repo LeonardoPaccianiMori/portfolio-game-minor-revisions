@@ -115,7 +115,8 @@ the check pass. Fresh independent re-review of the repair and block found the
 remaining baseline-test and acceptance-record corrections. The worker
 corrected only the baseline test in
 `0323ec7151bee5551d74866df5200b40990394c9`; the primary Codex agent corrected
-the acceptance record separately. Fresh final re-review is pending.
+the acceptance record separately. Fresh final re-review passed with no blocker,
+required, or advisory finding. The formatting block remains unchanged.
 
 ### Acceptance decision
 
