@@ -57,8 +57,11 @@ not exist now.
 
 No implementation worker can use frozen status as permission to create a
 signature or source file. Gate 1 was approved and Step 1 was accepted on
-2026-09-01. Step 2 still requires its own exact plan and separate approval.
-A change to any frozen interface requires an affected-consumer list,
+2026-09-01. Leonardo approved the exact Step-2 plan and its later correction
+plans on the same date. The correction code and primary audit are complete,
+and fresh independent technical review passed. Integration, Leonardo testing,
+and acceptance remain pending. No frozen interface changed. A change to any
+frozen interface requires an affected-consumer list,
 compatibility and migration review, updated fixtures and traceability, and
 Leonardo's approval. The later approved interface version supersedes the
 earlier version and applies to future work only.

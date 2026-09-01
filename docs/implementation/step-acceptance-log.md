@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 accepted; Step 2 record reconciliation blocked**
+Status: **Step 1 accepted; Step 2 technical review passed; integration pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -30,14 +30,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`     | The accepted result is the static local foundation, not a game system. |
-|    2 | Blocked                 | 2026-09-01    | Technical pass: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, and review passed; one current-record reconciliation is required                                        | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Integration waits for approved record-only correction and validation.  |
+|    2 | Technical review        | 2026-09-01    | 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and approved record reconciliation passed                                                                       | Not started       | Not accepted                                                                                        | Original worker through `43f868e`; correction worker `1bb03c2` through `51adc02` | Reviewed correction is ready for local integration.                    |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                                             |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Execute only the approved complete Step-2 correction plan |
+| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                                 |
+| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | --------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Integrate only the reviewed Step-2 correction |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -277,7 +277,8 @@ requirements, checks, exclusions, Sol `high` worker, fresh Sol `xhigh`
 reviewer, sequential order, and local test boundary on the same date.
 He then approved the exact complete eight-file correction plan, including the
 one-file ownership addition and the same Sol `high` worker and fresh Sol
-`xhigh` reviewer.
+`xhigh` reviewer. After the final review, he approved the exact narrow
+record-only reconciliation before integration.
 
 ### Agent contribution
 
@@ -300,24 +301,23 @@ The worker stopped with a clean worktree. `MR-WO-WP00-003` is now blocked
 because it does not own that file. A superseding approved order is required.
 
 Leonardo approved `MR-WO-WP00-004`. The primary agent recorded the complete
-eight-file authority. Correction work has not resumed, and
-`MR-CONTRIB-WP00-004` does not exist.
+eight-file authority before correction work resumed.
 
 The primary agent then verified the clean exact branch, worktree, base, absent
 remote, Node `v24.20.0`, and npm `11.19.0`, and activated
-`MR-WO-WP00-004`. The controlled worker assignment is the next activity.
+`MR-WO-WP00-004` before the controlled worker assignment.
 
 The controlled OpenAI `gpt-5.6-sol` worker using `high` reasoning submitted
 five clean correction commits from the exact base. The eight changed paths
 match the complete work order. Its full handoff reports all required checks
-passing. The primary audit and fresh independent review remain pending.
+passing. The later complete primary audit and fresh independent review passed.
 
 The primary agent completed the one full pre-review audit. It independently
 repeated focused and complete checks, reconciled all eight paths, requirements,
 interfaces, import routes, catalogue mappings, test substitutes, privacy and
 network boundaries, limitations, and current records, and found no new blocker
-or required correction. Fresh independent review is now the only technical gate
-before integration.
+or required correction. Fresh independent review then passed the technical
+correction.
 
 ### Files and commits
 
@@ -351,8 +351,9 @@ complete correction result passed 91 unit tests with 96.48 percent lines and
 coverage, production build, and 15 browser flows across Chromium, Firefox, and
 WebKit. A separate primary
 build also passed. Production, privacy, network, package, configuration, scope,
-remote, whitespace, and clean-worktree checks passed. The independent review
-then found the unresolved authority and technical issues below.
+remote, whitespace, and clean-worktree checks passed. The final fresh review
+passed the technical correction and found only the stale current-record issue
+described below.
 
 ### Leonardo test packet
 
@@ -406,30 +407,34 @@ therefore requires a revised work order and Leonardo's approval before any
 correction starts. Corrected technical work then needs applicable checks, one
 complete primary audit, and a fresh independent review.
 
-Leonardo supplied that approval on 2026-09-01. The correction remains pending;
-approval does not show that a finding is fixed.
+Leonardo supplied that approval on 2026-09-01. At that checkpoint, the
+correction remained pending; approval alone did not show that a finding was
+fixed.
 
 Activation inspection then found the additional unowned
-`src/bootstrap/startup-screen.ts` import. No correction was attempted. The
-approved scope is insufficient to remove every S02 private cross-module import.
+`src/bootstrap/startup-screen.ts` import. At that checkpoint, no correction had
+been attempted, and the approved scope was insufficient to remove every S02
+private cross-module import.
 
 Leonardo approved the exact addition of that file in `MR-WO-WP00-004` on
-2026-09-01. The scope block is resolved. The three technical correction groups,
-checks, complete primary audit, and fresh independent review remain pending.
+2026-09-01. The scope block was resolved. At that checkpoint, the three
+technical correction groups, checks, complete primary audit, and fresh
+independent review remained pending.
 
-The worker now reports all three correction groups complete within the approved
-scope. This is a submission claim, not primary-audit or review evidence.
-
-The primary audit confirms those three corrections and all recorded limits.
-This is not independent-review, integration, Leonardo-test, or acceptance
+The worker then reported all three correction groups complete within the
+approved scope. At submission, this was a claim and not primary-audit or review
 evidence.
 
+The primary audit then confirmed those three corrections and all recorded
+limits. At that checkpoint, this was not independent-review, integration,
+Leonardo-test, or acceptance evidence.
+
 The fresh independent reviewer returned a technical pass with no blocker or
-advisory finding. Its one required finding is record-only: four authority files
-still state that Step 2 has no approved plan, and current resume text must show
-the completed correction and audit. Integration is blocked until Leonardo
-approves that exact additional record scope and focused primary validation
-passes.
+advisory finding. Its one required finding was record-only: four authority
+files still stated that Step 2 had no approved plan, and current resume text
+needed to show the completed correction and audit. Leonardo approved that exact
+additional scope, and focused primary validation passed. The reviewed
+correction is ready for integration.
 
 ### Acceptance decision
 
@@ -439,12 +444,12 @@ accept a result.
 ### Known limitations and next boundary
 
 The corrected Step-2 code exists on the isolated correction branch and passed
-the complete primary audit and fresh technical review. It is not integrated,
-tested by Leonardo, or accepted. If IndexedDB reports a
+the complete primary audit, fresh technical review, and focused record
+validation. It is not integrated, tested by Leonardo, or accepted. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
 remain pending so old cleanup cannot overlap new work. The next permitted
-action is Leonardo's decision on the exact current-record correction plan. Step
-3 and every public action remain blocked.
+action is local integration and complete main-branch validation. Step 3 and
+every public action remain blocked.
 
 ## Required accepted-step entry
 

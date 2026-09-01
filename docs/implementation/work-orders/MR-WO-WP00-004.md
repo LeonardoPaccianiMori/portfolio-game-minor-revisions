@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-004
 type: implementation-work-order
-status: blocked
+status: reviewed
 work_package: MR-WP-00
 sequence: 4
 created: 2026-09-01
@@ -30,8 +30,9 @@ behaviour and every frozen interface.
 Fresh independent review passed the complete technical correction with no
 blocker or advisory finding. It found one required current-record
 reconciliation across four primary-owned authority files outside this order's
-approved record-update list. Integration is blocked until Leonardo approves
-that exact record-only correction and focused primary validation passes.
+approved record-update list. Leonardo approved that exact record-only
+correction, and focused primary validation passed. The correction is reviewed
+and ready for integration.
 
 ## Plain-language effect
 

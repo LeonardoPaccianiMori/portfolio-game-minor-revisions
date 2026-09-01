@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-004
 type: implementation-contribution
-status: submitted
+status: reviewed
 work_order: MR-WO-WP00-004
 work_package: MR-WP-00
 created: 2026-09-01
@@ -23,7 +23,9 @@ and Vitest uses controlled timing, event, event-target, and abort substitutes.
 The worker reports that all required checks pass. The complete primary audit
 also passes with no new blocker or required correction. Fresh independent
 review passed the technical correction but found one required current-record
-reconciliation. The result is not integrated, tested by Leonardo, or accepted.
+reconciliation. Leonardo approved that exact record-only correction, and
+focused primary validation passed. The reviewed result is not integrated,
+tested by Leonardo, or accepted.
 
 ## Changed files
 
@@ -109,12 +111,11 @@ stale statements that Step 2 has no approved plan. It also required the current
 status and acceptance record to remove older execution-state sentences and
 show the corrected 91-test and 92.30-percent branch result.
 
-The reviewer found the code technically ready. Integration is blocked until
-Leonardo approves the exact additional record scope and the primary agent
-completes the applicable record-only validation. The governance amendment does
-not require a further independent review for a narrow current-state and
-reference correction that changes no authority, evidence meaning, or technical
-claim.
+The reviewer found the code technically ready. Leonardo approved the exact
+additional record scope, and the primary agent completed the applicable
+record-only validation. The governance amendment does not require a further
+independent review for this narrow current-state and reference correction
+because it changes no authority, evidence meaning, or technical claim.
 
 ## Corrections
 
@@ -137,8 +138,8 @@ real timer. All later checks passed.
   check and retry remain pending to prevent an old cleanup operation from
   overlapping a newer probe.
 - A future diagnostic code requires an approved catalogue extension.
-- Four authority records need current-state reconciliation before integration;
-  this does not change a frozen interface or the correction code.
+- The four stale authority records were reconciled before integration; this did
+  not change a frozen interface or the correction code.
 
 ## Leonardo decision
 

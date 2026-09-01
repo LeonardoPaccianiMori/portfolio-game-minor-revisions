@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Step 1 accepted; Step 2 requires a separate approved plan**
+Status: **B10 and S01–S14 documented; Step 1 accepted; Step 2 technical review passed; integration, Leonardo testing, and acceptance pending**
 
 ## Authorization gate
 
@@ -207,5 +207,9 @@ The S14 audit freezes `MR-IF-001`–`MR-IF-015` as `v1` and corrects the
 requirement traceability above. Leonardo approved Gate 1 and separately
 accepted Step 1 on 2026-09-01.
 
-Nothing in this contract authorizes Step 2 or later work until Leonardo
-separately approves that exact step plan. No approval carries to a later step.
+Leonardo approved the exact Step-2 plan and its later correction plans on
+2026-09-01. The correction code and primary audit are complete, and fresh
+independent technical review passed. Integration, Leonardo testing, and
+acceptance remain pending. Nothing in this contract authorizes Step 3 or later
+work until Leonardo separately approves that exact step plan. No approval
+carries to a later step.
