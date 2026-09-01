@@ -124,6 +124,13 @@ distinguish completed automated browser flows from absent direct support,
 performance, and play evidence. Correction, repeated checks, and another fresh
 re-review remain required before integration.
 
+The latest fresh OpenAI `gpt-5.6-sol` re-review using `xhigh` reasoning
+confirmed that the closed-object exactness finding is resolved and found no
+blocker or advisory issue. It required the live agent contract to state that
+the Step-1 plan is approved and required three boundary statements to stop
+listing completed correction and validation work as pending. Leonardo
+approved this narrow primary-owned record correction on 2026-09-01.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -198,7 +205,7 @@ system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration remains pending until the exactness correction passes repeated
+Integration remains pending until the live-boundary correction passes repeated
 checks and fresh re-review.
 
 ## Leonardo decision

@@ -6,11 +6,12 @@ These rules apply to the entire repository.
 
 The repository has a complete S00–S14 implementation specification and an
 incremental Step 0–70 development roadmap. Read
-`docs/implementation/development-status.md` for the exact resume point. Do not
-create game code, package configuration, tests, production assets, or
-deployment configuration until Leonardo approves the exact next-step plan.
-Gate 1 was approved on 2026-09-01, but Step 1 remains unapproved. Approval
-never carries to a later step.
+`docs/implementation/development-status.md` for the exact resume point. Gate 1
+and the exact Step-1 plan were approved on 2026-09-01. The submitted Step-1
+foundation is not yet integrated, tested by Leonardo, or accepted. Do not
+create or change game code, package configuration, tests, production assets,
+or deployment configuration outside the current approved Step-1 cycle. Step 2
+and every later step remain unapproved; approval never carries forward.
 
 ## Leonardo context and communication
 
