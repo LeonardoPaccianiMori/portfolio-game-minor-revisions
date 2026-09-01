@@ -7,7 +7,7 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `technical review; the README live-status correction and repeated combined validation passed and await fresh independent re-review`.
+- Current workflow state: `technical review passed; the corrected combined result is ready for primary integration`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,15 +15,14 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: obtain fresh independent re-review of the corrected
-  README and passing combined evidence.
+- Next possible action: integrate the five reviewed worker commits onto local
+  `main`, repeat the required main-branch checks, and prepare Leonardo's test.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, submitted with the approved exactness
-  correction on `work/MR-WP-00-foundation`; its commits are not integrated.
-- Active contribution record: `MR-CONTRIB-WP00-001`, submitted with latest
-  correction commit `f4e1a24`; combined validation passed, while re-review,
-  integration, Leonardo test, and acceptance are pending.
+- Active work order: `MR-WO-WP00-001`, reviewed; its five worker commits are
+  ready for primary integration.
+- Active contribution record: `MR-CONTRIB-WP00-001`, reviewed; integration,
+  Leonardo test, and acceptance are pending.
 - Active player test: none.
 - Active correction cycle: complete. The primary agent corrected only the
   README live status, and repeated combined validation passed. No authority or
@@ -31,10 +30,10 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: README now states that corrections and combined validation are
-  complete while review, integration, Leonardo testing, and acceptance remain
-  pending. Repeated combined validation passed. Integration remains stopped
-  only until fresh independent re-review passes.
+- Review gate: passed. The fresh independent review found no blocker,
+  required, or advisory finding. It confirmed the README status, S13 path
+  order, closed-object tests, mechanical formatting-only recovery, local-only
+  network boundary, and complete integration readiness.
 
 ## Repository facts
 
