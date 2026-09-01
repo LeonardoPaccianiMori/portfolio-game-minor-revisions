@@ -10,6 +10,7 @@ type PackageManifest = {
   dependencies: Record<string, string>;
   devDependencies: Record<string, string>;
   engines: { node: string };
+  name: string;
   packageManager: string;
   private: boolean;
   scripts: Record<string, string>;
@@ -39,6 +40,7 @@ describe('MR-WP-00 foundation', () => {
     expect(npmConfig).toBe('engine-strict=true\nsave-exact=true\npackage-lock=true\n');
     expect(manifest).toMatchObject({
       engines: { node: '24.20.0' },
+      name: 'minor-revisions',
       packageManager: 'npm@11.19.0',
       private: true,
       type: 'module',
@@ -80,6 +82,8 @@ describe('MR-WP-00 foundation', () => {
         'npm run lint && npm run format:check && npm run test:coverage && npm run build && npm run test:e2e',
     });
     expect(typeScriptConfig.include).toEqual(['*.ts', 'src/**/*.ts', 'tests/**/*.ts']);
+    expect(typeScriptConfig.compilerOptions.lib).toEqual(['ES2022', 'DOM', 'DOM.Iterable']);
+    expect(typeScriptConfig.compilerOptions.types).toEqual(['node']);
     expect(typeScriptConfig.compilerOptions).toMatchObject({
       exactOptionalPropertyTypes: true,
       forceConsistentCasingInFileNames: true,
@@ -98,11 +102,24 @@ describe('MR-WP-00 foundation', () => {
       target: 'ES2022',
       verbatimModuleSyntax: true,
     });
-    expect(viteConfig).toContain('envDir: false');
-    expect(viteConfig).toContain("host: '127.0.0.1'");
-    expect(viteConfig).toContain('port: 5173');
-    expect(viteConfig).toContain('port: 4173');
-    expect(viteConfig).toContain('strictPort: true');
+    expect(viteConfig).toContain(`base: './',
+  build: {
+    emptyOutDir: true,
+    outDir: 'dist',
+    sourcemap: false,
+    target: 'es2022',
+  },
+  envDir: false,`);
+    expect(viteConfig).toContain(`preview: {
+    host: '127.0.0.1',
+    port: 4173,
+    strictPort: true,
+  },`);
+    expect(viteConfig).toContain(`server: {
+    host: '127.0.0.1',
+    port: 5173,
+    strictPort: true,
+  },`);
   });
 
   it('keeps the local page free of runtime modules and Three.js imports', async () => {
