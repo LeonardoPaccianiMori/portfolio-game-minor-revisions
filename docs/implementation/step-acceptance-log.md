@@ -58,9 +58,11 @@ boundary. He has not yet tested or accepted a result.
 
 The primary Codex agent recorded the approved plan, verified the exact Node and
 npm environment, created the isolated branch and worktree, and activated
-`MR-WO-WP00-001`. The controlled implementation worker is now active. The
-independent reviewer has not yet completed work. The matching primary-session
-AI-use-log entry is in `ai-use-log.md`.
+`MR-WO-WP00-001`. OpenAI `gpt-5.6-terra` with `high` reasoning submitted the
+foundation package, static page, and tests in commit
+`b965811ff9dd9994d120c923aa0f69077009633e`. Primary verification and the
+fresh independent reviewer have not yet completed work. Matching entries are
+in `ai-use-log.md` and `MR-CONTRIB-WP00-001`.
 
 ### Files and commits
 
@@ -71,10 +73,12 @@ worker submission because S13 permits no draft contribution-record state.
 
 ### Automated and review evidence
 
-Not yet available. Required evidence is exact Node and npm verification,
-fresh package compatibility, security, licence, deprecation, and peer review,
-`npm ci`, local Playwright-browser setup, `npm run check`, `npm run verify`,
-production-build inspection, no-runtime-external-request review,
+The worker reported a passing `npm install`, `npm run check`, and `npm run
+build` under the exact Node and npm versions. Primary evidence is not yet
+available. It must include exact Node and npm verification, fresh package
+compatibility, security, licence, deprecation, and peer review, `npm ci`,
+local Playwright-browser setup, `npm run check`, `npm run verify`, production
+build inspection, no-runtime-external-request review,
 `npm audit --audit-level=high`, `git diff --check`, and a fresh independent
 read-only review.
 
