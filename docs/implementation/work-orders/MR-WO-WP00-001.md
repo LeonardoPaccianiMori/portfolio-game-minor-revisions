@@ -58,9 +58,9 @@ scene, or final visual design already exists.
 - `content/`
 - `docs/`
 - `src/`
+- `tests/e2e/MR-WP-01/`
 - `tests/fixtures/`
 - `tests/unit/MR-WP-01/`
-- `tests/e2e/MR-WP-01/`
 
 ## Allowed sources
 

@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 technical review**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `technical review; the live-boundary correction and repeated combined validation passed and await fresh independent re-review`.
+- Current workflow state: `correcting; the live-boundary and exactness findings are resolved, while one work-order path list requires mechanical sorting`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,8 +15,8 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: obtain a fresh independent re-review of the corrected
-  live boundary and passing combined evidence.
+- Next possible action: sort the three prohibited test paths, repeat the
+  required checks, and obtain fresh independent re-review.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
 - Active work order: `MR-WO-WP00-001`, submitted with the approved exactness
@@ -25,16 +25,16 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
   correction commit `f4e1a24`; combined validation passed, while re-review,
   integration, Leonardo test, and acceptance are pending.
 - Active player test: none.
-- Active correction cycle: complete. The primary agent changed only the
-  approved live-boundary records, and repeated combined validation passed. No
-  foundation, configuration, or runtime file changed in this cycle.
+- Active correction cycle: primary-owned mechanical work-order correction. No
+  authority, meaning, foundation, configuration, test, or runtime change.
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: the live agent contract now records the approved Step-1 plan,
-  and the boundary statements no longer list completed correction or
-  validation work as pending. Repeated combined validation passed. Integration
-  remains stopped only until a fresh independent re-review passes.
+- Review gate: the latest fresh review confirmed the live-boundary and closed-
+  object findings are resolved and found no blocker or advisory issue. It
+  requires the prohibited work-order paths to follow the frozen S13 sort rule.
+  Integration remains stopped until the mechanical correction, repeated
+  checks, and fresh re-review pass.
 
 ## Repository facts
 
