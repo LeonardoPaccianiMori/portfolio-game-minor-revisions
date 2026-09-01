@@ -7,8 +7,8 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; complete Step 2 cor
 ## Durable resume point
 
 - Current step: `2`, complete correction plan approved on 2026-09-01.
-- Current workflow state: `plan approved; MR-WO-WP00-004 is the exact current
-authority and must enter an active committed checkpoint before worker edits`.
+- Current workflow state: `implementing; MR-WO-WP00-004 is active and the
+controlled worker receives the exact eight-file focused packet`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,12 +20,13 @@ authority and must enter an active committed checkpoint before worker edits`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: activate `MR-WO-WP00-004`, then send the controlled
-  worker the exact eight-file focused packet.
+- Next possible action: the controlled worker corrects only the eight owned
+  paths, runs every required check, commits the result, and supplies one
+  complete handoff.
 - Active approved implementation plan: the exact complete Step-2 correction
   plan for all three S02 private imports, the closed diagnostic fault catalogue,
   and deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-004`, status `approved`, OpenAI
+- Active work order: `MR-WO-WP00-004`, status `active`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
   `work/MR-WP-00-startup-safety-review-fixes`, worktree
   `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
@@ -36,11 +37,11 @@ authority and must enter an active committed checkpoint before worker edits`.
   submitted result that received the blocking review.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: approved but not started. `MR-WO-WP00-004` owns all
+- Active correction cycle: implementing. `MR-WO-WP00-004` owns all
   three bootstrap import paths and the five previously approved correction
   paths. Its worktree remains clean at the exact base. No frozen interface
   changed.
-- Last committed resume checkpoint: this complete-plan-approved checkpoint; Git history is
+- Last committed resume checkpoint: this active-work-order checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: failed on the historical submission. The fresh OpenAI
