@@ -14,14 +14,13 @@ survival loop without being presented as a perfect life.
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
 approved on 2026-09-01; the exact Step-1 plan approved on 2026-09-01; its
-integrated foundation awaits Leonardo's local test and acceptance**.
+integrated foundation accepted by Leonardo on 2026-09-01**.
 
-This repository contains no accepted game implementation result, production
-asset, or deployment configuration. The submitted Step-1 foundation contains
+This repository contains one accepted foundation result, but no game system,
+production asset, or deployment configuration. The accepted Step-1 foundation contains
 only the approved S01 package baseline, basic local start page, and foundation
-tests. Its corrections and combined validation are complete, but fresh
-independent re-review and integration are complete. Leonardo's local test and
-acceptance are still pending. B10
+tests. Its corrections, combined validation, independent re-review,
+integration, Leonardo test, and acceptance are complete. B10
 records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
@@ -73,8 +72,9 @@ fallback/full gate split, resolves the final issue group, and freezes
 content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
 which confirms only the frozen technical baseline. Leonardo separately
 approved the exact Step-1 plan on 2026-09-01. That approval permits only its
-listed S01 foundation paths and checks; it does not accept the result or
-authorize Step 2. Each later step needs its own plan, local test or result
+listed S01 foundation paths and checks. Leonardo accepted the integrated
+result on 2026-09-01. This does not authorize Step 2. Each later step needs its
+own plan, local test or result
 review, correction cycle, and explicit acceptance. The
 durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the

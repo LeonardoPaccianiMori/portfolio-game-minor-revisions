@@ -2,31 +2,31 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 Leonardo testing**
+Status: **Step 0 complete; Gate 1 approved; Step 1 accepted**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `Leonardo testing; the reviewed foundation is integrated on local main and all required main-branch checks pass`.
+- Current workflow state: `accepted on 2026-09-01; the reviewed foundation is integrated on local main and all required main-branch checks pass`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
   plan authorizes only `MR-WO-WP00-001` and its stated paths and checks.
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
-- Last accepted implementation step: none.
-- Next possible action: start the local foundation page, give Leonardo the
-  test packet, and wait for his observations and explicit Step-1 acceptance.
-- Active approved implementation plan: Step 1 — S01 package baseline and
-  basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, integrated on local `main`.
-- Active contribution record: `MR-CONTRIB-WP00-001`, integrated; Leonardo test
-  and acceptance are pending.
-- Active player test: local foundation-page confirmation; ready to start.
+- Last accepted implementation step: Step 1, accepted by Leonardo on
+  2026-09-01.
+- Next possible action: prepare the exact Step-2 plan and wait for Leonardo's
+  separate approval.
+- Active approved implementation plan: none. The Step-1 cycle is complete.
+- Active work order: none. `MR-WO-WP00-001` is accepted.
+- Active contribution record: none. `MR-CONTRIB-WP00-001` is accepted.
+- Active player test: none. Leonardo completed the Step-1 local foundation-page
+  confirmation.
 - Active correction cycle: complete. The primary agent corrected only the
   README live status, and repeated combined validation passed. No authority or
   technical behaviour changed.
-- Last committed resume checkpoint: this correction checkpoint; Git history is
+- Last committed resume checkpoint: this acceptance checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: passed. The fresh independent review found no blocker,
@@ -48,22 +48,23 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 Leo
 - Public licence: none.
 - Automated foundation results: one production-page build and passing
   Chromium, Firefox, and WebKit flows with no external request.
-- Direct Leonardo test, browser-support assessment, performance measurement,
-  and play results: none.
+- Direct Leonardo test: passed. Leonardo reported the expected title,
+  foundation text, game-systems-unavailable text, and no visible error.
+- Browser-support assessment, performance measurement, and play results: none.
 
 Git history is the authority for the commit that contains this file. Do not
 insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority                                       | State                          | Exact boundary                                                                                                                                          |
-| ----------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                              |
-| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                   |
-| Step 1                                          | Plan approved on 2026-09-01    | Only `MR-WP-00` paths and the stated S01 environment, package, page, test, review, and local-test actions are authorized. Acceptance is still required. |
-| Steps 2–70                                      | Blocked                        | Each needs accepted dependencies and its own approved plan.                                                                                             |
-| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                           |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                          |
+| Authority                                       | State                          | Exact boundary                                                                                                                                         |
+| ----------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                             |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                  |
+| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                 |
+| Steps 2–70                                      | Blocked                        | Step 2 has its accepted dependency but still needs its own approved plan. Every later step also needs accepted dependencies and its own approved plan. |
+| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                          |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                         |
 
 ## Session-resume procedure
 

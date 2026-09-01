@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-001
 type: implementation-contribution
-status: integrated
+status: accepted
 work_order: MR-WO-WP00-001
 work_package: MR-WP-00
 created: 2026-09-01
@@ -20,7 +20,8 @@ The controlled implementation worker completed the approved S01 package
 baseline, semantic static local foundation page, and package-owned foundation
 tests. The page identifies _Minor Revisions_ as a local foundation and states
 that game systems are not yet available. This is not a game implementation,
-Three.js scene, final visual design, or Step-1 acceptance.
+Three.js scene, or final visual design. Leonardo accepted this bounded Step-1
+result on 2026-09-01.
 
 ## Changed files
 
@@ -252,14 +253,15 @@ and the Git whitespace check under Node `v24.20.0` and npm `11.19.0`.
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
-system, content, production asset, Leonardo test, or acceptance exists. The
-page is intentionally static. The formatting block is resolved.
-Automated three-browser foundation flows exist, but direct browser-support
-assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration and required main-branch verification are complete. Leonardo
-testing and acceptance remain pending.
+system, content, or production asset exists. The page is intentionally static.
+The formatting block is resolved. Automated three-browser foundation flows and
+Leonardo's direct foundation-page test exist, but browser-support assessment,
+performance measurement, and play evidence do not. Integration, required
+main-branch verification, Leonardo testing, and acceptance are complete.
 
 ## Leonardo decision
 
-Leonardo approved the exact Step-1 plan on 2026-09-01. He has not yet tested
-or accepted this submitted result.
+Leonardo approved the exact Step-1 plan on 2026-09-01. He then confirmed that
+the local page showed the expected title and foundation messages with no
+visible error, and he explicitly accepted Step 1 on 2026-09-01. The raw
+screenshot and machine path are not stored.
