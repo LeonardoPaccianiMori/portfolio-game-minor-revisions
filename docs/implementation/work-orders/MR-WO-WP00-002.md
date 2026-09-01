@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-002
 type: implementation-work-order
-status: blocked
+status: superseded
 work_package: MR-WP-00
 sequence: 2
 created: 2026-09-01
@@ -25,6 +25,11 @@ six-capability compatibility report and probe lifecycle, sanitized diagnostics,
 the factual Checking browser and Ready states, blocking compatibility messages,
 and the safe fatal-error presentation. Preserve the accepted Step-1 package
 baseline and every frozen interface.
+
+This work order is historical evidence. Leonardo approved
+`MR-WO-WP00-003` on 2026-09-01 after independent review found one ownership
+blocker and two technical findings. `MR-WO-WP00-003` supersedes this order and
+is the only authority for the review corrections.
 
 ## Plain-language effect
 

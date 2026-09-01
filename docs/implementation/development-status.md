@@ -2,14 +2,13 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approved**
+Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; revised Step 2 correction plan approved**
 
 ## Durable resume point
 
-- Current step: `2`, plan approved on 2026-09-01.
-- Current workflow state: `blocked after independent review; one frozen S02
-public-entrance conflict requires a revised approved work order, and two
-technical findings require correction and fresh review`.
+- Current step: `2`, revised correction plan approved on 2026-09-01.
+- Current workflow state: `plan approved; create the exact correction branch
+and worktree, activate MR-WO-WP00-003, and assign the controlled worker`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -21,35 +20,33 @@ technical findings require correction and fresh review`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: Leonardo decides whether to approve the exact revised
-  Step-2 correction plan. No implementation can resume before that approval.
-- Active approved implementation plan: Step 2 compatibility checks, startup
-  diagnostics, loading state, and safe error screens, approved by Leonardo on
-  2026-09-01.
-- Active work order: `MR-WO-WP00-002`, status `blocked`, OpenAI
+- Next possible action: create the exact approved branch and worktree from
+  `43f868e64b80c88dc46832b676af6d2929f081c2`, then activate the new order.
+- Active approved implementation plan: the exact Step-2 correction plan for
+  the S02 public platform entrance, closed diagnostic fault catalogue, and
+  deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
+- Active work order: `MR-WO-WP00-003`, status `approved`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
-  `work/MR-WP-00-startup-safety`, worktree
-  `.worktrees/MR-WP-00-startup-safety/`, and exact base commit
-  `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`.
-- Active contribution record: `MR-CONTRIB-WP00-002`, status `submitted`;
-  seven worker commits exist and complete primary validation passed, but review
-  found one blocker and two required findings.
+  `work/MR-WP-00-startup-safety-review-fixes`, worktree
+  `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
+  `43f868e64b80c88dc46832b676af6d2929f081c2`. `MR-WO-WP00-002` is
+  superseded.
+- Active contribution record: none. S13 permits `MR-CONTRIB-WP00-003` only
+  after a real worker submission. `MR-CONTRIB-WP00-002` remains the historical
+  submitted result that received the blocking review.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: complete. The worker corrected frozen-coverage,
-  diagnostic-normalization, fatal-cleanup, raw-browser-output, and IndexedDB
-  lifecycle findings inside approved paths. Primary `npm run check`,
-  `npm run verify`, separate build, production and network inspection, scope
-  checks, and Git checks passed. Coverage is 96.48 percent lines and 92.68
-  percent branches. No authority changed.
-- Last committed resume checkpoint: this acceptance checkpoint; Git history is
+- Active correction cycle: approved but not started. It can change only the
+  seven paths in `MR-WO-WP00-003`. No authority or frozen interface changes.
+- Last committed resume checkpoint: this plan-approved checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: failed. The fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh`
-  reasoning found one blocker and two required findings on corrected worker
-  head `43f868e64b80c88dc46832b676af6d2929f081c2`. A revised approved
-  work order, corrections, applicable checks, complete primary audit, and fresh
-  independent review are required.
+- Review gate: failed on the historical submission. The fresh OpenAI
+  `gpt-5.6-sol` reviewer using `xhigh` reasoning found one blocker and two
+  required findings on worker head
+  `43f868e64b80c88dc46832b676af6d2929f081c2`. The revised order is now
+  approved. Corrections, applicable checks, one complete primary audit, and a
+  fresh independent review are still required.
 
 ## Repository facts
 
@@ -74,15 +71,15 @@ insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority                                       | State                          | Exact boundary                                                                                                                                                         |
-| ----------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                                             |
-| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                                  |
-| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                                 |
-| Step 2                                          | Plan approved on 2026-09-01    | Only the exact approved startup-safety files, checks, work order, controlled worker, primary audit, independent review, integration, and Leonardo test are authorized. |
-| Steps 3–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                                                                |
-| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                                          |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                                         |
+| Authority                                       | State                               | Exact boundary                                                                                                                                                        |
+| ----------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Documentation workflow                          | Approved for documentation          | Records the 70-step incremental plan only.                                                                                                                            |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01              | Confirms S01–S14; authorizes no code.                                                                                                                                 |
+| Step 1                                          | Accepted on 2026-09-01              | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                                |
+| Step 2                                          | Revised plan approved on 2026-09-01 | Only `MR-WO-WP00-003`, its seven correction paths, checks, controlled worker, primary audit, fresh independent review, integration, and Leonardo test are authorized. |
+| Steps 3–70                                      | Blocked                             | Every later step needs accepted dependencies and its own approved plan.                                                                                               |
+| Asset research and integration                  | Blocked until its named step        | Candidate research and integration remain separate approvals.                                                                                                         |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70      | Each needs a later separate plan and approval.                                                                                                                        |
 
 ## Session-resume procedure
 

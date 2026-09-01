@@ -21,8 +21,11 @@ compatibility checks, startup diagnostics, factual loading and Ready states,
 complete blocking messages, retry control, and safe fatal-error presentation.
 The submission has no Three.js scene, game system, package change, asset,
 remote, licence, deployment, or public result. All consolidated primary-audit
-corrections and complete primary validation pass. It is not reviewed,
-integrated, tested by Leonardo, or accepted.
+corrections and complete primary validation pass. Independent review blocked
+integration. Leonardo approved `MR-WO-WP00-003`, which supersedes the original
+work order and uses this submitted result as its exact correction base. This
+submission remains historical evidence. It is not integrated, tested by
+Leonardo, or accepted.
 
 ## Changed files
 
@@ -120,9 +123,10 @@ work order does not own `src/platform/index.ts`. The first required finding is
 that diagnostic codes and their module, phase, operation, severity, and
 recovery metadata do not form one closed internally consistent catalogue. The
 second is that Vitest tests use real timers and event objects where S12
-requires controlled substitutes. Integration is blocked. These technical and
-authority corrections require a revised approved work order, applicable
-checks, a complete primary audit, and a fresh independent review.
+requires controlled substitutes. Integration is blocked. Leonardo approved
+the revised correction work order `MR-WO-WP00-003` on 2026-09-01. Its
+technical corrections still require applicable checks, a complete primary
+audit, and a fresh independent review.
 
 ## Corrections
 
@@ -167,10 +171,12 @@ review remains required.
 - If IndexedDB reports `blocked` and never later reports success or error, the
   check and retry remain pending. This prevents an old cleanup operation from
   overlapping a newer probe.
-- The S02 public-entrance blocker and two required findings remain unresolved,
-  so the submission cannot enter integration.
+- The S02 public-entrance blocker and two required findings remain unresolved
+  in this historical submission. `MR-WO-WP00-003` is the only authority to
+  correct them before integration.
 
 ## Leonardo decision
 
-Leonardo approved the exact Step-2 plan on 2026-09-01. He has not yet received
-the local test packet or accepted the implementation.
+Leonardo approved the exact Step-2 plan and the later exact revised correction
+plan on 2026-09-01. He has not yet received the local test packet or accepted
+the implementation.
