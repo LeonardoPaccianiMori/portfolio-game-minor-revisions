@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 correcting; no implementation step accepted**
+Status: **Step 1 technical review; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                             | Notes                                                             |
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                                  | Records documentation only; no implementation is approved.        |
-|    1 | Correcting              | 2026-09-01    | Closed-object exactness and repeated combined validation passed; live-boundary records require correction                                                                                        | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Narrow record correction and fresh re-review remain required.     |
+|    1 | Technical review        | 2026-09-01    | Closed-object exactness, live-boundary correction, and repeated combined validation passed                                                                                                       | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Only fresh re-review remains before integration.                  |
 | 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                                  | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -175,6 +175,14 @@ the Step-1 plan is approved and required three boundary statements to stop
 listing completed correction and validation work as pending. Leonardo
 approved this narrow primary-owned record correction on 2026-09-01.
 
+The primary agent corrected only the live agent contract and approved boundary
+records. Repeated combined validation then passed formatting, typecheck, lint,
+all three foundation tests, production build, Chromium, Firefox, and WebKit
+flows, the high-severity audit with zero vulnerabilities, production and
+external-request inspections, and the Git whitespace check. The validation
+worktree remained clean. Only fresh independent re-review remains before
+integration.
+
 ### Acceptance decision
 
 Not yet available. Technical results and the local page test cannot replace
@@ -184,10 +192,9 @@ Leonardo's explicit Step-1 acceptance.
 
 No game system, Three.js scene, source directory, content, production asset,
 remote, licence, deployment, or public result exists. Step 1 cannot integrate
-or proceed to Leonardo testing until the live-boundary correction, repeated
-checks, and another fresh re-review pass. Automated browser flows are technical
-evidence, not Leonardo's direct test or Step-1 acceptance. Step 2 remains
-blocked.
+or proceed to Leonardo testing until fresh independent re-review passes.
+Automated browser flows are technical evidence, not Leonardo's direct test or
+Step-1 acceptance. Step 2 remains blocked.
 
 ## Required accepted-step entry
 

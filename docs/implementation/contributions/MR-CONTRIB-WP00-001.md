@@ -131,6 +131,14 @@ the Step-1 plan is approved and required three boundary statements to stop
 listing completed correction and validation work as pending. Leonardo
 approved this narrow primary-owned record correction on 2026-09-01.
 
+The primary agent corrected only the live agent contract and approved boundary
+records. Repeated combined validation then passed repository formatting,
+typecheck, lint, all three foundation tests, coverage, production build,
+Chromium, Firefox, and WebKit flows, the high-severity audit with zero
+vulnerabilities, production and external-request inspections, and the Git
+whitespace check. The validation worktree remained clean. Only fresh
+independent re-review remains before integration.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -205,8 +213,7 @@ system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration remains pending until the live-boundary correction passes repeated
-checks and fresh re-review.
+Integration remains pending only until fresh independent re-review passes.
 
 ## Leonardo decision
 

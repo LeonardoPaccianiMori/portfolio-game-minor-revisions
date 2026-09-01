@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 technical review**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `correcting; closed-object exactness passed re-review, while the live agent contract and three boundary statements require current-state correction`.
+- Current workflow state: `technical review; the live-boundary correction and repeated combined validation passed and await fresh independent re-review`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,8 +15,8 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 cor
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: complete the approved live-boundary correction, repeat
-  the required checks, and obtain another fresh independent re-review.
+- Next possible action: obtain a fresh independent re-review of the corrected
+  live boundary and passing combined evidence.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
 - Active work order: `MR-WO-WP00-001`, submitted with the approved exactness
@@ -25,18 +25,16 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 cor
   correction commit `f4e1a24`; combined validation passed, while re-review,
   integration, Leonardo test, and acceptance are pending.
 - Active player test: none.
-- Active correction cycle: the worker-owned exactness correction is complete.
-  The primary agent owns only the approved live-boundary record correction. No
-  foundation, configuration, or runtime file changes in this cycle.
+- Active correction cycle: complete. The primary agent changed only the
+  approved live-boundary records, and repeated combined validation passed. No
+  foundation, configuration, or runtime file changed in this cycle.
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking review issue: the latest fresh review confirmed that the closed-
-  object exactness finding is resolved and found no blocker or advisory issue.
-  It requires the live agent contract to record the approved Step-1 plan and
-  requires three boundary statements to stop listing completed correction and
-  validation work as pending. Integration remains stopped until this narrow
-  record correction, repeated checks, and a fresh re-review pass.
+- Review gate: the live agent contract now records the approved Step-1 plan,
+  and the boundary statements no longer list completed correction or
+  validation work as pending. Repeated combined validation passed. Integration
+  remains stopped only until a fresh independent re-review passes.
 
 ## Repository facts
 
