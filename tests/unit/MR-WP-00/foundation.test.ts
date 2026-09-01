@@ -191,7 +191,8 @@ describe('MR-WP-00 foundation', () => {
         .filter(({ source }) => /from ['"]\.\.\/platform['"]/u.test(source))
         .map(({ name }) => name),
     ).toEqual(['diagnostics.ts', 'startup-screen.ts', 'startup.ts']);
-    expect(platformEntrance).toBe(`export { cancelCompatibilityCheck, checkCompatibility } from './compatibility';
+    expect(platformEntrance)
+      .toBe(`export { cancelCompatibilityCheck, checkCompatibility } from './compatibility';
 export type {
   CapabilityId,
   CapabilityStatus,
