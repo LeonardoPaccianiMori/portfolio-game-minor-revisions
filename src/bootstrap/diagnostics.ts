@@ -467,6 +467,7 @@ export const createUnexpectedDiagnostic = (
 export const createDiagnosticConverterForTests = (adapters: DiagnosticAdapters) => {
   const converter = new DiagnosticConverter(adapters);
   return Object.freeze({
+    catalogue: diagnosticFaultCatalogue,
     create: (input: unknown, owningModule: DiagnosticModule): SanitizedDiagnostic =>
       converter.create(input, owningModule),
   });

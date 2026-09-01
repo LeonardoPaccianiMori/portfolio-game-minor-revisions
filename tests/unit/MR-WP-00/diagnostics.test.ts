@@ -133,6 +133,22 @@ const validCompatibility = () => ({
 });
 
 describe('MR-S11-DIA-001 diagnostics', () => {
+  it('exposes exactly the complete immutable Step-2 catalogue to the test boundary', () => {
+    const converter = createDiagnosticConverterForTests(adapters());
+    const expected = Object.fromEntries(
+      catalogueCases.map(({ code, ...metadata }) => [code, metadata]),
+    );
+
+    expect(converter.catalogue).toEqual(expected);
+    expect(Object.isFrozen(converter.catalogue)).toBe(true);
+    expect(Object.values(converter.catalogue).every(Object.isFrozen)).toBe(true);
+    expect(
+      Object.values(converter.catalogue).every((metadata) =>
+        Object.isFrozen(metadata.recoveryActions),
+      ),
+    ).toBe(true);
+  });
+
   it.each(catalogueCases)('converts the exact closed catalogue mapping for $code', (mapping) => {
     const diagnostic = createDiagnosticConverterForTests(adapters()).create(
       validFault(mapping),
