@@ -15,6 +15,7 @@ type PackageManifest = {
   private: boolean;
   scripts: Record<string, string>;
   type: string;
+  version: string;
 };
 
 type TypeScriptConfig = {
@@ -54,13 +55,23 @@ describe('MR-WP-00 foundation', () => {
 
     expect(nvmVersion.trim()).toBe('24.20.0');
     expect(npmConfig).toBe('engine-strict=true\nsave-exact=true\npackage-lock=true\n');
-    expect(manifest).toMatchObject({
-      engines: { node: '24.20.0' },
-      name: 'minor-revisions',
-      packageManager: 'npm@11.19.0',
-      private: true,
-      type: 'module',
-    });
+    expect(Object.keys(manifest).sort()).toEqual([
+      'dependencies',
+      'devDependencies',
+      'engines',
+      'name',
+      'packageManager',
+      'private',
+      'scripts',
+      'type',
+      'version',
+    ]);
+    expect(manifest.engines).toEqual({ node: '24.20.0' });
+    expect(manifest.name).toBe('minor-revisions');
+    expect(manifest.packageManager).toBe('npm@11.19.0');
+    expect(manifest.private).toBe(true);
+    expect(manifest.type).toBe('module');
+    expect(manifest.version).toBe('0.0.0');
     expect(manifest.dependencies).toEqual({
       idb: '8.0.3',
       three: '0.185.1',
@@ -97,13 +108,13 @@ describe('MR-WP-00 foundation', () => {
       verify:
         'npm run lint && npm run format:check && npm run test:coverage && npm run build && npm run test:e2e',
     });
+    expect(Object.keys(typeScriptConfig).sort()).toEqual(['compilerOptions', 'include']);
     expect(typeScriptConfig.include).toEqual(['*.ts', 'src/**/*.ts', 'tests/**/*.ts']);
-    expect(typeScriptConfig.compilerOptions.lib).toEqual(['ES2022', 'DOM', 'DOM.Iterable']);
-    expect(typeScriptConfig.compilerOptions.types).toEqual(['node']);
-    expect(typeScriptConfig.compilerOptions).toMatchObject({
+    expect(typeScriptConfig.compilerOptions).toEqual({
       exactOptionalPropertyTypes: true,
       forceConsistentCasingInFileNames: true,
       isolatedModules: true,
+      lib: ['ES2022', 'DOM', 'DOM.Iterable'],
       module: 'ESNext',
       moduleDetection: 'force',
       moduleResolution: 'Bundler',
@@ -116,6 +127,7 @@ describe('MR-WP-00 foundation', () => {
       resolveJsonModule: true,
       strict: true,
       target: 'ES2022',
+      types: ['node'],
       verbatimModuleSyntax: true,
     });
     expect(viteConfig).toContain(`base: './',
@@ -304,36 +316,41 @@ export default defineConfig({
   ],
 });
 `);
+    expect(Object.keys(packageLock).sort()).toEqual([
+      'lockfileVersion',
+      'name',
+      'packages',
+      'requires',
+      'version',
+    ]);
     expect(packageLock).toMatchObject({
       lockfileVersion: 3,
       name: 'minor-revisions',
-      packages: {
-        '': {
-          dependencies: {
-            idb: '8.0.3',
-            three: '0.185.1',
-            zod: '4.5.2',
-          },
-          devDependencies: {
-            '@eslint/js': '10.0.1',
-            '@playwright/test': '1.62.1',
-            '@types/node': '24.13.3',
-            '@vitest/coverage-v8': '4.1.11',
-            'cross-env': '10.1.0',
-            eslint: '10.9.1',
-            globals: '17.11.0',
-            prettier: '3.9.6',
-            typescript: '6.0.3',
-            'typescript-eslint': '8.68.0',
-            vite: '8.2.2',
-            vitest: '4.1.11',
-          },
-          engines: { node: '24.20.0' },
-          name: 'minor-revisions',
-          version: '0.0.0',
-        },
-      },
       requires: true,
+      version: '0.0.0',
+    });
+    expect(packageLock.packages['']).toEqual({
+      dependencies: {
+        idb: '8.0.3',
+        three: '0.185.1',
+        zod: '4.5.2',
+      },
+      devDependencies: {
+        '@eslint/js': '10.0.1',
+        '@playwright/test': '1.62.1',
+        '@types/node': '24.13.3',
+        '@vitest/coverage-v8': '4.1.11',
+        'cross-env': '10.1.0',
+        eslint: '10.9.1',
+        globals: '17.11.0',
+        prettier: '3.9.6',
+        typescript: '6.0.3',
+        'typescript-eslint': '8.68.0',
+        vite: '8.2.2',
+        vitest: '4.1.11',
+      },
+      engines: { node: '24.20.0' },
+      name: 'minor-revisions',
       version: '0.0.0',
     });
   });
