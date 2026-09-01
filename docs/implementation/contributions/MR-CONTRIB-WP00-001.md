@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-001
 type: implementation-contribution
-status: reviewed
+status: integrated
 work_order: MR-WO-WP00-001
 work_package: MR-WP-00
 created: 2026-09-01
@@ -59,7 +59,10 @@ Reject extra foundation configuration`.
 
 ## Integrated commits
 
-Not yet available.
+`41d7d6b` — `MR-WP-00 Add S01 foundation baseline`; `7387242` — `MR-WP-00
+Correct foundation review findings`; `03ceb7c` — `MR-WP-00 Expand exact
+baseline checks`; `bfdff73` — `MR-WP-00 Complete exact foundation coverage`;
+`e9c9d05` — `MR-WP-00 Reject extra foundation configuration`.
 
 ## Commands and results
 
@@ -240,15 +243,21 @@ request inspections, and the Git whitespace check passed. The production
 output remained one 407-byte semantic HTML file with no script, Three.js
 reference, or external address. The validation worktree remained clean.
 
+The primary agent integrated all five reviewed worker commits onto local
+`main` without conflict. A clean main-worktree `npm ci` installed 158 packages
+and found zero vulnerabilities. Main then passed `npm run check`, `npm run
+verify`, the high-severity audit, production and external-request inspections,
+and the Git whitespace check under Node `v24.20.0` and npm `11.19.0`.
+
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
-system, content, production asset, integration, Leonardo test, or acceptance
-exists. The page is intentionally static. The formatting block is resolved.
+system, content, production asset, Leonardo test, or acceptance exists. The
+page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration is ready but not yet performed. Leonardo testing and acceptance
-remain pending.
+Integration and required main-branch verification are complete. Leonardo
+testing and acceptance remain pending.
 
 ## Leonardo decision
 

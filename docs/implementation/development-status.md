@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 technical review**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 Leonardo testing**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `technical review passed; the corrected combined result is ready for primary integration`.
+- Current workflow state: `Leonardo testing; the reviewed foundation is integrated on local main and all required main-branch checks pass`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,15 +15,14 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: integrate the five reviewed worker commits onto local
-  `main`, repeat the required main-branch checks, and prepare Leonardo's test.
+- Next possible action: start the local foundation page, give Leonardo the
+  test packet, and wait for his observations and explicit Step-1 acceptance.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, reviewed; its five worker commits are
-  ready for primary integration.
-- Active contribution record: `MR-CONTRIB-WP00-001`, reviewed; integration,
-  Leonardo test, and acceptance are pending.
-- Active player test: none.
+- Active work order: `MR-WO-WP00-001`, integrated on local `main`.
+- Active contribution record: `MR-CONTRIB-WP00-001`, integrated; Leonardo test
+  and acceptance are pending.
+- Active player test: local foundation-page confirmation; ready to start.
 - Active correction cycle: complete. The primary agent corrected only the
   README live status, and repeated combined validation passed. No authority or
   technical behaviour changed.
@@ -41,11 +40,9 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 tec
 - Remote: none.
 - S00–S14: documented.
 - Frozen interfaces: `MR-IF-001`–`MR-IF-015` at `v1`.
-- Package configuration: submitted on the isolated `MR-WP-00` branch; not yet
-  integrated on `main`.
+- Package configuration: integrated on local `main`.
 - Game code: none.
-- Tests and executable fixtures: submitted on the isolated `MR-WP-00` branch;
-  not yet integrated on `main`.
+- Tests: integrated on local `main`; no S12 fixture set exists in Step 1.
 - Production assets: none.
 - Local deployment configuration: none.
 - Public licence: none.

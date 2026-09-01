@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 technical review; no implementation step accepted**
+Status: **Step 1 Leonardo testing; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -26,11 +26,11 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                             | Notes                                                             |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                                  | Records documentation only; no implementation is approved.        |
-|    1 | Technical review passed | 2026-09-01    | Exactness, live-boundary, S13 sorting, README status, combined validation, and final fresh review passed                                                                                         | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Ready for primary integration.                                    |
-| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                                  | Each step needs a separate approved plan and accepted dependency. |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test  | Acceptance                                                                                          | Commit                                                                         | Notes                                                             |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                              | Records documentation only; no implementation is approved.        |
+|    1 | Leonardo testing        | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Ready          | Not yet available                                                                                   | Control checkpoints plus integrated worker commits `41d7d6b` through `e9c9d05` | Await Leonardo's local page observation and explicit acceptance.  |
+| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —              | —                                                                                                   | —                                                                              | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
 
@@ -82,8 +82,9 @@ Gate-1 checkpoint `57282d501cb034334a070bf1c68151bc8501f803` remains the
 pre-plan repository fact, not the worker starting commit. The plan checkpoint
 commit is the commit that contains this entry. Worker commit
 `b965811ff9dd9994d120c923aa0f69077009633e` is submitted. Integration commits
-are not yet available. The contribution record was created after actual worker
-submission because S13 permits no draft contribution-record state.
+are `41d7d6b`, `7387242`, `03ceb7c`, `bfdff73`, and `e9c9d05`. The contribution
+record was created after actual worker submission because S13 permits no draft
+contribution-record state.
 
 ### Automated and review evidence
 
@@ -104,7 +105,7 @@ receive a new review.
 
 ### Leonardo test packet
 
-Not yet available. After reviewed integration, Leonardo will open the supplied
+Ready. Leonardo will open the supplied
 local address, confirm that it identifies _Minor Revisions_ as the local
 foundation with no visible error, describe what he sees, and close the page if
 he wants to stop safely.
@@ -215,6 +216,11 @@ the high-severity audit with zero vulnerabilities, external-request inspection,
 and the Git whitespace check. The validation worktree remained clean. Only
 fresh independent re-review remains before integration.
 
+After the final review pass, the primary agent integrated the five reviewed
+worker commits onto local `main` without conflict. A clean install and all
+required main-branch checks passed under exact Node `v24.20.0` and npm
+`11.19.0`. The local foundation page is ready for Leonardo's direct check.
+
 ### Acceptance decision
 
 Not yet available. Technical results and the local page test cannot replace
@@ -223,11 +229,10 @@ Leonardo's explicit Step-1 acceptance.
 ### Known limitations and next boundary
 
 No game system, Three.js scene, source directory, content, production asset,
-remote, licence, deployment, or public result exists. Step 1 cannot integrate
-or proceed to Leonardo testing until the primary agent integrates the reviewed
-worker commits and repeats the required checks on `main`. Automated browser
-flows are technical evidence, not Leonardo's direct test or Step-1 acceptance.
-Step 2 remains blocked.
+remote, licence, deployment, or public result exists. Step 1 cannot proceed to
+acceptance until Leonardo completes the direct local-page check and explicitly
+accepts Step 1. Automated browser flows are technical evidence, not Leonardo's
+direct test or Step-1 acceptance. Step 2 remains blocked.
 
 ## Required accepted-step entry
 
