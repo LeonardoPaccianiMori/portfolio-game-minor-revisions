@@ -150,13 +150,15 @@ describe('MR-WP-00 foundation', () => {
   },`);
   });
 
-  it('keeps the local page free of runtime modules and Three.js imports', async () => {
+  it('uses the approved module shell without a Three.js import or enabled game control', async () => {
     const page = await readFile(resolve(repositoryRoot, 'index.html'), 'utf8');
 
     expect(page).toContain('<h1>Minor Revisions</h1>');
     expect(page).toContain('Game systems are not yet available.');
-    expect(page).not.toMatch(/<script\b/i);
+    expect(page).toContain('This browser cannot run this version of Minor Revisions.');
+    expect(page).toContain('<script type="module" src="/src/bootstrap/main.ts"></script>');
     expect(page).not.toMatch(/three(?:\.js)?/i);
+    expect(page).not.toMatch(/>\s*(Continue|New Game)\s*</i);
   });
 
   it('keeps the remaining frozen S01 tool configuration and lockfile-root facts exact', async () => {
