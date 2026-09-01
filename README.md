@@ -13,12 +13,14 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
-approved on 2026-09-01; Step 1 awaits separate approval; no implementation
-authorized**.
+approved on 2026-09-01; the exact Step-1 plan approved on 2026-09-01; its
+foundation work is not yet complete**.
 
-This repository contains design documentation only. It contains no game
-implementation, production assets, package configuration, or deployment
-configuration. B10 now records the bounded content, evaluation, production,
+This repository contains no game implementation result, production asset,
+package configuration, or deployment configuration yet. The approved Step-1
+work order permits only the stated S01 package baseline, basic local start
+page, and foundation tests after its required local environment checks. B10
+records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
 defined the alignment and revealed-game check. A later
@@ -67,9 +69,11 @@ S14 records the complete inventory, corrects requirement traceability and the
 fallback/full gate split, resolves the final issue group, and freezes
 `MR-IF-001`–`MR-IF-015` as `v1`. The freeze creates no package, runtime, test,
 content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
-which confirms only the frozen technical baseline. No code can begin until he
-separately approves the exact Step-1 plan. Each later step needs its own plan,
-local test or result review, correction cycle, and explicit acceptance. The
+which confirms only the frozen technical baseline. Leonardo separately
+approved the exact Step-1 plan on 2026-09-01. That approval permits only its
+listed S01 foundation paths and checks; it does not accept the result or
+authorize Step 2. Each later step needs its own plan, local test or result
+review, correction cycle, and explicit acceptance. The
 durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the
 complete sequence is

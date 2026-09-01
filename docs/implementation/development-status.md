@@ -2,31 +2,35 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 approved; Step 1 not approved**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 not complete**
 
 ## Durable resume point
 
-- Current step: `0`, complete in the commit that contains this record.
-- Current workflow state: `awaiting exact Step-1 plan and approval`.
+- Current step: `1`, plan approved on 2026-09-01.
+- Current workflow state: `plan approved; environment verification and controlled MR-WP-00 assignment may begin`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
-  mandatory delegation-table evidence are documented. This does not approve a
-  work order or an implementation step.
+  mandatory delegation-table evidence are documented. The approved Step-1
+  plan authorizes only `MR-WO-WP00-001` and its stated paths and checks.
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible step: Step 1, but only after an exact Step-1 implementation
-  plan is approved.
-- Active approved implementation plan: none.
-- Active work order: none.
-- Active contribution record: none.
+- Next possible action: verify the exact S01 Node and npm environment, then
+  create the approved `work/MR-WP-00-foundation` branch and worktree before
+  assigning `MR-WO-WP00-001`.
+- Active approved implementation plan: Step 1 — S01 package baseline and
+  basic local start page, approved by Leonardo on 2026-09-01.
+- Active work order: `MR-WO-WP00-001`, approved; the worker has not started.
+- Active contribution record: none until the worker submits a commit. S13 has
+  no valid pre-submission contribution-record state.
 - Active player test: none.
 - Active correction cycle: none.
-- Last committed resume checkpoint: the commit that contains this Gate-1
-  approval record.
+- Last committed resume checkpoint: this plan-approved checkpoint; Git history
+  is authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking technical issue: none known; Step-1 implementation authority is
-  absent.
+- Blocking technical issue: none known. A failed required environment or
+  verification check will block Step 1 and requires a recorded restart
+  condition.
 
 ## Repository facts
 
@@ -51,7 +55,7 @@ insert a future or guessed commit identifier.
 |---|---|---|
 | Documentation workflow | Approved for documentation | Records the 70-step incremental plan only. |
 | Gate 1 — frozen technical baseline | Approved on 2026-09-01 | Confirms S01–S14; authorizes no code. |
-| Step 1 | Blocked | Needs a separate exact Step-1 plan approval. |
+| Step 1 | Plan approved on 2026-09-01 | Only `MR-WP-00` paths and the stated S01 environment, package, page, test, review, and local-test actions are authorized. Acceptance is still required. |
 | Steps 2–70 | Blocked | Each needs accepted dependencies and its own approved plan. |
 | Asset research and integration | Blocked until its named step | Candidate research and integration remain separate approvals. |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval. |

@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 approved on 2026-09-01; Step 1 not approved; no code authorized**
+Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
 
 ## Purpose
 
@@ -227,7 +227,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1 on
-2026-09-01 and accepted the frozen technical baseline. Prepare the exact
-Step-1 plan and wait for its separate approval. Do not create files from the
-planned runtime, test, content, work-order, contribution, or worktree paths.
+S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1 and
+the exact Step-1 plan on 2026-09-01. Create only the named Step-1 control,
+worktree, S01 package, basic start-page, and foundation-test paths after the
+required local environment verification. Do not create a Step-2-or-later
+runtime, content, asset, licence, remote, deployment, or public-action path.

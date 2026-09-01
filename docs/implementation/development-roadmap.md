@@ -1,6 +1,6 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 approved on 2026-09-01; all implementation steps await separate approval**
+Status: **workflow documented; Step 0 complete; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
 
 Last updated: 2026-09-01
 
@@ -236,7 +236,9 @@ Three terms in the list have these plain-language meanings:
 ## Current position
 
 Step 0 is complete in the commit that contains this roadmap. The S00–S14
-documents and frozen interfaces are complete, and Leonardo approved Gate 1 on
-2026-09-01. Step 1 remains unapproved. No implementation step, asset research,
-network search, package installation, code, test, local server, remote,
-licence, deployment, or public action is authorized by this document.
+documents and frozen interfaces are complete. Leonardo approved Gate 1 and the
+exact Step-1 plan on 2026-09-01. Step 1 alone may now perform the approved S01
+environment preparation, `MR-WP-00` package baseline, basic local start page,
+foundation tests, and required checks. Step 1 remains unaccepted. Step 2 and
+later work, asset research, a remote, licence, deployment, and public action
+remain blocked.

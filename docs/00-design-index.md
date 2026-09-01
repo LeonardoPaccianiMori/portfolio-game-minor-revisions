@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, S00–S14, and model-routed subagent governance documented; Gate 1 approved on 2026-09-01; Step 1 not approved; no implementation authorized**
+Status: **creative design, R00–R07, S00–S14, and model-routed subagent governance documented; Gate 1 and the exact Step-1 plan approved on 2026-09-01; Step 1 is not complete**
 
 This index is the completeness contract for *Minor Revisions*. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -31,15 +31,15 @@ gaps. It does not mean that the domain is finished.
 | `decision-log.md` | Approved decisions | Current | Continue for every material choice |
 | `glossary.md` | Shared terminology | B10 documented | Expand only when a new approved term needs definition. |
 | `../assets/ASSET_MANIFEST.md` | Asset provenance | B10 and S10 documented | No production asset source is selected or verified yet. |
-| `implementation/roadmap.md` | Technical-specification programme | S00–S14, Gate 1, and model-routed subagent governance documented | Gate 1 approved; the exact Step-1 plan awaits separate approval. |
+| `implementation/roadmap.md` | Technical-specification programme | S00–S14, Gate 1, and model-routed subagent governance documented | Gate 1 and the exact Step-1 plan are approved; only the assigned Step-1 foundation paths may proceed. |
 | `implementation/status.md` | Durable current state | Current; Sxx complete | Update in every specification commit. |
 | `implementation/decisions.md` | Technical and process decisions | Current through Gate 1 | Add only approved decisions and preserve supersessions. |
 | `implementation/interfaces.md` | Shared-interface lifecycle | `MR-IF-001`–`MR-IF-015` frozen `v1` | Changes require impact review and Leonardo's approval. |
 | `implementation/open-issues.md` | Technical clarification ledger | `MR-IMP-OPEN-001`–`015` resolved | Register any later material issue before dependent work. |
 | `implementation/specification-audit.md` | S14 audit and gate packet | Documented with governance amendment audit | Gate 1 approved on 2026-09-01; it authorizes no code. |
 | `implementation/ai-use-log.md` | Private, project-only AI model and contribution provenance | Current | Future primary sessions and completed subagent contributions record actual model and reasoning evidence. |
-| `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented | Steps 1–70 each require a separate approved plan and accepted predecessor. |
-| `implementation/development-status.md` | Durable implementation resume point | Step 0 complete; Gate 1 approved | Step 1 awaits a separate exact plan and approval. |
+| `implementation/development-roadmap.md` | Incremental implementation sequence | Step 0 documented; Step 1 plan approved | Steps 2–70 each require a separate approved plan and accepted predecessor. |
+| `implementation/development-status.md` | Durable implementation resume point | Step 1 plan approved | Complete only the approved Step-1 foundation cycle. |
 | `implementation/step-acceptance-log.md` | Leonardo and agent evidence index | Initialized | No implementation step is accepted. |
 
 ## Discussion roadmap
@@ -77,13 +77,14 @@ status, and the next place to resume.
   routing and focused delegation records.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
   S01–S14, and Step-0 model history belongs only to *Minor Revisions*.
-- Incremental implementation start: **blocked**; the exact Step-1 plan is not
-  approved.
+- Incremental implementation start: **Step 1 plan approved**; only the
+  `MR-WP-00` foundation work order and its approved checks may proceed.
 - Vertical-slice acceptance: **blocked**; Steps 1–30 do not exist.
 - Fallback acceptance: **blocked**; Steps 32–52 do not exist.
 - Full local-game acceptance: **blocked**; Steps 54–69 do not exist.
-- No code, package configuration, production asset, deployment configuration,
-  remote, or public licence is authorized.
+- No Step-2-or-later code, production asset, deployment configuration, remote,
+  or public licence is authorized. Step 1 may create only its approved package
+  configuration, basic local start page, and foundation tests.
 
 ### B00 — Vision, audience, success, and boundaries
 
@@ -480,8 +481,8 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current Gate 1 state: **approved by Leonardo on 2026-09-01; no implementation
-authorized**.
+Current Gate 1 state: **approved by Leonardo on 2026-09-01; the separately
+approved Step-1 plan permits only its named foundation work**.
 
 The former one-shot vertical-slice production sequence is superseded by the
 collaborative workflow in `implementation/development-roadmap.md`. After Gate
