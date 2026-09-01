@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-|    2 | Implementing            | 2026-09-01    | Work order active; no implementation result yet                                                                                                                                                  | Not started       | Not accepted                                                                                        | Plan checkpoint `1b06ee5`; active work order checkpoint                      | Exact startup-safety scope only.                                       |
+|    2 | Correcting              | 2026-09-01    | Worker submission exists; consolidated primary findings require technical and executable-test corrections                                                                                        | Not started       | Not accepted                                                                                        | Plan checkpoint `1b06ee5`; worker commits `d7394f9` through `601eb8e`        | Corrections remain inside approved scope.                              |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -264,23 +264,30 @@ on 2026-09-01. Testing observations and acceptance are not yet available.
 The primary Codex agent prepared the approved plan, verified the clean local
 repository, current commit, accepted Step-1 dependency, and absent remote, and
 created and activated `MR-WO-WP00-002` with the exact approved Sol `high`
-selection. No Step-2 worker, reviewer, implementation, test, contribution, or
-result exists at this checkpoint.
+selection. The controlled worker then submitted three atomic implementation
+commits and passing focused checks. The consolidated primary audit found the
+technical and coverage corrections described below. No reviewer, integration,
+Leonardo test, or accepted result exists.
 
 ### Files and commits
 
 The plan checkpoint is `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, the exact
 `base_commit` of `MR-WO-WP00-002`. The active work order is added in the next
-committed checkpoint. The worker branch, worktree, worker commits,
-contribution record, integration commits, and final acceptance commit do not
-exist yet.
+committed checkpoint. The worker branch, worktree, and three worker commits now
+exist. The formal submitted contribution record is `MR-CONTRIB-WP00-002`.
+Integration commits and the final acceptance commit do not exist yet.
 
 ### Automated and review evidence
 
-Not yet available. The approved plan requires focused tests, `npm run check`,
-`npm run build`, complete combined verification, production and network
-inspection, one complete primary pre-review audit, and one fresh independent
-review with all findings in one report.
+The worker's final `npm run check`, `npm run build`, focused Playwright flows,
+and Git whitespace check passed. The worker reported 35 passing unit tests and
+15 passing browser flows across Chromium, Firefox, and WebKit. Primary
+`npm run check` repeated successfully. Primary `npm run verify` failed only at
+the frozen coverage gate: 49.62 percent lines against 90 percent and 56.52
+percent branches against 85 percent. Source inspection also found incomplete
+closed-diagnostic validation, fatal cleanup, raw-browser-error suppression,
+and temporary IndexedDB lifecycle handling. The remaining primary checks and
+independent review wait for correction and completion of the primary audit.
 
 ### Leonardo test packet
 
@@ -291,7 +298,31 @@ failure messages, and the safe fatal-error presentation.
 
 ### Observed result and corrections
 
-Not yet available.
+The worker corrected initial owned type, test annotation, lint, and formatting
+findings before submission. The consolidated primary audit then found these
+required corrections together:
+
+- add honest executable coverage for the production WebGL2 and IndexedDB probe
+  paths, cancellation and cleanup, the startup coordinator, and all
+  `StartupScreen` actions without changing configuration, exclusions, ignore
+  directives, or thresholds;
+- validate the complete compatibility object before copying statuses into a
+  diagnostic, including the exact closed shape, capability order and IDs,
+  required flags, and permitted status values, so an arbitrary value cannot
+  enter the copied record;
+- when startup becomes fatal, cancel and settle the active compatibility
+  operation, remove the fatal listeners, prevent later probe completion from
+  changing presentation, and keep repeated cleanup harmless;
+- make IndexedDB open, blocked, error, deletion, and cancellation paths settle
+  safely, close every obtained handle, request deletion, create no store, read
+  no game database, and permit retry only after cleanup settles; and
+- prevent a handled production browser error or unhandled rejection from also
+  exposing its raw value through default browser output, while preserving the
+  approved local-development diagnostic boundary.
+
+The same controlled worker must correct these items inside the approved source
+and test paths. It cannot weaken or ignore the frozen thresholds. Corrected
+technical work requires all applicable checks and a fresh independent review.
 
 ### Acceptance decision
 
@@ -300,11 +331,10 @@ accept a result.
 
 ### Known limitations and next boundary
 
-The accepted repository still contains only the Step-1 package foundation and
-foundation tests. No Step-2 source or result exists at this checkpoint. The
-next permitted action is creation of the exact isolated branch and worktree
-from `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, followed by the selected
-controlled worker. Step 3 and every public action remain blocked.
+The submitted Step-2 code exists only on the isolated worker branch. It is not
+integrated or accepted. The next permitted action is the complete consolidated
+correction by the same controlled worker. Step 3 and every public action remain
+blocked.
 
 ## Required accepted-step entry
 

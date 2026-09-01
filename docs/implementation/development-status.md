@@ -7,9 +7,10 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approve
 ## Durable resume point
 
 - Current step: `2`, plan approved on 2026-09-01.
-- Current workflow state: `implementing; MR-WO-WP00-002 is active, but no
-Step-2 source, test, worker commit, contribution, review, integration, or
-result exists yet`.
+- Current workflow state: `correcting; MR-WO-WP00-002 has one submitted
+implementation, but the consolidated primary audit found incomplete coverage,
+closed-diagnostic validation, fatal cleanup, browser-error suppression, and
+temporary IndexedDB lifecycle handling`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -21,9 +22,10 @@ result exists yet`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: create the exact isolated branch and worktree from
-  work-order base commit `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, then
-  spawn the selected controlled implementation worker.
+- Next possible action: return the complete consolidated finding set to the
+  same controlled OpenAI `gpt-5.6-sol` worker using `high` reasoning for
+  correction inside the approved owned paths, then repeat all applicable
+  checks.
 - Active approved implementation plan: Step 2 compatibility checks, startup
   diagnostics, loading state, and safe error screens, approved by Leonardo on
   2026-09-01.
@@ -32,19 +34,23 @@ result exists yet`.
   `work/MR-WP-00-startup-safety`, worktree
   `.worktrees/MR-WP-00-startup-safety/`, and exact base commit
   `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`.
-- Active contribution record: none. `MR-CONTRIB-WP00-001` is accepted.
+- Active contribution record: `MR-CONTRIB-WP00-002`, status `submitted`;
+  three worker commits exist, but the consolidated corrections are pending.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: complete. The primary agent corrected only the
-  README live status, and repeated combined validation passed. No authority or
-  technical behaviour changed.
+- Active correction cycle: primary `npm run verify` found 49.62 percent line
+  coverage against the frozen 90-percent threshold and 56.52 percent branch
+  coverage against the frozen 85-percent threshold. The consolidated audit
+  also found incomplete runtime validation of copied capability statuses,
+  incomplete fatal cancellation and listener cleanup, incomplete suppression
+  of raw browser error output, and IndexedDB blocked, cancellation, and cleanup
+  paths that do not always settle safely. The correction is limited to
+  approved Step-2 source and test paths and changes no authority.
 - Last committed resume checkpoint: this acceptance checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: passed. The fresh independent review found no blocker,
-  required, or advisory finding. It confirmed the README status, S13 path
-  order, closed-object tests, mechanical formatting-only recovery, local-only
-  network boundary, and complete integration readiness.
+- Review gate: not started for Step 2. Corrected complete validation and one
+  complete primary pre-review audit must pass before the reviewer starts.
 
 ## Repository facts
 
