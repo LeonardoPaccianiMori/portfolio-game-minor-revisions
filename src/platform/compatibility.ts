@@ -57,6 +57,14 @@ type CompatibilityAdapters = Readonly<{
   getControllerStatus: () => ProbeResult;
 }>;
 
+type BrowserCompatibilityEnvironment = Readonly<{
+  createCanvas: () => HTMLCanvasElement;
+  indexedDb: IDBFactory | undefined;
+  hasWebAudio: () => boolean;
+  hasPointerLock: () => boolean;
+  hasController: () => boolean;
+}>;
+
 const PROBE_DATABASE_NAME = 'minor-revisions-capability-probe';
 
 const ready = (): ProbeResult => Object.freeze({ status: 'ready', reasonCode: null });
@@ -67,65 +75,109 @@ const unavailable = (reasonCode: CapabilityReasonCode): ProbeResult =>
 const failed = (reasonCode: CapabilityReasonCode): ProbeResult =>
   Object.freeze({ status: 'failed', reasonCode });
 
-const deleteProbeDatabase = async (): Promise<boolean> => {
-  return await new Promise<boolean>((resolve) => {
-    let request: IDBOpenDBRequest;
-    try {
-      request = indexedDB.deleteDatabase(PROBE_DATABASE_NAME);
-    } catch {
-      resolve(false);
-      return;
-    }
-    request.onsuccess = () => resolve(true);
-    request.onerror = () => resolve(false);
-  });
-};
-
-const probeIndexedDb = async (signal: AbortSignal): Promise<ProbeResult> => {
-  if (typeof indexedDB === 'undefined') {
-    return unavailable('INDEXED_DB_UNAVAILABLE');
+const probeIndexedDb = (
+  factory: IDBFactory | undefined,
+  signal: AbortSignal,
+): Promise<ProbeResult> => {
+  if (factory === undefined) {
+    return Promise.resolve(unavailable('INDEXED_DB_UNAVAILABLE'));
   }
 
-  if (signal.aborted) {
-    await deleteProbeDatabase();
-    return failed('INDEXED_DB_FAILED');
-  }
+  return new Promise<ProbeResult>((resolve) => {
+    let openRequest: IDBOpenDBRequest | undefined;
+    let handle: IDBDatabase | undefined;
+    let cleanupActive = false;
+    let settled = false;
 
-  return await new Promise<ProbeResult>((resolve) => {
-    let request: IDBOpenDBRequest;
-    try {
-      request = indexedDB.open(PROBE_DATABASE_NAME);
-    } catch {
-      void deleteProbeDatabase().then(() => resolve(failed('INDEXED_DB_FAILED')));
+    const closeHandle = (): void => {
+      handle?.close();
+      handle = undefined;
+    };
+
+    const deleteAfterLateOpen = (): void => {
+      try {
+        factory.deleteDatabase(PROBE_DATABASE_NAME);
+      } catch {
+        // The accepted result is already settled and no handle remains owned.
+      }
+    };
+
+    const settle = (result: ProbeResult): void => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      signal.removeEventListener('abort', cancel);
+      resolve(result);
+    };
+
+    const cleanup = (result: ProbeResult): void => {
+      closeHandle();
+      if (cleanupActive || settled) {
+        return;
+      }
+      cleanupActive = true;
+      let deleteRequest: IDBOpenDBRequest;
+      try {
+        deleteRequest = factory.deleteDatabase(PROBE_DATABASE_NAME);
+      } catch {
+        settle(failed('INDEXED_DB_FAILED'));
+        return;
+      }
+      deleteRequest.onsuccess = () => settle(result);
+      deleteRequest.onerror = () => settle(failed('INDEXED_DB_FAILED'));
+      deleteRequest.onblocked = () => settle(failed('INDEXED_DB_FAILED'));
+    };
+
+    function cancel(): void {
+      cleanup(failed('INDEXED_DB_FAILED'));
+    }
+
+    signal.addEventListener('abort', cancel, { once: true });
+    if (signal.aborted) {
+      cancel();
       return;
     }
 
-    request.onupgradeneeded = () => {
+    try {
+      openRequest = factory.open(PROBE_DATABASE_NAME);
+    } catch {
+      cleanup(failed('INDEXED_DB_FAILED'));
+      return;
+    }
+
+    openRequest.onupgradeneeded = () => {
       // The probe database stays empty. No object store is permitted here.
     };
-    request.onerror = () => {
-      void deleteProbeDatabase().then(() => resolve(failed('INDEXED_DB_FAILED')));
-    };
-    request.onsuccess = () => {
-      request.result.close();
-      void deleteProbeDatabase().then((deleted) => {
-        if (signal.aborted || !deleted) {
-          resolve(failed('INDEXED_DB_FAILED'));
-          return;
-        }
-        resolve(ready());
-      });
+    openRequest.onblocked = () => cleanup(failed('INDEXED_DB_FAILED'));
+    openRequest.onerror = () => cleanup(failed('INDEXED_DB_FAILED'));
+    openRequest.onsuccess = () => {
+      const opened = openRequest?.result;
+      if (opened === undefined) {
+        cleanup(failed('INDEXED_DB_FAILED'));
+        return;
+      }
+      if (settled) {
+        opened.close();
+        deleteAfterLateOpen();
+        return;
+      }
+      handle = opened;
+      cleanup(signal.aborted ? failed('INDEXED_DB_FAILED') : ready());
     };
   });
 };
 
-const probeWebGl2 = (signal: AbortSignal): Promise<ProbeResult> => {
-  if (signal.aborted || typeof document === 'undefined') {
+const probeWebGl2 = (
+  createCanvas: () => HTMLCanvasElement,
+  signal: AbortSignal,
+): Promise<ProbeResult> => {
+  if (signal.aborted) {
     return Promise.resolve(unavailable('WEBGL2_UNAVAILABLE'));
   }
 
   try {
-    const canvas = document.createElement('canvas');
+    const canvas = createCanvas();
     const context = canvas.getContext('webgl2', {
       alpha: false,
       antialias: true,
@@ -139,20 +191,30 @@ const probeWebGl2 = (signal: AbortSignal): Promise<ProbeResult> => {
   }
 };
 
-const productionAdapters: CompatibilityAdapters = Object.freeze({
-  getEsModulesStatus: ready,
-  probeWebGl2,
-  probeIndexedDb,
-  getWebAudioStatus: () =>
-    typeof AudioContext === 'function' ? ready() : unavailable('WEB_AUDIO_UNAVAILABLE'),
-  getPointerLockStatus: () =>
+const createBrowserAdapters = (
+  environment: BrowserCompatibilityEnvironment,
+): CompatibilityAdapters =>
+  Object.freeze({
+    getEsModulesStatus: ready,
+    probeWebGl2: async (signal) => await probeWebGl2(environment.createCanvas, signal),
+    probeIndexedDb: async (signal) => await probeIndexedDb(environment.indexedDb, signal),
+    getWebAudioStatus: () =>
+      environment.hasWebAudio() ? ready() : unavailable('WEB_AUDIO_UNAVAILABLE'),
+    getPointerLockStatus: () =>
+      environment.hasPointerLock() ? ready() : unavailable('POINTER_LOCK_UNAVAILABLE'),
+    getControllerStatus: () =>
+      environment.hasController() ? ready() : unavailable('CONTROLLER_UNAVAILABLE'),
+  });
+
+const productionAdapters = createBrowserAdapters({
+  createCanvas: () => document.createElement('canvas'),
+  indexedDb: typeof indexedDB === 'undefined' ? undefined : indexedDB,
+  hasWebAudio: () => typeof AudioContext === 'function',
+  hasPointerLock: () =>
     typeof HTMLElement !== 'undefined' &&
     typeof HTMLElement.prototype.requestPointerLock === 'function' &&
-    typeof document.exitPointerLock === 'function'
-      ? ready()
-      : unavailable('POINTER_LOCK_UNAVAILABLE'),
-  getControllerStatus: () =>
-    typeof navigator.getGamepads === 'function' ? ready() : unavailable('CONTROLLER_UNAVAILABLE'),
+    typeof document.exitPointerLock === 'function',
+  hasController: () => typeof navigator.getGamepads === 'function',
 });
 
 const freezeReport = (entries: CapabilityEntry[]): CompatibilityReport => {
@@ -263,3 +325,7 @@ export const createCompatibilityCheckerForTests = (adapters: CompatibilityAdapte
     cancel: async (): Promise<void> => await checker.cancel(),
   });
 };
+
+export const createBrowserCompatibilityAdaptersForTests = (
+  environment: BrowserCompatibilityEnvironment,
+): CompatibilityAdapters => createBrowserAdapters(environment);
