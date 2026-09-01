@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 technical review**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `correcting; combined validation passed, while the second fresh review requires closed-object baseline assertions and two current-status corrections`.
+- Current workflow state: `technical review; the approved closed-object test and current-status corrections are submitted and await combined validation`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,19 +15,19 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 cor
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: complete the exactness and status corrections, repeat
-  combined validation, and obtain another fresh independent re-review.
+- Next possible action: repeat combined validation with the exactness
+  correction, then obtain another fresh independent re-review.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, active for the approved exactness
+- Active work order: `MR-WO-WP00-001`, submitted with the approved exactness
   correction on `work/MR-WP-00-foundation`; its commits are not integrated.
-- Active contribution record: `MR-CONTRIB-WP00-001`, submitted with correction
-  commit `f18c17c`; combined validation passed, while re-review, integration,
+- Active contribution record: `MR-CONTRIB-WP00-001`, submitted with latest
+  correction commit `f4e1a24`; combined validation, re-review, integration,
   Leonardo test, and acceptance are pending.
 - Active player test: none.
-- Active correction cycle: the same controlled worker owns only closed-object
-  assertions in the existing test. The primary agent owns only current Step-1
-  records. No configuration or runtime change is required.
+- Active correction cycle: the controlled worker completed only the approved
+  closed-object assertions; the primary agent corrected only current Step-1
+  records. No configuration or runtime file changed.
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.

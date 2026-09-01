@@ -54,7 +54,8 @@ baseline`; `5434ca74ab797887d68dd1a2d540eef77e7daaf7` — `MR-WP-00 Correct
 foundation review findings`; `0323ec7151bee5551d74866df5200b40990394c9` —
 `MR-WP-00 Expand exact baseline checks`;
 `f18c17c66d0ad3972f81522768ca4896ce063dc0` — `MR-WP-00 Complete exact
-foundation coverage`.
+foundation coverage`; `f4e1a24922c6e93a7357608450f4a036f5bb049a` — `MR-WP-00
+Reject extra foundation configuration`.
 
 ## Integrated commits
 
@@ -172,6 +173,15 @@ whitespace check passed. The validation worktree remained clean.
 The next approved correction remains inside the same owned test file and
 primary-owned Step-1 records. It changes no frozen configuration, runtime,
 dependency, interface, player-visible behaviour, asset, or public boundary.
+
+The controlled worker completed the closed-shape test correction in
+`f4e1a24922c6e93a7357608450f4a036f5bb049a`. The owned-file formatting check,
+three focused tests, typecheck, lint, production build, and Git whitespace
+check passed with exact Node `v24.20.0` and npm `11.19.0`. The test now rejects
+extra package-manifest keys and nested dependency, script, and engine keys;
+extra TypeScript top-level and compiler-option keys; and extra lockfile and
+root-package metadata or dependency keys. Only the known unmerged branch
+documentation formatting difference remains outside the worker branch.
 
 ## Known limitations
 
