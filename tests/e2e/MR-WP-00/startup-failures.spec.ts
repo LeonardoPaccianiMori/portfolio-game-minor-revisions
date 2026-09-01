@@ -179,6 +179,8 @@ test('runs a new complete check after Retry Check', async ({ page }) => {
 
 test('presents one safe fatal screen and copies only after the user acts', async ({ page }) => {
   const externalRequests = trackExternalRequests(page);
+  const escapedPageErrors: string[] = [];
+  page.on('pageerror', (error) => escapedPageErrors.push(error.message));
   await installCapabilities(page, {
     controller: true,
     webglFailures: 0,
@@ -221,5 +223,6 @@ test('presents one safe fatal screen and copies only after the user acts', async
     recoveryActions: ['reloadPage'],
   });
   expect(copied).not.toMatch(/Controlled|stack|path|https?:|player|campaign|save|device/iu);
+  expect(escapedPageErrors).toEqual([]);
   expect(externalRequests).toEqual([]);
 });

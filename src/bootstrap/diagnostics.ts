@@ -74,6 +74,22 @@ const capabilityOrder: readonly CapabilityId[] = Object.freeze([
   'pointerLock',
   'controller',
 ]);
+const requiredByCapability: Readonly<Record<CapabilityId, boolean>> = Object.freeze({
+  esModules: true,
+  webgl2: true,
+  indexedDb: true,
+  webAudio: true,
+  pointerLock: true,
+  controller: false,
+});
+const reasonPrefixByCapability: Readonly<Record<CapabilityId, string>> = Object.freeze({
+  esModules: 'ES_MODULES',
+  webgl2: 'WEBGL2',
+  indexedDb: 'INDEXED_DB',
+  webAudio: 'WEB_AUDIO',
+  pointerLock: 'POINTER_LOCK',
+  controller: 'CONTROLLER',
+});
 
 const fixedFallbackRecord: DiagnosticRecord = Object.freeze({
   schemaVersion: 1,
@@ -94,28 +110,84 @@ const fixedFallback: SanitizedDiagnostic = Object.freeze({
   copyForm: JSON.stringify(fixedFallbackRecord),
 });
 
+const hasExactKeys = (value: object, expected: readonly string[]): boolean => {
+  const actual = Object.keys(value).sort();
+  return actual.length === expected.length && actual.every((key, index) => key === expected[index]);
+};
+
+const isCompatibilityReport = (value: unknown): value is CompatibilityReport => {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  const expectedReportKeys = ['capabilities', 'overall', 'schemaVersion'];
+  if (!hasExactKeys(value, expectedReportKeys)) {
+    return false;
+  }
+  const candidate = value as Partial<CompatibilityReport>;
+  if (
+    candidate.schemaVersion !== 1 ||
+    !['supported', 'degraded', 'blocked'].includes(candidate.overall ?? '') ||
+    !Array.isArray(candidate.capabilities) ||
+    candidate.capabilities.length !== capabilityOrder.length
+  ) {
+    return false;
+  }
+
+  let requiredBlocked = false;
+  let controllerReady = false;
+  for (const [index, id] of capabilityOrder.entries()) {
+    const entry: unknown = candidate.capabilities[index];
+    if (
+      typeof entry !== 'object' ||
+      entry === null ||
+      !hasExactKeys(entry, ['id', 'reasonCode', 'required', 'status'])
+    ) {
+      return false;
+    }
+    const capability = entry as Partial<CompatibilityReport['capabilities'][number]>;
+    if (
+      capability.id !== id ||
+      capability.required !== requiredByCapability[id] ||
+      !['ready', 'unavailable', 'failed'].includes(capability.status ?? '')
+    ) {
+      return false;
+    }
+    const expectedReason =
+      capability.status === 'ready'
+        ? null
+        : `${reasonPrefixByCapability[id]}_${capability.status === 'failed' ? 'FAILED' : 'UNAVAILABLE'}`;
+    if (capability.reasonCode !== expectedReason) {
+      return false;
+    }
+    requiredBlocked ||= capability.required && capability.status !== 'ready';
+    if (id === 'controller') {
+      controllerReady = capability.status === 'ready';
+    }
+  }
+
+  const expectedOverall = requiredBlocked ? 'blocked' : controllerReady ? 'supported' : 'degraded';
+  return candidate.overall === expectedOverall;
+};
+
 const isDiagnosticFault = (value: unknown): value is DiagnosticFault => {
   if (typeof value !== 'object' || value === null) {
     return false;
   }
   const candidate = value as Partial<DiagnosticFault>;
-  const keys = Object.keys(value).sort();
+  const keys = [
+    'code',
+    'compatibility',
+    'contentVersion',
+    'contextCodes',
+    'graphicsProfile',
+    'module',
+    'operation',
+    'phase',
+    'recoveryActions',
+    'severity',
+  ];
   return (
-    JSON.stringify(keys) ===
-      JSON.stringify(
-        [
-          'code',
-          'severity',
-          'phase',
-          'module',
-          'operation',
-          'contentVersion',
-          'graphicsProfile',
-          'compatibility',
-          'contextCodes',
-          'recoveryActions',
-        ].sort(),
-      ) &&
+    hasExactKeys(value, keys) &&
     typeof candidate.code === 'string' &&
     candidate.code.length <= 64 &&
     codePattern.test(candidate.code) &&
@@ -128,7 +200,7 @@ const isDiagnosticFault = (value: unknown): value is DiagnosticFault => {
     (candidate.contentVersion === null || candidate.contentVersion === BUILD_VERSION) &&
     (candidate.graphicsProfile === null ||
       ['low', 'standard', 'high'].includes(candidate.graphicsProfile ?? '')) &&
-    (candidate.compatibility === null || candidate.compatibility?.schemaVersion === 1) &&
+    (candidate.compatibility === null || isCompatibilityReport(candidate.compatibility)) &&
     Array.isArray(candidate.contextCodes) &&
     candidate.contextCodes.length <= 8 &&
     candidate.contextCodes.every(
@@ -179,8 +251,8 @@ class DiagnosticConverter {
       this.adapters.reportDevelopmentError(input);
     }
 
-    const fault = isDiagnosticFault(input) ? input : this.unknownFault(owningModule);
     try {
+      const fault = isDiagnosticFault(input) ? input : this.unknownFault(owningModule);
       const record = this.adapters.freeze({
         schemaVersion: 1 as const,
         code: fault.code,

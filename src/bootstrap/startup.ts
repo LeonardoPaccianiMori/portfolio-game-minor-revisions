@@ -25,6 +25,7 @@ export type StartupHandle = Readonly<{
 }>;
 
 class StartupCoordinator {
+  private cleanupPromise: Promise<void> | undefined;
   private fatal = false;
   private stopped = false;
   private removeFatalListeners: (() => void) | undefined;
@@ -64,31 +65,51 @@ class StartupCoordinator {
       return;
     }
     this.fatal = true;
+    this.removeErrorListeners();
+    this.cleanupPromise ??= this.dependencies.cancelCompatibilityCheck().catch(() => undefined);
     const diagnostic = this.dependencies.createUnexpectedDiagnostic(fault);
     this.dependencies.showFatal(diagnostic);
   }
 
   private async stop(): Promise<void> {
     if (this.stopped) {
+      await this.cleanupPromise;
       return;
     }
     this.stopped = true;
+    this.removeErrorListeners();
+    this.cleanupPromise ??= this.dependencies.cancelCompatibilityCheck();
+    await this.cleanupPromise;
+  }
+
+  private removeErrorListeners(): void {
     this.removeFatalListeners?.();
     this.removeFatalListeners = undefined;
-    await this.dependencies.cancelCompatibilityCheck();
   }
 }
 
-const browserErrorBoundary = (listener: (fault: unknown) => void): (() => void) => {
-  const onError = (event: ErrorEvent): void => listener(event.error);
-  const onUnhandledRejection = (event: PromiseRejectionEvent): void => listener(event.reason);
-  window.addEventListener('error', onError);
-  window.addEventListener('unhandledrejection', onUnhandledRejection);
+const installBrowserErrorBoundary = (
+  target: EventTarget,
+  listener: (fault: unknown) => void,
+): (() => void) => {
+  const onError: EventListener = (event): void => {
+    event.preventDefault();
+    listener((event as ErrorEvent).error);
+  };
+  const onUnhandledRejection: EventListener = (event): void => {
+    event.preventDefault();
+    listener((event as PromiseRejectionEvent).reason);
+  };
+  target.addEventListener('error', onError);
+  target.addEventListener('unhandledrejection', onUnhandledRejection);
   return () => {
-    window.removeEventListener('error', onError);
-    window.removeEventListener('unhandledrejection', onUnhandledRejection);
+    target.removeEventListener('error', onError);
+    target.removeEventListener('unhandledrejection', onUnhandledRejection);
   };
 };
+
+const browserErrorBoundary = (listener: (fault: unknown) => void): (() => void) =>
+  installBrowserErrorBoundary(window, listener);
 
 export const bootstrapStartup = (root: HTMLElement): StartupHandle => {
   const screen = new StartupScreen(root, {
@@ -117,3 +138,8 @@ export const createStartupCoordinatorForTests = (dependencies: StartupDependenci
   const coordinator = new StartupCoordinator(dependencies);
   return Object.freeze({ start: (): StartupHandle => coordinator.start() });
 };
+
+export const installBrowserErrorBoundaryForTests = (
+  target: EventTarget,
+  listener: (fault: unknown) => void,
+): (() => void) => installBrowserErrorBoundary(target, listener);

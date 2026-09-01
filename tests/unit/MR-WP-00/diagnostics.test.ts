@@ -30,6 +30,19 @@ const validFault = (overrides: Partial<DiagnosticFault> = {}): DiagnosticFault =
   ...overrides,
 });
 
+const validCompatibility = () => ({
+  schemaVersion: 1,
+  overall: 'supported',
+  capabilities: [
+    { id: 'esModules', required: true, status: 'ready', reasonCode: null },
+    { id: 'webgl2', required: true, status: 'ready', reasonCode: null },
+    { id: 'indexedDb', required: true, status: 'ready', reasonCode: null },
+    { id: 'webAudio', required: true, status: 'ready', reasonCode: null },
+    { id: 'pointerLock', required: true, status: 'ready', reasonCode: null },
+    { id: 'controller', required: false, status: 'ready', reasonCode: null },
+  ],
+});
+
 describe('MR-S11-DIA-001 diagnostics', () => {
   it.each([
     ['warning', []],
@@ -152,6 +165,91 @@ describe('MR-S11-DIA-001 diagnostics', () => {
     expect(converter.create(withTooManyCodes, 'BOOTSTRAP').record.code).toBe(
       'MRD1-BOOTSTRAP-UNEXPECTED',
     );
+  });
+
+  it.each([
+    { ...validCompatibility(), extra: 'not allowed' },
+    { ...validCompatibility(), schemaVersion: 2 },
+    { ...validCompatibility(), overall: 'arbitrary' },
+    { ...validCompatibility(), capabilities: null },
+    { ...validCompatibility(), capabilities: validCompatibility().capabilities.slice(0, 5) },
+    {
+      ...validCompatibility(),
+      capabilities: [null, ...validCompatibility().capabilities.slice(1)],
+    },
+    {
+      ...validCompatibility(),
+      capabilities: validCompatibility().capabilities.map((entry, index) =>
+        index === 0 ? { ...entry, extra: 'not allowed' } : entry,
+      ),
+    },
+    {
+      ...validCompatibility(),
+      capabilities: validCompatibility().capabilities.map((entry, index) =>
+        index === 0 ? { ...entry, id: 'webgl2' } : entry,
+      ),
+    },
+    {
+      ...validCompatibility(),
+      capabilities: validCompatibility().capabilities.map((entry, index) =>
+        index === 5 ? { ...entry, required: true } : entry,
+      ),
+    },
+    {
+      ...validCompatibility(),
+      capabilities: validCompatibility().capabilities.map((entry, index) =>
+        index === 1 ? { ...entry, status: 'private-value' } : entry,
+      ),
+    },
+    {
+      ...validCompatibility(),
+      capabilities: validCompatibility().capabilities.map((entry, index) =>
+        index === 1 ? { ...entry, reasonCode: 'WEBGL2_FAILED' } : entry,
+      ),
+    },
+    { ...validCompatibility(), overall: 'degraded' },
+  ])('rejects malformed closed compatibility input %#', (compatibility) => {
+    const result = createDiagnosticConverterForTests(adapters()).create(
+      { ...validFault(), compatibility },
+      'BOOTSTRAP',
+    );
+
+    expect(result.record.code).toBe('MRD1-BOOTSTRAP-UNEXPECTED');
+    expect(result.record.capabilities).toBeNull();
+    expect(result.copyForm).not.toContain('private-value');
+  });
+
+  it('uses the fixed fallback when hostile property access interrupts validation', () => {
+    const input = validFault() as DiagnosticFault & { compatibility: unknown };
+    Object.defineProperty(input, 'compatibility', {
+      get: () => {
+        throw new Error('controlled hostile getter');
+      },
+    });
+
+    const result = createDiagnosticConverterForTests(adapters()).create(input, 'BOOTSTRAP');
+    expect(result.record.code).toBe('MRD1-DIAGNOSTICS-CREATION_FAILED');
+  });
+
+  it('accepts the closed optional content, graphics, context, and recovery values', () => {
+    const result = createDiagnosticConverterForTests(adapters()).create(
+      validFault({
+        contentVersion: '0.0.0',
+        graphicsProfile: 'standard',
+        contextCodes: [
+          'STARTUP_INTERRUPTED',
+          'COMPATIBILITY_BLOCKED',
+          'PRESENTATION_FAILED',
+          'CLEANUP_FAILED',
+        ],
+        recoveryActions: ['retryCheck', 'reloadPage'],
+      }),
+      'BOOTSTRAP',
+    );
+    expect(result.record).toMatchObject({
+      contentVersion: '0.0.0',
+      graphicsProfile: 'standard',
+    });
   });
 
   it('uses the fixed non-recursive fallback when conversion fails', () => {
