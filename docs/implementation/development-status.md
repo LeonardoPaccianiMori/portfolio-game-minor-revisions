@@ -2,12 +2,13 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 approved; Step 1 accepted**
+Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approved**
 
 ## Durable resume point
 
-- Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `accepted on 2026-09-01; the reviewed foundation is integrated on local main and all required main-branch checks pass`.
+- Current step: `2`, plan approved on 2026-09-01.
+- Current workflow state: `plan approved; no Step-2 source, test, work order,
+branch, worktree, contribution, or implementation result exists yet`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,10 +20,14 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted**
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: prepare the exact Step-2 plan and wait for Leonardo's
-  separate approval.
-- Active approved implementation plan: none. The Step-1 cycle is complete.
-- Active work order: none. `MR-WO-WP00-001` is accepted.
+- Next possible action: create and activate `MR-WO-WP00-002` from this exact
+  plan checkpoint, then create its isolated branch and worktree.
+- Active approved implementation plan: Step 2 compatibility checks, startup
+  diagnostics, loading state, and safe error screens, approved by Leonardo on
+  2026-09-01.
+- Active work order: none yet. `MR-WO-WP00-001` is accepted, and
+  `MR-WO-WP00-002` must use the exact commit that contains this plan-approved
+  checkpoint as its base.
 - Active contribution record: none. `MR-CONTRIB-WP00-001` is accepted.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
@@ -60,14 +65,15 @@ insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority                                       | State                          | Exact boundary                                                                                                                                         |
-| ----------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                             |
-| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                  |
-| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                 |
-| Steps 2–70                                      | Blocked                        | Step 2 has its accepted dependency but still needs its own approved plan. Every later step also needs accepted dependencies and its own approved plan. |
-| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                          |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                         |
+| Authority                                       | State                          | Exact boundary                                                                                                                                                         |
+| ----------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                                             |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                                                  |
+| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                                                 |
+| Step 2                                          | Plan approved on 2026-09-01    | Only the exact approved startup-safety files, checks, work order, controlled worker, primary audit, independent review, integration, and Leonardo test are authorized. |
+| Steps 3–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                                                                |
+| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                                          |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                                         |
 
 ## Session-resume procedure
 

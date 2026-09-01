@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 accepted**
+Status: **Step 1 accepted; Step 2 plan approved**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -30,13 +30,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
+|    2 | Plan approved           | 2026-09-01    | Not started                                                                                                                                                                                      | Not started       | Not accepted                                                                                        | Containing plan checkpoint                                                   | Exact startup-safety scope only.                                       |
+| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                                               |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Complete Step 2 only after Leonardo approves its exact plan |
+| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                         |
+| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | ------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Execute only the approved Step-2 plan |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -233,6 +234,74 @@ No game system, Three.js scene, source directory, content, production asset,
 remote, licence, deployment, or public result exists. Step 2 now has its
 accepted dependency, but it remains blocked until Leonardo approves its exact
 plan.
+
+## Step 02 — Startup compatibility, diagnostics, and safe errors
+
+### Plan and authority
+
+Leonardo approved the exact Step-2 plan on 2026-09-01. It permits only the
+listed `MR-WP-00` startup, platform, test, and primary control paths; the exact
+S11 compatibility and sanitized-diagnostic subset; one controlled OpenAI
+`gpt-5.6-sol` worker using `high` reasoning; one later fresh read-only OpenAI
+`gpt-5.6-sol` reviewer using `xhigh` reasoning; the required checks; local
+integration; and Leonardo's normal-start and controlled-failure review.
+
+This approval does not authorize Step 3, an application controller, a Three.js
+scene, campaign systems, content, saves, assets, package changes, a remote, a
+licence, deployment, publication, or a Career Center update. No earlier
+decision or frozen interface changes. Evidence that requires such a change
+stops this step and needs a separate impact packet and Leonardo approval.
+
+### Leonardo contribution
+
+Leonardo approved the Step-2 purpose, exact file scope, requirements, checks,
+local test method, exclusions, commit boundary, focused source packets, model
+and reasoning selections, sequential execution, and correction-review cadence
+on 2026-09-01. Testing observations and acceptance are not yet available.
+
+### Agent contribution
+
+The primary Codex agent prepared the approved plan and verified the clean local
+repository, current commit, accepted Step-1 dependency, and absent remote. No
+Step-2 worker, reviewer, implementation, test, worktree, or result exists at
+this checkpoint.
+
+### Files and commits
+
+The plan checkpoint is the commit that contains this entry. It becomes the
+exact `base_commit` of `MR-WO-WP00-002`. The work order, worker branch,
+worktree, worker commits, contribution record, integration commits, and final
+acceptance commit do not exist yet.
+
+### Automated and review evidence
+
+Not yet available. The approved plan requires focused tests, `npm run check`,
+`npm run build`, complete combined verification, production and network
+inspection, one complete primary pre-review audit, and one fresh independent
+review with all findings in one report.
+
+### Leonardo test packet
+
+Not yet available. After reviewed integration, the primary agent will operate
+the local server and controlled browser sessions. Leonardo will inspect one
+normal start, the factual loading and Ready states, controlled compatibility
+failure messages, and the safe fatal-error presentation.
+
+### Observed result and corrections
+
+Not yet available.
+
+### Acceptance decision
+
+Not accepted. Plan approval is implementation authority only and does not
+accept a result.
+
+### Known limitations and next boundary
+
+The accepted repository still contains only the Step-1 package foundation and
+foundation tests. No Step-2 source or result exists at this checkpoint. The
+next permitted action is creation and activation of `MR-WO-WP00-002` from this
+exact commit. Step 3 and every public action remain blocked.
 
 ## Required accepted-step entry
 
