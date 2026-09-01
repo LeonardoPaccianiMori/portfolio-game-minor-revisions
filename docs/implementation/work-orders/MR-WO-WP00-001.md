@@ -1,12 +1,12 @@
 ---
 id: MR-WO-WP00-001
 type: implementation-work-order
-status: submitted
+status: active
 work_package: MR-WP-00
 sequence: 1
 created: 2026-09-01
 updated: 2026-09-01
-base_commit: 57282d501cb034334a070bf1c68151bc8501f803
+base_commit: 5eb5850f9f10302a4d6935577187d23dc7f4f63d
 provider: OpenAI
 model: gpt-5.6-terra
 reasoning_level: high

@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 in technical review**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `technical review; primary verification passed and fresh independent review is pending`.
+- Current workflow state: `correcting; independent review found one blocker and four required findings`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,22 +15,24 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 in 
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: obtain a fresh independent read-only review of the
-  controlled worker diff and recorded primary validation evidence.
+- Next possible action: correct the approved-scope configuration, test, and
+  provenance findings; repeat applicable checks; then obtain a fresh
+  independent read-only re-review.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, submitted from
-  `work/MR-WP-00-foundation`; primary verification passed and review is
-  pending.
+- Active work order: `MR-WO-WP00-001`, reactivated for approved-scope repair
+  on `work/MR-WP-00-foundation`.
 - Active contribution record: `MR-CONTRIB-WP00-001`, submitted; primary
   verification, review, integration, and Leonardo acceptance are pending.
 - Active player test: none.
 - Active correction cycle: none.
-- Last committed resume checkpoint: this plan-approved checkpoint; Git history
-  is authoritative for its commit identifier.
+- Last committed resume checkpoint: this correction checkpoint; Git history is
+  authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking technical issue: none known. Required technical checks passed; an
-  independent-review finding can still require correction and re-review.
+- Blocking technical issue: review finding `MR-S1-REV-001` requires the exact
+  worker starting commit to replace the earlier Gate-1 checkpoint in the work
+  order and contribution evidence. The required formatting correction can
+  reveal a separate block when the unaffected tracked records are checked.
 
 ## Repository facts
 
@@ -38,9 +40,11 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 in 
 - Remote: none.
 - S00–S14: documented.
 - Frozen interfaces: `MR-IF-001`–`MR-IF-015` at `v1`.
-- Package configuration: none.
+- Package configuration: submitted on the isolated `MR-WP-00` branch; not yet
+  integrated on `main`.
 - Game code: none.
-- Tests and executable fixtures: none.
+- Tests and executable fixtures: submitted on the isolated `MR-WP-00` branch;
+  not yet integrated on `main`.
 - Production assets: none.
 - Local deployment configuration: none.
 - Public licence: none.

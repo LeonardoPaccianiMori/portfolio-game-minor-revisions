@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 in technical review; no implementation step accepted**
+Status: **Step 1 correcting; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
 | 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Technical review | 2026-09-01 | Clean install, browser setup, exact-version, dependency, audit, check, verify, production, network-boundary, and diff checks passed; independent review pending | Not yet available | Not yet available | Plan-approved, implementing, submission, and technical-review checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
+| 1 | Correcting | 2026-09-01 | Primary checks passed; independent review found one blocker and four required corrections | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, and correction checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
 | 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -66,10 +66,13 @@ in `ai-use-log.md` and `MR-CONTRIB-WP00-001`.
 
 ### Files and commits
 
-Base commit: `57282d501cb034334a070bf1c68151bc8501f803`. The plan checkpoint
-commit is the commit that contains this entry. Worker and integration commits
-are not yet available. The contribution record will be created after actual
-worker submission because S13 permits no draft contribution-record state.
+Worker starting commit: `5eb5850f9f10302a4d6935577187d23dc7f4f63d`. The earlier
+Gate-1 checkpoint `57282d501cb034334a070bf1c68151bc8501f803` remains the
+pre-plan repository fact, not the worker starting commit. The plan checkpoint
+commit is the commit that contains this entry. Worker commit
+`b965811ff9dd9994d120c923aa0f69077009633e` is submitted. Integration commits
+are not yet available. The contribution record was created after actual worker
+submission because S13 permits no draft contribution-record state.
 
 ### Automated and review evidence
 
@@ -82,7 +85,11 @@ test, coverage command, production build, and Chromium, Firefox, and WebKit
 start-page flows); `npm audit --audit-level=high` (no vulnerabilities);
 dependency-tree inspection; production-output inspection; no-runtime-external-
 request inspection; and `git diff --check`. A fresh independent read-only
-review is pending.
+review found the following before integration: exact starting-commit
+provenance; future source coverage, browser globals, worktree and editor
+ignores; prohibited tracked-source formatting exclusions; baseline test
+coverage; and contribution evidence require correction. The correction must
+receive a new review.
 
 ### Leonardo test packet
 
@@ -93,7 +100,9 @@ he wants to stop safely.
 
 ### Observed result and corrections
 
-Not yet available.
+The independent reviewer found no advisory issue. Its blocker and required
+findings are recorded in `MR-CONTRIB-WP00-001`; no correction has yet passed
+revalidation or re-review.
 
 ### Acceptance decision
 

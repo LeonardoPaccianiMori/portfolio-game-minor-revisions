@@ -6,7 +6,7 @@ work_order: MR-WO-WP00-001
 work_package: MR-WP-00
 created: 2026-09-01
 updated: 2026-09-01
-base_commit: 57282d501cb034334a070bf1c68151bc8501f803
+base_commit: 5eb5850f9f10302a4d6935577187d23dc7f4f63d
 provider: OpenAI
 model: gpt-5.6-terra
 reasoning_level: high
@@ -67,6 +67,10 @@ scope and ignored only the pre-existing unowned formatting paths before the
 passing results.
 
 Primary verification also passed under the same exact Node and npm versions:
+before the worker started, registry metadata confirmed that every frozen direct
+package version exists, has the S01 licence, has no deprecation notice, and
+has compatible required peers; optional Vite, Vitest, coverage, and ESLint
+peers were not added.
 `npm ci` installed 158 packages and audited 159 with no vulnerabilities;
 `npm run setup:browsers` installed the local Chromium, Firefox, and WebKit
 test browsers; `npm run check` passed; `npm run verify` passed its coverage,
@@ -80,24 +84,33 @@ are the visual evidence before Leonardo's own direct local-page check.
 
 ## Independent review
 
-Not yet available.
+On 2026-09-01, an OpenAI `gpt-5.6-sol` independent reviewer using `xhigh`
+reasoning reviewed worker commit `b965811ff9dd9994d120c923aa0f69077009633e`
+against worker starting commit `5eb5850f9f10302a4d6935577187d23dc7f4f63d`.
+It found one blocker and four required findings: the previously misrecorded
+starting commit; future source typecheck and browser-global coverage, worktree
+and editor ignores; prohibited tracked-source formatting exclusions; inadequate
+Node-only baseline checks; and incomplete, contradictory contribution evidence.
+It found no advisory issue. Correction, applicable check repetition, and a
+fresh independent re-review are required before integration.
 
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
-lint, and formatting results. No primary-owned, frozen, player-visible,
-dependency, or design contract changed. Primary review must verify the final
-configuration and the narrow formatting exclusions.
+lint, and formatting results. The independent review found that the tracked-
+source formatting exclusions cannot remain under S01. The primary agent also
+corrected the worker-starting-commit provenance in this contribution, the work
+order, and the step acceptance record. Approved-scope configuration and test
+repairs are pending. No frozen interface, dependency version, design, or
+player-visible contract changed.
 
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
-system, content, production asset, browser installation result, full
-verification result, independent review, integration, Leonardo test, or
-acceptance exists. The page is intentionally static. The pre-existing
-`AGENTS.md`, `README.md`, `assets/`, and `docs/` paths are ignored by Prettier
-to prevent existing frozen formatting differences from changing this worker
-check; owned configuration, page, and tests remain checked.
+system, content, production asset, integration, Leonardo test, or acceptance
+exists. The page is intentionally static. Local browser installation and full
+verification results exist as recorded above. The tracked-source Prettier
+exclusions are under correction; S01 does not permit them to remain.
 
 ## Leonardo decision
 
