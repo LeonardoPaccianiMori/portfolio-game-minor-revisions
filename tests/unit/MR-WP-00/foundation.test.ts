@@ -22,6 +22,22 @@ type TypeScriptConfig = {
   include: string[];
 };
 
+type PackageLock = {
+  lockfileVersion: number;
+  name: string;
+  packages: {
+    '': {
+      dependencies: Record<string, string>;
+      devDependencies: Record<string, string>;
+      engines: { node: string };
+      name: string;
+      version: string;
+    };
+  };
+  requires: boolean;
+  version: string;
+};
+
 const readJson = async <T>(path: string): Promise<T> => {
   return JSON.parse(await readFile(path, 'utf8')) as T;
 };
@@ -129,5 +145,196 @@ describe('MR-WP-00 foundation', () => {
     expect(page).toContain('Game systems are not yet available.');
     expect(page).not.toMatch(/<script\b/i);
     expect(page).not.toMatch(/three(?:\.js)?/i);
+  });
+
+  it('keeps the remaining frozen S01 tool configuration and lockfile-root facts exact', async () => {
+    const [
+      gitIgnore,
+      prettierIgnore,
+      eslintConfig,
+      prettierConfig,
+      vitestConfig,
+      playwrightConfig,
+      packageLock,
+    ] = await Promise.all([
+      readFile(resolve(repositoryRoot, '.gitignore'), 'utf8'),
+      readFile(resolve(repositoryRoot, '.prettierignore'), 'utf8'),
+      readFile(resolve(repositoryRoot, 'eslint.config.js'), 'utf8'),
+      readFile(resolve(repositoryRoot, 'prettier.config.js'), 'utf8'),
+      readFile(resolve(repositoryRoot, 'vitest.config.ts'), 'utf8'),
+      readFile(resolve(repositoryRoot, 'playwright.config.ts'), 'utf8'),
+      readJson<PackageLock>(resolve(repositoryRoot, 'package-lock.json')),
+    ]);
+
+    expect(gitIgnore).toBe(`node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+local-artifacts/performance/
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.worktrees/
+`);
+    expect(prettierIgnore).toBe(`node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+local-artifacts/performance/
+.vite/
+.cache/
+package-lock.json
+`);
+    expect(eslintConfig).toBe(`import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  {
+    ignores: [
+      'coverage/',
+      'dist/',
+      'local-artifacts/',
+      'node_modules/',
+      'playwright-report/',
+      'test-results/',
+      '.worktrees/',
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked.map((config) => ({
+    ...config,
+    files: ['**/*.ts'],
+  })),
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-misused-promises': 'error',
+      '@typescript-eslint/no-unsafe-assignment': 'error',
+      '@typescript-eslint/switch-exhaustiveness-check': 'error',
+    },
+  },
+  {
+    files: ['src/**/*.ts'],
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
+  {
+    files: ['tests/**/*.ts'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
+    files: ['eslint.config.js', 'playwright.config.ts', 'vite.config.ts', 'vitest.config.ts'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+);
+`);
+    expect(prettierConfig).toBe(`export default {
+  endOfLine: 'lf',
+  printWidth: 100,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+  useTabs: false,
+};
+`);
+    expect(vitestConfig).toBe(`import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    coverage: {
+      provider: 'v8',
+      thresholds: {
+        branches: 85,
+        lines: 90,
+      },
+    },
+    environment: 'node',
+    include: ['tests/unit/**/*.test.ts'],
+  },
+});
+`);
+    expect(playwrightConfig).toBe(`import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  outputDir: 'test-results',
+  testDir: 'tests/e2e',
+  use: {
+    baseURL: 'http://127.0.0.1:5173',
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    video: 'off',
+  },
+  webServer: {
+    command: 'npm run dev',
+    reuseExistingServer: false,
+    url: 'http://127.0.0.1:5173',
+  },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  ],
+});
+`);
+    expect(packageLock).toMatchObject({
+      lockfileVersion: 3,
+      name: 'minor-revisions',
+      packages: {
+        '': {
+          dependencies: {
+            idb: '8.0.3',
+            three: '0.185.1',
+            zod: '4.5.2',
+          },
+          devDependencies: {
+            '@eslint/js': '10.0.1',
+            '@playwright/test': '1.62.1',
+            '@types/node': '24.13.3',
+            '@vitest/coverage-v8': '4.1.11',
+            'cross-env': '10.1.0',
+            eslint: '10.9.1',
+            globals: '17.11.0',
+            prettier: '3.9.6',
+            typescript: '6.0.3',
+            'typescript-eslint': '8.68.0',
+            vite: '8.2.2',
+            vitest: '4.1.11',
+          },
+          engines: { node: '24.20.0' },
+          name: 'minor-revisions',
+          version: '0.0.0',
+        },
+      },
+      requires: true,
+      version: '0.0.0',
+    });
   });
 });
