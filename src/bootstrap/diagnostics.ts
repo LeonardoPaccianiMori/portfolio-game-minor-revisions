@@ -110,71 +110,143 @@ const fixedFallback: SanitizedDiagnostic = Object.freeze({
   copyForm: JSON.stringify(fixedFallbackRecord),
 });
 
-const hasExactKeys = (value: object, expected: readonly string[]): boolean => {
-  const actual = Object.keys(value).sort();
-  return actual.length === expected.length && actual.every((key, index) => key === expected[index]);
+type NormalizedDiagnosticFault = Readonly<{
+  code: `MRD1-${string}`;
+  severity: DiagnosticSeverity;
+  phase: DiagnosticPhase;
+  module: DiagnosticModule;
+  operation: DiagnosticOperation;
+  contentVersion: string | null;
+  graphicsProfile: GraphicsProfile | null;
+  capabilities: CapabilityStatuses | null;
+  contextCodes: readonly DiagnosticContextCode[];
+  recoveryActions: readonly RecoveryAction[];
+}>;
+
+const readExactDataProperties = (
+  value: unknown,
+  expected: readonly string[],
+): Readonly<Record<string, unknown>> | null => {
+  if (typeof value !== 'object' || value === null) {
+    return null;
+  }
+
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  const ownKeys = Reflect.ownKeys(descriptors);
+  if (
+    ownKeys.length !== expected.length ||
+    ownKeys.some((key) => typeof key !== 'string' || !expected.includes(key))
+  ) {
+    return null;
+  }
+
+  const snapshot: Record<string, unknown> = {};
+  for (const key of expected) {
+    const descriptor = descriptors[key];
+    if (descriptor === undefined || !descriptor.enumerable || !('value' in descriptor)) {
+      return null;
+    }
+    snapshot[key] = descriptor.value;
+  }
+  return Object.freeze(snapshot);
 };
 
-const isCompatibilityReport = (value: unknown): value is CompatibilityReport => {
-  if (typeof value !== 'object' || value === null) {
-    return false;
+const readClosedArray = (value: unknown, maximumLength: number): readonly unknown[] | null => {
+  if (!Array.isArray(value)) {
+    return null;
   }
-  const expectedReportKeys = ['capabilities', 'overall', 'schemaVersion'];
-  if (!hasExactKeys(value, expectedReportKeys)) {
-    return false;
-  }
-  const candidate = value as Partial<CompatibilityReport>;
+  const descriptors = Object.getOwnPropertyDescriptors(value as object);
+  const lengthDescriptor = descriptors.length;
   if (
-    candidate.schemaVersion !== 1 ||
-    !['supported', 'degraded', 'blocked'].includes(candidate.overall ?? '') ||
-    !Array.isArray(candidate.capabilities) ||
-    candidate.capabilities.length !== capabilityOrder.length
+    lengthDescriptor === undefined ||
+    !('value' in lengthDescriptor) ||
+    typeof lengthDescriptor.value !== 'number' ||
+    lengthDescriptor.value > maximumLength
   ) {
-    return false;
+    return null;
   }
 
+  const length = lengthDescriptor.value;
+  const expectedKeys = Array.from({ length }, (_, index) => String(index));
+  expectedKeys.push('length');
+  const ownKeys = Reflect.ownKeys(descriptors);
+  if (
+    ownKeys.length !== expectedKeys.length ||
+    ownKeys.some((key) => typeof key !== 'string' || !expectedKeys.includes(key))
+  ) {
+    return null;
+  }
+
+  const snapshot: unknown[] = [];
+  for (let index = 0; index < length; index += 1) {
+    const descriptor = descriptors[String(index)];
+    if (descriptor === undefined || !descriptor.enumerable || !('value' in descriptor)) {
+      return null;
+    }
+    snapshot.push(descriptor.value);
+  }
+  return Object.freeze(snapshot);
+};
+
+const normalizeCompatibility = (value: unknown): CapabilityStatuses | null | undefined => {
+  if (value === null) {
+    return null;
+  }
+  const candidate = readExactDataProperties(value, ['capabilities', 'overall', 'schemaVersion']);
+  if (candidate === null) {
+    return undefined;
+  }
+  const capabilities = readClosedArray(candidate.capabilities, capabilityOrder.length);
+  if (
+    candidate.schemaVersion !== 1 ||
+    !['supported', 'degraded', 'blocked'].some((allowed) => allowed === candidate.overall) ||
+    capabilities === null ||
+    capabilities.length !== capabilityOrder.length
+  ) {
+    return undefined;
+  }
+
+  const statuses = {} as Record<CapabilityId, CapabilityStatus>;
   let requiredBlocked = false;
   let controllerReady = false;
   for (const [index, id] of capabilityOrder.entries()) {
-    const entry: unknown = candidate.capabilities[index];
-    if (
-      typeof entry !== 'object' ||
-      entry === null ||
-      !hasExactKeys(entry, ['id', 'reasonCode', 'required', 'status'])
-    ) {
-      return false;
+    const entry = readExactDataProperties(capabilities[index], [
+      'id',
+      'reasonCode',
+      'required',
+      'status',
+    ]);
+    if (entry === null) {
+      return undefined;
     }
-    const capability = entry as Partial<CompatibilityReport['capabilities'][number]>;
     if (
-      capability.id !== id ||
-      capability.required !== requiredByCapability[id] ||
-      !['ready', 'unavailable', 'failed'].includes(capability.status ?? '')
+      entry.id !== id ||
+      entry.required !== requiredByCapability[id] ||
+      !['ready', 'unavailable', 'failed'].some((allowed) => allowed === entry.status)
     ) {
-      return false;
+      return undefined;
     }
+    const status = entry.status as CapabilityStatus;
     const expectedReason =
-      capability.status === 'ready'
+      status === 'ready'
         ? null
-        : `${reasonPrefixByCapability[id]}_${capability.status === 'failed' ? 'FAILED' : 'UNAVAILABLE'}`;
-    if (capability.reasonCode !== expectedReason) {
-      return false;
+        : `${reasonPrefixByCapability[id]}_${status === 'failed' ? 'FAILED' : 'UNAVAILABLE'}`;
+    if (entry.reasonCode !== expectedReason) {
+      return undefined;
     }
-    requiredBlocked ||= capability.required && capability.status !== 'ready';
+    statuses[id] = status;
+    requiredBlocked ||= entry.required === true && status !== 'ready';
     if (id === 'controller') {
-      controllerReady = capability.status === 'ready';
+      controllerReady = status === 'ready';
     }
   }
 
   const expectedOverall = requiredBlocked ? 'blocked' : controllerReady ? 'supported' : 'degraded';
-  return candidate.overall === expectedOverall;
+  return candidate.overall === expectedOverall ? Object.freeze(statuses) : undefined;
 };
 
-const isDiagnosticFault = (value: unknown): value is DiagnosticFault => {
-  if (typeof value !== 'object' || value === null) {
-    return false;
-  }
-  const candidate = value as Partial<DiagnosticFault>;
-  const keys = [
+const normalizeDiagnosticFault = (value: unknown): NormalizedDiagnosticFault | null => {
+  const candidate = readExactDataProperties(value, [
     'code',
     'compatibility',
     'contentVersion',
@@ -185,25 +257,30 @@ const isDiagnosticFault = (value: unknown): value is DiagnosticFault => {
     'phase',
     'recoveryActions',
     'severity',
-  ];
-  return (
-    hasExactKeys(value, keys) &&
+  ]);
+  if (candidate === null) {
+    return null;
+  }
+
+  const compatibility = normalizeCompatibility(candidate.compatibility);
+  const contextCodes = readClosedArray(candidate.contextCodes, 8);
+  const recoveryActions = readClosedArray(candidate.recoveryActions, 1);
+  if (
     typeof candidate.code === 'string' &&
     candidate.code.length <= 64 &&
     codePattern.test(candidate.code) &&
-    ['warning', 'recoverable', 'fatal'].includes(candidate.severity ?? '') &&
-    ['startup', 'compatibility', 'presentation'].includes(candidate.phase ?? '') &&
-    ['BOOTSTRAP', 'PLATFORM', 'DIAGNOSTICS'].includes(candidate.module ?? '') &&
+    ['warning', 'recoverable', 'fatal'].some((allowed) => allowed === candidate.severity) &&
+    ['startup', 'compatibility', 'presentation'].some((allowed) => allowed === candidate.phase) &&
+    ['BOOTSTRAP', 'PLATFORM', 'DIAGNOSTICS'].some((allowed) => allowed === candidate.module) &&
     ['START_BOOTSTRAP', 'CHECK_COMPATIBILITY', 'PRESENT_STARTUP', 'CREATE_DIAGNOSTIC'].includes(
-      candidate.operation ?? '',
+      candidate.operation as string,
     ) &&
     (candidate.contentVersion === null || candidate.contentVersion === BUILD_VERSION) &&
     (candidate.graphicsProfile === null ||
-      ['low', 'standard', 'high'].includes(candidate.graphicsProfile ?? '')) &&
-    (candidate.compatibility === null || isCompatibilityReport(candidate.compatibility)) &&
-    Array.isArray(candidate.contextCodes) &&
-    candidate.contextCodes.length <= 8 &&
-    candidate.contextCodes.every(
+      ['low', 'standard', 'high'].some((allowed) => allowed === candidate.graphicsProfile)) &&
+    compatibility !== undefined &&
+    contextCodes !== null &&
+    contextCodes.every(
       (code) =>
         typeof code === 'string' &&
         [
@@ -213,28 +290,38 @@ const isDiagnosticFault = (value: unknown): value is DiagnosticFault => {
           'CLEANUP_FAILED',
         ].some((allowed) => allowed === code),
     ) &&
-    Array.isArray(candidate.recoveryActions) &&
-    candidate.recoveryActions.every(
+    recoveryActions !== null &&
+    recoveryActions.every(
       (action) =>
         typeof action === 'string' &&
         ['retryCheck', 'reloadPage'].some((allowed) => allowed === action),
     )
-  );
-};
-
-const capabilityStatuses = (report: CompatibilityReport | null): CapabilityStatuses | null => {
-  if (report === null || report.capabilities.length !== capabilityOrder.length) {
-    return null;
-  }
-  const statuses = {} as Record<CapabilityId, CapabilityStatus>;
-  for (const [index, id] of capabilityOrder.entries()) {
-    const entry = report.capabilities[index];
-    if (entry?.id !== id) {
+  ) {
+    const severity = candidate.severity as DiagnosticSeverity;
+    const recoveryIsValid =
+      (severity === 'warning' && recoveryActions.length === 0) ||
+      (severity === 'recoverable' &&
+        (recoveryActions.length === 0 ||
+          (recoveryActions.length === 1 && recoveryActions[0] === 'retryCheck'))) ||
+      (severity === 'fatal' && recoveryActions.length === 1 && recoveryActions[0] === 'reloadPage');
+    if (!recoveryIsValid) {
       return null;
     }
-    statuses[id] = entry.status;
+
+    return Object.freeze({
+      code: candidate.code as `MRD1-${string}`,
+      severity,
+      phase: candidate.phase as DiagnosticPhase,
+      module: candidate.module as DiagnosticModule,
+      operation: candidate.operation as DiagnosticOperation,
+      contentVersion: candidate.contentVersion,
+      graphicsProfile: candidate.graphicsProfile as GraphicsProfile | null,
+      capabilities: compatibility,
+      contextCodes: contextCodes as readonly DiagnosticContextCode[],
+      recoveryActions: recoveryActions as readonly RecoveryAction[],
+    });
   }
-  return Object.freeze(statuses);
+  return null;
 };
 
 const operationForModule: Readonly<Record<DiagnosticModule, DiagnosticOperation>> = Object.freeze({
@@ -252,7 +339,7 @@ class DiagnosticConverter {
     }
 
     try {
-      const fault = isDiagnosticFault(input) ? input : this.unknownFault(owningModule);
+      const fault = normalizeDiagnosticFault(input) ?? this.unknownFault(owningModule);
       const record = this.adapters.freeze({
         schemaVersion: 1 as const,
         code: fault.code,
@@ -263,7 +350,7 @@ class DiagnosticConverter {
         buildVersion: BUILD_VERSION,
         contentVersion: fault.contentVersion,
         graphicsProfile: fault.graphicsProfile,
-        capabilities: capabilityStatuses(fault.compatibility),
+        capabilities: fault.capabilities,
         contextCodes: this.adapters.freeze([...fault.contextCodes]),
         recoveryActions: this.adapters.freeze([...fault.recoveryActions]),
       });
@@ -277,7 +364,7 @@ class DiagnosticConverter {
     }
   }
 
-  private unknownFault(module: DiagnosticModule): DiagnosticFault {
+  private unknownFault(module: DiagnosticModule): NormalizedDiagnosticFault {
     return Object.freeze({
       code: `MRD1-${module}-UNEXPECTED`,
       severity: 'fatal',
@@ -286,7 +373,7 @@ class DiagnosticConverter {
       operation: operationForModule[module],
       contentVersion: null,
       graphicsProfile: null,
-      compatibility: null,
+      capabilities: null,
       contextCodes: Object.freeze(['STARTUP_INTERRUPTED'] as DiagnosticContextCode[]),
       recoveryActions: Object.freeze(['reloadPage'] as RecoveryAction[]),
     });

@@ -60,6 +60,24 @@ describe('MR-S11-DIA-001 diagnostics', () => {
     expect(Object.isFrozen(diagnostic.record)).toBe(true);
   });
 
+  it.each([
+    ['warning', ['retryCheck']],
+    ['warning', ['reloadPage']],
+    ['recoverable', ['reloadPage']],
+    ['recoverable', ['retryCheck', 'reloadPage']],
+    ['fatal', []],
+    ['fatal', ['retryCheck']],
+  ] as const)('rejects the invalid %s recovery form %#', (severity, recoveryActions) => {
+    const diagnostic = createDiagnosticConverterForTests(adapters()).create(
+      validFault({ severity, recoveryActions }),
+      'BOOTSTRAP',
+    );
+
+    expect(diagnostic.record.code).toBe('MRD1-BOOTSTRAP-UNEXPECTED');
+    expect(diagnostic.record.severity).toBe('fatal');
+    expect(diagnostic.record.recoveryActions).toEqual(['reloadPage']);
+  });
+
   it('uses the fixed canonical field order and only approved safe values', () => {
     const diagnostic = createDiagnosticConverterForTests(adapters()).create(
       validFault(),
@@ -132,6 +150,7 @@ describe('MR-S11-DIA-001 diagnostics', () => {
       'pointerLock',
       'controller',
     ]);
+    expect(Object.isFrozen(diagnostic.record.capabilities)).toBe(true);
   });
 
   it('maps arbitrary or prohibited input to one stable owning-module result', () => {
@@ -219,16 +238,63 @@ describe('MR-S11-DIA-001 diagnostics', () => {
     expect(result.copyForm).not.toContain('private-value');
   });
 
-  it('uses the fixed fallback when hostile property access interrupts validation', () => {
+  it('rejects a hostile top-level accessor without invoking or copying it', () => {
+    let reads = 0;
+    const arbitrary = 'PRIVATE-TOP-LEVEL-VALUE';
+    const input = validFault() as DiagnosticFault & { compatibility: unknown };
+    Object.defineProperty(input, 'code', {
+      configurable: true,
+      enumerable: true,
+      get: () => {
+        reads += 1;
+        return reads === 1 ? 'MRD1-BOOTSTRAP-START_FAILED' : arbitrary;
+      },
+    });
+
+    const result = createDiagnosticConverterForTests(adapters()).create(input, 'BOOTSTRAP');
+    expect(result.record.code).toBe('MRD1-BOOTSTRAP-UNEXPECTED');
+    expect(reads).toBe(0);
+    expect(result.copyForm).not.toContain(arbitrary);
+  });
+
+  it('rejects a changing nested capability accessor without invoking or copying it', () => {
+    let reads = 0;
+    const arbitrary = 'PRIVATE-NESTED-CAPABILITY-VALUE';
+    const compatibility = validCompatibility();
+    Object.defineProperty(compatibility.capabilities[0], 'status', {
+      configurable: true,
+      enumerable: true,
+      get: () => {
+        reads += 1;
+        return reads === 1 ? 'ready' : arbitrary;
+      },
+    });
+
+    const result = createDiagnosticConverterForTests(adapters()).create(
+      { ...validFault(), compatibility },
+      'BOOTSTRAP',
+    );
+    expect(result.record.code).toBe('MRD1-BOOTSTRAP-UNEXPECTED');
+    expect(result.record.capabilities).toBeNull();
+    expect(reads).toBe(0);
+    expect(result.copyForm).not.toContain(arbitrary);
+  });
+
+  it('rejects a throwing accessor without invoking it', () => {
+    let reads = 0;
     const input = validFault() as DiagnosticFault & { compatibility: unknown };
     Object.defineProperty(input, 'compatibility', {
+      configurable: true,
+      enumerable: true,
       get: () => {
+        reads += 1;
         throw new Error('controlled hostile getter');
       },
     });
 
     const result = createDiagnosticConverterForTests(adapters()).create(input, 'BOOTSTRAP');
-    expect(result.record.code).toBe('MRD1-DIAGNOSTICS-CREATION_FAILED');
+    expect(result.record.code).toBe('MRD1-BOOTSTRAP-UNEXPECTED');
+    expect(reads).toBe(0);
   });
 
   it('accepts the closed optional content, graphics, context, and recovery values', () => {
@@ -242,7 +308,7 @@ describe('MR-S11-DIA-001 diagnostics', () => {
           'PRESENTATION_FAILED',
           'CLEANUP_FAILED',
         ],
-        recoveryActions: ['retryCheck', 'reloadPage'],
+        recoveryActions: ['reloadPage'],
       }),
       'BOOTSTRAP',
     );
