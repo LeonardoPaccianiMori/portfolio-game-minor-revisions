@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 correcting; no implementation step accepted**
+Status: **Step 1 blocked; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
 | 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Correcting | 2026-09-01 | Primary checks passed; independent review found one blocker and four required corrections | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, and correction checkpoints | Only the exact S01 baseline, basic start page, tests, and listed local checks are authorized. |
+| 1 | Blocked | 2026-09-01 | Repair typecheck, lint, tests, and build passed; required combined check fails on 57 pre-existing out-of-scope tracked files | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
 | 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -100,9 +100,13 @@ he wants to stop safely.
 
 ### Observed result and corrections
 
-The independent reviewer found no advisory issue. Its blocker and required
-findings are recorded in `MR-CONTRIB-WP00-001`; no correction has yet passed
-revalidation or re-review.
+The independent reviewer found no advisory issue. The worker corrected the
+approved configuration, test, and ignore findings in commit
+`5434ca74ab797887d68dd1a2d540eef77e7daaf7`. Primary checks then passed for
+typecheck, lint, two Node-only tests, and the production build. The required
+`npm run check` failed only at Prettier on 57 existing tracked Markdown and
+asset-manifest files outside Step 1 scope. S01 prohibits ignoring them to make
+the check pass. Fresh independent re-review of the repair and block is pending.
 
 ### Acceptance decision
 
@@ -112,8 +116,9 @@ Leonardo's explicit Step-1 acceptance.
 ### Known limitations and next boundary
 
 No game system, Three.js scene, source directory, content, production asset,
-remote, licence, deployment, or public result exists. After Step 1 is
-accepted, Step 2 needs its own exact plan and approval.
+remote, licence, deployment, or public result exists. Step 1 cannot integrate
+or proceed to Leonardo testing until a separate approved recovery plan resolves
+the pre-existing tracked-file formatting block. Step 2 remains blocked.
 
 ## Required accepted-step entry
 

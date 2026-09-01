@@ -50,7 +50,8 @@ submission addresses the Step-1 S13 groups `MR-S13-GATE-001`,
 ## Worker commits
 
 `b965811ff9dd9994d120c923aa0f69077009633e` — `MR-WP-00 Add S01 foundation
-baseline`.
+baseline`; `5434ca74ab797887d68dd1a2d540eef77e7daaf7` — `MR-WP-00 Correct
+foundation review findings`.
 
 ## Integrated commits
 
@@ -101,8 +102,14 @@ lint, and formatting results. The independent review found that the tracked-
 source formatting exclusions cannot remain under S01. The primary agent also
 corrected the worker-starting-commit provenance in this contribution, the work
 order, and the step acceptance record. Approved-scope configuration and test
-repairs are pending. No frozen interface, dependency version, design, or
-player-visible contract changed.
+repairs completed in `5434ca74ab797887d68dd1a2d540eef77e7daaf7`: they removed
+the tracked-source Prettier exclusions, added future source checking and
+browser globals, ignored nested worktrees and editor files, and expanded the
+Node-only baseline test. Primary typecheck, lint, two tests, and production
+build passed. The required combined check now fails on the 57 pre-existing
+tracked Markdown and asset-manifest files, so integration is blocked pending a
+separate approved recovery plan. No frozen interface, dependency version,
+design, or player-visible contract changed.
 
 ## Known limitations
 
@@ -110,7 +117,9 @@ No `src/` directory, runtime module, Three.js scene, game system, styling
 system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. Local browser installation and full
 verification results exist as recorded above. The tracked-source Prettier
-exclusions are under correction; S01 does not permit them to remain.
+exclusions were removed. The current required-check block is the 57 existing
+unowned tracked formatting differences; no integration, Leonardo test, or
+acceptance can occur until Leonardo approves a precise recovery plan.
 
 ## Leonardo decision
 

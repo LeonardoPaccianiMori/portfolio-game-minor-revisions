@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 blocked**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `correcting; independent review found one blocker and four required findings`.
+- Current workflow state: `blocked; required formatting check fails on 57 pre-existing tracked files outside Step 1 scope`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,24 +15,28 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 cor
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: correct the approved-scope configuration, test, and
-  provenance findings; repeat applicable checks; then obtain a fresh
-  independent read-only re-review.
+- Next possible action: obtain the required fresh review of the repaired branch
+  and blocked condition, then wait for Leonardo's separate approval of a
+  precise recovery plan before any affected tracked document changes.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, reactivated for approved-scope repair
-  on `work/MR-WP-00-foundation`.
-- Active contribution record: `MR-CONTRIB-WP00-001`, submitted; primary
-  verification, review, integration, and Leonardo acceptance are pending.
+- Active work order: `MR-WO-WP00-001`, blocked on
+  `work/MR-WP-00-foundation`; its repaired commits are not integrated.
+- Active contribution record: `MR-CONTRIB-WP00-001`, submitted with a repair
+  commit; re-review, integration, Leonardo test, and acceptance are pending.
 - Active player test: none.
-- Active correction cycle: none.
+- Active correction cycle: completed within approved worker paths; its full
+  check exposed the separate out-of-scope formatting block.
 - Last committed resume checkpoint: this correction checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Blocking technical issue: review finding `MR-S1-REV-001` requires the exact
-  worker starting commit to replace the earlier Gate-1 checkpoint in the work
-  order and contribution evidence. The required formatting correction can
-  reveal a separate block when the unaffected tracked records are checked.
+- Blocking technical issue: `npm run check` passes typecheck and lint but
+  fails `prettier --check .` on 57 existing tracked Markdown and asset-manifest
+  files. S01 prohibits ignoring the affected paths to make the check pass.
+  Restart condition: Leonardo must approve a precise recovery plan that names
+  the affected files and validation before they can be formatted, or approve a
+  separately justified S01 contract change. No integration is permitted while
+  this required check fails.
 
 ## Repository facts
 
