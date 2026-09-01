@@ -29,7 +29,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                             | Notes                                                             |
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                                  | Records documentation only; no implementation is approved.        |
-|    1 | Technical review        | 2026-09-01    | Closed-object baseline assertions and current status corrections are submitted                                                                                                                   | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Combined validation and another fresh re-review remain required.  |
+|    1 | Technical review        | 2026-09-01    | Closed-object baseline assertions, current status corrections, and repeated combined validation passed                                                                                           | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, correction, and validation checkpoints | Another fresh re-review remains required before integration.      |
 | 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                                  | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -162,7 +162,11 @@ closed-shape test correction in worker commit
 lint, build, owned-file formatting, and Git whitespace checks passed. The test
 now rejects prohibited extra package, TypeScript, and lockfile-root settings.
 The worker changed no configuration, runtime, dependency, documentation,
-asset, or public file. Combined validation and fresh re-review remain pending.
+asset, or public file. Repeated combined validation then passed formatting,
+typecheck, lint, all three foundation tests, production build, Chromium,
+Firefox, and WebKit flows, the high-severity audit with zero vulnerabilities,
+production and external-request inspections, and the Git whitespace check.
+The validation worktree remained clean. Fresh re-review remains pending.
 
 ### Acceptance decision
 

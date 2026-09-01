@@ -183,6 +183,14 @@ extra TypeScript top-level and compiler-option keys; and extra lockfile and
 root-package metadata or dependency keys. Only the known unmerged branch
 documentation formatting difference remains outside the worker branch.
 
+Repeated combined validation after `f4e1a24` used exact Node `v24.20.0` and
+npm `11.19.0`. Repository formatting, typecheck, lint, all three foundation
+tests, coverage, production build, Chromium, Firefox, and WebKit flows, the
+high-severity audit with zero vulnerabilities, production and external-
+request inspections, and the Git whitespace check passed. The production
+output remained one 407-byte semantic HTML file with no script, Three.js
+reference, or external address. The validation worktree remained clean.
+
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
