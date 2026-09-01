@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-|    2 | Plan approved           | 2026-09-01    | Not started                                                                                                                                                                                      | Not started       | Not accepted                                                                                        | Containing plan checkpoint                                                   | Exact startup-safety scope only.                                       |
+|    2 | Implementing            | 2026-09-01    | Work order active; no implementation result yet                                                                                                                                                  | Not started       | Not accepted                                                                                        | Plan checkpoint `1b06ee5`; active work order checkpoint                      | Exact startup-safety scope only.                                       |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -261,17 +261,19 @@ on 2026-09-01. Testing observations and acceptance are not yet available.
 
 ### Agent contribution
 
-The primary Codex agent prepared the approved plan and verified the clean local
-repository, current commit, accepted Step-1 dependency, and absent remote. No
-Step-2 worker, reviewer, implementation, test, worktree, or result exists at
-this checkpoint.
+The primary Codex agent prepared the approved plan, verified the clean local
+repository, current commit, accepted Step-1 dependency, and absent remote, and
+created and activated `MR-WO-WP00-002` with the exact approved Sol `high`
+selection. No Step-2 worker, reviewer, implementation, test, contribution, or
+result exists at this checkpoint.
 
 ### Files and commits
 
-The plan checkpoint is the commit that contains this entry. It becomes the
-exact `base_commit` of `MR-WO-WP00-002`. The work order, worker branch,
-worktree, worker commits, contribution record, integration commits, and final
-acceptance commit do not exist yet.
+The plan checkpoint is `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, the exact
+`base_commit` of `MR-WO-WP00-002`. The active work order is added in the next
+committed checkpoint. The worker branch, worktree, worker commits,
+contribution record, integration commits, and final acceptance commit do not
+exist yet.
 
 ### Automated and review evidence
 
@@ -300,8 +302,9 @@ accept a result.
 
 The accepted repository still contains only the Step-1 package foundation and
 foundation tests. No Step-2 source or result exists at this checkpoint. The
-next permitted action is creation and activation of `MR-WO-WP00-002` from this
-exact commit. Step 3 and every public action remain blocked.
+next permitted action is creation of the exact isolated branch and worktree
+from `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, followed by the selected
+controlled worker. Step 3 and every public action remain blocked.
 
 ## Required accepted-step entry
 

@@ -7,8 +7,9 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approve
 ## Durable resume point
 
 - Current step: `2`, plan approved on 2026-09-01.
-- Current workflow state: `plan approved; no Step-2 source, test, work order,
-branch, worktree, contribution, or implementation result exists yet`.
+- Current workflow state: `implementing; MR-WO-WP00-002 is active, but no
+Step-2 source, test, worker commit, contribution, review, integration, or
+result exists yet`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,14 +21,17 @@ branch, worktree, contribution, or implementation result exists yet`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: create and activate `MR-WO-WP00-002` from this exact
-  plan checkpoint, then create its isolated branch and worktree.
+- Next possible action: create the exact isolated branch and worktree from
+  work-order base commit `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`, then
+  spawn the selected controlled implementation worker.
 - Active approved implementation plan: Step 2 compatibility checks, startup
   diagnostics, loading state, and safe error screens, approved by Leonardo on
   2026-09-01.
-- Active work order: none yet. `MR-WO-WP00-001` is accepted, and
-  `MR-WO-WP00-002` must use the exact commit that contains this plan-approved
-  checkpoint as its base.
+- Active work order: `MR-WO-WP00-002`, status `active`, OpenAI
+  `gpt-5.6-sol` with `high` reasoning, branch
+  `work/MR-WP-00-startup-safety`, worktree
+  `.worktrees/MR-WP-00-startup-safety/`, and exact base commit
+  `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`.
 - Active contribution record: none. `MR-CONTRIB-WP00-001` is accepted.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
