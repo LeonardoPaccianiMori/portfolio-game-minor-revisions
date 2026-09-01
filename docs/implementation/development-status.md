@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 correcting**
+Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 blocked**
 
 ## Durable resume point
 
 - Current step: `1`, plan approved on 2026-09-01.
-- Current workflow state: `correcting; re-review found one baseline-test and one control-record correction while the formatting block remains`.
+- Current workflow state: `blocked; final approved-scope corrections passed their own checks, while the required formatting check still fails on 57 pre-existing tracked files`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. The approved Step-1
@@ -15,14 +15,13 @@ Status: **Step 0 complete; Gate 1 and the exact Step-1 plan approved; Step 1 cor
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible action: correct the remaining approved-scope baseline-test and
-  acceptance-record findings, repeat applicable checks, and obtain a fresh
-  re-review. Integration remains blocked by the existing formatting gate.
+- Next possible action: obtain the final required fresh re-review of the
+  corrected branch and blocked condition, then wait for Leonardo's separate
+  approval of a precise recovery plan before any affected tracked file changes.
 - Active approved implementation plan: Step 1 — S01 package baseline and
   basic local start page, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-001`, reactivated for the remaining approved-
-  scope correction on `work/MR-WP-00-foundation`; its commits are not
-  integrated.
+- Active work order: `MR-WO-WP00-001`, blocked on
+  `work/MR-WP-00-foundation`; its corrected commits are not integrated.
 - Active contribution record: `MR-CONTRIB-WP00-001`, submitted with a repair
   commit; re-review, integration, Leonardo test, and acceptance are pending.
 - Active player test: none.

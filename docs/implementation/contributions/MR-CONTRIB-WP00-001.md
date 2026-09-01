@@ -51,7 +51,8 @@ submission addresses the Step-1 S13 groups `MR-S13-GATE-001`,
 
 `b965811ff9dd9994d120c923aa0f69077009633e` — `MR-WP-00 Add S01 foundation
 baseline`; `5434ca74ab797887d68dd1a2d540eef77e7daaf7` — `MR-WP-00 Correct
-foundation review findings`.
+foundation review findings`; `0323ec7151bee5551d74866df5200b40990394c9` —
+`MR-WP-00 Expand exact baseline checks`.
 
 ## Integrated commits
 
@@ -117,8 +118,11 @@ tracked Markdown and asset-manifest files, so integration is blocked pending a
 separate approved recovery plan. No frozen interface, dependency version,
 design, or player-visible contract changed.
 
-The exact baseline-test expansion and acceptance-record correction are now in
-progress.
+The exact baseline-test expansion and acceptance-record correction completed
+in `0323ec7151bee5551d74866df5200b40990394c9`. Primary tests, typecheck,
+lint, and build passed. The required combined check still fails only at
+Prettier on the same 57 pre-existing tracked files. Fresh final re-review is
+pending; integration remains blocked.
 
 ## Known limitations
 
