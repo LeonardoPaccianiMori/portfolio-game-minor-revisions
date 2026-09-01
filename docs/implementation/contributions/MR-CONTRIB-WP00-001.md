@@ -152,6 +152,15 @@ check still observed the historical documentation formatting difference
 because the isolated worker branch does not merge primary commit `9faf211`;
 the required combined check runs on the separate validation branch.
 
+The corrected combined validation used Node `v24.20.0` and npm `11.19.0`.
+`npm run check` passed typecheck, lint, repository formatting, and three
+foundation tests. `npm run verify` passed lint, formatting, coverage, build,
+and the local start-page flow in Chromium, Firefox, and WebKit. The high-
+severity npm audit found zero vulnerabilities. The production output remained
+one 407-byte semantic `index.html` with no script, Three.js reference, or
+external address. The browser test observed no external request, and the Git
+whitespace check passed. The validation worktree remained clean.
+
 ## Known limitations
 
 No `src/` directory, runtime module, Three.js scene, game system, styling
