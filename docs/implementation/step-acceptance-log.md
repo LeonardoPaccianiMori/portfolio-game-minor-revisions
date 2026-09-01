@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 correcting; no implementation step accepted**
+Status: **Step 1 technical review; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -26,11 +26,11 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                 | Notes                                                               |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                      | Records documentation only; no implementation is approved.          |
-|    1 | Correcting              | 2026-09-01    | The 58-file formatting recovery and combined checks passed; fresh final review requires one wider baseline test and current primary-owned records                                                | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, and correction checkpoints | Leonardo approved the final-review correction and integration plan. |
-| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                      | Each step needs a separate approved plan and accepted dependency.   |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                                 | Notes                                                             |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                      | Records documentation only; no implementation is approved.        |
+|    1 | Technical review        | 2026-09-01    | The 58-file formatting recovery passed; the approved wider baseline test and primary-owned record corrections are submitted and await combined validation                                        | Not yet available | Not yet available                                                                                   | Plan-approved, implementation, review, formatting-recovery, and correction checkpoints | Fresh combined re-review remains required before integration.     |
+| 2–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                      | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
 
@@ -136,6 +136,13 @@ accessibility, asset, network, creative, or shared-contract issue. It required
 the Node-only baseline test to cover the remaining frozen configuration and
 required README and control records to describe the current state. Leonardo
 approved that correction and integration plan on 2026-09-01.
+
+OpenAI `gpt-5.6-terra` with `high` reasoning completed only the approved
+Node-only test expansion in worker commit
+`f18c17c66d0ad3972f81522768ca4896ce063dc0`. The focused test, typecheck,
+lint, build, owned-file formatting, and Git whitespace checks passed. The
+worker changed no configuration, runtime, documentation, asset, dependency, or
+public file. Combined validation and fresh re-review remain pending.
 
 ### Acceptance decision
 

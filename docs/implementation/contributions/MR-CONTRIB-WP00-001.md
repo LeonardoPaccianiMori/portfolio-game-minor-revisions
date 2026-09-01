@@ -52,7 +52,9 @@ submission addresses the Step-1 S13 groups `MR-S13-GATE-001`,
 `b965811ff9dd9994d120c923aa0f69077009633e` — `MR-WP-00 Add S01 foundation
 baseline`; `5434ca74ab797887d68dd1a2d540eef77e7daaf7` — `MR-WP-00 Correct
 foundation review findings`; `0323ec7151bee5551d74866df5200b40990394c9` —
-`MR-WP-00 Expand exact baseline checks`.
+`MR-WP-00 Expand exact baseline checks`;
+`f18c17c66d0ad3972f81522768ca4896ce063dc0` — `MR-WP-00 Complete exact
+foundation coverage`.
 
 ## Integrated commits
 
@@ -141,6 +143,14 @@ The formatting recovery resolved the earlier tracked-file block. The new
 approved correction cycle assigns only
 `tests/unit/MR-WP-00/foundation.test.ts` to the controlled worker and keeps
 README and all project-control records with the primary agent.
+
+The controlled worker completed that single test-file correction in
+`f18c17c66d0ad3972f81522768ca4896ce063dc0`. Its owned-file Prettier check,
+three focused foundation tests, typecheck, lint, production build, and Git
+whitespace check passed with Node `v24.20.0` and npm `11.19.0`. Its branch-wide
+check still observed the historical documentation formatting difference
+because the isolated worker branch does not merge primary commit `9faf211`;
+the required combined check runs on the separate validation branch.
 
 ## Known limitations
 
