@@ -52,8 +52,8 @@ results. The freeze commit is the Git commit that contains this register and
 not exist now.
 
 No implementation worker can use frozen status as permission to create a
-signature or source file. Gate 1 and the exact next-step plan approval remain
-required.
+signature or source file. Gate 1 was approved on 2026-09-01; the exact Step-1
+plan and its separate approval remain required.
 A change to any frozen interface requires an affected-consumer list,
 compatibility and migration review, updated fixtures and traceability, and
 Leonardo's approval.

@@ -1,6 +1,6 @@
 # S14 — Specification Audit and Gate Packet
 
-Status: **documented; Gate 1 awaits Leonardo's separate approval; no implementation authorized**
+Status: **documented; Gate 1 approved on 2026-09-01; Step 1 not approved; no implementation authorized**
 
 ## Purpose and authority
 
@@ -188,7 +188,8 @@ ready.
 ## Gate packet
 
 The S00–S14 documentation baseline is complete and `MR-IMP-OPEN-014` is
-resolved. Gate 1 is **ready for Leonardo's approval**, not approved.
+resolved. Leonardo approved Gate 1 on 2026-09-01 and accepted the frozen
+technical baseline. This approval authorizes no implementation.
 
 The later approved incremental-workflow decision supersedes the original
 batch-authority columns below. Gate 1 still confirms only the frozen baseline.
@@ -198,8 +199,8 @@ intermediate step needs a separate plan and approval.
 
 | Gate | Required prior acceptance | Authority if Leonardo separately approves it | Current state |
 |---|---|---|---|
-| Gate 1 — Technical baseline | Complete S00–S14 audit with no blocker | Confirms the frozen technical baseline only | Ready for Leonardo approval |
-| Incremental implementation start | Gate 1 approved | An exact Step-1 plan can be proposed; only its approval authorizes Step 1 | Blocked pending Gate 1 and Step-1 approval |
+| Gate 1 — Technical baseline | Complete S00–S14 audit with no blocker | Confirms the frozen technical baseline only | Approved on 2026-09-01 |
+| Incremental implementation start | Gate 1 approved | An exact Step-1 plan can be proposed; only its approval authorizes Step 1 | Blocked pending Step-1 approval |
 | Vertical-slice acceptance | Accepted Steps 1–30, including applicable S12 evidence | Step 31 evaluates and can accept the slice; it does not approve Step 32 | Blocked; no slice exists |
 | Fallback acceptance | Accepted Steps 32–52, including applicable S12 evidence | Step 53 evaluates and can accept the fallback; it does not approve Step 54 | Blocked; no fallback exists |
 | Full local-game acceptance | Accepted Steps 54–69, including applicable S12 evidence | Step 70 evaluates and can accept the complete local game | Blocked; no full game exists |
@@ -211,6 +212,6 @@ deployment, portfolio publication, or unsupported completion claim.
 ## Completion statement
 
 S14 adds no S15 block. All Sxx decision groups are complete. The incremental
-roadmap is later governance documentation, not S15. The next action is
-Leonardo's separate Gate-1 decision. Do not infer Gate-1 approval from his
-approval of the incremental documentation plan.
+roadmap is later governance documentation, not S15. Leonardo separately
+approved Gate 1 on 2026-09-01. The next action is preparation of the exact
+Step-1 plan; Gate 1 does not approve that plan.

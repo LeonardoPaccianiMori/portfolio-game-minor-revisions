@@ -1,8 +1,8 @@
 # Implementation Specification Status
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
-Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 ready for Leonardo approval; no implementation authorized**
+Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 approved; Step 1 not approved; no implementation authorized**
 
 ## Current repository state
 
@@ -27,8 +27,8 @@ not insert a future or guessed commit identifier into this document.
 
 | Gate | State | Blocking condition |
 |---|---|---|
-| Gate 1 — technical baseline | Ready for Leonardo approval | S00–S14 are documented with no blocked audit finding; Leonardo has not separately approved Gate 1. |
-| Incremental implementation start | Blocked | Gate 1 and the exact Step-1 plan are not approved. |
+| Gate 1 — technical baseline | Approved on 2026-09-01 | Leonardo accepted the frozen S01–S14 baseline; this authorizes no code. |
+| Incremental implementation start | Blocked | The exact Step-1 plan is not approved. |
 | Vertical-slice acceptance | Blocked | Steps 1–30 do not exist and Step 31 cannot run. |
 | Fallback acceptance | Blocked | Steps 32–52 do not exist and Step 53 cannot run. |
 | Full local-game acceptance | Blocked | Steps 54–69 do not exist and Step 70 cannot run. |
@@ -51,8 +51,8 @@ not insert a future or guessed commit identifier into this document.
   reviewer, and asset-researcher roles; at most two subagents; and mandatory
   delegation-table evidence. This amendment does not alter an interface or
   authorize implementation.
-- Next action: request Leonardo's separate Gate-1 decision. If approved,
-  prepare the exact Step-1 plan and wait for its separate approval.
+- Next action: prepare the exact Step-1 plan and wait for its separate
+  approval.
 - Prohibited next action: create package, source, content, test, work-order,
   contribution, worktree, asset, licence, remote, or deployment files.
 
@@ -63,7 +63,7 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design | Complete for the current baseline | B00–B10 and numbered design documents are authoritative. |
 | Independent design review | Complete for the current baseline | R00–R07 are resolved and documented. |
 | Specification governance | Documented | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification | Documented | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 is ready, not approved. |
+| Technical specification | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 was approved on 2026-09-01. |
 | Incremental implementation | Not authorized | Step 0 is documentation only. Steps 1–70 each require an approved plan and accepted dependencies. |
 | Vertical slice | Not authorized | Steps 1–30 assemble it and Step 31 accepts it; no code exists. |
 | Fallback and full game | Not authorized | Step 53 accepts the fallback; Step 70 accepts the full local game. |

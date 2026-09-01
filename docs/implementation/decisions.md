@@ -1,6 +1,6 @@
 # Implementation Specification Decision Register
 
-Status: **current through S14 and the approved model-routed subagent governance amendment**
+Status: **current through Gate 1 and the approved model-routed subagent governance amendment**
 
 This register records approved process and technical decisions for the
 implementation-specification programme. It does not replace the detailed
@@ -317,7 +317,8 @@ specification files or the creative decision log.
 | MR-IMP-DEC-297 | 2026-08-31 | Add project-local controlled-worker, independent-reviewer, and asset-researcher profiles plus a two-subagent concurrency limit; give each a focused source packet rather than a full conversation-history fork. | Confirmed | The worker profile deliberately has no fixed model so the exact task-specific routing remains mandatory. |
 | MR-IMP-DEC-298 | 2026-08-31 | Require every future step plan to include a delegation table with task, role, paths, dependencies, selected model and effort, reason, source packet, and parallel or sequential execution. | Confirmed | If the primary agent retains implementation, it explains why a worker would not improve that step; independent review remains required. |
 | MR-IMP-DEC-299 | 2026-08-31 | Reserve `max` for an exceptional documented quality-first single-agent problem and do not assign `ultra` to a worker, reviewer, or researcher because those roles cannot delegate again. | Confirmed | Higher effort cannot bypass ownership, approval, privacy, or independent-review rules. |
-| MR-IMP-DEC-300 | 2026-08-31 | Keep Gate 1 and Step 1 unapproved after the model-routed governance amendment. | Confirmed | This adds no game code, package, test, work order, contribution, asset, remote, licence, deployment, or runtime result. |
+| MR-IMP-DEC-300 | 2026-08-31 | Keep Gate 1 and Step 1 unapproved after the model-routed governance amendment. | Superseded | `MR-IMP-DEC-301` later approved Gate 1 only. Step 1 and all implementation and public-action exclusions remain unchanged. |
+| MR-IMP-DEC-301 | 2026-09-01 | Approve Gate 1 and accept the frozen S01–S14 technical baseline. Keep Step 1 separately unapproved. | Confirmed | The next permitted action is preparation of the exact Step-1 plan; no code, package, test, work order, contribution, asset, remote, licence, deployment, or runtime result is authorized. |
 
 ## Entry rule
 

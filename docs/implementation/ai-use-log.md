@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
 ## Purpose and scope
 
@@ -58,6 +58,9 @@ not apply to future sessions.
 | 2026-08-31 | OpenAI | `unknown` | `unknown` | Primary Codex agent | Created this private AI-use log and updated the related documentation controls. This was documentation work only. | AI-use provenance documentation | This file and the local Git commit that contains it. Exact current-session model and reasoning metadata were unavailable, so neither was inferred. |
 | 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Reviewed the AI-use documentation diff and found two required record corrections: use the verified Opus date and exclude uncompleted runs by category only. | AI-use provenance documentation | [AI-use documentation independent review](specification-audit.md#ai-use-documentation-independent-review). |
 | 2026-08-31 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Re-reviewed the corrected AI-use documentation diff and returned `pass` with no blocker, required, or advisory finding. | AI-use provenance documentation | [AI-use documentation independent review](specification-audit.md#ai-use-documentation-independent-review). |
+| 2026-09-01 | OpenAI | `unknown` | `unknown` | Primary Codex agent | Recorded Leonardo's Gate-1 approval across the primary-owned project control documents and preserved the separate Step-1 boundary. | Gate 1 documentation | User approval dated 2026-09-01; the local Git commit containing this entry. Exact session model and reasoning metadata were unavailable, so neither was inferred. |
+| 2026-09-01 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Completed the first Gate-1 documentation review. It verified the Step-1 and public-action boundaries, found six required record corrections, and reported that the requested reviewer-profile path was incorrect. | Gate 1 documentation | Focused read-only review of the uncommitted Gate-1 documentation diff; conditional result pending corrected profile-conformant re-review. |
+| 2026-09-01 | OpenAI | `gpt-5.6-sol` | `xhigh` | Independent reviewer | Re-reviewed the corrected Gate-1 documentation diff under the project-local reviewer profile and returned `pass` on scope and content with no blocker or advisory finding. | Gate 1 documentation | Focused read-only profile-conformant re-review of the complete corrected diff; all earlier required record corrections verified. |
 
 The completed history excludes failed, interrupted, abandoned, considered, and
 unused runs.

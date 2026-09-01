@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 ready for Leonardo approval; no code authorized**
+Status: **S00–S14 documented; incremental roadmap and model-routed subagent governance documented; Gate 1 approved on 2026-09-01; Step 1 not approved; no code authorized**
 
 ## Purpose
 
@@ -227,8 +227,7 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-S00–S14 are documented, and no S15 is planned. After the S14 documentation
-commit, tell Leonardo that all Sxx decision groups are complete and wait for
-his instructions. Gate 1 is ready for his separate approval; it is not
-approved by the S14 documentation decision. Do not create files from the
+S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1 on
+2026-09-01 and accepted the frozen technical baseline. Prepare the exact
+Step-1 plan and wait for its separate approval. Do not create files from the
 planned runtime, test, content, work-order, contribution, or worktree paths.

@@ -8,8 +8,9 @@ The repository has a complete S00–S14 implementation specification and an
 incremental Step 0–70 development roadmap. Read
 `docs/implementation/development-status.md` for the exact resume point. Do not
 create game code, package configuration, tests, production assets, or
-deployment configuration until Gate 1 is separately approved and Leonardo
-approves the exact next-step plan. Approval never carries to a later step.
+deployment configuration until Leonardo approves the exact next-step plan.
+Gate 1 was approved on 2026-09-01, but Step 1 remains unapproved. Approval
+never carries to a later step.
 
 ## Leonardo context and communication
 

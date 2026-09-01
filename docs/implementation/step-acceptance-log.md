@@ -28,8 +28,14 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
-| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; Gate 1 remains separately pending and no implementation is approved. |
+| 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
 | 1–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
+
+## Gate decisions
+
+| Gate | State | Leonardo decision | Effect | Next boundary |
+|---|---|---|---|---|
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01 | Accepts the frozen S01–S14 baseline and authorizes no implementation | Prepare the exact Step-1 plan and wait for its separate approval |
 
 ## Required accepted-step entry
 

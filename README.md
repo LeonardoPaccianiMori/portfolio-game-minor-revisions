@@ -13,7 +13,8 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
-and Step 1 await separate approval; no implementation authorized**.
+approved on 2026-09-01; Step 1 awaits separate approval; no implementation
+authorized**.
 
 This repository contains design documentation only. It contains no game
 implementation, production assets, package configuration, or deployment
@@ -65,11 +66,11 @@ that fallback and full prose do not need to exist before the slice is tested.
 S14 records the complete inventory, corrects requirement traceability and the
 fallback/full gate split, resolves the final issue group, and freezes
 `MR-IF-001`–`MR-IF-015` as `v1`. The freeze creates no package, runtime, test,
-content, work-order, or asset file. Gate 1 is only ready for Leonardo's
-separate approval. No code can begin until Leonardo approves Gate 1 and then
-approves the exact Step-1 plan. Each later step needs its own plan, local test
-or result review, correction cycle, and explicit acceptance. The durable
-resume point is
+content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
+which confirms only the frozen technical baseline. No code can begin until he
+separately approves the exact Step-1 plan. Each later step needs its own plan,
+local test or result review, correction cycle, and explicit acceptance. The
+durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the
 complete sequence is
 [`development-roadmap.md`](docs/implementation/development-roadmap.md).
@@ -97,7 +98,7 @@ the work order and contribution evidence. The authoritative routing matrix,
 including the use of Sol, Terra, and Luna, is in
 [`S13`](docs/implementation/specs/13-agent-work-orders-and-integration.md).
 The configuration exists only to control future work; it does not authorize a
-step, code, package, asset, network action, or Gate 1.
+step, code, package, asset, or network action.
 
 The private [`AI-use log`](docs/implementation/ai-use-log.md) records the
 actual model, reasoning effort, role, completed work, and evidence for this

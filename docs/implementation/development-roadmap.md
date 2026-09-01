@@ -1,8 +1,8 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 and all implementation steps await separate approval**
+Status: **workflow documented; Step 0 complete; Gate 1 approved on 2026-09-01; all implementation steps await separate approval**
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
 ## Purpose
 
@@ -236,7 +236,7 @@ Three terms in the list have these plain-language meanings:
 ## Current position
 
 Step 0 is complete in the commit that contains this roadmap. The S00–S14
-documents and frozen interfaces are complete, but Gate 1 is not approved. No
-implementation step, asset research, network search, package installation,
-code, test, local server, remote, licence, deployment, or public action is
-authorized by this document.
+documents and frozen interfaces are complete, and Leonardo approved Gate 1 on
+2026-09-01. Step 1 remains unapproved. No implementation step, asset research,
+network search, package installation, code, test, local server, remote,
+licence, deployment, or public action is authorized by this document.

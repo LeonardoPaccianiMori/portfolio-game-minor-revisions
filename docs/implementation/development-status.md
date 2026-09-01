@@ -1,13 +1,13 @@
 # Incremental Development Status
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
-Status: **Step 0 complete; Gate 1 and Step 1 not approved**
+Status: **Step 0 complete; Gate 1 approved; Step 1 not approved**
 
 ## Durable resume point
 
 - Current step: `0`, complete in the commit that contains this record.
-- Current workflow state: `awaiting separate Gate-1 decision`.
+- Current workflow state: `awaiting exact Step-1 plan and approval`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. This does not approve a
@@ -15,17 +15,18 @@ Status: **Step 0 complete; Gate 1 and Step 1 not approved**
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
 - Last accepted implementation step: none.
-- Next possible step: Step 1, but only after separate Gate-1 approval and an
-  approved Step-1 implementation plan.
+- Next possible step: Step 1, but only after an exact Step-1 implementation
+  plan is approved.
 - Active approved implementation plan: none.
 - Active work order: none.
 - Active contribution record: none.
 - Active player test: none.
 - Active correction cycle: none.
-- Last committed resume checkpoint: the commit that contains this Step-0
-  record and the approved model-routed governance amendment.
+- Last committed resume checkpoint: the commit that contains this Gate-1
+  approval record.
 - Roadmap deviation request: none.
-- Blocking technical issue: none known; implementation authority is absent.
+- Blocking technical issue: none known; Step-1 implementation authority is
+  absent.
 
 ## Repository facts
 
@@ -49,8 +50,8 @@ insert a future or guessed commit identifier.
 | Authority | State | Exact boundary |
 |---|---|---|
 | Documentation workflow | Approved for documentation | Records the 70-step incremental plan only. |
-| Gate 1 — frozen technical baseline | Awaiting Leonardo's separate approval | Confirms S01–S14; authorizes no code. |
-| Step 1 | Blocked | Needs Gate 1 and a separate Step-1 plan approval. |
+| Gate 1 — frozen technical baseline | Approved on 2026-09-01 | Confirms S01–S14; authorizes no code. |
+| Step 1 | Blocked | Needs a separate exact Step-1 plan approval. |
 | Steps 2–70 | Blocked | Each needs accepted dependencies and its own approved plan. |
 | Asset research and integration | Blocked until its named step | Candidate research and integration remain separate approvals. |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval. |
