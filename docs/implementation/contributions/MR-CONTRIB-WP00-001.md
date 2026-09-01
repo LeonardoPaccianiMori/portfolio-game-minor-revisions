@@ -95,6 +95,12 @@ Node-only baseline checks; and incomplete, contradictory contribution evidence.
 It found no advisory issue. Correction, applicable check repetition, and a
 fresh independent re-review are required before integration.
 
+The 2026-09-01 fresh re-review confirmed that the first blocker and the
+configuration, ignore, and tracked-source-exclusion findings were corrected.
+It kept integration blocked on the 57-file formatting failure and found two
+remaining required corrections: extend the exact S01 baseline test and repair
+the stale acceptance-record statement. A further fresh re-review is required.
+
 ## Corrections
 
 The worker corrected only owned configuration after the initial installation,
@@ -110,6 +116,9 @@ build passed. The required combined check now fails on the 57 pre-existing
 tracked Markdown and asset-manifest files, so integration is blocked pending a
 separate approved recovery plan. No frozen interface, dependency version,
 design, or player-visible contract changed.
+
+The exact baseline-test expansion and acceptance-record correction are now in
+progress.
 
 ## Known limitations
 

@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 blocked; no implementation step accepted**
+Status: **Step 1 correcting; no implementation step accepted**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -29,7 +29,7 @@ Revisions* and does not replace Leonardo's approval or acceptance evidence.
 | Step | State | Plan approval | Technical evidence | Leonardo test | Acceptance | Commit | Notes |
 |---:|---|---|---|---|---|---|---|
 | 0 | Documented and complete | 2026-08-31 | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit | Records documentation only; no implementation is approved. |
-| 1 | Blocked | 2026-09-01 | Repair typecheck, lint, tests, and build passed; required combined check fails on 57 pre-existing out-of-scope tracked files | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
+| 1 | Correcting | 2026-09-01 | Repair typecheck, lint, tests, and build passed; required combined check fails on 57 pre-existing out-of-scope tracked files; re-review found a remaining test and record correction | Not yet available | Not yet available | Plan-approved, implementing, submission, technical-review, correction, and blocked checkpoints | No integration or acceptance while the required formatting check fails. |
 | 2–70 | Not started | — | — | — | — | — | Each step needs a separate approved plan and accepted dependency. |
 
 ## Gate decisions
@@ -61,8 +61,10 @@ npm environment, created the isolated branch and worktree, and activated
 `MR-WO-WP00-001`. OpenAI `gpt-5.6-terra` with `high` reasoning submitted the
 foundation package, static page, and tests in commit
 `b965811ff9dd9994d120c923aa0f69077009633e`. Primary verification and the
-fresh independent reviewer have not yet completed work. Matching entries are
-in `ai-use-log.md` and `MR-CONTRIB-WP00-001`.
+first independent review completed work. The worker submitted correction
+commit `5434ca74ab797887d68dd1a2d540eef77e7daaf7`; the fresh re-review found
+one remaining baseline-test correction and this stale record statement.
+Matching entries are in `ai-use-log.md` and `MR-CONTRIB-WP00-001`.
 
 ### Files and commits
 
@@ -106,7 +108,8 @@ approved configuration, test, and ignore findings in commit
 typecheck, lint, two Node-only tests, and the production build. The required
 `npm run check` failed only at Prettier on 57 existing tracked Markdown and
 asset-manifest files outside Step 1 scope. S01 prohibits ignoring them to make
-the check pass. Fresh independent re-review of the repair and block is pending.
+the check pass. Fresh independent re-review of the repair and block found the
+remaining baseline-test and acceptance-record corrections now in progress.
 
 ### Acceptance decision
 
