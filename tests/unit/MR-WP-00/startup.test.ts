@@ -6,10 +6,7 @@ import {
   installBrowserErrorBoundaryForTests,
 } from '../../../src/bootstrap/startup';
 import { createStartupScreenForTests } from '../../../src/bootstrap/startup-screen';
-import type {
-  CompatibilityCheckResult,
-  CompatibilityReport,
-} from '../../../src/platform/compatibility';
+import type { CompatibilityCheckResult, CompatibilityReport } from '../../../src/platform';
 import type { SanitizedDiagnostic } from '../../../src/bootstrap/diagnostics';
 
 type Dependencies = Parameters<typeof createStartupCoordinatorForTests>[0];
@@ -69,8 +66,60 @@ const dependencies = (overrides: Partial<Dependencies> = {}): Dependencies => ({
 });
 
 const settle = async (): Promise<void> => {
-  await new Promise((resolve) => setTimeout(resolve, 0));
+  for (let index = 0; index < 32; index += 1) {
+    await Promise.resolve();
+  }
 };
+
+type ControlledEvent = Event & Readonly<Record<string, unknown>>;
+
+const controlledEvent = (
+  type: string,
+  values: Readonly<Record<string, unknown>> = {},
+): ControlledEvent => {
+  const event = {
+    type,
+    defaultPrevented: false,
+    preventDefault(): void {
+      event.defaultPrevented = true;
+    },
+    ...values,
+  };
+  return event as unknown as ControlledEvent;
+};
+
+class ControlledEventTarget {
+  private readonly listeners = new Map<string, Set<EventListenerOrEventListenerObject>>();
+
+  public addEventListener(type: string, callback: EventListenerOrEventListenerObject | null): void {
+    if (callback === null) {
+      return;
+    }
+    const listeners = this.listeners.get(type) ?? new Set<EventListenerOrEventListenerObject>();
+    listeners.add(callback);
+    this.listeners.set(type, listeners);
+  }
+
+  public removeEventListener(
+    type: string,
+    callback: EventListenerOrEventListenerObject | null,
+  ): void {
+    if (callback !== null) {
+      this.listeners.get(type)?.delete(callback);
+    }
+  }
+
+  public dispatchEvent(event: Event): boolean {
+    for (const listener of [...(this.listeners.get(event.type) ?? [])]) {
+      if (typeof listener === 'function') {
+        listener(event);
+      } else {
+        listener.handleEvent(event);
+      }
+    }
+    return !event.defaultPrevented;
+  }
+}
 
 const deferred = <T>() => {
   let resolve: (value: T) => void = () => undefined;
@@ -114,7 +163,7 @@ class FakeElement {
   public click(): void {
     const listeners = [...(this.listeners.get('click') ?? [])];
     for (const item of listeners) {
-      item.listener(new Event('click'));
+      item.listener(controlledEvent('click'));
     }
     this.listeners.set(
       'click',
@@ -328,20 +377,18 @@ describe('early browser fatal boundary', () => {
   ] as const)(
     'handles and prevents default %s output, then removes the listener',
     (type, field) => {
-      const target = new EventTarget();
+      const target = new ControlledEventTarget();
       const listener = vi.fn();
       const remove = installBrowserErrorBoundaryForTests(target, listener);
       const raw = new Error(`controlled ${type}`);
-      const event = new Event(type, { cancelable: true });
-      Object.defineProperty(event, field, { value: raw });
+      const event = controlledEvent(type, { [field]: raw });
 
       target.dispatchEvent(event);
       expect(event.defaultPrevented).toBe(true);
       expect(listener).toHaveBeenCalledWith(raw);
 
       remove();
-      const later = new Event(type, { cancelable: true });
-      Object.defineProperty(later, field, { value: raw });
+      const later = controlledEvent(type, { [field]: raw });
       target.dispatchEvent(later);
       expect(listener).toHaveBeenCalledOnce();
     },
@@ -447,7 +494,7 @@ describe('production bootstrap wiring', () => {
       },
       exitPointerLock: () => undefined,
     };
-    const target = new EventTarget() as EventTarget & {
+    const target = new ControlledEventTarget() as unknown as EventTarget & {
       location: { reload: () => void };
     };
     target.location = { reload: vi.fn() };
@@ -465,8 +512,9 @@ describe('production bootstrap wiring', () => {
     const handle = bootstrapStartup(root as unknown as HTMLElement);
     await settle();
     expect(elements.some((element) => element.textContent === 'Browser check blocked')).toBe(true);
-    const fatalEvent = new Event('error', { cancelable: true });
-    Object.defineProperty(fatalEvent, 'error', { value: new Error('controlled production input') });
+    const fatalEvent = controlledEvent('error', {
+      error: new Error('controlled production input'),
+    });
     target.dispatchEvent(fatalEvent);
     expect(fatalEvent.defaultPrevented).toBe(true);
     elements.find((element) => element.textContent === 'Copy Diagnostic')?.click();

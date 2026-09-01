@@ -39,6 +39,73 @@ type ControlledRequest = IDBOpenDBRequest & {
   controlledResult?: IDBDatabase;
 };
 
+type ControlledListener = Readonly<{
+  callback: EventListenerOrEventListenerObject;
+  once: boolean;
+}>;
+
+const controlledEvent = (type: string): Event => Object.freeze({ type }) as unknown as Event;
+
+class ControlledAbortSignal {
+  public aborted = false;
+  private readonly listeners: ControlledListener[] = [];
+
+  public addEventListener(
+    type: string,
+    callback: EventListenerOrEventListenerObject | null,
+    options?: boolean | AddEventListenerOptions,
+  ): void {
+    if (type !== 'abort' || callback === null) {
+      return;
+    }
+    this.listeners.push({
+      callback,
+      once: typeof options === 'object' && options.once === true,
+    });
+  }
+
+  public removeEventListener(
+    type: string,
+    callback: EventListenerOrEventListenerObject | null,
+  ): void {
+    if (type !== 'abort' || callback === null) {
+      return;
+    }
+    for (let index = this.listeners.length - 1; index >= 0; index -= 1) {
+      if (this.listeners[index]?.callback === callback) {
+        this.listeners.splice(index, 1);
+      }
+    }
+  }
+
+  public abort(): void {
+    if (this.aborted) {
+      return;
+    }
+    this.aborted = true;
+    const listeners = [...this.listeners];
+    for (const listener of listeners) {
+      if (typeof listener.callback === 'function') {
+        listener.callback(controlledEvent('abort'));
+      } else {
+        listener.callback.handleEvent(controlledEvent('abort'));
+      }
+      if (listener.once) {
+        this.removeEventListener('abort', listener.callback);
+      }
+    }
+  }
+}
+
+class ControlledAbortController {
+  private readonly controlledSignal = new ControlledAbortSignal();
+  public readonly signal = this.controlledSignal as unknown as AbortSignal;
+
+  public abort(): void {
+    this.controlledSignal.abort();
+  }
+}
+
 const request = (result?: IDBDatabase): ControlledRequest =>
   ({
     onblocked: null,
@@ -56,7 +123,7 @@ const fire = (
   if (handler !== null) {
     (handler as (this: ControlledRequest, event: Event) => unknown).call(
       controlledRequest,
-      new Event(type),
+      controlledEvent(type),
     );
   }
 };
@@ -254,7 +321,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
         }) as unknown as HTMLCanvasElement,
     );
 
-    await expect(adapters.probeWebGl2(new AbortController().signal)).resolves.toEqual({
+    await expect(adapters.probeWebGl2(new ControlledAbortController().signal)).resolves.toEqual({
       status: 'ready',
       reasonCode: null,
     });
@@ -277,14 +344,18 @@ describe('MR-S11-CMP-001 compatibility', () => {
     const failedAdapters = lowLevelAdapters(undefined, () => {
       throw new Error('Controlled canvas failure.');
     });
-    const cancelled = new AbortController();
+    const cancelled = new ControlledAbortController();
     cancelled.abort();
 
-    await expect(unavailableAdapters.probeWebGl2(new AbortController().signal)).resolves.toEqual({
+    await expect(
+      unavailableAdapters.probeWebGl2(new ControlledAbortController().signal),
+    ).resolves.toEqual({
       status: 'unavailable',
       reasonCode: 'WEBGL2_UNAVAILABLE',
     });
-    await expect(failedAdapters.probeWebGl2(new AbortController().signal)).resolves.toEqual({
+    await expect(
+      failedAdapters.probeWebGl2(new ControlledAbortController().signal),
+    ).resolves.toEqual({
       status: 'failed',
       reasonCode: 'WEBGL2_FAILED',
     });
@@ -297,7 +368,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('opens, closes, and deletes the exact empty IndexedDB probe before ready', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     let closes = 0;
     const handle = {
@@ -322,7 +393,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('fails, closes, and deletes a nonempty reserved probe without inspecting stores', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     let closes = 0;
     let storeInspections = 0;
@@ -356,7 +427,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('keeps a blocked IndexedDB open pending until a terminal error and deletion', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     let settled = false;
     void result.then(() => {
@@ -379,7 +450,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('keeps a blocked IndexedDB deletion pending until terminal success', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     const handle = {
       close: () => undefined,
@@ -403,7 +474,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('maps a terminal IndexedDB deletion error to typed failure', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     const handle = {
       close: () => undefined,
@@ -423,14 +494,14 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('settles thrown open and deletion operations through the typed failure path', async () => {
     const openFailure = indexedDbEnvironment({ openThrows: true });
     const openResult = lowLevelAdapters(openFailure.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     fire(openFailure.deleteRequests[0]!, 'success');
     await expect(openResult).resolves.toMatchObject({ status: 'failed' });
 
     const deleteFailure = indexedDbEnvironment({ deleteThrows: true });
     const deleteResult = lowLevelAdapters(deleteFailure.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     const handle = {
       close: () => undefined,
@@ -443,7 +514,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
 
   it('waits for terminal open and deletion events after IndexedDB cancellation', async () => {
     const environment = indexedDbEnvironment();
-    const controller = new AbortController();
+    const controller = new ControlledAbortController();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(controller.signal);
     let settled = false;
     void result.then(() => {
@@ -538,7 +609,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
 
   it('settles initially cancelled and missing-open-result probes as typed failures', async () => {
     const initiallyCancelled = indexedDbEnvironment();
-    const controller = new AbortController();
+    const controller = new ControlledAbortController();
     controller.abort();
     const cancelledResult = lowLevelAdapters(initiallyCancelled.factory).probeIndexedDb(
       controller.signal,
@@ -549,7 +620,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
 
     const missingResult = indexedDbEnvironment();
     const result = lowLevelAdapters(missingResult.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     fire(missingResult.openRequest, 'success');
     fire(missingResult.deleteRequests[0]!, 'success');
@@ -559,7 +630,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
   it('contains an IndexedDB close failure and still deletes the reserved probe', async () => {
     const environment = indexedDbEnvironment();
     const result = lowLevelAdapters(environment.factory).probeIndexedDb(
-      new AbortController().signal,
+      new ControlledAbortController().signal,
     );
     const handle = {
       close: () => {
@@ -606,7 +677,7 @@ describe('MR-S11-CMP-001 compatibility', () => {
       hasController: () => false,
     });
 
-    await expect(missing.probeIndexedDb(new AbortController().signal)).resolves.toEqual({
+    await expect(missing.probeIndexedDb(new ControlledAbortController().signal)).resolves.toEqual({
       status: 'unavailable',
       reasonCode: 'INDEXED_DB_UNAVAILABLE',
     });
