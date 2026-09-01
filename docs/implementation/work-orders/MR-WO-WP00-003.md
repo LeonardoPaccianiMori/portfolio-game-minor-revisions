@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-003
 type: implementation-work-order
-status: active
+status: blocked
 work_package: MR-WP-00
 sequence: 3
 created: 2026-09-01
@@ -25,6 +25,12 @@ startup-safety result. Add the required public platform entrance, make the
 diagnostic fault set closed and internally consistent, and replace real unit-
 test timers and browser event objects with controlled fakes. Preserve every
 approved Step-2 behaviour and every frozen interface.
+
+Primary source inspection after activation found a third direct private
+platform import in `src/bootstrap/startup-screen.ts`. This path is outside the
+owned list. The order is blocked before worker edits because its exact scope
+cannot satisfy S02. A later approved order must own that file and supersede
+this order before correction work resumes.
 
 ## Plain-language effect
 

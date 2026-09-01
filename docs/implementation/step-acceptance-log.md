@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 accepted; revised Step 2 correction plan approved**
+Status: **Step 1 accepted; revised Step 2 correction plan blocked**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                   | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`        | The accepted result is the static local foundation, not a game system. |
-|    2 | Implementing            | 2026-09-01    | Historical submission passed primary audit; independent review found one blocker and two required findings                                                                                       | Not started       | Not accepted                                                                                        | Original plan `1b06ee5`; worker `d7394f9` through `43f868e`; revised plan `1228616` | `MR-WO-WP00-002` superseded; `MR-WO-WP00-003` active.                  |
+|    2 | Blocked                 | 2026-09-01    | Historical submission passed primary audit; review found three correction groups; activation inspection found one additional unowned private import                                              | Not started       | Not accepted                                                                                        | Original plan `1b06ee5`; worker `d7394f9` through `43f868e`; revised plan `1228616` | `MR-WO-WP00-003` cannot satisfy S02 with its exact file scope.         |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                                   | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -281,8 +281,13 @@ findings. No integration, Leonardo test, or accepted result exists.
 
 The primary Codex agent then recorded the approved supersession, created the
 exact branch and worktree from the reviewed head, and activated the new order.
-The original work order is `superseded`; the new order is `active`.
-`MR-CONTRIB-WP00-003` does not yet exist.
+The original work order is `superseded`; the new order was active only until
+the following source inspection. `MR-CONTRIB-WP00-003` does not exist.
+
+Before the worker changed a file, the primary agent's source inspection found
+that `src/bootstrap/startup-screen.ts` also imports the private platform file.
+The worker stopped with a clean worktree. `MR-WO-WP00-003` is now blocked
+because it does not own that file. A superseding approved order is required.
 
 ### Files and commits
 
@@ -365,6 +370,10 @@ complete primary audit, and a fresh independent review.
 Leonardo supplied that approval on 2026-09-01. The correction remains pending;
 approval does not show that a finding is fixed.
 
+Activation inspection then found the additional unowned
+`src/bootstrap/startup-screen.ts` import. No correction was attempted. The
+approved scope is insufficient to remove every S02 private cross-module import.
+
 ### Acceptance decision
 
 Not accepted. Plan approval is implementation authority only and does not
@@ -377,8 +386,8 @@ as the exact base of the approved correction order. It is not corrected,
 integrated, tested by Leonardo, or accepted. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
 remain pending so old cleanup cannot overlap new work. The next permitted
-action is creation and activation of the exact correction branch and worktree.
-Step 3 and every public action remain blocked.
+action is Leonardo's decision on the exact one-file scope amendment. Step 3
+and every public action remain blocked.
 
 ## Required accepted-step entry
 
