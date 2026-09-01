@@ -7,9 +7,9 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 plan approve
 ## Durable resume point
 
 - Current step: `2`, plan approved on 2026-09-01.
-- Current workflow state: `awaiting independent review; the controlled worker
-corrected every consolidated primary-audit finding, complete primary
-validation passed, and the Step-2 result remains isolated and unintegrated`.
+- Current workflow state: `blocked after independent review; one frozen S02
+public-entrance conflict requires a revised approved work order, and two
+technical findings require correction and fresh review`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -21,20 +21,19 @@ validation passed, and the Step-2 result remains isolated and unintegrated`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: give the corrected complete packet to one fresh
-  independent OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning and require
-  one report with all findings together.
+- Next possible action: Leonardo decides whether to approve the exact revised
+  Step-2 correction plan. No implementation can resume before that approval.
 - Active approved implementation plan: Step 2 compatibility checks, startup
   diagnostics, loading state, and safe error screens, approved by Leonardo on
   2026-09-01.
-- Active work order: `MR-WO-WP00-002`, status `active`, OpenAI
+- Active work order: `MR-WO-WP00-002`, status `blocked`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
   `work/MR-WP-00-startup-safety`, worktree
   `.worktrees/MR-WP-00-startup-safety/`, and exact base commit
   `1b06ee5933de302c00cee7efa394d0b7ac19c0b5`.
 - Active contribution record: `MR-CONTRIB-WP00-002`, status `submitted`;
-  seven worker commits exist, complete primary validation passed, and review
-  remains pending.
+  seven worker commits exist and complete primary validation passed, but review
+  found one blocker and two required findings.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
 - Active correction cycle: complete. The worker corrected frozen-coverage,
@@ -46,9 +45,11 @@ validation passed, and the Step-2 result remains isolated and unintegrated`.
 - Last committed resume checkpoint: this acceptance checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
-- Review gate: ready. One complete primary pre-review audit passed on corrected
-  worker head `43f868e64b80c88dc46832b676af6d2929f081c2`. The fresh
-  independent review has not started.
+- Review gate: failed. The fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh`
+  reasoning found one blocker and two required findings on corrected worker
+  head `43f868e64b80c88dc46832b676af6d2929f081c2`. A revised approved
+  work order, corrections, applicable checks, complete primary audit, and fresh
+  independent review are required.
 
 ## Repository facts
 

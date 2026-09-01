@@ -30,7 +30,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-|    2 | Awaiting review         | 2026-09-01    | Corrected worker submission and complete primary pre-review audit pass                                                                                                                           | Not started       | Not accepted                                                                                        | Plan checkpoint `1b06ee5`; worker commits `d7394f9` through `43f868e`        | Fresh independent review is next.                                      |
+|    2 | Blocked                 | 2026-09-01    | Primary audit passed; independent review found one blocker and two required findings                                                                                                             | Not started       | Not accepted                                                                                        | Plan checkpoint `1b06ee5`; worker commits `d7394f9` through `43f868e`        | Revised correction plan needs approval.                                |
 | 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -266,7 +266,8 @@ repository, current commit, accepted Step-1 dependency, and absent remote, and
 created and activated `MR-WO-WP00-002` with the exact approved Sol `high`
 selection. The controlled worker submitted three implementation commits and
 four correction commits. The complete primary audit and all primary validation
-now pass. No reviewer, integration, Leonardo test, or accepted result exists.
+now pass. The fresh independent review found one blocker and two required
+findings. No integration, Leonardo test, or accepted result exists.
 
 ### Files and commits
 
@@ -283,8 +284,8 @@ Corrected worker and primary checks passed. Primary `npm run check` passed all
 production build, and 15 browser flows across Chromium, Firefox, and WebKit.
 Coverage is 96.48 percent lines and 92.68 percent branches. A separate primary
 build also passed. Production, privacy, network, package, configuration, scope,
-remote, whitespace, and clean-worktree checks passed. Independent review has
-not started.
+remote, whitespace, and clean-worktree checks passed. The independent review
+then found the unresolved authority and technical issues below.
 
 ### Leonardo test packet
 
@@ -324,7 +325,19 @@ corrections normalize diagnostic input once, enforce closed recovery forms,
 cancel and settle fatal startup work, suppress default raw browser output,
 require an empty probe database, and keep a retry blocked until old IndexedDB
 open and deletion work reaches a terminal result. The complete primary audit
-passed. Fresh independent review remains required.
+passed. The fresh independent review found:
+
+- one blocker: frozen S02 requires every runtime module to expose a public
+  `index.ts` and forbids cross-module private imports, but Step 2 did not own
+  `src/platform/index.ts`; and
+- two required corrections: diagnostic codes and their metadata remain too
+  open and can describe inconsistent faults, and Vitest unit tests use real
+  timers and event objects where S12 requires controlled fakes.
+
+The public-entrance correction adds a path outside the approved plan. S13
+therefore requires a revised work order and Leonardo's approval before any
+correction starts. Corrected technical work then needs applicable checks, one
+complete primary audit, and a fresh independent review.
 
 ### Acceptance decision
 
@@ -337,8 +350,8 @@ The corrected Step-2 code exists only on the isolated worker branch. It is not
 reviewed, integrated, tested by Leonardo, or accepted. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
 remain pending so old cleanup cannot overlap new work. The next permitted
-action is the fresh independent review. Step 3 and every public action remain
-blocked.
+action is Leonardo's decision on the exact revised correction plan. Step 3 and
+every public action remain blocked.
 
 ## Required accepted-step entry
 

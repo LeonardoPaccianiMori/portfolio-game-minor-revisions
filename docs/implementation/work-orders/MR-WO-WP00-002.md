@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-002
 type: implementation-work-order
-status: active
+status: blocked
 work_package: MR-WP-00
 sequence: 2
 created: 2026-09-01
