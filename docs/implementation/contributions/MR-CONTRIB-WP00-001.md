@@ -140,6 +140,12 @@ whitespace check. The validation worktree remained clean. Only fresh
 independent re-review remains before integration.
 
 The latest fresh OpenAI `gpt-5.6-sol` review using `xhigh` reasoning confirmed
+the S13 path order and all earlier findings. It found no blocker or advisory
+issue. It required README to stop saying that completed final-review
+corrections remain in progress. This primary-owned wording correction changes
+no authority, technical behaviour, or worker path ownership.
+
+The latest fresh OpenAI `gpt-5.6-sol` review using `xhigh` reasoning confirmed
 the live-boundary and closed-object findings are resolved. It found no blocker
 or advisory issue. It required three prohibited test paths in the primary-
 owned work order to follow the frozen S13 alphabetical sort rule. This
@@ -228,7 +234,8 @@ system, content, production asset, integration, Leonardo test, or acceptance
 exists. The page is intentionally static. The formatting block is resolved.
 Automated three-browser foundation flows exist, but direct browser-support
 assessment, performance measurement, Leonardo testing, and acceptance do not.
-Integration remains pending only until fresh independent re-review passes.
+Integration remains pending until the README live-status correction passes
+repeated checks and fresh independent re-review.
 
 ## Leonardo decision
 

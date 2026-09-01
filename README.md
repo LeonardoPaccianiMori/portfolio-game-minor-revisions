@@ -19,8 +19,9 @@ foundation work is not yet complete**.
 This repository contains no accepted game implementation result, production
 asset, or deployment configuration. The submitted Step-1 foundation contains
 only the approved S01 package baseline, basic local start page, and foundation
-tests. Its final review corrections are in progress, so it is not integrated
-or accepted. B10
+tests. Its corrections and combined validation are complete, but fresh
+independent re-review, integration, Leonardo's local test, and acceptance are
+still pending. B10
 records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
