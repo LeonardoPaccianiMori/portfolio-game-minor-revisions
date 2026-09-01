@@ -7,8 +7,9 @@ Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; revised Step 2 corr
 ## Durable resume point
 
 - Current step: `2`, revised correction plan approved on 2026-09-01.
-- Current workflow state: `plan approved; create the exact correction branch
-and worktree, activate MR-WO-WP00-003, and assign the controlled worker`.
+- Current workflow state: `implementing; the exact branch and worktree exist,
+MR-WO-WP00-003 is active, and the controlled worker receives the focused
+correction packet`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,12 +21,13 @@ and worktree, activate MR-WO-WP00-003, and assign the controlled worker`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 1, accepted by Leonardo on
   2026-09-01.
-- Next possible action: create the exact approved branch and worktree from
-  `43f868e64b80c88dc46832b676af6d2929f081c2`, then activate the new order.
+- Next possible action: the controlled worker corrects only the seven owned
+  paths, runs the required checks, commits the result, and supplies one complete
+  handoff.
 - Active approved implementation plan: the exact Step-2 correction plan for
   the S02 public platform entrance, closed diagnostic fault catalogue, and
   deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-003`, status `approved`, OpenAI
+- Active work order: `MR-WO-WP00-003`, status `active`, OpenAI
   `gpt-5.6-sol` with `high` reasoning, branch
   `work/MR-WP-00-startup-safety-review-fixes`, worktree
   `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
@@ -36,9 +38,9 @@ and worktree, activate MR-WO-WP00-003, and assign the controlled worker`.
   submitted result that received the blocking review.
 - Active player test: none. Leonardo completed the Step-1 local foundation-page
   confirmation.
-- Active correction cycle: approved but not started. It can change only the
-  seven paths in `MR-WO-WP00-003`. No authority or frozen interface changes.
-- Last committed resume checkpoint: this plan-approved checkpoint; Git history is
+- Active correction cycle: implementing. It can change only the seven paths in
+  `MR-WO-WP00-003`. No authority or frozen interface changes.
+- Last committed resume checkpoint: this active-work-order checkpoint; Git history is
   authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Review gate: failed on the historical submission. The fresh OpenAI
