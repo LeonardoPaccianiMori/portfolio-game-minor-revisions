@@ -7,7 +7,3 @@ local-artifacts/performance/
 .vite/
 .cache/
 package-lock.json
-AGENTS.md
-README.md
-assets/
-docs/

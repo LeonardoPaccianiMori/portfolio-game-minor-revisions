@@ -11,6 +11,7 @@ export default tseslint.config(
       'node_modules/',
       'playwright-report/',
       'test-results/',
+      '.worktrees/',
     ],
   },
   js.configs.recommended,
@@ -35,27 +36,21 @@ export default tseslint.config(
     },
   },
   {
-    files: ['tests/unit/**/*.ts'],
-    languageOptions: {
-      globals: globals.node,
-    },
-  },
-  {
-    files: ['tests/e2e/**/*.ts'],
-    languageOptions: {
-      globals: globals.node,
-    },
-  },
-  {
-    files: ['vite.config.ts', 'vitest.config.ts'],
-    languageOptions: {
-      globals: globals.node,
-    },
-  },
-  {
-    files: ['**/*.browser.ts'],
+    files: ['src/**/*.ts'],
     languageOptions: {
       globals: globals.browser,
+    },
+  },
+  {
+    files: ['tests/**/*.ts'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
+    files: ['eslint.config.js', 'playwright.config.ts', 'vite.config.ts', 'vitest.config.ts'],
+    languageOptions: {
+      globals: globals.node,
     },
   },
 );
