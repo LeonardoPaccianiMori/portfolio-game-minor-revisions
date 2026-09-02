@@ -5,3 +5,4 @@ export type {
   CompatibilityCheckResult,
   CompatibilityReport,
 } from './compatibility';
+export { createTimingPort, createTimingPortForTests } from './timing';
