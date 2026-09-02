@@ -14,7 +14,7 @@ survival loop without being presented as a perfect life.
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
 approved on 2026-09-01; Steps 1 and 2 accepted; exact Step-3 plan approved by
-Leonardo on 2026-09-02; Step-3 implementation not active**.
+Leonardo on 2026-09-02; controlled Step-3 work order active**.
 
 This repository contains the accepted Step-1 foundation and Step-2 startup
 safety result, but no Three.js scene, game system, production asset, or

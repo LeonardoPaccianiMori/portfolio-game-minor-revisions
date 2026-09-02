@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; exact Step-3 plan approved**
+Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; exact Step-3 work order active**
 
 ## Authorization gate
 

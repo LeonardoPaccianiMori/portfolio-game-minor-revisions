@@ -1,6 +1,6 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3 plan approved**
+Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3 work order active**
 
 Last updated: 2026-09-02
 
@@ -269,7 +269,8 @@ Three terms in the list have these plain-language meanings:
 
 Step 0 and the S00–S14 documents are complete. Leonardo approved Gate 1,
 accepted Steps 1 and 2, and approved the exact Step-3 application-lifecycle
-plan on 2026-09-02. Step 3 can now enter controlled work-order activation. It
-does not yet contain an application controller or implementation evidence.
+plan on 2026-09-02. `MR-WO-WP00-005` is active for the controlled
+application-lifecycle implementation. It does not yet contain reviewed or
+integrated application-controller evidence.
 Step 4, Three.js, game systems, asset research, a remote, licence, deployment,
 and public action remain blocked.

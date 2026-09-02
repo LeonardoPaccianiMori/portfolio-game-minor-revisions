@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1 and 2 accepted; exact Step-3 plan approved**
+Status: **Steps 1 and 2 accepted; exact Step-3 work order active**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -31,7 +31,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-|    3 | Plan approved           | 2026-09-02    | Pending controlled implementation, primary audit, and fresh independent review                                                                                                                   | Pending             | Pending                                                                                             | Plan checkpoint pending                                                      | Exact application-lifecycle scope only.                                |
+|    3 | Implementing            | 2026-09-02    | Controlled worker pending on active `MR-WO-WP00-005`; primary audit and fresh independent review follow                                                                                          | Pending             | Pending                                                                                             | Plan checkpoint `cb19a1e`; activation checkpoint pending                     | Exact application-lifecycle scope only.                                |
 | 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -561,14 +561,16 @@ has not yet tested or accepted a Step-3 result.
 
 ### Agent contribution
 
-The primary agent prepared and reconciled the plan authority records. No
-Step-3 worker, implementation, audit, review, integration, or local test has
-started at this checkpoint.
+The primary agent prepared and reconciled the plan authority records, created
+and activated `MR-WO-WP00-005`, and selected OpenAI `gpt-5.6-sol` with `high`
+reasoning for the controlled worker. No worker implementation, audit, review,
+integration, or local test has started at this checkpoint.
 
 ### Files and commits
 
-The plan checkpoint contains only primary-owned authority and status records.
-Git history is authoritative for its commit identifier.
+The plan checkpoint is `cb19a1e99b365aa98f8dbec4e33b9fde31864a5e`. The
+activation checkpoint adds the exact work order and current-state records. Git
+history is authoritative for the activation commit identifier.
 
 ### Automated and review evidence
 
@@ -588,8 +590,9 @@ Pending. Plan approval is not Step-3 acceptance.
 
 ### Known limitations and next boundary
 
-Step 3 has plan authority only. The next action is to create and activate
-`MR-WO-WP00-005` from the exact plan checkpoint. Step 4 remains unapproved.
+Step 3 is implementing under `MR-WO-WP00-005`. The next action is to verify the
+isolated worktree and start the exact selected worker. Step 4 remains
+unapproved.
 
 ## Required accepted-step entry
 
