@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
+Status: **documented technical specification; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending**
 
 ## Purpose and authority
 
@@ -686,5 +686,7 @@ and primary audit are complete, fresh independent technical review passed, and
 the reviewed result is integrated on local `main`. Complete main-branch
 validation passed. Leonardo accepted Step 2 and approved the exact Step-3 plan
 on 2026-09-02. The controlled worker submitted `MR-WO-WP00-005`, and the
-complete primary audit passed. Independent review, integration, Leonardo
-testing, and acceptance remain pending. Step 4 remains unapproved.
+complete primary audit passed. Fresh independent technical review found no
+technical issue and one narrow current-record correction. Focused primary
+validation of that correction passed. Integration, Leonardo testing, and
+acceptance remain pending. Step 4 remains unapproved.

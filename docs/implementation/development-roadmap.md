@@ -1,6 +1,6 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
+Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending**
 
 Last updated: 2026-09-02
 
@@ -271,7 +271,9 @@ Step 0 and the S00–S14 documents are complete. Leonardo approved Gate 1,
 accepted Steps 1 and 2, and approved the exact Step-3 application-lifecycle
 plan on 2026-09-02. The controlled worker submitted `MR-WO-WP00-005` at
 `f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. The complete primary audit
-passed. One fresh independent review is now pending; no integration or
-Leonardo test has occurred.
+passed. Fresh independent technical review found no technical issue and one
+narrow current-record correction. Focused primary validation of that
+correction passed. The exact reviewed worker range is ready for integration;
+no integration or Leonardo test has occurred.
 Step 4, Three.js, game systems, asset research, a remote, licence, deployment,
 and public action remain blocked.

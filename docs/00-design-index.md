@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
+Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending**
 
 This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -22,7 +22,7 @@ gaps. It does not mean that the domain is finished.
 | `12-content-specification.md`                   | Content inventory                                            | B10 documented                                         | Implementation evidence and later content revisions only.                                                                  |
 | `13-testing-and-evaluation.md`                  | Quality evidence                                             | B10 and S12–S14 documented                             | Test results are future evidence, not current claims.                                                                      |
 | `14-production-plan.md`                         | Delivery strategy                                            | B10 and S13–S14 documented                             | Leonardo may later revise capacity or release timing.                                                                      |
-| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Step-3 submission and primary audit are complete; independent review is pending.                                           |
+| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Step-3 submission, primary audit, review, and focused record correction passed; integration is pending.                    |
 | `reviews/independent-design-review-protocol.md` | External specification review                                | Review complete                                        | Discuss the validated findings and record Leonardo's decisions.                                                            |
 | `reviews/2026-08-28-opus-5/`                    | Opus 5 reports and validation                                | Stored; advisory                                       | No recommendation is accepted until Leonardo decides it.                                                                   |
 | `reviews/holistic-game-assessment-protocol.md`  | Identity, fun-hypothesis, direction, and expectations review | Review complete                                        | Preserve document-only quality claims as hypotheses until private play evidence exists.                                    |
@@ -38,9 +38,9 @@ gaps. It does not mean that the domain is finished.
 | `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`015` resolved                       | Register any later material issue before dependent work.                                                                   |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1 and 2 accepted; Step-3 technical review        | Obtain the one fresh independent review of the audited Step-3 packet.                                                      |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step-3 technical review                                | Independent review is pending after the passed primary audit.                                                              |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1 and 2 accepted; Step 3 in technical review     | Record the independent-review result before integration.                                                                   |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1 and 2 accepted; Step-3 technical review passed | Integrate only the exact reviewed two-commit Step-3 range.                                                                 |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step-3 technical review passed                         | Reviewed integration is the next action.                                                                                   |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1 and 2 accepted; Step-3 review passed           | Preserve integration and Leonardo testing as separate later states.                                                        |
 
 ## Discussion roadmap
 
@@ -78,7 +78,7 @@ status, and the next place to resume.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
   S01–S14, and Step-0 model history belongs only to _Minor Revisions_.
 - Incremental implementation start: **Steps 1 and 2 accepted; exact Step-3
-  work order active**; implement only its controlled scope.
+  work order reviewed**; integrate only its exact reviewed two-commit result.
 - Vertical-slice acceptance: **blocked**; Steps 3–30 remain unaccepted.
 - Fallback acceptance: **blocked**; Steps 32–52 do not exist.
 - Full local-game acceptance: **blocked**; Steps 54–69 do not exist.

@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending; development governance permits approved evidence-led revisions**
+Status: **S00–S14 documented; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -231,6 +231,7 @@ keys. This prevents drift between two prose sources.
 S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1,
 accepted Steps 1 and 2, and approved the exact Step-3 plan on 2026-09-02.
 The controlled `MR-WO-WP00-005` submission and complete primary audit are
-finished. Obtain the one fresh independent review before integration. Do not
+finished. Fresh independent technical review and its narrow current-record
+correction passed. Integrate only the exact reviewed two-commit range. Do not
 create a Three.js scene, game system, content, asset, licence, remote,
 deployment, or public-action path.

@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
+Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending**
 
 ## Durable resume point
 
 - Current step: `3`, plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `technical review; independent review pending`.
+- Current workflow state: `technical review passed; integration pending`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,24 +19,26 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 prima
   does not describe model use for another project.
 - Last accepted implementation step: Step 2, accepted by Leonardo on
   2026-09-02.
-- Next possible action: assign one fresh read-only OpenAI `gpt-5.6-sol`
-  reviewer using `xhigh` reasoning to the complete audited packet.
+- Next possible action: integrate only the exact reviewed Step-3 worker commits
+  in their approved order, then run complete main-branch validation.
 - Active approved implementation plan: exact Step-3 application-lifecycle plan
   approved on 2026-09-02.
-- Submitted work order: `MR-WO-WP00-005` on branch
+- Reviewed work order: `MR-WO-WP00-005` on branch
   `work/MR-WP-00-application-lifecycle` and worktree
   `.worktrees/MR-WP-00-application-lifecycle/`. `MR-WO-WP00-004` is accepted.
-- Active contribution record: `MR-CONTRIB-WP00-005` is submitted and records
-  the passed complete primary audit. `MR-CONTRIB-WP00-004` is accepted.
+- Active contribution record: `MR-CONTRIB-WP00-005` is reviewed and records
+  the passed complete primary audit, fresh independent review, and focused
+  record correction. `MR-CONTRIB-WP00-004` is accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the
   blocking review.
 - Active player test: none. Leonardo explicitly accepted Step 2 after the test
   packet; he supplied no separate defect or screen-observation report.
-- Last completed correction cycle: primary-audited. Primary verification confirms 91
-  unit tests, 96.48 percent line coverage, 92.30 percent branch coverage, a
-  successful build, 15 passing browser flows, exact scope, public imports,
-  closed diagnostics, controlled unit substitutes, production privacy, and a
-  clean worker head at `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`.
+- Last accepted Step-2 correction cycle: primary-audited. Primary verification
+  confirms 91 unit tests, 96.48 percent line coverage, 92.30 percent branch
+  coverage, a successful build, 15 passing browser flows, exact scope, public
+  imports, closed diagnostics, controlled unit substitutes, production
+  privacy, and a clean worker head at
+  `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2`.
   The fresh review found no technical issue and one required record
   reconciliation. The reconciliation and focused validation passed. The
   reviewed worker sequence is integrated without conflict, and complete
@@ -47,10 +49,12 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 prima
   Worker and primary `npm run check` and `npm run verify` passed 111 tests, the
   required coverage, a 16-module build, and all 15 Chromium, Firefox, and
   WebKit flows. The complete primary audit found no blocker or required
-  correction. Independent review is pending.
-- Last committed resume checkpoint: Step-3 work-order activation at
-  `1b75a968ba2f419b66158d8f88abc119378af27d`. Git history is authoritative
-  for the next technical-review checkpoint.
+  correction. Fresh independent review found no technical issue and one narrow
+  current-record correction. Focused primary validation of that correction
+  passed.
+- Primary-audit authority checkpoint:
+  `2ca6cc8b71bb356cad6d902f5a2efb8054b8c56d`. Git history is authoritative
+  for the later review-record checkpoint that contains this current state.
 - Roadmap deviation request: none.
 - Historical review gate: failed on the original submission. The first OpenAI
   `gpt-5.6-sol` reviewer using `xhigh` reasoning found one blocker and two
@@ -62,17 +66,20 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 prima
   imports. Leonardo approved the exact addition of
   `src/bootstrap/startup-screen.ts` to `MR-WO-WP00-004`. The worker reports the
   complete approved correction submitted.
-- Review result: passed. The technical review found no blocker or advisory
-  issue. Leonardo approved the required current-record correction, and focused
-  primary validation passed. No new independent review is required because the
-  correction changes no authority, evidence meaning, or technical claim.
-- Integration result: passed. The original implementation is integrated as
-  `41adfbb` through `aeae015`, and the reviewed correction is integrated as
-  `1e28a45` through `4475844`. Main `npm run verify` passed 91 unit tests,
-  92.30 percent branch coverage, the production build, and 15 browser flows.
-- Acceptance result: Leonardo explicitly accepted Step 2 on 2026-09-02.
-- Current Step-3 review result: pending. The complete primary audit passed; no
-  independent-review result, integration, Leonardo test, or acceptance exists.
+- Last accepted Step-2 review result: passed. The technical review found no
+  blocker or advisory issue. Leonardo approved the required current-record
+  correction, and focused primary validation passed. No new independent review
+  was required because the correction changed no authority, evidence meaning,
+  or technical claim.
+- Last accepted Step-2 integration result: passed. The original implementation
+  is integrated as `41adfbb` through `aeae015`, and the reviewed correction is
+  integrated as `1e28a45` through `4475844`. Main `npm run verify` passed 91
+  unit tests, 92.30 percent branch coverage, the production build, and 15
+  browser flows.
+- Last acceptance result: Leonardo explicitly accepted Step 2 on 2026-09-02.
+- Current Step-3 review result: passed after one narrow current-record
+  correction and focused primary validation. No integration, Leonardo test, or
+  acceptance exists.
 
 ## Repository facts
 
@@ -108,7 +115,7 @@ insert a future or guessed commit identifier.
 | Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                |
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
-| Step 3                                          | Technical review               | `MR-WO-WP00-005` and `MR-CONTRIB-WP00-005` are submitted; the complete primary audit passed and independent review is pending.       |
+| Step 3                                          | Technical review passed        | The work order and contribution are reviewed; the record-only review finding and focused primary validation passed.                  |
 | Steps 4–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |
