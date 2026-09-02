@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-006
 type: implementation-work-order
-status: active
+status: submitted
 work_package: MR-WP-00
 sequence: 6
 created: 2026-09-02
@@ -30,7 +30,11 @@ current primary session identifies OpenAI as provider, but its exact model and
 reasoning effort are unavailable. They remain `unknown` and are not inferred.
 
 The exact verified dependency is
-`94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`. This order is now active.
+`94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`. The diagnostic branch contains
+exact rules copy `3bd8b18` and diagnostic commit `0fc7d39`. Leonardo approved
+the narrow foundation-file inventory amendment after its exact-list test found
+the missing planned path. Complete checks and the primary audit passed.
+Independent review remains pending.
 
 ## Plain-language effect
 
@@ -62,6 +66,7 @@ the diagnostic does not need.
 - `tests/e2e/MR-WP-00/campaign-state-diagnostic.spec.ts`
 - `tests/unit/MR-WP-00/architecture.test.ts`
 - `tests/unit/MR-WP-00/campaign-state-diagnostic.test.ts`
+- `tests/unit/MR-WP-00/foundation.test.ts`
 
 ## Prohibited paths
 
@@ -140,7 +145,6 @@ the diagnostic does not need.
 - `tests/unit/MR-WP-00/application.test.ts`
 - `tests/unit/MR-WP-00/compatibility.test.ts`
 - `tests/unit/MR-WP-00/diagnostics.test.ts`
-- `tests/unit/MR-WP-00/foundation.test.ts`
 - `tests/unit/MR-WP-00/platform-timing.test.ts`
 - `tests/unit/MR-WP-00/startup.test.ts`
 - `tests/unit/MR-WP-01/`

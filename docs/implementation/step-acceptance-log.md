@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; Step-4 rules submitted and diagnostic active**
+Status: **Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -32,7 +32,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-|    4 | Implementing            | 2026-09-02    | Rules commit `94b12f3` submitted and verified; private diagnostic order active                                                                                                                   | Pending             | Pending                                                                                             | Plan `580c8d9`; activation `3e4d2d2`; rules `94b12f3`                        | Review and acceptance remain pending.                                  |
+|    4 | Technical review        | 2026-09-02    | 154 tests, required coverage, 115-module build, 21 browser flows, audit, scope, privacy, production, and complete primary audit passed                                                           | Pending             | Pending                                                                                             | Plan `580c8d9`; rules `94b12f3`; diagnostic `0fc7d39`                        | Fresh independent review is pending.                                   |
 | 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -760,8 +760,8 @@ Pending. Plan approval is not Step-4 acceptance.
 
 ### Known limitations and next boundary
 
-The verified rules submission is complete. Step 4 now implements only active
-`MR-WO-WP00-006` for the private diagnostic. Audit, review, integration,
+Both exact Step-4 submissions and the complete primary audit are finished. The
+next action is the approved fresh Sol `xhigh` independent review. Integration,
 Leonardo testing, and acceptance remain pending. Step 5 and every public
 action remain unapproved.
 

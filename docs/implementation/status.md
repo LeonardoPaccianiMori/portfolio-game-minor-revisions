@@ -2,7 +2,7 @@
 
 Last updated: 2026-09-02
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 rules submitted and diagnostic active**
+Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
 
 ## Current repository state
 
@@ -53,8 +53,8 @@ not insert a future or guessed commit identifier into this document.
   reviewer, and asset-researcher roles; at most two subagents; and mandatory
   delegation-table evidence. This amendment does not alter an interface or
   authorize implementation.
-- Next action: implement only active `MR-WO-WP00-006` from verified rules
-  commit `94b12f3`.
+- Next action: run the approved fresh Sol `xhigh` review of the complete Step-4
+  packet.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 
@@ -66,7 +66,7 @@ not insert a future or guessed commit identifier into this document.
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
 | Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v2`; all other interfaces remain frozen `v1`; Gate 1 was approved on 2026-09-01.                      |
-| Incremental implementation | Steps 1–3 accepted; Step 4 implementing                | Rules are submitted; `MR-WO-WP00-006` is active. Steps 5–70 need accepted dependencies and separate exact plans.                                     |
+| Incremental implementation | Steps 1–3 accepted; Step 4 technical review            | Both work orders are submitted and the complete primary audit passed. Fresh independent review is pending.                                           |
 | Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 

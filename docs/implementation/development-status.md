@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules submitted and diagnostic active**
+Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
 
 ## Durable resume point
 
 - Current step: `4`, exact plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `implementing; exact private diagnostic order active`.
+- Current workflow state: `technical review; complete primary audit passed`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,14 +19,14 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules s
   does not describe model use for another project.
 - Last accepted implementation step: Step 3, accepted by Leonardo on
   2026-09-02.
-- Next possible action: bring verified rules commit `94b12f3` into the exact
-  diagnostic worktree and implement only `MR-WO-WP00-006`.
+- Next possible action: run the approved fresh Sol `xhigh` independent review
+  on the latest complete packet.
 - Active approved implementation plan: Step 4 campaign-state foundation and
   private diagnostic, including the evidence-led `MR-IF-002 v2`
   creation-input refinement.
-- Active work order: `MR-WO-WP00-006` on
-  `work/MR-WP-00-campaign-state-diagnostic`. `MR-WO-WP01-001` is submitted.
-- Active contribution record: `MR-CONTRIB-WP01-001` is submitted.
+- Active work orders: `MR-WO-WP01-001` and `MR-WO-WP00-006` are submitted.
+- Active contribution records: `MR-CONTRIB-WP01-001` and
+  `MR-CONTRIB-WP00-006` are submitted.
   `MR-CONTRIB-WP00-005` and
   `MR-CONTRIB-WP00-004` are accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the

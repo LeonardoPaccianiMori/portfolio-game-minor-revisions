@@ -22,7 +22,8 @@ passed. Leonardo confirmed the four expected lines after repeated reloads and
 explicitly accepted Step 3 on 2026-09-02. Leonardo approved the exact Step-4
 plan and its evidence-led `MR-IF-002 v2` creation-input refinement on
 2026-09-02. `MR-WO-WP01-001` submitted verified rules commit `94b12f3`.
-`MR-WO-WP00-006` is active for the private diagnostic.
+`MR-WO-WP00-006` submitted the private diagnostic as `0fc7d39`; complete
+checks and the primary audit passed. Fresh independent review is next.
 Step 5 and every later step remain unapproved; approval never carries forward.
 Do not create or change game code, package configuration, tests, production
 assets, or deployment configuration outside an exact approved step.
