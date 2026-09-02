@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1 and 2 accepted; Step-3 technical review passed; integration pending**
+Status: **Steps 1 and 2 accepted; Step-3 reviewed integration and main validation passed; Leonardo testing pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -31,7 +31,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-|    3 | Technical review passed | 2026-09-02    | Exact worker submission, complete primary audit, fresh independent review, and focused record correction passed                                                                                  | Pending             | Pending                                                                                             | Plan `cb19a1e`; audit authority `2ca6cc8`; worker head `f4130ac`             | Exact application-lifecycle scope only.                                |
+|    3 | Leonardo testing        | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Pending             | Pending                                                                                             | Integrated commits `d2a63f5` and `d26ffe1`                                   | Exact visible reload test is ready.                                    |
 | 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -568,16 +568,20 @@ two-commit result. The primary agent then completed the one full pre-review
 audit and found no blocker or required correction. Independent review,
 which was fresh and read-only, then found no technical issue and one narrow
 current-record correction. The primary agent corrected it, and focused
-validation passed. Integration and the local test remain pending. Matching
-completed-use entries are in `ai-use-log.md` and `MR-CONTRIB-WP00-005`.
+validation passed. The primary agent integrated the exact two reviewed worker
+commits without conflict and completed main-branch validation. The local test
+remains pending. Matching completed-use entries are in `ai-use-log.md` and
+`MR-CONTRIB-WP00-005`.
 
 ### Files and commits
 
 The plan checkpoint is `cb19a1e99b365aa98f8dbec4e33b9fde31864a5e`. The
 activation checkpoint is `1b75a968ba2f419b66158d8f88abc119378af27d`.
 Worker commits are `d3c11c2a23a6a473d43ecd29d377d6eb34b691f2` and
-`f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. They remain only on the isolated
-work branch; no integration commit exists.
+`f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. Integrated commits are
+`d2a63f5e4c516036380c4adaaf634d4e1e62534b` and
+`d26ffe119040dd16ba3ff4f22ffcf90375de570a`. The 17 integrated paths match the
+reviewed worker head exactly.
 
 ### Automated and review evidence
 
@@ -594,9 +598,17 @@ one required record-only group. Focused formatting, repository, reference,
 whitespace, staged-scope, and diff validation passed after its correction. No
 fresh review is required for that narrow mechanical correction.
 
+After integration, main `npm run check` passed all 111 tests. Main `npm run
+verify` passed lint, formatting, the same coverage, the 16-module production
+build, and all 15 browser flows across Chromium, Firefox, and WebKit. Exact
+worker-content, package, configuration, production-output, source-map,
+external-request, console-path, whitespace, clean-state, and absent-remote
+checks passed.
+
 ### Leonardo test packet
 
-Planned as described above; not yet run.
+Ready as described above. The loopback-only server has not started, and
+Leonardo has not received or run the visible reload test at this checkpoint.
 
 ### Observed result and corrections
 
@@ -608,16 +620,20 @@ primary agent corrected only those current records and matching review-state
 references; no code, authority, interface, requirement, test contract, or
 evidence meaning changed.
 
+The reviewed worker commits integrated without conflict. Complete main
+validation found no new approved-scope defect. Expected controlled-failure
+browser logs were test evidence, not a production failure.
+
 ### Acceptance decision
 
 Pending. Plan approval is not Step-3 acceptance.
 
 ### Known limitations and next boundary
 
-Step-3 technical review passed. `MR-WO-WP00-005` and
-`MR-CONTRIB-WP00-005` are reviewed. The next action is to integrate only the
-exact reviewed two-commit range in its approved order, then run complete
-main-branch validation. Step 4 remains unapproved.
+Step 3 is in Leonardo testing. `MR-WO-WP00-005` and
+`MR-CONTRIB-WP00-005` are integrated. The next action is to start the
+loopback-only page and give Leonardo the exact approved visible reload test.
+Step 4 remains unapproved.
 
 ## Required accepted-step entry
 

@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; Steps 1 and 2 accepted; Step-3 technical review passed; integration pending; later interface changes require approved supersession**
+Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; Steps 1 and 2 accepted; Step-3 reviewed integration and main validation passed; Leonardo testing pending; later interface changes require approved supersession**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -66,7 +66,8 @@ same date. The controlled `MR-WO-WP00-005` submission and complete primary
 audit use the applicable frozen `MR-IF-001`, `MR-IF-014`, and `MR-IF-015`
 subsets without changing them. Fresh independent review found no interface
 issue; its required narrow current-record correction passed focused primary
-validation. A
+validation. The exact reviewed result is integrated on local `main`, and
+complete main-branch validation confirms that no frozen interface changed. A
 change to any
 frozen interface requires an affected-consumer list,
 compatibility and migration review, updated fixtures and traceability, and

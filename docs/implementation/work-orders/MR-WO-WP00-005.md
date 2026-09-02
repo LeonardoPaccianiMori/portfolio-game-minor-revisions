@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-005
 type: implementation-work-order
-status: reviewed
+status: integrated
 work_package: MR-WP-00
 sequence: 5
 created: 2026-09-02
@@ -31,8 +31,10 @@ The worker submitted the exact two-commit result at
 `f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. All worker checks and the complete
 primary audit passed. Fresh independent technical review found no technical
 issue and one narrow current-record correction. Focused primary validation of
-that correction passed. Integration, Leonardo testing, and acceptance remain
-pending.
+that correction passed. The reviewed commits are integrated on local `main` as
+`d2a63f5e4c516036380c4adaaf634d4e1e62534b` and
+`d26ffe119040dd16ba3ff4f22ffcf90375de570a`. Complete main-branch validation
+passed. Leonardo testing and acceptance remain pending.
 
 ## Plain-language effect
 

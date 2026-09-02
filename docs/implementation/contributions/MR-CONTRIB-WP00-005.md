@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-005
 type: implementation-contribution
-status: reviewed
+status: integrated
 work_order: MR-WO-WP00-005
 work_package: MR-WP-00
 created: 2026-09-02
@@ -27,7 +27,8 @@ The visible Step-2 wording, compatibility order, controlled-failure behaviour,
 retry path, diagnostic privacy, package, configuration, and frozen interfaces
 remain unchanged. The complete primary pre-review audit passed. Independent
 technical review and its required narrow current-record correction passed.
-Integration, Leonardo testing, and Step-3 acceptance remain pending.
+The reviewed result is integrated on local `main`, and complete main-branch
+validation passed. Leonardo testing and Step-3 acceptance remain pending.
 
 ## Changed files
 
@@ -73,7 +74,12 @@ changed. Step 4 and every public action remain blocked.
 
 ## Integrated commits
 
-None. The submitted worker commits remain only on the isolated work branch.
+- `d2a63f5e4c516036380c4adaaf634d4e1e62534b` — integrated worker commit
+  `d3c11c2a23a6a473d43ecd29d377d6eb34b691f2`.
+- `d26ffe119040dd16ba3ff4f22ffcf90375de570a` — integrated worker commit
+  `f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`.
+
+The 17 integrated paths match the reviewed worker head exactly.
 
 ## Commands and results
 
@@ -125,7 +131,7 @@ reference, whitespace, staged-scope, and diff validation passed. S13 requires
 no fresh review because this narrow correction changes no authority, evidence
 meaning, interface, requirement, code, runtime, dependency, security, privacy,
 accessibility, or test contract. The exact two worker commits are technically
-ready for integration.
+approved for integration and are now integrated on local `main`.
 
 ## Corrections
 
