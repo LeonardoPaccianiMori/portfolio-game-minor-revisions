@@ -1,6 +1,6 @@
 # Implementation Interface Register
 
-Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; Step 1 accepted; later interface changes require approved supersession**
+Status: **`MR-IF-001`–`MR-IF-015` frozen `v1`; Steps 1 and 2 accepted; Step-3 plan approved; later interface changes require approved supersession**
 
 This register prevents two agents from inventing incompatible shared
 contracts. It tracks only boundaries used by more than one module or work
@@ -61,7 +61,9 @@ signature or source file. Gate 1 was approved and Step 1 was accepted on
 plans on the same date. The correction code and primary audit are complete,
 fresh independent technical review passed, and the reviewed result is
 integrated on local `main`. Complete main-branch validation passed. Leonardo
-accepted Step 2 on 2026-09-02. No frozen interface changed. A change to any
+accepted Step 2 on 2026-09-02. Leonardo approved the exact Step-3 plan on the
+same date. It uses the applicable frozen `MR-IF-001`, `MR-IF-014`, and
+`MR-IF-015` subsets without changing them. A change to any
 frozen interface requires an affected-consumer list,
 compatibility and migration review, updated fixtures and traceability, and
 Leonardo's approval. The later approved interface version supersedes the

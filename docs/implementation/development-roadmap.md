@@ -1,8 +1,8 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 approved and Step 1 accepted on 2026-09-01; Step 2 is not approved**
+Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3 plan approved**
 
-Last updated: 2026-09-01
+Last updated: 2026-09-02
 
 ## Purpose
 
@@ -267,10 +267,9 @@ Three terms in the list have these plain-language meanings:
 
 ## Current position
 
-Step 0 is complete in the commit that contains this roadmap. The S00–S14
-documents and frozen interfaces are complete. Leonardo approved Gate 1 and
-accepted the exact Step-1 S01 foundation on 2026-09-01. That accepted result
-contains only the package baseline, basic local start page, foundation tests,
-and their required checks. Step 2 and later work, asset research, a remote,
-licence, deployment, and public action remain blocked until Leonardo approves
-the exact Step-2 plan.
+Step 0 and the S00–S14 documents are complete. Leonardo approved Gate 1,
+accepted Steps 1 and 2, and approved the exact Step-3 application-lifecycle
+plan on 2026-09-02. Step 3 can now enter controlled work-order activation. It
+does not yet contain an application controller or implementation evidence.
+Step 4, Three.js, game systems, asset research, a remote, licence, deployment,
+and public action remain blocked.

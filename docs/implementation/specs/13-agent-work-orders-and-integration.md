@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Steps 1 and 2 accepted; Step 3 unapproved**
+Status: **documented technical specification; Steps 1 and 2 accepted; exact Step-3 plan approved**
 
 ## Purpose and authority
 
@@ -18,8 +18,8 @@ change one of those contracts.
 This document defines controlled package paths and governance. It does not
 itself authorize a package, worktree, work order, source file, asset, licence,
 remote, deployment, or public result. S14 completed the final baseline audit.
-Leonardo approved Gate 1 and accepted Step 1. Every later step still needs its
-own exact plan and approval.
+Leonardo approved Gate 1, accepted Steps 1 and 2, and approved the exact Step-3
+plan. Every later step still needs its own exact plan and approval.
 
 ## Plain-language terms
 
@@ -684,5 +684,5 @@ approved Gate 1 and accepted Step 1 on 2026-09-01. Leonardo approved the exact
 Step-2 plan and its later correction plans on the same date. The correction code
 and primary audit are complete, fresh independent technical review passed, and
 the reviewed result is integrated on local `main`. Complete main-branch
-validation passed. Leonardo accepted Step 2 on 2026-09-02. Step 3 requires its
-own exact plan and separate approval.
+validation passed. Leonardo accepted Step 2 and approved the exact Step-3 plan
+on 2026-09-02. Step 3 is not accepted, and Step 4 remains unapproved.

@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Step 1 accepted; development governance permits approved evidence-led revisions**
+Status: **S00–S14 documented; Steps 1 and 2 accepted; Step-3 plan approved; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -228,7 +228,8 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1 and
-accepted Step 1 on 2026-09-01. Prepare only the exact Step-2 plan and wait for
-Leonardo's separate approval. Do not create a Step-2-or-later runtime,
-content, asset, licence, remote, deployment, or public-action path.
+S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1,
+accepted Steps 1 and 2, and approved the exact Step-3 plan on 2026-09-02.
+Create and activate only its controlled work order. Do not create a Three.js
+scene, game system, content, asset, licence, remote, deployment, or
+public-action path.

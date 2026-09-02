@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1 and 2 accepted; Step 3 unapproved**
+Status: **Steps 1 and 2 accepted; exact Step-3 plan approved**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -31,13 +31,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
+|    3 | Plan approved           | 2026-09-02    | Pending controlled implementation, primary audit, and fresh independent review                                                                                                                   | Pending             | Pending                                                                                             | Plan checkpoint pending                                                      | Exact application-lifecycle scope only.                                |
+| 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                  | Next boundary                      |
-| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------- | ---------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1 and 2 were separately planned and accepted | Prepare only the exact Step-3 plan |
+| Gate                               | State    | Leonardo decision | Effect                                                                                  | Next boundary                             |
+| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1 and 2 were separately planned and accepted | Activate only the exact Step-3 work order |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -467,9 +468,128 @@ The corrected Step-2 code is integrated on local `main`, passed the complete
 primary audit, fresh technical review, focused record validation, and complete
 main-branch checks, and was accepted by Leonardo. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
-remain pending so old cleanup cannot overlap new work. The next permitted
-action is preparation of the exact Step-3 plan. Step 3 and every public action
-remain blocked until their separate approvals.
+remain pending so old cleanup cannot overlap new work. Leonardo approved the
+exact Step-3 plan on 2026-09-02. The next permitted action is its controlled
+work-order activation. Step 4 and every public action remain blocked until
+their separate approvals.
+
+## Step 03 — S02 application structure and lifecycle
+
+### Plan and authority
+
+Leonardo approved this exact plan on 2026-09-02. Its purpose is to add the
+small application control layer that starts and stops future game parts in one
+safe order. It adds no gameplay. The lifecycle is `new`, `starting`, `ready`,
+`stopping`, and `stopped`, with a safe `failed` state. One ordered request
+queue prevents two start or stop requests from racing. One controlled frame
+loop provides the future update rhythm. Shutdown runs in reverse order and is
+safe to repeat. Temporary adapters make the structure testable before game
+systems exist.
+
+The controlled worker owns these additions:
+
+- `src/application/controller.ts`
+- `src/application/index.ts`
+- `src/bootstrap/application-bootstrap.ts`
+- `src/bootstrap/index.ts`
+- `src/bootstrap/temporary-adapters.ts`
+- `src/platform/timing.ts`
+- `tests/unit/MR-WP-00/application-bootstrap.test.ts`
+- `tests/unit/MR-WP-00/application-fakes.ts`
+- `tests/unit/MR-WP-00/application.test.ts`
+- `tests/unit/MR-WP-00/architecture.test.ts`
+- `tests/unit/MR-WP-00/platform-timing.test.ts`
+
+It owns changes only to:
+
+- `src/bootstrap/main.ts`
+- `src/bootstrap/startup.ts`
+- `src/platform/index.ts`
+- `tests/e2e/MR-WP-00/start-page.spec.ts`
+- `tests/unit/MR-WP-00/foundation.test.ts`
+- `tests/unit/MR-WP-00/startup.test.ts`
+
+The primary agent owns the authority, work-order, contribution, status,
+integration, audit, review, and acceptance records named in the approved plan.
+The worker cannot edit documentation.
+
+The approved evidence is partial implementation of `MR-S02-FIX-001`,
+`MR-S02-FIX-004`–`007`, and `MR-S02-FIX-009`–`010`, while preserving the
+accepted Step-2 evidence for `MR-S02-FIX-002`. It links the applicable Step-3
+subsets of `MR-REQ-TECH-001`, `MR-REQ-TEST-001`, frozen `MR-IF-001`, applicable
+`MR-IF-014` and `MR-IF-015`, and S13 groups `MR-S13-CON-001`,
+`MR-S13-GATE-001`, `MR-S13-GIT-001`, `MR-S13-OWN-001`, `MR-S13-REV-001`, and
+`MR-S13-WO-001`. It does not claim `MR-S02-FIX-003`, `MR-S02-FIX-008`, or
+complete `MR-S12-ACC-003`.
+
+Required checks are focused lifecycle, queue, frame-loop, shutdown, bootstrap,
+timing, startup, foundation, and architecture tests; `npm run check`; `npm run
+verify`; `npm run build`; the Step-3 browser flows in Chromium, Firefox, and
+WebKit; static public-entrance and dependency inspection; production, privacy,
+runtime-network, package, configuration, scope, Git-whitespace, and clean-state
+checks; one complete primary pre-review audit; and one fresh independent final
+review.
+
+After reviewed integration, the primary agent starts the loopback-only local
+page. Leonardo checks that the visible text remains `Minor Revisions`, `Ready`,
+`Startup checks passed.`, and `Game systems are not yet available.`, reloads
+once, reports any error or unexpected change, and can stop safely by closing
+the page. The primary agent stops the temporary server after the decision.
+
+Excluded work includes Three.js, a scene, campaign state, rules, content,
+saves, menus, movement, audio, cutscenes, packages, lockfile or configuration
+changes, coverage changes, assets or research, frozen specification or
+interface changes, roadmap-sequence changes, telemetry, external requests, a
+remote, licence, release, deployment, publication, portfolio work, Career
+Center changes, Step 4, and every player-visible wording change.
+
+The approved plan checkpoint commit message is `Approve Minor Revisions Step 3
+plan`. The activation commit message is `Activate Minor Revisions Step 3 work
+order`. Worker commits must start with `MR-WP-00`. The later test-readiness
+commit is `Record Minor Revisions Step 3 Leonardo test readiness`.
+
+| Task                                     | Role                     | Owned paths                                                       | Dependencies                                                        | Model and effort                                                               | Selection reason                                                                          | Focused source packet                                                                                                                                                                            | Order              |
+| ---------------------------------------- | ------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| Application lifecycle implementation     | Controlled worker        | Exact 17 source and test paths above                              | Accepted Step 2, committed plan checkpoint, active `MR-WO-WP00-005` | OpenAI `gpt-5.6-sol`, `high`                                                   | S02 lifecycle, concurrency, failure, and integration work is difficult architecture work. | `AGENTS.md`; implementation contract; development status and roadmap; interfaces; S01, S02, S11, S12, and S13 exact sections; Step-2 public entrances; owned source and tests; active work order | First; sequential  |
+| Complete audit, records, and integration | Primary agent            | Primary-owned records, main branch, and isolated worktree control | Worker submission                                                   | Actual active-session model and effort, recorded as `unknown` when unavailable | S13 keeps authority, audit, records, and integration with the primary agent.              | Approved plan, work order, complete worker diff and evidence, current authority records                                                                                                          | Second; sequential |
+| Final independent review                 | Fresh read-only reviewer | No writes                                                         | Complete primary audit on the latest artifact                       | OpenAI `gpt-5.6-sol`, `xhigh`                                                  | S13 requires a fresh quality-first independent review for the final technical packet.     | Approved plan and work order; frozen interfaces and relevant S02, S11, S12, S13 contracts; complete diff; tests; contribution; primary audit                                                     | Third; sequential  |
+
+### Leonardo contribution
+
+Leonardo accepted Step 2 and explicitly approved this exact Step-3 plan. He
+has not yet tested or accepted a Step-3 result.
+
+### Agent contribution
+
+The primary agent prepared and reconciled the plan authority records. No
+Step-3 worker, implementation, audit, review, integration, or local test has
+started at this checkpoint.
+
+### Files and commits
+
+The plan checkpoint contains only primary-owned authority and status records.
+Git history is authoritative for its commit identifier.
+
+### Automated and review evidence
+
+Pending after work-order activation and implementation.
+
+### Leonardo test packet
+
+Planned as described above; not yet run.
+
+### Observed result and corrections
+
+None. No Step-3 result exists at this checkpoint.
+
+### Acceptance decision
+
+Pending. Plan approval is not Step-3 acceptance.
+
+### Known limitations and next boundary
+
+Step 3 has plan authority only. The next action is to create and activate
+`MR-WO-WP00-005` from the exact plan checkpoint. Step 4 remains unapproved.
 
 ## Required accepted-step entry
 

@@ -1,8 +1,8 @@
 # Implementation Specification Status
 
-Last updated: 2026-09-01
+Last updated: 2026-09-02
 
-Status: **S00–S14 documented; Step 1 accepted; Step 2 requires a separate approved plan**
+Status: **S00–S14 documented; Steps 1 and 2 accepted; exact Step-3 plan approved**
 
 ## Current repository state
 
@@ -10,8 +10,9 @@ Status: **S00–S14 documented; Step 1 accepted; Step 2 requires a separate appr
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: none.
-- Implementation code: no game code or Three.js scene.
-- Package and build configuration: accepted S01 foundation only.
+- Implementation code: accepted Step-2 startup safety only; no game system or
+  Three.js scene.
+- Package and build configuration: accepted S01 foundation; unchanged by Step 2.
 - Production assets: none.
 - Public licence file: none.
 - Deployment configuration: none.
@@ -25,15 +26,15 @@ not insert a future or guessed commit identifier into this document.
 
 ## Gate state
 
-| Gate                                   | State                         | Blocking condition                                                                             |
-| -------------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------- |
-| Gate 1 — technical baseline            | Approved on 2026-09-01        | Gate 1 alone authorizes no code; Step 1 required its own separate plan and acceptance.         |
-| Incremental implementation start       | Step 1 accepted on 2026-09-01 | The S01 foundation is accepted. Step 2 remains blocked until Leonardo approves its exact plan. |
-| Vertical-slice acceptance              | Blocked                       | Steps 2–30 remain unaccepted and Step 31 cannot run.                                           |
-| Fallback acceptance                    | Blocked                       | Steps 32–52 do not exist and Step 53 cannot run.                                               |
-| Full local-game acceptance             | Blocked                       | Steps 54–69 do not exist and Step 70 cannot run.                                               |
-| Remote creation or push                | Blocked                       | Leonardo has not authorized a remote.                                                          |
-| Public release or portfolio deployment | Blocked                       | No playable implementation, release evidence, or separate publication approval exists.         |
+| Gate                                   | State                  | Blocking condition                                                                     |
+| -------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------- |
+| Gate 1 — technical baseline            | Approved on 2026-09-01 | Gate 1 alone authorizes no code; Step 1 required its own separate plan and acceptance. |
+| Incremental implementation start       | Step-3 plan approved   | Steps 1 and 2 are accepted. Activate only the exact Step-3 work order.                 |
+| Vertical-slice acceptance              | Blocked                | Steps 3–30 remain unaccepted and Step 31 cannot run.                                   |
+| Fallback acceptance                    | Blocked                | Steps 32–52 do not exist and Step 53 cannot run.                                       |
+| Full local-game acceptance             | Blocked                | Steps 54–69 do not exist and Step 70 cannot run.                                       |
+| Remote creation or push                | Blocked                | Leonardo has not authorized a remote.                                                  |
+| Public release or portfolio deployment | Blocked                | No playable implementation, release evidence, or separate publication approval exists. |
 
 ## Current checkpoint
 
@@ -51,11 +52,10 @@ not insert a future or guessed commit identifier into this document.
   reviewer, and asset-researcher roles; at most two subagents; and mandatory
   delegation-table evidence. This amendment does not alter an interface or
   authorize implementation.
-- Next action: prepare the exact Step-2 plan and wait for Leonardo's separate
-  approval.
-- Prohibited next action: create Step-2-or-later source, content, test,
-  work-order, contribution, worktree, asset, licence, remote, or deployment
-  files without that approved Step-2 plan.
+- Next action: create and activate the exact Step-3 work order from the plan
+  checkpoint.
+- Prohibited next action: create work outside the approved Step-3 source,
+  test, record, worktree, validation, review, integration, and local-test scope.
 
 ## Durable progress summary
 
@@ -65,8 +65,8 @@ not insert a future or guessed commit identifier into this document.
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
 | Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 was approved on 2026-09-01.                                                  |
-| Incremental implementation | Step 1 accepted; Step 2 not approved                   | Step 0 is documentation only. The accepted S01 foundation has no game system. Steps 2–70 each require an approved plan and accepted dependencies.    |
-| Vertical slice             | Not authorized                                         | Steps 1–30 assemble it and Step 31 accepts it; no game code or Three.js scene exists.                                                                |
+| Incremental implementation | Steps 1 and 2 accepted; Step-3 plan approved           | Step 3 can start only through its exact controlled work order. Steps 4–70 remain unapproved.                                                         |
+| Vertical slice             | Step 3 planned; not accepted                           | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 
 ## Session-resume procedure

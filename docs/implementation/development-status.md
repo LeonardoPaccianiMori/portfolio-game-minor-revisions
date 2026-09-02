@@ -2,13 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step 3 unapproved**
+Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3 plan approved**
 
 ## Durable resume point
 
-- Current step: `2`, accepted by Leonardo on 2026-09-02.
-- Current workflow state: `accepted; no Step-3 plan or implementation authority
-exists`.
+- Current step: `3`, plan approved by Leonardo on 2026-09-02.
+- Current workflow state: `plan approved; work order not yet active`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,10 +19,10 @@ exists`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 2, accepted by Leonardo on
   2026-09-02.
-- Next possible action: prepare only the exact Step-3 plan and wait for
-  Leonardo's separate approval.
-- Active approved implementation plan: none. The Step-2 plan and correction
-  plans are complete historical authority.
+- Next possible action: create and activate `MR-WO-WP00-005` from the committed
+  Step-3 plan checkpoint.
+- Active approved implementation plan: exact Step-3 application-lifecycle plan
+  approved on 2026-09-02.
 - Active work order: none. `MR-WO-WP00-004` is accepted. `MR-WO-WP00-002` and
   `MR-WO-WP00-003` remain superseded historical records.
 - Active contribution record: none. `MR-CONTRIB-WP00-004` is accepted.
@@ -31,7 +30,7 @@ exists`.
   blocking review.
 - Active player test: none. Leonardo explicitly accepted Step 2 after the test
   packet; he supplied no separate defect or screen-observation report.
-- Active correction cycle: primary-audited. Primary verification confirms 91
+- Last completed correction cycle: primary-audited. Primary verification confirms 91
   unit tests, 96.48 percent line coverage, 92.30 percent branch coverage, a
   successful build, 15 passing browser flows, exact scope, public imports,
   closed diagnostics, controlled unit substitutes, production privacy, and a
@@ -40,8 +39,9 @@ exists`.
   reconciliation. The reconciliation and focused validation passed. The
   reviewed worker sequence is integrated without conflict, and complete
   main-branch validation passed. No frozen interface changed.
-- Last committed resume checkpoint: this Step-2 acceptance checkpoint; Git
-  history is authoritative for its commit identifier.
+- Last committed resume checkpoint: Step-2 acceptance. This plan-approval
+  checkpoint becomes the next committed resume point; Git history is
+  authoritative for its identifier.
 - Roadmap deviation request: none.
 - Historical review gate: failed on the original submission. The first OpenAI
   `gpt-5.6-sol` reviewer using `xhigh` reasoning found one blocker and two
@@ -97,7 +97,8 @@ insert a future or guessed commit identifier.
 | Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                |
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
-| Steps 3–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
+| Step 3                                          | Plan approved on 2026-09-02    | Create and activate only `MR-WO-WP00-005`; implementation evidence and Leonardo acceptance remain pending.                           |
+| Steps 4–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |
 

@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; Step 3 unapproved**
+Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; exact Step-3 plan approved**
 
 ## Authorization gate
 
@@ -211,6 +211,8 @@ Leonardo approved the exact Step-2 plan and its later correction plans on
 2026-09-01. The correction code and primary audit are complete, fresh
 independent technical review passed, and the reviewed result is integrated on
 local `main`. Complete main-branch validation passed. Leonardo explicitly
-accepted Step 2 on 2026-09-02. Nothing in this contract authorizes Step 3 or
-later work until Leonardo separately approves that exact step plan. No
-approval carries to a later step.
+accepted Step 2 on 2026-09-02. Leonardo approved the exact Step-3
+application-lifecycle plan on the same date. That authority is limited to the
+named source, test, control-record, validation, review, integration, and local
+test scope. It does not accept Step 3 or authorize Step 4. No approval carries
+to a later step.
