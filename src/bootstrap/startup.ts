@@ -3,6 +3,7 @@ import {
   checkCompatibility,
   type CompatibilityCheckResult,
 } from '../platform';
+import type { ApplicationController, ApplicationStatus } from '../application';
 import { createUnexpectedDiagnostic, type SanitizedDiagnostic } from './diagnostics';
 import { StartupScreen } from './startup-screen';
 
@@ -18,10 +19,12 @@ type StartupDependencies = Readonly<{
   showFatal: (diagnostic: SanitizedDiagnostic) => void;
   createUnexpectedDiagnostic: (fault: unknown) => SanitizedDiagnostic;
   addErrorListener: (listener: (fault: unknown) => void) => () => void;
+  startApplication: () => Promise<ApplicationController | undefined>;
 }>;
 
 export type StartupHandle = Readonly<{
   stop: () => Promise<void>;
+  getStatus: () => ApplicationStatus;
 }>;
 
 class StartupCoordinator {
@@ -29,6 +32,8 @@ class StartupCoordinator {
   private fatal = false;
   private stopped = false;
   private removeFatalListeners: (() => void) | undefined;
+  private application: ApplicationController | undefined;
+  private applicationStartPromise: Promise<ApplicationController | undefined> | undefined;
 
   public constructor(private readonly dependencies: StartupDependencies) {}
 
@@ -36,7 +41,10 @@ class StartupCoordinator {
     this.removeFatalListeners = this.dependencies.addErrorListener((fault) => this.fail(fault));
     this.dependencies.showChecking();
     void this.runCheck().catch((fault: unknown) => this.fail(fault));
-    return Object.freeze({ stop: async () => await this.stop() });
+    return Object.freeze({
+      stop: async () => await this.stop(),
+      getStatus: () => this.getStatus(),
+    });
   }
 
   private async runCheck(): Promise<void> {
@@ -57,6 +65,11 @@ class StartupCoordinator {
       });
       return;
     }
+    this.applicationStartPromise = this.dependencies.startApplication();
+    this.application = await this.applicationStartPromise;
+    if (this.stopped || this.fatal) {
+      return;
+    }
     this.dependencies.showReady(result.report);
   }
 
@@ -66,7 +79,7 @@ class StartupCoordinator {
     }
     this.fatal = true;
     this.removeErrorListeners();
-    this.cleanupPromise ??= this.dependencies.cancelCompatibilityCheck().catch(() => undefined);
+    this.cleanupPromise ??= this.cleanup().catch(() => undefined);
     const diagnostic = this.dependencies.createUnexpectedDiagnostic(fault);
     this.dependencies.showFatal(diagnostic);
   }
@@ -78,8 +91,27 @@ class StartupCoordinator {
     }
     this.stopped = true;
     this.removeErrorListeners();
-    this.cleanupPromise ??= this.dependencies.cancelCompatibilityCheck();
+    this.cleanupPromise ??= this.cleanup();
     await this.cleanupPromise;
+  }
+
+  private async cleanup(): Promise<void> {
+    if (this.applicationStartPromise !== undefined) {
+      const application = await this.applicationStartPromise.catch(() => undefined);
+      await application?.stop();
+    }
+    await this.dependencies.cancelCompatibilityCheck();
+  }
+
+  private getStatus(): ApplicationStatus {
+    if (this.application !== undefined) {
+      return this.application.getStatus();
+    }
+    return Object.freeze({
+      lifecycle: this.fatal ? 'failed' : this.stopped ? 'stopped' : 'starting',
+      acceptsRequests: false,
+      frameLoopActive: false,
+    });
   }
 
   private removeErrorListeners(): void {
@@ -111,7 +143,11 @@ const installBrowserErrorBoundary = (
 const browserErrorBoundary = (listener: (fault: unknown) => void): (() => void) =>
   installBrowserErrorBoundary(window, listener);
 
-export const bootstrapStartup = (root: HTMLElement): StartupHandle => {
+export const bootstrapStartup = (
+  root: HTMLElement,
+  startApplication: () => Promise<ApplicationController | undefined> = () =>
+    Promise.resolve(undefined),
+): StartupHandle => {
   const screen = new StartupScreen(root, {
     copyText: async (value) => {
       if (navigator.clipboard === undefined) {
@@ -130,6 +166,7 @@ export const bootstrapStartup = (root: HTMLElement): StartupHandle => {
     showFatal: (diagnostic) => screen.showFatal(diagnostic),
     createUnexpectedDiagnostic: (fault) => createUnexpectedDiagnostic('BOOTSTRAP', fault),
     addErrorListener: browserErrorBoundary,
+    startApplication,
   });
   return coordinator.start();
 };

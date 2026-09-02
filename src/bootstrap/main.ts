@@ -1,7 +1,7 @@
-import { bootstrapStartup } from './startup';
+import { bootstrapApplication } from './index';
 
 const root = document.querySelector('#app');
 
 if (root instanceof HTMLElement) {
-  bootstrapStartup(root);
+  bootstrapApplication(root);
 }

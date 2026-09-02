@@ -19,6 +19,7 @@ type BrowserEvidence = {
   pointerRequests: number;
   controllerReads: number;
   clipboardWrites: string[];
+  frameRequests: number;
 };
 
 const supportedSetup: CapabilitySetup = {
@@ -45,6 +46,7 @@ export const installCapabilities = async (
       pointerRequests: 0,
       controllerReads: 0,
       clipboardWrites: [],
+      frameRequests: 0,
     };
     Object.defineProperty(window, '__mrEvidence', { configurable: true, value: evidence });
 
@@ -55,6 +57,15 @@ export const installCapabilities = async (
       }
     });
     observer.observe(document, { childList: true, subtree: true });
+
+    const requestFrame = window.requestAnimationFrame.bind(window);
+    Object.defineProperty(window, 'requestAnimationFrame', {
+      configurable: true,
+      value(callback: FrameRequestCallback) {
+        evidence.frameRequests += 1;
+        return requestFrame(callback);
+      },
+    });
 
     let webglAttempts = 0;
     Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
@@ -201,6 +212,7 @@ test('shows factual Checking browser and Ready states with clean temporary probe
   expect(evidence.pointerRequests).toBe(0);
   expect(evidence.controllerReads).toBe(0);
   expect(evidence.clipboardWrites).toEqual([]);
+  expect(evidence.frameRequests).toBeGreaterThan(0);
   expect(externalRequests).toEqual([]);
 });
 

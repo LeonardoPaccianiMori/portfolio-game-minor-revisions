@@ -178,10 +178,13 @@ describe('MR-WP-00 foundation', () => {
     );
 
     expect(bootstrapFiles).toEqual([
+      'application-bootstrap.ts',
       'diagnostics.ts',
+      'index.ts',
       'main.ts',
       'startup-screen.ts',
       'startup.ts',
+      'temporary-adapters.ts',
     ]);
     for (const { name, source } of bootstrapSources) {
       expect(source, name).not.toMatch(/from ['"]\.\.\/platform\//u);
@@ -190,7 +193,7 @@ describe('MR-WP-00 foundation', () => {
       bootstrapSources
         .filter(({ source }) => /from ['"]\.\.\/platform['"]/u.test(source))
         .map(({ name }) => name),
-    ).toEqual(['diagnostics.ts', 'startup-screen.ts', 'startup.ts']);
+    ).toEqual(['application-bootstrap.ts', 'diagnostics.ts', 'startup-screen.ts', 'startup.ts']);
     expect(platformEntrance)
       .toBe(`export { cancelCompatibilityCheck, checkCompatibility } from './compatibility';
 export type {
@@ -199,6 +202,7 @@ export type {
   CompatibilityCheckResult,
   CompatibilityReport,
 } from './compatibility';
+export { createTimingPort, createTimingPortForTests } from './timing';
 `);
   });
 

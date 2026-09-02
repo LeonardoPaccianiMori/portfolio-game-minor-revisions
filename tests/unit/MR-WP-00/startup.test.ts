@@ -3,11 +3,12 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   bootstrapStartup,
   createStartupCoordinatorForTests,
+  createStartupScreenForTests,
   installBrowserErrorBoundaryForTests,
-} from '../../../src/bootstrap/startup';
-import { createStartupScreenForTests } from '../../../src/bootstrap/startup-screen';
+  type SanitizedDiagnostic,
+} from '../../../src/bootstrap';
 import type { CompatibilityCheckResult, CompatibilityReport } from '../../../src/platform';
-import type { SanitizedDiagnostic } from '../../../src/bootstrap/diagnostics';
+import type { ApplicationController } from '../../../src/application';
 
 type Dependencies = Parameters<typeof createStartupCoordinatorForTests>[0];
 
@@ -62,6 +63,7 @@ const dependencies = (overrides: Partial<Dependencies> = {}): Dependencies => ({
   showFatal: vi.fn(),
   createUnexpectedDiagnostic: () => diagnostic,
   addErrorListener: () => () => undefined,
+  startApplication: () => Promise.resolve(undefined),
   ...overrides,
 });
 
@@ -206,6 +208,58 @@ const screenHarness = (copyText = vi.fn(() => Promise.resolve())) => {
 };
 
 describe('Step-2 startup coordinator', () => {
+  it('starts the transferred application after compatibility and before Ready', async () => {
+    const events: string[] = [];
+    const application = {
+      stop: vi.fn(() => Promise.resolve({ kind: 'success' as const })),
+      getStatus: () => ({
+        lifecycle: 'ready' as const,
+        acceptsRequests: true,
+        frameLoopActive: true,
+      }),
+    } as unknown as ApplicationController;
+    const testDependencies = dependencies({
+      checkCompatibility: () => {
+        events.push('check');
+        return Promise.resolve({ kind: 'complete', report: report('supported') });
+      },
+      startApplication: () => {
+        events.push('application');
+        return Promise.resolve(application);
+      },
+      showReady: () => events.push('ready'),
+    });
+
+    const handle = createStartupCoordinatorForTests(testDependencies).start();
+    await settle();
+    expect(events).toEqual(['check', 'application', 'ready']);
+    expect(handle.getStatus()).toEqual({
+      lifecycle: 'ready',
+      acceptsRequests: true,
+      frameLoopActive: true,
+    });
+    await handle.stop();
+    expect(application.stop).toHaveBeenCalledOnce();
+  });
+
+  it('does not create an application while compatibility remains blocked', async () => {
+    const startApplication = vi.fn(() => Promise.resolve(undefined));
+    const testDependencies = dependencies({
+      checkCompatibility: () => Promise.resolve({ kind: 'complete', report: report('blocked') }),
+      startApplication,
+    });
+
+    const handle = createStartupCoordinatorForTests(testDependencies).start();
+    await settle();
+    expect(startApplication).not.toHaveBeenCalled();
+    expect(handle.getStatus()).toEqual({
+      lifecycle: 'starting',
+      acceptsRequests: false,
+      frameLoopActive: false,
+    });
+    await handle.stop();
+  });
+
   it.each(['supported', 'degraded'] as const)(
     'shows Checking browser before the factual %s Ready result',
     async (overall) => {
