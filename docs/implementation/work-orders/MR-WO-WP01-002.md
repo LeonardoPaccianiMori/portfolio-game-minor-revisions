@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP01-002
 type: implementation-work-order
-status: approved
+status: active
 work_package: MR-WP-01
 sequence: 2
 created: 2026-09-02
@@ -96,7 +96,8 @@ internally inconsistent state, and serialize equivalent records identically.
 - Steps 1–3 are accepted.
 - Leonardo approved `MR-IMP-DEC-306`, `MR-IMP-OPEN-017`, and this exact order.
 - Submitted base commit is `94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`.
-- The authority checkpoint on `main` is supplied separately and is read-only.
+- The read-only authority checkpoint on `main` is
+  `2904f751de36422add383a7f2363c3fba50a8e7d`.
 - No remote exists and package and configuration files remain unchanged.
 
 ## Tasks
