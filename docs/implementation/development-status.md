@@ -2,13 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step 4 unapproved**
+Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
 
 ## Durable resume point
 
-- Current step: `3`, accepted by Leonardo on 2026-09-02.
-- Current workflow state: `accepted; no Step-4 plan or implementation authority
-exists`.
+- Current step: `4`, exact plan approved by Leonardo on 2026-09-02.
+- Current workflow state: `plan approved; two exact work orders inactive`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,10 +19,12 @@ exists`.
   does not describe model use for another project.
 - Last accepted implementation step: Step 3, accepted by Leonardo on
   2026-09-02.
-- Next possible action: prepare only the exact Step-4 plan when Leonardo
-  requests it, then wait for his separate approval.
-- Active approved implementation plan: none. The Step-3 plan is complete
-  historical authority.
+- Next possible action: create and activate only `MR-WO-WP01-001` and
+  `MR-WO-WP00-006` from this committed plan checkpoint, then assign the exact
+  Sol `high` worker.
+- Active approved implementation plan: Step 4 campaign-state foundation and
+  private diagnostic, including the evidence-led `MR-IF-002 v2`
+  creation-input refinement.
 - Active work order: none. `MR-WO-WP00-005` and `MR-WO-WP00-004` are accepted.
 - Active contribution record: none. `MR-CONTRIB-WP00-005` and
   `MR-CONTRIB-WP00-004` are accepted.
@@ -31,6 +32,10 @@ exists`.
   blocking review.
 - Active player test: none. Leonardo confirmed the four expected Step-3 lines
   after repeated reloads and explicitly accepted Step 3.
+- Step-4 authority: exact purpose, files, requirements, checks, local test,
+  exclusions, commit boundaries, two work orders, Sol `high` worker, and fresh
+  Sol `xhigh` reviewer approved on 2026-09-02. Approval is not implementation
+  or acceptance.
 - Last accepted Step-2 correction cycle: primary-audited. Primary verification
   confirms 91 unit tests, 96.48 percent line coverage, 92.30 percent branch
   coverage, a successful build, 15 passing browser flows, exact scope, public
@@ -100,7 +105,8 @@ systems are not yet available.`, and reported the same result after repeated
 - Branch: `main`.
 - Remote: none.
 - S00–S14: documented.
-- Frozen interfaces: `MR-IF-001`–`MR-IF-015` at `v1`.
+- Frozen interfaces: `MR-IF-002` at `v2`; `MR-IF-001` and
+  `MR-IF-003`–`MR-IF-015` at `v1`. Historical `MR-IF-002 v1` is superseded.
 - Package configuration: integrated on local `main`.
 - Startup source: the reviewed Step-3 application lifecycle is integrated on
   local `main`; no Three.js scene or game system exists.
@@ -132,7 +138,8 @@ insert a future or guessed commit identifier.
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
 | Step 3                                          | Accepted on 2026-09-02         | The reviewed integration, complete main validation, visible reload result, and explicit acceptance are recorded.                     |
-| Steps 4–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
+| Step 4                                          | Plan approved on 2026-09-02    | Two exact work orders remain inactive; no implementation or acceptance exists.                                                       |
+| Steps 5–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |
 

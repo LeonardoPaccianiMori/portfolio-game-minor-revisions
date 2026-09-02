@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step 4 unapproved; development governance permits approved evidence-led revisions**
+Status: **S00–S14 documented; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -233,7 +233,8 @@ accepted Steps 1 and 2, and approved the exact Step-3 plan on 2026-09-02.
 The controlled `MR-WO-WP00-005` submission and complete primary audit are
 finished. Fresh independent technical review and its narrow current-record
 correction passed. The exact reviewed range is integrated on local `main`, and
-complete main validation passed. Leonardo accepted Step 3 on 2026-09-02.
-Prepare only the exact Step-4 plan when Leonardo requests it. Do not create a
-Three.js scene, game system, content, asset, licence, remote, deployment, or
-public-action path.
+complete main validation passed. Leonardo accepted Step 3 on 2026-09-02 and
+then approved the exact Step-4 plan and evidence-led `MR-IF-002 v2`
+creation-input refinement. Record and activate only its two exact work orders.
+Do not create a Three.js scene, game system, content, asset, licence, remote,
+deployment, public-action path, or Step-5 result.

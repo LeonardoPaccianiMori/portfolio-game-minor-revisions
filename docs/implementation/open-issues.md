@@ -36,6 +36,7 @@ ideas or measured results that do not exist yet.
 | MR-IMP-OPEN-013 | S13               | Exact future source ownership, worker dependency graph, assignment packets, branch and commit workflow, integration order, review evidence, and contribution records                              | Resolved | `specs/13-agent-work-orders-and-integration.md`; MR-IMP-DEC-241–260                                                                |
 | MR-IMP-OPEN-014 | S14               | Final contradiction, assumption, traceability, interface-freeze, content-boundary, licence, privacy, accessibility, and gate audit results                                                        | Resolved | `specification-audit.md`; MR-IMP-DEC-261–287; `MR-S14-FIND-001`–`021`; `MR-IF-001`–`015` frozen `v1`                               |
 | MR-IMP-OPEN-015 | Post-S14 workflow | Replace batch slice implementation with a definite incremental roadmap, per-step approval and Leonardo testing, durable resume state, asset-selection gates, and explicit human/agent attribution | Resolved | `development-roadmap.md`; `development-status.md`; `step-acceptance-log.md`; MR-IMP-DEC-288–295                                    |
+| MR-IMP-OPEN-016 | Step 4            | Define the exact caller-supplied facts for `createInitialCampaignState` without changing stored campaign facts, balance, or player-visible meaning                                                | Resolved | Approved Step-4 impact packet; `specs/03-domain-model-and-state.md`; MR-IMP-DEC-305; `MR-IF-002 v2`                                |
 
 ## Issue protocol
 
@@ -47,5 +48,7 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-There is no active issue group. A later material conflict must receive a new
-stable issue ID before dependent work continues.
+There is no active issue group. `MR-IMP-OPEN-016` was registered and resolved
+through Leonardo's approved evidence-led `MR-IF-002 v2` refinement before
+dependent Step-4 work. A later material conflict must receive a new stable
+issue ID before dependent work continues.

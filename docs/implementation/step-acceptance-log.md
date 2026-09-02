@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; Step 4 unapproved**
+Status: **Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -32,13 +32,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-| 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
+|    4 | Plan approved           | 2026-09-02    | Pending                                                                                                                                                                                          | Pending             | Pending                                                                                             | Containing plan checkpoint                                                   | Two exact work orders remain inactive.                                 |
+| 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                      |
-| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | ---------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Prepare only the exact Step-4 plan |
+| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                                  |
+| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Activate only the two exact Step-4 work orders |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -638,8 +639,130 @@ the reviewed application-lifecycle result and does not approve Step 4.
 ### Known limitations and next boundary
 
 Step 3 is accepted. `MR-WO-WP00-005` and `MR-CONTRIB-WP00-005` are accepted.
-No Step-4 plan or implementation authority exists. Prepare only its exact plan
-when Leonardo requests it, then wait for his separate approval.
+At the Step-3 acceptance checkpoint, no Step-4 plan or implementation authority
+existed. The later Step-4 section records its separate plan approval.
+
+## Step 04 — S03 campaign-state and S04 command/result foundation
+
+### Plan and authority
+
+Leonardo approved the exact Step-4 plan on 2026-09-02. Its purpose is to add
+the complete S03 plain-data campaign-state foundation, strict validation,
+stable JSON conversion, the S04 command/effect/result data foundation, and one
+private local diagnostic that compares fixed Standard and Supported examples.
+
+The same evidence and impact packet resolves `MR-IMP-OPEN-016` and supersedes
+only historical `MR-IF-002 v1` with frozen `v2`. The exact public operation is
+`createInitialCampaignState(input: CampaignCreationInput)`. Its input contains
+only campaign ID, seed, content version, build profile, pressure profile,
+protagonist name, and pronoun set. S03 continues to own every fixed starting
+fact. No stored field, starting value, game rule, consumer, JSON fact, content
+contract, persistence contract, or player-visible meaning changes. No save
+migration exists because no campaign save exists.
+
+The controlled rules work order is `MR-WO-WP01-001`. It owns only the approved
+`src/rules/` and `tests/unit/MR-WP-01/` files. OpenAI `gpt-5.6-sol` with `high`
+reasoning is selected because the state contract and validation contain many
+connected invariants. The primary integration work order is
+`MR-WO-WP00-006`. It owns only the approved private diagnostic, bootstrap
+connection, MR-WP-00 tests, and primary control records. A later fresh,
+read-only OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning reviews the
+latest complete artifact after one primary audit. The worker and reviewer are
+the only two approved subagents and run sequentially. No silent model or
+effort substitution is allowed.
+
+The private diagnostic route is exactly
+`http://127.0.0.1:4173/?diagnostic=campaign-state`. It has no normal-page link.
+It can show only profile, revision, period index, energy, evidence, paper
+confidence, integrity, and a safe validation result. It cannot show JSON,
+campaign ID, seed, protagonist name, histories, save data, raw errors, stack
+traces, or machine facts.
+
+Approved source and test paths are:
+
+- `src/rules/campaign-state-codec.ts`;
+- `src/rules/campaign-state-schema.ts`;
+- `src/rules/campaign-state-types.ts`;
+- `src/rules/campaign-state.ts`;
+- `src/rules/command-contract.ts`;
+- `src/rules/index.ts`;
+- `src/bootstrap/campaign-state-diagnostic.ts`;
+- `src/bootstrap/index.ts`;
+- `src/bootstrap/main.ts`;
+- `src/bootstrap/startup.css`;
+- `tests/e2e/MR-WP-00/campaign-state-diagnostic.spec.ts`;
+- `tests/unit/MR-WP-00/architecture.test.ts`;
+- `tests/unit/MR-WP-00/campaign-state-diagnostic.test.ts`;
+- `tests/unit/MR-WP-01/campaign-state-codec.test.ts`;
+- `tests/unit/MR-WP-01/campaign-state.test.ts`;
+- `tests/unit/MR-WP-01/campaign-test-data.ts`; and
+- `tests/unit/MR-WP-01/command-contract.test.ts`.
+
+The approved checks are focused unit and browser tests, `npm run check`,
+`npm run verify`, `npm run build`, `npm audit --audit-level=high`, three-browser
+flows, coverage, architecture, canonical-JSON, immutability, production,
+source-map, network, telemetry, package, configuration, whitespace, full-diff,
+clean-state, and absent-remote checks.
+
+Excluded work includes real command algorithms, gameplay, campaign
+progression, authored content, S12 fixture files, Three.js, a scene, geometry,
+lighting, saves, IndexedDB, menus, input, movement, audio, cutscenes, assets or
+asset research, dependencies, package or configuration changes, coverage
+changes, telemetry, external requests, a remote, licence, release, deployment,
+publication, portfolio work, Career Center changes, and Step 5.
+
+The plan checkpoint commit is `Approve Minor Revisions Step 4 plan`. Worker
+commits use `MR-WP-01 Add campaign-state foundation`. The primary diagnostic
+commit uses `MR-WP-00 Add private campaign-state diagnostic`. Later checkpoint
+messages are `Record Minor Revisions Step 4 Leonardo test readiness` and
+`Record Minor Revisions Step 4 acceptance`.
+
+### Leonardo contribution
+
+Leonardo approved the purpose, exact paths, requirements, checks, private local
+test, exclusions, interface evidence and impact, explicit `v1` supersession,
+two work orders, model and effort selections, focused source packets,
+sequential order, and commit boundaries. He has not tested or accepted a Step-4
+result.
+
+### Agent contribution
+
+The primary agent prepared the exact plan and impact packet. No work order,
+worktree, worker code, primary diagnostic code, audit, independent review,
+integration, local server, Leonardo test, or accepted result exists at this
+checkpoint.
+
+### Files and commits
+
+The starting repository commit is
+`596fd3564449fa7776430f44d6ba8f4cd0441dc2`. The plan checkpoint is the commit
+that contains this entry. Work-order base commits and activation evidence do
+not exist yet.
+
+### Automated and review evidence
+
+Pending. Plan approval is not a test or review result.
+
+### Leonardo test packet
+
+Pending. After reviewed integration, Leonardo will compare the fixed Standard
+and Supported summaries, verify the stable validation result and reload, and
+confirm that the normal Step-3 page is unchanged.
+
+### Observed result and corrections
+
+None. No implementation result exists.
+
+### Acceptance decision
+
+Pending. Plan approval is not Step-4 acceptance.
+
+### Known limitations and next boundary
+
+Only the exact plan and `MR-IF-002 v2` refinement are approved. The next action
+is to commit this authority, create and activate only the two exact work orders,
+and then assign the selected Sol `high` worker. Step 5 and every public action
+remain unapproved.
 
 ## Required accepted-step entry
 

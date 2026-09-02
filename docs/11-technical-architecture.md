@@ -1,13 +1,14 @@
 # Technical Architecture
 
-Status: **B10 and S01–S14 documented; Gate 1 approval pending**
+Status: **B10 and S01–S14 documented; Gate 1 approved; Steps 1–3 accepted;
+exact Step-4 plan and `MR-IF-002 v2` refinement approved**
 
 ## Scope and boundary
 
 This document defines the approved technical direction for the first release.
-It does not authorize game code, package files, production assets, a remote,
-or deployment work. The technical baseline is documented, but Gate 1 is only
-ready for Leonardo's separate approval. Step 1 remains blocked.
+It does not authorize production assets, a remote, or deployment work. Gate 1
+is approved, Steps 1–3 are accepted, and the exact Step-4 plan is approved.
+The two Step-4 work orders remain inactive at this checkpoint.
 
 S02 defines the exact subordinate module graph, public ports, lifecycle,
 ownership, frame order, and error boundaries in
@@ -92,8 +93,10 @@ It contains no Three.js objects, DOM nodes, audio nodes, functions, real-time
 timestamps that drive play, or browser-specific object references. S03 now
 defines its exact ten-section shape, stable IDs, stored-versus-derived facts,
 safe integers, immutable histories, cross-section invariants, complete initial
-fixture, rejected fixtures, and canonical JSON representation. `MR-IF-002` is
-candidate `v1`; later blocks cannot add campaign fields silently.
+fixture, rejected fixtures, and canonical JSON representation. S14 historically
+froze `MR-IF-002 v1`. The approved Step-4 impact packet supersedes it with
+frozen `v2` only to define the exact caller-supplied creation facts. It adds no
+campaign field and changes no stored fact.
 
 ### Commands, effects, and deterministic variation
 
@@ -418,10 +421,13 @@ attribution boundary.
 - A future external Safari test service could provide direct Safari evidence,
   but it is not part of the approved first-release plan.
 
-S14 freezes `MR-IF-001`–`MR-IF-015` as `v1`. Earlier candidate statements in
-this document record their lifecycle before S14. Freeze does not claim that a
-source signature, executable fixture, browser result, or performance result
-exists.
+S14 historically froze `MR-IF-001`–`MR-IF-015` as `v1`. Earlier candidate
+statements in this document record their lifecycle before S14. The approved
+Step-4 impact packet later supersedes only `MR-IF-002 v1` with frozen `v2` to
+define its exact creation input. Every other interface remains frozen `v1`.
+The freeze and supersession do not claim that a source signature, executable
+fixture, browser result, or performance result exists.
 
-Nothing in this document authorizes implementation before Gate 1 and the exact
-Step-1 plan are explicitly approved. No approval carries to a later step.
+The current implementation authority is the exact approved Step-4 plan. Its
+two work orders remain inactive at this checkpoint, and no approval carries to
+Step 5 or a later step.

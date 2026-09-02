@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1–3 accepted; Step 4 unapproved**
+Status: **B10 and S01–S14 documented; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
 
 ## Authorization gate
 
@@ -221,3 +221,11 @@ integrated on local `main`, and complete main-branch validation passed.
 Leonardo confirmed the four expected lines after repeated reloads and
 explicitly accepted Step 3 on 2026-09-02. This does not authorize Step 4. No
 approval carries to a later step.
+
+Leonardo then approved the exact Step-4 campaign-state and private-diagnostic
+plan on 2026-09-02. The same impact packet supersedes only historical
+`MR-IF-002 v1` with frozen `v2` by defining the exact caller-supplied creation
+facts. It changes no stored field, initial value, game rule, consumer,
+serialization fact, or player-visible meaning. The two exact work orders remain
+inactive. This is plan authority, not implementation, review, integration,
+Leonardo testing, acceptance, Step-5 authority, or public authority.

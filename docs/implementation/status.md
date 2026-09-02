@@ -2,7 +2,7 @@
 
 Last updated: 2026-09-02
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step 4 unapproved**
+Status: **S00–S14 documented; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
 
 ## Current repository state
 
@@ -53,10 +53,10 @@ not insert a future or guessed commit identifier into this document.
   reviewer, and asset-researcher roles; at most two subagents; and mandatory
   delegation-table evidence. This amendment does not alter an interface or
   authorize implementation.
-- Next action: prepare only the exact Step-4 plan when Leonardo requests it,
-  then wait for his separate approval.
-- Prohibited next action: create Step-4 code, tests, worktree, worker, or other
-  implementation before that exact plan is approved.
+- Next action: record and activate only the two exact approved Step-4 work
+  orders, then assign the selected Sol `high` worker.
+- Prohibited next action: create work outside the approved Step-4 paths or
+  start Step 5, Three.js, assets, a remote, or public action.
 
 ## Durable progress summary
 
@@ -65,8 +65,8 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                             |
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-001`–`MR-IF-015` are frozen `v1`; Gate 1 was approved on 2026-09-01.                                                  |
-| Incremental implementation | Steps 1–3 accepted; Step 4 unapproved                  | `MR-WO-WP00-005` is accepted. Steps 4–70 need accepted dependencies and separate exact plans.                                                        |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v2`; all other interfaces remain frozen `v1`; Gate 1 was approved on 2026-09-01.                      |
+| Incremental implementation | Steps 1–3 accepted; Step 4 plan-approved               | The two exact Step-4 work orders are inactive. Steps 5–70 need accepted dependencies and separate exact plans.                                       |
 | Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 

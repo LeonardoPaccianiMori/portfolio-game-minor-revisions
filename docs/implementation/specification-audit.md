@@ -1,6 +1,6 @@
 # S14 — Specification Audit and Gate Packet
 
-Status: **documented; Gate 1 approved and Step 1 accepted on 2026-09-01; Step 2 not approved**
+Status: **historical S14 audit documented; Gate 1 approved; Steps 1–3 accepted; approved Step-4 amendment supersedes only `MR-IF-002 v1` with frozen `v2`**
 
 ## Purpose and authority
 
@@ -271,3 +271,24 @@ scope. The cadence does not require a third independent review.
 Earlier audit sections preserve their original 2026-08-31 baseline-state
 findings. The gate packet and this amendment state the current implementation
 authority and governance.
+
+## Step-4 interface amendment
+
+Implementation inspection found that historical `MR-IF-002 v1` named
+`createInitialCampaignState()` but did not define which new-campaign facts its
+caller supplies. The real New Game boundary must supply the campaign ID, seed,
+content version, build profile, pressure profile, protagonist name, and pronoun
+set. Fixed initial facts must remain owned by S03.
+
+Leonardo approved the evidence and impact packet on 2026-09-02. It supersedes
+only `MR-IF-002 v1` with frozen `v2`. There is no stored-field, initial-value,
+rule, content, persistence, presentation, consumer, or other-interface change.
+No compatibility or save migration is required because no saved campaign
+exists. Historical `v1`, the original S14 result, and accepted Steps 1–3 remain
+evidence. `MR-IMP-OPEN-016`, `MR-IMP-DEC-305`, the interface register, S03,
+current control records, and the approved Step-4 plan contain the connected
+traceability.
+
+The amendment is material governance and its implementation must receive one
+complete primary pre-review audit and one fresh independent Sol `xhigh`
+review. Approval alone supplies no implementation or review result.

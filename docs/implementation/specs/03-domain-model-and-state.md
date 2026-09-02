@@ -1,6 +1,6 @@
 # S03 Domain Model and Campaign State
 
-Status: **documented; `MR-IF-002` frozen `v1` by S14; no implementation authorized**
+Status: **documented; historical `MR-IF-002 v1` superseded by approved frozen `v2` creation-input refinement; Step 4 plan-approved but not implemented**
 
 ## Purpose and authority
 
@@ -448,7 +448,7 @@ Transition-pair fixtures compare an earlier and later valid-looking state and
 reject removal, editing, or ID reuse of any permanent history, snapshot, raw
 record, evidence card, or stop log.
 
-## `MR-IF-002` candidate `v1`
+## `MR-IF-002` historical candidate `v1`
 
 The public surface is:
 
@@ -464,6 +464,10 @@ receives partial state or can mutate its supplied input through the result.
 
 Owner: `rules`. Consumers: application, scheduler, content validation,
 persistence, UI projection, cutscenes, and tests.
+
+The historical candidate did not define which new-campaign facts the caller
+supplies. Step 4 later found this implementation gap before code depended on
+it.
 
 S04 refines candidate `MR-IF-002` with exact stored experiment-variation,
 raw-record, evidence-card, PIIM-lock, content-presentation, and ending-module
@@ -511,3 +515,34 @@ the interface register and `specification-audit.md`. Earlier candidate-state
 statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
+
+## Step-4 evidence-led supersession
+
+On 2026-09-02, Leonardo approved the evidence and impact packet that
+supersedes `MR-IF-002 v1` with frozen `v2`. The exact public creation operation
+is:
+
+`createInitialCampaignState(input: CampaignCreationInput)`
+
+`CampaignCreationInput` contains exactly:
+
+- `campaignId`;
+- `campaignSeed`;
+- `contentVersion`;
+- `buildProfileId`;
+- `pressureProfile`;
+- `protagonist.name`; and
+- `protagonist.pronounSet`.
+
+The caller cannot supply `schemaVersion`, `stateRevision`, calendar position,
+starting values, starting relationships, histories, world facts, or other
+fixed initial facts. The existing S03 contract supplies them. Creation still
+returns one complete success or typed failure and a new checked plain-data
+copy.
+
+This refinement changes no stored field, identifier grammar, starting value,
+validation rule, canonical JSON fact, content link, consumer responsibility,
+or player-visible meaning. No save migration is required because no campaign
+save exists. Historical `v1` remains evidence. `MR-IMP-OPEN-016` and
+`MR-IMP-DEC-305` record the gap and approved supersession. Step-4
+implementation and independent review remain future evidence.
