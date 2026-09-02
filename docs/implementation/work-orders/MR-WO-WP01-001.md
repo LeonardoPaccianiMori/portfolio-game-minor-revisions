@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP01-001
 type: implementation-work-order
-status: active
+status: submitted
 work_package: MR-WP-01
 sequence: 1
 created: 2026-09-02
@@ -24,6 +24,11 @@ Implement only the approved Step-4 S03 campaign-state plain-data types,
 creation boundary, complete starting state, strict validation, canonical JSON
 conversion, and the S04 command, effect, rejection, fault, and result data
 shapes. Do not implement a command algorithm or change a frozen contract.
+
+The worker submitted the exact owned-path commit
+`94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`. Worker and primary verification
+passed. Independent review, integration, Leonardo testing, and acceptance are
+still pending.
 
 ## Plain-language effect
 

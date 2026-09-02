@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-006
 type: implementation-work-order
-status: approved
+status: active
 work_package: MR-WP-00
 sequence: 6
 created: 2026-09-02
@@ -28,6 +28,9 @@ bootstrap and browser evidence, and maintain the primary-owned control records.
 This is a primary-agent coordination order, not a delegated assignment. The
 current primary session identifies OpenAI as provider, but its exact model and
 reasoning effort are unavailable. They remain `unknown` and are not inferred.
+
+The exact verified dependency is
+`94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`. This order is now active.
 
 ## Plain-language effect
 

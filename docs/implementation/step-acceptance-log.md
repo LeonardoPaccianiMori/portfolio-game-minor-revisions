@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; Step-4 rules work order active**
+Status: **Steps 1–3 accepted; Step-4 rules submitted and diagnostic active**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -32,7 +32,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-|    4 | Implementing            | 2026-09-02    | Exact rules work order active; primary diagnostic order waits for verified submission                                                                                                            | Pending             | Pending                                                                                             | Plan checkpoint `580c8d9`; activation checkpoint pending                     | No implementation result exists yet.                                   |
+|    4 | Implementing            | 2026-09-02    | Rules commit `94b12f3` submitted and verified; private diagnostic order active                                                                                                                   | Pending             | Pending                                                                                             | Plan `580c8d9`; activation `3e4d2d2`; rules `94b12f3`                        | Review and acceptance remain pending.                                  |
 | 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -760,10 +760,10 @@ Pending. Plan approval is not Step-4 acceptance.
 
 ### Known limitations and next boundary
 
-Step 4 is implementing only through active `MR-WO-WP01-001`. The next action is
-to assign the selected Sol `high` worker. `MR-WO-WP00-006` cannot start before
-the exact rules submission is verified. Step 5 and every public action remain
-unapproved.
+The verified rules submission is complete. Step 4 now implements only active
+`MR-WO-WP00-006` for the private diagnostic. Audit, review, integration,
+Leonardo testing, and acceptance remain pending. Step 5 and every public
+action remain unapproved.
 
 ## Required accepted-step entry
 
