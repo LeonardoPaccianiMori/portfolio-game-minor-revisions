@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP01-001
 type: implementation-work-order
-status: submitted
+status: superseded
 work_package: MR-WP-01
 sequence: 1
 created: 2026-09-02
@@ -27,8 +27,9 @@ shapes. Do not implement a command algorithm or change a frozen contract.
 
 The worker submitted the exact owned-path commit
 `94b12f38b36ef7acf4bd6fcc4bd344db6cd39454`. Worker and primary verification
-passed. Independent review, integration, Leonardo testing, and acceptance are
-still pending.
+passed. Complete independent review blocked integration. Leonardo approved
+`MR-IF-002 v3` and `MR-WO-WP01-002`, which supersede this order without erasing
+its submitted result or evidence.
 
 ## Plain-language effect
 
@@ -112,7 +113,7 @@ It does not make a command run, advance the campaign, or create gameplay.
 ## Authority and traceability
 
 - Requirements: the Step-4 state and contract subsets of `MR-REQ-EXP-001`,
-  `MR-REQ-SCI-001`, `MR-REQ-TECH-001`, and `MR-REQ-TEST-001`.
+  `MR-REQ-TECH-001`, and `MR-REQ-TEST-001`.
 - Interfaces: frozen `MR-IF-002 v2`, the data-shape subset of frozen
   `MR-IF-003 v1`, and the canonical-data boundary of frozen `MR-IF-007 v1`.
 - S03 groups: the complete schema, type, validation, initial-state, immutable

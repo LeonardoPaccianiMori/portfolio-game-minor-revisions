@@ -68,13 +68,16 @@ test amendment. The one-line inventory update and every later check passed.
 
 ## Independent review
 
-Not yet available. One fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh`
-reasoning reviews the latest complete packet after this primary audit.
+The fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning found the
+diagnostic safe and in scope, but blocked integration because its rules
+dependency did not satisfy the complete campaign-state contract. Leonardo
+approved `MR-WO-WP00-007` for the corrected dependency and combined evidence.
 
 ## Corrections
 
-The approved one-line foundation inventory amendment is complete. No other
-primary-audit correction is open.
+The approved one-line foundation inventory amendment remains complete and
+historical. `MR-WO-WP00-007` supersedes this submission after the corrected
+rules dependency exists.
 
 ## Known limitations
 

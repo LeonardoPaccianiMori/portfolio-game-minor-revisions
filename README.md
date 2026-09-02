@@ -13,8 +13,9 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
-approved on 2026-09-01; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002
-v2` creation-input refinement approved on 2026-09-02; rules work order active**.
+approved on 2026-09-01; Steps 1–3 accepted; exact Step-4 plan approved; complete
+review blocked its first submission; `MR-IF-002 v3` correction and superseding
+work orders approved on 2026-09-02**.
 
 This repository contains the accepted Step-1 foundation, Step-2 startup safety,
 and Step-3 application lifecycle, but no Three.js scene, game system,
@@ -72,9 +73,10 @@ an explicitly incomplete inactive content profile during slice development so
 that fallback and full prose do not need to exist before the slice is tested.
 S14 records the complete inventory, corrects requirement traceability and the
 fallback/full gate split, resolves the final issue group, and historically
-froze `MR-IF-001`–`MR-IF-015` as `v1`. The approved Step-4 impact packet later
-supersedes only the `MR-IF-002` creation input with frozen `v2`; every other
-interface remains frozen `v1`. The S14 freeze created no package, runtime,
+froze `MR-IF-001`–`MR-IF-015` as `v1`. The first Step-4 impact packet created
+`MR-IF-002 v2`; complete review exposed missing initial content authority, and
+the approved correction supersedes it with frozen `v3`. Every other interface
+remains frozen `v1`. The S14 freeze created no package, runtime,
 test, content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
 which confirms only the frozen technical baseline. Leonardo separately
 approved the exact Step-1 plan on 2026-09-01 and accepted its integrated result
@@ -87,10 +89,10 @@ with one narrow current-record correction, and focused primary validation of
 that correction passed. The exact reviewed worker result is now integrated on
 local `main`, and complete main-branch validation passed. Leonardo confirmed
 the four expected lines after repeated reloads and explicitly accepted Step 3
-on 2026-09-02. Leonardo approved the exact Step-4 plan and `MR-IF-002 v2`
-creation-input refinement on the same date. The exact rules order is now
-active, and the diagnostic order waits for its
-verified submission. Activation is not implementation or acceptance. Each
+on 2026-09-02. Leonardo approved the exact Step-4 plan and later the
+evidence-led `MR-IF-002 v3` correction on the same date. The superseding rules
+correction can activate, and the diagnostic correction waits for its verified
+submission. Activation is not implementation or acceptance. Each
 later step needs its own plan, local test or result review, correction cycle,
 and explicit acceptance.
 The

@@ -924,3 +924,11 @@ with frozen `v2` to define its exact creation input. Existing S03 case facts,
 fixture reason codes, traceability, and acceptance rows remain unchanged. Step
 4 can add ordinary unit evidence but cannot claim that the Step-6 S12 fixture
 schema or manifest exists.
+
+The approved correction supersedes `MR-IF-002 v2` with `v3`. Future S03 cases
+must prove the sparse initial lifecycle, exact non-sparse inventories, global
+multi-field revision sequence, complete internal invariants, and equal
+canonical bytes for equivalent states whose ID-record insertion order differs.
+S04 shape cases must prove a non-empty caveat list, the closed preparation-band
+vocabulary, and complete ending-card effect facts. Step 4 still creates only
+ordinary unit evidence, not S12 fixture files or a complete acceptance row.

@@ -39,8 +39,8 @@ change exists.
 ## Authority
 
 Work order: `MR-WO-WP01-001`. Requirements: the approved Step-4 state and data
-subsets of `MR-REQ-EXP-001`, `MR-REQ-SCI-001`, `MR-REQ-TECH-001`, and
-`MR-REQ-TEST-001`. Interfaces: frozen `MR-IF-002 v2`, the data-shape subset of
+subsets of `MR-REQ-EXP-001`, `MR-REQ-TECH-001`, and `MR-REQ-TEST-001`.
+Interfaces: historical frozen `MR-IF-002 v2`, the data-shape subset of
 frozen `MR-IF-003 v1`, and the canonical-data boundary of frozen
 `MR-IF-007 v1`. The result supplies ordinary unit evidence for S03, the S04
 data foundation, and the named S13 groups. It creates no S12 fixture or
@@ -74,13 +74,17 @@ or configuration changed.
 
 ## Independent review
 
-Not yet available. The fresh Sol `xhigh` review follows the complete combined
-primary audit.
+The fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning blocked
+integration. It found incomplete initial state, invalid multi-field history
+validation, open experiment bands, incomplete invariants and S04 shapes,
+non-canonical record ordering, incomplete semantic tests, one invalid
+requirement ID, and stale current records. Leonardo approved the evidence-led
+`MR-IF-002 v3` correction packet. `MR-WO-WP01-002` supersedes this submission.
 
 ## Corrections
 
-No primary correction is open at submission. Later review findings remain
-possible.
+This submitted result remains historical evidence. The approved correction is
+owned by `MR-WO-WP01-002`; no finding is silently removed or downgraded.
 
 ## Known limitations
 

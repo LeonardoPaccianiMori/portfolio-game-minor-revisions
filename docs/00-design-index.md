@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1–3 accepted; Step-4 rules work order active**
+Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1–3 accepted; Step-4 correction authority approved**
 
 This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -22,7 +22,7 @@ gaps. It does not mean that the domain is finished.
 | `12-content-specification.md`                   | Content inventory                                            | B10 documented                                         | Implementation evidence and later content revisions only.                                                                  |
 | `13-testing-and-evaluation.md`                  | Quality evidence                                             | B10 and S12–S14 documented                             | Test results are future evidence, not current claims.                                                                      |
 | `14-production-plan.md`                         | Delivery strategy                                            | B10 and S13–S14 documented                             | Leonardo may later revise capacity or release timing.                                                                      |
-| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Implement only active `MR-WO-WP01-001`; keep `MR-WO-WP00-006` waiting.                                                     |
+| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Activate only `MR-WO-WP01-002`; keep `MR-WO-WP00-007` waiting.                                                             |
 | `reviews/independent-design-review-protocol.md` | External specification review                                | Review complete                                        | Discuss the validated findings and record Leonardo's decisions.                                                            |
 | `reviews/2026-08-28-opus-5/`                    | Opus 5 reports and validation                                | Stored; advisory                                       | No recommendation is accepted until Leonardo decides it.                                                                   |
 | `reviews/holistic-game-assessment-protocol.md`  | Identity, fun-hypothesis, direction, and expectations review | Review complete                                        | Preserve document-only quality claims as hypotheses until private play evidence exists.                                    |
@@ -34,13 +34,13 @@ gaps. It does not mean that the domain is finished.
 | `implementation/roadmap.md`                     | Technical-specification programme                            | S00–S14, Gate 1, and development governance documented | Step 1 is accepted; later decisions and frozen contracts remain revisable only through approved evidence-led supersession. |
 | `implementation/status.md`                      | Durable current state                                        | Current; Sxx complete                                  | Update in every specification commit.                                                                                      |
 | `implementation/decisions.md`                   | Technical and process decisions                              | Current through Step-4 plan approval                   | Add only approved decisions and preserve supersessions.                                                                    |
-| `implementation/interfaces.md`                  | Shared-interface lifecycle                                   | `MR-IF-002` frozen `v2`; all others frozen `v1`        | Historical `MR-IF-002 v1` is superseded through the approved Step-4 impact packet.                                         |
+| `implementation/interfaces.md`                  | Shared-interface lifecycle                                   | `MR-IF-002` frozen `v3`; all others frozen `v1`        | Historical `MR-IF-002 v1` and `v2` are superseded through approved evidence-led packets.                                   |
 | `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`016` resolved                       | Register any later material issue before dependent work.                                                                   |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–3 accepted; Step 4 implementing                | Run only the exact rules worker before primary diagnostic work.                                                            |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step-4 rules work order active                         | Verify and start only the selected Sol `high` worker.                                                                      |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Step 4 implementing                                    | Preserve activation separately from implementation and acceptance.                                                         |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–3 accepted; Step 4 correcting                  | Run only the superseding Sol `high` rules correction before the primary diagnostic correction.                             |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step-4 correction approved                             | Activate only `MR-WO-WP01-002`.                                                                                            |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Step 4 correcting                                      | Preserve the blocked review and approved supersession separately from future correction evidence.                          |
 
 ## Discussion roadmap
 
@@ -77,8 +77,9 @@ status, and the next place to resume.
   routing and focused delegation records.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
   S01–S14, and Step-0 model history belongs only to _Minor Revisions_.
-- Incremental implementation start: **Steps 1–3 accepted; exact Step-4 plan
-  approved**; `MR-WO-WP01-001` is active and `MR-WO-WP00-006` waits.
+- Incremental implementation start: **Steps 1–3 accepted; exact Step-4
+  correction approved**; `MR-WO-WP01-002` can activate and
+  `MR-WO-WP00-007` waits.
 - Vertical-slice acceptance: **blocked**; Steps 4–30 remain unaccepted.
 - Fallback acceptance: **blocked**; Steps 32–52 do not exist.
 - Full local-game acceptance: **blocked**; Steps 54–69 do not exist.

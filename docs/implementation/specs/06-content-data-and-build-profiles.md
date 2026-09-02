@@ -1029,3 +1029,10 @@ with frozen `v2` to define its exact creation input. Content versions, build
 profiles, source records, validation, strings, migrations, and restricted
 views remain unchanged and unimplemented. Step 5 remains separately
 unapproved.
+
+The approved correction supersedes `MR-IF-002 v2` with `v3`. S06 remains the
+only authority for authored task, scene, message, request, concern, and event
+IDs. Its validated restricted view supplies the exact object when S04 or S05
+first materializes that object in campaign state. Rules cannot create an
+undocumented content ID. Profiles, validation, and migration meaning do not
+change.

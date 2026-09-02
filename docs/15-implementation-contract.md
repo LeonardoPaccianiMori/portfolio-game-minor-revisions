@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1–3 accepted; Step-4 rules work order active**
+Status: **B10 and S01–S14 documented; Steps 1–3 accepted; Step-4 correction authority approved**
 
 ## Authorization gate
 
@@ -226,8 +226,17 @@ Leonardo then approved the exact Step-4 campaign-state and private-diagnostic
 plan on 2026-09-02. The same impact packet supersedes only historical
 `MR-IF-002 v1` with frozen `v2` by defining the exact caller-supplied creation
 facts. It changes no stored field, initial value, game rule, consumer,
-serialization fact, or player-visible meaning. `MR-WO-WP01-001` is active on
-its exact branch and worktree. `MR-WO-WP00-006` is approved and cannot start
+serialization fact, or player-visible meaning. `MR-WO-WP01-001` was active on
+its exact branch and worktree. `MR-WO-WP00-006` was approved and could not start
 until the rules submission is verified. This is implementation authority only
 for that controlled sequence, not review, integration, Leonardo testing,
 acceptance, Step-5 authority, or public authority.
+
+Complete independent review blocked integration of those first submissions.
+It found a valid diagnostic but incomplete initial state, global history,
+closed experiment bands, invariants, canonical ordering, command shapes,
+semantic tests, traceability, and current records. Leonardo approved the exact
+evidence-led correction on 2026-09-02. Frozen `MR-IF-002 v3` supersedes `v2`;
+`MR-WO-WP01-002` supersedes the rules order and can activate first;
+`MR-WO-WP00-007` supersedes the diagnostic order and waits. All exclusions and
+the Step-5 block remain unchanged.

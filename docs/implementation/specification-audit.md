@@ -1,6 +1,6 @@
 # S14 — Specification Audit and Gate Packet
 
-Status: **historical S14 audit documented; Gate 1 approved; Steps 1–3 accepted; approved Step-4 amendment supersedes only `MR-IF-002 v1` with frozen `v2`**
+Status: **historical S14 audit documented; Gate 1 approved; Steps 1–3 accepted; approved Step-4 correction freezes `MR-IF-002 v3`**
 
 ## Purpose and authority
 
@@ -292,3 +292,34 @@ traceability.
 The amendment is material governance and its implementation must receive one
 complete primary pre-review audit and one fresh independent Sol `xhigh`
 review. Approval alone supplies no implementation or review result.
+
+## Step-4 correction audit amendment
+
+Complete Step-4 independent review found that `MR-IF-002 v2` could not be
+implemented completely without inventing S06-owned IDs. It also found an
+invalid per-field history-sequence interpretation, open experiment-band
+values, incomplete internally checkable invariants, non-canonical record
+insertion order, incomplete S04 data shapes and semantic tests, one nonexistent
+requirement reference, and stale current records. The diagnostic itself passed
+its scope, privacy, network, and browser boundary.
+
+The affected consumers are rules, application, scheduler, content validation,
+persistence, UI projection, cutscenes, and tests. No save or migration exists.
+The correction does not change a stored top-level section, player-visible
+starting value, balance, story, command algorithm, consumer owner, package,
+asset, or accepted earlier result.
+
+Leonardo approved the complete impact packet on 2026-09-02. Frozen
+`MR-IF-002 v3` preserves the exact `v2` creation input, defines sparse run and
+authored-content lifecycle records, fixes exact non-sparse IDs and the initial
+roster, makes change sequence global per revision, requires canonical
+ID-record sorting, and completes the internal invariant boundary. The existing
+five-member `MR-IF-003 v1` effect union is unchanged; its non-empty caveat,
+closed band, and exact ending-card data shapes are clarified from S04 and S07.
+
+`MR-IMP-OPEN-017`, `MR-IMP-DEC-306`, S03–S07, S12–S13, the interface register,
+the step log, and superseding work orders contain the connected authority and
+traceability. Historical `v1`, `v2`, first submissions, primary audit, and
+blocked review remain evidence. The correction must pass applicable checks,
+one new complete primary audit, and one fresh complete review by the same
+approved Sol `xhigh` reviewer before integration.

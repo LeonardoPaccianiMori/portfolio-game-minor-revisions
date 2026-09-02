@@ -706,3 +706,10 @@ The approved Step-4 impact packet supersedes only historical `MR-IF-002 v1`
 with frozen `v2` to define its exact creation input. The canonical saved state
 and every persistence, migration, recovery, size, and failure contract remain
 unchanged. No save migration is required because no campaign save exists.
+
+The approved correction supersedes `MR-IF-002 v2` with `v3`. Persistence uses
+the `v3` canonical serializer and validates sparse lifecycle records and exact
+fixed inventories through S03 and S06 before save or load. The ending-card
+facts passed by `completeCampaign` are the exact record defined here without a
+completion sequence; persistence alone assigns that sequence. No save or
+migration exists.

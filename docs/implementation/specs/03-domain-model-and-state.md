@@ -1,6 +1,6 @@
 # S03 Domain Model and Campaign State
 
-Status: **documented; historical `MR-IF-002 v1` superseded by approved frozen `v2` creation-input refinement; Step 4 plan-approved but not implemented**
+Status: **documented; historical `MR-IF-002 v1` and `v2` superseded by approved frozen `v3`; Step-4 correction authority approved**
 
 ## Purpose and authority
 
@@ -107,8 +107,9 @@ has no permitted raw support; it does not add an actionable fabrication method.
 
 ## Relationships
 
-`relationships.byId` contains exactly Elena, Haoran, Samira, Gabriel, and
-Camila. Each entry contains `id`, `trust`, `introduced`, `permanentBreach`,
+`relationships.byId` contains exactly `MR-CHR-ELENA`, `MR-CHR-HAORAN`,
+`MR-CHR-SAMIRA`, `MR-CHR-GABRIEL`, and `MR-CHR-CAMILA`. Each entry contains
+`id`, `trust`, `introduced`, `permanentBreach`,
 `supportConsumed`, `lastConsequentialSceneId`, and a permanent `history`.
 
 Starting trust values are Elena `60`, Haoran `60`, Samira `40`, Gabriel `60`,
@@ -139,7 +140,11 @@ One successful state-changing operation increments `stateRevision` once, even
 when it creates several change records. Rejected and no-change operations do
 not increment it. Initial values are defaults, not change records.
 
-Histories are permanent and ordered. A record cannot be edited or removed. Its
+Histories are permanent and ordered. Sequence is one global order inside a
+revision, not a separate order that restarts in each field history. Across all
+histories, one revision contains exactly `change:<revision>:1` through
+`change:<revision>:<count>` with no gap or duplicate. Each record remains in
+the history for its exact `fieldPath`. A record cannot be edited or removed. Its
 previous value must match the value before that change; its new value must be
 different; and the newest value must match the current fact.
 
@@ -154,6 +159,13 @@ different; and the newest value must match the current fact.
 - immutable `rawRecordsById`;
 - immutable `evidenceCardsById`;
 - immutable `stopLogsById`.
+
+The equipment and preparation collections are sparse run-fact collections.
+They are empty before any run exists. `configureExperiment` later creates the
+run, its equipment fact, and its preparation fact atomically. Each collection
+is keyed by the owning run ID; the value does not create a second independent
+content identity. A missing entry for an existing run is invalid. Rules do not
+invent an equipment or preparation content ID.
 
 Experiment templates remain in validated content, not campaign state.
 Availability, repeat availability, and completion are calculated from content,
@@ -205,8 +217,13 @@ act as free undo. `currentSnapshotId` is `null` before the first commit and
 otherwise points to the newest snapshot.
 
 Revision-task states are `locked`, `available`, `committed`, and `expired`.
-Each of the three reviewers stores exactly one immutable `base` or
-`conditional` form when that report exists. Before review, the form is `null`.
+Revision-task state is sparse: a validated authored task enters this collection
+when its scheduled transition first makes it a campaign fact. Absence before
+that transition is not an invented locked record. Each of the three reviewer
+records, `MR-REC-REVIEWER-1`, `MR-REC-REVIEWER-2`, and
+`MR-REC-REVIEWER-3`, exists from campaign creation. Each stores exactly one
+immutable `base` or `conditional` form when that report exists. Before review,
+the form is `null`.
 
 Preprint states are `notPosted`, `public`, and `withdrawn`. Journal states are
 `notSubmitted`, `submitted`, `majorRevision`, `withdrawn`, and `resolved`.
@@ -227,6 +244,16 @@ matching Samira authorship state.
 
 `narrative` contains ID-keyed scenes, messages, requests, concerns, and routes,
 plus `scheduler` and `protagonist`.
+
+These content-owned lifecycle collections are sparse. At creation, only the
+approved opening scene and event are stored. A later validated S06 content
+object enters campaign state only through its first successful S04 or S05
+transition. Absence means that the authored object has not yet become a
+campaign fact; it does not create an implicit stored field. Once present, the
+entry is permanent and follows the lifecycle below. Application validates each
+present authored ID against the selected immutable content profile before it
+can activate or save the state. Rules do not hard-code an undocumented event,
+message, request, concern, or scene ID.
 
 Scene states are `locked`, `eligible`, `queued`, `inProgress`, `completed`,
 and `skipped`. Message states are `locked`, `available`, `read`, `replied`, and
@@ -371,6 +398,16 @@ The complete campaign must also satisfy these invariants:
 - permanent histories, snapshots, records, cards, and stop logs cannot be
   removed, edited, or reused between an earlier and later state.
 
+Internal validation also enforces every internally checkable S03 relation:
+global change sequence and per-field value continuity; run-stage, active-list,
+equipment, preparation, variation, and monitoring agreement; raw-record,
+evidence-card, Samira-source, snapshot, manuscript-source, reviewer, PIIM,
+scene, scheduler, room, route, withdrawal, and conclusion prerequisites; exact
+fixed relationship, reviewer, route, and room inventories; and absence of
+orphan or premature terminal facts. S06 owns existence in the selected
+authored catalogue. A later transition-pair check owns comparison of permanent
+facts between two otherwise valid states.
+
 ## Canonical JSON representation
 
 `CampaignStateCodec.serialize()` emits one compact UTF-8 JSON text containing
@@ -399,20 +436,25 @@ At creation:
 - `stateRevision` and `periodIndex` are `0`;
 - energy is `4`, evidence `3`, Elena paper confidence `45`, integrity `100`,
   integrity recovery used `0`, no crash is pending, and histories are empty;
-- relationships use their approved starting values and only Camila is hidden;
-- every equipment condition is `ready` and all equipment and preparation
-  histories are empty;
+- relationships use the five exact `MR-CHR-*` IDs and approved starting values,
+  and only Camila is hidden;
+- equipment and preparation collections are empty because no run exists;
 - there is no run, active run, raw record, evidence card, or stop log;
-- every manuscript slot is empty, all revision tasks are locked, preprint is
-  `notPosted`, journal is `notSubmitted`, and later paper facts are `null`;
-- `MR-SCN-CLARIFIED` is queued and is the only scheduler queue entry; all
-  later narrative entries are locked, no event is active, its first eligible
-  period is `0`, its resolved period is `null`, all locked events have both
-  period fields `null`, and the last scheduler revision is `0`;
+- every manuscript slot and revision-task collection is empty; the three exact
+  reviewer records exist with `null` forms; preprint is `notPosted`, journal is
+  `notSubmitted`, and later paper facts are `null`;
+- `MR-SCN-CLARIFIED` is the only stored scene and event, is queued, and is the
+  only scheduler queue entry; message, request, and concern collections are
+  empty; no event is active; the opening event's first eligible period is `0`,
+  its resolved period is `null`, and the last scheduler revision is `0`;
 - both routes are locked;
 - the world uses `orderlyButOverbooked`, recovery anchor
-  `MR-ANCHOR-REC-SHARED-DESKS`, the Week-1 early background roster, and
-  inactive room problems;
+  `MR-ANCHOR-REC-SHARED-DESKS`, absent Elena,
+  `MR-ANCHOR-CHARACTER-HAORAN-TISSUE-CULTURE`,
+  `MR-ANCHOR-CHARACTER-SAMIRA-SHARED-DESKS`, and
+  `MR-ANCHOR-CHARACTER-GABRIEL-FACILITY`; its exact inactive room inventory is
+  `MR-ROOM-FACILITY-QUEUE`, `MR-ROOM-IMAGING-BOOKING`, and
+  `MR-ROOM-IMAGING-SERVICE-LIMIT`;
 - content history is empty and conclusion is `unresolved`.
 
 A smaller Supported vector changes only `pressureProfile` to `supported` and
@@ -516,7 +558,7 @@ statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
 
-## Step-4 evidence-led supersession
+## Step-4 evidence-led supersessions
 
 On 2026-09-02, Leonardo approved the evidence and impact packet that
 supersedes `MR-IF-002 v1` with frozen `v2`. The exact public creation operation
@@ -546,3 +588,23 @@ or player-visible meaning. No save migration is required because no campaign
 save exists. Historical `v1` remains evidence. `MR-IMP-OPEN-016` and
 `MR-IMP-DEC-305` record the gap and approved supersession. Step-4
 implementation and independent review remain future evidence.
+
+Complete independent review then found that `v2` required initial records whose
+content-owned IDs did not exist in the approved source documents. Implementing
+that wording would require rules to invent S06-owned IDs. Leonardo therefore
+approved the evidence and impact packet that supersedes `MR-IF-002 v2` with
+frozen `v3` on 2026-09-02.
+
+Version `v3` preserves the exact creation input above. It adds the sparse run
+and authored-content lifecycle, exact fixed identities and initial roster, one
+global sequence per campaign revision, complete internal invariant boundary,
+and complete initial fixture in this specification. The serializer sorts each
+ID-keyed record by ID according to its declared field position. It does not
+reject an equivalent valid state because its JavaScript insertion order is
+different. Ordered lists retain their meaningful order.
+
+This supersession changes no player-visible rule, starting value, balance,
+story, command algorithm, save migration, or accepted earlier result. S06
+continues to own authored IDs. Historical `v1`, `v2`, the first submitted code,
+the primary audit, and the blocked review remain evidence. `MR-IMP-OPEN-017`
+and `MR-IMP-DEC-306` record the finding, impact, approval, and resolution.

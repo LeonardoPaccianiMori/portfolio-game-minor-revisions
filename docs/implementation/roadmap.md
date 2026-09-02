@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; development governance permits approved evidence-led revisions**
+Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 `MR-IF-002 v3` correction approved; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -235,7 +235,8 @@ finished. Fresh independent technical review and its narrow current-record
 correction passed. The exact reviewed range is integrated on local `main`, and
 complete main validation passed. Leonardo accepted Step 3 on 2026-09-02 and
 then approved the exact Step-4 plan and evidence-led `MR-IF-002 v2`
-creation-input refinement. The two exact work orders now exist.
-`MR-WO-WP01-001` is active; `MR-WO-WP00-006` waits for its verified
+creation-input refinement. Complete review later blocked the first submissions.
+Leonardo approved `MR-IF-002 v3` and the two superseding correction orders.
+`MR-WO-WP01-002` runs first; `MR-WO-WP00-007` waits for its verified
 submission. Do not create a Three.js scene, game system, content, asset,
 licence, remote, deployment, public-action path, or Step-5 result.

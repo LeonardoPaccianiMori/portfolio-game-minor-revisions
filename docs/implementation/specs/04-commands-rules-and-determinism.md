@@ -61,13 +61,24 @@ The closed effect union has five members:
 | `showNotice`       | authored notice key and reason key                 | UI                          |
 | `startCutscene`    | cutscene or scene ID                               | scheduler and cutscenes     |
 | `playAudioCue`     | approved cue ID                                    | audio                       |
-| `completeCampaign` | ending card facts and resulting revision           | application and persistence |
+| `completeCampaign` | complete ending-card facts and resulting revision  | application and persistence |
 
 An effect requests presentation or browser work. It never changes campaign
 truth. The returned list keeps the causal order produced by the rule. S05 and
 the consuming port contracts define when a checkpoint, scene, or other
 asynchronous effect completes. A consumer cannot add a later campaign change
 after the command reports success.
+
+`completeCampaign` contains `stateRevision` and one `endingCard` record without
+the persistence-assigned completion sequence. The record contains schema
+version `1`, campaign ID, build and pressure profiles, protagonist name and
+pronoun set, the exact career, paper, relationship, integrity, and fatigue
+module IDs, final evidence-packet label `thin`, `developing`, `coherent`, or
+`substantial`, five trust values keyed by the exact
+`MR-CHR-*` IDs, five relationship-consequence module IDs keyed by those same
+IDs, the one dramatized afterbeat module ID, and the campaign Citation IDs.
+Persistence validates these facts against the terminal state before it assigns
+the completion sequence.
 
 ## Complete command union
 
@@ -678,10 +689,17 @@ statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
 
-## Step-4 interface amendment
+## Step-4 interface amendments
 
 The approved Step-4 impact packet supersedes only historical `MR-IF-002 v1`
 with frozen `v2` to define its exact creation input. The complete state,
 command, effect, rejection, fault, deterministic-variation, and rule contracts
 in this specification are unchanged. Step 4 implements only the command and
 result data foundation; later approved steps still own command algorithms.
+
+The later approved correction supersedes `MR-IF-002 v2` with frozen `v3` and
+clarifies the existing `MR-IF-003 v1` data shape without changing its five
+effect members. `analyseExperiment` uses a non-empty caveat tuple. Experiment
+preparation, projected result, final result, and raw-record preparation bands
+use only `robust`, `mixed`, or `compromised`. `completeCampaign` uses the exact
+ending-card facts above. Command algorithms remain later work.

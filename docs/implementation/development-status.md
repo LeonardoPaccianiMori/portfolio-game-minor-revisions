@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
+Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 correction authority approved**
 
 ## Durable resume point
 
 - Current step: `4`, exact plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `technical review; complete primary audit passed`.
+- Current workflow state: `correcting; superseding rules order approved`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,24 +19,26 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 primary
   does not describe model use for another project.
 - Last accepted implementation step: Step 3, accepted by Leonardo on
   2026-09-02.
-- Next possible action: run the approved fresh Sol `xhigh` independent review
-  on the latest complete packet.
+- Next possible action: activate only `MR-WO-WP01-002` with the same approved
+  OpenAI `gpt-5.6-sol` worker using `high` reasoning.
 - Active approved implementation plan: Step 4 campaign-state foundation and
-  private diagnostic, including the evidence-led `MR-IF-002 v2`
-  creation-input refinement.
-- Active work orders: `MR-WO-WP01-001` and `MR-WO-WP00-006` are submitted.
+  private diagnostic, including the evidence-led `MR-IF-002 v3` correction.
+- Active work orders: `MR-WO-WP01-002` is approved for activation;
+  `MR-WO-WP00-007` is approved but waits for the verified rules correction.
+  `MR-WO-WP01-001` and `MR-WO-WP00-006` are superseded historical submissions.
 - Active contribution records: `MR-CONTRIB-WP01-001` and
-  `MR-CONTRIB-WP00-006` are submitted.
+  `MR-CONTRIB-WP00-006` preserve the blocked first submissions.
   `MR-CONTRIB-WP00-005` and
   `MR-CONTRIB-WP00-004` are accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the
   blocking review.
 - Active player test: none. Leonardo confirmed the four expected Step-3 lines
   after repeated reloads and explicitly accepted Step 3.
-- Step-4 authority: exact purpose, files, requirements, checks, local test,
-  exclusions, commit boundaries, two work orders, Sol `high` worker, and fresh
-  Sol `xhigh` reviewer approved on 2026-09-02. Approval is not implementation
-  or acceptance.
+- Step-4 correction authority: `MR-IMP-OPEN-017`, `MR-IMP-DEC-306`, frozen
+  `MR-IF-002 v3`, exact purpose, files, requirements, checks, local test,
+  exclusions, commit boundaries, two superseding work orders, the same Sol
+  `high` worker, and the same Sol `xhigh` reviewer were approved on 2026-09-02.
+  Approval is not correction, integration, test, or acceptance.
 - Last accepted Step-2 correction cycle: primary-audited. Primary verification
   confirms 91 unit tests, 96.48 percent line coverage, 92.30 percent branch
   coverage, a successful build, 15 passing browser flows, exact scope, public
@@ -106,8 +108,9 @@ systems are not yet available.`, and reported the same result after repeated
 - Branch: `main`.
 - Remote: none.
 - S00–S14: documented.
-- Frozen interfaces: `MR-IF-002` at `v2`; `MR-IF-001` and
-  `MR-IF-003`–`MR-IF-015` at `v1`. Historical `MR-IF-002 v1` is superseded.
+- Frozen interfaces: `MR-IF-002` at `v3`; `MR-IF-001` and
+  `MR-IF-003`–`MR-IF-015` at `v1`. Historical `MR-IF-002 v1` and `v2` are
+  superseded.
 - Package configuration: integrated on local `main`.
 - Startup source: the reviewed Step-3 application lifecycle is integrated on
   local `main`; no Three.js scene or game system exists.
@@ -139,7 +142,7 @@ insert a future or guessed commit identifier.
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
 | Step 3                                          | Accepted on 2026-09-02         | The reviewed integration, complete main validation, visible reload result, and explicit acceptance are recorded.                     |
-| Step 4                                          | Implementing                   | `MR-WO-WP01-001` is active; `MR-WO-WP00-006` waits for its verified submission.                                                      |
+| Step 4                                          | Correcting                     | Complete review blocked integration; `MR-WO-WP01-002` is approved for activation and `MR-WO-WP00-007` waits.                         |
 | Steps 5–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |

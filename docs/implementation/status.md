@@ -2,7 +2,7 @@
 
 Last updated: 2026-09-02
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
+Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 correction authority approved**
 
 ## Current repository state
 
@@ -46,15 +46,15 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current open issue group: none; `MR-IMP-OPEN-001`–`015` are resolved.
+- Current open issue group: none; `MR-IMP-OPEN-001`–`017` are resolved.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: explicit Sol, Terra, and Luna routing; focused worker,
   reviewer, and asset-researcher roles; at most two subagents; and mandatory
   delegation-table evidence. This amendment does not alter an interface or
   authorize implementation.
-- Next action: run the approved fresh Sol `xhigh` review of the complete Step-4
-  packet.
+- Next action: activate only the approved Sol `high` `MR-WO-WP01-002`
+  correction.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 
@@ -65,8 +65,8 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                             |
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v2`; all other interfaces remain frozen `v1`; Gate 1 was approved on 2026-09-01.                      |
-| Incremental implementation | Steps 1–3 accepted; Step 4 technical review            | Both work orders are submitted and the complete primary audit passed. Fresh independent review is pending.                                           |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v3`; all other interfaces remain frozen `v1`; Gate 1 was approved on 2026-09-01.                      |
+| Incremental implementation | Steps 1–3 accepted; Step 4 correcting                  | Complete review blocked the first submissions. Leonardo approved the exact `v3` correction and superseding work orders.                              |
 | Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 

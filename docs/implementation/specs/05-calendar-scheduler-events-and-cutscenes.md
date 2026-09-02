@@ -876,3 +876,9 @@ The approved Step-4 impact packet supersedes only historical `MR-IF-002 v1`
 with frozen `v2` to define its exact creation input. Scheduler fields, event
 order, safe points, crashes, scenes, reload, recap, and finalization remain
 unchanged and unimplemented.
+
+The approved correction supersedes `MR-IF-002 v2` with `v3`. Only
+`MR-SCN-CLARIFIED` is stored at creation. A later scene, message, request,
+concern, or event is materialized once by its first valid scheduled transition.
+After materialization, every lifecycle, queue, safe-point, reload, and
+finalization rule in this specification is unchanged.

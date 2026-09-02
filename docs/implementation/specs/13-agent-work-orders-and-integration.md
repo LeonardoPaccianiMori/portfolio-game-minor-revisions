@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Steps 1–3 accepted; Step-4 rules work order active**
+Status: **documented technical specification; Steps 1–3 accepted; Step-4 correction authority approved**
 
 ## Purpose and authority
 
@@ -693,7 +693,8 @@ integrated on local `main`, and complete main-branch validation passed.
 Leonardo confirmed the four expected lines after repeated reloads and accepted
 Step 3 on 2026-09-02. He then approved the exact Step-4 plan, the evidence-led
 `MR-IF-002 v2` creation-input refinement, the two exact work orders, the Sol
-`high` worker, and the later fresh Sol `xhigh` reviewer. The work orders remain
-the only approved Step-4 orders. `MR-WO-WP01-001` is active on its exact
-isolated worktree. `MR-WO-WP00-006` is approved and waits for the verified
-rules submission. Step 5 remains unapproved.
+`high` worker, and the later Sol `xhigh` reviewer. Complete review blocked the
+first submissions. Leonardo then approved `MR-IF-002 v3` and superseding
+`MR-WO-WP01-002` and `MR-WO-WP00-007`, with the same exact worker and reviewer
+selections. Only the rules correction can activate first. Step 5 remains
+unapproved.

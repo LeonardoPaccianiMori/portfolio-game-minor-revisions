@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; Step-4 primary audit passed; fresh review pending**
+Status: **Steps 1–3 accepted; Step-4 correction authority approved**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -26,20 +26,20 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test       | Acceptance                                                                                          | Commit                                                                       | Notes                                                                  |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
-|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-|    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-|    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-|    4 | Technical review        | 2026-09-02    | 154 tests, required coverage, 115-module build, 21 browser flows, audit, scope, privacy, production, and complete primary audit passed                                                           | Pending             | Pending                                                                                             | Plan `580c8d9`; rules `94b12f3`; diagnostic `0fc7d39`                        | Fresh independent review is pending.                                   |
-| 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test       | Acceptance                                                                                          | Commit                                                                                 | Notes                                                                  |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                                      | Records documentation only; no implementation is approved.             |
+|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05`           | The accepted result is the static local foundation, not a game system. |
+|    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                          | No separate defect or screen-observation report supplied.              |
+|    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                              | Four expected lines persisted after repeated reloads.                  |
+|    4 | Correcting              | 2026-09-02    | First submissions passed 154 tests, coverage, build, 21 browser flows, and audit; complete review blocked integration; exact `v3` correction approved                                            | Pending             | Pending                                                                                             | Plan `580c8d9`; rules `94b12f3`; diagnostic `0fc7d39`; correction authority checkpoint | Activate only `MR-WO-WP01-002`.                                        |
+| 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                                      | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                          |
-| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | -------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Run only active `MR-WO-WP01-001` first |
+| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                            |
+| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | ---------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Run only approved `MR-WO-WP01-002` first |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -725,13 +725,22 @@ two work orders, model and effort selections, focused source packets,
 sequential order, and commit boundaries. He has not tested or accepted a Step-4
 result.
 
+After complete review blocked integration, Leonardo approved the exact narrow
+foundation-test amendment and then the complete evidence-led correction plan.
+He approved `MR-IMP-OPEN-017`, `MR-IMP-DEC-306`, frozen `MR-IF-002 v3`, the
+sparse initialization boundary, exact correction files and checks, the two
+superseding work orders, the same OpenAI `gpt-5.6-sol` worker using `high`
+reasoning, and the same OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning.
+
 ### Agent contribution
 
-The primary agent prepared the exact plan and impact packet, created the two
-exact work orders and isolated worktrees from the plan checkpoint, activated
-only `MR-WO-WP01-001`, and kept `MR-WO-WP00-006` approved until the verified
-rules submission. No worker code, primary diagnostic code, audit, independent
-review, integration, local server, Leonardo test, or accepted result exists.
+The primary agent prepared the first plan and impact packet, created the first
+two work orders and isolated worktrees, and coordinated both submissions and
+the complete primary audit. The complete independent reviewer then reported all
+findings together and blocked integration. The primary agent verified the
+missing-authority condition, prepared the approved `v3` packet, and created
+superseding `MR-WO-WP01-002` and `MR-WO-WP00-007`. Correction, integration,
+local server, Leonardo test, and acceptance do not yet exist.
 
 ### Files and commits
 
@@ -742,7 +751,25 @@ that exact base. Git history is authoritative for the activation commit.
 
 ### Automated and review evidence
 
-Pending. Plan approval is not a test or review result.
+The first submission passed 154 unit tests, 91.09 percent line coverage, 85.96
+percent branch coverage, a 115-module build, 21 Chromium, Firefox, and WebKit
+flows, audit, scope, privacy, network, telemetry, configuration, whitespace,
+clean-state, and absent-remote checks. Complete independent review by OpenAI
+`gpt-5.6-sol` using `xhigh` reasoning blocked integration. It found:
+
+- invalid per-field restart of a revision's global history sequence;
+- incomplete initial inventories and missing exact authority for several IDs;
+- wrong or open experiment-band vocabularies;
+- incomplete internally checkable S03 invariants;
+- rejection instead of canonicalization of equivalent record insertion order;
+- incomplete analysis and completion-effect shapes;
+- tests that preserved invalid behaviour or omitted semantic proof;
+- one nonexistent requirement reference; and
+- stale current-governance records.
+
+The diagnostic itself passed its privacy, network, scope, exact-query, safe
+field, Standard-versus-Supported, normal-page, and browser checks. The review
+does not accept Step 4.
 
 ### Leonardo test packet
 
@@ -752,7 +779,11 @@ confirm that the normal Step-3 page is unchanged.
 
 ### Observed result and corrections
 
-None. No implementation result exists.
+The approved narrow foundation inventory amendment is complete on the
+diagnostic branch. The complete technical and governance correction is now
+defined by frozen `MR-IF-002 v3`, `MR-WO-WP01-002`, and `MR-WO-WP00-007`.
+Historical `v1`, `v2`, both first submissions, their audit, and the blocked
+review remain evidence.
 
 ### Acceptance decision
 
@@ -760,10 +791,12 @@ Pending. Plan approval is not Step-4 acceptance.
 
 ### Known limitations and next boundary
 
-Both exact Step-4 submissions and the complete primary audit are finished. The
-next action is the approved fresh Sol `xhigh` independent review. Integration,
-Leonardo testing, and acceptance remain pending. Step 5 and every public
-action remain unapproved.
+The next action is activation of only the approved OpenAI `gpt-5.6-sol` `high`
+`MR-WO-WP01-002` correction. After its verified submission, the primary agent
+can activate `MR-WO-WP00-007`, run all combined checks, complete one new
+primary audit, and send one fresh complete correction packet to the same
+approved Sol `xhigh` reviewer. Integration, Leonardo testing, and acceptance
+remain pending. Step 5 and every public action remain unapproved.
 
 ## Required accepted-step entry
 

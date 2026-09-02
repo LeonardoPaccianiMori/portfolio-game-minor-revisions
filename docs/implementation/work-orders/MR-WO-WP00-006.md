@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-006
 type: implementation-work-order
-status: submitted
+status: superseded
 work_package: MR-WP-00
 sequence: 6
 created: 2026-09-02
@@ -35,6 +35,11 @@ exact rules copy `3bd8b18` and diagnostic commit `0fc7d39`. Leonardo approved
 the narrow foundation-file inventory amendment after its exact-list test found
 the missing planned path. Complete checks and the primary audit passed.
 Independent review remains pending.
+
+Complete independent review later blocked integration because the rules
+dependency was incomplete. Leonardo approved `MR-IF-002 v3` and
+`MR-WO-WP00-007`, which supersede this order. Its submitted diagnostic and the
+approved one-line foundation inventory change remain historical evidence.
 
 ## Plain-language effect
 

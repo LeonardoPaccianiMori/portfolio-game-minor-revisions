@@ -1,14 +1,14 @@
 # Technical Architecture
 
 Status: **B10 and S01–S14 documented; Gate 1 approved; Steps 1–3 accepted;
-exact Step-4 plan and `MR-IF-002 v2` refinement approved**
+Step-4 `MR-IF-002 v3` correction approved**
 
 ## Scope and boundary
 
 This document defines the approved technical direction for the first release.
 It does not authorize production assets, a remote, or deployment work. Gate 1
-is approved, Steps 1–3 are accepted, and the exact Step-4 plan is approved.
-The two Step-4 work orders remain inactive at this checkpoint.
+is approved, Steps 1–3 are accepted, and the exact Step-4 correction is
+approved. Only its superseding rules order can activate first.
 
 S02 defines the exact subordinate module graph, public ports, lifecycle,
 ownership, frame order, and error boundaries in
@@ -94,9 +94,11 @@ timestamps that drive play, or browser-specific object references. S03 now
 defines its exact ten-section shape, stable IDs, stored-versus-derived facts,
 safe integers, immutable histories, cross-section invariants, complete initial
 fixture, rejected fixtures, and canonical JSON representation. S14 historically
-froze `MR-IF-002 v1`. The approved Step-4 impact packet supersedes it with
-frozen `v2` only to define the exact caller-supplied creation facts. It adds no
-campaign field and changes no stored fact.
+froze `MR-IF-002 v1`. The first Step-4 packet superseded it with `v2` to define
+creation inputs. Complete review exposed undefined initial content inventories.
+The approved `v3` correction preserves those inputs, uses sparse run and
+content lifecycle records, and completes fixed identities, invariants, and
+canonical order without changing a player-visible fact.
 
 ### Commands, effects, and deterministic variation
 
@@ -423,11 +425,11 @@ attribution boundary.
 
 S14 historically froze `MR-IF-001`–`MR-IF-015` as `v1`. Earlier candidate
 statements in this document record their lifecycle before S14. The approved
-Step-4 impact packet later supersedes only `MR-IF-002 v1` with frozen `v2` to
-define its exact creation input. Every other interface remains frozen `v1`.
+Step-4 impact packets later supersede `MR-IF-002 v1` and `v2` with frozen `v3`.
+Every other interface remains frozen `v1`.
 The freeze and supersession do not claim that a source signature, executable
 fixture, browser result, or performance result exists.
 
-The current implementation authority is the exact approved Step-4 plan. Its
-two work orders remain inactive at this checkpoint, and no approval carries to
-Step 5 or a later step.
+The current implementation authority is the exact approved Step-4 correction.
+Only `MR-WO-WP01-002` can activate first; `MR-WO-WP00-007` waits for its
+verified result. No approval carries to Step 5 or a later step.
