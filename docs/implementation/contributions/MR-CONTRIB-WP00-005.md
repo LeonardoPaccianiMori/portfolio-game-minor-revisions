@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-005
 type: implementation-contribution
-status: integrated
+status: accepted
 work_order: MR-WO-WP00-005
 work_package: MR-WP-00
 created: 2026-09-02
@@ -28,7 +28,8 @@ retry path, diagnostic privacy, package, configuration, and frozen interfaces
 remain unchanged. The complete primary pre-review audit passed. Independent
 technical review and its required narrow current-record correction passed.
 The reviewed result is integrated on local `main`, and complete main-branch
-validation passed. Leonardo testing and Step-3 acceptance remain pending.
+validation passed. Leonardo confirmed the expected visible page after repeated
+reloads and explicitly accepted Step 3 on 2026-09-02.
 
 ## Changed files
 
@@ -166,5 +167,8 @@ sanitized-bootstrap boundary. All later focused and complete checks passed.
 ## Leonardo decision
 
 Leonardo approved the exact Step-3 plan and later directly approved its
-disclosed cross-workspace implementation. He has not yet received the
-integrated local test packet, tested the Step-3 result, or accepted Step 3.
+disclosed cross-workspace implementation. On 2026-09-02, he checked the
+integrated local page, supplied a screenshot that showed the four expected
+lines, reported that repeated reloads kept the same result, and explicitly
+accepted Step 3. The raw screenshot and its machine path are not stored. This
+acceptance does not approve Step 4.

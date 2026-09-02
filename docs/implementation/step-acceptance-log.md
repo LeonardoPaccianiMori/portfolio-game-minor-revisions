@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1 and 2 accepted; Step-3 reviewed integration and main validation passed; Leonardo testing pending**
+Status: **Steps 1–3 accepted; Step 4 unapproved**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -31,14 +31,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-|    3 | Leonardo testing        | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Pending             | Pending                                                                                             | Integrated commits `d2a63f5` and `d26ffe1`                                   | Exact visible reload test is ready.                                    |
+|    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
 | 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                  | Next boundary                             |
-| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1 and 2 were separately planned and accepted | Activate only the exact Step-3 work order |
+| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                      |
+| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | ---------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Prepare only the exact Step-4 plan |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -557,7 +557,10 @@ commit is `Record Minor Revisions Step 3 Leonardo test readiness`.
 ### Leonardo contribution
 
 Leonardo accepted Step 2 and explicitly approved this exact Step-3 plan. He
-has not yet tested or accepted a Step-3 result.
+then checked the integrated local result, supplied a screenshot that showed the
+four expected lines, reported the same result after repeated reloads, and
+explicitly accepted Step 3 on 2026-09-02. The raw screenshot and its machine
+path are not stored.
 
 ### Agent contribution
 
@@ -570,8 +573,9 @@ which was fresh and read-only, then found no technical issue and one narrow
 current-record correction. The primary agent corrected it, and focused
 validation passed. The primary agent integrated the exact two reviewed worker
 commits without conflict and completed main-branch validation. The local test
-remains pending. Matching completed-use entries are in `ai-use-log.md` and
-`MR-CONTRIB-WP00-005`.
+then supplied the exact visible reload test and stopped the loopback-only
+server after Leonardo's decision. Matching completed-use entries are in
+`ai-use-log.md` and `MR-CONTRIB-WP00-005`.
 
 ### Files and commits
 
@@ -607,8 +611,10 @@ checks passed.
 
 ### Leonardo test packet
 
-Ready as described above. The loopback-only server has not started, and
-Leonardo has not received or run the visible reload test at this checkpoint.
+Complete. Leonardo opened the loopback-only page and confirmed `Minor
+Revisions`, `Ready`, `Startup checks passed.`, and `Game systems are not yet
+available.` He reported the same result after repeated reloads and supplied no
+visible error or unexpected change. The server was stopped after his decision.
 
 ### Observed result and corrections
 
@@ -626,14 +632,14 @@ browser logs were test evidence, not a production failure.
 
 ### Acceptance decision
 
-Pending. Plan approval is not Step-3 acceptance.
+Leonardo explicitly accepted Step 3 on 2026-09-02. This acceptance covers only
+the reviewed application-lifecycle result and does not approve Step 4.
 
 ### Known limitations and next boundary
 
-Step 3 is in Leonardo testing. `MR-WO-WP00-005` and
-`MR-CONTRIB-WP00-005` are integrated. The next action is to start the
-loopback-only page and give Leonardo the exact approved visible reload test.
-Step 4 remains unapproved.
+Step 3 is accepted. `MR-WO-WP00-005` and `MR-CONTRIB-WP00-005` are accepted.
+No Step-4 plan or implementation authority exists. Prepare only its exact plan
+when Leonardo requests it, then wait for his separate approval.
 
 ## Required accepted-step entry
 

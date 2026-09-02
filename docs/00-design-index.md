@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1 and 2 accepted; Step-3 reviewed integration and main validation passed; Leonardo testing pending**
+Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1–3 accepted; Step 4 unapproved**
 
 This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -22,7 +22,7 @@ gaps. It does not mean that the domain is finished.
 | `12-content-specification.md`                   | Content inventory                                            | B10 documented                                         | Implementation evidence and later content revisions only.                                                                  |
 | `13-testing-and-evaluation.md`                  | Quality evidence                                             | B10 and S12–S14 documented                             | Test results are future evidence, not current claims.                                                                      |
 | `14-production-plan.md`                         | Delivery strategy                                            | B10 and S13–S14 documented                             | Leonardo may later revise capacity or release timing.                                                                      |
-| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Step-3 reviewed integration and complete main validation passed; Leonardo testing is pending.                              |
+| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Step 3 is accepted; Step 4 needs a separate exact plan and approval.                                                       |
 | `reviews/independent-design-review-protocol.md` | External specification review                                | Review complete                                        | Discuss the validated findings and record Leonardo's decisions.                                                            |
 | `reviews/2026-08-28-opus-5/`                    | Opus 5 reports and validation                                | Stored; advisory                                       | No recommendation is accepted until Leonardo decides it.                                                                   |
 | `reviews/holistic-game-assessment-protocol.md`  | Identity, fun-hypothesis, direction, and expectations review | Review complete                                        | Preserve document-only quality claims as hypotheses until private play evidence exists.                                    |
@@ -38,9 +38,9 @@ gaps. It does not mean that the domain is finished.
 | `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`015` resolved                       | Register any later material issue before dependent work.                                                                   |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1 and 2 accepted; Step-3 Leonardo testing        | Supply only the approved visible reload test.                                                                              |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step-3 Leonardo testing                                | Start the loopback-only page and give Leonardo the exact visible test.                                                     |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1 and 2 accepted; Step-3 Leonardo testing        | Record Leonardo's observation or approved-scope defect without inferring acceptance.                                       |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–3 accepted                                     | Prepare only the exact Step-4 plan when Leonardo requests it.                                                              |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step 3 accepted                                        | No Step-4 plan or implementation authority exists.                                                                         |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1–3 accepted                                     | Preserve the visible Step-3 observation and acceptance; do not infer Step-4 authority.                                     |
 
 ## Discussion roadmap
 
@@ -77,10 +77,9 @@ status, and the next place to resume.
   routing and focused delegation records.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
   S01–S14, and Step-0 model history belongs only to _Minor Revisions_.
-- Incremental implementation start: **Steps 1 and 2 accepted; exact Step-3
-  reviewed result integrated and main-validated**; supply only the approved
-  visible local test.
-- Vertical-slice acceptance: **blocked**; Steps 3–30 remain unaccepted.
+- Incremental implementation start: **Steps 1–3 accepted**; no Step-4 plan or
+  implementation authority exists.
+- Vertical-slice acceptance: **blocked**; Steps 4–30 remain unaccepted.
 - Fallback acceptance: **blocked**; Steps 32–52 do not exist.
 - Full local-game acceptance: **blocked**; Steps 54–69 do not exist.
 - Step-3 authority is limited to its exact approved application-lifecycle
@@ -485,8 +484,8 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current Gate 1 state: **approved by Leonardo on 2026-09-01; Steps 1 and 2 are
-accepted, and the exact Step-3 plan was approved on 2026-09-02**.
+Current Gate 1 state: **approved by Leonardo on 2026-09-01; Steps 1–3 are
+accepted, and Step 4 remains unapproved**.
 
 The former one-shot vertical-slice production sequence is superseded by the
 collaborative workflow in `implementation/development-roadmap.md`. After Gate

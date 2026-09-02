@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-005
 type: implementation-work-order
-status: integrated
+status: accepted
 work_package: MR-WP-00
 sequence: 5
 created: 2026-09-02
@@ -34,7 +34,8 @@ issue and one narrow current-record correction. Focused primary validation of
 that correction passed. The reviewed commits are integrated on local `main` as
 `d2a63f5e4c516036380c4adaaf634d4e1e62534b` and
 `d26ffe119040dd16ba3ff4f22ffcf90375de570a`. Complete main-branch validation
-passed. Leonardo testing and acceptance remain pending.
+passed. Leonardo confirmed the expected visible page after repeated reloads
+and explicitly accepted Step 3 on 2026-09-02. Step 4 remains unapproved.
 
 ## Plain-language effect
 

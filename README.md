@@ -13,18 +13,17 @@ survival loop without being presented as a perfect life.
 ## Repository status
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
-approved on 2026-09-01; Steps 1 and 2 accepted; exact Step-3 plan approved by
-Leonardo on 2026-09-02; Step-3 primary audit, independent review, and focused
-record correction passed; reviewed integration and complete main validation
-passed; Leonardo testing pending**.
+approved on 2026-09-01; Steps 1–3 accepted; Step 4 unapproved**.
 
-This repository contains the accepted Step-1 foundation and Step-2 startup
-safety result, but no Three.js scene, game system, production asset, or
-deployment configuration. Step 2 adds the approved browser compatibility
-checks, sanitized diagnostics, factual startup states, safe failure screens,
-and their tests. Its corrections, primary audit, fresh independent review,
-integration, complete main-branch validation, Leonardo test packet, and
-acceptance are complete. B10
+This repository contains the accepted Step-1 foundation, Step-2 startup safety,
+and Step-3 application lifecycle, but no Three.js scene, game system,
+production asset, or deployment configuration. Step 2 adds the approved
+browser compatibility checks, sanitized diagnostics, factual startup states,
+safe failure screens, and their tests. Step 3 adds the internal lifecycle,
+ordered request queue, controlled frame loop, repeat-safe shutdown, temporary
+no-game adapters, public entrances, and their tests. Both steps completed
+their approved audit, review, integration, main validation, Leonardo test, and
+acceptance cycle. B10
 records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
@@ -83,10 +82,11 @@ The controlled worker submitted the exact application-lifecycle result, and
 the complete primary audit passed. Fresh independent technical review passed
 with one narrow current-record correction, and focused primary validation of
 that correction passed. The exact reviewed worker result is now integrated on
-local `main`, and complete main-branch validation passed. Leonardo's visible
-local test and acceptance remain pending. This does not accept Step 3 or
-authorize Step 4. Each later step needs its own plan, local test or result
-review, correction cycle, and explicit acceptance. The
+local `main`, and complete main-branch validation passed. Leonardo confirmed
+the four expected lines after repeated reloads and explicitly accepted Step 3
+on 2026-09-02. This does not authorize Step 4. Each later step needs its own
+plan, local test or result review, correction cycle, and explicit acceptance.
+The
 durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the
 complete sequence is

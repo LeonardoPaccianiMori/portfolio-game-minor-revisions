@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; Step-3 reviewed integration and main validation passed; Leonardo testing pending**
+Status: **B10 and S01–S14 documented; Steps 1–3 accepted; Step 4 unapproved**
 
 ## Authorization gate
 
@@ -218,5 +218,6 @@ test scope. The controlled worker submitted the exact result, and the complete
 primary audit passed. Fresh independent technical review and the required
 focused current-record correction passed. The exact reviewed result is now
 integrated on local `main`, and complete main-branch validation passed.
-Leonardo testing and acceptance remain pending. This does not accept Step 3 or
-authorize Step 4. No approval carries to a later step.
+Leonardo confirmed the four expected lines after repeated reloads and
+explicitly accepted Step 3 on 2026-09-02. This does not authorize Step 4. No
+approval carries to a later step.
