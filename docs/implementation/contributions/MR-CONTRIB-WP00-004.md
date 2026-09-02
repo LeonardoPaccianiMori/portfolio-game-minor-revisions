@@ -1,11 +1,11 @@
 ---
 id: MR-CONTRIB-WP00-004
 type: implementation-contribution
-status: integrated
+status: accepted
 work_order: MR-WO-WP00-004
 work_package: MR-WP-00
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-02
 base_commit: 43f868e64b80c88dc46832b676af6d2929f081c2
 provider: OpenAI
 model: gpt-5.6-sol
@@ -25,8 +25,8 @@ also passes with no new blocker or required correction. Fresh independent
 review passed the technical correction but found one required current-record
 reconciliation. Leonardo approved that exact record-only correction, and
 focused primary validation passed. The reviewed result is integrated on local
-`main`, and complete main-branch validation passed. It is not tested by
-Leonardo or accepted.
+`main`, and complete main-branch validation passed. Leonardo explicitly
+accepted Step 2 on 2026-09-02.
 
 ## Changed files
 
@@ -157,5 +157,6 @@ real timer. All later checks passed.
 ## Leonardo decision
 
 Leonardo approved the exact complete Step-2 correction plan on 2026-09-01. He
-has received the local test packet. His observations and acceptance decision
-are not yet available.
+received the local test packet and explicitly accepted Step 2 on 2026-09-02. He
+did not supply a separate defect or screen-observation report with that
+decision.

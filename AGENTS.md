@@ -11,9 +11,9 @@ and the exact Step-1 plan were approved on 2026-09-01. The submitted Step-1
 foundation is integrated, tested by Leonardo, and accepted. Leonardo approved
 the exact Step-2 plan and its later correction plans on 2026-09-01. The Step-2
 correction code and primary audit are complete, and fresh independent technical
-review passed. The reviewed result is integrated on local `main`, and complete
-main-branch validation passed. Leonardo testing and acceptance remain pending.
-Step 3 and every later step remain unapproved; approval never carries forward.
+review passed. The reviewed result is integrated on local `main`, complete
+main-branch validation passed, and Leonardo accepted Step 2 on 2026-09-02. Step
+3 and every later step remain unapproved; approval never carries forward.
 Do not create or change game code, package configuration, tests, production
 assets, or deployment configuration outside an exact approved step.
 

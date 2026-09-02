@@ -1,14 +1,14 @@
 # Incremental Development Status
 
-Last updated: 2026-09-01
+Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Step 1 accepted; Step 2 integrated; Leonardo testing**
+Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step 3 unapproved**
 
 ## Durable resume point
 
-- Current step: `2`, complete correction plan approved on 2026-09-01.
-- Current workflow state: `Leonardo testing; reviewed integration and complete
-main-branch validation passed`.
+- Current step: `2`, accepted by Leonardo on 2026-09-02.
+- Current workflow state: `accepted; no Step-3 plan or implementation authority
+exists`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -18,25 +18,19 @@ main-branch validation passed`.
   corrections.
 - AI-use log: `ai-use-log.md` records completed project-specific AI work. It
   does not describe model use for another project.
-- Last accepted implementation step: Step 1, accepted by Leonardo on
-  2026-09-01.
-- Next possible action: Leonardo checks the normal startup page and controlled
-  failure window, reports observations, and decides whether to accept Step 2.
-- Active approved implementation plan: the exact complete Step-2 correction
-  plan for all three S02 private imports, the closed diagnostic fault catalogue,
-  and deterministic Vitest fakes, approved by Leonardo on 2026-09-01.
-- Active work order: `MR-WO-WP00-004`, status `integrated`, OpenAI
-  `gpt-5.6-sol` with `high` reasoning, branch
-  `work/MR-WP-00-startup-safety-review-fixes`, worktree
-  `.worktrees/MR-WP-00-startup-safety-review-fixes/`, and exact base commit
-  `43f868e64b80c88dc46832b676af6d2929f081c2`. `MR-WO-WP00-002` is
-  superseded. `MR-WO-WP00-003` is also superseded.
-- Active contribution record: `MR-CONTRIB-WP00-004`, status `integrated`, with
-  the complete 12-commit Step-2 worker sequence integrated on local `main`.
+- Last accepted implementation step: Step 2, accepted by Leonardo on
+  2026-09-02.
+- Next possible action: prepare only the exact Step-3 plan and wait for
+  Leonardo's separate approval.
+- Active approved implementation plan: none. The Step-2 plan and correction
+  plans are complete historical authority.
+- Active work order: none. `MR-WO-WP00-004` is accepted. `MR-WO-WP00-002` and
+  `MR-WO-WP00-003` remain superseded historical records.
+- Active contribution record: none. `MR-CONTRIB-WP00-004` is accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the
   blocking review.
-- Active player test: ready. The loopback-only page and one controlled-failure
-  Chromium window are available for Leonardo's review.
+- Active player test: none. Leonardo explicitly accepted Step 2 after the test
+  packet; he supplied no separate defect or screen-observation report.
 - Active correction cycle: primary-audited. Primary verification confirms 91
   unit tests, 96.48 percent line coverage, 92.30 percent branch coverage, a
   successful build, 15 passing browser flows, exact scope, public imports,
@@ -46,7 +40,7 @@ main-branch validation passed`.
   reconciliation. The reconciliation and focused validation passed. The
   reviewed worker sequence is integrated without conflict, and complete
   main-branch validation passed. No frozen interface changed.
-- Last committed resume checkpoint: this Leonardo-test-ready checkpoint; Git
+- Last committed resume checkpoint: this Step-2 acceptance checkpoint; Git
   history is authoritative for its commit identifier.
 - Roadmap deviation request: none.
 - Historical review gate: failed on the original submission. The first OpenAI
@@ -67,6 +61,7 @@ main-branch validation passed`.
   `41adfbb` through `aeae015`, and the reviewed correction is integrated as
   `1e28a45` through `4475844`. Main `npm run verify` passed 91 unit tests,
   92.30 percent branch coverage, the production build, and 15 browser flows.
+- Acceptance result: Leonardo explicitly accepted Step 2 on 2026-09-02.
 
 ## Repository facts
 
@@ -86,6 +81,9 @@ main-branch validation passed`.
   Chromium, Firefox, and WebKit flows with no external request.
 - Direct Leonardo test: passed. Leonardo reported the expected title,
   foundation text, game-systems-unavailable text, and no visible error.
+- Direct Step-2 decision: accepted by Leonardo on 2026-09-02 after the supplied
+  normal-start and controlled-failure packet; no separate observation was
+  supplied.
 - Browser-support assessment, performance measurement, and play results: none.
 
 Git history is the authority for the commit that contains this file. Do not
@@ -93,15 +91,15 @@ insert a future or guessed commit identifier.
 
 ## Approval state
 
-| Authority                                       | State                          | Exact boundary                                                                                                                                 |
-| ----------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                                     |
-| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                          |
-| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                                         |
-| Step 2                                          | Leonardo testing on 2026-09-01 | The reviewed implementation and correction are integrated. Complete main checks passed. Leonardo's observations and acceptance remain pending. |
-| Steps 3–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                                        |
-| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                                  |
-| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                                 |
+| Authority                                       | State                          | Exact boundary                                                                                                                       |
+| ----------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Documentation workflow                          | Approved for documentation     | Records the 70-step incremental plan only.                                                                                           |
+| Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                |
+| Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
+| Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
+| Steps 3–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
+| Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
+| Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |
 
 ## Session-resume procedure
 

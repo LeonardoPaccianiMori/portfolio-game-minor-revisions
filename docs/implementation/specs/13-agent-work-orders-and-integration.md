@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Step 1 accepted; Step 2 integrated and ready for Leonardo testing**
+Status: **documented technical specification; Steps 1 and 2 accepted; Step 3 unapproved**
 
 ## Purpose and authority
 
@@ -684,5 +684,5 @@ approved Gate 1 and accepted Step 1 on 2026-09-01. Leonardo approved the exact
 Step-2 plan and its later correction plans on the same date. The correction code
 and primary audit are complete, fresh independent technical review passed, and
 the reviewed result is integrated on local `main`. Complete main-branch
-validation passed. Leonardo testing and acceptance remain pending. Step 3
-requires its own exact plan and separate approval.
+validation passed. Leonardo accepted Step 2 on 2026-09-02. Step 3 requires its
+own exact plan and separate approval.

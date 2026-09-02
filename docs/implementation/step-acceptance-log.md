@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Step 1 accepted; Step 2 integrated; Leonardo testing**
+Status: **Steps 1 and 2 accepted; Step 3 unapproved**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -26,18 +26,18 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Step index
 
-| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test     | Acceptance                                                                                          | Commit                                                                       | Notes                                                                  |
-| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable    | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
-|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01 | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
-|    2 | Leonardo testing        | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Ready             | Not accepted                                                                                        | Integrated commits `41adfbb` through `4475844`                               | Normal-start and controlled-failure packet supplied.                   |
-| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                 | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
+| Step | State                   | Plan approval | Technical evidence                                                                                                                                                                               | Leonardo test       | Acceptance                                                                                          | Commit                                                                       | Notes                                                                  |
+| ---: | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+|    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
+|    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
+|    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
+| 3–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                          | Next boundary                                |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------- | -------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Step 1 was separately planned and accepted | Complete Leonardo's Step-2 test and decision |
+| Gate                               | State    | Leonardo decision | Effect                                                                                  | Next boundary                      |
+| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------- | ---------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1 and 2 were separately planned and accepted | Prepare only the exact Step-3 plan |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -457,18 +457,19 @@ correction is ready for integration.
 
 ### Acceptance decision
 
-Not accepted. Plan approval is implementation authority only and does not
-accept a result.
+Leonardo explicitly accepted Step 2 on 2026-09-02. He supplied no separate
+defect or screen-observation report with that decision. The acceptance covers
+only the integrated Step-2 startup-safety result and does not approve Step 3.
 
 ### Known limitations and next boundary
 
-The corrected Step-2 code is integrated on local `main` and passed the complete
+The corrected Step-2 code is integrated on local `main`, passed the complete
 primary audit, fresh technical review, focused record validation, and complete
-main-branch checks. It is not yet tested by Leonardo or accepted. If IndexedDB reports a
+main-branch checks, and was accepted by Leonardo. If IndexedDB reports a
 blocked event and never later reports success or error, the check and its retry
 remain pending so old cleanup cannot overlap new work. The next permitted
-action is Leonardo's test report and acceptance decision. Step 3 and every
-public action remain blocked.
+action is preparation of the exact Step-3 plan. Step 3 and every public action
+remain blocked until their separate approvals.
 
 ## Required accepted-step entry
 

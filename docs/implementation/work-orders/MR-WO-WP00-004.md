@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP00-004
 type: implementation-work-order
-status: integrated
+status: accepted
 work_package: MR-WP-00
 sequence: 4
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-02
 base_commit: 43f868e64b80c88dc46832b676af6d2929f081c2
 provider: OpenAI
 model: gpt-5.6-sol
@@ -32,7 +32,8 @@ blocker or advisory finding. It found one required current-record
 reconciliation across four primary-owned authority files outside this order's
 approved record-update list. Leonardo approved that exact record-only
 correction, and focused primary validation passed. The correction is reviewed,
-integrated on local `main`, and ready for Leonardo testing.
+integrated on local `main`, and accepted by Leonardo as part of Step 2 on
+2026-09-02.
 
 ## Plain-language effect
 

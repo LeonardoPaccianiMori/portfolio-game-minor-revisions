@@ -14,13 +14,16 @@ survival loop without being presented as a perfect life.
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
 approved on 2026-09-01; the exact Step-1 plan approved on 2026-09-01; its
-integrated foundation accepted by Leonardo on 2026-09-01**.
+integrated foundation accepted by Leonardo on 2026-09-01; Step 2 accepted by
+Leonardo on 2026-09-02**.
 
-This repository contains one accepted foundation result, but no game system,
-production asset, or deployment configuration. The accepted Step-1 foundation contains
-only the approved S01 package baseline, basic local start page, and foundation
-tests. Its corrections, combined validation, independent re-review,
-integration, Leonardo test, and acceptance are complete. B10
+This repository contains the accepted Step-1 foundation and Step-2 startup
+safety result, but no Three.js scene, game system, production asset, or
+deployment configuration. Step 2 adds the approved browser compatibility
+checks, sanitized diagnostics, factual startup states, safe failure screens,
+and their tests. Its corrections, primary audit, fresh independent review,
+integration, complete main-branch validation, Leonardo test packet, and
+acceptance are complete. B10
 records the bounded content, evaluation, production,
 and handoff plan. An approved
 [`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
@@ -71,10 +74,10 @@ fallback/full gate split, resolves the final issue group, and freezes
 `MR-IF-001`–`MR-IF-015` as `v1`. The freeze creates no package, runtime, test,
 content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
 which confirms only the frozen technical baseline. Leonardo separately
-approved the exact Step-1 plan on 2026-09-01. That approval permits only its
-listed S01 foundation paths and checks. Leonardo accepted the integrated
-result on 2026-09-01. This does not authorize Step 2. Each later step needs its
-own plan, local test or result
+approved the exact Step-1 plan on 2026-09-01 and accepted its integrated result
+on the same date. Leonardo separately approved the exact Step-2 plan and later
+correction plans, then accepted the integrated Step-2 result on 2026-09-02.
+This does not authorize Step 3. Each later step needs its own plan, local test or result
 review, correction cycle, and explicit acceptance. The
 durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the
