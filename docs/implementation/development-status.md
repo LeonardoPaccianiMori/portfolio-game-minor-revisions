@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
+Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules work order active**
 
 ## Durable resume point
 
 - Current step: `4`, exact plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `plan approved; two exact work orders inactive`.
+- Current workflow state: `implementing; exact rules work order active`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,13 +19,14 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; exact Step-4 p
   does not describe model use for another project.
 - Last accepted implementation step: Step 3, accepted by Leonardo on
   2026-09-02.
-- Next possible action: create and activate only `MR-WO-WP01-001` and
-  `MR-WO-WP00-006` from this committed plan checkpoint, then assign the exact
-  Sol `high` worker.
+- Next possible action: verify the exact rules worktree, then assign the
+  selected Sol `high` worker. Keep the diagnostic worktree unchanged.
 - Active approved implementation plan: Step 4 campaign-state foundation and
   private diagnostic, including the evidence-led `MR-IF-002 v2`
   creation-input refinement.
-- Active work order: none. `MR-WO-WP00-005` and `MR-WO-WP00-004` are accepted.
+- Active work order: `MR-WO-WP01-001` on
+  `work/MR-WP-01-campaign-state`. `MR-WO-WP00-006` is approved and waits for
+  the verified rules submission. `MR-WO-WP00-005` is accepted.
 - Active contribution record: none. `MR-CONTRIB-WP00-005` and
   `MR-CONTRIB-WP00-004` are accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the
@@ -138,7 +139,7 @@ insert a future or guessed commit identifier.
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
 | Step 3                                          | Accepted on 2026-09-02         | The reviewed integration, complete main validation, visible reload result, and explicit acceptance are recorded.                     |
-| Step 4                                          | Plan approved on 2026-09-02    | Two exact work orders remain inactive; no implementation or acceptance exists.                                                       |
+| Step 4                                          | Implementing                   | `MR-WO-WP01-001` is active; `MR-WO-WP00-006` waits for its verified submission.                                                      |
 | Steps 5–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |

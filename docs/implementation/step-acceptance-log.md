@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
+Status: **Steps 1–3 accepted; Step-4 rules work order active**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -32,14 +32,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-|    4 | Plan approved           | 2026-09-02    | Pending                                                                                                                                                                                          | Pending             | Pending                                                                                             | Containing plan checkpoint                                                   | Two exact work orders remain inactive.                                 |
+|    4 | Implementing            | 2026-09-02    | Exact rules work order active; primary diagnostic order waits for verified submission                                                                                                            | Pending             | Pending                                                                                             | Plan checkpoint `580c8d9`; activation checkpoint pending                     | No implementation result exists yet.                                   |
 | 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                                  |
-| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Activate only the two exact Step-4 work orders |
+| Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                          |
+| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | -------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Run only active `MR-WO-WP01-001` first |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -727,17 +727,18 @@ result.
 
 ### Agent contribution
 
-The primary agent prepared the exact plan and impact packet. No work order,
-worktree, worker code, primary diagnostic code, audit, independent review,
-integration, local server, Leonardo test, or accepted result exists at this
-checkpoint.
+The primary agent prepared the exact plan and impact packet, created the two
+exact work orders and isolated worktrees from the plan checkpoint, activated
+only `MR-WO-WP01-001`, and kept `MR-WO-WP00-006` approved until the verified
+rules submission. No worker code, primary diagnostic code, audit, independent
+review, integration, local server, Leonardo test, or accepted result exists.
 
 ### Files and commits
 
 The starting repository commit is
 `596fd3564449fa7776430f44d6ba8f4cd0441dc2`. The plan checkpoint is the commit
-that contains this entry. Work-order base commits and activation evidence do
-not exist yet.
+`580c8d927434d6a05c2e79af1c3880ca955edd58`. Both work orders and worktrees use
+that exact base. Git history is authoritative for the activation commit.
 
 ### Automated and review evidence
 
@@ -759,10 +760,10 @@ Pending. Plan approval is not Step-4 acceptance.
 
 ### Known limitations and next boundary
 
-Only the exact plan and `MR-IF-002 v2` refinement are approved. The next action
-is to commit this authority, create and activate only the two exact work orders,
-and then assign the selected Sol `high` worker. Step 5 and every public action
-remain unapproved.
+Step 4 is implementing only through active `MR-WO-WP01-001`. The next action is
+to assign the selected Sol `high` worker. `MR-WO-WP00-006` cannot start before
+the exact rules submission is verified. Step 5 and every public action remain
+unapproved.
 
 ## Required accepted-step entry
 

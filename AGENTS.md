@@ -21,7 +21,8 @@ result is integrated on local `main`, and complete main-branch validation
 passed. Leonardo confirmed the four expected lines after repeated reloads and
 explicitly accepted Step 3 on 2026-09-02. Leonardo approved the exact Step-4
 plan and its evidence-led `MR-IF-002 v2` creation-input refinement on
-2026-09-02. Step 4 is at plan approval; its two work orders are not active.
+2026-09-02. `MR-WO-WP01-001` is active on its exact isolated rules worktree.
+`MR-WO-WP00-006` is approved and waits for the verified rules submission.
 Step 5 and every later step remain unapproved; approval never carries forward.
 Do not create or change game code, package configuration, tests, production
 assets, or deployment configuration outside an exact approved step.

@@ -1,6 +1,6 @@
 # Incremental Development Roadmap
 
-Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1–3 accepted; exact Step-4 plan and `MR-IF-002 v2` refinement approved; work orders inactive**
+Status: **workflow documented; Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules work order active**
 
 Last updated: 2026-09-02
 
@@ -278,6 +278,7 @@ correction passed. The exact reviewed worker range is integrated on local
 Leonardo confirmed the four expected lines after repeated reloads and
 explicitly accepted Step 3 on 2026-09-02. He then approved the exact Step-4
 plan and evidence-led `MR-IF-002 v2` creation-input refinement. The two exact
-work orders remain inactive; no worker code or worktree exists.
+work orders now exist. `MR-WO-WP01-001` is active in its isolated worktree;
+`MR-WO-WP00-006` remains approved and unchanged until rules submission.
 Step 5, Three.js, game systems, asset research, a remote, licence, deployment,
 and public action remain blocked.
