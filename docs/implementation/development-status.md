@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-02
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3 work order active**
+Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
 
 ## Durable resume point
 
 - Current step: `3`, plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `implementing; work order active`.
+- Current workflow state: `technical review; independent review pending`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -19,14 +19,15 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3
   does not describe model use for another project.
 - Last accepted implementation step: Step 2, accepted by Leonardo on
   2026-09-02.
-- Next possible action: create and verify the exact isolated worktree from the
-  plan checkpoint, then start the selected controlled worker.
+- Next possible action: assign one fresh read-only OpenAI `gpt-5.6-sol`
+  reviewer using `xhigh` reasoning to the complete audited packet.
 - Active approved implementation plan: exact Step-3 application-lifecycle plan
   approved on 2026-09-02.
-- Active work order: `MR-WO-WP00-005` on branch
+- Submitted work order: `MR-WO-WP00-005` on branch
   `work/MR-WP-00-application-lifecycle` and worktree
   `.worktrees/MR-WP-00-application-lifecycle/`. `MR-WO-WP00-004` is accepted.
-- Active contribution record: none. `MR-CONTRIB-WP00-004` is accepted.
+- Active contribution record: `MR-CONTRIB-WP00-005` is submitted and records
+  the passed complete primary audit. `MR-CONTRIB-WP00-004` is accepted.
   `MR-CONTRIB-WP00-002` remains the historical submission that received the
   blocking review.
 - Active player test: none. Leonardo explicitly accepted Step 2 after the test
@@ -40,9 +41,16 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3
   reconciliation. The reconciliation and focused validation passed. The
   reviewed worker sequence is integrated without conflict, and complete
   main-branch validation passed. No frozen interface changed.
-- Last committed resume checkpoint: exact Step-3 plan approval at
-  `cb19a1e99b365aa98f8dbec4e33b9fde31864a5e`. This activation checkpoint
-  becomes the next committed resume point.
+- Current Step-3 implementation evidence: the exact worker range
+  `d3c11c2a23a6a473d43ecd29d377d6eb34b691f2` through
+  `f4130acb6f555cb55ff09f30b5f89e3ca49a4d89` changes only the 17 owned paths.
+  Worker and primary `npm run check` and `npm run verify` passed 111 tests, the
+  required coverage, a 16-module build, and all 15 Chromium, Firefox, and
+  WebKit flows. The complete primary audit found no blocker or required
+  correction. Independent review is pending.
+- Last committed resume checkpoint: Step-3 work-order activation at
+  `1b75a968ba2f419b66158d8f88abc119378af27d`. Git history is authoritative
+  for the next technical-review checkpoint.
 - Roadmap deviation request: none.
 - Historical review gate: failed on the original submission. The first OpenAI
   `gpt-5.6-sol` reviewer using `xhigh` reasoning found one blocker and two
@@ -63,6 +71,8 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1 and 2 accepted; exact Step-3
   `1e28a45` through `4475844`. Main `npm run verify` passed 91 unit tests,
   92.30 percent branch coverage, the production build, and 15 browser flows.
 - Acceptance result: Leonardo explicitly accepted Step 2 on 2026-09-02.
+- Current Step-3 review result: pending. The complete primary audit passed; no
+  independent-review result, integration, Leonardo test, or acceptance exists.
 
 ## Repository facts
 
@@ -98,7 +108,7 @@ insert a future or guessed commit identifier.
 | Gate 1 — frozen technical baseline              | Approved on 2026-09-01         | Confirms S01–S14; authorizes no code.                                                                                                |
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
-| Step 3                                          | Implementing                   | `MR-WO-WP00-005` is active; reviewed implementation evidence and Leonardo acceptance remain pending.                                 |
+| Step 3                                          | Technical review               | `MR-WO-WP00-005` and `MR-CONTRIB-WP00-005` are submitted; the complete primary audit passed and independent review is pending.       |
 | Steps 4–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |

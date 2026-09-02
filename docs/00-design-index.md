@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1 and 2 accepted; Step-3 work order active**
+Status: **creative design, R00–R07, S00–S14, and development governance documented; Gate 1 approved; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
 
 This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -22,7 +22,7 @@ gaps. It does not mean that the domain is finished.
 | `12-content-specification.md`                   | Content inventory                                            | B10 documented                                         | Implementation evidence and later content revisions only.                                                                  |
 | `13-testing-and-evaluation.md`                  | Quality evidence                                             | B10 and S12–S14 documented                             | Test results are future evidence, not current claims.                                                                      |
 | `14-production-plan.md`                         | Delivery strategy                                            | B10 and S13–S14 documented                             | Leonardo may later revise capacity or release timing.                                                                      |
-| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Exact Step-3 work order is active.                                                                                         |
+| `15-implementation-contract.md`                 | Agent handoff                                                | B10 and S13–S14 plus incremental workflow documented   | Step-3 submission and primary audit are complete; independent review is pending.                                           |
 | `reviews/independent-design-review-protocol.md` | External specification review                                | Review complete                                        | Discuss the validated findings and record Leonardo's decisions.                                                            |
 | `reviews/2026-08-28-opus-5/`                    | Opus 5 reports and validation                                | Stored; advisory                                       | No recommendation is accepted until Leonardo decides it.                                                                   |
 | `reviews/holistic-game-assessment-protocol.md`  | Identity, fun-hypothesis, direction, and expectations review | Review complete                                        | Preserve document-only quality claims as hypotheses until private play evidence exists.                                    |
@@ -38,9 +38,9 @@ gaps. It does not mean that the domain is finished.
 | `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`015` resolved                       | Register any later material issue before dependent work.                                                                   |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1 and 2 accepted; Step-3 work order active       | Implement only the exact approved Step-3 scope.                                                                            |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step-3 work order active                               | Verify the isolated worktree and start the exact worker.                                                                   |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1 and 2 accepted; Step 3 implementing            | Record implementation evidence before Leonardo testing.                                                                    |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1 and 2 accepted; Step-3 technical review        | Obtain the one fresh independent review of the audited Step-3 packet.                                                      |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step-3 technical review                                | Independent review is pending after the passed primary audit.                                                              |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1 and 2 accepted; Step 3 in technical review     | Record the independent-review result before integration.                                                                   |
 
 ## Discussion roadmap
 

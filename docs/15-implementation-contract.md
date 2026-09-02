@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; exact Step-3 work order active**
+Status: **B10 and S01–S14 documented; Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
 
 ## Authorization gate
 
@@ -214,5 +214,7 @@ local `main`. Complete main-branch validation passed. Leonardo explicitly
 accepted Step 2 on 2026-09-02. Leonardo approved the exact Step-3
 application-lifecycle plan on the same date. That authority is limited to the
 named source, test, control-record, validation, review, integration, and local
-test scope. It does not accept Step 3 or authorize Step 4. No approval carries
-to a later step.
+test scope. The controlled worker submitted the exact result, and the complete
+primary audit passed. Independent review, integration, Leonardo testing, and
+acceptance remain pending. This does not accept Step 3 or authorize Step 4. No
+approval carries to a later step.

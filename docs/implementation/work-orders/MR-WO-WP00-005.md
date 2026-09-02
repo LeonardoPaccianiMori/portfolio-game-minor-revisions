@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-005
 type: implementation-work-order
-status: active
+status: submitted
 work_package: MR-WP-00
 sequence: 5
 created: 2026-09-02
@@ -26,6 +26,11 @@ queue, one controlled frame loop, reverse-order and repeat-safe shutdown,
 temporary no-game adapters, public module entrances, and architecture checks.
 Preserve every accepted Step-2 startup-safety behaviour and every frozen
 interface.
+
+The worker submitted the exact two-commit result at
+`f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. All worker checks and the complete
+primary audit passed. Independent review, integration, Leonardo testing, and
+acceptance remain pending.
 
 ## Plain-language effect
 

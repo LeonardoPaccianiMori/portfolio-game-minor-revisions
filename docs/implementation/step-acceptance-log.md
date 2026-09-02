@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1 and 2 accepted; exact Step-3 work order active**
+Status: **Steps 1 and 2 accepted; Step-3 primary audit passed; independent review pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -31,7 +31,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    0 | Documented and complete | 2026-08-31    | Step sequence, IDs, links, tables, boundaries, explicit model routing, controlled roles, delegation evidence, project-only AI-use provenance, and fresh independent review plus re-review passed | Not applicable      | Workflow documentation and its model-routed governance amendment approved by Leonardo on 2026-08-31 | Containing commit                                                            | Records documentation only; no implementation is approved.             |
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
-|    3 | Implementing            | 2026-09-02    | Controlled worker pending on active `MR-WO-WP00-005`; primary audit and fresh independent review follow                                                                                          | Pending             | Pending                                                                                             | Plan checkpoint `cb19a1e`; activation checkpoint pending                     | Exact application-lifecycle scope only.                                |
+|    3 | Technical review        | 2026-09-02    | Exact two-commit worker submission and complete primary audit passed; fresh independent review pending                                                                                           | Pending             | Pending                                                                                             | Plan `cb19a1e`; activation `1b75a96`; worker head `f4130ac`                  | Exact application-lifecycle scope only.                                |
 | 4–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -563,18 +563,31 @@ has not yet tested or accepted a Step-3 result.
 
 The primary agent prepared and reconciled the plan authority records, created
 and activated `MR-WO-WP00-005`, and selected OpenAI `gpt-5.6-sol` with `high`
-reasoning for the controlled worker. No worker implementation, audit, review,
-integration, or local test has started at this checkpoint.
+reasoning for the controlled worker. That worker submitted the exact approved
+two-commit result. The primary agent then completed the one full pre-review
+audit and found no blocker or required correction. Independent review,
+integration, and the local test remain pending. Matching completed-use entries
+are in `ai-use-log.md` and `MR-CONTRIB-WP00-005`.
 
 ### Files and commits
 
 The plan checkpoint is `cb19a1e99b365aa98f8dbec4e33b9fde31864a5e`. The
-activation checkpoint adds the exact work order and current-state records. Git
-history is authoritative for the activation commit identifier.
+activation checkpoint is `1b75a968ba2f419b66158d8f88abc119378af27d`.
+Worker commits are `d3c11c2a23a6a473d43ecd29d377d6eb34b691f2` and
+`f4130acb6f555cb55ff09f30b5f89e3ca49a4d89`. They remain only on the isolated
+work branch; no integration commit exists.
 
 ### Automated and review evidence
 
-Pending after work-order activation and implementation.
+Worker and primary `npm run check` passed 111 tests. Worker and primary `npm
+run verify` passed lint, formatting, 111 tests, coverage, the 16-module build,
+and all 15 browser flows across Chromium, Firefox, and WebKit. Coverage is
+90.41 percent statements, 88.77 percent branches, 79.91 percent functions, and
+93.27 percent lines. Scope, public entrances, dependency direction, lifecycle,
+queue, frame-loop, shutdown, startup, package, configuration, privacy,
+production, runtime-network, source-map, whitespace, remote, and clean-state
+checks passed. The complete primary audit found no blocker or required
+correction. One fresh independent review is pending.
 
 ### Leonardo test packet
 
@@ -582,7 +595,9 @@ Planned as described above; not yet run.
 
 ### Observed result and corrections
 
-None. No Step-3 result exists at this checkpoint.
+The worker corrected private implementation and test defects before final
+submission. The final submitted range and primary audit contain no open
+approved-scope defect. This is not independent-review evidence.
 
 ### Acceptance decision
 
@@ -590,9 +605,10 @@ Pending. Plan approval is not Step-3 acceptance.
 
 ### Known limitations and next boundary
 
-Step 3 is implementing under `MR-WO-WP00-005`. The next action is to verify the
-isolated worktree and start the exact selected worker. Step 4 remains
-unapproved.
+Step 3 is in technical review. `MR-WO-WP00-005` and
+`MR-CONTRIB-WP00-005` are submitted, and the complete primary audit passed.
+The next action is the one fresh read-only OpenAI `gpt-5.6-sol` review using
+`xhigh` reasoning. Step 4 remains unapproved.
 
 ## Required accepted-step entry
 

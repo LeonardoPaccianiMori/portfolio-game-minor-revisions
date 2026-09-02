@@ -14,7 +14,8 @@ survival loop without being presented as a perfect life.
 
 Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
 approved on 2026-09-01; Steps 1 and 2 accepted; exact Step-3 plan approved by
-Leonardo on 2026-09-02; controlled Step-3 work order active**.
+Leonardo on 2026-09-02; Step-3 primary audit passed; independent review
+pending**.
 
 This repository contains the accepted Step-1 foundation and Step-2 startup
 safety result, but no Three.js scene, game system, production asset, or
@@ -77,9 +78,11 @@ approved the exact Step-1 plan on 2026-09-01 and accepted its integrated result
 on the same date. Leonardo separately approved the exact Step-2 plan and later
 correction plans, then accepted the integrated Step-2 result on 2026-09-02.
 Leonardo approved the exact Step-3 application-lifecycle plan on the same day.
-That approval authorizes only its controlled activation and implementation; it
-does not accept Step 3 or authorize Step 4. Each later step needs its own plan,
-local test or result review, correction cycle, and explicit acceptance. The
+The controlled worker submitted the exact application-lifecycle result, and
+the complete primary audit passed. Independent review, integration, Leonardo
+testing, and acceptance remain pending. This does not accept Step 3 or
+authorize Step 4. Each later step needs its own plan, local test or result
+review, correction cycle, and explicit acceptance. The
 durable resume point is
 [`development-status.md`](docs/implementation/development-status.md), and the
 complete sequence is
