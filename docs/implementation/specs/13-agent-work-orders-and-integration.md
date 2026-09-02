@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Step 1 accepted; Step 2 technical review passed; integration, Leonardo testing, and acceptance pending**
+Status: **documented technical specification; Step 1 accepted; Step 2 integrated and ready for Leonardo testing**
 
 ## Purpose and authority
 
@@ -682,6 +682,7 @@ statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Leonardo
 approved Gate 1 and accepted Step 1 on 2026-09-01. Leonardo approved the exact
 Step-2 plan and its later correction plans on the same date. The correction code
-and primary audit are complete, and fresh independent technical review passed.
-Integration, Leonardo testing, and acceptance remain pending. Step 3 requires
-its own exact plan and separate approval.
+and primary audit are complete, fresh independent technical review passed, and
+the reviewed result is integrated on local `main`. Complete main-branch
+validation passed. Leonardo testing and acceptance remain pending. Step 3
+requires its own exact plan and separate approval.

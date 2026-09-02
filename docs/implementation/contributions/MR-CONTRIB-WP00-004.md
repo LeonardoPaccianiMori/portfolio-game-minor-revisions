@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP00-004
 type: implementation-contribution
-status: reviewed
+status: integrated
 work_order: MR-WO-WP00-004
 work_package: MR-WP-00
 created: 2026-09-01
@@ -24,8 +24,9 @@ The worker reports that all required checks pass. The complete primary audit
 also passes with no new blocker or required correction. Fresh independent
 review passed the technical correction but found one required current-record
 reconciliation. Leonardo approved that exact record-only correction, and
-focused primary validation passed. The reviewed result is not integrated,
-tested by Leonardo, or accepted.
+focused primary validation passed. The reviewed result is integrated on local
+`main`, and complete main-branch validation passed. It is not tested by
+Leonardo or accepted.
 
 ## Changed files
 
@@ -63,7 +64,12 @@ every public action remain blocked.
 
 ## Integrated commits
 
-Not yet available.
+- Original Step-2 implementation: `41adfbb` through `aeae015`.
+- Complete correction: `1e28a45` through `4475844`.
+
+The primary agent cherry-picked all 12 worker commits in dependency order. No
+conflict occurred. The integrated source and test paths match corrected worker
+head `51adc02d5eb1ab72142ed7ae7489b3b4cde2feb2` exactly.
 
 ## Commands and results
 
@@ -97,6 +103,13 @@ rejection, controlled unit substitutes, production privacy, no external
 browser request, no source map, no production console call, and Git whitespace.
 It found no new blocker, required correction, unsupported claim, or scope
 change.
+
+After integration, main `npm run verify` passed 91 unit tests, 96.10 percent
+statement coverage, 92.30 percent branch coverage, 95.23 percent function
+coverage, 96.48 percent line coverage, the 10-module production build, and all
+15 Chromium, Firefox, and WebKit flows. Exact worker-content, unchanged package
+and configuration, public-import, production-output, external-request,
+source-map, remote, Git whitespace, and clean-state checks passed.
 
 ## Independent review
 
@@ -144,4 +157,5 @@ real timer. All later checks passed.
 ## Leonardo decision
 
 Leonardo approved the exact complete Step-2 correction plan on 2026-09-01. He
-has not yet received the local test packet or accepted the implementation.
+has received the local test packet. His observations and acceptance decision
+are not yet available.

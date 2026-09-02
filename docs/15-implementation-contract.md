@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Step 1 accepted; Step 2 technical review passed; integration, Leonardo testing, and acceptance pending**
+Status: **B10 and S01–S14 documented; Step 1 accepted; Step 2 integrated and ready for Leonardo testing**
 
 ## Authorization gate
 
@@ -208,8 +208,9 @@ requirement traceability above. Leonardo approved Gate 1 and separately
 accepted Step 1 on 2026-09-01.
 
 Leonardo approved the exact Step-2 plan and its later correction plans on
-2026-09-01. The correction code and primary audit are complete, and fresh
-independent technical review passed. Integration, Leonardo testing, and
+2026-09-01. The correction code and primary audit are complete, fresh
+independent technical review passed, and the reviewed result is integrated on
+local `main`. Complete main-branch validation passed. Leonardo testing and
 acceptance remain pending. Nothing in this contract authorizes Step 3 or later
 work until Leonardo separately approves that exact step plan. No approval
 carries to a later step.

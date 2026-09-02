@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP00-004
 type: implementation-work-order
-status: reviewed
+status: integrated
 work_package: MR-WP-00
 sequence: 4
 created: 2026-09-01
@@ -31,8 +31,8 @@ Fresh independent review passed the complete technical correction with no
 blocker or advisory finding. It found one required current-record
 reconciliation across four primary-owned authority files outside this order's
 approved record-update list. Leonardo approved that exact record-only
-correction, and focused primary validation passed. The correction is reviewed
-and ready for integration.
+correction, and focused primary validation passed. The correction is reviewed,
+integrated on local `main`, and ready for Leonardo testing.
 
 ## Plain-language effect
 
