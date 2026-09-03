@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP00-007
 type: implementation-work-order
-status: approved
+status: superseded
 work_package: MR-WP-00
 sequence: 7
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-09-03
 base_commit: 0fc7d39b6dbaca6ea57a3f41831041b264a0ca2d
 provider: OpenAI
 model: unknown
@@ -14,9 +14,13 @@ model_selected: 2026-09-02
 branch: work/MR-WP-00-campaign-state-diagnostic
 worktree: .worktrees/MR-WP-00-campaign-state-diagnostic/
 supersedes: MR-WO-WP00-006
+superseded_by: MR-WO-WP00-008
 ---
 
 # MR-WO-WP00-007 — Correct the private campaign-state diagnostic
+
+This order is historical. It did not activate after the latest complete review
+found a further rules-authority gap. `MR-WO-WP00-008` supersedes it.
 
 ## Objective
 

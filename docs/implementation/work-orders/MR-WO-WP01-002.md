@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP01-002
 type: implementation-work-order
-status: active
+status: superseded
 work_package: MR-WP-01
 sequence: 2
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-09-03
 base_commit: 94b12f38b36ef7acf4bd6fcc4bd344db6cd39454
 provider: OpenAI
 model: gpt-5.6-sol
@@ -14,9 +14,15 @@ model_selected: 2026-09-02
 branch: work/MR-WP-01-campaign-state
 worktree: .worktrees/MR-WP-01-campaign-state/
 supersedes: MR-WO-WP01-001
+superseded_by: MR-WO-WP01-003
 ---
 
 # MR-WO-WP01-002 — Correct the Step-4 campaign-state foundation
+
+This order is historical. The latest complete review and the resumed worker
+proved that frozen `MR-IF-002 v3` lacked the typed facts needed to complete the
+route and PIIM validation task without guessing. No edit or commit was made in
+that blocked attempt. `MR-WO-WP01-003` supersedes this order.
 
 ## Objective
 

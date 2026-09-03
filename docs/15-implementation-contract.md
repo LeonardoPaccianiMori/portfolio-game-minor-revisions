@@ -236,7 +236,8 @@ Complete independent review blocked integration of those first submissions.
 It found a valid diagnostic but incomplete initial state, global history,
 closed experiment bands, invariants, canonical ordering, command shapes,
 semantic tests, traceability, and current records. Leonardo approved the exact
-evidence-led correction on 2026-09-02. Frozen `MR-IF-002 v3` supersedes `v2`;
-`MR-WO-WP01-002` supersedes the rules order and can activate first;
-`MR-WO-WP00-007` supersedes the diagnostic order and waits. All exclusions and
+evidence-led correction on 2026-09-02. A later complete review exposed a typed
+prerequisite-proof gap, and Leonardo approved frozen `MR-IF-002 v4` on
+2026-09-03. `MR-WO-WP01-003` supersedes the rules order and is active;
+`MR-WO-WP00-008` supersedes the diagnostic order and waits. All exclusions and
 the Step-5 block remain unchanged.

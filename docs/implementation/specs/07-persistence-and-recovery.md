@@ -713,3 +713,8 @@ fixed inventories through S03 and S06 before save or load. The ending-card
 facts passed by `completeCampaign` are the exact record defined here without a
 completion sequence; persistence alone assigns that sequence. No save or
 migration exists.
+
+The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with `v4`.
+Persistence preserves the added typed prerequisite proofs through the same
+canonical checked-state boundary. No save migration exists because Step 4 has
+not been integrated or accepted.

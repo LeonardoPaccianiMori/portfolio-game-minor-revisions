@@ -912,6 +912,13 @@ receive only the view needed by their public port. Raw JSON, raw source
 objects, source arrays, and a mutable complete catalogue are never read outside
 the content module.
 
+For frozen `MR-IF-002 v4`, the rules view also supplies the exact semantic
+mapping for each evidence card's `piimRole`, each board claim's `claimLevel`,
+the eight fixed manuscript requirement keys, and each concern's `routeImpact`.
+Content validation rejects a stored typed role that does not match its authored
+source. Rules never infer one of these meanings from a general-purpose ID or
+prose key.
+
 The validator creates new checked copies and retains no input reference. A
 consumer cannot cast or mutate one view to obtain another.
 
@@ -1036,3 +1043,8 @@ IDs. Its validated restricted view supplies the exact object when S04 or S05
 first materializes that object in campaign state. Rules cannot create an
 undocumented content ID. Profiles, validation, and migration meaning do not
 change.
+
+The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with `v4`.
+The restricted rules view supplies the role mappings above, while campaign
+state stores their typed proof. This changes no authored object, prose, count,
+profile, route rule, PIIM rule, or build behaviour.

@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–3 accepted; Step-4 rules correction active**
+Status: **Steps 1–3 accepted; Step-4 v4 rules correction active**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -32,14 +32,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    1 | Accepted                | 2026-09-01    | Final review, integration, clean install, main checks, build, three-browser flows, audit, production, network, and Git checks passed                                                             | Passed 2026-09-01   | Leonardo explicitly accepted Step 1 on 2026-09-01                                                   | Containing commit plus integrated worker commits `41d7d6b` through `e9c9d05` | The accepted result is the static local foundation, not a game system. |
 |    2 | Accepted                | 2026-09-01    | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02 | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02    | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02   | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                    | Four expected lines persisted after repeated reloads.                  |
-|    4 | Correcting              | 2026-09-02    | First submissions passed 154 tests, coverage, build, 21 browser flows, and audit; complete review blocked integration; exact `v3` rules correction is active                                     | Pending             | Pending                                                                                             | Plan `580c8d9`; rules `94b12f3`; diagnostic `0fc7d39`; authority `2904f75`   | Complete only active `MR-WO-WP01-002`.                                 |
+|    4 | Correcting              | 2026-09-02    | Three correction commits and diagnostic copies passed applicable checks; latest complete review exposed a `v3` prerequisite-proof gap; exact `v4` rules correction is active                     | Pending             | Pending                                                                                             | Plan `580c8d9`; authority `2904f75`; latest reviewed packet `09dbbe8`        | Complete only active `MR-WO-WP01-003`.                                 |
 | 5–70 | Not started             | —             | —                                                                                                                                                                                                | —                   | —                                                                                                   | —                                                                            | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
 | Gate                               | State    | Leonardo decision | Effect                                                                              | Next boundary                          |
 | ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------- | -------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Complete active `MR-WO-WP01-002` first |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–3 were separately planned and accepted | Complete active `MR-WO-WP01-003` first |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -732,6 +732,13 @@ sparse initialization boundary, exact correction files and checks, the two
 superseding work orders, the same OpenAI `gpt-5.6-sol` worker using `high`
 reasoning, and the same OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning.
 
+On 2026-09-03, Leonardo approved the narrow prerequisite-proof recovery plan.
+He approved `MR-IMP-OPEN-018`, `MR-IMP-DEC-307`, frozen `MR-IF-002 v4`, exact
+purpose, files, requirements, checks, local test, exclusions, commit messages,
+impact analysis, superseding `MR-WO-WP01-003` and `MR-WO-WP00-008`, the same
+OpenAI `gpt-5.6-sol` `high` worker, and one new fresh OpenAI `gpt-5.6-sol`
+`xhigh` final reviewer. He has not tested or accepted Step 4.
+
 ### Agent contribution
 
 The primary agent prepared the first plan and impact packet, created the first
@@ -739,15 +746,22 @@ two work orders and isolated worktrees, and coordinated both submissions and
 the complete primary audit. The complete independent reviewer then reported all
 findings together and blocked integration. The primary agent verified the
 missing-authority condition, prepared the approved `v3` packet, and created
-superseding `MR-WO-WP01-002` and `MR-WO-WP00-007`. Correction, integration,
-local server, Leonardo test, and acceptance do not yet exist.
+superseding `MR-WO-WP01-002` and `MR-WO-WP00-007`. The Sol `high` worker then
+submitted three narrow correction commits. Diagnostic copies and record
+corrections produced packet `09dbbe8`. A new fresh Sol `xhigh` reviewer found
+four required issues. The resumed Sol `high` worker proved that two issues
+could not be represented by `v3` and stopped with a clean unchanged worktree.
+The primary agent prepared the approved `v4` authority and superseding orders.
+Integration, Leonardo test, and acceptance do not yet exist.
 
 ### Files and commits
 
 The starting repository commit is
 `596fd3564449fa7776430f44d6ba8f4cd0441dc2`. The plan checkpoint is the commit
 `580c8d927434d6a05c2e79af1c3880ca955edd58`. Both work orders and worktrees use
-that exact base. Git history is authoritative for the activation commit.
+that exact historical base. Rules corrections are `e602613`, `c2a5241`, and
+`53f34b8`; diagnostic copies and records end at `09dbbe8`. Git history is
+authoritative for the `v4` authority commit and active order.
 
 ### Automated and review evidence
 
@@ -771,6 +785,22 @@ The diagnostic itself passed its privacy, network, scope, exact-query, safe
 field, Standard-versus-Supported, normal-page, and browser checks. The review
 does not accept Step 4.
 
+The corrected packet later passed 193 combined tests, 92.18 percent line
+coverage, 90.63 percent branch coverage, a 115-module build, zero audit
+vulnerabilities, and 21 browser flows. The isolated duplicate-member
+correction then passed 190 worker and 193 combined tests without a runtime
+change. The latest fresh Sol `xhigh` review confirmed that duplicate evidence
+and found four remaining required issues together:
+
+- route states did not enforce their exact prerequisites;
+- PIIM cards and outcomes did not enforce source and causal order;
+- PIIM accepted a target other than `MR-PIIM-OUTCOME`; and
+- deeply nested JSON could throw instead of returning a typed failure.
+
+The resumed worker confirmed that `v3` lacked typed route and PIIM proof and
+made no edit. Failed or blocked attempts are preserved here and in work-order
+history, not in `ai-use-log.md`.
+
 ### Leonardo test packet
 
 Pending. After reviewed integration, Leonardo will compare the fixed Standard
@@ -780,10 +810,9 @@ confirm that the normal Step-3 page is unchanged.
 ### Observed result and corrections
 
 The approved narrow foundation inventory amendment is complete on the
-diagnostic branch. The complete technical and governance correction is now
-defined by frozen `MR-IF-002 v3`, `MR-WO-WP01-002`, and `MR-WO-WP00-007`.
-Historical `v1`, `v2`, both first submissions, their audit, and the blocked
-review remain evidence.
+diagnostic branch. The next correction is now defined by frozen
+`MR-IF-002 v4`, `MR-WO-WP01-003`, and `MR-WO-WP00-008`. Historical `v1`
+through `v3`, all submissions, audits, and reviews remain evidence.
 
 ### Acceptance decision
 
@@ -791,12 +820,13 @@ Pending. Plan approval is not Step-4 acceptance.
 
 ### Known limitations and next boundary
 
-The approved OpenAI `gpt-5.6-sol` `high` `MR-WO-WP01-002` correction is active
-from authority checkpoint `2904f751`. After its verified submission, the primary agent
-can activate `MR-WO-WP00-007`, run all combined checks, complete one new
-primary audit, and send one fresh complete correction packet to the same
-approved Sol `xhigh` reviewer. Integration, Leonardo testing, and acceptance
-remain pending. Step 5 and every public action remain unapproved.
+The approved OpenAI `gpt-5.6-sol` `high` `MR-WO-WP01-003` correction is active
+from the local authority commit that contains it. After its verified
+submission, the primary agent can activate `MR-WO-WP00-008`, run all combined
+checks, complete one new primary audit, and send one complete packet to a new
+fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning. Integration,
+Leonardo testing, and acceptance remain pending. Step 5 and every public
+action remain unapproved.
 
 ## Required accepted-step entry
 

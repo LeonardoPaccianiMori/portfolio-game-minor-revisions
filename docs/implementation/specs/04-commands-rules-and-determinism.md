@@ -521,6 +521,15 @@ redraw it. A committed journal or public-record withdrawal creates
 `evaluateCareerRoute` runs once for each route at its fixed check. A failed
 check closes the route and never reopens it.
 
+The command stores the frozen `MR-IF-002 v4` evaluation proof in the same
+atomic transition. Aldercroft has named proof fields for plan timing, evidence,
+Elena confidence-or-trust, no blocking concern, and no public withdrawal.
+Morrow has named proof fields for reply, video, public preprint, analysed
+records, honest limitation, Camila trust, no confession, no blocking conflict,
+and no public withdrawal. `eligible` is the conjunction of the named fields.
+No general-purpose content ID or effect ID can stand in for one of these
+facts.
+
 Aldercroft checks once in Week 13. It requires all of:
 
 - the research plan completed before Week 12;
@@ -573,6 +582,10 @@ The relationship module uses this fixed tie order:
 
 The resolver records the approved module IDs in order. It creates no new paper
 draw, route, relationship fact, or moral ranking.
+
+Complete-state conclusion validation uses the same four exact final choices
+and the ordered career, paper, integrity, fatigue, and relationship module
+families. It does not accept a module only because it is a stable ID.
 
 ## Required S04 fixtures
 
@@ -703,3 +716,9 @@ effect members. `analyseExperiment` uses a non-empty caveat tuple. Experiment
 preparation, projected result, final result, and raw-record preparation bands
 use only `robust`, `mixed`, or `compromised`. `completeCampaign` uses the exact
 ending-card facts above. Command algorithms remain later work.
+
+The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with frozen `v4`
+and makes the existing route and PIIM rules checkable through exact typed
+proof. The conditions and tables in this specification do not change. The
+correction does not add a command, effect, rejection, draw, content result, or
+player-visible choice.

@@ -1,6 +1,6 @@
 # S14 — Specification Audit and Gate Packet
 
-Status: **historical S14 audit documented; Gate 1 approved; Steps 1–3 accepted; approved Step-4 correction freezes `MR-IF-002 v3`**
+Status: **historical S14 audit documented; Gate 1 approved; Steps 1–3 accepted; approved Step-4 correction freezes `MR-IF-002 v4`**
 
 ## Purpose and authority
 
@@ -323,3 +323,14 @@ traceability. Historical `v1`, `v2`, first submissions, primary audit, and
 blocked review remain evidence. The correction must pass applicable checks,
 one new complete primary audit, and one fresh complete review by the same
 approved Sol `xhigh` reviewer before integration.
+
+The next complete review found four further required issues: route
+prerequisites, PIIM source and order prerequisites, the fixed PIIM target, and
+deep-JSON typed failure. The resumed Sol `high` worker confirmed that `v3`
+could not represent the first two exactly and stopped without edits. Leonardo
+approved `MR-IF-002 v4` on 2026-09-03. It adds only typed prerequisite proof;
+the affected consumers and all visible rules remain unchanged. No save or
+migration exists. `MR-IMP-OPEN-018`, `MR-IMP-DEC-307`, S03–S07, S12–S13,
+`MR-WO-WP01-003`, and `MR-WO-WP00-008` contain the connected authority. The
+new correction still requires complete checks, primary audit, and one new
+fresh Sol `xhigh` review before integration.

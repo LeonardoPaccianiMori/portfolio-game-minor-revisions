@@ -234,6 +234,50 @@ resolved PIIM outcome also stores its response band, the `piimOutcome`
 namespace, stable target ID, draw index `0`, integer bucket, and one locked
 result. Withdrawal stores no variation facts and uses `rejectedOrWithdrawn`.
 
+Frozen `MR-IF-002 v4` adds the minimum PIIM source and order proof:
+
+- every evidence card has `piimRole` equal to `batch`, `oxygen`, or `none`;
+- every manuscript board has `claimLevel` equal to `careful`, `strong`,
+  `inflated`, or `null`;
+- every snapshot's strict `requirementResults` object has exactly
+  `supportedFigure`, `relevantControl`, `distinctExperimentFigures`,
+  `structureCoverage`, `rhythmCoverage`, `matchedControl`, `caveat`, and
+  `causalSupport`; each value is `met`, `missing`, `conflict`, `unsupported`,
+  or `null` when that requirement does not apply to the selected claim;
+- every snapshot has `statedMissingRequirement`, which is one applicable
+  requirement key or `null`;
+- `piimCardSources` has exactly `batchEvidenceCardId`,
+  `oxygenEvidenceCardId`, and `claimSnapshotId`, with a nullable source
+  permitted only when its card is `notMet`; and
+- `piimMilestones` has exactly `publicPreprintRevision`,
+  `journalChainRevision`, `reviewerReportsRevision`, `piimCardsRevision`, and
+  `piimOutcomeRevision`, each a nullable campaign revision.
+
+Present milestone revisions are safe positive integers no greater than the
+campaign revision. They are strictly ordered as listed. A later milestone
+cannot exist without every earlier milestone. All three reviewer reports must
+exist at their milestone. PIIM cards must use the current immutable snapshot
+and applicable included evidence. The outcome target is exactly
+`MR-PIIM-OUTCOME`, and its outcome milestone is required.
+
+For PIIM claim validation, Careful requires `supportedFigure`,
+`relevantControl`, and `caveat`. Strong requires
+`distinctExperimentFigures`, `structureCoverage`, `rhythmCoverage`,
+`matchedControl`, and `caveat`. Inflated requires the Strong set plus
+`causalSupport`. Other requirement keys are `null`. A non-null
+`statedMissingRequirement` must name one applicable `missing` result and needs
+a present board caveat. A `conflict` result is a visible contradiction. The claim
+card is `met` when every applicable result is `met`, `partlyMet` when exactly
+one applicable result is `missing` and the caveat states that limit, and
+`notMet` otherwise. An Inflated claim without causal support is `notMet`.
+
+For batch and oxygen, the source evidence card must have the matching
+`piimRole`, a present raw record, an included figure, its control, and its
+caveat. `usable` maps to `met`; valid `worthRepeating` or `inconclusive` maps
+to `partlyMet`; an absent, omitted, `suspicious`, visibly unsupported, or
+visibly contradicted source maps to `notMet`. The fixed S04 response-band and
+bucket tables remain unchanged.
+
 The manuscript stores fixed variable-authorship states for Haoran and Samira,
 the factual status of reported readings (`honest`, `altered`, or
 `unsupported`), omitted evidence IDs, and committed effects. Each committed
@@ -273,6 +317,57 @@ Route states are `locked`, `developing`, `available`, `closed`, `chosen`, and
 `declined`. The Aldercroft and Morrow routes start locked. A chosen route must
 have been available. Choosing it records any other available route as
 declined. Locked or closed routes cannot be chosen.
+
+Frozen `MR-IF-002 v4` adds the minimum permanent facts that make the existing
+route rules checkable without interpreting a general-purpose content ID.
+`narrative.careerProgress` contains
+`researchPlanCompletedPeriod`, `camilaReplySent`, `morrowVideoCompleted`, and
+`fabricationConfessedToCamila`. The period is `null` or an integer from `0`
+through `43`; the three other fields are booleans. A video needs an earlier
+reply, and a confession to Camila can exist only with the completed video.
+
+Each concern has one `routeImpact`: `none`, `aldercroft`, `morrow`, or `both`.
+The S06 restricted rules view owns the mapping from its authored source to
+this value. A visible concern with the applicable impact blocks that route
+until its current response is `correct`. The concern and response history stay
+permanent after correction.
+
+Each route also stores `evaluation`, which is `null` before its one fixed
+check. The locked evaluation proof contains the exact evaluation period, one
+named boolean for every S04 prerequisite, and `eligible`. `eligible` is true
+only when every named prerequisite was true. `evaluated`, `evaluation`, and
+the route state must agree: `available`, `chosen`, and `declined` require one
+eligible proof. A failed evaluation closes the route with an ineligible proof.
+A route that closes for an earlier or later authored reason keeps `evaluation`
+`null` or preserves its earlier eligible proof. A later trust, concern, paper,
+or PIIM change cannot rewrite the proof or reopen the route. The transition that
+creates the proof validates its named values against the pre-transition state;
+the complete-state validator checks its fixed shape, internal agreement, and
+all still-permanent source facts.
+
+Each route also stores `closureReason`, which is `null` unless its state is
+`closed`. Aldercroft permits `failedEvaluation` or `publicWithdrawal`. Morrow
+permits `failedEvaluation`, `publicWithdrawal`, `messageExpired`,
+`fabricationConfession`, or `playerDeclined`. The reason must agree with the
+permanent state fact that caused it. A failed evaluation requires its route
+proof; an earlier closure does not fabricate an evaluation.
+
+The route evaluation is this closed union:
+
+- Aldercroft stores `routeId: aldercroft`, a positive `evaluationRevision`,
+  `evaluationPeriod` from `48` through `51`, `researchPlanOnTime`, `evidenceAtLeastSix`,
+  `elenaConfidenceOrTrust`, `noBlockingConcern`,
+  `publicRecordNotWithdrawn`, and `eligible`;
+- Morrow stores `routeId: morrow`, a positive `evaluationRevision`,
+  `evaluationPeriod` from `56` through `59`, `camilaReplySent`,
+  `morrowVideoCompleted`, `publicPreprintAvailable`, `threeAnalysedRecords`,
+  `honestLimitationPresent`, `camilaTrustAtLeast41`, `noFabricationConfession`,
+  `noBlockingConflict`, and `eligible`.
+
+The evaluation revision cannot exceed the campaign revision. Every named
+prerequisite is boolean. `eligible` is their conjunction.
+`evaluation.routeId` matches the record key. An evaluated route keeps this
+proof when it becomes `chosen` or `declined`.
 
 The scheduler stores `eventsById`, ordered unique `queue`, `activeEventId`, and
 `lastSchedulerRevision`. Every stored event contains its stable ID, lifecycle
@@ -408,6 +503,13 @@ orphan or premature terminal facts. S06 owns existence in the selected
 authored catalogue. A later transition-pair check owns comparison of permanent
 facts between two otherwise valid states.
 
+For `MR-IF-002 v4`, this boundary includes exact route-evaluation proofs,
+career-progress order, concern route impact, PIIM source roles, fixed claim
+requirements, milestone order, the single PIIM target, and the complete S04
+card mapping. S06 still owns the independent check that an authored ID has the
+semantic role claimed by its typed rules-view entry. A general-purpose content
+or effect ID alone is never proof of a route or PIIM prerequisite.
+
 ## Canonical JSON representation
 
 `CampaignStateCodec.serialize()` emits one compact UTF-8 JSON text containing
@@ -442,12 +544,14 @@ At creation:
 - there is no run, active run, raw record, evidence card, or stop log;
 - every manuscript slot and revision-task collection is empty; the three exact
   reviewer records exist with `null` forms; preprint is `notPosted`, journal is
-  `notSubmitted`, and later paper facts are `null`;
+  `notSubmitted`, the PIIM source and milestone fields are empty, and later
+  paper facts are `null`;
 - `MR-SCN-CLARIFIED` is the only stored scene and event, is queued, and is the
   only scheduler queue entry; message, request, and concern collections are
   empty; no event is active; the opening event's first eligible period is `0`,
   its resolved period is `null`, and the last scheduler revision is `0`;
-- both routes are locked;
+- career progress is empty and false; both routes are locked, unevaluated, and
+  have `null` evaluation proofs and closure reasons;
 - the world uses `orderlyButOverbooked`, recovery anchor
   `MR-ANCHOR-REC-SHARED-DESKS`, absent Elena,
   `MR-ANCHOR-CHARACTER-HAORAN-TISSUE-CULTURE`,
@@ -608,3 +712,18 @@ story, command algorithm, save migration, or accepted earlier result. S06
 continues to own authored IDs. Historical `v1`, `v2`, the first submitted code,
 the primary audit, and the blocked review remain evidence. `MR-IMP-OPEN-017`
 and `MR-IMP-DEC-306` record the finding, impact, approval, and resolution.
+
+On 2026-09-03, the next complete review found that `v3` stated exact route and
+PIIM prerequisite validation but did not store enough typed proof to perform
+it. Leonardo approved the narrow correction that supersedes `v3` with frozen
+`v4`. It adds only the career-progress, concern-route-impact,
+route-evaluation, PIIM-role, claim-level, fixed requirement, PIIM-source, and
+milestone facts defined above. It also fixes the deterministic outcome target
+to `MR-PIIM-OUTCOME`.
+
+The S04 route conditions, PIIM tables, conclusion rules, starting values,
+story, balance, commands, effects, and player-visible results do not change.
+No save or migration exists because Step 4 is not integrated or accepted.
+Historical `v1` through `v3`, all submitted commits, audits, and reviews remain
+evidence. `MR-IMP-OPEN-018` and `MR-IMP-DEC-307` record the approved impact
+and resolution.

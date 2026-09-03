@@ -698,3 +698,12 @@ first submissions. Leonardo then approved `MR-IF-002 v3` and superseding
 `MR-WO-WP01-002` and `MR-WO-WP00-007`, with the same exact worker and reviewer
 selections. Only the rules correction can activate first. Step 5 remains
 unapproved.
+
+A later complete review found four further required issues. The resumed Sol
+`high` worker proved that `v3` lacked the typed state facts required for exact
+route and PIIM validation and stopped without edits. Leonardo approved frozen
+`MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
+2026-09-03. The same exact Sol `high` worker remains selected. The final review
+must use a new fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning after
+the new complete primary audit. This one-Step-4 correction does not change the
+normal S13 routing matrix.

@@ -1,13 +1,13 @@
 # Incremental Development Status
 
-Last updated: 2026-09-02
+Last updated: 2026-09-03
 
-Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules correction active**
+Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 v4 rules correction active**
 
 ## Durable resume point
 
 - Current step: `4`, exact plan approved by Leonardo on 2026-09-02.
-- Current workflow state: `correcting; superseding rules order active`.
+- Current workflow state: `correcting; v4 prerequisite-proof rules order active`.
 - Current governance: explicit model routing, focused project-local worker,
   independent reviewer, and asset-researcher roles, a two-subagent limit, and
   mandatory delegation-table evidence are documented. Earlier decisions and
@@ -20,13 +20,13 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules c
 - Last accepted implementation step: Step 3, accepted by Leonardo on
   2026-09-02.
 - Next possible action: the same approved OpenAI `gpt-5.6-sol` worker using
-  `high` reasoning completes only active `MR-WO-WP01-002`.
+  `high` reasoning completes only active `MR-WO-WP01-003`.
 - Active approved implementation plan: Step 4 campaign-state foundation and
-  private diagnostic, including the evidence-led `MR-IF-002 v3` correction.
-- Active work orders: `MR-WO-WP01-002` is active from read-only authority
-  checkpoint `2904f751de36422add383a7f2363c3fba50a8e7d`;
-  `MR-WO-WP00-007` is approved but waits for the verified rules correction.
-  `MR-WO-WP01-001` and `MR-WO-WP00-006` are superseded historical submissions.
+  private diagnostic, including the evidence-led `MR-IF-002 v4` correction.
+- Active work orders: `MR-WO-WP01-003` is active from the local authority
+  commit that contains it; `MR-WO-WP00-008` is approved but waits for the
+  verified rules correction. Earlier Step-4 orders are superseded historical
+  evidence.
 - Active contribution records: `MR-CONTRIB-WP01-001` and
   `MR-CONTRIB-WP00-006` preserve the blocked first submissions.
   `MR-CONTRIB-WP00-005` and
@@ -35,10 +35,11 @@ Status: **Step 0 complete; Gate 1 approved; Steps 1–3 accepted; Step-4 rules c
   blocking review.
 - Active player test: none. Leonardo confirmed the four expected Step-3 lines
   after repeated reloads and explicitly accepted Step 3.
-- Step-4 correction authority: `MR-IMP-OPEN-017`, `MR-IMP-DEC-306`, frozen
-  `MR-IF-002 v3`, exact purpose, files, requirements, checks, local test,
+- Step-4 correction authority: `MR-IMP-OPEN-018`, `MR-IMP-DEC-307`, frozen
+  `MR-IF-002 v4`, exact purpose, files, requirements, checks, local test,
   exclusions, commit boundaries, two superseding work orders, the same Sol
-  `high` worker, and the same Sol `xhigh` reviewer were approved on 2026-09-02.
+  `high` worker, and a new fresh Sol `xhigh` reviewer were approved on
+  2026-09-03.
   Approval is not correction, integration, test, or acceptance.
 - Last accepted Step-2 correction cycle: primary-audited. Primary verification
   confirms 91 unit tests, 96.48 percent line coverage, 92.30 percent branch
@@ -143,7 +144,7 @@ insert a future or guessed commit identifier.
 | Step 1                                          | Accepted on 2026-09-01         | The reviewed S01 foundation, automated evidence, and Leonardo's direct local-page result are accepted.                               |
 | Step 2                                          | Accepted on 2026-09-02         | The reviewed implementation and correction are integrated, complete main checks passed, and Leonardo explicitly accepted the result. |
 | Step 3                                          | Accepted on 2026-09-02         | The reviewed integration, complete main validation, visible reload result, and explicit acceptance are recorded.                     |
-| Step 4                                          | Correcting                     | Complete review blocked integration; `MR-WO-WP01-002` is active and `MR-WO-WP00-007` waits.                                          |
+| Step 4                                          | Correcting                     | Latest complete review exposed the `v3` proof gap; `MR-WO-WP01-003` is active and `MR-WO-WP00-008` waits.                            |
 | Steps 5–70                                      | Blocked                        | Every later step needs accepted dependencies and its own approved plan.                                                              |
 | Asset research and integration                  | Blocked until its named step   | Candidate research and integration remain separate approvals.                                                                        |
 | Remote, licence, release, deployment, portfolio | Blocked and outside Steps 0–70 | Each needs a later separate plan and approval.                                                                                       |

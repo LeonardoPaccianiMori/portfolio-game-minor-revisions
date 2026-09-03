@@ -25,10 +25,11 @@ plan and its evidence-led `MR-IF-002 v2` creation-input refinement on
 `MR-WO-WP00-006` submitted the private diagnostic as `0fc7d39`; complete
 checks and the primary audit passed. Fresh independent review blocked
 integration with one complete set of campaign-contract findings. Leonardo
-approved the evidence-led `MR-IF-002 v3` correction and superseding
-`MR-WO-WP01-002` and `MR-WO-WP00-007`. `MR-WO-WP01-002` is active for the
-approved Sol `high` correction worker from authority checkpoint `2904f751`;
-`MR-WO-WP00-007` remains approved and waiting.
+approved the evidence-led `MR-IF-002 v3` correction. A later complete review
+proved that `v3` could not represent every route and PIIM prerequisite.
+Leonardo approved frozen `MR-IF-002 v4` and superseding `MR-WO-WP01-003` and
+`MR-WO-WP00-008` on 2026-09-03. `MR-WO-WP01-003` is active for the approved
+Sol `high` correction worker; `MR-WO-WP00-008` remains approved and waiting.
 Step 5 and every later step remain unapproved; approval never carries forward.
 Do not create or change game code, package configuration, tests, production
 assets, or deployment configuration outside an exact approved step.

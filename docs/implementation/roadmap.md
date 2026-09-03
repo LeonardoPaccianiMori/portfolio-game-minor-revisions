@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 `MR-IF-002 v3` correction approved; development governance permits approved evidence-led revisions**
+Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 `MR-IF-002 v4` correction approved; development governance permits approved evidence-led revisions**
 
 ## Purpose
 
@@ -238,5 +238,8 @@ then approved the exact Step-4 plan and evidence-led `MR-IF-002 v2`
 creation-input refinement. Complete review later blocked the first submissions.
 Leonardo approved `MR-IF-002 v3` and the two superseding correction orders.
 `MR-WO-WP01-002` runs first; `MR-WO-WP00-007` waits for its verified
-submission. Do not create a Three.js scene, game system, content, asset,
+submission. A later complete review and clean blocked worker attempt proved
+that `v3` lacked typed route and PIIM proof. Leonardo approved frozen
+`MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
+2026-09-03. Do not create a Three.js scene, game system, content, asset,
 licence, remote, deployment, public-action path, or Step-5 result.

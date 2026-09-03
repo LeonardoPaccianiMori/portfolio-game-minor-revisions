@@ -380,6 +380,11 @@ The fixed causal chain is:
     in Week 14; and
 16. resolve `PIIM` once in Week 15 after the response.
 
+Frozen `MR-IF-002 v4` records the public-preprint, completed-journal-chain,
+reviewer-lock, PIIM-card, and PIIM-outcome campaign revisions. These revisions
+must follow the same order as this chain. They are proof of order, not a second
+scheduler or a new player-visible event.
+
 Required follow-up work costs remain separate from scene period effects:
 
 | Follow-up work                 | Periods | Energy |

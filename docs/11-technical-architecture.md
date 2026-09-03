@@ -1,7 +1,7 @@
 # Technical Architecture
 
 Status: **B10 and S01–S14 documented; Gate 1 approved; Steps 1–3 accepted;
-Step-4 `MR-IF-002 v3` correction approved**
+Step-4 `MR-IF-002 v4` correction approved**
 
 ## Scope and boundary
 
@@ -431,5 +431,5 @@ The freeze and supersession do not claim that a source signature, executable
 fixture, browser result, or performance result exists.
 
 The current implementation authority is the exact approved Step-4 correction.
-Only `MR-WO-WP01-002` can activate first; `MR-WO-WP00-007` waits for its
+Only `MR-WO-WP01-003` is active; `MR-WO-WP00-008` waits for its
 verified result. No approval carries to Step 5 or a later step.

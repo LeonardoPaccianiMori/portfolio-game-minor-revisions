@@ -932,3 +932,11 @@ canonical bytes for equivalent states whose ID-record insertion order differs.
 S04 shape cases must prove a non-empty caveat list, the closed preparation-band
 vocabulary, and complete ending-card effect facts. Step 4 still creates only
 ordinary unit evidence, not S12 fixture files or a complete acceptance row.
+
+The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with `v4`.
+Future S03 and S04 cases must also isolate every route prerequisite, typed
+route-evaluation proof, concern impact, PIIM source, claim requirement,
+milestone-order edge, the exact `MR-PIIM-OUTCOME` target, and a deeply nested
+JSON input that returns a typed failure without throwing. The fallback vector
+must continue to reject run 2 for `MR-FB-EXP-RANGE-REPAIR`. Conclusion cases
+must continue to prove all four choices and the exact ordered ending modules.

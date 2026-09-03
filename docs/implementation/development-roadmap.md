@@ -282,5 +282,10 @@ submissions and complete audit passed their checks, but complete independent
 review blocked integration. Leonardo approved `MR-IF-002 v3` and superseding
 `MR-WO-WP01-002` and `MR-WO-WP00-007`. The rules correction runs first; the
 diagnostic correction waits for its verified submission.
+The next complete review found four further required issues. The resumed Sol
+`high` worker proved that `v3` could not represent the exact route and PIIM
+prerequisites and stopped without edits. Leonardo approved frozen
+`MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
+2026-09-03.
 Step 5, Three.js, game systems, asset research, a remote, licence, deployment,
 and public action remain blocked.
