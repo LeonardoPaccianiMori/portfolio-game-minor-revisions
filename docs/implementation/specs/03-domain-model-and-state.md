@@ -1,6 +1,6 @@
 # S03 Domain Model and Campaign State
 
-Status: **documented; historical `MR-IF-002 v1` and `v2` superseded by approved frozen `v3`; Step-4 correction authority approved**
+Status: **documented; historical `MR-IF-002 v1` through `v3` superseded by approved frozen `v4`; Step-4 v4 correction primary audit complete**
 
 ## Purpose and authority
 
