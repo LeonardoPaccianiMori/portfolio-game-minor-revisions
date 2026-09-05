@@ -66,8 +66,19 @@ Existing synthetic analysed/stop examples moved their impossible period0 respons
 
 Step4 validates saved state; it does not execute action costs, resolve experiments, advance the scheduler, calculate manuscript transitions, save to production storage or prove campaign reachability. Source-ID/scientificFacts equality, selected honest reading semantics and the successful authored rehearsal action need the later connected catalogue and transition tests. A structural slice checkpoint is not evidence that the rehearsal action has run.
 
-MR-IMP-OPEN-019: `MR-FB-EXP-RANGE-REPAIR` has no approved last-start boundary. Primary verified the Terra source result against `docs/12-content-specification.md` (six-template table, fallback replacement paragraph and fallback selection) and S06's corrected timing. No boundary was inferred. For templates without a known authored boundary, Step4 checks the expiry result shape and references but leaves timing proof to connected content. Its fallback fixture's period1 is deliberately synthetic, not a proposed design window. Approve the missing fallback window before dependent fallback content/scheduler work. This does not block current Step4 structural support.
+MR-IMP-OPEN-020: `MR-FB-EXP-RANGE-REPAIR` has no approved last-start boundary. Primary verified the Terra source result against `docs/12-content-specification.md` (six-template table, fallback replacement paragraph and fallback selection) and S06's corrected timing. No boundary was inferred. For templates without a known authored boundary, Step4 checks the expiry result shape and references but leaves timing proof to connected content. Its fallback fixture's period1 is deliberately synthetic, not a proposed design window. Approve the missing fallback window before dependent fallback content/scheduler work. This does not block current Step4 structural support.
 
 ### Review packet and next gate
 
 Fresh read-only Sol xhigh review must examine the complete corrected-base-to-submission code/test packet, the approved baseline and the new amendment diff, relevant frozen contracts, these checks and limits, and the exact prior submission/contribution history. Report all blockers, required corrections and advisories together. The project reviewer profile has no model/effort pin; the assignment explicitly selects Sol xhigh and prohibits writes, further delegation and user contact. Original Sol worker code is not attributed to Astra. Local main integration and Leonardo's diagnostic test remain pending. The approved implementation commit message is `MR-WP-01 Align Step 4 with corrected game contracts`.
+
+## Complete independent review of3dcd8af — 2026-09-06
+
+OpenAI gpt-5.6-sol xhigh, fresh read-only `step4_final_review`, applying the unpinned project reviewer contract through an explicitly selected generic agent. Reviewed the full corrected-base450972c through3dcd8af packet plus focused transplant amendment. No blocker, four required findings, no advisory. No writes, network, delegated agents or independently rerun checks.
+
+1. Missed responses must retain a preparation-issue lower bound after ordered later stabilization, and analysed records with a miss must have limited coverage. Authority: S03 correction last paragraph, S04 preparation table and design12 missed-observation paragraph. The new two-miss robust positive fixture exposed the missing check.
+2. Analysis expiry after the full response set must retain the already locked final band; incomplete running expiry retains null. Authority: S04 final-band lock and approved expiry preservation.
+3. Issue019 already belongs to the original npm amendment. Restore that resolved record and give the fallback question the unused020 ID.
+4. Reconcile status.md current issue, next-action, interface and Step4 fields; old v4 worker pointers are not current authority.
+
+Primary verified all four findings against their cited sources. The record fixes are applied at this correcting checkpoint; the two source fixes and isolated regression tests follow. No new game rule or scope approval is needed. Prior tests remain evidence for3dcd8af, not proof that these findings were already fixed.

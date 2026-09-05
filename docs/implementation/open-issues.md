@@ -67,6 +67,10 @@ Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic 
 
 The material decisions in the September finding register are resolved by MR-IMP-DEC-309. Their runtime verification is measured later, not silently marked complete. Step4 v5 code, full campaign journeys, connected-content semantic checks, pressure/tail play quality and asset feasibility remain open implementation/evaluation obligations at their approved gates. No unanswered creative question blocks the approved Step4 amendment.
 
-## MR-IMP-OPEN-019 — Fallback combined-template start boundary
+## MR-IMP-OPEN-019 — npm toolchain amendment (resolved history)
+
+Resolved by Leonardo on 2026-09-04 through MR-IMP-DEC-308: npm12.0.2 replaces npm11.19.0; Node24.20.0 and all dependency pins remain fixed. Preserved work order MR-WO-WP00-009 and contribution MR-CONTRIB-WP00-009 retain this original identifier. The fallback question uses020; the first amendment checkpoint's accidental reuse is superseded, not a change to the npm decision.
+
+## MR-IMP-OPEN-020 — Fallback combined-template start boundary
 
 Open for the later connected-content plan; not a Step-4 structural-state blocker. The approved six-template table in `../12-content-specification.md` supplies full-game windows, but the fallback replacement `MR-FB-EXP-RANGE-REPAIR` has no explicit start window in its replacement paragraph or selected-content list. S06's correction section does not assign one. Do not infer it from either replaced template. Before implementing the fallback scheduler/content, approve and record its exact window, then test the connected expiry mapping. Step 4 stores the expiry result and checks known authored boundaries; a structural pass for a template without an authored boundary does not prove its timing. Read-only Terra source check and primary verification: `../reviews/2026-09-05-astra/step4-amendment.md`.

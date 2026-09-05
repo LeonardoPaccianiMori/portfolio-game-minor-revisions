@@ -872,3 +872,7 @@ Leonardo approved C01–C06, the reviewed correction patch and exact Step4 amend
 ## 2026-09-06 — Step4 amended-code technical review
 
 The approved baseline is integrated at `450972c`; exact combined-source transplant is `8bd4d97`. Primary Astra completed the schema2/v5 state amendment and focused regression cases under MR-IMP-DEC-309. See `../reviews/2026-09-05-astra/step4-amendment.md` for the current full checks, primary audit and limited connected-content claims. Fresh Sol xhigh review is next. Original contributions and Steps1–3 acceptance remain historical evidence. No amended-code integration or Leonardo acceptance is claimed at this checkpoint.
+
+## 2026-09-06 — Step4 correcting after complete review
+
+Fresh Sol xhigh complete review of3dcd8af found no blocker and four required fixes. Primary verified the missed-issue/coverage and locked-final-band corrections plus issue-ID/status reconciliation. All remain within MR-IMP-DEC-309. Current findings, exact source boundary, actual reviewer use and repair sequence are in step4-amendment.md. Repeat affected checks and fresh focused review before integration; user observation and acceptance remain pending.
