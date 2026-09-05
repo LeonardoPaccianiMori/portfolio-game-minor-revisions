@@ -52,7 +52,12 @@ describe('Step-3 runtime architecture', () => {
 
     expect([...(edges.get('application') ?? [])]).toEqual([]);
     expect([...(edges.get('platform') ?? [])]).toEqual(['application']);
-    expect([...(edges.get('bootstrap') ?? [])].sort()).toEqual(['application', 'platform']);
+    expect([...(edges.get('bootstrap') ?? [])].sort()).toEqual([
+      'application',
+      'platform',
+      'rules',
+    ]);
+    expect([...(edges.get('rules') ?? [])]).toEqual([]);
 
     const visit = (module: string, active: Set<string>, complete: Set<string>): void => {
       expect(active.has(module), `circular import through ${module}`).toBe(false);
@@ -63,7 +68,7 @@ describe('Step-3 runtime architecture', () => {
       complete.add(module);
     };
     const complete = new Set<string>();
-    for (const module of ['application', 'platform', 'bootstrap']) {
+    for (const module of ['application', 'platform', 'rules', 'bootstrap']) {
       visit(module, new Set(), complete);
     }
   });
@@ -75,6 +80,10 @@ describe('Step-3 runtime architecture', () => {
       .map((file) => file.source)
       .join('\n');
     const temporary = sources.find((file) => file.name === 'temporary-adapters.ts')?.source ?? '';
+    const rules = sources
+      .filter((file) => file.module === 'rules')
+      .map((file) => file.source)
+      .join('\n');
 
     expect(application).not.toMatch(/\b(?:window|document|indexedDB|AudioContext|HTMLElement)\b/u);
     expect(temporary).not.toMatch(
@@ -82,6 +91,9 @@ describe('Step-3 runtime architecture', () => {
     );
     expect(temporary).not.toMatch(
       /(?:three|campaign|save payload|fetch|XMLHttpRequest|WebSocket)/iu,
+    );
+    expect(rules).not.toMatch(
+      /\b(?:window|document|indexedDB|AudioContext|requestAnimationFrame|fetch|XMLHttpRequest|WebSocket|sendBeacon)\b/u,
     );
   });
 

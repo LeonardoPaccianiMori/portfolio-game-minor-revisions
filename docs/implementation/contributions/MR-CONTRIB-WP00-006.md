@@ -76,8 +76,9 @@ approved `MR-WO-WP00-007` for the corrected dependency and combined evidence.
 ## Corrections
 
 The approved one-line foundation inventory amendment remains complete and
-historical. `MR-WO-WP00-007` supersedes this submission after the corrected
-rules dependency exists.
+historical. Corrected rules commit `e602613` was verified and copied as
+`87f6924`; submitted `MR-WO-WP00-007` supersedes this submission for combined
+evidence.
 
 ## Known limitations
 

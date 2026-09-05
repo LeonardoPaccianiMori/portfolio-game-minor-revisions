@@ -12,3 +12,9 @@ export {
 export type { StartupHandle } from './startup';
 export { createStartupScreenForTests } from './startup-screen';
 export type { SanitizedDiagnostic } from './diagnostics';
+export {
+  buildCampaignStateDiagnosticSummaries,
+  isCampaignStateDiagnosticLocation,
+  renderCampaignStateDiagnostic,
+} from './campaign-state-diagnostic';
+export type { CampaignStateDiagnosticSummary } from './campaign-state-diagnostic';

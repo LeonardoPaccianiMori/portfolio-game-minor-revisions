@@ -1,7 +1,15 @@
-import { bootstrapApplication } from './index';
+import {
+  bootstrapApplication,
+  isCampaignStateDiagnosticLocation,
+  renderCampaignStateDiagnostic,
+} from './index';
 
 const root = document.querySelector('#app');
 
 if (root instanceof HTMLElement) {
-  bootstrapApplication(root);
+  if (isCampaignStateDiagnosticLocation(window.location.search)) {
+    renderCampaignStateDiagnostic(root);
+  } else {
+    bootstrapApplication(root);
+  }
 }

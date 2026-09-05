@@ -49,3 +49,36 @@ button:focus-visible {
   outline: 0.25rem solid #ffdd6e;
   outline-offset: 0.2rem;
 }
+
+.campaign-diagnostic {
+  box-sizing: border-box;
+  max-width: 56rem;
+  width: 100%;
+}
+
+.campaign-diagnostic-comparison {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.campaign-diagnostic-card {
+  border: 0.125rem solid #bce8ff;
+  padding: 1rem;
+}
+
+.campaign-diagnostic-card dl {
+  display: grid;
+  gap: 0.5rem 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin: 0;
+}
+
+.campaign-diagnostic-card dt {
+  font-weight: 700;
+}
+
+.campaign-diagnostic-card dd {
+  margin: 0;
+  text-align: end;
+}

@@ -6,7 +6,7 @@
   "engines": {
     "node": "24.20.0"
   },
-  "packageManager": "npm@11.19.0",
+  "packageManager": "npm@12.0.2",
   "scripts": {
     "setup:browsers": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium firefox webkit",
     "dev": "vite",

@@ -83,8 +83,9 @@ requirement ID, and stale current records. Leonardo approved the evidence-led
 
 ## Corrections
 
-This submitted result remains historical evidence. The approved correction is
-owned by `MR-WO-WP01-002`; no finding is silently removed or downgraded.
+This submitted result remains historical evidence. `MR-WO-WP01-002` submitted
+its verified correction as `e602613`, recorded in `MR-CONTRIB-WP01-002`. No
+finding is silently removed or downgraded.
 
 ## Known limitations
 

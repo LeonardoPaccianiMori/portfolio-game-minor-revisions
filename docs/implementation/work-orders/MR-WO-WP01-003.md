@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP01-003
 type: implementation-work-order
-status: active
+status: submitted
 work_package: MR-WP-01
 sequence: 3
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-04
 base_commit: 53f34b8a929a6485665d3697f82b53096107843a
 provider: OpenAI
 model: gpt-5.6-sol
@@ -93,7 +93,7 @@ typed-failure boundary.
 ## Accepted dependencies
 
 - Steps 1–3 are accepted. Step 4 is correcting and not accepted.
-- The preserved worktree is clean at
+- The preserved worktree started clean at
   `53f34b8a929a6485665d3697f82b53096107843a`.
 - Leonardo approved the exact 2026-09-03 recovery plan.
 - No remote exists and package and configuration files remain unchanged.
@@ -140,3 +140,42 @@ integrated, tested by Leonardo, or accepted.
 
 The worker is not alone in the repository. It must preserve other work, cannot
 delegate, and must stop if exact authority is absent.
+
+## Submission
+
+The approved worker submitted `5f93395a83614191bcec80fa6c410c56ff039461`.
+The complete primary audit found one trust-proof defect and one checkpoint-boundary
+group. The same worker preserved that commit and added corrections
+`a36b0f23acf0cf189c096f32265c89b95f6328f6` and
+`05d28113ab01742296088d087c0ca671d11dc520`. Fresh Sol `xhigh` review found
+three required issues together: later concerns rewrote locked route proof,
+stored claim results were not checked against board and evidence facts, and
+route negative tests were not isolated. The same approved worker corrected all
+three as `515342d986a46d87d91f6f2aeeb6c7a4c96f8bbd` and added the primary-audit
+test proof as `6bbbf46dc43bed7e67a3e325a66a3a01abbdd39e`. Final worker and primary
+checks passed 96 focused tests, 207 complete rules tests, required coverage,
+the 16-module build, zero audit vulnerabilities, scope, privacy, package,
+configuration, whitespace, clean-state, and absent-remote checks.
+
+The next fresh Sol `xhigh` review confirmed those three findings and reported
+six new technical correction groups plus one S13 record group. The same worker
+corrected historical snapshots, missing references, honest route proof,
+source-local PIIM cards, apparent support, and milestone chronology as
+`0c37db280f7d18a50395b167432793656ed1a37b`. Primary audit found one remaining
+effective Morrow-report checkpoint issue. The worker corrected it as
+`5269618e2038292cb18e050173e6e7b0e30ebb82`. Final rules checks passed 114
+focused and 225 complete tests, required coverage, the 16-module build, zero
+audit vulnerabilities, scope, privacy, package, configuration, whitespace,
+clean-state, and absent-remote checks. It is submitted for a new fresh
+re-review, not integrated, tested by Leonardo, or accepted. Temporary
+service-capacity failures were resumed with the same exact model and are not
+AI-use-log contributions.
+
+The same approved worker then corrected exact evaluation-time route proof in
+`f2babe975073fb3c4d5dc09d703aed225c9fd005`, whose parent is `5269618`.
+It changed only `src/rules/campaign-state-schema.ts` and
+`tests/unit/MR-WP-01/campaign-state.test.ts`. Worker and primary rules checks
+passed 120 focused and 231 complete tests, required coverage, a 16-module
+build, zero offline audit vulnerabilities, and all scope and safety checks.
+The exact diagnostic copy is `1b3d6d5`. It remains submitted, not integrated,
+tested by Leonardo, or accepted.

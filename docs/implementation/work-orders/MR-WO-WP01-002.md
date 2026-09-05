@@ -19,10 +19,9 @@ superseded_by: MR-WO-WP01-003
 
 # MR-WO-WP01-002 — Correct the Step-4 campaign-state foundation
 
-This order is historical. The latest complete review and the resumed worker
-proved that frozen `MR-IF-002 v3` lacked the typed facts needed to complete the
-route and PIIM validation task without guessing. No edit or commit was made in
-that blocked attempt. `MR-WO-WP01-003` supersedes this order.
+This order is historical. The final v3 review proved that it lacked the typed
+facts needed for exact route and PIIM prerequisite validation. Frozen
+`MR-IF-002 v4` and `MR-WO-WP01-003` supersede it.
 
 ## Objective
 
@@ -154,3 +153,15 @@ the repository. Preserve other work and edit only owned paths.
 Return the exact commit, sorted files, commands and results, requirements,
 interfaces, corrected review findings, limitations, and clean-state evidence.
 Submitted does not mean reviewed, integrated, tested by Leonardo, or accepted.
+
+The approved OpenAI `gpt-5.6-sol` worker using `high` reasoning submitted
+`e602613fab5c2a514f19bc59d37bd9ce424a9137`. Fresh review found six required
+issues and no blocker. The same approved worker submitted the four-path
+technical correction as `c2a52418388c61a9d1f22a580fde25f6e9e93732`. Primary
+checks passed 190 tests, required coverage, and the 16-module build. Its exact
+diagnostic-branch copy is `b46cca30454b5704192db784bfa4cb014228e59f`.
+Fresh re-review found one required test-evidence issue and no blocker. The same
+approved worker corrected the one test as
+`53f34b8a929a6485665d3697f82b53096107843a`; its exact diagnostic copy is
+`62ac3ea`. Applicable checks passed. Another fresh re-review, integration,
+Leonardo testing, and acceptance remain pending.

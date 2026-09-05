@@ -19,8 +19,8 @@ superseded_by: MR-WO-WP00-008
 
 # MR-WO-WP00-007 — Correct the private campaign-state diagnostic
 
-This order is historical. It did not activate after the latest complete review
-found a further rules-authority gap. `MR-WO-WP00-008` supersedes it.
+This order is historical. The final v3 review found a further rules-authority
+gap before integration. `MR-WO-WP00-008` supersedes it.
 
 ## Objective
 
@@ -92,9 +92,10 @@ Requirements are `MR-REQ-TECH-001` and `MR-REQ-TEST-001`. Interfaces are
 
 ## Accepted dependencies
 
-This order remains approved but inactive until the exact rules correction is
-submitted and verified. The existing diagnostic and foundation amendment are
-historical accepted inputs.
+The rules correction sequence is submitted and verified through `53f34b8`; its
+exact diagnostic-branch copy is `62ac3ea`. This order is submitted after
+applicable checks and the complete primary audit passed. The existing
+diagnostic and foundation amendment remain historical inputs.
 
 ## Tasks
 
@@ -124,3 +125,10 @@ network data. Do not alter an expected fact merely to make a test pass.
 
 Record exact copied and diagnostic commits, files, checks, correction coverage,
 limitations, and the complete primary audit. Fresh independent review follows.
+
+Verified correction commit `53f34b8a929a6485665d3697f82b53096107843a` was
+copied exactly as `62ac3ea`. The private
+diagnostic needed no code change because the consumed initial-state projection
+is unchanged. Applicable checks and the complete primary audit passed. Another
+fresh independent re-review, integration, Leonardo testing, and acceptance
+remain.

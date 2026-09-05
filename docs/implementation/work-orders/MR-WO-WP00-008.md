@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP00-008
 type: implementation-work-order
-status: approved
+status: superseded
 work_package: MR-WP-00
 sequence: 8
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-04
 base_commit: 09dbbe88b5857a2210fd730ed6b27ee848f30bbc
 provider: OpenAI
 model: unknown
@@ -14,9 +14,14 @@ model_selected: 2026-09-03
 branch: work/MR-WP-00-campaign-state-diagnostic
 worktree: .worktrees/MR-WP-00-campaign-state-diagnostic/
 supersedes: MR-WO-WP00-007
+superseded_by: MR-WO-WP00-009
 ---
 
 # MR-WO-WP00-008 — Record exact Step-4 prerequisite correction
+
+This submitted order became historical when the installed npm version no
+longer matched its unchanged-package boundary. Leonardo approved
+`MR-WO-WP00-009` on 2026-09-04. Preserve all work and evidence below.
 
 ## Objective
 
@@ -70,7 +75,7 @@ configuration, asset, or content path is owned.
 ## Authority and sequence
 
 Frozen `MR-IF-002 v4`, `MR-IF-001 v1`, `MR-IF-014 v1`, and `MR-IF-015 v1`
-apply. This order remains waiting until the rules commit passes the primary
+apply. This order activated after the final rules range passed the primary
 audit. Requirements are `MR-REQ-TECH-001` and `MR-REQ-TEST-001`. It does not
 authorize main integration.
 
@@ -118,3 +123,22 @@ game rules remain unchanged.
 | Rules correction                  | Controlled implementation worker     | Nine paths in `MR-WO-WP01-003`                  | Frozen `MR-IF-002 v4`           | OpenAI `gpt-5.6-sol`            | `high`    | Before this order |
 | Diagnostic copy and primary audit | Primary Codex agent                  | Paths listed in this order                      | Verified rules commit           | OpenAI; exact model unavailable | `unknown` | After rules       |
 | Complete final review             | Fresh read-only independent reviewer | No write path; latest packet and audit are read | Complete combined primary audit | OpenAI `gpt-5.6-sol`            | `xhigh`   | Last              |
+
+## Submission
+
+The verified v4 rules range was copied as `83f509b`, `01590df`, and `3bcdcb6`.
+Fresh Sol `xhigh` review found three required validator and test issues
+together. The same approved worker corrected them as `515342d` and `6bbbf46`;
+the exact diagnostic copies are `5bb09ae` and `560fcdb`.
+
+The next fresh review confirmed those findings and reported six technical
+groups plus one record-format group. The worker corrections are `0c37db2` and
+`5269618`; their exact diagnostic copies are `5bfb188` and `2b88ba7`. The
+primary agent corrected the S13 records. The diagnostic source and tests did
+not need a change. Final combined validation passed 117 focused and 228
+complete tests, 90.17 percent statement coverage, 89.49 percent branch
+coverage, 85.54 percent function coverage, 91.99 percent line coverage, the
+115-module build, zero audit vulnerabilities, and 21 Chromium, Firefox, and
+WebKit flows. Port `5173` was closed before and after verification. The new
+complete combined primary audit passed. Fresh independent re-review remains
+required before integration.

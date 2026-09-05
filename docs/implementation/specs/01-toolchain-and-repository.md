@@ -1,6 +1,6 @@
 # S01 — Toolchain and Repository Contract
 
-Status: **frozen; S01 approved and documented; no implementation authorized**
+Status: **frozen; npm 12.0.2 amendment approved on 2026-09-04**
 
 ## Purpose and authority
 
@@ -16,9 +16,11 @@ licence, or a release. Package files can exist only after Gate 1 is complete
 and Leonardo separately approves the exact Step-1 plan. Later files require
 their own step plans.
 
-The exact versions below were verified against official Node and npm registry
-metadata on 2026-08-29. S01 fixes them before code. Step 1 requires a fresh
-compatibility, security, licence, clean-install, and verification check.
+The original exact versions were verified against official Node and npm
+registry metadata on 2026-08-29. Leonardo approved npm `12.0.2` on 2026-09-04
+to match the installed Node `24.20.0` environment after local Step-4 checks
+passed with it. The earlier npm `11.19.0` evidence remains historical. This
+amendment changes no dependency or runtime interface.
 
 ## Leonardo's working boundary
 
@@ -41,13 +43,13 @@ review requirements.
 | Component               | Frozen version or boundary                   | Purpose                                                                                                                                |
 | ----------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Node.js                 | `24.20.0` LTS, Krypton                       | Runs development and build tools.                                                                                                      |
-| npm                     | `11.19.0`                                    | Installs the exact package graph and runs project commands.                                                                            |
+| npm                     | `12.0.2`                                     | Installs the exact package graph and runs project commands.                                                                            |
 | TypeScript              | `6.0.3`                                      | Checks strict source types. TypeScript 7.0.2 is excluded because the approved TypeScript ESLint version supports TypeScript below 6.1. |
 | Browser language target | `ES2022` with DOM and DOM iterable libraries | Gives current desktop browsers a stable modern target without experimental language features.                                          |
 
 Node `26` is not approved because it is not an LTS line on the S01 verification
 date. `.nvmrc` records `24.20.0`. `package.json` records the exact Node engine
-and `packageManager: npm@11.19.0`. npm uses `engine-strict=true`.
+and `packageManager: npm@12.0.2`. npm uses `engine-strict=true`.
 
 Node, npm, and an existing desktop browser are computer-level prerequisites.
 Every project-owned input and output lives under

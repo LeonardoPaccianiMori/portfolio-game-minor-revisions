@@ -68,7 +68,7 @@ describe('MR-WP-00 foundation', () => {
     ]);
     expect(manifest.engines).toEqual({ node: '24.20.0' });
     expect(manifest.name).toBe('minor-revisions');
-    expect(manifest.packageManager).toBe('npm@11.19.0');
+    expect(manifest.packageManager).toBe('npm@12.0.2');
     expect(manifest.private).toBe(true);
     expect(manifest.type).toBe('module');
     expect(manifest.version).toBe('0.0.0');
@@ -179,6 +179,7 @@ describe('MR-WP-00 foundation', () => {
 
     expect(bootstrapFiles).toEqual([
       'application-bootstrap.ts',
+      'campaign-state-diagnostic.ts',
       'diagnostics.ts',
       'index.ts',
       'main.ts',
