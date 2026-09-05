@@ -1,0 +1,135 @@
+{
+  "status": "candidate-reference-cases-not-runtime-tests",
+  "cases": [
+    {
+      "id": "SEM-01",
+      "given": "Two distinct usable honest recovery cards, neither shows repatterning",
+      "expect": "Strong associationSupport missing/unsupported; no inferred association from counts"
+    },
+    {
+      "id": "SEM-02",
+      "given": "Two distinct usable honest compatible recovery records, one combines recovery and transient repatterning; matched control and association caveat",
+      "expect": "Honest Strong support; no named repair template required"
+    },
+    {
+      "id": "SEM-03",
+      "given": "Same pair but one apparent association reading is altered",
+      "expect": "Honest raw association fails; apparent reported support remains possible with existing integrity consequence; raw facts unchanged"
+    },
+    {
+      "id": "SEM-04",
+      "given": "Two recovery cards; linked control exists but controlKind is limited",
+      "expect": "matchedControl is not met"
+    },
+    {
+      "id": "SEM-05",
+      "given": "All honest records, Inflated selected",
+      "expect": "causalSupport is unsupported; incomplete deliberate commit still follows existing confirmation"
+    },
+    {
+      "id": "SEM-06",
+      "given": "No positive recovery observation, valid usable evidence of failed recovery",
+      "expect": "May answer a different science question; cannot honestly satisfy the recovery claim"
+    },
+    {
+      "id": "SEM-07",
+      "given": "Higher-risk choice with weak/unreliable outcome",
+      "expect": "Show selected broader question, never claim it was answered or award extra points"
+    },
+    {
+      "id": "SEM-08",
+      "given": "Limited room route chosen instead of one-period wait",
+      "expect": "Explicit saved equipment limitation plus control/coverage constraint before new run; existing runs unchanged"
+    },
+    {
+      "id": "SEM-09",
+      "given": "Strong laser biology with limited control or missed observation",
+      "expect": "Result prose describes damaged-group recovery; never assumes stable sham or complete evidence"
+    },
+    {
+      "id": "SEM-10",
+      "given": "Weak laser biology from sample/risk issue; controls and monitoring valid",
+      "expect": "No invented control or monitoring failure"
+    },
+    {
+      "id": "SEM-11",
+      "given": "Samira trust selects ambiguous, no optional contact or authorship",
+      "expect": "Ending assumes no shared file, message or credit"
+    },
+    {
+      "id": "SEM-12",
+      "given": "Undiscovered misconduct combined separately with each paper state and public withdrawal",
+      "expect": "Integrity text does not assert publication or ongoing public availability"
+    },
+    {
+      "id": "SEM-13",
+      "given": "Week6 task committed with Careful or incomplete arrangement",
+      "expect": "Result confirms saved revision, not obedience or successful support"
+    },
+    {
+      "id": "SEM-14",
+      "given": "Standard draft starts at night; later normal revision starts at night",
+      "expect": "Draft major costs 3/2; revision focused costs 1/2; UI obtains exact forecast"
+    },
+    {
+      "id": "SEM-15",
+      "given": "Same warning situation in Standard and Supported",
+      "expect": "Same warning text; only documented energy/recovery pressure differs"
+    },
+    {
+      "id": "SEM-16",
+      "given": "Each of A/B/C in Haoran Borrowed Time and Gabriel Queue",
+      "expect": "Exactly its own closeA/B/C, no fallback to generic alternative-aware closing; effects unchanged"
+    },
+    {
+      "id": "SEM-17",
+      "given": "Raw scientificFacts disagree with observation-ID semantics",
+      "expect": "Future connected content validator rejects; structural decoder alone does not prove mapping"
+    },
+    {
+      "id": "SEM-18",
+      "given": "Schema1 payload lacks scientificFacts or associationSupport",
+      "expect": "Reject without inventing fields or deleting original save; explicit recovery"
+    },
+    {
+      "id": "SEM-19",
+      "given": "Slice rehearsal done at period6, snapshot saved; campaign conclusion unresolved",
+      "expect": "Evaluation completion valid only for slice and verified checkpoint; never a full campaign ending"
+    },
+    {
+      "id": "SEM-20",
+      "given": "Required manuscript work due with insufficient energy",
+      "expect": "Protected break allowed with normal deadline consequences; a due scene still runs first"
+    },
+    {
+      "id": "SEM-21",
+      "given": "Normal window opens at16 as Complete Narrative queues",
+      "expect": "Monitoring16\u219217 allowed first; scene17\u219218 before analysis; no reciprocal prerequisite deadlock"
+    },
+    {
+      "id": "SEM-22",
+      "given": "Oxygen start attempted at44 then independently45",
+      "expect": "44\u219246 accepted with earliest full report finish51;45 rejected unchanged before any draw"
+    },
+    {
+      "id": "SEM-23",
+      "given": "Configured run crosses last start; another running run crosses52 unanalysed",
+      "expect": "Exactly one appropriate stop log each, no fake response or draw, free slots, preserve old analysed records"
+    },
+    {
+      "id": "SEM-24",
+      "given": "Ordinary or oxygen window missed",
+      "expect": "Stored response missed atS+2 orS+4; player payload missed rejected; final-band readiness counts resolved windows once"
+    },
+    {
+      "id": "SEM-25",
+      "given": "An honest raw record has unobserved rhythm and a transient signal without an observed recovery relation",
+      "expect": "No rhythm or association support inferred; exact typed mapping required"
+    },
+    {
+      "id": "SEM-26",
+      "given": "Routine monitor with selected single view versus paired view",
+      "expect": "Do not infer full paired coverage; paired full coverage requires qualityCheck"
+    }
+  ]
+}

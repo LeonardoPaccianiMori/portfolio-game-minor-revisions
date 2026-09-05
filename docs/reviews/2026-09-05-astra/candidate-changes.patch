@@ -1,0 +1,1029 @@
+--- /dev/null
++++ b/.codex/agents/minor-revisions-evidence-explorer.toml
+@@ -0,0 +1,12 @@
++name = "minor_revisions_evidence_explorer"
++description = "Read-only explorer for a bounded Minor Revisions document, dependency or feasibility question."
++model = "gpt-5.6-terra"
++model_reasoning_effort = "high"
++sandbox_mode = "read-only"
++developer_instructions = """
++Read only the primary agent's focused allowed source packet. Return precise
++sources, contradictions, dependencies, uncertainty and concrete alternatives.
++Do not decide creative rules, approve work, contact Leonardo, change files or
++external state, spawn agents, or access unrelated private repositories.
++Use network research only if the assignment explicitly authorizes its scope.
++"""
+--- a/.codex/agents/minor-revisions-independent-reviewer.toml
++++ b/.codex/agents/minor-revisions-independent-reviewer.toml
+@@ -1,7 +1,5 @@
+ name = "minor_revisions_independent_reviewer"
+ description = "Fresh-context, read-only reviewer for an approved Minor Revisions work order and its controlled evidence packet. Use after implementation or a material governance change, before integration or gate confirmation."
+-model = "gpt-5.6-sol"
+-model_reasoning_effort = "xhigh"
+ sandbox_mode = "read-only"
+ developer_instructions = """
+ Review only the controlled Minor Revisions packet supplied by the primary
+@@ -10,7 +8,7 @@
+ recorded limitations. Work from a focused packet, not a full conversation
+ history.
+
+-Independently check scope, requirements, interfaces, behaviour, tests,
++Independently check scope, requirements, interfaces, game meaning, behaviour, tests,
+ accessibility, privacy, provenance, network boundaries, and accidental creative
+ or shared-contract changes. Return only blocker, required, and advisory
+ findings with precise evidence. Say clearly when no material issue exists.
+@@ -19,3 +17,6 @@
+ agent, use mutating tools, integrate, or accept the work. Earlier design
+ reviews are not a substitute for this review.
+ """
++
++# Model and effort are selected per approved assignment: Sol xhigh for detailed
++# implementation review, Astra xhigh only for high-level design/governance review.
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -4,35 +4,7 @@
+
+ ## Current phase
+
+-The repository has a complete S00–S14 implementation specification and an
+-incremental Step 0–70 development roadmap. Read
+-`docs/implementation/development-status.md` for the exact resume point. Gate 1
+-and the exact Step-1 plan were approved on 2026-09-01. The submitted Step-1
+-foundation is integrated, tested by Leonardo, and accepted. Leonardo approved
+-the exact Step-2 plan and its later correction plans on 2026-09-01. The Step-2
+-correction code and primary audit are complete, and fresh independent technical
+-review passed. The reviewed result is integrated on local `main`, complete
+-main-branch validation passed, and Leonardo accepted Step 2 on 2026-09-02.
+-Leonardo approved the exact Step-3 plan on 2026-09-02. The controlled worker
+-submitted `MR-WO-WP00-005`, and the complete primary audit passed. Fresh
+-independent technical review passed with one narrow current-record correction,
+-and focused primary validation of that correction passed. The exact worker
+-result is integrated on local `main`, and complete main-branch validation
+-passed. Leonardo confirmed the four expected lines after repeated reloads and
+-explicitly accepted Step 3 on 2026-09-02. Leonardo approved the exact Step-4
+-plan and its evidence-led `MR-IF-002 v2` creation-input refinement on
+-2026-09-02. `MR-WO-WP01-001` submitted verified rules commit `94b12f3`, and
+-`MR-WO-WP00-006` submitted the private diagnostic as `0fc7d39`; complete
+-checks and the primary audit passed. Fresh independent review blocked
+-integration with one complete set of campaign-contract findings. Leonardo
+-approved the evidence-led `MR-IF-002 v3` correction. A later complete review
+-proved that `v3` could not represent every route and PIIM prerequisite.
+-Leonardo approved frozen `MR-IF-002 v4` and superseding `MR-WO-WP01-003` and
+-`MR-WO-WP00-008` on 2026-09-03. `MR-WO-WP01-003` is active for the approved
+-Sol `high` correction worker; `MR-WO-WP00-008` remains approved and waiting.
+-Step 5 and every later step remain unapproved; approval never carries forward.
+-Do not create or change game code, package configuration, tests, production
+-assets, or deployment configuration outside an exact approved step.
++Read `docs/implementation/development-status.md` for the accepted main head, pending submissions, current approved work and next gate. It is the single current resume record. Historical step decisions remain in the acceptance and contribution logs. Every later step needs its exact plan; approval never carries forward. Do not change code, dependencies, tests, assets or deployment outside that plan.
+
+ ## Leonardo context and communication
+
+@@ -138,9 +110,9 @@
+ Use the project-local roles in `.codex/agents/` when their bounded purpose
+ matches the approved work. A worker, reviewer, or researcher receives a
+ focused approved source packet, not a full conversation-history fork. Before
+-spawning it, the primary agent must select and pass the exact model and
+-reasoning effort required by the S13 routing matrix, then record the actual
+-selection in the work-order and contribution evidence. If no useful,
++spawning it, the primary agent must select the exact model and reasoning
++effort required by S13, verify that role-file pins agree with the assignment,
++and record actual completed use in the work-order and contribution evidence. If no useful,
+ non-overlapping delegation exists, the primary agent records why; it still
+ obtains the required independent review. Do not silently substitute an
+ unavailable model or reasoning level.
+@@ -196,3 +168,11 @@
+   approves integration. Modified candidates return to Leonardo for review.
+ - Step 70 is complete local-game acceptance. A remote, licence, release,
+   deployment, or portfolio change remains outside the roadmap.
++
++## Corrected review practice
++
++The primary resolves missing shared rules and proves representative valid and invalid contract examples before delegating implementation. Workers implement the approved contract in exclusive paths; they cannot resolve design ambiguity. A fresh reviewer checks both contract conformance and game meaning. After a narrow technical correction, the fresh review covers the correction and affected dependencies; repeat full review when behavior or shared assumptions changed broadly. Pure mechanical records receive focused primary validation. No worker reviews its own implementation, and no reviewer accepts a step.
++
++## Leonardo's 2026-09-06 subagent model boundary
++
++Use gpt-6-astra subagents only for high-level design, architecture, shared-contract analysis or high-level review. Delegated implementation uses gpt-5.6-sol, gpt-5.6-terra or gpt-5.6-luna under the S13 matrix. Do not use an Astra implementation worker. The primary retains its conversation, decision, tracked-correction-write and integration responsibilities. This instruction is prospective and does not reattribute earlier contributions.
+--- a/README.md
++++ b/README.md
+@@ -12,128 +12,11 @@
+
+ ## Repository status
+
+-Status: **S00–S14 documented; incremental Step 0–70 roadmap documented; Gate 1
+-approved on 2026-09-01; Steps 1–3 accepted; exact Step-4 plan approved; complete
+-review blocked its first submission; `MR-IF-002 v4` prerequisite-proof
+-correction and superseding work orders approved on 2026-09-03**.
++Read [development-status.md](docs/implementation/development-status.md) for the accepted main head, pending work, approved scope and exact next action. Read the [acceptance log](docs/implementation/step-acceptance-log.md) for historical approvals and tests, and the [AI-use log](docs/implementation/ai-use-log.md) for actual contributions.
+
+-This repository contains the accepted Step-1 foundation, Step-2 startup safety,
+-and Step-3 application lifecycle, but no Three.js scene, game system,
+-production asset, or deployment configuration. Step 2 adds the approved
+-browser compatibility checks, sanitized diagnostics, factual startup states,
+-safe failure screens, and their tests. Step 3 adds the internal lifecycle,
+-ordered request queue, controlled frame loop, repeat-safe shutdown, temporary
+-no-game adapters, public entrances, and their tests. Both steps completed
+-their approved audit, review, integration, main validation, Leonardo test, and
+-acceptance cycle. B10
+-records the bounded content, evaluation, production,
+-and handoff plan. An approved
+-[`independent design review protocol`](docs/reviews/independent-design-review-protocol.md)
+-defined the alignment and revealed-game check. A later
+-[`holistic game assessment protocol`](docs/reviews/holistic-game-assessment-protocol.md)
+-tested identity, the fun hypothesis, narrative and artistic direction, and
+-Leonardo's explicit and inferred expectations. The reports and validation notes
+-are stored under
+-[`docs/reviews/2026-08-28-opus-5/`](docs/reviews/2026-08-28-opus-5/) and
+-[`docs/reviews/2026-08-28-opus-5-holistic/`](docs/reviews/2026-08-28-opus-5-holistic/).
+-The controlled
+-[`recommendation register`](docs/reviews/recommendation-register.md) preserves
+-duplicates, conflicts, new findings, and decision status. R00 through R07 are
+-documented, and no review block remains. The
+-[`implementation roadmap`](docs/implementation/roadmap.md) records the
+-completed technical-specification programme. Its Sxx
+-[`status`](docs/implementation/status.md) remains current. The primary future
+-resume point is
+-[`development-status.md`](docs/implementation/development-status.md).
+-S01 freezes the toolchain and repository contract. S02 freezes the documented
+-module-architecture contract. S03 freezes the documented campaign-state,
+-validation, canonical JSON, and fixture contract. S04 freezes the documented
+-command, rule, deterministic-variation, truth-table, and unchanged-state
+-contract. S05 freezes the documented calendar, safe-point, scheduler, event,
+-crash, message, room, cutscene, skip, reload, recap, and finalization order.
+-S06 freezes the documented authored-data, reference, English-string, profile,
+-validation, and content-compatibility contract. S07 freezes the documented
+-IndexedDB, save, backup, recovery, migration, Archive, and local-data-clearing
+-contract. S08 freezes the documented spatial plan, floor, collision, player,
+-camera, anchor, target, focused-station, and world-projection contract.
+-S09 freezes the documented action, device, focus, pointer-capture, screen,
+-settings, responsive-layout, accessibility, UI-projection, and error contract.
+-S10 freezes the documented renderer, scene, camera, lighting, material,
+-animation, effect, cutscene-presentation, specialist-resource, provenance, and
+-four-bus audio contract. S11 freezes the documented compatibility, graphics-
+-profile, frame, processor, workload, memory, download, profiling, diagnostic,
+-privacy, and failed-measurement contract. S12 adds `MR-IF-015`, the fixture and
+-traceability contract. S12
+-fixes the future strict fixture format, acceptance matrix, evidence classes,
+-coverage boundary, S02–S12 case routes, connected journeys, and manual-review
+-boundary. S13 fixes the future ten-package ownership,
+-dependency, stored work-order, model-selection, isolated-branch, review,
+-validation, contribution, integration, and recovery contract. It also permits
+-an explicitly incomplete inactive content profile during slice development so
+-that fallback and full prose do not need to exist before the slice is tested.
+-S14 records the complete inventory, corrects requirement traceability and the
+-fallback/full gate split, resolves the final issue group, and historically
+-froze `MR-IF-001`–`MR-IF-015` as `v1`. The first Step-4 impact packet created
+-`MR-IF-002 v2`; complete review exposed missing initial content authority, and
+-the approved correction supersedes it with frozen `v3`. Every other interface
+-remains frozen `v1`. The S14 freeze created no package, runtime,
+-test, content, work-order, or asset file. Leonardo approved Gate 1 on 2026-09-01,
+-which confirms only the frozen technical baseline. Leonardo separately
+-approved the exact Step-1 plan on 2026-09-01 and accepted its integrated result
+-on the same date. Leonardo separately approved the exact Step-2 plan and later
+-correction plans, then accepted the integrated Step-2 result on 2026-09-02.
+-Leonardo approved the exact Step-3 application-lifecycle plan on the same day.
+-The controlled worker submitted the exact application-lifecycle result, and
+-the complete primary audit passed. Fresh independent technical review passed
+-with one narrow current-record correction, and focused primary validation of
+-that correction passed. The exact reviewed worker result is now integrated on
+-local `main`, and complete main-branch validation passed. Leonardo confirmed
+-the four expected lines after repeated reloads and explicitly accepted Step 3
+-on 2026-09-02. Leonardo approved the exact Step-4 plan and later the
+-evidence-led `MR-IF-002 v3` correction on the same date. A later complete
+-review proved that `v3` lacked typed route and PIIM prerequisite proof.
+-Leonardo approved frozen `MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting
+-`MR-WO-WP00-008` on 2026-09-03. Activation is not implementation or
+-acceptance. Each
+-later step needs its own plan, local test or result review, correction cycle,
+-and explicit acceptance.
+-The
+-durable resume point is
+-[`development-status.md`](docs/implementation/development-status.md), and the
+-complete sequence is
+-[`development-roadmap.md`](docs/implementation/development-roadmap.md).
++The numbered design documents define game meaning; implementation specifications define approved technical contracts. The [interface register](docs/implementation/interfaces.md) gives current versions. The [development roadmap](docs/implementation/development-roadmap.md) preserves Steps 0–70 and the correction gates. A documented plan or candidate patch is not an accepted implementation.
+
+-Target experience:
+-
+-- first-person 3D exploration on a compact fictional university research floor;
+-- one semester compressed into an approximately three-hour first playthrough;
+-- a 90-minute minimum-complete fallback if production must contract;
+-- a 20–30-minute vertical slice before full production;
+-- local, account-free save and resume;
+-- eventual deployment on Leonardo's portfolio website.
+-
+-Development is collaborative. Codex plans, implements, runs technical checks,
+-operates the local game, debugs, and records evidence. Leonardo controls
+-creative direction, approves each plan, reviews asset and aesthetic choices,
+-performs the supplied play tests, reports observations, and accepts each step.
+-The [`step acceptance log`](docs/implementation/step-acceptance-log.md) keeps
+-those contributions distinct.
+-
+-When an approved step benefits from delegation, the primary Codex agent uses a
+-focused, project-local worker, independent reviewer, or asset/licence
+-researcher. Every assignment records its exact model and reasoning effort in
+-the work order and contribution evidence. The authoritative routing matrix,
+-including the use of Sol, Terra, and Luna, is in
+-[`S13`](docs/implementation/specs/13-agent-work-orders-and-integration.md).
+-The configuration exists only to control future work; it does not authorize a
+-step, code, package, asset, or network action.
+-
+-The private [`AI-use log`](docs/implementation/ai-use-log.md) records the
+-actual model, reasoning effort, role, completed work, and evidence for this
+-game's completed AI contributions. Its B00–B10, R00–R07, S01–S14, and Step-0
+-history applies only to _Minor Revisions_. Future entries record each primary
+-Codex session and completed subagent contribution. A configuration default is
+-never used as evidence of the actual session model or reasoning effort.
++Earlier Opus review reports remain under [reviews](docs/reviews/); the [recommendation register](docs/reviews/recommendation-register.md) preserves their resolution history. The [Astra correction package](docs/reviews/2026-09-05-astra/baseline-candidate.md) records the later correction decision and its evidence.
+
+ ## Documentation
+
+--- a/docs/00-design-index.md
++++ b/docs/00-design-index.md
+@@ -496,3 +496,9 @@
+ complete local game. Each step includes technical checks, a Leonardo test or
+ result review, corrections, durable attribution, and explicit acceptance.
+ Public actions remain separate.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/02-player-experience-and-loop.md
++++ b/docs/02-player-experience-and-loop.md
+@@ -378,3 +378,7 @@
+ manuscript, and replay content. `11-technical-architecture.md` contains the
+ save and browser boundary. Measured implementation evidence remains future
+ evidence and does not alter this approved loop without a recorded decision.
++
++## Correction C01: cost supersession
++
++The earlier sample-configuration row is superseded: configuration is free planning at zero periods and zero energy. Its saved choice and occupied active slot remain meaningful. Starting, monitoring and analysis keep their costs. Initial drafting and PIIM response are major commitments. The opening evaluation follows the normal loop through an explicit slice-only claim rehearsal across the early weeks; it is not restricted to Week 1.
+--- a/docs/03-narrative-and-campaign.md
++++ b/docs/03-narrative-and-campaign.md
+@@ -390,3 +390,7 @@
+ Before a public remote exists, a title-conflict and brand check must examine
+ _Minor Revisions_, the fictional journal names, and the fictional organization
+ names. The game must not copy real journal branding or imply real affiliation.
++
++## Correction C01: campaign timing supersession
++
++Use 64 clock states and 63 advances. The Week-5 scene remains due even with weak or missing evidence. Early experiment requests cannot deadlock the manuscript chain. Batch starts remain available through Week 9; existing runs can finish later, with all analysis and reports before Week 14. The opening evaluation uses only its selected content across periods 0–11; advancing its clock does not import excluded campaign scenes. The normal full-game opening and calendar-driven manuscript dates remain unchanged.
+--- a/docs/04-science-and-experiments.md
++++ b/docs/04-science-and-experiments.md
+@@ -219,8 +219,8 @@
+
+ | Claim level | Paper wording                                                         | Main effect                                                                               |
+ | ----------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+-| Careful     | Recovery is linked to the repair state.                               | Protects integrity but can make publication harder.                                       |
+-| Strong      | The repair state supports recovery.                                   | Can increase Elena's paper confidence.                                                    |
++| Careful     | Recovery appears in the observed condition.                               | Protects integrity but can make publication harder.                                       |
++| Strong      | The included observations link transient repatterning with recovery in this model.                                   | Can increase Elena's paper confidence.                                                    |
+ | Inflated    | Treat the repair state as if it drives recovery. This is unsupported. | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
+
+ The main paper claim is that a controlled cardiac tissue model can enter a
+@@ -300,3 +300,34 @@
+ `12-content-specification.md` owns the exact requests, evidence cards, and
+ readable clues. No later work may add real laboratory quantities, executable
+ protocols, or a claim that the repair state is a demonstrated mechanism.
++
++## Correction C01: timing and meaningful choices
++
++Sample configuration is a free planning action (zero periods, zero energy). Starting still pays its listed cost and locks variation. Three active slots remain the capacity limit. Configuration cannot be used to obtain evidence, recovery or another variation draw.
++
++The ordinary monitoring window opens when the start action finishes and includes that period and the next. Oxygen has a second window two and three periods after start completion. Responding within a window resolves it before processing the response's elapsed period. After all windows resolve or are missed, analysis is available. These fictional calendar boundaries are not laboratory instructions.
++
++The batch-check start window extends through Week 9 after-hours. Every configured/running experiment can finish after its start window. All analysis and reports remain available before Week 14. Required scenes remain calendar-driven even if evidence is weak or absent; missing experiments weaken the response, not access to the next act.
++
++Higher-risk choices retain their one preparation issue. Their value is a different stated question, preserved with the original run choices, not extra support points. The approved question labels below are shown beside the biological and quality results; a question label never asserts that a weak run answered it.
++
++| Template | Baseline question | Higher-risk question |
++|---|---|---|
++| Laser/sham | Does recovery recur in the matched comparison? | Does recovery extend to the broader injury case? |
++| Damage range | Where does recovery stop in the observed range? | What happens at the recovery edge? |
++| Batch check | Does recovery recur in the established batch context? | Does recovery recur in the newly available batch context? |
++| Repair state | Does repatterning track recovery in the observed condition? | Does the same association appear in the broader condition? |
++| Oxygen loss | What recovery follows the interpretable challenge? | Does recovery extend to the broader reviewer condition? |
++| Drug exposure | What response appears in the established assay context? | What response appears in the exploratory assay context? |
++
++The selected question is an authored string selected by the saved family choice. It remains in the record and can be read during manuscript selection. It does not alter evidence points, PIIM requirements, career eligibility or causal support. The result must say when it does not answer the selected question.
++
++Limited controls become a constrained faster route, not a voluntary equal-cost substitute for an available matched comparison. A limited room route permits only limited control/coverage for the affected new run; the player sees those limits before selecting it. Waiting one period, or using the existing earned support, restores access to the matched/full option. Equipment quality and control quality remain separate saved facts: one affects biological preparation, the other affects evidence quality. Existing configured or active runs are not retroactively relabelled.
++
++## Correction C01: attention priority and final experiment windows
++
++Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
++
++Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
++
++Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
+--- a/docs/05-characters-and-dialogue.md
++++ b/docs/05-characters-and-dialogue.md
+@@ -278,3 +278,7 @@
+ original sounds. They never form words or carry required meaning. Exact audio
+ cue IDs and wording are in the content catalogue; implementation still needs
+ verified original or reusable sound assets.
++
++## Correction C03: representative voice rule
++
++Keep the existing character motives and comedy. Haoran's revised closing lines state the practical consequence of help, planning or refusal. Gabriel's revised closing lines state the booking consequence. The internal narrator can carry the wider institutional joke. Their two revised scenes use choice-specific closing text, with unchanged effects and duration targets. Review these scenes in motion before extending this editorial treatment to the cast.
+--- a/docs/07-systems-and-balance.md
++++ b/docs/07-systems-and-balance.md
+@@ -672,3 +672,13 @@
+ alter the three percentages only. It may not add a new outcome type, hide a
+ player-caused failure, change a fixed campaign gate, or create a new mandatory
+ experiment without Leonardo's explicit approval.
++
++## Correction C01: replacement balance baseline
++
++R01 above is historical demand analysis under the former charged configuration action. Its 64-state slack calculation and assertion that the minimum route fits are superseded. There are 63 spendable advances. Without any repricing, the old optimistic totals are 55/51 for minimum, 69/65 for thorough and 100/93 for maximizing (Standard/Supported); the corrected respective slack is 8/12, -6/-2 and -37/-30.
++
++Configuration now costs 0/0. Other action prices and pressure-profile recovery stay unchanged. The initial draft is major, matching the design action table; S06's former intense classification is superseded. Under the old archetype action counts, the revised optimistic non-break demand is 39, 50, 69 and base energy is 21, 24, 36. Optimistic Standard totals are 48, 60, 85; Supported totals are 45, 57, 80. These aggregates still omit actual surcharges, recovery cap losses and room costs; they do not prove schedules.
++
++The named honest core completes laser, range, repair, batch and oxygen work, five honest reports, the mandatory manuscript chain, and the research plan. The broader Supported route also completes drug work, both career preparations, Gabriel Queue, Haoran Borrowed Time, Samira Shared Instrument and credited contribution, plus Camila reply and offer. It does not promise every optional contact or repeat. Do not require an honest route to manufacture a record concern merely to unlock a concern scene.
++
++The twelve candidate traces in `implementation/analysis/campaign-schedules.json` state exact arithmetic and explicit outcome assumptions. Their manual timing, roster and route ledger is in that directory's README. Approval makes them reference targets, not measured gameplay or runtime reachability proof. Runtime tests at Gate 6A and later rule steps must reproduce them. Thin remains unreachable with current starting support 3 and nondecreasing raw evidence; no evidence repricing is included.
+--- a/docs/08-endings-and-state-matrix.md
++++ b/docs/08-endings-and-state-matrix.md
+@@ -278,3 +278,7 @@
+ unethical play. The exact ending lines, status text, and citation wording are
+ in that same authoritative content draft. B08 presentation and
+ `11-technical-architecture.md` save rules remain unchanged.
++
++## Correction C02: truthful selector wording
++
++Samira's ambiguous ending cannot assume evidence use, credit, a shared file or any optional message. Undiscovered misconduct cannot assume publication or a currently public preprint. The state-neutral revised strings in the content catalogue apply across those independent states. Preserve all existing ending selectors and module counts.
+--- a/docs/10-ui-ux-accessibility.md
++++ b/docs/10-ui-ux-accessibility.md
+@@ -106,7 +106,7 @@
+ The requirements panel lists each rule as Met, Missing, Conflict, or
+ Unsupported and gives a plain-language reason. It does not use a moral label or
+ block a deliberate incomplete commit. Before confirmation, it shows the
+-one-period and one-energy cost, unmet requirements, record changes, authorship
++action-specific time and energy cost, unmet requirements, record changes, authorship
+ changes, and irreversible integrity action, if present.
+
+ Camila's video call uses the protagonist's desk monitor as a focused view. It
+--- a/docs/12-content-specification.md
++++ b/docs/12-content-specification.md
+@@ -134,7 +134,7 @@
+
+ | Action ID                | Action                                           | Periods | Standard energy | Requirement      | Test             |
+ | ------------------------ | ------------------------------------------------ | ------: | --------------: | ---------------- | ---------------- |
+-| MR-ACT-SAMPLE-CONFIGURE  | Select and configure a sample group              |       1 |               1 | MR-REQ-LOOP-001  | MR-TEST-EXP-001  |
++| MR-ACT-SAMPLE-CONFIGURE  | Select and configure a sample group              |       0 |               0 | MR-REQ-LOOP-001  | MR-TEST-EXP-001  |
+ | MR-ACT-START-FOCUSED     | Start laser/sham, repair-state, or drug work     |       1 |               1 | MR-REQ-LOOP-001  | MR-TEST-EXP-001  |
+ | MR-ACT-START-INTENSE     | Start range, batch, oxygen, or repeat work       |       2 |               2 | MR-REQ-LOOP-001  | MR-TEST-EXP-001  |
+ | MR-ACT-MONITOR-ROUTINE   | Routine monitor or stop                          |       1 |               0 | MR-REQ-LOOP-001  | MR-TEST-EXP-001  |
+@@ -338,8 +338,8 @@
+ | task.piimOxygen                    | Answer the required oxygen-loss question before the response deadline.                                                             |
+ | task.piimResponse                  | Submit a response, withdraw from PIIM, or withdraw the public record.                                                              |
+ | task.concernReminder               | A deferred record concern needs a response before the Week-13 route check.                                                         |
+-| manuscript.claim.careful           | Recovery is linked to a transient repatterning state.                                                                              |
+-| manuscript.claim.strong            | The transient repatterning state supports recovery in this model.                                                                  |
++| manuscript.claim.careful           | Recovery appears in the observed condition.                                                                              |
++| manuscript.claim.strong            | The included observations link transient repatterning with recovery in this model.                                                                  |
+ | manuscript.claim.inflated          | Treat the transient repatterning state as if it governs recovery. This is unsupported.                                             |
+ | manuscript.requirements.title      | Active requirements                                                                                                                |
+ | manuscript.requirements.missing    | The current draft has a visible evidence or authorship gap.                                                                        |
+@@ -356,7 +356,7 @@
+ | manuscript.requirement.conflict    | Conflict                                                                                                                           |
+ | manuscript.requirement.unsupported | Unsupported                                                                                                                        |
+ | manuscript.requirement.careful     | Careful needs one supported figure, one relevant control, and one caveat.                                                          |
+-| manuscript.requirement.strong      | Strong needs two supported figures from different experiments, structure and rhythm coverage, one matched control, and one caveat. |
++| manuscript.requirement.strong      | Strong needs two distinct recovery records, structure and rhythm coverage, an observed repatterning association, one matched control, and the association caveat. |
+ | manuscript.requirement.inflated    | Inflated also needs causal support. The current honest record does not provide it.                                                 |
+ | piim.card.batch                    | Batch evidence                                                                                                                     |
+ | piim.card.oxygen                   | Oxygen-loss challenge                                                                                                              |
+@@ -399,7 +399,7 @@
+ | -------------------- | ------------------------------------------------------------------ | -----------------: | ---------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ----------------------- | -------------------------------- |
+ | MR-EXP-LASER-SHAM    | W1 after Clarified to W4 after-hours                               |                  1 | MR-SCN-CLARIFIED             | Matched comparison / broader injury case                      | Clear recovery with stable sham / partial recovery or unclear control / unreliable record        | Creates MR-REC-LASER-SHAM; supports the next request                                       | experiment.laserSham    | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+ | MR-EXP-DAMAGE-RANGE  | W2 early to W4 after-hours                                         |                  1 | Analysed laser/sham record   | Observed recovery range / recovery edge                       | Clear recovery boundary / mixed recovery range / no useful range                                 | Creates MR-REC-DAMAGE-RANGE                                                                | experiment.damageRange  | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+-| MR-EXP-BATCH-CHECK   | W3 early to W6 after-hours                                         |                  1 | Analysed laser/sham record   | Established batch context / newly available batch context     | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input                                       | experiment.batchCheck   | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
++| MR-EXP-BATCH-CHECK   | W3 early to W9 after-hours                                         |                  1 | Analysed laser/sham record   | Established batch context / newly available batch context     | Similar response in another batch / partial or mixed second batch / mismatch or unreliable batch | Creates MR-REC-BATCH-CHECK and PIIM batch card input                                       | experiment.batchCheck   | MR-REQ-EXP-002 / MR-TEST-EXP-001 |
+ | MR-EXP-REPAIR-STATE  | W4 early to W6 after-hours                                         |                  1 | Analysed damage-range record | Observe association / broader-condition challenge             | Repatterning tracks recovery / tracks only part of recovery / stress signal unclear              | Creates MR-REC-REPAIR-STATE                                                                | experiment.repairState  | MR-REQ-EXP-003 / MR-TEST-EXP-001 |
+ | MR-EXP-OXYGEN-LOSS   | W10 after Helpful Comments to W12 after-hours; analysis before W14 |                  2 | MR-SCN-HELPFUL-COMMENTS      | Interpretable recovery condition / broader reviewer condition | Constrained recovery after challenge / delayed or mixed recovery / no usable recovery            | Creates MR-REC-OXYGEN-LOSS and PIIM oxygen card input                                      | experiment.oxygenLoss   | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+ | MR-EXP-DRUG-EXPOSURE | W10 after Camila contact to W12 after-hours; analysis before W14   |                  1 | MR-OPT-CAMILA-INITIAL        | Established assay context / exploratory assay context         | Useful condition-dependent response / mixed response / unreliable response                       | Creates MR-REC-DRUG-EXPOSURE and one later Camila acknowledgement; no route or PIIM effect | experiment.drugExposure | MR-REQ-EXP-001 / MR-TEST-EXP-001 |
+@@ -434,7 +434,7 @@
+ | ------------------------ | ----------------------------------------------------- | --------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------- | -------------------- | ---------------- |
+ | MR-TASK-LASER-SHAM       | Replicate the initial result with a sham              | W1–W4                                               | Clarified                 | Enables laser/sham record and report to Elena                              | task.laserSham       | MR-TEST-EXP-001  |
+ | MR-TASK-DAMAGE-RANGE     | Establish a limited recovery range                    | W2–W4                                               | Laser/sham analysis       | Enables range record                                                       | task.damageRange     | MR-TEST-EXP-001  |
+-| MR-TASK-BATCH-CHECK      | Check a second tissue batch                           | W3–W6                                               | Laser/sham analysis       | Enables batch record and later PIIM card                                   | task.batchCheck      | MR-TEST-EXP-001  |
++| MR-TASK-BATCH-CHECK      | Check a second tissue batch                           | W3–W10; report before W11                                               | Laser/sham analysis       | Enables batch record and later PIIM card                                   | task.batchCheck      | MR-TEST-EXP-001  |
+ | MR-TASK-REPAIR-STATE     | Read the repair-state signal carefully                | W4–W6                                               | Damage-range analysis     | Enables repair-state record                                                | task.repairState     | MR-TEST-EXP-001  |
+ | MR-TASK-MANUSCRIPT       | Draft the paper with the current packet               | W5–W7                                               | A Complete Narrative      | Requires MR-ACT-MANUSCRIPT-DRAFT                                           | task.manuscript      | MR-TEST-NARR-001 |
+ | MR-TASK-REMOVE-CAUTION   | Remove cautious wording                               | W6; due at first safe point after the initial draft | Initial manuscript commit | Requires MR-ACT-MANUSCRIPT-COMMIT; stores first contradictory revision     | task.removeCaution   | MR-TEST-NARR-001 |
+@@ -589,7 +589,7 @@
+ | ----------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+ | Elena message     | task.removeCaution.message     | The wording is too defensive. If the result is real, the sentence should not look frightened of it.  |
+ | Board instruction | task.removeCaution.instruction | Remove the cautious language from the main claim.                                                    |
+-| Commit result     | task.removeCaution.result      | The claim now carries the requested confidence. The earlier version remains in the snapshot history. |
++| Commit result     | task.removeCaution.result      | The revision is saved. Your selected claim and the earlier version remain in the snapshot history. |
+
+ `MR-SCN-WHAT-WE-HAD` cannot become due until the initial manuscript and this
+ revision are both committed. It then asks for the earlier caution to return.
+@@ -774,7 +774,9 @@
+ | Player A          | optional.haoran.borrowed.help    | I can take the late check.                                 | T:Haoran+10 |
+ | Player B          | optional.haoran.borrowed.plan    | Show me what can wait without becoming urgent by email.    | T:Haoran+0  |
+ | Player C          | optional.haoran.borrowed.decline | I cannot take another task.                                | T:Haoran-10 |
+-| Haoran            | optional.haoran.borrowed.close   | Thank you. Or understood. Both are useful to know.         | None        |
++| Haoran after A | optional.haoran.borrowed.closeA | Thank you. I will leave the late check with you. | None |
++| Haoran after B | optional.haoran.borrowed.closeB | All right. We can mark what can wait. | None |
++| Haoran after C | optional.haoran.borrowed.closeC | I understand. I will ask someone else. | None |
+
+ Choice A sets FLAG:helpedHaoran. Choice C sets FLAG:declinedHaoran. The scene
+ does not give or remove the player's evidence.
+@@ -841,7 +843,9 @@
+ | Player A          | optional.gabriel.queue.wait    | Keep the queue. I will use the later window.                                                     | T:Gabriel+10; FLAG:acceptedQueue     |
+ | Player B          | optional.gabriel.queue.limited | Use the limited slot and record the limit.                                                       | T:Gabriel+0; FLAG:limitedFacilityUse |
+ | Player C          | optional.gabriel.queue.press   | My deadline needs priority.                                                                      | T:Gabriel-10; FLAG:pressedFacility   |
+-| Gabriel           | optional.gabriel.queue.close   | Thank you. I will enter that into the system as a human decision.                                | None                                 |
++| Gabriel after A | optional.gabriel.queue.closeA | I will keep your place. The later slot is yours. | None |
++| Gabriel after B | optional.gabriel.queue.closeB | I will record the limit beside the booking. | None |
++| Gabriel after C | optional.gabriel.queue.closeC | I can move you ahead. The other requests will wait. | None |
+
+ ### MR-OPT-GABRIEL-ARCHIVE
+
+@@ -958,9 +962,9 @@
+ | Record ID               | Text key                         | Initial English text                                                                                                                                                                                     |
+ | ----------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | MR-REC-PROJECT-NOTEBOOK | record.projectNotebook.body      | Objective: test whether the recovery result repeats when treated as a result rather than as a prophecy. Keep the sham visible. Keep the limits visible.                                                  |
+-| MR-REC-LASER-SHAM       | record.laserSham.strong          | Observation: the matched sham remains stable. The damaged group regains a clear boundary and coordinated rhythm. Interpretation: the result is repeatable in this record.                                |
++| MR-REC-LASER-SHAM       | record.laserSham.strong          | Observation: the damaged group regains a clear boundary and coordinated rhythm. Interpretation: recovery is visible in this run; the control and coverage labels show how far the comparison can go. |
+ | MR-REC-LASER-SHAM       | record.laserSham.limited         | Observation: recovery is partial, or the sham record is unclear. Interpretation: the result can support a limited claim and a clearer repeat.                                                            |
+-| MR-REC-LASER-SHAM       | record.laserSham.weak            | Observation: the record is unreliable. Interpretation: this run cannot support the claim, but it identifies a control or monitoring problem.                                                             |
++| MR-REC-LASER-SHAM       | record.laserSham.weak            | Observation: the record is unreliable. Interpretation: this run cannot support the recovery claim. The preparation and quality labels state the observed limits. |
+ | MR-REC-DAMAGE-RANGE     | record.damageRange.strong        | Observation: recovery appears inside a clear limited-damage boundary. Interpretation: the range narrows the question without explaining the mechanism.                                                   |
+ | MR-REC-DAMAGE-RANGE     | record.damageRange.limited       | Observation: recovery changes across the range, but no single boundary is clear. Interpretation: the manuscript must describe mixed conditions.                                                          |
+ | MR-REC-DAMAGE-RANGE     | record.damageRange.weak          | Observation: no useful recovery range is visible. Interpretation: do not turn absence of a boundary into a boundary.                                                                                     |
+@@ -976,8 +980,8 @@
+ | MR-REC-DRUG-EXPOSURE    | record.drugExposure.strong       | Observation: the response changes with the drug condition. Interpretation: the assay may be useful for a bounded safety question.                                                                        |
+ | MR-REC-DRUG-EXPOSURE    | record.drugExposure.limited      | Observation: the drug response is mixed. Interpretation: it is a useful discussion point, not a product promise.                                                                                         |
+ | MR-REC-DRUG-EXPOSURE    | record.drugExposure.weak         | Observation: the drug record is unreliable. Interpretation: it should not carry an industry claim.                                                                                                       |
+-| MR-REC-MANUSCRIPT-V1    | record.manuscriptV1.careful      | Title: Transient Repatterning Accompanies Spatial-Rhythmic Recovery in Cardiac Tissue. Current claim: recovery is linked to a transient repatterning state.                                              |
+-| MR-REC-MANUSCRIPT-V1    | record.manuscriptV1.strong       | Title: Transient Repatterning Supports Spatial-Rhythmic Recovery in Cardiac Tissue. Current claim: the state supports recovery within this model.                                                        |
++| MR-REC-MANUSCRIPT-V1    | record.manuscriptV1.careful      | Title: Recovery Observations in Cardiac Tissue. Current claim: recovery appears in the observed condition.                                              |
++| MR-REC-MANUSCRIPT-V1    | record.manuscriptV1.strong       | Title: Transient Repatterning and Spatial-Rhythmic Recovery in Cardiac Tissue. Current claim: the included observations show recovery and an association between transient repatterning and recovery within this model. |
+ | MR-REC-MANUSCRIPT-V1    | record.manuscriptV1.inflated     | Title: Reconstructive Rhythmogenesis Governs Cardiac Tissue Recovery. Current claim treats the state as if it drives recovery. Warning: the visible record does not support this claim.                  |
+ | MR-REC-PREPRINT-RECEIPT | record.preprintReceipt.body      | The Common Archive has created a public record. It can now be read by people who have no access to your corridor, your queue, or your reasons.                                                           |
+ | MR-REC-COSMOS           | record.cosmos.body               | Decision: decline. The observation may interest specialists, but the work does not change a broad field. We wish you a focused next submission.                                                          |
+@@ -1141,7 +1145,7 @@
+ | MR-UI-MENU-SAVEQUIT           | ui.menu.saveQuit            | Save and Quit                                                                                                             |
+ | MR-UI-MENU-STATUS             | ui.menu.researchStatus      | Research Status                                                                                                           |
+ | MR-UI-PROFILE-STANDARD        | ui.profile.standard         | Standard: the intended pressure profile.                                                                                  |
+-| MR-UI-PROFILE-SUPPORTED       | ui.profile.supported        | Supported: the same story with clearer warnings and more energy tolerance.                                                |
++| MR-UI-PROFILE-SUPPORTED       | ui.profile.supported        | Supported: the same story with more energy tolerance.                                                |
+ | MR-UI-PROFILE-LOCK            | ui.profile.lock             | This pressure profile is fixed for this save. Start a New Game to use another profile.                                    |
+ | MR-UI-REPLACE-SAVE            | ui.confirm.replaceSave      | Start a new game and replace the current active local save? The Archive will remain.                                      |
+ | MR-UI-CLEAR-DATA              | ui.confirm.clearData        | Clear all local game data, including settings, the active save, Archive cards, and Citations? This cannot be undone.      |
+@@ -1241,7 +1245,7 @@
+ | MR-END-REL-HAORAN-AMBIGUOUS  | Haoran, ambiguous  | ending.relationship.haoran.ambiguous  | Haoran's desk is occupied by another list. The old one is folded underneath.                       |
+ | MR-END-REL-HAORAN-DISTANCE   | Haoran, distance   | ending.relationship.haoran.distance   | Haoran asks for a record only through formal channels. The message is careful and very short.      |
+ | MR-END-REL-SAMIRA-SUPPORT    | Samira, support    | ending.relationship.samira.support    | Samira sends a new pattern sketch. It has no figure number and no apology.                         |
+-| MR-END-REL-SAMIRA-AMBIGUOUS  | Samira, ambiguous  | ending.relationship.samira.ambiguous  | Samira's name appears beside yours in an old supplementary file, correct but not close.            |
++| MR-END-REL-SAMIRA-AMBIGUOUS  | Samira, ambiguous  | ending.relationship.samira.ambiguous  | You and Samira leave with no clear account of what you were to each other. |
+ | MR-END-REL-SAMIRA-DISTANCE   | Samira, distance   | ending.relationship.samira.distance   | Samira's result appears elsewhere with the credit it needed.                                       |
+ | MR-END-REL-GABRIEL-SUPPORT   | Gabriel, support   | ending.relationship.gabriel.support   | Gabriel labels an old repair as fixed and writes: this one actually is.                            |
+ | MR-END-REL-GABRIEL-AMBIGUOUS | Gabriel, ambiguous | ending.relationship.gabriel.ambiguous | Gabriel's service log shows the same queue problem under a new project name.                       |
+@@ -1256,7 +1260,7 @@
+ | ----------------------------- | ---------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------- |
+ | MR-END-INTEGRITY-DEFENSIBLE   | Defensible record                              | ending.integrity.defensible   | The record is limited, readable, and still yours to explain.                                    |
+ | MR-END-INTEGRITY-COMPROMISED  | Unresolved omission                            | ending.integrity.compromised  | One missing card keeps changing the shape of the story whenever you look at it.                 |
+-| MR-END-INTEGRITY-UNDISCOVERED | Seriously undermined, not visible to others    | ending.integrity.undiscovered | The published version looks stable. The private record has a different kind of rhythm.          |
++| MR-END-INTEGRITY-UNDISCOVERED | Seriously undermined, not visible to others    | ending.integrity.undiscovered | The visible account and the private record no longer agree. The private record has a different kind of rhythm.          |
+ | MR-END-INTEGRITY-VISIBLE      | Seriously undermined, visible concern          | ending.integrity.visible      | A request for clarification arrives with two records attached. Neither has forgotten the other. |
+ | MR-END-FATIGUE-CLEAR          | No crash and ending energy above one           | ending.fatigue.clear          | The final image holds still long enough to look like rest.                                      |
+ | MR-END-FATIGUE-EXHAUSTED      | Crash occurred or ending energy is zero or one | ending.fatigue.exhausted      | The final image loses focus for a moment, then holds. The next day is not shown.                |
+@@ -1344,3 +1348,70 @@
+
+ No entry in this document authorizes implementation, production assets, a
+ package file, a remote, or deployment work.
++
++## Correction C02: fact-to-claim support
++
++Careful requires one included honest Usable evidence pair whose immutable raw record establishes recovery in at least one stated structure or rhythm observation, with a relevant control and caveat. Its wording remains limited to that observation.
++
++Strong retains two supported figures from different experiment templates, collective structure/rhythm coverage, one matched control and one caveat. In addition, at least one included honest Usable pair must establish repatterning together with recovery in the same raw record. The second honest Usable pair must establish a compatible recovery observation. Neither counts as association evidence solely because its template or card slot is different. Every honest Strong commit includes the association-only caveat: these observations do not establish a causal role. Any template can supply the association if its actual raw observation IDs establish it.
++
++S06 defines closed semantic sets for recovery observations, transient repatterning observations, compatible readings and the association-only caveat, using the S06-defined observation/reading/caveat IDs. Unknown IDs fail content validation. A raw unreliable result, an Inconclusive card, a missing observation, or a generic template match cannot enter the honest support predicate. A failed biological recovery can still honestly answer a different question; it cannot support a recovery claim without a compatible recovery observation.
++
++The visible reported-support result remains separate from honest raw support. An explicit altered/unsupported reading can still create apparently supported reported claims under existing integrity rules. Do not reveal hidden misconduct through a raw-support badge shown to other characters, and do not block the existing explicit dishonest path. Inflated requires causal support that no honest raw record provides. Persisted reported requirement states do not certify scientific truth.
++
++## Correction C01/C03: selected question text and dialogue selectors
++
++The twelve question labels in `04-science-and-experiments.md` are exact authored strings, keyed as `experiment.<template>.question.baseline` and `.higherRisk`, using the existing lower-camel template segment. The saved family choice selects exactly one. They are question labels, not outcome forms or new records. Each build includes only selected templates' labels.
++
++Haoran Borrowed Time and Gabriel Queue replace their shared closing with `closeA`, `closeB` or `closeC`, selected only by the committed choice. They retain the same scene IDs, choices, effects, time and skip behavior. The old shared closing keys are superseded, not selected in the new content version. S06 dependency closure includes all three reachable closings per selected scene.
++
++Supported's warning content remains identical to Standard. Manuscript cost UI obtains period and current energy cost from the actual action forecast, including any applicable Standard surcharge. It never assumes that every commit costs one period/one energy.
++
++## Correction C02: closed scientific meaning tables
++
++These small closed semantic IDs are content definitions, not additional experiment templates, primary records or generated text. Add MR-STRUCTURE-, MR-RHYTHM-, MR-REPATTERNING-, MR-CONTROL-, MR-READING- and MR-CAVEAT- to the semantic-definition prefix registry. Every selected definition has the exact English label below in strings.en.json. Full, fallback and slice include only their dependency closure.
++
++| Semantic ID | Exact English label | Saved meaning |
++|---|---|---|
++| MR-STRUCTURE-RECOVERY | Structure recovery observed | structureRecovery=true |
++| MR-STRUCTURE-PARTIAL | Partial structure recovery observed | structureRecovery=true |
++| MR-STRUCTURE-NONE | No structure recovery observed | structureRecovery=false |
++| MR-STRUCTURE-UNOBSERVED | Structure recovery not established | structureRecovery=false |
++| MR-RHYTHM-RECOVERY | Rhythm recovery observed | rhythmRecovery=true |
++| MR-RHYTHM-PARTIAL | Partial rhythm recovery observed | rhythmRecovery=true |
++| MR-RHYTHM-NONE | No rhythm recovery observed | rhythmRecovery=false |
++| MR-RHYTHM-UNOBSERVED | Rhythm recovery not established | rhythmRecovery=false |
++| MR-REPATTERNING-TRACKS-RECOVERY | Repatterning tracks recovery in this record | repatterningTracksRecovery=true; requires a positive recovery observation in the same record |
++| MR-REPATTERNING-NO-ASSOCIATION | No recovery association established | repatterningTracksRecovery=false |
++| MR-REPATTERNING-UNOBSERVED | Repatterning relation not established | repatterningTracksRecovery=false |
++| MR-CONTROL-MATCHED | Matched comparison | controlKind=matched |
++| MR-CONTROL-LIMITED | Limited comparison | controlKind=limited |
++| MR-READING-RECOVERY | Recovery appears in the observed condition | Honest only if structureRecovery or rhythmRecovery is true |
++| MR-READING-ASSOCIATION | Repatterning tracks the observed recovery | Honest only if repatterningTracksRecovery and at least one recovery fact are true |
++| MR-READING-NO-RECOVERY | Recovery was not observed | Honest only if both recovery facts are false, at least one selected observation is NONE, and no selected observation is UNOBSERVED |
++| MR-READING-UNRESOLVED | This record does not settle the question | Honest for an inconclusive/process-limited record; never positive support for a recovery claim |
++| MR-CAVEAT-CONDITION | This conclusion is limited to the observed condition | Relevant to an honest RECOVERY/NO-RECOVERY reading |
++| MR-CAVEAT-ASSOCIATION | These observations do not establish a causal role | Relevant to ASSOCIATION or RECOVERY; required on every honest Strong board |
++| MR-CAVEAT-PROCESS | The recorded process or coverage limit remains | Relevant to UNRESOLVED or a honestly narrowed valid record with a process/coverage limit |
++
++Text keys use `science.<lowerCamel semantic ID without MR prefix>`, for example `science.structureRecovery`, `science.repatterningTracksRecovery`, `science.caveatAssociation`. This table defines each key by that mechanical conversion; no runtime prose conversion is permitted. Selected content supplies the literal label.
++
++Each raw result refers to exactly one structure ID, one rhythm ID, one repatterning ID and one control ID. scientificFacts must equal those exact table meanings. A nonselected observation is UNOBSERVED; paired views require the existing quality-check action for full paired coverage. An unreliable result cannot use RECOVERY/PARTIAL or TRACKS-RECOVERY to establish a supported claim. A selected honest reading and caveat must pass this table. A different template is not evidence for any of these facts. Do not infer meanings from ID spelling: validated content builds the typed mapping from these approved entries; the decoder checks shape and the connected validator checks equality.
++
++C02 does not grant association to every Strong biological result. Association is true only when the raw record contains the specific TRACKS-RECOVERY observation. Later content/result vectors must include both association-present and association-absent records from at least two templates, consistent with their approved biological outcomes. No new raw observation may be invented to make a card fit a claim.
++
++Careful reported support counts one nonomitted, noncontradictory usable honest recovery pair or one explicitly altered/unsupported apparent recovery pair. Strong/Inflated reported support counts two distinct such pairs and collective structure/rhythm support, plus associationSupport, matched control and caveat. For an honest pair, those predicates use the raw meanings above. An explicitly altered/unsupported pair may supply apparent recovery/association observations under existing confirmation and integrity rules; it cannot change raw scientificFacts or turn a limited control into a matched control. A contradictory or omitted pair supplies no reported support. Only deliberate altered/unsupported reporting can supply apparent causal support; honest raw causal support is always false.
++
++An honest Strong board must include one usable ASSOCIATION reading, another compatible usable recovery reading from a different template, at least one genuine matched control linked to included evidence, collective structure/rhythm recovery, and MR-CAVEAT-ASSOCIATION. A single limited structure-only record can honestly support Careful, but cannot silently supply rhythm or association. The requirement result is conflict if visible contradiction exists, missing if the necessary card/slot is absent, unsupported if present candidates fail the predicate, and met otherwise. A missing versus unsupported result is not guessed from card counts.
++
++Required S06 validation cases: every table row; unknown ID; raw-ID/scientificFacts disagreement; unobserved view represented as recovery; TRACKS-RECOVERY without same-record recovery; unsupported honest reading; mismatched caveat; selected pair with limited control falsely marked matched; altered apparent support with unchanged raw facts; no honest causal support; profile closure and exact literal label mapping. S12 semantic cases link these to MR-REQ-EXP-001/003, MR-REQ-NARR-001, MR-REQ-CONTENT-001 and MR-IF-002/003/006.
++
++Content also registers MR-REASON-START-WINDOW-EXPIRED (label: The start window closed before this experiment began) and MR-REASON-ANALYSIS-DEADLINE (label: The analysis deadline passed before this record was archived). Both use the existing reason projection; they do not imply misconduct. Add MR-REASON- to the semantic prefix registry. Expiry event template IDs use the existing MR-EVT- prefix and preserve the run ID without truncation; content validation rejects any resulting ID over128 characters and constrains authored template IDs/run-ID construction accordingly.
++
++## Correction C01: attention priority and final experiment windows
++
++Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
++
++Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
++
++Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
+--- a/docs/13-testing-and-evaluation.md
++++ b/docs/13-testing-and-evaluation.md
+@@ -537,3 +537,11 @@
+ Exact Node and package versions, actual assets and codecs, measured frame
+ rates, browser versions, and a public release date are deliberate later facts.
+ They are not assumptions or current claims.
++
++## Correction C04: earlier evidence
++
++The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
++
++## Correction C05: length and play evidence
++
++Retain the 6,000-unique-word vocabulary cap. Also report total authored word tokens and words seen in representative runs, including compulsory text, chosen options, displayed results and ending modules. Repeated words count each time in the latter measures. Report optional-reading volume separately. Before runtime strings exist, catalogue-table counts are provisional and must state which tables/columns were included. Calculate reading-only estimates at 150, 200 and 250 words per minute; none proves game duration. Measure actual private play after mechanics and readable presentation exist. Keep 90/180-minute targets and scene durations as targets, not measured facts or forced reading timers. Do not pad text to reach them.
+--- a/docs/14-production-plan.md
++++ b/docs/14-production-plan.md
+@@ -195,3 +195,7 @@
+ Gate 1 is approved, the next action is an exact Step-1 plan, not a batch slice
+ approval. No code, assets, package files, deployment configuration, remote, or
+ public release work is authorized.
++
++## Correction C04: earlier evidence
++
++The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
+--- a/docs/15-implementation-contract.md
++++ b/docs/15-implementation-contract.md
+@@ -101,7 +101,7 @@
+ | MR-WP-04 Input and interaction           | src/player, src/input, src/interaction                                                                                                                                          | MR-WP-00, MR-WP-03 target interface                                         | Keyboard/controller action tests and focused-view checks                                                                            |
+ | MR-WP-05 UI and accessibility            | src/ui, semantic overlays, menu, settings, status, accessibility tests                                                                                                          | MR-WP-01, MR-WP-02, MR-WP-04 interfaces                                     | UI, scale, captions, small-view, and input evidence                                                                                 |
+ | MR-WP-06 Audio and cutscenes             | src/audio, src/cutscenes, audio-resource ownership, cue wiring, skip and input restoration                                                                                      | MR-WP-01, MR-WP-03, MR-WP-05 interfaces                                     | S05 campaign-safe scene checks and S10 cutscene, audio, ambience, music, dialogue-sound, restoration, and teardown fixtures         |
+-| MR-WP-07 Vertical-slice integration      | Week-1 selected content, integration checks, slice journeys, save/recovery evidence, and private slice packet                                                                   | MR-WP-01 through MR-WP-06                                                   | Vertical-slice private gate evidence                                                                                                |
++| MR-WP-07 Vertical-slice integration      | early-weeks selected content, integration checks, slice journeys, save/recovery evidence, and private slice packet                                                                   | MR-WP-01 through MR-WP-06                                                   | Vertical-slice private gate evidence                                                                                                |
+ | MR-WP-08 Campaign content integration    | Separately approved fallback and full content data, scene wiring, records, endings, English text, and campaign journeys                                                         | Accepted MR-WP-07 gate, then accepted fallback gate                         | Content counts, route matrix, Citation and ending checks                                                                            |
+ | MR-WP-09 Quality and release preparation | Own future `MR-IF-015`, fixture schema, manifest, acceptance matrix, shared test utilities, performance audit, asset/dependency audit, private evidence, and release checklist  | Shared preparation after MR-WP-00; final evidence after applicable packages | Fixture and documentation self-checks, complete traceability, verify command output, and approved release-boundary audit            |
+
+@@ -241,3 +241,7 @@
+ 2026-09-03. `MR-WO-WP01-003` supersedes the rules order and is active;
+ `MR-WO-WP00-008` supersedes the diagnostic order and waits. All exclusions and
+ the Step-5 block remain unchanged.
++
++## Correction C04: earlier evidence
++
++The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
+--- a/docs/decision-log.md
++++ b/docs/decision-log.md
+@@ -181,7 +181,7 @@
+ | 2026-08-29 | Use `requestScene` in two steps without adding a command or effect: lock the scene form and verify its queued pre-scene checkpoint first, then activate and start only from that exact verified revision.                                                                                                                                                                                                                                                                         | Confirmed                                                                                                                                                                                  |
+ | 2026-08-30 | Use one strict authored `content/` source catalogue with exact data, manifest, English-string, and full, fallback, and slice profile files. Finished builds contain only selected data and text.                                                                                                                                                                                                                                                                                  | Confirmed                                                                                                                                                                                  |
+ | 2026-08-30 | Use globally unique stable IDs, strict family shapes, stable-ID-only references, declarative closed conditions and effects, and rules-owned campaign changes.                                                                                                                                                                                                                                                                                                                     | Confirmed                                                                                                                                                                                  |
+-| 2026-08-30 | Use the exact full, fallback, and Week-1 slice selections and counts, including the slice claim rehearsal and completion item, with independent dependency and reachability checks.                                                                                                                                                                                                                                                                                               | Confirmed                                                                                                                                                                                  |
++| 2026-08-30 | Use the exact full, fallback, and early-weeks slice selections and counts, including the slice claim rehearsal and completion item, with independent dependency and reachability checks.                                                                                                                                                                                                                                                                                               | Confirmed                                                                                                                                                                                  |
+ | 2026-08-30 | Use one build-specific English map with strict lower-camel dot keys, a closed protagonist-placeholder set, exact selected-key closure, and the normalized 6,000-unique-word check.                                                                                                                                                                                                                                                                                                | Confirmed                                                                                                                                                                                  |
+ | 2026-08-30 | Start content schema at `1` and content version at `1.0.0`; list compatible earlier versions exactly; preserve the campaign profile; and migrate saved content only through direct approved mappings.                                                                                                                                                                                                                                                                             | Confirmed                                                                                                                                                                                  |
+ | 2026-08-30 | Divide immutable validated content into metadata, rules, presentation, and string views; reject invalid content without partial data, profile switching, or saved-data change.                                                                                                                                                                                                                                                                                                    | Confirmed                                                                                                                                                                                  |
+@@ -238,3 +238,9 @@
+ - Do not record proposals as confirmed.
+ - When a decision changes readiness, update `00-design-index.md` in the same
+   change.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/decisions.md
++++ b/docs/implementation/decisions.md
+@@ -114,7 +114,7 @@
+ | MR-IMP-DEC-094 | 2026-08-30 | Use one strict dot-separated lower-camel English key map, a closed protagonist-placeholder set, separate dynamic UI fields, build-specific text selection, and the exact normalized unique-word check with a 6,000-word limit.                                                                                                                                                                                                                                                                                                                                                                                                                                    | Confirmed  | Runtime systems cannot assemble or generate player-facing prose.                                                                                                                                                                                                                                                       |
+ | MR-IMP-DEC-095 | 2026-08-30 | Start content schema at `1` and content version at `1.0.0`; classify patch, minor, and major compatibility by identity and meaning; list compatible earlier versions exactly; keep the campaign build profile immutable.                                                                                                                                                                                                                                                                                                                                                                                                                                          | Confirmed  | No implicit version range, profile conversion, or best-effort load is allowed.                                                                                                                                                                                                                                         |
+ | MR-IMP-DEC-096 | 2026-08-30 | Use the fixed manifest-to-filtered-package validation order, sanitized ordered issues, one new immutable `ValidatedContent` on success, and candidate `MR-IF-006` `v1` without implementation authority.                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Confirmed  | Invalid input produces no partial content or retained raw reference.                                                                                                                                                                                                                                                   |
+-| MR-IMP-DEC-097 | 2026-08-30 | Select full, fallback, and Week-1 slice content with explicit per-family ID lists, exact approved counts and replacements, no inheritance, and separate dependency and reachability checks for each profile.                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Confirmed  | The fallback remains coherent and the slice cannot depend on later campaign content.                                                                                                                                                                                                                                   |
++| MR-IMP-DEC-097 | 2026-08-30 | Select full, fallback, and early-weeks slice content with explicit per-family ID lists, exact approved counts and replacements, no inheritance, and separate dependency and reachability checks for each profile.                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Confirmed  | The fallback remains coherent and the slice cannot depend on later campaign content.                                                                                                                                                                                                                                   |
+ | MR-IMP-DEC-098 | 2026-08-30 | Add the approved event, message, notification, form, beat, choice, cue, slice, character, speaker, and location prefixes; use globally unique 1–128-character uppercase ASCII content IDs that cannot be repurposed.                                                                                                                                                                                                                                                                                                                                                                                                                                              | Confirmed  | S08 will map semantic locations to geometry.                                                                                                                                                                                                                                                                           |
+ | MR-IMP-DEC-099 | 2026-08-30 | Use inclusive period indexes `0`–`63`, four closed authored priorities, unique same-priority `authoredOrder` values from `0`–`9999`, no expiry for required story content, normal completion for active optional content, and separate follow-up events.                                                                                                                                                                                                                                                                                                                                                                                                          | Confirmed  | Refines S05 authored facts without changing scheduler order.                                                                                                                                                                                                                                                           |
+ | MR-IMP-DEC-100 | 2026-08-30 | Use five fixed recurring-character IDs, separate protagonist, internal, system, editor, and reviewer speaker roles, and ten semantic location IDs whose coordinates remain owned by S08.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Confirmed  | Prevents display names and coordinates from becoming content identity.                                                                                                                                                                                                                                                 |
+@@ -331,3 +331,9 @@
+ Add an entry only after Leonardo approves it. When a later decision replaces
+ one, preserve the old row as `superseded` and link the new ID. Detailed
+ behaviour belongs in the applicable specification file.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/development-roadmap.md
++++ b/docs/implementation/development-roadmap.md
+@@ -211,7 +211,7 @@
+ |   26 | Add the cutscene timeline, checkpoints, skip rules, captions, restoration, and synthetic temporary audio. Leonardo tests complete, skipped, interrupted, and resumed scenes.                                                                                                                                                                               |                                         25 |
+ |   27 | Research representative visual and audio candidates and build no asset until Leonardo approves the benchmark selection and any permitted modifications.                                                                                                                                                                                                    |                                         26 |
+ |   28 | Integrate the approved benchmark assets in one representative slice area and add the slice science presentation. Leonardo approves the style direction or requests rework.                                                                                                                                                                                 |                                         27 |
+-|   29 | Add the complete approved Week-1 slice tutorial, dialogue, narrative, manuscript rehearsal, experiment, messages, and completion content. Leonardo reviews its words, humour, clarity, and pacing.                                                                                                                                                         |                                         28 |
++|   29 | Add the complete approved early-weeks slice tutorial, dialogue, narrative, manuscript rehearsal, experiment, messages, and completion content. Leonardo reviews its words, humour, clarity, and pacing.                                                                                                                                                         |                                         28 |
+ |   30 | Connect the complete slice journey and verify save, recovery, accessibility, supported browsers, performance method, and privacy. Leonardo completes a guided pre-slice check.                                                                                                                                                                             |                                         29 |
+ |   31 | Run Leonardo's 20–30-minute private slice review, correct blockers and approved-scope defects, and record explicit slice acceptance.                                                                                                                                                                                                                       |                                         30 |
+ |   32 | Add the five-act campaign shell, phase transitions, content slots, and complete local traversal without final prose. Leonardo checks the campaign map and transition clarity.                                                                                                                                                                              |                                         31 |
+@@ -289,3 +289,19 @@
+ 2026-09-03.
+ Step 5, Three.js, game systems, asset research, a remote, licence, deployment,
+ and public action remain blocked.
++
++## Correction gates attached to existing steps
++
++These named gates do not create new integer steps or work packages. They do not authorize later steps as a batch.
++
++- Gate 4A, before revised Step-4 acceptance: approve the corrected creative/technical baseline and named schedule targets; review and validate the amended Step-4 candidate before integration and Leonardo's existing acceptance exercise.
++- Gate 6A, attached to Step 6: preserve the reference traces and semantic cases as fixture data and map each to an existing requirement. Steps 5–6 provide content envelopes, schema, manifest and test utilities. Content for future acts may remain an explicitly incomplete test-only fixture; no production profile is falsely marked complete. Execute only rules that exist. Replay calendar/monitoring parts after Steps 18–23, and claim cases after Step 24. Complete full journeys when their remaining rules arrive.
++- Gate 26A, after Step 26 and before Step 27: run a temporary internal scenario starting at period 43 with an oxygen window due, a manuscript revision and a colleague/career opportunity with a competing deadline. Use existing temporary rooms and text. Steps 18–26 supply clock, scheduler, monitoring, records, board, relationships and presentation. Pull forward only the career-task completion/expiry subset from Step 43 if Step 25 does not yet expose it. Do not implement final career selection for this gate.
++- In the same gate, run a tail scenario starting at period 56. If final route choices or ending resolution are needed, pull forward only their pure transition subset from Steps 44–45 and use test-only result modules. Keep final prose and presentation in Steps 46–50. A fixture which merely declares an ending passed is insufficient. Required tests cover exact 63 boundary, no extra advance, finalization once, and the ability to reach a valid ending when optional tasks were missed.
++- Before Step 27 benchmark selection, review feasibility for every planned asset role: possible approved source route, licence/cost evidence status, adaptation work and technical uncertainty. This is planning evidence; no candidate is selected, imported or purchased. Steps 33–38 still require their existing research/selection and separate integration plans.
++
++The Step-26 plan must list exact relocated rule functions, exclusive paths and tests before implementation. The corresponding later step removes only duplicated implementation, retaining full integration and acceptance. Do not claim the pressure or tail gate has passed until its actual runtime dependencies and test evidence exist.
++
++## Routing pointer
++
++S13 is the authority for prospective Astra/Sol/Terra/Luna routing and actual-use records. Earlier model descriptions above preserve the pre-correction workflow only. The integer Step 0–70 IDs and ten work-package IDs remain unchanged.
+--- a/docs/implementation/interfaces.md
++++ b/docs/implementation/interfaces.md
+@@ -97,3 +97,9 @@
+ compatibility and migration review, updated fixtures and traceability, and
+ Leonardo's approval. The later approved interface version supersedes the
+ earlier version and applies to future work only.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/open-issues.md
++++ b/docs/implementation/open-issues.md
+@@ -56,3 +56,9 @@
+ use only the exact superseding work orders. Historical `MR-IMP-OPEN-017` and
+ `v3` remain evidence. A later material conflict must receive a new stable issue
+ ID before dependent work continues.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/roadmap.md
++++ b/docs/implementation/roadmap.md
+@@ -93,7 +93,7 @@
+
+ The earlier one-approval slice authority is superseded. After Gate 1, Leonardo
+ can approve only the exact next step in `development-roadmap.md`. Step 1 does
+-not authorize Step 2. Steps 1–30 build the foundation and Week-1 slice through
++not authorize Step 2. Steps 1–30 build the foundation and early-weeks slice through
+ separate plans, checks, local reviews, corrections, and acceptances. Step 31 is
+ Leonardo's private slice acceptance.
+
+@@ -243,3 +243,9 @@
+ `MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
+ 2026-09-03. Do not create a Three.js scene, game system, content, asset,
+ licence, remote, deployment, public-action path, or Step-5 result.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/specification-audit.md
++++ b/docs/implementation/specification-audit.md
+@@ -334,3 +334,9 @@
+ `MR-WO-WP01-003`, and `MR-WO-WP00-008` contain the connected authority. The
+ new correction still requires complete checks, primary audit, and one new
+ fresh Sol `xhigh` review before integration.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/implementation/specs/03-domain-model-and-state.md
++++ b/docs/implementation/specs/03-domain-model-and-state.md
+@@ -727,3 +727,27 @@
+ Historical `v1` through `v3`, all submitted commits, audits, and reviews remain
+ evidence. `MR-IMP-OPEN-018` and `MR-IMP-DEC-307` record the approved impact
+ and resolution.
++
++## Correction C02: candidate MR-IF-002 v5
++
++The state schema version becomes 2. Each immutable experiment raw record adds exactly `scientificFacts`: `structureRecovery` (boolean), `rhythmRecovery` (boolean), `repatterningTracksRecovery` (boolean), and `controlKind` (`matched` or `limited`). These are saved qualitative meanings of the linked raw observation/control IDs, assigned by validated content. They are not new player controls. S06 connected validation must compare every fact with the linked ID meaning; structural validation alone cannot certify that mapping.
++
++Each snapshot's strict requirementResults object adds `associationSupport` with the existing result union. It is applicable for Strong and Inflated and null for Careful or no claim. For honest support, Strong's distinct supported figures must each carry a compatible recovery observation; apparent dishonest support follows the explicit C02 reported-support table. Its structure/rhythm coverage uses the corresponding scientificFacts booleans, not mere presence of an ID. At least one included usable honest record must combine transient repatterning and structure or rhythm recovery. A matching control ID counts as matched only when its raw controlKind is matched. Unknown/missing fact fields fail validation; never default missing facts to true.
++
++The visible reported-support calculation preserves deliberate altered/unsupported readings. Such a reading may supply apparent recovery, association or causal support under the existing integrity and contradiction rules; it cannot change scientificFacts. The codec does not expose a separate hidden-truth label. Later connected-content tests check selected honest readings against the facts and caveat meaning. These checks must not be mistaken for Step-4 content validation.
++
++The existing completedContentIds entry `MR-SLICE-CLAIM-REHEARSAL` records slice rehearsal completion. It requires buildProfileId slice, period at most 11, an existing current manuscript snapshot and completed laser analysis. It is incompatible with full/fallback, any career evaluation, public preprint, PIIM milestones or non-unresolved campaign conclusion. Slice completion is not campaign conclusion; no career or ending module is fabricated. Persistence verifies the checkpoint before showing completion. A full-game draft still obeys the Week-5 task gate.
++
++No creation-input member, command discriminant, effect member, random algorithm or ending count changes. MR-IF-002 v4 remains historical evidence; v5 is frozen only by the subsequent explicit correction decision.
++
++## Correction C01: saved monitoring origin and expiry
++
++Each ExperimentRun adds startedPeriod, the period reached after its successful start command, not the period at which the command began. It is null while configured. It is a safe integer 0–63 no later than the current period for running, readyForAnalysis or analysed runs and ordinary stopped runs. It never changes after start. A configured run stopped by the exact start-window-expired reason retains null, no variation, no monitoring responses and no preparation result. Its stop log and inactive slot are required; it cannot have a raw record or evidence card.
++
++MonitoringRecord.completedPeriod remains the period after its response action. For a one-period monitoring response, eligibility is checked at completedPeriod minus one against the startedPeriod-derived inclusive offset. Responses are ordered, unique per window and cannot precede startedPeriod. No field or check infers an origin from the current clock. Missed-window transitions are future S05 rules; this amendment must not fabricate a player response to a missed window.
++
++Automatic start-window expiry and analysis-deadline expiry use existing StopLog.reasonId, respectively MR-REASON-START-WINDOW-EXPIRED and MR-REASON-ANALYSIS-DEADLINE. The former may stop only configured runs and leaves null variation; the latter may stop running/ready runs that actually started, preserves locked variation and responses, and creates no raw/card/support. A stopped run is established by exactly one valid stop log plus either a final stop response or these explicit expiry conditions. It is not required to invent a stop response for an automatic expiry. All stopped runs are absent from activeRunIds. Stop reasons cannot relax invariants for other states.
++
++## Correction C01: missed-window state representation
++
++Stored MonitoringRecord.response adds `missed`; the player command payload still permits only continue, qualityCheck, stabilize and stop. A scheduler missed record has completedPeriod equal to the first entered period after the derived window closes (S+2 for ordinary/oxygen first, S+4 for oxygen second). A real one-period response stores its post-action period with pre-action eligibility as above. The ordered monitoringResponses array contains one record per resolved window, whether answered or missed; a missed record cannot masquerade as a player command or quality check. Final-band/ready-state checks count resolved windows, not only player responses. A stopped configured run has no records. Preserve exactly-once/ordering and the existing issue/coverage consequence for every missed window.
+--- a/docs/implementation/specs/04-commands-rules-and-determinism.md
++++ b/docs/implementation/specs/04-commands-rules-and-determinism.md
+@@ -722,3 +722,25 @@
+ proof. The conditions and tables in this specification do not change. The
+ correction does not add a command, effect, rejection, draw, content result, or
+ player-visible choice.
++
++## Correction C02: fact-to-claim support
++
++Careful requires one included honest Usable evidence pair whose immutable raw record establishes recovery in at least one stated structure or rhythm observation, with a relevant control and caveat. Its wording remains limited to that observation.
++
++Strong retains two supported figures from different experiment templates, collective structure/rhythm coverage, one matched control and one caveat. In addition, at least one included honest Usable pair must establish repatterning together with recovery in the same raw record. The second honest Usable pair must establish a compatible recovery observation. Neither counts as association evidence solely because its template or card slot is different. Every honest Strong commit includes the association-only caveat: these observations do not establish a causal role. Any template can supply the association if its actual raw observation IDs establish it.
++
++S06 defines closed semantic sets for recovery observations, transient repatterning observations, compatible readings and the association-only caveat, using the S06-defined observation/reading/caveat IDs. Unknown IDs fail content validation. A raw unreliable result, an Inconclusive card, a missing observation, or a generic template match cannot enter the honest support predicate. A failed biological recovery can still honestly answer a different question; it cannot support a recovery claim without a compatible recovery observation.
++
++The visible reported-support result remains separate from honest raw support. An explicit altered/unsupported reading can still create apparently supported reported claims under existing integrity rules. Do not reveal hidden misconduct through a raw-support badge shown to other characters, and do not block the existing explicit dishonest path. Inflated requires causal support that no honest raw record provides. Persisted reported requirement states do not certify scientific truth.
++
++## Correction C01: attention priority and final experiment windows
++
++Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
++
++Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
++
++Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
++
++## Correction C01: required-work recovery eligibility
++
++takeProtectedBreak remains available during a due required work task. It does not bypass a pending crash, active cutscene, or higher-priority open experiment attention; once those settle, a due scene must run before recovery. A required work task by itself is not commandUnavailable for a break. Apply the normal combined deadline warning, one-period cost, profile recovery and five-energy cap. No special zero-time or bonus recovery is added. Test commandUnavailable ordering, unaffordable required work followed by a legal break, and unchanged state for a break blocked by a due scene.
+--- a/docs/implementation/specs/05-calendar-scheduler-events-and-cutscenes.md
++++ b/docs/implementation/specs/05-calendar-scheduler-events-and-cutscenes.md
+@@ -887,3 +887,19 @@
+ concern, or event is materialized once by its first valid scheduled transition.
+ After materialization, every lifecycle, queue, safe-point, reload, and
+ finalization rule in this specification is unchanged.
++
++## Correction C01: calendar clarification
++
++The 64 indices contain 63 available advances. Index 63 permits only no-time finalization and related approved interactions. No action may spend a 64th advance.
++
++A Complete Narrative becomes due at the first Week-5 safe point regardless of experiment completion. Remove Caution becomes due at or after Week 6 once the initial draft exists; it remains due until committed. What We Had follows at or after Week 7 after that revision, regardless of missing laboratory work. Protected breaks remain available while a required work task is due; open higher-priority experiment attention is resolved first, then due scenes run before a break. A break uses normal cost and recovery, crosses deadlines normally, and cannot defer a due scene. This prevents a required work task from trapping an unaffordable player. Experiments are requests with consequences, not prerequisites for time-driven story access.
++
++A normal monitoring response at an eligible pre-command period resolves that window before its elapsed-period expiry. The C01 offsets in S06 determine exactly when the window is eligible; no other timing is inferred.
++
++## Correction C01: attention priority and final experiment windows
++
++Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
++
++Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
++
++Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
+--- a/docs/implementation/specs/06-content-data-and-build-profiles.md
++++ b/docs/implementation/specs/06-content-data-and-build-profiles.md
+@@ -398,10 +398,10 @@
+ | Work class | Actions                                                                                     |
+ | ---------- | ------------------------------------------------------------------------------------------- |
+ | `recovery` | Protected break                                                                             |
+-| `light`    | Routine monitor, Elena report, relationship action, and room wait                           |
+-| `focused`  | Configure, focused start, quality monitor, analysis, manuscript revision, and career action |
+-| `intense`  | Intensive start and initial manuscript draft                                                |
+-| `major`    | PIIM response                                                                               |
++| `light`    | Configuration (0/0), routine monitor, Elena report, relationship action, and room wait                           |
++| `focused`  | Focused start, quality monitor, analysis, manuscript revision, and career action |
++| `intense`  | Intensive start                                                |
++| `major`    | Initial manuscript draft and PIIM response                                                                               |
+
+ Only focused and intense work can use the S04 night surcharge or push-through
+ rule. A content object cannot reclassify an action for one scene or profile.
+@@ -958,7 +958,7 @@
+ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | `MR-S06-VAL-001` | The three permitted development-status combinations; refusal to select an incomplete profile; one complete valid full package; exact counts, references, required content, stable ordering, and deterministic repeated validation. |
+ | `MR-S06-FBK-001` | Exact fallback cut, direct range/repair replacements, basic facility route, all mandatory content, exact counts, and no excluded text.                                                                                             |
+-| `MR-S06-SLC-001` | Exact Week-1 slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text.                                                                                  |
++| `MR-S06-SLC-001` | Exact early-weeks slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text.                                                                                  |
+ | `MR-S06-REF-001` | Valid references plus every missing, wrong-family, duplicate, circular, chained-replacement, and excluded-dependency rejection.                                                                                                    |
+ | `MR-S06-STR-001` | Key grammar, placeholders, selected-key closure, normalized unique-word vectors, exact 6,000 boundary, and 6,001 rejection.                                                                                                        |
+ | `MR-S06-OBJ-001` | Every strict family shape, explicit null and empty-list use, unknown fields, value ranges, forms, choices, conditions, and effects.                                                                                                |
+@@ -1048,3 +1048,64 @@
+ The restricted rules view supplies the role mappings above, while campaign
+ state stores their typed proof. This changes no authored object, prose, count,
+ profile, route rule, PIIM rule, or build behaviour.
++
++## Correction C01: explicit planning and timing data
++
++Configuration uses the `light` class with zero period and energy cost. It still creates one configured run, occupies a slot and records the selected qualitative options; it cannot draw variation, award evidence, improve preparation by repetition, or advance a clock. Existing stop/slot rules still apply. This is planning, not a new work class.
++
++Each selected template defines `monitoringOffsets` relative to the period reached by its successful start command. Normal templates and repeats use the inclusive pair `[0, 1]`. Oxygen uses `[0, 1]` and `[2, 3]`. These are fictional calendar indices, not laboratory timings. A response is eligible at the pre-command period. Once accepted, it resolves its own window before crossed-period expiry; a response cannot miss its own resolved window. After the last completed or missed window, the record is ready for analysis. No hidden incubation duration exists.
++
++Template windows govern configuration and start eligibility. An active run can complete after that window; analysis and report remain available through period 51. Laser analysis must precede range start, and range analysis must precede repair start. Batch starts through period 35. An unfulfilled request expires after period 51, without blocking the story.
++
++The slice has period range 0–11 and completes immediately after its successful rehearsal checkpoint. It uses the normal profile costs, monitoring offsets and room responses. `MR-SLICE-CLAIM-REHEARSAL` uses one period and one base energy, focused class, and requires an analysed laser record with an honest reading, relevant control and caveat. It commits a slice-only manuscript snapshot through the existing initial-manuscript command with this explicit profile action binding. The existing slice completion evidence records that snapshot and verified checkpoint before completion UI. It never creates the full-game Week-5 task, public record, career result or transferable full-game save. The S03 slice-profile definition and S07 compatibility checks must reject cross-profile continuation. A request whose full cost crosses 11 is rejected without change; the evaluation can restart through the existing New Game confirmation. Missing rehearsal never counts as completion.
++
++Full/fallback selection excludes this rehearsal action binding and its strings. Existing same-ID definition rules must recognize the explicit slice-only target, not silently reprice the full-game draft.
++
++## Correction C02: closed scientific meaning tables
++
++These small closed semantic IDs are content definitions, not additional experiment templates, primary records or generated text. Add MR-STRUCTURE-, MR-RHYTHM-, MR-REPATTERNING-, MR-CONTROL-, MR-READING- and MR-CAVEAT- to the semantic-definition prefix registry. Every selected definition has the exact English label below in strings.en.json. Full, fallback and slice include only their dependency closure.
++
++| Semantic ID | Exact English label | Saved meaning |
++|---|---|---|
++| MR-STRUCTURE-RECOVERY | Structure recovery observed | structureRecovery=true |
++| MR-STRUCTURE-PARTIAL | Partial structure recovery observed | structureRecovery=true |
++| MR-STRUCTURE-NONE | No structure recovery observed | structureRecovery=false |
++| MR-STRUCTURE-UNOBSERVED | Structure recovery not established | structureRecovery=false |
++| MR-RHYTHM-RECOVERY | Rhythm recovery observed | rhythmRecovery=true |
++| MR-RHYTHM-PARTIAL | Partial rhythm recovery observed | rhythmRecovery=true |
++| MR-RHYTHM-NONE | No rhythm recovery observed | rhythmRecovery=false |
++| MR-RHYTHM-UNOBSERVED | Rhythm recovery not established | rhythmRecovery=false |
++| MR-REPATTERNING-TRACKS-RECOVERY | Repatterning tracks recovery in this record | repatterningTracksRecovery=true; requires a positive recovery observation in the same record |
++| MR-REPATTERNING-NO-ASSOCIATION | No recovery association established | repatterningTracksRecovery=false |
++| MR-REPATTERNING-UNOBSERVED | Repatterning relation not established | repatterningTracksRecovery=false |
++| MR-CONTROL-MATCHED | Matched comparison | controlKind=matched |
++| MR-CONTROL-LIMITED | Limited comparison | controlKind=limited |
++| MR-READING-RECOVERY | Recovery appears in the observed condition | Honest only if structureRecovery or rhythmRecovery is true |
++| MR-READING-ASSOCIATION | Repatterning tracks the observed recovery | Honest only if repatterningTracksRecovery and at least one recovery fact are true |
++| MR-READING-NO-RECOVERY | Recovery was not observed | Honest only if both recovery facts are false, at least one selected observation is NONE, and no selected observation is UNOBSERVED |
++| MR-READING-UNRESOLVED | This record does not settle the question | Honest for an inconclusive/process-limited record; never positive support for a recovery claim |
++| MR-CAVEAT-CONDITION | This conclusion is limited to the observed condition | Relevant to an honest RECOVERY/NO-RECOVERY reading |
++| MR-CAVEAT-ASSOCIATION | These observations do not establish a causal role | Relevant to ASSOCIATION or RECOVERY; required on every honest Strong board |
++| MR-CAVEAT-PROCESS | The recorded process or coverage limit remains | Relevant to UNRESOLVED or a honestly narrowed valid record with a process/coverage limit |
++
++Text keys use `science.<lowerCamel semantic ID without MR prefix>`, for example `science.structureRecovery`, `science.repatterningTracksRecovery`, `science.caveatAssociation`. This table defines each key by that mechanical conversion; no runtime prose conversion is permitted. Selected content supplies the literal label.
++
++Each raw result refers to exactly one structure ID, one rhythm ID, one repatterning ID and one control ID. scientificFacts must equal those exact table meanings. A nonselected observation is UNOBSERVED; paired views require the existing quality-check action for full paired coverage. An unreliable result cannot use RECOVERY/PARTIAL or TRACKS-RECOVERY to establish a supported claim. A selected honest reading and caveat must pass this table. A different template is not evidence for any of these facts. Do not infer meanings from ID spelling: validated content builds the typed mapping from these approved entries; the decoder checks shape and the connected validator checks equality.
++
++C02 does not grant association to every Strong biological result. Association is true only when the raw record contains the specific TRACKS-RECOVERY observation. Later content/result vectors must include both association-present and association-absent records from at least two templates, consistent with their approved biological outcomes. No new raw observation may be invented to make a card fit a claim.
++
++Careful reported support counts one nonomitted, noncontradictory usable honest recovery pair or one explicitly altered/unsupported apparent recovery pair. Strong/Inflated reported support counts two distinct such pairs and collective structure/rhythm support, plus associationSupport, matched control and caveat. For an honest pair, those predicates use the raw meanings above. An explicitly altered/unsupported pair may supply apparent recovery/association observations under existing confirmation and integrity rules; it cannot change raw scientificFacts or turn a limited control into a matched control. A contradictory or omitted pair supplies no reported support. Only deliberate altered/unsupported reporting can supply apparent causal support; honest raw causal support is always false.
++
++An honest Strong board must include one usable ASSOCIATION reading, another compatible usable recovery reading from a different template, at least one genuine matched control linked to included evidence, collective structure/rhythm recovery, and MR-CAVEAT-ASSOCIATION. A single limited structure-only record can honestly support Careful, but cannot silently supply rhythm or association. The requirement result is conflict if visible contradiction exists, missing if the necessary card/slot is absent, unsupported if present candidates fail the predicate, and met otherwise. A missing versus unsupported result is not guessed from card counts.
++
++Required S06 validation cases: every table row; unknown ID; raw-ID/scientificFacts disagreement; unobserved view represented as recovery; TRACKS-RECOVERY without same-record recovery; unsupported honest reading; mismatched caveat; selected pair with limited control falsely marked matched; altered apparent support with unchanged raw facts; no honest causal support; profile closure and exact literal label mapping. S12 semantic cases link these to MR-REQ-EXP-001/003, MR-REQ-NARR-001, MR-REQ-CONTENT-001 and MR-IF-002/003/006.
++
++Content also registers MR-REASON-START-WINDOW-EXPIRED (label: The start window closed before this experiment began) and MR-REASON-ANALYSIS-DEADLINE (label: The analysis deadline passed before this record was archived). Both use the existing reason projection; they do not imply misconduct. Add MR-REASON- to the semantic prefix registry. Expiry event template IDs use the existing MR-EVT- prefix and preserve the run ID without truncation; content validation rejects any resulting ID over128 characters and constrains authored template IDs/run-ID construction accordingly.
++
++## Correction C01: attention priority and final experiment windows
++
++Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
++
++Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
++
++Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
+--- a/docs/implementation/specs/07-persistence-and-recovery.md
++++ b/docs/implementation/specs/07-persistence-and-recovery.md
+@@ -718,3 +718,9 @@
+ Persistence preserves the added typed prerequisite proofs through the same
+ canonical checked-state boundary. No save migration exists because Step 4 has
+ not been integrated or accepted.
++
++## Correction C02: schema and content compatibility
++
++Candidate schema version 2 and content version 1.1.0 identify the new scientific facts, requirement member and slice semantics. A schema-1 payload has no reliable scientificFacts proof. Do not infer it from ID spelling or silently mutate/delete the save. Hold it as unsupported and offer existing recovery/New Game behavior with explicit user choice; a future migration needs its own proven content mapping. No production campaign save exists at this step, and this package does not implement persistence or a migration. Preserve original diagnostic branches and test payloads as historical evidence.
++
++Full, fallback and evaluation slice remain different build profiles. A slice checkpoint may store the rehearsal completedContentIds fact with campaign conclusion unresolved, but cannot continue as a full or fallback campaign. Approval of the candidate requires version consistency in S03/S06, codec tests, build metadata and future S07 consumers.
+--- a/docs/implementation/specs/09-input-ui-and-accessibility.md
++++ b/docs/implementation/specs/09-input-ui-and-accessibility.md
+@@ -796,3 +796,7 @@
+ statements preserve the interface lifecycle before S14; they are not the
+ current state. No executable fixture or measured result exists. Gate 1 is
+ ready for Leonardo's separate approval, and no implementation is authorized.
++
++## Correction C02: factual cost and requirement projection
++
++Cost confirmation uses the actual resolved action forecast: initial draft 3 periods/2 energy (major), normal revision 1/1 plus applicable Standard surcharge, PIIM 3/2 (major), slice rehearsal 1/1 plus applicable surcharge. Free configuration shows 0/0. The requirements panel includes associationSupport when applicable and projects reported support without exposing hidden raw/reported mismatches to another character. Existing incomplete/dishonest confirmation rules remain explicit.
+--- a/docs/implementation/specs/12-test-vectors-and-acceptance.md
++++ b/docs/implementation/specs/12-test-vectors-and-acceptance.md
+@@ -940,3 +940,7 @@
+ JSON input that returns a typed failure without throwing. The fallback vector
+ must continue to reject run 2 for `MR-FB-EXP-RANGE-REPAIR`. Conclusion cases
+ must continue to prove all four choices and the exact ordered ending modules.
++
++## Correction C04: earlier evidence
++
++The named Gates 4A, 6A and 26A in `../development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
+--- a/docs/implementation/specs/13-agent-work-orders-and-integration.md
++++ b/docs/implementation/specs/13-agent-work-orders-and-integration.md
+@@ -272,32 +272,33 @@
+ the actual selection. A default inherited model is not a valid substitute for
+ an omitted selection.
+
+-The current OpenAI routing matrix is:
+-
+-| Assignment class                                                                                          | Exact default selection             | Boundary                                                                                                |
+-| --------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------- |
+-| Architecture, shared contracts, persistence, Three.js, accessibility, integration, or difficult debugging | `gpt-5.6-sol`, `high` or `xhigh`    | Use `xhigh` when the work has several difficult connected trade-offs.                                   |
+-| Final independent implementation or governance review                                                     | `gpt-5.6-sol`, `xhigh`              | The reviewer is fresh-context and read-only.                                                            |
+-| Normal bounded implementation, tests, tools, or UI work                                                   | `gpt-5.6-terra`, `medium` or `high` | Use `high` when the task must trace several modules or edge cases.                                      |
+-| Asset, licence, and provenance research                                                                   | `gpt-5.6-terra`, `high`             | Escalate a materially ambiguous rights or provenance question to Sol under a new or revised work order. |
+-| Mechanical transformation, inventory, fixture conversion, or repeatable check with known input and output | `gpt-5.6-luna`, `low` or `medium`   | It cannot decide design, a shared contract, or an approval question.                                    |
++The prospective routing matrix incorporates Leonardo's 2026-09-06 instruction. Astra subagents are restricted to high-level work; they cannot be assigned implementation.
++
++| Assignment class | Exact selection | Boundary |
++|---|---|---|
++| High-level design, architecture, shared-contract analysis and cross-system review | `gpt-6-astra`, `high` or `xhigh` | Read-only supporting analysis/review; no delegated implementation or mechanical conversion. |
++| Difficult implementation, persistence, Three.js, accessibility, integration repair or debugging | `gpt-5.6-sol`, `high` or `xhigh` | Implements an approved contract with exclusive owned paths; cannot decide shared rules. |
++| Routine bounded implementation, tests, tools or UI | `gpt-5.6-terra`, `medium` or `high` | Use high for connected modules or important edge cases. |
++| Mechanical transformation, inventory, fixture conversion or repeatable check | `gpt-5.6-luna`, `low` or `medium` | Known inputs/outputs; no design or approval authority. |
++| Final independent implementation review | `gpt-5.6-sol`, `xhigh` | Fresh-context, read-only detailed code/test review; primary owns integration and acceptance. |
++| Independent high-level design or material-governance review | `gpt-6-astra`, `xhigh` | Fresh-context, read-only game/architecture/authority review. Do not assign implementation under a review label. |
++| Asset, licence, provenance or bounded evidence research | `gpt-5.6-terra`, `high` | Read-only focused source packet; escalate material design meaning to primary. |
+
+ `max` is reserved for an exceptional, documented quality-first single-agent
+-problem after the primary agent explains why `xhigh` is insufficient. Do not
+-assign `ultra` to a worker, reviewer, or researcher: it uses subagents while
+-this project forbids a delegated worker from delegating again. The primary
++problem after the primary agent explains why `xhigh` is insufficient. A worker, reviewer or researcher cannot delegate further, regardless of
++reasoning effort. Effort labels do not authorize delegation. The primary
+ agent may use a supported higher-effort setting only when the approved plan
+ states its purpose and it does not bypass this routing, ownership, review, or
+ approval contract. These named defaults are rechecked for availability before
+ each assignment; a changed provider or model family needs a revised work order
+ and Leonardo's approval when it changes the selected assignment.
+
+-The project-local configuration has three focused roles:
++The project-local configuration has four focused roles:
+
+ | Role                             | Configuration path                                         | Use                                                                                                                                                                   |
+ | -------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | Controlled implementation worker | `.codex/agents/minor-revisions-implementation-worker.toml` | One approved assignment with exclusive owned paths. Its model stays unset in the profile so the primary agent must pass the matrix-selected value for the exact work. |
+-| Independent reviewer             | `.codex/agents/minor-revisions-independent-reviewer.toml`  | Fresh-context, read-only review using Sol `xhigh`.                                                                                                                    |
++| Independent reviewer             | `.codex/agents/minor-revisions-independent-reviewer.toml`  | Fresh-context, read-only review with the explicit task-specific selection above.                                                                                                                    |
+ | Asset researcher                 | `.codex/agents/minor-revisions-asset-researcher.toml`      | Focused candidate, licence, and provenance research using Terra `high`.                                                                                               |
+
+ At most two subagents can run at the same time under `.codex/config.toml`. The
+@@ -707,3 +708,13 @@
+ must use a new fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning after
+ the new complete primary audit. This one-Step-4 correction does not change the
+ normal S13 routing matrix.
++
++## Correction C06: prospective routing and primary work
++
++The amended routing applies only to new or revised assignments after the correction baseline approval. Do not reattribute earlier Sol/Terra/Luna contributions or edit their historical work orders. The primary remains Astra; delegated implementation uses Sol/Terra/Luna only; actual effort must be recorded, using unknown if unavailable. The new read-only evidence explorer uses Terra high for bounded document, dependency or feasibility questions and owns no paths. The asset researcher remains unchanged.
++
++Custom role model/effort pins must agree with the selected assignment because they override resolved spawn defaults. Keep the implementation-worker model unset so an approved complex Sol or routine Terra/Luna assignment can select its exact model. The independent-reviewer role leaves model and effort unset; each assignment must select Sol xhigh for detailed implementation review or Astra xhigh only for high-level design/governance review. Keep the current two-subagent limit. Do not infer a prohibition or delegation capability from an effort label: every worker, reviewer and researcher is explicitly prohibited from delegating further.
++
++Primary correction preparation is recorded in its approved correction plan, execution record and AI-use entry; a worker work order is required only for an actual delegated implementation assignment. Primary-only records name exact owned paths, base, tests and contributions but do not pretend that a worker was spawned. A bounded temporary worktree outside the repository is permitted for primary candidate preparation when filesystem permissions require it; record the branch and base, preserve original branches, and integrate only reviewed approved commits. Normal delegated workers retain the existing worktree grammar.
++
++Read-only evidence research and fresh review run sequentially around primary synthesis. The primary owns all corrective-package tracked writes. A narrow correction requires focused fresh review of its diff and affected dependencies; only a broad behavior/contract change requires another complete review. Full initial review still reports all findings together. Mechanical records retain focused primary checks.
+--- a/docs/implementation/status.md
++++ b/docs/implementation/status.md
+@@ -93,3 +93,9 @@
+ current block, the last documented block, gate state, open issue group, exact
+ next action, and any repository fact that changed. If those fields do not
+ agree with the roadmap, the block is not complete.
++
++## Correction baseline C01–C06
++
++The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Its final decision must record Leonardo's approval date and exact reviewed patch before these changes are labelled frozen. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
++
++Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These require explicit next versions in the approval record, with all consumers checked. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+--- a/docs/reviews/recommendation-register.md
++++ b/docs/reviews/recommendation-register.md
+@@ -281,3 +281,7 @@
+
+ No implementation is authorized. R00–R07 are documented, and no review block
+ remains. Wait for Leonardo's next instruction.
++
++## September Astra correction programme
++
++The later [finding register](2026-09-05-astra/finding-register.md) links calendar, slice, scientific support, meaningful experiment choice, factual text, early evidence, voice and production-risk corrections to the preserved prior reviews. It distinguishes new implementation-preparation findings F09–F12. Prior review reports are unchanged. Candidate rules and their final approval status are recorded in [the decision packet](2026-09-05-astra/baseline-candidate.md); candidate analysis does not mark an old recommendation runtime-proven.

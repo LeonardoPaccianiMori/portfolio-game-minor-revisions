@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-03
+Last updated: 2026-09-06
 
 ## Purpose and scope
 
@@ -128,3 +128,14 @@ records, review evidence, or the step-acceptance log. A future implementation
 record must link the matching entries here. No entry in this file authorizes a
 game step, changes Gate 1 or Step 1, or claims that Leonardo manually wrote
 agent-produced code.
+
+## 2026-09-05–06 — Astra correction preparation
+
+- Provider: OpenAI. Primary model: `gpt-6-astra`. Actual reasoning effort: `unknown`.
+- Completed contribution: preserved the Step-4 handover; prepared the candidate rule/text/workflow diff, campaign arithmetic checker and reference schedules, semantic counterexamples, reading-volume and asset-feasibility records. This is candidate preparation, not game implementation acceptance.
+- Supporting read-only evidence contributions: `career_evidence_explorer`, `gpt-5.6-terra`, actual `medium`, for bounded science/text/state/reading inventory and separately roadmap/routing/branch/asset inventory. Primary verified and synthesized the evidence.
+- Completed candidate critical review: OpenAI `gpt-5.6-sol`, actual `high`, read-only `career_critical_reviewer`; all material C01/C02 findings closed after corrections. The final terminology advisory received focused primary validation. See the exact review boundary and hashes in validation.md.
+- Evidence: [execution](../reviews/2026-09-05-astra/execution.md), [candidate](../reviews/2026-09-05-astra/baseline-candidate.md), [validation](../reviews/2026-09-05-astra/validation.md).
+- Leonardo's contribution: requested implementation of the correction plan. Exact candidate creative/balance approval and Step-4 acceptance remain pending. Existing completed contributions from other models retain their original records.
+
+Leonardo amended future routing on2026-09-06: Astra subagents are for high-level work only; implementation subagents use Sol/Terra/Luna. The candidate policy implements that instruction without reattributing any historical contribution.
