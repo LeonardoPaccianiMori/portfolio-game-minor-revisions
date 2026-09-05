@@ -64,6 +64,7 @@ const requirementKey = z.enum([
   'rhythmCoverage',
   'matchedControl',
   'caveat',
+  'associationSupport',
   'causalSupport',
 ]);
 const requirementResult = z.enum(['met', 'missing', 'conflict', 'unsupported']).nullable();
@@ -76,6 +77,7 @@ const requirementResultsSchema = z
     rhythmCoverage: requirementResult,
     matchedControl: requirementResult,
     caveat: requirementResult,
+    associationSupport: requirementResult,
     causalSupport: requirementResult,
   })
   .strict();
@@ -96,7 +98,7 @@ const stateSchema = z
   .object({
     metadata: z
       .object({
-        schemaVersion: z.literal(1),
+        schemaVersion: z.literal(2),
         contentVersion,
         campaignId: z
           .string()
@@ -158,6 +160,7 @@ const stateSchema = z
               templateId: stableId,
               runNumber: z.union([z.literal(1), z.literal(2)]),
               stage: z.enum(['configured', 'running', 'readyForAnalysis', 'analysed', 'stopped']),
+              startedPeriod: safeInteger(0, 63).nullable(),
               goalId: stableId,
               controlId: stableId,
               observationId: stableId,
@@ -178,7 +181,7 @@ const stateSchema = z
                 z
                   .object({
                     windowIndex: safeInteger(0, 1),
-                    response: z.enum(['continue', 'qualityCheck', 'stabilize', 'stop']),
+                    response: z.enum(['continue', 'qualityCheck', 'stabilize', 'stop', 'missed']),
                     completedPeriod: safeInteger(0, 63),
                   })
                   .strict(),
@@ -193,6 +196,14 @@ const stateSchema = z
             .object({
               id: stableId,
               runId: stableId,
+              scientificFacts: z
+                .object({
+                  structureRecovery: z.boolean(),
+                  rhythmRecovery: z.boolean(),
+                  repatterningTracksRecovery: z.boolean(),
+                  controlKind: z.enum(['matched', 'limited']),
+                })
+                .strict(),
               biologicalResultId: stableId,
               finalPreparationBand: z.enum(['robust', 'mixed', 'compromised']),
               structureResultId: stableId,
@@ -648,6 +659,17 @@ const checkHistory = (
   return null;
 };
 
+// Exact authored start-expiry boundaries; unknown templates need connected content proof.
+const startExpiryPeriod = (templateId: string): number | undefined =>
+  ({
+    'MR-EXP-LASER-SHAM': 16,
+    'MR-EXP-DAMAGE-RANGE': 16,
+    'MR-EXP-BATCH-CHECK': 36,
+    'MR-EXP-REPAIR-STATE': 24,
+    'MR-EXP-OXYGEN-LOSS': 45,
+    'MR-EXP-DRUG-EXPOSURE': 48,
+  })[templateId];
+
 const expectedFloorAct = (period: number): CampaignState['world']['floorAct'] => {
   if (period < 16) return 'orderlyButOverbooked';
   if (period < 28) return 'manuscriptClutter';
@@ -667,6 +689,7 @@ const requirementKeys = [
   'rhythmCoverage',
   'matchedControl',
   'caveat',
+  'associationSupport',
   'causalSupport',
 ] as const;
 
@@ -678,6 +701,7 @@ const applicableRequirementKeys = {
     'rhythmCoverage',
     'matchedControl',
     'caveat',
+    'associationSupport',
   ],
   inflated: [
     'distinctExperimentFigures',
@@ -685,6 +709,7 @@ const applicableRequirementKeys = {
     'rhythmCoverage',
     'matchedControl',
     'caveat',
+    'associationSupport',
     'causalSupport',
   ],
 } as const;
@@ -720,8 +745,10 @@ type ResolvedRequirementResult = Exclude<ManuscriptRequirementResult, null>;
 interface SnapshotEvidenceFact {
   reportedReadingStatus: 'honest' | 'altered' | 'unsupported' | null;
   templateId: string | null;
-  structureResultId: string | null;
-  rhythmResultId: string | null;
+  structureRecovery: boolean;
+  rhythmRecovery: boolean;
+  associationSupport: boolean;
+  matchedControl: boolean;
   controlResultId: string | null;
   caveatId: string | null;
   contradictsReport: boolean;
@@ -771,13 +798,27 @@ const snapshotEvidenceFacts = (
       !contradictsReport &&
       (reportedReadingStatus === 'altered' ||
         reportedReadingStatus === 'unsupported' ||
-        card.quality === 'usable');
+        (card.quality === 'usable' &&
+          (raw?.scientificFacts.structureRecovery === true ||
+            raw?.scientificFacts.rhythmRecovery === true)));
     return [
       {
         reportedReadingStatus,
         templateId: run?.templateId ?? null,
-        structureResultId: raw?.structureResultId ?? null,
-        rhythmResultId: raw?.rhythmResultId ?? null,
+        structureRecovery:
+          raw?.scientificFacts.structureRecovery === true ||
+          reportedReadingStatus === 'altered' ||
+          reportedReadingStatus === 'unsupported',
+        rhythmRecovery:
+          raw?.scientificFacts.rhythmRecovery === true ||
+          reportedReadingStatus === 'altered' ||
+          reportedReadingStatus === 'unsupported',
+        associationSupport:
+          (raw?.scientificFacts.repatterningTracksRecovery === true &&
+            (raw.scientificFacts.structureRecovery || raw.scientificFacts.rhythmRecovery)) ||
+          reportedReadingStatus === 'altered' ||
+          reportedReadingStatus === 'unsupported',
+        matchedControl: raw?.scientificFacts.controlKind === 'matched',
         controlResultId: raw?.controlResultId ?? null,
         caveatId: card?.selectedCaveatId ?? null,
         contradictsReport,
@@ -798,6 +839,7 @@ const expectedRequirementResults = (
     rhythmCoverage: null,
     matchedControl: null,
     caveat: null,
+    associationSupport: null,
     causalSupport: null,
   };
   const level = snapshot.board.claimLevel;
@@ -841,19 +883,25 @@ const expectedRequirementResults = (
     );
     results.structureCoverage = resolveRequirement(
       facts.length,
-      supportedFacts.filter((fact) => fact.structureResultId !== null).length,
+      supportedFacts.filter((fact) => fact.structureRecovery).length,
       1,
       figureConflict,
     );
     results.rhythmCoverage = resolveRequirement(
       facts.length,
-      supportedFacts.filter((fact) => fact.rhythmResultId !== null).length,
+      supportedFacts.filter((fact) => fact.rhythmRecovery).length,
+      1,
+      figureConflict,
+    );
+    results.associationSupport = resolveRequirement(
+      facts.length,
+      supportedFacts.filter((fact) => fact.associationSupport).length,
       1,
       figureConflict,
     );
     results.matchedControl = resolveRequirement(
       controls.length,
-      supportedControlFacts.length,
+      supportedControlFacts.filter((fact) => fact.matchedControl).length,
       1,
       matchingControlFacts.some((fact) => fact.contradictsReport),
     );
@@ -872,7 +920,13 @@ const expectedRequirementResults = (
   }
   results.caveat = resolveRequirement(
     snapshot.board.caveat === null ? 0 : 1,
-    supportedCaveatFacts.length,
+    supportedCaveatFacts.filter(
+      (fact) =>
+        level === 'careful' ||
+        fact.reportedReadingStatus === 'altered' ||
+        fact.reportedReadingStatus === 'unsupported' ||
+        snapshot.board.caveat === 'MR-CAVEAT-ASSOCIATION',
+    ).length,
     1,
     matchingCaveatFacts.some((fact) => fact.contradictsReport),
   );
@@ -1193,8 +1247,16 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
     const hasCompleteVariation = variationFacts.every((fact) => fact !== null);
     if (!hasNoVariation && !hasCompleteVariation)
       return invariant(`/experiments/runsById/${id}/variationNamespace`, 'invariantViolation');
-    if (run.stage === 'configured') {
+    const stopLog = state.experiments.stopLogsById[`stop:${id}`];
+    const startExpired =
+      run.stage === 'stopped' && stopLog?.reasonId === 'MR-REASON-START-WINDOW-EXPIRED';
+    const analysisExpired =
+      run.stage === 'stopped' && stopLog?.reasonId === 'MR-REASON-ANALYSIS-DEADLINE';
+    if (run.startedPeriod !== null && run.startedPeriod > state.calendar.periodIndex)
+      return invariant(`/experiments/runsById/${id}/startedPeriod`, 'invariantViolation');
+    if (run.stage === 'configured' || startExpired) {
       if (
+        run.startedPeriod !== null ||
         !hasNoVariation ||
         run.projectedResultBand !== null ||
         run.finalResultBand !== null ||
@@ -1203,6 +1265,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
       )
         return invariant(`/experiments/runsById/${id}`, 'invariantViolation');
     } else if (
+      run.startedPeriod === null ||
       !hasCompleteVariation ||
       run.variationTargetId !== id ||
       run.projectedResultBand === null
@@ -1214,6 +1277,11 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
       return invariant(`/experiments/runsById/${id}/monitoringResponses`, 'invariantViolation');
     for (const [index, response] of run.monitoringResponses.entries()) {
       if (
+        run.startedPeriod === null ||
+        (response.response === 'missed'
+          ? response.completedPeriod !== run.startedPeriod + index * 2 + 2
+          : response.completedPeriod - 1 < run.startedPeriod + index * 2 ||
+            response.completedPeriod - 1 > run.startedPeriod + index * 2 + 1) ||
         response.windowIndex !== index ||
         response.completedPeriod > state.calendar.periodIndex ||
         (index > 0 &&
@@ -1230,7 +1298,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
         );
     }
     const stoppedByResponse = run.monitoringResponses.at(-1)?.response === 'stop';
-    if ((run.stage === 'stopped') !== stoppedByResponse)
+    if ((run.stage === 'stopped' && !startExpired && !analysisExpired) !== stoppedByResponse)
       return invariant(`/experiments/runsById/${id}/stage`, 'invariantViolation');
     if (
       (run.stage === 'running' && run.monitoringResponses.length >= windowCount) ||
@@ -1245,6 +1313,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
       return invariant(`/experiments/runsById/${id}/finalResultBand`, 'invariantViolation');
     if (
       run.stage !== 'configured' &&
+      !startExpired &&
       preparation?.band !== (run.finalResultBand ?? run.projectedResultBand)
     )
       return invariant(`/experiments/preparationById/${id}/band`, 'invariantViolation');
@@ -1304,10 +1373,37 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
     if (
       id !== `stop:${stop.runId}` ||
       run?.stage !== 'stopped' ||
-      stop.stoppedPeriod !== run.monitoringResponses.at(-1)?.completedPeriod ||
+      (stop.reasonId === 'MR-REASON-START-WINDOW-EXPIRED'
+        ? run.startedPeriod !== null ||
+          (startExpiryPeriod(run.templateId) !== undefined &&
+            stop.stoppedPeriod !== startExpiryPeriod(run.templateId))
+        : stop.reasonId === 'MR-REASON-ANALYSIS-DEADLINE'
+          ? run.startedPeriod === null ||
+            stop.stoppedPeriod !== 52 ||
+            run.startedPeriod > 52 ||
+            run.monitoringResponses.some(
+              (response) => response.completedPeriod > 52 || response.response === 'stop',
+            )
+          : stop.stoppedPeriod !== run.monitoringResponses.at(-1)?.completedPeriod) ||
       stop.stoppedPeriod > state.calendar.periodIndex
     )
       return invariant(`/experiments/stopLogsById/${id}`, 'invalidReference');
+  }
+  if (state.contentHistory.completedContentIds.includes('MR-SLICE-CLAIM-REHEARSAL')) {
+    const laser = Object.values(state.experiments.runsById).some(
+      (run) => run.templateId === 'MR-EXP-LASER-SHAM' && run.stage === 'analysed',
+    );
+    if (
+      state.metadata.buildProfileId !== 'slice' ||
+      state.calendar.periodIndex > 11 ||
+      state.manuscript.currentSnapshotId === null ||
+      !laser ||
+      state.conclusion.state !== 'unresolved' ||
+      Object.values(state.narrative.routesById).some((route) => route.evaluation !== null) ||
+      state.manuscript.preprintState !== 'notPosted' ||
+      Object.values(state.manuscript.piimMilestones).some((revision) => revision !== null)
+    )
+      return invariant('/contentHistory/completedContentIds', 'invariantViolation');
   }
   if (state.manuscript.snapshotOrder.length === 0) {
     if (state.manuscript.currentSnapshotId !== null)

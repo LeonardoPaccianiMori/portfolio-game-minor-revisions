@@ -6,7 +6,7 @@ Last updated: 2026-09-06.
 
 Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps1–3 remain accepted. Step4 remains unaccepted.
 
-Current work: commit/integrate the corrected documentation baseline, then reconcile the single combined Step4 source f7192fa and implement the approved v5/schema2 changes. Preserve original branches f7192fa and f2babe9. The primary owns edits; fresh detailed technical review uses Sol xhigh. Astra subagents perform high-level work only. Complete tests and independent review before integration; Leonardo's Step4 diagnostic acceptance remains last. Later steps remain separately unapproved.
+Current work: technical review of the primary-owned Step4 v5/schema2 amendment in `work/MR-WP-00-step4-corrected`. Corrected documentation is integrated on local main at `450972c`. Combined source `f7192fa` was transplanted exactly once in `8bd4d97`; old rules and combined branches remain preserved. The amended code, tests, audit and limits are recorded in [step4-amendment.md](../reviews/2026-09-05-astra/step4-amendment.md). No dependency upgrade or separate rules import occurred. Fresh detailed technical review uses Sol xhigh after the completed primary audit; integration and Leonardo's diagnostic test follow a passing review. Step4 is not accepted; no Step5 work is authorized. MR-IMP-OPEN-019 reserves the missing fallback start boundary for the later connected-content plan.
 
 ## Historical pre-correction resume record
 

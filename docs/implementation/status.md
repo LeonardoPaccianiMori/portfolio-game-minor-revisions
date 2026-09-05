@@ -1,6 +1,6 @@
 # Implementation Specification Status
 
-Last updated: 2026-09-03
+Last updated: 2026-09-06
 
 Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
@@ -99,3 +99,5 @@ agree with the roadmap, the block is not complete.
 The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Leonardo approved the exact reviewed correction package on 2026-09-06. MR-IMP-DEC-309 records the approval and superseded interfaces. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
 
 Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These versions are frozen by MR-IMP-DEC-309; their consumers and later proof obligations remain as listed. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+
+Current incremental resume authority remains `development-status.md`. MR-IMP-OPEN-019 records the fallback start-window question for the later connected-content plan; no guessed boundary enters Step 4.

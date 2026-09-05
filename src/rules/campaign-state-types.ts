@@ -37,7 +37,7 @@ export interface ChangeRecord {
 }
 
 export interface CampaignMetadata {
-  schemaVersion: 1;
+  schemaVersion: 2;
   contentVersion: string;
   campaignId: string;
   campaignSeed: number;
@@ -81,7 +81,7 @@ export interface PreparationState {
 
 export interface MonitoringRecord {
   windowIndex: number;
-  response: 'continue' | 'qualityCheck' | 'stabilize' | 'stop';
+  response: 'continue' | 'qualityCheck' | 'stabilize' | 'stop' | 'missed';
   completedPeriod: number;
 }
 
@@ -90,6 +90,7 @@ export interface ExperimentRun {
   templateId: string;
   runNumber: 1 | 2;
   stage: 'configured' | 'running' | 'readyForAnalysis' | 'analysed' | 'stopped';
+  startedPeriod: number | null;
   goalId: string;
   controlId: string;
   observationId: string;
@@ -112,6 +113,12 @@ export interface ExperimentRun {
 export interface RawRecord {
   id: string;
   runId: string;
+  scientificFacts: {
+    structureRecovery: boolean;
+    rhythmRecovery: boolean;
+    repatterningTracksRecovery: boolean;
+    controlKind: 'matched' | 'limited';
+  };
   biologicalResultId: string;
   finalPreparationBand: PreparationBand;
   structureResultId: string;
@@ -173,6 +180,7 @@ export type ManuscriptRequirementKey =
   | 'rhythmCoverage'
   | 'matchedControl'
   | 'caveat'
+  | 'associationSupport'
   | 'causalSupport';
 export type ManuscriptRequirementResult = 'met' | 'missing' | 'conflict' | 'unsupported' | null;
 export type ManuscriptRequirementResults = Record<

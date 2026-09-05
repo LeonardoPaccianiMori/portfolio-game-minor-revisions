@@ -95,13 +95,13 @@ describe('canonical campaign-state JSON', () => {
   });
 
   it.each([
-    '"contentVersion":"do-not-return","contentVersion":"1.0.0"',
-    '"contentVersion":"do-not-return","\\u0063ontentVersion":"1.0.0"',
+    '"contentVersion":"do-not-return","contentVersion":"1.1.0"',
+    '"contentVersion":"do-not-return","\\u0063ontentVersion":"1.1.0"',
   ])('rejects one duplicate member in an otherwise valid campaign: %s', (duplicateMember) => {
     const serialized = CampaignStateCodec.serialize(initialCampaign());
     expect(serialized.kind).toBe('success');
     if (serialized.kind === 'failure') return;
-    const text = serialized.value.replace('"contentVersion":"1.0.0"', duplicateMember);
+    const text = serialized.value.replace('"contentVersion":"1.1.0"', duplicateMember);
     const ordinaryLastMemberText = JSON.stringify(JSON.parse(text) as unknown);
     expect(CampaignStateCodec.parse(ordinaryLastMemberText).kind).toBe('success');
 

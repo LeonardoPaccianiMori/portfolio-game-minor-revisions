@@ -4,7 +4,7 @@ import type { CampaignCreationInput, CampaignState } from '../../../src/rules';
 export const standardInput: CampaignCreationInput = {
   campaignId: '00000000-0000-4000-8000-000000000001',
   campaignSeed: 305_419_896,
-  contentVersion: '1.0.0',
+  contentVersion: '1.1.0',
   buildProfileId: 'full',
   pressureProfile: 'standard',
   protagonist: { name: 'Morgan', pronounSet: 'theyThem' },

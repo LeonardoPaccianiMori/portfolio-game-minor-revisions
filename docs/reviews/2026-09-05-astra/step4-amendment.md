@@ -44,3 +44,30 @@ Exact transplanted paths:
 ## Amendment and checks
 
 Apply only approved v5/schema2 state fields, invariants, codec/creation compatibility, scientific support and slice completion. Command count24 and effect count5 remain fixed. No scheduler/content/persistence engine is implemented. Run focused tests, npm run check, npm run verify, primary audit and Sol xhigh complete review before integration. Preserve actual results and final reviewed commit here. Leonardo's diagnostic acceptance remains pending.
+
+## Completed amendment — 2026-09-06
+
+The primary changed only the approved state/diagnostic/tests and control records. Schema2 rejects schema1; raw scientificFacts are strict; startedPeriod records the post-start origin; saved monitoring includes missed while the player command remains four choices. Known six-template expiry boundaries are checked. Automatic start expiry saves no variation/response/raw/card, and analysis expiry saves locked variation and prior responses without a fabricated stop. Current manuscript requirements use recovery facts, same-record association and genuine matched control, while explicit dishonest reporting retains apparent support. Slice completion requires the separate profile/checkpoint boundaries. The canonical codec carries the new fields without a migration or extra command. MR-IF-004, all 24 commands and five effects remain unchanged.
+
+Existing synthetic analysed/stop examples moved their impossible period0 responses to valid post-action period1. Oxygen examples now use separate windows. Honest Strong/Inflated fixtures carry the association caveat and ninth requirement. The diagnostic creation fixture now identifies content1.1.0. Duplicate-key codec cases were adjusted to the new fixture version without changing parser behavior. The decisions-file change only formats the preserved original npm308 table to satisfy the required formatter.
+
+### Primary checks and complete audit
+
+- `npm run check`: passed TypeScript, lint, formatting and 253 unit tests in 12 files.
+- `npm run verify`: passed lint, formatting, the same 253 tests with coverage, production build and all 21 browser flows across Chromium, Firefox and WebKit.
+- Coverage: statements90.34%, branches90.32%, functions86.15%, lines92.13%; required thresholds passed. Build:115 modules, no source maps.
+- Controlled startup-failure browser tests intentionally emit their named injected error; all assertions passed. They are not unexplained application failures.
+- Source/contract audit: exact schema fields, applicable requirement sets, current-snapshot reconstruction, null configured origin, missed/real response offsets, three disjoint stop paths, raw/card exclusion, slice gate, unchanged command/effect/determinism boundaries and schema1 refusal checked against the approved S03–S07 corrections. Codec positive controls preserve the new nested facts and missed responses. New semantic tests include no honest causal support, false same-record association, limited control and deliberately false reported support.
+- Scope/history audit: approved documentation base450972c and single transplant8bd4d97; no repeated rules import, package/lockfile change, asset or deployment. Steps1–3 accepted history remains intact. Current-state addenda identify this cycle and preserve earlier submissions as historical evidence.
+- Privacy/network audit: no campaign data logging, external request or storage API was added; the diagnostic exposes only its approved safe summaries. Existing browser flows check normal-page separation and controlled failure behavior. No remote is configured. No Career Center record changed. `git diff --check` passed.
+- Actual AI contributions are recorded in `../../implementation/ai-use-log.md`. Primary gpt-6-astra effort is unknown; read-only Terra/medium source work is identified separately. Fresh Sol/xhigh detailed review follows this complete primary audit and has not yet occurred at this checkpoint.
+
+### Limits and future content obligation
+
+Step4 validates saved state; it does not execute action costs, resolve experiments, advance the scheduler, calculate manuscript transitions, save to production storage or prove campaign reachability. Source-ID/scientificFacts equality, selected honest reading semantics and the successful authored rehearsal action need the later connected catalogue and transition tests. A structural slice checkpoint is not evidence that the rehearsal action has run.
+
+MR-IMP-OPEN-019: `MR-FB-EXP-RANGE-REPAIR` has no approved last-start boundary. Primary verified the Terra source result against `docs/12-content-specification.md` (six-template table, fallback replacement paragraph and fallback selection) and S06's corrected timing. No boundary was inferred. For templates without a known authored boundary, Step4 checks the expiry result shape and references but leaves timing proof to connected content. Its fallback fixture's period1 is deliberately synthetic, not a proposed design window. Approve the missing fallback window before dependent fallback content/scheduler work. This does not block current Step4 structural support.
+
+### Review packet and next gate
+
+Fresh read-only Sol xhigh review must examine the complete corrected-base-to-submission code/test packet, the approved baseline and the new amendment diff, relevant frozen contracts, these checks and limits, and the exact prior submission/contribution history. Report all blockers, required corrections and advisories together. The project reviewer profile has no model/effort pin; the assignment explicitly selects Sol xhigh and prohibits writes, further delegation and user contact. Original Sol worker code is not attributed to Astra. Local main integration and Leonardo's diagnostic test remain pending. The approved implementation commit message is `MR-WP-01 Align Step 4 with corrected game contracts`.

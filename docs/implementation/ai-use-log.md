@@ -155,3 +155,11 @@ Leonardo amended future routing on2026-09-06: Astra subagents are for high-level
 ## 2026-09-06 — Approved baseline application
 
 OpenAI gpt-6-astra primary, actual effort unknown: applied the exact approved correction patch, reconciled current version/status/action/roadmap tables, and recorded Leonardo's C01–C06 approval. Historical patch remains unchanged. Evidence: MR-IMP-DEC-309, current interface register, acceptance/resume record and correction-baseline commit. This does not claim completed Step4 code or acceptance.
+
+## 2026-09-06 — Step4 schema2 amendment and primary audit
+
+OpenAI `gpt-6-astra`, primary, actual reasoning effort `unknown`: transplanted the exact preserved combined source once; amended state types, creation, structural and cross-section validation, diagnostic fixture version and regression tests; completed the primary scope/contract/privacy audit and automated checks recorded in `../reviews/2026-09-05-astra/step4-amendment.md`. Primary owns all tracked writes. No implementation worker was spawned because types, invariants and fixtures share the same narrow contract. This contribution does not claim Step4 acceptance.
+
+OpenAI `gpt-5.6-terra`, actual `medium`, read-only `career_evidence_explorer` (`correction_semantics`): mapped the affected state/claim helpers and fixtures, then checked the absent fallback combined-template window against the exact design and S03–S06 sources. No edits, external research, delegated implementation or further agents. Primary verified material source citations and recorded MR-IMP-OPEN-019 as a later content obligation.
+
+Leonardo's contribution: approved C01–C06 and the exact Step4 amendment on 2026-09-06, and set the prospective Astra/high-level versus Sol/Terra/Luna implementation boundary. Diagnostic observation and final Step4 acceptance remain pending.

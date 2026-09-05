@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 
-import { createInitialCampaignState, validateCampaignState } from '../../../src/rules';
+import {
+  CampaignStateCodec,
+  createInitialCampaignState,
+  validateCampaignState,
+} from '../../../src/rules';
 import type {
   CampaignState,
   ChangeRecord,
@@ -9,15 +13,15 @@ import type {
 } from '../../../src/rules/campaign-state-types';
 import { copyCampaign, initialCampaign, standardInput } from './campaign-test-data';
 
-describe('MR-IF-002 v4 campaign creation', () => {
+describe('MR-IF-002 v5 campaign creation', () => {
   it('creates the complete fixed Standard starting state', () => {
     const result = createInitialCampaignState(standardInput);
     expect(result.kind).toBe('success');
     if (result.kind === 'failure') return;
     expect(result.value).toEqual({
       metadata: {
-        schemaVersion: 1,
-        contentVersion: '1.0.0',
+        schemaVersion: 2,
+        contentVersion: '1.1.0',
         campaignId: standardInput.campaignId,
         campaignSeed: 305_419_896,
         stateRevision: 0,
@@ -442,6 +446,7 @@ const configuredRun = (overrides: Partial<ExperimentRun> = {}): ExperimentRun =>
   templateId: 'MR-EXP-TEST',
   runNumber: 1,
   stage: 'configured',
+  startedPeriod: overrides.stage === undefined || overrides.stage === 'configured' ? null : 0,
   goalId: 'MR-GOAL-TEST',
   controlId: 'MR-CONTROL-TEST',
   observationId: 'MR-OBSERVATION-TEST',
@@ -464,6 +469,10 @@ const configuredRun = (overrides: Partial<ExperimentRun> = {}): ExperimentRun =>
 
 const addConfiguredRun = (state: CampaignState, run: ExperimentRun = configuredRun()): void => {
   state.metadata.stateRevision = Math.max(state.metadata.stateRevision, 1);
+  state.calendar.periodIndex = Math.max(
+    state.calendar.periodIndex,
+    ...run.monitoringResponses.map((response) => response.completedPeriod),
+  );
   state.experiments.runsById[run.id] = run;
   state.experiments.equipmentById[run.id] = {
     id: run.id,
@@ -489,6 +498,7 @@ const emptyRequirementResults = (): ManuscriptRequirementResults => ({
   rhythmCoverage: null,
   matchedControl: null,
   caveat: null,
+  associationSupport: null,
   causalSupport: null,
 });
 
@@ -571,7 +581,7 @@ const addPiimEvidence = (
     variationBucket: 17,
     projectedResultBand: 'robust',
     finalResultBand: 'robust',
-    monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 0 }],
+    monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 1 }],
   });
   addConfiguredRun(state, run);
   const rawId = `raw:${runId}`;
@@ -579,6 +589,12 @@ const addPiimEvidence = (
   state.experiments.rawRecordsById[rawId] = {
     id: rawId,
     runId,
+    scientificFacts: {
+      structureRecovery: true,
+      rhythmRecovery: true,
+      repatterningTracksRecovery: true,
+      controlKind: 'matched',
+    },
     biologicalResultId: `MR-RESULT-${role.toUpperCase()}`,
     finalPreparationBand: 'robust',
     structureResultId: `MR-STRUCTURE-${role.toUpperCase()}`,
@@ -597,7 +613,7 @@ const addPiimEvidence = (
     sourceId: rawId,
     quality,
     selectedReadingId: `MR-READING-${role.toUpperCase()}`,
-    selectedCaveatId: 'MR-CAVEAT-PIIM',
+    selectedCaveatId: 'MR-CAVEAT-ASSOCIATION',
     reportedReadingStatus: 'honest',
     awardedSupport: 1,
     piimRole: role,
@@ -649,6 +665,7 @@ const completePiimState = (
     requirementResults.distinctExperimentFigures = 'missing';
     requirementResults.structureCoverage = 'met';
     requirementResults.rhythmCoverage = 'met';
+    requirementResults.associationSupport = 'met';
     requirementResults.matchedControl = 'met';
     requirementResults.caveat = 'met';
     statedMissingRequirement = 'distinctExperimentFigures';
@@ -665,6 +682,7 @@ const completePiimState = (
     requirementResults.distinctExperimentFigures = 'met';
     requirementResults.structureCoverage = 'met';
     requirementResults.rhythmCoverage = 'met';
+    requirementResults.associationSupport = 'met';
     requirementResults.matchedControl = 'met';
     requirementResults.caveat = 'met';
     requirementResults.causalSupport = 'unsupported';
@@ -684,7 +702,7 @@ const completePiimState = (
     claimLevel,
     figures: [figureIds[0] ?? null, figureIds[1] ?? null, figureIds[2] ?? null],
     controls: [controlIds[0] ?? null, controlIds[1] ?? null],
-    caveat: 'MR-CAVEAT-PIIM',
+    caveat: 'MR-CAVEAT-ASSOCIATION',
     authorship: null,
     supplementary: null,
     activeRequest: null,
@@ -764,7 +782,7 @@ const claimSnapshotState = (
       boardEvidenceIds[2] ?? null,
     ],
     controls: [controlIds[0] ?? null, controlIds[1] ?? null],
-    caveat: options.emptyBoard ? null : 'MR-CAVEAT-PIIM',
+    caveat: options.emptyBoard ? null : 'MR-CAVEAT-ASSOCIATION',
     authorship: null,
     supplementary: null,
     activeRequest: null,
@@ -1024,12 +1042,18 @@ const addAnalysedRun = (state: CampaignState): void => {
     variationBucket: 17,
     projectedResultBand: 'robust',
     finalResultBand: 'robust',
-    monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 0 }],
+    monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 1 }],
   });
   addConfiguredRun(state, run);
   state.experiments.rawRecordsById['raw:run:MR-EXP-TEST:1'] = {
     id: 'raw:run:MR-EXP-TEST:1',
     runId: 'run:MR-EXP-TEST:1',
+    scientificFacts: {
+      structureRecovery: true,
+      rhythmRecovery: true,
+      repatterningTracksRecovery: true,
+      controlKind: 'matched',
+    },
     biologicalResultId: 'MR-RESULT-TEST',
     finalPreparationBand: 'robust',
     structureResultId: 'MR-STRUCTURE-TEST',
@@ -1063,13 +1087,13 @@ const addStoppedRun = (state: CampaignState): void => {
     variationDrawIndex: 0,
     variationBucket: 17,
     projectedResultBand: 'robust',
-    monitoringResponses: [{ windowIndex: 0, response: 'stop', completedPeriod: 0 }],
+    monitoringResponses: [{ windowIndex: 0, response: 'stop', completedPeriod: 1 }],
   });
   addConfiguredRun(state, run);
   state.experiments.stopLogsById['stop:run:MR-EXP-TEST:1'] = {
     id: 'stop:run:MR-EXP-TEST:1',
     runId: 'run:MR-EXP-TEST:1',
-    stoppedPeriod: 0,
+    stoppedPeriod: 1,
     reasonId: 'MR-STOP-REASON-TEST',
   };
 };
@@ -1282,6 +1306,12 @@ describe('cross-section and permanent-history invariants', () => {
     orphanRaw.experiments.rawRecordsById['raw:run:MR-EXP-TEST:1'] = {
       id: 'raw:run:MR-EXP-TEST:1',
       runId: 'run:MR-EXP-TEST:1',
+      scientificFacts: {
+        structureRecovery: true,
+        rhythmRecovery: true,
+        repatterningTracksRecovery: true,
+        controlKind: 'matched',
+      },
       biologicalResultId: 'MR-RESULT-TEST',
       finalPreparationBand: 'mixed',
       structureResultId: 'MR-STRUCTURE-TEST',
@@ -1334,12 +1364,18 @@ describe('cross-section and permanent-history invariants', () => {
       variationBucket: 17,
       projectedResultBand: 'robust',
       finalResultBand: 'robust',
-      monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 0 }],
+      monitoringResponses: [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 1 }],
     });
     addConfiguredRun(analysed, analysedRun);
     analysed.experiments.rawRecordsById['raw:run:MR-EXP-TEST:1'] = {
       id: 'raw:run:MR-EXP-TEST:1',
       runId: 'run:MR-EXP-TEST:1',
+      scientificFacts: {
+        structureRecovery: true,
+        rhythmRecovery: true,
+        repatterningTracksRecovery: true,
+        controlKind: 'matched',
+      },
       biologicalResultId: 'MR-RESULT-TEST',
       finalPreparationBand: 'robust',
       structureResultId: 'MR-STRUCTURE-TEST',
@@ -1373,13 +1409,13 @@ describe('cross-section and permanent-history invariants', () => {
       variationDrawIndex: 0,
       variationBucket: 17,
       projectedResultBand: 'robust',
-      monitoringResponses: [{ windowIndex: 0, response: 'stop', completedPeriod: 0 }],
+      monitoringResponses: [{ windowIndex: 0, response: 'stop', completedPeriod: 1 }],
     });
     addConfiguredRun(stopped, stoppedRun);
     stopped.experiments.stopLogsById['stop:run:MR-EXP-TEST:1'] = {
       id: 'stop:run:MR-EXP-TEST:1',
       runId: 'run:MR-EXP-TEST:1',
-      stoppedPeriod: 0,
+      stoppedPeriod: 1,
       reasonId: 'MR-STOP-REASON-TEST',
     };
     expect(validateCampaignState(stopped).kind).toBe('success');
@@ -1411,7 +1447,7 @@ describe('cross-section and permanent-history invariants', () => {
     });
   });
 
-  it('accepts equal monitoring periods and rejects a decreasing sequence', () => {
+  it('accepts separate monitoring windows and rejects a decreasing sequence', () => {
     const oxygenState = (secondPeriod: number): CampaignState => {
       const state = copyCampaign();
       state.calendar.periodIndex = 5;
@@ -1421,6 +1457,7 @@ describe('cross-section and permanent-history invariants', () => {
           id: 'run:MR-EXP-OXYGEN-LOSS:1',
           templateId: 'MR-EXP-OXYGEN-LOSS',
           stage: 'readyForAnalysis',
+          startedPeriod: 4,
           variationNamespace: 'experimentVariation',
           variationTargetId: 'run:MR-EXP-OXYGEN-LOSS:1',
           variationDrawIndex: 0,
@@ -1436,7 +1473,7 @@ describe('cross-section and permanent-history invariants', () => {
       return state;
     };
 
-    expect(validateCampaignState(oxygenState(5)).kind).toBe('success');
+    expect(validateCampaignState(oxygenState(7)).kind).toBe('success');
     expect(validateCampaignState(oxygenState(4))).toMatchObject({
       kind: 'failure',
       issue: {
@@ -1484,14 +1521,14 @@ describe('cross-section and permanent-history invariants', () => {
 
     const tooManyWindows = running();
     tooManyWindows.experiments.runsById['run:MR-EXP-TEST:1']!.monitoringResponses = [
-      { windowIndex: 0, response: 'continue', completedPeriod: 0 },
-      { windowIndex: 1, response: 'continue', completedPeriod: 0 },
+      { windowIndex: 0, response: 'continue', completedPeriod: 1 },
+      { windowIndex: 1, response: 'continue', completedPeriod: 1 },
     ];
     cases.push(['too many monitoring windows', tooManyWindows]);
 
     const wrongWindowIndex = running();
     wrongWindowIndex.experiments.runsById['run:MR-EXP-TEST:1']!.monitoringResponses = [
-      { windowIndex: 1, response: 'continue', completedPeriod: 0 },
+      { windowIndex: 1, response: 'continue', completedPeriod: 1 },
     ];
     cases.push(['wrong monitoring index', wrongWindowIndex]);
 
@@ -1508,8 +1545,8 @@ describe('cross-section and permanent-history invariants', () => {
         variationBucket: 17,
         projectedResultBand: 'robust',
         monitoringResponses: [
-          { windowIndex: 0, response: 'stop', completedPeriod: 0 },
-          { windowIndex: 1, response: 'continue', completedPeriod: 0 },
+          { windowIndex: 0, response: 'stop', completedPeriod: 1 },
+          { windowIndex: 1, response: 'continue', completedPeriod: 1 },
         ],
       }),
     );
@@ -1517,13 +1554,13 @@ describe('cross-section and permanent-history invariants', () => {
 
     const runningAfterStop = running();
     runningAfterStop.experiments.runsById['run:MR-EXP-TEST:1']!.monitoringResponses = [
-      { windowIndex: 0, response: 'stop', completedPeriod: 0 },
+      { windowIndex: 0, response: 'stop', completedPeriod: 1 },
     ];
     cases.push(['running stage after stop', runningAfterStop]);
 
     const runningAfterFinalWindow = running();
     runningAfterFinalWindow.experiments.runsById['run:MR-EXP-TEST:1']!.monitoringResponses = [
-      { windowIndex: 0, response: 'continue', completedPeriod: 0 },
+      { windowIndex: 0, response: 'continue', completedPeriod: 1 },
     ];
     cases.push(['running after final window', runningAfterFinalWindow]);
 
@@ -1553,7 +1590,7 @@ describe('cross-section and permanent-history invariants', () => {
 
     const stoppedPeriodMismatch = copyCampaign();
     addStoppedRun(stoppedPeriodMismatch);
-    stoppedPeriodMismatch.experiments.stopLogsById['stop:run:MR-EXP-TEST:1']!.stoppedPeriod = 1;
+    stoppedPeriodMismatch.experiments.stopLogsById['stop:run:MR-EXP-TEST:1']!.stoppedPeriod = 0;
     cases.push(['stop period mismatch', stoppedPeriodMismatch]);
 
     const invalidSamiraSource = copyCampaign();
@@ -1760,7 +1797,7 @@ describe('cross-section and permanent-history invariants', () => {
   it.each([
     ['aldercroft', 0],
     ['aldercroft', 47],
-    ['morrow', 0],
+    ['morrow', 1],
     ['morrow', 55],
   ] as const)('rejects route %s availability at early period %i', (routeId, periodIndex) => {
     const state = routeId === 'aldercroft' ? availableAldercroftState() : availableMorrowState();
@@ -2321,6 +2358,7 @@ describe('cross-section and permanent-history invariants', () => {
     strongMissingResults.distinctExperimentFigures = 'missing';
     strongMissingResults.structureCoverage = 'met';
     strongMissingResults.rhythmCoverage = 'met';
+    strongMissingResults.associationSupport = 'met';
     strongMissingResults.matchedControl = 'met';
     strongMissingResults.caveat = 'met';
     const stated = claimSnapshotState('strong', ['usable'], strongMissingResults);
@@ -2332,6 +2370,7 @@ describe('cross-section and permanent-history invariants', () => {
     inflatedHonestResults.distinctExperimentFigures = 'met';
     inflatedHonestResults.structureCoverage = 'met';
     inflatedHonestResults.rhythmCoverage = 'met';
+    inflatedHonestResults.associationSupport = 'met';
     inflatedHonestResults.matchedControl = 'met';
     inflatedHonestResults.caveat = 'met';
     inflatedHonestResults.causalSupport = 'unsupported';
@@ -2406,6 +2445,7 @@ describe('cross-section and permanent-history invariants', () => {
         distinctExperimentFigures: 'missing',
         structureCoverage: 'met',
         rhythmCoverage: 'met',
+        associationSupport: 'met',
         matchedControl: 'met',
         caveat: 'met',
       },
@@ -2444,6 +2484,7 @@ describe('cross-section and permanent-history invariants', () => {
         distinctExperimentFigures: 'met',
         structureCoverage: 'met',
         rhythmCoverage: 'met',
+        associationSupport: 'met',
         matchedControl: 'met',
         caveat: 'met',
         causalSupport: 'unsupported',
@@ -3436,5 +3477,309 @@ describe('cross-section and permanent-history invariants', () => {
       kind: 'failure',
       issue: { path: '/', reason: 'wrongType' },
     });
+  });
+});
+
+describe('approved schema-2 correction boundaries', () => {
+  it('rejects schema 1 without mutation or a guessed migration', () => {
+    const legacy = {
+      ...copyCampaign(),
+      metadata: { ...copyCampaign().metadata, schemaVersion: 1 },
+    };
+    const json = JSON.stringify(legacy);
+    expect(CampaignStateCodec.parse(json).kind).toBe('failure');
+    expect(JSON.stringify(legacy)).toBe(json);
+  });
+
+  it('requires exact scientific fact fields and preserves them through the codec', () => {
+    const state = copyCampaign();
+    addAnalysedRun(state);
+    const encoded = CampaignStateCodec.serialize(state);
+    expect(encoded.kind).toBe('success');
+    if (encoded.kind === 'failure') return;
+    expect(CampaignStateCodec.parse(encoded.value)).toEqual({ kind: 'success', value: state });
+    for (const facts of [
+      undefined,
+      {},
+      {
+        structureRecovery: true,
+        rhythmRecovery: true,
+        repatterningTracksRecovery: true,
+        controlKind: 'invented',
+      },
+      {
+        ...state.experiments.rawRecordsById['raw:run:MR-EXP-TEST:1']!.scientificFacts,
+        extra: true,
+      },
+    ]) {
+      const invalid = structuredClone(state);
+      Object.assign(invalid.experiments.rawRecordsById['raw:run:MR-EXP-TEST:1']!, {
+        scientificFacts: facts,
+      });
+      expect(validateCampaignState(invalid).kind).toBe('failure');
+    }
+  });
+
+  it.each([0, 1])(
+    'resolves normal monitoring at offset %i before crossing the expiry',
+    (offset) => {
+      const state = copyCampaign();
+      addAnalysedRun(state);
+      const run = state.experiments.runsById['run:MR-EXP-TEST:1']!;
+      run.startedPeriod = 5;
+      run.monitoringResponses[0]!.completedPeriod = 6 + offset;
+      state.calendar.periodIndex = 7;
+      expect(validateCampaignState(state).kind).toBe('success');
+      for (const period of [5, 8]) {
+        run.monitoringResponses[0]!.completedPeriod = period;
+        expect(validateCampaignState(state).kind).toBe('failure');
+      }
+    },
+  );
+
+  it('resolves both oxygen windows as missed without a fabricated player stop', () => {
+    const state = copyCampaign();
+    const id = 'run:MR-EXP-OXYGEN-LOSS:1';
+    addConfiguredRun(
+      state,
+      configuredRun({
+        id,
+        templateId: 'MR-EXP-OXYGEN-LOSS',
+        stage: 'readyForAnalysis',
+        startedPeriod: 3,
+        variationNamespace: 'experimentVariation',
+        variationTargetId: id,
+        variationDrawIndex: 0,
+        variationBucket: 17,
+        projectedResultBand: 'robust',
+        finalResultBand: 'robust',
+        monitoringResponses: [
+          { windowIndex: 0, response: 'missed', completedPeriod: 5 },
+          { windowIndex: 1, response: 'missed', completedPeriod: 7 },
+        ],
+      }),
+    );
+    expect(validateCampaignState(state).kind).toBe('success');
+    const encoded = CampaignStateCodec.serialize(state);
+    expect(encoded.kind).toBe('success');
+    if (encoded.kind === 'success')
+      expect(CampaignStateCodec.parse(encoded.value)).toEqual({ kind: 'success', value: state });
+    const run = state.experiments.runsById[id]!;
+    run.monitoringResponses[1]!.completedPeriod = 6;
+    expect(validateCampaignState(state).kind).toBe('failure');
+    run.monitoringResponses[1]!.completedPeriod = 7;
+    run.stage = 'running';
+    expect(validateCampaignState(state).kind).toBe('failure');
+  });
+
+  it.each([
+    ['MR-EXP-LASER-SHAM', 16],
+    ['MR-EXP-DAMAGE-RANGE', 16],
+    ['MR-EXP-BATCH-CHECK', 36],
+    ['MR-EXP-REPAIR-STATE', 24],
+    ['MR-EXP-OXYGEN-LOSS', 45],
+    ['MR-EXP-DRUG-EXPOSURE', 48],
+  ] as const)('saves configured expiry for %s at %i exactly once', (templateId, period) => {
+    const state = copyCampaign();
+    const id = `run:${templateId}:1`;
+    addConfiguredRun(
+      state,
+      configuredRun({ id, templateId, stage: 'stopped', startedPeriod: null }),
+    );
+    state.calendar.periodIndex = period;
+    state.world.floorAct = period < 28 ? 'manuscriptClutter' : 'reviewPressure';
+    state.experiments.stopLogsById[`stop:${id}`] = {
+      id: `stop:${id}`,
+      runId: id,
+      stoppedPeriod: period,
+      reasonId: 'MR-REASON-START-WINDOW-EXPIRED',
+    };
+    expect(validateCampaignState(state).kind).toBe('success');
+    const log = state.experiments.stopLogsById[`stop:${id}`]!;
+    log.stoppedPeriod--;
+    expect(validateCampaignState(state).kind).toBe('failure');
+    log.stoppedPeriod++;
+    state.experiments.stopLogsById['stop:duplicate'] = { ...log, id: 'stop:duplicate' };
+    expect(validateCampaignState(state).kind).toBe('failure');
+    delete state.experiments.stopLogsById['stop:duplicate'];
+    state.experiments.runsById[id]!.startedPeriod = 1;
+    expect(validateCampaignState(state).kind).toBe('failure');
+  });
+
+  it('stores fallback expiry shape while leaving its unauthored deadline to connected content', () => {
+    const state = copyCampaign();
+    const id = 'run:MR-FB-EXP-RANGE-REPAIR:1';
+    state.metadata.buildProfileId = 'fallback';
+    addConfiguredRun(
+      state,
+      configuredRun({
+        id,
+        templateId: 'MR-FB-EXP-RANGE-REPAIR',
+        stage: 'stopped',
+        startedPeriod: null,
+      }),
+    );
+    // Synthetic period is a shape fixture, not an approved fallback window.
+    state.calendar.periodIndex = 1;
+    state.experiments.stopLogsById[`stop:${id}`] = {
+      id: `stop:${id}`,
+      runId: id,
+      stoppedPeriod: 1,
+      reasonId: 'MR-REASON-START-WINDOW-EXPIRED',
+    };
+    expect(validateCampaignState(state).kind).toBe('success');
+    state.experiments.runsById[id]!.variationBucket = 0;
+    expect(validateCampaignState(state).kind).toBe('failure');
+  });
+
+  it.each([false, true])('saves analysis expiry with resolved windows: %s', (resolved) => {
+    const state = copyCampaign();
+    const id = 'run:MR-EXP-TEST:1';
+    addConfiguredRun(
+      state,
+      configuredRun({
+        stage: 'stopped',
+        startedPeriod: 51,
+        variationNamespace: 'experimentVariation',
+        variationTargetId: id,
+        variationDrawIndex: 0,
+        variationBucket: 17,
+        projectedResultBand: 'robust',
+        monitoringResponses: resolved
+          ? [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 52 }]
+          : [],
+      }),
+    );
+    state.calendar.periodIndex = 52;
+    state.world.floorAct = 'reviewPressure';
+    state.experiments.stopLogsById[`stop:${id}`] = {
+      id: `stop:${id}`,
+      runId: id,
+      stoppedPeriod: 52,
+      reasonId: 'MR-REASON-ANALYSIS-DEADLINE',
+    };
+    expect(validateCampaignState(state).kind).toBe('success');
+    state.experiments.stopLogsById[`stop:${id}`]!.stoppedPeriod = 51;
+    expect(validateCampaignState(state).kind).toBe('failure');
+    state.experiments.stopLogsById[`stop:${id}`]!.stoppedPeriod = 52;
+    state.experiments.runsById[id]!.monitoringResponses = [
+      { windowIndex: 0, response: 'stop', completedPeriod: 52 },
+    ];
+    expect(validateCampaignState(state).kind).toBe('failure');
+  });
+
+  it('uses recovery facts and same-record association, and never upgrades a limited control', () => {
+    const results: ManuscriptRequirementResults = {
+      ...emptyRequirementResults(),
+      distinctExperimentFigures: 'met',
+      structureCoverage: 'met',
+      rhythmCoverage: 'met',
+      associationSupport: 'met',
+      matchedControl: 'met',
+      caveat: 'met',
+    };
+    const state = claimSnapshotState('strong', ['usable', 'usable'], results);
+    expect(validateCampaignState(state).kind).toBe('success');
+    const raws = Object.values(state.experiments.rawRecordsById);
+    for (const raw of raws) raw.scientificFacts.repatterningTracksRecovery = false;
+    expect(validateCampaignState(state).kind).toBe('failure');
+    state.manuscript.snapshotsById['snapshot:1']!.requirementResults.associationSupport =
+      'unsupported';
+    expect(validateCampaignState(state).kind).toBe('success');
+    raws[0]!.scientificFacts.repatterningTracksRecovery = true;
+    raws[0]!.scientificFacts.structureRecovery = false;
+    raws[0]!.scientificFacts.rhythmRecovery = false;
+    state.manuscript.snapshotsById['snapshot:1']!.requirementResults.distinctExperimentFigures =
+      'missing';
+    expect(validateCampaignState(state).kind).toBe('success');
+    for (const raw of raws) raw.scientificFacts.controlKind = 'limited';
+    expect(validateCampaignState(state).kind).toBe('failure');
+    state.manuscript.snapshotsById['snapshot:1']!.requirementResults.matchedControl = 'unsupported';
+    expect(validateCampaignState(state).kind).toBe('success');
+  });
+
+  it.each(['altered', 'unsupported'] as const)(
+    'preserves apparent %s support without changing raw facts',
+    (status) => {
+      const results: ManuscriptRequirementResults = {
+        ...emptyRequirementResults(),
+        distinctExperimentFigures: 'met',
+        structureCoverage: 'met',
+        rhythmCoverage: 'met',
+        associationSupport: 'met',
+        matchedControl: 'met',
+        caveat: 'met',
+        causalSupport: 'met',
+      };
+      const state = claimSnapshotState('inflated', ['usable', 'usable'], results, {
+        reportedEvidence: { index: 0, status },
+      });
+      const first = Object.values(state.experiments.rawRecordsById)[0]!;
+      first.scientificFacts = {
+        structureRecovery: false,
+        rhythmRecovery: false,
+        repatterningTracksRecovery: false,
+        controlKind: 'matched',
+      };
+      for (const raw of Object.values(state.experiments.rawRecordsById))
+        raw.scientificFacts.repatterningTracksRecovery = false;
+      const before = structuredClone(state.experiments.rawRecordsById);
+      expect(validateCampaignState(state).kind).toBe('success');
+      expect(state.experiments.rawRecordsById).toEqual(before);
+      for (const raw of Object.values(state.experiments.rawRecordsById))
+        raw.scientificFacts.controlKind = 'limited';
+      expect(validateCampaignState(state).kind).toBe('failure');
+    },
+  );
+
+  it('allows a slice rehearsal checkpoint and rejects campaign contamination', () => {
+    const state = copyCampaign();
+    state.metadata.buildProfileId = 'slice';
+    addPiimEvidence(state, 'MR-EXP-LASER-SHAM', 'none');
+    state.manuscript.snapshotsById['snapshot:1'] = {
+      id: 'snapshot:1',
+      stateRevision: 1,
+      board: structuredClone(state.manuscript.board),
+      requirementResults: emptyRequirementResults(),
+      statedMissingRequirement: null,
+    };
+    state.manuscript.snapshotOrder = ['snapshot:1'];
+    state.manuscript.currentSnapshotId = 'snapshot:1';
+    state.contentHistory.completedContentIds = ['MR-SLICE-CLAIM-REHEARSAL', 'MR-CONTENT-OTHER'];
+    expect(validateCampaignState(state).kind).toBe('success');
+    const mutations: Array<(copy: CampaignState) => void> = [
+      (copy) => {
+        copy.metadata.buildProfileId = 'full';
+      },
+      (copy) => {
+        copy.metadata.buildProfileId = 'fallback';
+      },
+      (copy) => {
+        copy.calendar.periodIndex = 12;
+      },
+      (copy) => {
+        copy.manuscript.currentSnapshotId = null;
+      },
+      (copy) => {
+        copy.experiments.runsById['run:MR-EXP-LASER-SHAM:1']!.stage = 'running';
+      },
+      (copy) => {
+        copy.conclusion.state = 'choicePending';
+      },
+      (copy) => {
+        copy.narrative.routesById.aldercroft!.evaluation = eligibleAldercroftEvaluation();
+      },
+      (copy) => {
+        copy.manuscript.preprintState = 'public';
+      },
+      (copy) => {
+        copy.manuscript.piimMilestones.publicPreprintRevision = 1;
+      },
+    ];
+    for (const mutate of mutations) {
+      const invalid = structuredClone(state);
+      mutate(invalid);
+      expect(validateCampaignState(invalid).kind).toBe('failure');
+    }
   });
 });

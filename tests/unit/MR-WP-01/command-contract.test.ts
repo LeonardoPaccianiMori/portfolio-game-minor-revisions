@@ -10,7 +10,7 @@ import type {
   RuleTransitionResult,
 } from '../../../src/rules';
 
-describe('MR-IF-003 v1 closed data contracts', () => {
+describe('MR-IF-003 v2 closed data contracts', () => {
   it('contains exactly the 24 command discriminants', () => {
     type Tags = RuleCommand['type'];
     expectTypeOf<Tags>().toEqualTypeOf<
@@ -38,6 +38,13 @@ describe('MR-IF-003 v1 closed data contracts', () => {
       | 'evaluateCareerRoute'
       | 'finalizeCampaign'
       | 'recordContentPresentation'
+    >();
+  });
+
+  it('keeps missed monitoring out of player responses', () => {
+    type Monitor = Extract<RuleCommand, { type: 'respondToMonitoring' }>;
+    expectTypeOf<Monitor['response']>().toEqualTypeOf<
+      'continue' | 'qualityCheck' | 'stabilize' | 'stop'
     >();
   });
 

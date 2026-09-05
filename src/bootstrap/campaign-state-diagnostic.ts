@@ -23,7 +23,7 @@ export interface CampaignStateDiagnosticSummary {
 const diagnosticInput = (pressureProfile: 'standard' | 'supported'): CampaignCreationInput => ({
   campaignId: '00000000-0000-4000-8000-000000000004',
   campaignSeed: 1_363_162_018,
-  contentVersion: '1.0.0',
+  contentVersion: '1.1.0',
   buildProfileId: 'full',
   pressureProfile,
   protagonist: { name: 'Morgan', pronounSet: 'theyThem' },

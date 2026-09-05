@@ -18,7 +18,7 @@ const relationship = (id: string, trust: number, introduced: boolean): Relations
 
 const buildInitialState = (input: CampaignCreationInput): CampaignState => ({
   metadata: {
-    schemaVersion: 1,
+    schemaVersion: 2,
     contentVersion: input.contentVersion,
     campaignId: input.campaignId,
     campaignSeed: input.campaignSeed,

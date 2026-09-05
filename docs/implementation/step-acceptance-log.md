@@ -868,3 +868,7 @@ repair.
 ## 2026-09-06 — Correction baseline approved; Step4 amendment active
 
 Leonardo approved C01–C06, the reviewed correction patch and exact Step4 amendment scope in baseline-candidate.md; MR-IMP-DEC-309 records the supersession. Primary work applies the approved documents then reconciles combined f7192fa once. Candidate arithmetic/review is complete; actual amended-code checks, fresh Sol xhigh review, integration and user diagnostic acceptance remain pending. No earlier acceptance is rewritten.
+
+## 2026-09-06 — Step4 amended-code technical review
+
+The approved baseline is integrated at `450972c`; exact combined-source transplant is `8bd4d97`. Primary Astra completed the schema2/v5 state amendment and focused regression cases under MR-IMP-DEC-309. See `../reviews/2026-09-05-astra/step4-amendment.md` for the current full checks, primary audit and limited connected-content claims. Fresh Sol xhigh review is next. Original contributions and Steps1–3 acceptance remain historical evidence. No amended-code integration or Leonardo acceptance is claimed at this checkpoint.
