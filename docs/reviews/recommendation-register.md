@@ -281,3 +281,7 @@ Discuss entries in dependency order, not numerical order:
 
 No implementation is authorized. R00–R07 are documented, and no review block
 remains. Wait for Leonardo's next instruction.
+
+## September Astra correction programme
+
+The later [finding register](2026-09-05-astra/finding-register.md) links calendar, slice, scientific support, meaningful experiment choice, factual text, early evidence, voice and production-risk corrections to the preserved prior reviews. It distinguishes new implementation-preparation findings F09–F12. Prior review reports are unchanged. Candidate rules and their final approval status are recorded in [the decision packet](2026-09-05-astra/baseline-candidate.md); candidate analysis does not mark an old recommendation runtime-proven.

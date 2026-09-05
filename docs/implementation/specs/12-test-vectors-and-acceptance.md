@@ -1,6 +1,6 @@
 # Test Vectors and Acceptance Matrix
 
-Status: **S12 documented; fixtures and results do not exist; code prohibited**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Purpose and authority
 
@@ -940,3 +940,7 @@ milestone-order edge, the exact `MR-PIIM-OUTCOME` target, and a deeply nested
 JSON input that returns a typed failure without throwing. The fallback vector
 must continue to reject run 2 for `MR-FB-EXP-RANGE-REPAIR`. Conclusion cases
 must continue to prove all four choices and the exact ordered ending modules.
+
+## Correction C04: earlier evidence
+
+The named Gates 4A, 6A and 26A in `../development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.

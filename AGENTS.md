@@ -4,35 +4,7 @@ These rules apply to the entire repository.
 
 ## Current phase
 
-The repository has a complete S00–S14 implementation specification and an
-incremental Step 0–70 development roadmap. Read
-`docs/implementation/development-status.md` for the exact resume point. Gate 1
-and the exact Step-1 plan were approved on 2026-09-01. The submitted Step-1
-foundation is integrated, tested by Leonardo, and accepted. Leonardo approved
-the exact Step-2 plan and its later correction plans on 2026-09-01. The Step-2
-correction code and primary audit are complete, and fresh independent technical
-review passed. The reviewed result is integrated on local `main`, complete
-main-branch validation passed, and Leonardo accepted Step 2 on 2026-09-02.
-Leonardo approved the exact Step-3 plan on 2026-09-02. The controlled worker
-submitted `MR-WO-WP00-005`, and the complete primary audit passed. Fresh
-independent technical review passed with one narrow current-record correction,
-and focused primary validation of that correction passed. The exact worker
-result is integrated on local `main`, and complete main-branch validation
-passed. Leonardo confirmed the four expected lines after repeated reloads and
-explicitly accepted Step 3 on 2026-09-02. Leonardo approved the exact Step-4
-plan and its evidence-led `MR-IF-002 v2` creation-input refinement on
-2026-09-02. `MR-WO-WP01-001` submitted verified rules commit `94b12f3`, and
-`MR-WO-WP00-006` submitted the private diagnostic as `0fc7d39`; complete
-checks and the primary audit passed. Fresh independent review blocked
-integration with one complete set of campaign-contract findings. Leonardo
-approved the evidence-led `MR-IF-002 v3` correction. A later complete review
-proved that `v3` could not represent every route and PIIM prerequisite.
-Leonardo approved frozen `MR-IF-002 v4` and superseding `MR-WO-WP01-003` and
-`MR-WO-WP00-008` on 2026-09-03. `MR-WO-WP01-003` is active for the approved
-Sol `high` correction worker; `MR-WO-WP00-008` remains approved and waiting.
-Step 5 and every later step remain unapproved; approval never carries forward.
-Do not create or change game code, package configuration, tests, production
-assets, or deployment configuration outside an exact approved step.
+Read `docs/implementation/development-status.md` for the accepted main head, pending submissions, current approved work and next gate. It is the single current resume record. Historical step decisions remain in the acceptance and contribution logs. Every later step needs its exact plan; approval never carries forward. Do not change code, dependencies, tests, assets or deployment outside that plan.
 
 ## Leonardo context and communication
 
@@ -138,9 +110,9 @@ frozen interface, use a remote, or begin from an informal chat instruction.
 Use the project-local roles in `.codex/agents/` when their bounded purpose
 matches the approved work. A worker, reviewer, or researcher receives a
 focused approved source packet, not a full conversation-history fork. Before
-spawning it, the primary agent must select and pass the exact model and
-reasoning effort required by the S13 routing matrix, then record the actual
-selection in the work-order and contribution evidence. If no useful,
+spawning it, the primary agent must select the exact model and reasoning
+effort required by S13, verify that role-file pins agree with the assignment,
+and record actual completed use in the work-order and contribution evidence. If no useful,
 non-overlapping delegation exists, the primary agent records why; it still
 obtains the required independent review. Do not silently substitute an
 unavailable model or reasoning level.
@@ -196,3 +168,11 @@ does not assign this history to another Leonardo project.
   approves integration. Modified candidates return to Leonardo for review.
 - Step 70 is complete local-game acceptance. A remote, licence, release,
   deployment, or portfolio change remains outside the roadmap.
+
+## Corrected review practice
+
+The primary resolves missing shared rules and proves representative valid and invalid contract examples before delegating implementation. Workers implement the approved contract in exclusive paths; they cannot resolve design ambiguity. A fresh reviewer checks both contract conformance and game meaning. After a narrow technical correction, the fresh review covers the correction and affected dependencies; repeat full review when behavior or shared assumptions changed broadly. Pure mechanical records receive focused primary validation. No worker reviews its own implementation, and no reviewer accepts a step.
+
+## Leonardo's 2026-09-06 subagent model boundary
+
+Use gpt-6-astra subagents only for high-level design, architecture, shared-contract analysis or high-level review. Delegated implementation uses gpt-5.6-sol, gpt-5.6-terra or gpt-5.6-luna under the S13 matrix. Do not use an Astra implementation worker. The primary retains its conversation, decision, tracked-correction-write and integration responsibilities. This instruction is prospective and does not reattribute earlier contributions.

@@ -1,6 +1,6 @@
 # Endings and State Matrix
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Confirmed architecture
 
@@ -278,3 +278,7 @@ and Archive description in `12-content-specification.md`. No citation requires
 unethical play. The exact ending lines, status text, and citation wording are
 in that same authoritative content draft. B08 presentation and
 `11-technical-architecture.md` save rules remain unchanged.
+
+## Correction C02: truthful selector wording
+
+Samira's ambiguous ending cannot assume evidence use, credit, a shared file or any optional message. Undiscovered misconduct cannot assume publication or a currently public preprint. The state-neutral revised strings in the content catalogue apply across those independent states. Preserve all existing ending selectors and module counts.

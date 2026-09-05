@@ -1,6 +1,6 @@
 # UI, UX, and Accessibility
 
-Status: **B10 and S14 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Interaction principles
 
@@ -106,7 +106,7 @@ back, and comparison controls cover all board work; dragging is never required.
 The requirements panel lists each rule as Met, Missing, Conflict, or
 Unsupported and gives a plain-language reason. It does not use a moral label or
 block a deliberate incomplete commit. Before confirmation, it shows the
-one-period and one-energy cost, unmet requirements, record changes, authorship
+action-specific time and energy cost, unmet requirements, record changes, authorship
 changes, and irreversible integrity action, if present.
 
 Camila's video call uses the protagonist's desk monitor as a focused view. It

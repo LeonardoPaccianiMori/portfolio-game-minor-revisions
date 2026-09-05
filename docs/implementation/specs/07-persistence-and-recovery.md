@@ -1,6 +1,6 @@
 # S07 — Persistence and Recovery
 
-Status: **documented technical specification; no implementation authorized**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 This specification fixes the local IndexedDB database, record shapes, save
 order, validation, backup, recovery, migration, Archive completion, settings,
@@ -718,3 +718,9 @@ The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with `v4`.
 Persistence preserves the added typed prerequisite proofs through the same
 canonical checked-state boundary. No save migration exists because Step 4 has
 not been integrated or accepted.
+
+## Correction C02: schema and content compatibility
+
+Approved schema version 2 and content version 1.1.0 identify the new scientific facts, requirement member and slice semantics. A schema-1 payload has no reliable scientificFacts proof. Do not infer it from ID spelling or silently mutate/delete the save. Hold it as unsupported and offer existing recovery/New Game behavior with explicit user choice; a future migration needs its own proven content mapping. No production campaign save exists at this step, and this package does not implement persistence or a migration. Preserve original diagnostic branches and test payloads as historical evidence.
+
+Full, fallback and evaluation slice remain different build profiles. A slice checkpoint may store the rehearsal completedContentIds fact with campaign conclusion unresolved, but cannot continue as a full or fallback campaign. Approval of the candidate requires version consistency in S03/S06, codec tests, build metadata and future S07 consumers.

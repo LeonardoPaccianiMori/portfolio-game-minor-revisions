@@ -1,6 +1,6 @@
 # S05 Calendar, Scheduler, Events, and Cutscenes
 
-Status: **documented technical specification; no implementation authorized**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 This specification fixes the 64-period calendar, safe-point scheduler, event
 queue, expiry, message, reminder, crash, room-event, cutscene, reload, recap,
@@ -887,3 +887,19 @@ The approved correction supersedes `MR-IF-002 v2` with `v3`. Only
 concern, or event is materialized once by its first valid scheduled transition.
 After materialization, every lifecycle, queue, safe-point, reload, and
 finalization rule in this specification is unchanged.
+
+## Correction C01: calendar clarification
+
+The 64 indices contain 63 available advances. Index 63 permits only no-time finalization and related approved interactions. No action may spend a 64th advance.
+
+A Complete Narrative becomes due at the first Week-5 safe point regardless of experiment completion. Remove Caution becomes due at or after Week 6 once the initial draft exists; it remains due until committed. What We Had follows at or after Week 7 after that revision, regardless of missing laboratory work. Protected breaks remain available while a required work task is due; open higher-priority experiment attention is resolved first, then due scenes run before a break. A break uses normal cost and recovery, crosses deadlines normally, and cannot defer a due scene. This prevents a required work task from trapping an unaffordable player. Experiments are requests with consequences, not prerequisites for time-driven story access.
+
+A normal monitoring response at an eligible pre-command period resolves that window before its elapsed-period expiry. The C01 offsets in S06 determine exactly when the window is eligible; no other timing is inferred.
+
+## Correction C01: attention priority and final experiment windows
+
+Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
+
+Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
+
+Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.

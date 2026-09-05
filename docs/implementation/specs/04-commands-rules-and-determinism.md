@@ -1,6 +1,6 @@
 # S04 — Commands, Rules, and Determinism
 
-Status: **documented specification; `MR-IF-003` and `MR-IF-004` frozen `v1` by S14; no implementation authorized**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Purpose and authority
 
@@ -722,3 +722,25 @@ and makes the existing route and PIIM rules checkable through exact typed
 proof. The conditions and tables in this specification do not change. The
 correction does not add a command, effect, rejection, draw, content result, or
 player-visible choice.
+
+## Correction C02: fact-to-claim support
+
+Careful requires one included honest Usable evidence pair whose immutable raw record establishes recovery in at least one stated structure or rhythm observation, with a relevant control and caveat. Its wording remains limited to that observation.
+
+Strong retains two supported figures from different experiment templates, collective structure/rhythm coverage, one matched control and one caveat. In addition, at least one included honest Usable pair must establish repatterning together with recovery in the same raw record. The second honest Usable pair must establish a compatible recovery observation. Neither counts as association evidence solely because its template or card slot is different. Every honest Strong commit includes the association-only caveat: these observations do not establish a causal role. Any template can supply the association if its actual raw observation IDs establish it.
+
+S06 defines closed semantic sets for recovery observations, transient repatterning observations, compatible readings and the association-only caveat, using the S06-defined observation/reading/caveat IDs. Unknown IDs fail content validation. A raw unreliable result, an Inconclusive card, a missing observation, or a generic template match cannot enter the honest support predicate. A failed biological recovery can still honestly answer a different question; it cannot support a recovery claim without a compatible recovery observation.
+
+The visible reported-support result remains separate from honest raw support. An explicit altered/unsupported reading can still create apparently supported reported claims under existing integrity rules. Do not reveal hidden misconduct through a raw-support badge shown to other characters, and do not block the existing explicit dishonest path. Inflated requires causal support that no honest raw record provides. Persisted reported requirement states do not certify scientific truth.
+
+## Correction C01: attention priority and final experiment windows
+
+Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
+
+Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
+
+Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.
+
+## Correction C01: required-work recovery eligibility
+
+takeProtectedBreak remains available during a due required work task. It does not bypass a pending crash, active cutscene, or higher-priority open experiment attention; once those settle, a due scene must run before recovery. A required work task by itself is not commandUnavailable for a break. Apply the normal combined deadline warning, one-period cost, profile recovery and five-energy cap. No special zero-time or bonus recovery is added. Test commandUnavailable ordering, unaffordable required work followed by a legal break, and unchanged state for a break blocked by a due scene.

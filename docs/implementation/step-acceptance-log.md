@@ -864,3 +864,7 @@ and in `development-status.md` in a local committed checkpoint before the next
 activity starts. After a correction, the evidence entry must identify the new
 checks and new independent review; an earlier review does not cover a later
 repair.
+
+## 2026-09-06 — Correction baseline approved; Step4 amendment active
+
+Leonardo approved C01–C06, the reviewed correction patch and exact Step4 amendment scope in baseline-candidate.md; MR-IMP-DEC-309 records the supersession. Primary work applies the approved documents then reconciles combined f7192fa once. Candidate arithmetic/review is complete; actual amended-code checks, fresh Sol xhigh review, integration and user diagnostic acceptance remain pending. No earlier acceptance is rewritten.

@@ -1,6 +1,6 @@
 # S09 — Input, UI, and Accessibility
 
-Status: **documented technical specification; no implementation authorized**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 This specification fixes the device-independent action map, keyboard, mouse,
 and controller behaviour, pointer capture, input modes, screen inventory,
@@ -796,3 +796,7 @@ the interface register and `specification-audit.md`. Earlier candidate-state
 statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
+
+## Correction C02: factual cost and requirement projection
+
+Cost confirmation uses the actual resolved action forecast: initial draft 3 periods/2 energy (major), normal revision 1/1 plus applicable Standard surcharge, PIIM 3/2 (major), slice rehearsal 1/1 plus applicable surcharge. Free configuration shows 0/0. The requirements panel includes associationSupport when applicable and projects reported support without exposing hidden raw/reported mismatches to another character. Existing incomplete/dishonest confirmation rules remain explicit.

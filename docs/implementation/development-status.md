@@ -4,18 +4,9 @@ Last updated: 2026-09-06.
 
 ## Current resume point
 
-Leonardo approved preparation of the Astra correction plan on 2026-09-05.
-The correction package is on `work/astra-correction-package`, based on accepted
-main `9e3dba9`. Steps 1–3 remain accepted. Step 4 is unaccepted; the newer
-combined submission is `f7192fa`, with rules also preserved at `f2babe9`.
-Neither pending branch has been merged or accepted.
+Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps1–3 remain accepted. Step4 remains unaccepted.
 
-Read [the concrete candidate decision](../reviews/2026-09-05-astra/baseline-candidate.md),
-[validation](../reviews/2026-09-05-astra/validation.md), and
-[handover](../reviews/2026-09-05-astra/handover.md). Candidate preparation passed the checks and independent review described there. Leonardo amended routing on2026-09-06: Astra subagents only for high-level work; Sol/Terra/Luna for implementation. The next action is the
-consolidated decision on exact C01–C06 rules, text, workflow and Step-4 amendment.
-Candidate arithmetic is not runtime proof. Frozen documents remain unchanged
-until that decision. No later implementation step or public action is authorized.
+Current work: commit/integrate the corrected documentation baseline, then reconcile the single combined Step4 source f7192fa and implement the approved v5/schema2 changes. Preserve original branches f7192fa and f2babe9. The primary owns edits; fresh detailed technical review uses Sol xhigh. Astra subagents perform high-level work only. Complete tests and independent review before integration; Leonardo's Step4 diagnostic acceptance remains last. Later steps remain separately unapproved.
 
 ## Historical pre-correction resume record
 

@@ -1,12 +1,12 @@
 # Systems and Balance
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## State model and player visibility
 
 | State                    | Internal representation                            | Player-facing feedback                                                          |
 | ------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Semester time            | 64 work periods across 16 weeks                    | Current week and early, late, night, or after-hours period on the permanent HUD |
+| Semester time            | 64 clock states / 63 advances across 16 weeks      | Current week and early, late, night, or after-hours period on the permanent HUD |
 | Energy                   | 0–5 segments                                       | Five-segment bar on the permanent HUD                                           |
 | Evidence                 | 0–12 support points                                | Thin, Developing, Coherent, or Substantial packet label in Research Status      |
 | Elena's paper confidence | 0–100                                              | Cautious, Conditional, Supportive, or Invested desk label and Elena's response  |
@@ -44,7 +44,7 @@ five act-state responses before the Week-16 final scene.
 
 ## Time, pacing, and pressure profiles
 
-The fixed semester has 64 work periods: early, late, night, and after-hours in
+The fixed semester has 64 clock states and 63 available advances: early, late, night, and after-hours in
 each of 16 weeks. Walking, reading, and ordinary dialogue cost no period.
 Meaningful actions cost one, two, or three periods, and state the cost before
 commitment.
@@ -89,7 +89,7 @@ The earlier estimates of 48–52, 52–56, and 58–62 productive periods are
 superseded by the R01 audit below. The approved action catalogue does not yet
 support those estimates.
 
-## R01 period, energy, and evidence audit
+## Historical R01 period, energy, and evidence audit (superseded by C01)
 
 This paper audit closes the previously undefined action counts. It is a design
 fixture, not measured play evidence. Each count uses only an approved action.
@@ -672,3 +672,13 @@ After the vertical-slice internal evaluation, a recorded balance change may
 alter the three percentages only. It may not add a new outcome type, hide a
 player-caused failure, change a fixed campaign gate, or create a new mandatory
 experiment without Leonardo's explicit approval.
+
+## Correction C01: replacement balance baseline
+
+R01 above is historical demand analysis under the former charged configuration action. Its 64-state slack calculation and assertion that the minimum route fits are superseded. There are 63 spendable advances. Without any repricing, the old optimistic totals are 55/51 for minimum, 69/65 for thorough and 100/93 for maximizing (Standard/Supported); the corrected respective slack is 8/12, -6/-2 and -37/-30.
+
+Configuration now costs 0/0. Other action prices and pressure-profile recovery stay unchanged. The initial draft is major, matching the design action table; S06's former intense classification is superseded. Under the old archetype action counts, the revised optimistic non-break demand is 39, 50, 69 and base energy is 21, 24, 36. Optimistic Standard totals are 48, 60, 85; Supported totals are 45, 57, 80. These aggregates still omit actual surcharges, recovery cap losses and room costs; they do not prove schedules.
+
+The named honest core completes laser, range, repair, batch and oxygen work, five honest reports, the mandatory manuscript chain, and the research plan. The broader Supported route also completes drug work, both career preparations, Gabriel Queue, Haoran Borrowed Time, Samira Shared Instrument and credited contribution, plus Camila reply and offer. It does not promise every optional contact or repeat. Do not require an honest route to manufacture a record concern merely to unlock a concern scene.
+
+The twelve candidate traces in `implementation/analysis/campaign-schedules.json` state exact arithmetic and explicit outcome assumptions. Their manual timing, roster and route ledger is in that directory's README. Approval makes them reference targets, not measured gameplay or runtime reachability proof. Runtime tests at Gate 6A and later rule steps must reproduce them. Thin remains unreachable with current starting support 3 and nondecreasing raw evidence; no evidence repricing is included.

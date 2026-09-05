@@ -1,6 +1,6 @@
 # S03 Domain Model and Campaign State
 
-Status: **documented; historical `MR-IF-002 v1` through `v3` superseded by approved frozen `v4`; Step-4 v4 correction primary audit complete**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Purpose and authority
 
@@ -727,3 +727,27 @@ No save or migration exists because Step 4 is not integrated or accepted.
 Historical `v1` through `v3`, all submitted commits, audits, and reviews remain
 evidence. `MR-IMP-OPEN-018` and `MR-IMP-DEC-307` record the approved impact
 and resolution.
+
+## Correction C02: frozen MR-IF-002 v5
+
+The state schema version becomes 2. Each immutable experiment raw record adds exactly `scientificFacts`: `structureRecovery` (boolean), `rhythmRecovery` (boolean), `repatterningTracksRecovery` (boolean), and `controlKind` (`matched` or `limited`). These are saved qualitative meanings of the linked raw observation/control IDs, assigned by validated content. They are not new player controls. S06 connected validation must compare every fact with the linked ID meaning; structural validation alone cannot certify that mapping.
+
+Each snapshot's strict requirementResults object adds `associationSupport` with the existing result union. It is applicable for Strong and Inflated and null for Careful or no claim. For honest support, Strong's distinct supported figures must each carry a compatible recovery observation; apparent dishonest support follows the explicit C02 reported-support table. Its structure/rhythm coverage uses the corresponding scientificFacts booleans, not mere presence of an ID. At least one included usable honest record must combine transient repatterning and structure or rhythm recovery. A matching control ID counts as matched only when its raw controlKind is matched. Unknown/missing fact fields fail validation; never default missing facts to true.
+
+The visible reported-support calculation preserves deliberate altered/unsupported readings. Such a reading may supply apparent recovery, association or causal support under the existing integrity and contradiction rules; it cannot change scientificFacts. The codec does not expose a separate hidden-truth label. Later connected-content tests check selected honest readings against the facts and caveat meaning. These checks must not be mistaken for Step-4 content validation.
+
+The existing completedContentIds entry `MR-SLICE-CLAIM-REHEARSAL` records slice rehearsal completion. It requires buildProfileId slice, period at most 11, an existing current manuscript snapshot and completed laser analysis. It is incompatible with full/fallback, any career evaluation, public preprint, PIIM milestones or non-unresolved campaign conclusion. Slice completion is not campaign conclusion; no career or ending module is fabricated. Persistence verifies the checkpoint before showing completion. A full-game draft still obeys the Week-5 task gate.
+
+No creation-input member, command discriminant, effect member, random algorithm or ending count changes. MR-IF-002 v4 remains historical evidence; v5 was frozen by Leonardo's 2026-09-06 correction approval.
+
+## Correction C01: saved monitoring origin and expiry
+
+Each ExperimentRun adds startedPeriod, the period reached after its successful start command, not the period at which the command began. It is null while configured. It is a safe integer 0–63 no later than the current period for running, readyForAnalysis or analysed runs and ordinary stopped runs. It never changes after start. A configured run stopped by the exact start-window-expired reason retains null, no variation, no monitoring responses and no preparation result. Its stop log and inactive slot are required; it cannot have a raw record or evidence card.
+
+MonitoringRecord.completedPeriod remains the period after its response action. For a one-period monitoring response, eligibility is checked at completedPeriod minus one against the startedPeriod-derived inclusive offset. Responses are ordered, unique per window and cannot precede startedPeriod. No field or check infers an origin from the current clock. Missed-window transitions are future S05 rules; this amendment must not fabricate a player response to a missed window.
+
+Automatic start-window expiry and analysis-deadline expiry use existing StopLog.reasonId, respectively MR-REASON-START-WINDOW-EXPIRED and MR-REASON-ANALYSIS-DEADLINE. The former may stop only configured runs and leaves null variation; the latter may stop running/ready runs that actually started, preserves locked variation and responses, and creates no raw/card/support. A stopped run is established by exactly one valid stop log plus either a final stop response or these explicit expiry conditions. It is not required to invent a stop response for an automatic expiry. All stopped runs are absent from activeRunIds. Stop reasons cannot relax invariants for other states.
+
+## Correction C01: missed-window state representation
+
+Stored MonitoringRecord.response adds `missed`; the player command payload still permits only continue, qualityCheck, stabilize and stop. A scheduler missed record has completedPeriod equal to the first entered period after the derived window closes (S+2 for ordinary/oxygen first, S+4 for oxygen second). A real one-period response stores its post-action period with pre-action eligibility as above. The ordered monitoringResponses array contains one record per resolved window, whether answered or missed; a missed record cannot masquerade as a player command or quality check. Final-band/ready-state checks count resolved windows, not only player responses. A stopped configured run has no records. Preserve exactly-once/ordering and the existing issue/coverage consequence for every missed window.

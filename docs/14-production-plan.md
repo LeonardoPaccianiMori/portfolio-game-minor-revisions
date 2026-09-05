@@ -1,6 +1,6 @@
 # Production Plan
 
-Status: **B10 and S13–S14 documented; incremental Step 0–70 workflow documented; Gate 1 approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Production boundary
 
@@ -195,3 +195,7 @@ complete. Gate 1 is ready for Leonardo's separate decision, not approved. If
 Gate 1 is approved, the next action is an exact Step-1 plan, not a batch slice
 approval. No code, assets, package files, deployment configuration, remote, or
 public release work is authorized.
+
+## Correction C04: earlier evidence
+
+The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.

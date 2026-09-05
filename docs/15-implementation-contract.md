@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **B10 and S01–S14 documented; Steps 1–3 accepted; Step-4 correction authority approved**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Authorization gate
 
@@ -101,7 +101,7 @@ work-order state, review, validation, integration, and recovery.
 | MR-WP-04 Input and interaction           | src/player, src/input, src/interaction                                                                                                                                          | MR-WP-00, MR-WP-03 target interface                                         | Keyboard/controller action tests and focused-view checks                                                                            |
 | MR-WP-05 UI and accessibility            | src/ui, semantic overlays, menu, settings, status, accessibility tests                                                                                                          | MR-WP-01, MR-WP-02, MR-WP-04 interfaces                                     | UI, scale, captions, small-view, and input evidence                                                                                 |
 | MR-WP-06 Audio and cutscenes             | src/audio, src/cutscenes, audio-resource ownership, cue wiring, skip and input restoration                                                                                      | MR-WP-01, MR-WP-03, MR-WP-05 interfaces                                     | S05 campaign-safe scene checks and S10 cutscene, audio, ambience, music, dialogue-sound, restoration, and teardown fixtures         |
-| MR-WP-07 Vertical-slice integration      | Week-1 selected content, integration checks, slice journeys, save/recovery evidence, and private slice packet                                                                   | MR-WP-01 through MR-WP-06                                                   | Vertical-slice private gate evidence                                                                                                |
+| MR-WP-07 Vertical-slice integration      | early-weeks selected content, integration checks, slice journeys, save/recovery evidence, and private slice packet                                                              | MR-WP-01 through MR-WP-06                                                   | Vertical-slice private gate evidence                                                                                                |
 | MR-WP-08 Campaign content integration    | Separately approved fallback and full content data, scene wiring, records, endings, English text, and campaign journeys                                                         | Accepted MR-WP-07 gate, then accepted fallback gate                         | Content counts, route matrix, Citation and ending checks                                                                            |
 | MR-WP-09 Quality and release preparation | Own future `MR-IF-015`, fixture schema, manifest, acceptance matrix, shared test utilities, performance audit, asset/dependency audit, private evidence, and release checklist  | Shared preparation after MR-WP-00; final evidence after applicable packages | Fixture and documentation self-checks, complete traceability, verify command output, and approved release-boundary audit            |
 
@@ -241,3 +241,7 @@ prerequisite-proof gap, and Leonardo approved frozen `MR-IF-002 v4` on
 2026-09-03. `MR-WO-WP01-003` supersedes the rules order and is active;
 `MR-WO-WP00-008` supersedes the diagnostic order and waits. All exclusions and
 the Step-5 block remain unchanged.
+
+## Correction C04: earlier evidence
+
+The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.

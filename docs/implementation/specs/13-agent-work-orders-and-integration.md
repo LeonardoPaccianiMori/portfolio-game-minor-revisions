@@ -1,6 +1,6 @@
 # S13 — Agent Work Orders and Integration
 
-Status: **documented technical specification; Steps 1–3 accepted; Step-4 correction authority approved**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Purpose and authority
 
@@ -272,32 +272,33 @@ configuration. The contribution record and independent-review record preserve
 the actual selection. A default inherited model is not a valid substitute for
 an omitted selection.
 
-The current OpenAI routing matrix is:
+The prospective routing matrix incorporates Leonardo's 2026-09-06 instruction. Astra subagents are restricted to high-level work; they cannot be assigned implementation.
 
-| Assignment class                                                                                          | Exact default selection             | Boundary                                                                                                |
-| --------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Architecture, shared contracts, persistence, Three.js, accessibility, integration, or difficult debugging | `gpt-5.6-sol`, `high` or `xhigh`    | Use `xhigh` when the work has several difficult connected trade-offs.                                   |
-| Final independent implementation or governance review                                                     | `gpt-5.6-sol`, `xhigh`              | The reviewer is fresh-context and read-only.                                                            |
-| Normal bounded implementation, tests, tools, or UI work                                                   | `gpt-5.6-terra`, `medium` or `high` | Use `high` when the task must trace several modules or edge cases.                                      |
-| Asset, licence, and provenance research                                                                   | `gpt-5.6-terra`, `high`             | Escalate a materially ambiguous rights or provenance question to Sol under a new or revised work order. |
-| Mechanical transformation, inventory, fixture conversion, or repeatable check with known input and output | `gpt-5.6-luna`, `low` or `medium`   | It cannot decide design, a shared contract, or an approval question.                                    |
+| Assignment class                                                                                | Exact selection                     | Boundary                                                                                                        |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| High-level design, architecture, shared-contract analysis and cross-system review               | `gpt-6-astra`, `high` or `xhigh`    | Read-only supporting analysis/review; no delegated implementation or mechanical conversion.                     |
+| Difficult implementation, persistence, Three.js, accessibility, integration repair or debugging | `gpt-5.6-sol`, `high` or `xhigh`    | Implements an approved contract with exclusive owned paths; cannot decide shared rules.                         |
+| Routine bounded implementation, tests, tools or UI                                              | `gpt-5.6-terra`, `medium` or `high` | Use high for connected modules or important edge cases.                                                         |
+| Mechanical transformation, inventory, fixture conversion or repeatable check                    | `gpt-5.6-luna`, `low` or `medium`   | Known inputs/outputs; no design or approval authority.                                                          |
+| Final independent implementation review                                                         | `gpt-5.6-sol`, `xhigh`              | Fresh-context, read-only detailed code/test review; primary owns integration and acceptance.                    |
+| Independent high-level design or material-governance review                                     | `gpt-6-astra`, `xhigh`              | Fresh-context, read-only game/architecture/authority review. Do not assign implementation under a review label. |
+| Asset, licence, provenance or bounded evidence research                                         | `gpt-5.6-terra`, `high`             | Read-only focused source packet; escalate material design meaning to primary.                                   |
 
 `max` is reserved for an exceptional, documented quality-first single-agent
-problem after the primary agent explains why `xhigh` is insufficient. Do not
-assign `ultra` to a worker, reviewer, or researcher: it uses subagents while
-this project forbids a delegated worker from delegating again. The primary
+problem after the primary agent explains why `xhigh` is insufficient. A worker, reviewer or researcher cannot delegate further, regardless of
+reasoning effort. Effort labels do not authorize delegation. The primary
 agent may use a supported higher-effort setting only when the approved plan
 states its purpose and it does not bypass this routing, ownership, review, or
 approval contract. These named defaults are rechecked for availability before
 each assignment; a changed provider or model family needs a revised work order
 and Leonardo's approval when it changes the selected assignment.
 
-The project-local configuration has three focused roles:
+The project-local configuration has four focused roles:
 
 | Role                             | Configuration path                                         | Use                                                                                                                                                                   |
 | -------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Controlled implementation worker | `.codex/agents/minor-revisions-implementation-worker.toml` | One approved assignment with exclusive owned paths. Its model stays unset in the profile so the primary agent must pass the matrix-selected value for the exact work. |
-| Independent reviewer             | `.codex/agents/minor-revisions-independent-reviewer.toml`  | Fresh-context, read-only review using Sol `xhigh`.                                                                                                                    |
+| Independent reviewer             | `.codex/agents/minor-revisions-independent-reviewer.toml`  | Fresh-context, read-only review with the explicit task-specific selection above.                                                                                      |
 | Asset researcher                 | `.codex/agents/minor-revisions-asset-researcher.toml`      | Focused candidate, licence, and provenance research using Terra `high`.                                                                                               |
 
 At most two subagents can run at the same time under `.codex/config.toml`. The
@@ -707,3 +708,13 @@ route and PIIM validation and stopped without edits. Leonardo approved frozen
 must use a new fresh OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning after
 the new complete primary audit. This one-Step-4 correction does not change the
 normal S13 routing matrix.
+
+## Correction C06: prospective routing and primary work
+
+The amended routing applies only to new or revised assignments after the correction baseline approval. Do not reattribute earlier Sol/Terra/Luna contributions or edit their historical work orders. The primary remains Astra; delegated implementation uses Sol/Terra/Luna only; actual effort must be recorded, using unknown if unavailable. The new read-only evidence explorer uses Terra high for bounded document, dependency or feasibility questions and owns no paths. The asset researcher remains unchanged.
+
+Custom role model/effort pins must agree with the selected assignment because they override resolved spawn defaults. Keep the implementation-worker model unset so an approved complex Sol or routine Terra/Luna assignment can select its exact model. The independent-reviewer role leaves model and effort unset; each assignment must select Sol xhigh for detailed implementation review or Astra xhigh only for high-level design/governance review. Keep the current two-subagent limit. Do not infer a prohibition or delegation capability from an effort label: every worker, reviewer and researcher is explicitly prohibited from delegating further.
+
+Primary correction preparation is recorded in its approved correction plan, execution record and AI-use entry; a worker work order is required only for an actual delegated implementation assignment. Primary-only records name exact owned paths, base, tests and contributions but do not pretend that a worker was spawned. A bounded temporary worktree outside the repository is permitted for primary candidate preparation when filesystem permissions require it; record the branch and base, preserve original branches, and integrate only reviewed approved commits. Normal delegated workers retain the existing worktree grammar.
+
+Read-only evidence research and fresh review run sequentially around primary synthesis. The primary owns all corrective-package tracked writes. A narrow correction requires focused fresh review of its diff and affected dependencies; only a broad behavior/contract change requires another complete review. Full initial review still reports all findings together. Mechanical records retain focused primary checks.

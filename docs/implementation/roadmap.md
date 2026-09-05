@@ -1,6 +1,6 @@
 # Implementation Specification Roadmap
 
-Status: **S00–S14 documented; Steps 1–3 accepted; Step-4 `MR-IF-002 v4` correction approved; development governance permits approved evidence-led revisions**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Purpose
 
@@ -93,7 +93,7 @@ code.
 
 The earlier one-approval slice authority is superseded. After Gate 1, Leonardo
 can approve only the exact next step in `development-roadmap.md`. Step 1 does
-not authorize Step 2. Steps 1–30 build the foundation and Week-1 slice through
+not authorize Step 2. Steps 1–30 build the foundation and early-weeks slice through
 separate plans, checks, local reviews, corrections, and acceptances. Step 31 is
 Leonardo's private slice acceptance.
 
@@ -243,3 +243,9 @@ that `v3` lacked typed route and PIIM proof. Leonardo approved frozen
 `MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
 2026-09-03. Do not create a Three.js scene, game system, content, asset,
 licence, remote, deployment, public-action path, or Step-5 result.
+
+## Correction baseline C01–C06
+
+The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Leonardo approved the exact reviewed correction package on 2026-09-06. MR-IMP-DEC-309 records the approval and superseded interfaces. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
+
+Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These versions are frozen by MR-IMP-DEC-309; their consumers and later proof obligations remain as listed. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.

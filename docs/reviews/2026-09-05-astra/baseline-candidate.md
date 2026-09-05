@@ -1,6 +1,6 @@
 # Correction baseline for decision
 
-Status: candidate; prepared under Leonardo's 2026-09-05 instruction to implement the correction plan. This is the concrete decision packet, not a frozen game baseline. The existing accepted code and all original branches remain intact.
+Status: approved by Leonardo on 2026-09-06 ("I approve"). This record preserves the exact decision packet as reviewed; C01–C06 now govern the amended baseline. The existing accepted code and all original branches remain intact.
 
 ## Recommended decision
 
@@ -66,3 +66,7 @@ Attention precedes a required scene; the cue cannot block its own prerequisite m
 ## 2026-09-06 routing amendment
 
 The exact C06 matrix and reviewer profile now enforce Leonardo's instruction: Astra subagents perform high-level work only; implementation subagents use Sol/Terra/Luna. Primary ownership of this correction package is unchanged. No Astra implementation subagent was used.
+
+## Approval record — 2026-09-06
+
+Leonardo explicitly approved this package after the final review summary and consolidated decision request. Approved patch SHA-256: d793da777f2a53b99b6fe7cc19cd11b46188ee266e7f5ac39c81605d911c05c6, preserved unchanged as evidence. Authority includes its documented status/table reconciliation, C01–C06 rule/text/workflow changes and exact primary-owned Step4 amendment scope. Existing Steps1–3 retain acceptance; Step4 final acceptance remains pending. No further permission is needed for approved-scope repairs.

@@ -139,3 +139,7 @@ agent-produced code.
 - Leonardo's contribution: requested implementation of the correction plan. Exact candidate creative/balance approval and Step-4 acceptance remain pending. Existing completed contributions from other models retain their original records.
 
 Leonardo amended future routing on2026-09-06: Astra subagents are for high-level work only; implementation subagents use Sol/Terra/Luna. The candidate policy implements that instruction without reattributing any historical contribution.
+
+## 2026-09-06 — Approved baseline application
+
+OpenAI gpt-6-astra primary, actual effort unknown: applied the exact approved correction patch, reconciled current version/status/action/roadmap tables, and recorded Leonardo's C01–C06 approval. Historical patch remains unchanged. Evidence: MR-IMP-DEC-309, current interface register, acceptance/resume record and correction-baseline commit. This does not claim completed Step4 code or acceptance.

@@ -1,6 +1,6 @@
 # Science and Experiments
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Scientific field and model
 
@@ -217,11 +217,11 @@ success or failure.
 
 The manuscript board offers three claim levels:
 
-| Claim level | Paper wording                                                         | Main effect                                                                               |
-| ----------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Careful     | Recovery is linked to the repair state.                               | Protects integrity but can make publication harder.                                       |
-| Strong      | The repair state supports recovery.                                   | Can increase Elena's paper confidence.                                                    |
-| Inflated    | Treat the repair state as if it drives recovery. This is unsupported. | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
+| Claim level | Paper wording                                                                      | Main effect                                                                               |
+| ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Careful     | Recovery appears in the observed condition.                                        | Protects integrity but can make publication harder.                                       |
+| Strong      | The included observations link transient repatterning with recovery in this model. | Can increase Elena's paper confidence.                                                    |
+| Inflated    | Treat the repair state as if it drives recovery. This is unsupported.              | Can increase Elena's paper confidence, harm integrity, and cause harder reviewer demands. |
 
 The main paper claim is that a controlled cardiac tissue model can enter a
 repeatable repair state after limited damage and show spatial-rhythmic recovery.
@@ -300,3 +300,34 @@ second run of the same template, not a new experiment family.
 `12-content-specification.md` owns the exact requests, evidence cards, and
 readable clues. No later work may add real laboratory quantities, executable
 protocols, or a claim that the repair state is a demonstrated mechanism.
+
+## Correction C01: timing and meaningful choices
+
+Sample configuration is a free planning action (zero periods, zero energy). Starting still pays its listed cost and locks variation. Three active slots remain the capacity limit. Configuration cannot be used to obtain evidence, recovery or another variation draw.
+
+The ordinary monitoring window opens when the start action finishes and includes that period and the next. Oxygen has a second window two and three periods after start completion. Responding within a window resolves it before processing the response's elapsed period. After all windows resolve or are missed, analysis is available. These fictional calendar boundaries are not laboratory instructions.
+
+The batch-check start window extends through Week 9 after-hours. Every configured/running experiment can finish after its start window. All analysis and reports remain available before Week 14. Required scenes remain calendar-driven even if evidence is weak or absent; missing experiments weaken the response, not access to the next act.
+
+Higher-risk choices retain their one preparation issue. Their value is a different stated question, preserved with the original run choices, not extra support points. The approved question labels below are shown beside the biological and quality results; a question label never asserts that a weak run answered it.
+
+| Template      | Baseline question                                           | Higher-risk question                                       |
+| ------------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| Laser/sham    | Does recovery recur in the matched comparison?              | Does recovery extend to the broader injury case?           |
+| Damage range  | Where does recovery stop in the observed range?             | What happens at the recovery edge?                         |
+| Batch check   | Does recovery recur in the established batch context?       | Does recovery recur in the newly available batch context?  |
+| Repair state  | Does repatterning track recovery in the observed condition? | Does the same association appear in the broader condition? |
+| Oxygen loss   | What recovery follows the interpretable challenge?          | Does recovery extend to the broader reviewer condition?    |
+| Drug exposure | What response appears in the established assay context?     | What response appears in the exploratory assay context?    |
+
+The selected question is an authored string selected by the saved family choice. It remains in the record and can be read during manuscript selection. It does not alter evidence points, PIIM requirements, career eligibility or causal support. The result must say when it does not answer the selected question.
+
+Limited controls become a constrained faster route, not a voluntary equal-cost substitute for an available matched comparison. A limited room route permits only limited control/coverage for the affected new run; the player sees those limits before selecting it. Waiting one period, or using the existing earned support, restores access to the matched/full option. Equipment quality and control quality remain separate saved facts: one affects biological preparation, the other affects evidence quality. Existing configured or active runs are not retroactively relabelled.
+
+## Correction C01: attention priority and final experiment windows
+
+Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
+
+Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
+
+Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.

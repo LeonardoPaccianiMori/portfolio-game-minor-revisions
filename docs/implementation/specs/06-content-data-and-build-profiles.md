@@ -1,6 +1,6 @@
 # S06 — Content Data and Build Profiles
 
-Status: **documented technical specification; no implementation authorized**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 This specification fixes the authored-content package, strict data shapes,
 stable identifiers, references, English-string boundary, full, fallback, and
@@ -395,13 +395,13 @@ repeat or calculate rule algorithms.
 
 The exact work classes are:
 
-| Work class | Actions                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------- |
-| `recovery` | Protected break                                                                             |
-| `light`    | Routine monitor, Elena report, relationship action, and room wait                           |
-| `focused`  | Configure, focused start, quality monitor, analysis, manuscript revision, and career action |
-| `intense`  | Intensive start and initial manuscript draft                                                |
-| `major`    | PIIM response                                                                               |
+| Work class | Actions                                                                                |
+| ---------- | -------------------------------------------------------------------------------------- |
+| `recovery` | Protected break                                                                        |
+| `light`    | Configuration (0/0), routine monitor, Elena report, relationship action, and room wait |
+| `focused`  | Focused start, quality monitor, analysis, manuscript revision, and career action       |
+| `intense`  | Intensive start                                                                        |
+| `major`    | Initial manuscript draft and PIIM response                                             |
 
 Only focused and intense work can use the S04 night surcharge or push-through
 rule. A content object cannot reclassify an action for one scene or profile.
@@ -958,7 +958,7 @@ expected view summaries, and important excluded items.
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `MR-S06-VAL-001` | The three permitted development-status combinations; refusal to select an incomplete profile; one complete valid full package; exact counts, references, required content, stable ordering, and deterministic repeated validation. |
 | `MR-S06-FBK-001` | Exact fallback cut, direct range/repair replacements, basic facility route, all mandatory content, exact counts, and no excluded text.                                                                                             |
-| `MR-S06-SLC-001` | Exact Week-1 slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text.                                                                                  |
+| `MR-S06-SLC-001` | Exact early-weeks slice, claim rehearsal, save-flow content, slice completion, excluded later content, no endings or Citations, and no unrelated text.                                                                             |
 | `MR-S06-REF-001` | Valid references plus every missing, wrong-family, duplicate, circular, chained-replacement, and excluded-dependency rejection.                                                                                                    |
 | `MR-S06-STR-001` | Key grammar, placeholders, selected-key closure, normalized unique-word vectors, exact 6,000 boundary, and 6,001 rejection.                                                                                                        |
 | `MR-S06-OBJ-001` | Every strict family shape, explicit null and empty-list use, unknown fields, value ranges, forms, choices, conditions, and effects.                                                                                                |
@@ -1048,3 +1048,64 @@ The approved 2026-09-03 correction supersedes `MR-IF-002 v3` with `v4`.
 The restricted rules view supplies the role mappings above, while campaign
 state stores their typed proof. This changes no authored object, prose, count,
 profile, route rule, PIIM rule, or build behaviour.
+
+## Correction C01: explicit planning and timing data
+
+Configuration uses the `light` class with zero period and energy cost. It still creates one configured run, occupies a slot and records the selected qualitative options; it cannot draw variation, award evidence, improve preparation by repetition, or advance a clock. Existing stop/slot rules still apply. This is planning, not a new work class.
+
+Each selected template defines `monitoringOffsets` relative to the period reached by its successful start command. Normal templates and repeats use the inclusive pair `[0, 1]`. Oxygen uses `[0, 1]` and `[2, 3]`. These are fictional calendar indices, not laboratory timings. A response is eligible at the pre-command period. Once accepted, it resolves its own window before crossed-period expiry; a response cannot miss its own resolved window. After the last completed or missed window, the record is ready for analysis. No hidden incubation duration exists.
+
+Template windows govern configuration and start eligibility. An active run can complete after that window; analysis and report remain available through period 51. Laser analysis must precede range start, and range analysis must precede repair start. Batch starts through period 35. An unfulfilled request expires after period 51, without blocking the story.
+
+The slice has period range 0–11 and completes immediately after its successful rehearsal checkpoint. It uses the normal profile costs, monitoring offsets and room responses. `MR-SLICE-CLAIM-REHEARSAL` uses one period and one base energy, focused class, and requires an analysed laser record with an honest reading, relevant control and caveat. It commits a slice-only manuscript snapshot through the existing initial-manuscript command with this explicit profile action binding. The existing slice completion evidence records that snapshot and verified checkpoint before completion UI. It never creates the full-game Week-5 task, public record, career result or transferable full-game save. The S03 slice-profile definition and S07 compatibility checks must reject cross-profile continuation. A request whose full cost crosses 11 is rejected without change; the evaluation can restart through the existing New Game confirmation. Missing rehearsal never counts as completion.
+
+Full/fallback selection excludes this rehearsal action binding and its strings. Existing same-ID definition rules must recognize the explicit slice-only target, not silently reprice the full-game draft.
+
+## Correction C02: closed scientific meaning tables
+
+These small closed semantic IDs are content definitions, not additional experiment templates, primary records or generated text. Add MR-STRUCTURE-, MR-RHYTHM-, MR-REPATTERNING-, MR-CONTROL-, MR-READING- and MR-CAVEAT- to the semantic-definition prefix registry. Every selected definition has the exact English label below in strings.en.json. Full, fallback and slice include only their dependency closure.
+
+| Semantic ID                     | Exact English label                                  | Saved meaning                                                                                                                      |
+| ------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| MR-STRUCTURE-RECOVERY           | Structure recovery observed                          | structureRecovery=true                                                                                                             |
+| MR-STRUCTURE-PARTIAL            | Partial structure recovery observed                  | structureRecovery=true                                                                                                             |
+| MR-STRUCTURE-NONE               | No structure recovery observed                       | structureRecovery=false                                                                                                            |
+| MR-STRUCTURE-UNOBSERVED         | Structure recovery not established                   | structureRecovery=false                                                                                                            |
+| MR-RHYTHM-RECOVERY              | Rhythm recovery observed                             | rhythmRecovery=true                                                                                                                |
+| MR-RHYTHM-PARTIAL               | Partial rhythm recovery observed                     | rhythmRecovery=true                                                                                                                |
+| MR-RHYTHM-NONE                  | No rhythm recovery observed                          | rhythmRecovery=false                                                                                                               |
+| MR-RHYTHM-UNOBSERVED            | Rhythm recovery not established                      | rhythmRecovery=false                                                                                                               |
+| MR-REPATTERNING-TRACKS-RECOVERY | Repatterning tracks recovery in this record          | repatterningTracksRecovery=true; requires a positive recovery observation in the same record                                       |
+| MR-REPATTERNING-NO-ASSOCIATION  | No recovery association established                  | repatterningTracksRecovery=false                                                                                                   |
+| MR-REPATTERNING-UNOBSERVED      | Repatterning relation not established                | repatterningTracksRecovery=false                                                                                                   |
+| MR-CONTROL-MATCHED              | Matched comparison                                   | controlKind=matched                                                                                                                |
+| MR-CONTROL-LIMITED              | Limited comparison                                   | controlKind=limited                                                                                                                |
+| MR-READING-RECOVERY             | Recovery appears in the observed condition           | Honest only if structureRecovery or rhythmRecovery is true                                                                         |
+| MR-READING-ASSOCIATION          | Repatterning tracks the observed recovery            | Honest only if repatterningTracksRecovery and at least one recovery fact are true                                                  |
+| MR-READING-NO-RECOVERY          | Recovery was not observed                            | Honest only if both recovery facts are false, at least one selected observation is NONE, and no selected observation is UNOBSERVED |
+| MR-READING-UNRESOLVED           | This record does not settle the question             | Honest for an inconclusive/process-limited record; never positive support for a recovery claim                                     |
+| MR-CAVEAT-CONDITION             | This conclusion is limited to the observed condition | Relevant to an honest RECOVERY/NO-RECOVERY reading                                                                                 |
+| MR-CAVEAT-ASSOCIATION           | These observations do not establish a causal role    | Relevant to ASSOCIATION or RECOVERY; required on every honest Strong board                                                         |
+| MR-CAVEAT-PROCESS               | The recorded process or coverage limit remains       | Relevant to UNRESOLVED or a honestly narrowed valid record with a process/coverage limit                                           |
+
+Text keys use `science.<lowerCamel semantic ID without MR prefix>`, for example `science.structureRecovery`, `science.repatterningTracksRecovery`, `science.caveatAssociation`. This table defines each key by that mechanical conversion; no runtime prose conversion is permitted. Selected content supplies the literal label.
+
+Each raw result refers to exactly one structure ID, one rhythm ID, one repatterning ID and one control ID. scientificFacts must equal those exact table meanings. A nonselected observation is UNOBSERVED; paired views require the existing quality-check action for full paired coverage. An unreliable result cannot use RECOVERY/PARTIAL or TRACKS-RECOVERY to establish a supported claim. A selected honest reading and caveat must pass this table. A different template is not evidence for any of these facts. Do not infer meanings from ID spelling: validated content builds the typed mapping from these approved entries; the decoder checks shape and the connected validator checks equality.
+
+C02 does not grant association to every Strong biological result. Association is true only when the raw record contains the specific TRACKS-RECOVERY observation. Later content/result vectors must include both association-present and association-absent records from at least two templates, consistent with their approved biological outcomes. No new raw observation may be invented to make a card fit a claim.
+
+Careful reported support counts one nonomitted, noncontradictory usable honest recovery pair or one explicitly altered/unsupported apparent recovery pair. Strong/Inflated reported support counts two distinct such pairs and collective structure/rhythm support, plus associationSupport, matched control and caveat. For an honest pair, those predicates use the raw meanings above. An explicitly altered/unsupported pair may supply apparent recovery/association observations under existing confirmation and integrity rules; it cannot change raw scientificFacts or turn a limited control into a matched control. A contradictory or omitted pair supplies no reported support. Only deliberate altered/unsupported reporting can supply apparent causal support; honest raw causal support is always false.
+
+An honest Strong board must include one usable ASSOCIATION reading, another compatible usable recovery reading from a different template, at least one genuine matched control linked to included evidence, collective structure/rhythm recovery, and MR-CAVEAT-ASSOCIATION. A single limited structure-only record can honestly support Careful, but cannot silently supply rhythm or association. The requirement result is conflict if visible contradiction exists, missing if the necessary card/slot is absent, unsupported if present candidates fail the predicate, and met otherwise. A missing versus unsupported result is not guessed from card counts.
+
+Required S06 validation cases: every table row; unknown ID; raw-ID/scientificFacts disagreement; unobserved view represented as recovery; TRACKS-RECOVERY without same-record recovery; unsupported honest reading; mismatched caveat; selected pair with limited control falsely marked matched; altered apparent support with unchanged raw facts; no honest causal support; profile closure and exact literal label mapping. S12 semantic cases link these to MR-REQ-EXP-001/003, MR-REQ-NARR-001, MR-REQ-CONTENT-001 and MR-IF-002/003/006.
+
+Content also registers MR-REASON-START-WINDOW-EXPIRED (label: The start window closed before this experiment began) and MR-REASON-ANALYSIS-DEADLINE (label: The analysis deadline passed before this record was archived). Both use the existing reason projection; they do not imply misconduct. Add MR-REASON- to the semantic prefix registry. Expiry event template IDs use the existing MR-EVT- prefix and preserve the run ID without truncation; content validation rejects any resulting ID over128 characters and constrains authored template IDs/run-ID construction accordingly.
+
+## Correction C01: attention priority and final experiment windows
+
+Open experiment attention has priority over a required scene cue. The player may resolve that due monitoring attention before the cue blocks ordinary time-costing work. Once attention is resolved, the required scene runs before analysis, recovery or unrelated work. Never expose a required cue that simultaneously prevents the attention response required to make that same scene eligible.
+
+Oxygen configuration and start are allowed through period44 (Week12 early), inclusive; its two-period start finishes by46. An earliest-window completion can then monitor46→47 and48→49, analyse49→50 and report50→51. Starting at45 or later is rejected without state, cost or draw. Taking the final allowed monitoring period may sacrifice report completion; the forecast identifies that consequence. Other template start boundaries remain as listed, with batch through35. Analysis and report actions must finish at or before51.
+
+Entering the period after a template's last allowed start automatically stops any still-configured run through applyScheduledTransition, for no additional time/energy; free its slot, create one stop log with MR-REASON-START-WINDOW-EXPIRED, and create no variation/raw/card/support. At52, stop any remaining running/ready run similarly with MR-REASON-ANALYSIS-DEADLINE, preserving locked facts and old records. Per-run event IDs are MR-EVT-START-EXPIRY:<runId> and MR-EVT-ANALYSIS-EXPIRY:<runId>; these are instances of two content-defined transition templates, not new command types or arbitrary runtime effects. Each expiry is idempotent and uses the existing crossed-period priority before newly due Week14 content. Forecast known abandonment before crossing the boundary. Previous analysed records never expire.

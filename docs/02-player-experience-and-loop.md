@@ -1,6 +1,6 @@
 # Player Experience and Core Loop
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Perspective and interaction
 
@@ -346,7 +346,7 @@ costs and uses its approved energy adjustments.
 
 | Authored action                                 | Periods | Standard energy | Notes                                                                  |
 | ----------------------------------------------- | ------: | --------------: | ---------------------------------------------------------------------- |
-| Select and configure a sample group             |       1 |               1 | One focused setup action.                                              |
+| Select and configure a sample group             |       0 |               0 | One focused setup action.                                              |
 | Start laser/sham, repair-state, or drug work    |       1 |               1 | One focused start action.                                              |
 | Start range, batch, oxygen-loss, or repeat work |       2 |               2 | One intense start action.                                              |
 | Routine monitor or stop                         |       1 |               0 | A light deliberate check.                                              |
@@ -378,3 +378,7 @@ by the minimum-defensible, thorough-honest, and maximizing demand fixtures.
 manuscript, and replay content. `11-technical-architecture.md` contains the
 save and browser boundary. Measured implementation evidence remains future
 evidence and does not alter this approved loop without a recorded decision.
+
+## Correction C01: cost supersession
+
+The earlier sample-configuration row is superseded: configuration is free planning at zero periods and zero energy. Its saved choice and occupied active slot remain meaningful. Starting, monitoring and analysis keep their costs. Initial drafting and PIIM response are major commitments. The opening evaluation follows the normal loop through an explicit slice-only claim rehearsal across the early weeks; it is not restricted to Week 1.

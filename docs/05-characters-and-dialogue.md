@@ -1,6 +1,6 @@
 # Characters and Dialogue
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Protagonist
 
@@ -278,3 +278,7 @@ The five supporting-character non-lexical palettes each contain eight short
 original sounds. They never form words or carry required meaning. Exact audio
 cue IDs and wording are in the content catalogue; implementation still needs
 verified original or reusable sound assets.
+
+## Correction C03: representative voice rule
+
+Keep the existing character motives and comedy. Haoran's revised closing lines state the practical consequence of help, planning or refusal. Gabriel's revised closing lines state the booking consequence. The internal narrator can carry the wider institutional joke. Their two revised scenes use choice-specific closing text, with unchanged effects and duration targets. Review these scenes in motion before extending this editorial treatment to the cast.

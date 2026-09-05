@@ -1,6 +1,6 @@
 # Narrative and Campaign
 
-Status: **B10 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Premise
 
@@ -390,3 +390,7 @@ repeat in a campaign.
 Before a public remote exists, a title-conflict and brand check must examine
 _Minor Revisions_, the fictional journal names, and the fictional organization
 names. The game must not copy real journal branding or imply real affiliation.
+
+## Correction C01: campaign timing supersession
+
+Use 64 clock states and 63 advances. The Week-5 scene remains due even with weak or missing evidence. Early experiment requests cannot deadlock the manuscript chain. Batch starts remain available through Week 9; existing runs can finish later, with all analysis and reports before Week 14. The opening evaluation uses only its selected content across periods 0–11; advancing its clock does not import excluded campaign scenes. The normal full-game opening and calendar-driven manuscript dates remain unchanged.

@@ -1,6 +1,6 @@
 # Testing and Evaluation
 
-Status: **B10, S12, and S13 documented; implementation approval pending**
+Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
 ## Evaluation boundary
 
@@ -537,3 +537,11 @@ after a separate review.
 Exact Node and package versions, actual assets and codecs, measured frame
 rates, browser versions, and a public release date are deliberate later facts.
 They are not assumptions or current claims.
+
+## Correction C04: earlier evidence
+
+The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
+
+## Correction C05: length and play evidence
+
+Retain the 6,000-unique-word vocabulary cap. Also report total authored word tokens and words seen in representative runs, including compulsory text, chosen options, displayed results and ending modules. Repeated words count each time in the latter measures. Report optional-reading volume separately. Before runtime strings exist, catalogue-table counts are provisional and must state which tables/columns were included. Calculate reading-only estimates at 150, 200 and 250 words per minute; none proves game duration. Measure actual private play after mechanics and readable presentation exist. Keep 90/180-minute targets and scene durations as targets, not measured facts or forced reading timers. Do not pad text to reach them.
