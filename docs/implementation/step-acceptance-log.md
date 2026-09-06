@@ -896,3 +896,7 @@ Leonardo supplied screenshots of the diagnostic and normal page and explicitly s
 Accepted result: reviewed schema2/v5 state foundation and private diagnostic, integrated and main-validated through d08ee26. Automated evidence remains 259 unit tests, required coverage, build and 21 browser flows. Acceptance changes records only. Primary checked the record diff, formatting, current-state consistency and unchanged source/tests/package. No new technical review or runtime test was needed for this acceptance record. Original contributions remain attributed to their actual agents.
 
 Gate 4A is complete. Step 5 requires a separate exact plan and approval; it covers S06 content envelopes, profiles, strings and validation. Future campaign reachability, connected semantics, pressure/tail play quality and asset feasibility remain at their own gates. MR-IMP-OPEN-020 remains a later fallback-content question.
+
+## 2026-09-06 — Step 5 contract preparation approved
+
+Leonardo approved the bounded contract-preparation plan after its scope and approval boundary were presented. Primary may write the two candidate documents and named control records, run document/contract checks and obtain a fresh high-level review. This does not approve a new frozen interface, literal story text, code, configuration, assets or Step 5 acceptance. Base32d6a01; branch work/MR-WP-01-step5-contracts. Exact scope: plans/step-05-content-foundation.md.

@@ -49,7 +49,7 @@ not insert a future or guessed commit identifier into this document.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: prepare the separate exact Step 5 plan; Step 4 and Gate 4A are accepted. No Step 5 implementation is approved. The earlier worker orders are historical submissions, not current execution authority.
+- Next action: complete the approved primary-owned Step 5 contract preparation and high-level review. Step 4 and Gate 4A are accepted; Step 5 code implementation is not approved. The earlier worker orders are historical submissions, not current execution authority.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 

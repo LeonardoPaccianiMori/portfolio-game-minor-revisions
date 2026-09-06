@@ -10,7 +10,7 @@ Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 plannin
 
 Leonardo supplied screenshots of both pages and explicitly stated “I accept step 4”. The diagnostic shows the exact expected Standard/Supported values and Passed validation; the normal page shows the expected four lines. Reload behavior was not separately reported. No defect was reported. The screenshots and their machine paths are not copied into the repository.
 
-Next action: prepare a separate exact Step 5 plan for S06 content envelopes, slice/fallback/full profiles, strings and validation. Only the slice profile may be complete. Do not begin Step 5 implementation without approval of that plan. MR-IMP-OPEN-020 reserves the missing fallback start window for later connected-content work. The updated fresh-session prompt is in [step4-amendment.md](../reviews/2026-09-05-astra/step4-amendment.md).
+Current approved work: Step 5 contract preparation, approved on 2026-09-06. Primary owns candidate contract and implementation-plan records on `work/MR-WP-01-step5-contracts`, base `32d6a01`. No Step 5 source, build configuration or content corpus change is approved. Next: complete the candidate schemas, slice source map, phase commands, examples and primary audit, then obtain fresh Astra xhigh high-level review. The resulting exact amendment/implementation packet returns to Leonardo before code begins. See [the plan](plans/step-05-content-foundation.md). MR-IMP-OPEN-020 remains the later fallback-window question.
 
 ## Historical pre-correction resume record
 

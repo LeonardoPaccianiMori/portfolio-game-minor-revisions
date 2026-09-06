@@ -175,3 +175,7 @@ OpenAI `gpt-6-astra`, primary, actual effort `unknown`: closed the exact record-
 ## 2026-09-06 — Corrected Step 4 acceptance record
 
 OpenAI `gpt-6-astra`, primary, actual reasoning effort `unknown`: checked Leonardo's two supplied screenshots against the expected diagnostic and normal-page values, recorded his explicit Step 4 acceptance, reconciled current status/acceptance/handover records and Gate 4A, and validated the record-only diff. No code, tests, dependencies, external assets, remote or Career Center changed. No subagent was needed for this routine acceptance record. Leonardo's contribution is direct observation and explicit acceptance; reload behavior was not separately reported. Evidence: step-acceptance-log.md, step4-amendment.md and the local acceptance commit.
+
+## 2026-09-06 — Step 5 preparation activation
+
+OpenAI gpt-6-astra primary, actual effort unknown: inspected accepted Step4/main state and the S06/S13/roadmap boundaries, prepared the bounded Step5 contract-preparation plan, recorded Leonardo's approval and created an isolated local worktree at32d6a01. No Step5 implementation is claimed. Evidence: plans/step-05-content-foundation.md and current status/acceptance records.
