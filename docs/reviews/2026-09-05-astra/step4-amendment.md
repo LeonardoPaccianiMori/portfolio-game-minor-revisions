@@ -123,7 +123,11 @@ Continue Minor Revisions in /home/lpm/Desktop/minor-revisions. Read AGENTS.md an
 
 C01–C06 and the exact Step4 amendment are approved. Corrected Step4 is integrated on local main (reviewed codea0b268f; integration00029e2; later record commits may follow). Complete and focused Sol xhigh review findings are closed. Main check/verify passed259 tests and21 browser flows. Original Step4 branches are preserved; do not merge or transplant them again.
 
-First check whether my Step4 diagnostic observation and explicit acceptance are recorded. If not, start the loopback diagnostic and give me its short test packet. Do not infer acceptance. Once I accept, record it locally and prepare the separate detailed Step5 plan: S06 content envelopes, slice/fallback/full profiles, strings and validation. Wait for approval of that plan before implementing Step5.
+I explicitly accepted corrected Step 4 on 2026-09-06 after supplying screenshots of the expected diagnostic and normal pages. Acceptance is recorded; do not repeat that gate. Prepare the separate detailed Step 5 plan: S06 content envelopes, slice/fallback/full profiles, strings and validation. Only the slice profile may be complete. Wait for approval of that plan before implementing Step 5.
 
 Use Astra subagents only for high-level work; implementation subagents must use Sol/Terra/Luna under S13. Detailed technical review uses Sol xhigh. Record actual model/effort contributions. Keep all work private and local: no remote, push, assets, deployment or Career Center changes. Preserve MR-IMP-OPEN-020 as the unauthored fallback start-window question until its dependent plan resolves it.
 ```
+
+## Final acceptance — 2026-09-06
+
+Leonardo supplied the two expected page screenshots and explicitly accepted Step 4. Both diagnostic summaries and normal-page text match the test packet above. No defect or separate reload observation was reported. This acceptance supersedes the pending-test state of the earlier dated checkpoints. Gate 4A is complete. The screenshot files and their machine paths are not retained. Next is a separately approved Step 5 plan, as specified in the updated fresh-session prompt above. Record-only acceptance validation preserves exact reviewed code and prior test evidence; no additional implementation is authorized.

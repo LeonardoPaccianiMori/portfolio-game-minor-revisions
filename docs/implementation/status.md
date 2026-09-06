@@ -10,7 +10,7 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: none.
-- Implementation code: Steps1–3 accepted; corrected Step4 state foundation and private diagnostic integrated at `00029e2`, main checks passed; Leonardo testing/acceptance pending. No game transition engine or Three.js scene.
+- Implementation code: Steps1–3 accepted; corrected Step4 state foundation and private diagnostic integrated at `00029e2`, main checks passed; accepted by Leonardo on 2026-09-06. No game transition engine or Three.js scene.
 - Package and build configuration: accepted S01 foundation; unchanged by Steps
   2 and 3.
 - Production assets: none.
@@ -30,7 +30,7 @@ not insert a future or guessed commit identifier into this document.
 | -------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------- |
 | Gate 1 — technical baseline            | Approved on 2026-09-01 | Gate 1 alone authorizes no code; Step 1 required its own separate plan and acceptance. |
 | Incremental implementation start       | Step 3 accepted        | Leonardo accepted the reviewed, integrated, and main-validated result on 2026-09-02.   |
-| Vertical-slice acceptance              | Blocked                | Steps 4–30 remain unaccepted and Step 31 cannot run.                                   |
+| Vertical-slice acceptance              | Blocked                | Steps 5–30 remain unaccepted and Step 31 cannot run.                                   |
 | Fallback acceptance                    | Blocked                | Steps 32–52 do not exist and Step 53 cannot run.                                       |
 | Full local-game acceptance             | Blocked                | Steps 54–69 do not exist and Step 70 cannot run.                                       |
 | Remote creation or push                | Blocked                | Leonardo has not authorized a remote.                                                  |
@@ -49,21 +49,21 @@ not insert a future or guessed commit identifier into this document.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: complete Leonardo's Step4 diagnostic test and explicit acceptance. Only then prepare the separate Step5 plan; no Step5 implementation is approved. The earlier worker orders are historical submissions, not current execution authority.
+- Next action: prepare the separate exact Step 5 plan; Step 4 and Gate 4A are accepted. No Step 5 implementation is approved. The earlier worker orders are historical submissions, not current execution authority.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 
 ## Durable progress summary
 
-| Work group                 | State                                                  | Result                                                                                                                                                                                                          |
-| -------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                                                                        |
-| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                                                                            |
-| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.                                                            |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.                                                            |
-| Incremental implementation | Steps 1–3 accepted; Step 4 rules correction active     | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; complete/focused review and record reconciliation passed; integrated main passes259 tests/build/21 browser flows; Leonardo testing/acceptance pending. |
-| Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                                                                         |
-| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                                                                              |
+| Work group                 | State                                                  | Result                                                                                                                                                                                                         |
+| -------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                                                                       |
+| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                                                                           |
+| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.                                                           |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.                                                           |
+| Incremental implementation | Steps 1–4 accepted; Step 5 planning next               | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; complete/focused review and record reconciliation passed; integrated main passes259 tests/build/21 browser flows; accepted by Leonardo on 2026-09-06. |
+| Vertical slice             | Step 4 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                                                                        |
+| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                                                                             |
 
 ## Session-resume procedure
 
@@ -93,6 +93,6 @@ agree with the roadmap, the block is not complete.
 
 The September Astra correction package is recorded in `../reviews/2026-09-05-astra/baseline-candidate.md`. Leonardo approved the exact reviewed correction package on 2026-09-06. MR-IMP-DEC-309 records the approval and superseded interfaces. Historical B/R/S and accepted Steps 1–3 remain evidence of their original approvals.
 
-Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These versions are frozen by MR-IMP-DEC-309; their consumers and later proof obligations remain as listed. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is unaccepted; later steps remain unapproved.
+Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These versions are frozen by MR-IMP-DEC-309; their consumers and later proof obligations remain as listed. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is accepted on 2026-09-06; later implementation steps remain unapproved.
 
 Current incremental resume authority remains `development-status.md`. MR-IMP-OPEN-020 records the fallback start-window question for the later connected-content plan; no guessed boundary enters Step 4.

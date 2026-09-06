@@ -305,3 +305,7 @@ The Step-26 plan must list exact relocated rule functions, exclusive paths and t
 ## Routing pointer
 
 S13 is the authority for prospective Astra/Sol/Terra/Luna routing and actual-use records. Earlier model descriptions above preserve the pre-correction workflow only. The integer Step 0–70 IDs and ten work-package IDs remain unchanged.
+
+## 2026-09-06 — Corrected Step 4 and Gate 4A accepted
+
+Leonardo explicitly accepted corrected Step 4 after supplying the expected diagnostic and normal-page screenshots. C01–C06 approval, amended-code checks, complete/focused reviews, local integration, main verification and user acceptance complete Gate 4A. Steps 1–4 are accepted. The next permitted action is the separate exact Step 5 plan for S06 source content envelopes, profiles, strings and validation; no Step 5 implementation is approved. Current authority: development-status.md and the latest step-acceptance-log.md entry. Earlier correction-cycle descriptions above remain historical evidence.
