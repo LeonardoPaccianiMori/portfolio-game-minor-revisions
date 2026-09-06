@@ -10,7 +10,7 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: none.
-- Implementation code: Steps1–3 accepted; Step4 state foundation and private diagnostic submitted at `3dcd8af`, now correcting four independent-review findings. No game transition engine or Three.js scene.
+- Implementation code: Steps1–3 accepted; Step4 state foundation and private diagnostic submitted at `3dcd8af`, four independent-review findings corrected and awaiting fresh focused review. No game transition engine or Three.js scene.
 - Package and build configuration: accepted S01 foundation; unchanged by Steps
   2 and 3.
 - Production assets: none.
@@ -45,25 +45,25 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current issues: `MR-IMP-OPEN-001`–`019` are resolved. `MR-IMP-OPEN-020` reserves the unauthored fallback start window for later connected-content work. Step4 review corrections are active under MR-IMP-DEC-309.
+- Current issues: `MR-IMP-OPEN-001`–`019` are resolved. `MR-IMP-OPEN-020` reserves the unauthored fallback start window for later connected-content work. Step4 review corrections are complete under MR-IMP-DEC-309; fresh focused review is pending.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: primary corrects the four findings on `3dcd8af`, repeats affected checks and the complete primary audit, then obtains a fresh focused Sol xhigh review. The earlier worker orders are historical submissions, not current execution authority.
+- Next action: obtain fresh focused Sol xhigh review of the four corrected findings on `3dcd8af` and affected dependencies; integrate only after a passing review. The earlier worker orders are historical submissions, not current execution authority.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 
 ## Durable progress summary
 
-| Work group                 | State                                                  | Result                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                              |
-| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                  |
-| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.  |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.  |
-| Incremental implementation | Steps 1–3 accepted; Step 4 rules correction active     | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; complete Sol xhigh review found four required fixes; integration and acceptance are pending. |
-| Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                               |
-| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                    |
+| Work group                 | State                                                  | Result                                                                                                                                                                             |
+| -------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                                           |
+| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                                               |
+| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.                               |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.                               |
+| Incremental implementation | Steps 1–3 accepted; Step 4 rules correction active     | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; four findings from complete Sol xhigh review are corrected; fresh focused review, integration and acceptance are pending. |
+| Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                                            |
+| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                                                 |
 
 ## Session-resume procedure
 

@@ -3551,8 +3551,9 @@ describe('approved schema-2 correction boundaries', () => {
         variationTargetId: id,
         variationDrawIndex: 0,
         variationBucket: 17,
-        projectedResultBand: 'robust',
-        finalResultBand: 'robust',
+        issueCount: 2,
+        projectedResultBand: 'compromised',
+        finalResultBand: 'compromised',
         monitoringResponses: [
           { windowIndex: 0, response: 'missed', completedPeriod: 5 },
           { windowIndex: 1, response: 'missed', completedPeriod: 7 },
@@ -3645,6 +3646,7 @@ describe('approved schema-2 correction boundaries', () => {
         variationDrawIndex: 0,
         variationBucket: 17,
         projectedResultBand: 'robust',
+        finalResultBand: resolved ? 'robust' : null,
         monitoringResponses: resolved
           ? [{ windowIndex: 0, response: 'qualityCheck', completedPeriod: 52 }]
           : [],
@@ -3659,6 +3661,10 @@ describe('approved schema-2 correction boundaries', () => {
       reasonId: 'MR-REASON-ANALYSIS-DEADLINE',
     };
     expect(validateCampaignState(state).kind).toBe('success');
+    const run = state.experiments.runsById[id]!;
+    run.finalResultBand = resolved ? null : 'robust';
+    expect(validateCampaignState(state).kind).toBe('failure');
+    run.finalResultBand = resolved ? 'robust' : null;
     state.experiments.stopLogsById[`stop:${id}`]!.stoppedPeriod = 51;
     expect(validateCampaignState(state).kind).toBe('failure');
     state.experiments.stopLogsById[`stop:${id}`]!.stoppedPeriod = 52;
@@ -3781,5 +3787,110 @@ describe('approved schema-2 correction boundaries', () => {
       mutate(invalid);
       expect(validateCampaignState(invalid).kind).toBe('failure');
     }
+  });
+});
+
+describe('review corrections for retained monitoring consequences', () => {
+  it.each([
+    [['missed', 'missed'], 2],
+    [['missed', 'stabilize'], 0],
+    [['stabilize', 'missed'], 1],
+    [['missed', 'qualityCheck'], 1],
+  ] as const)('retains the issue lower bound for ordered responses %j', (responses, minimum) => {
+    const state = copyCampaign();
+    const id = 'run:MR-EXP-OXYGEN-LOSS:1';
+    const band = minimum === 0 ? 'robust' : minimum === 1 ? 'mixed' : 'compromised';
+    addConfiguredRun(
+      state,
+      configuredRun({
+        id,
+        templateId: 'MR-EXP-OXYGEN-LOSS',
+        stage: 'readyForAnalysis',
+        startedPeriod: 3,
+        issueCount: minimum,
+        projectedResultBand: band,
+        finalResultBand: band,
+        variationNamespace: 'experimentVariation',
+        variationTargetId: id,
+        variationDrawIndex: 0,
+        variationBucket: 17,
+        monitoringResponses: responses.map((response, windowIndex) => ({
+          windowIndex,
+          response,
+          completedPeriod: 3 + 2 * windowIndex + (response === 'missed' ? 2 : 1),
+        })),
+      }),
+    );
+    expect(validateCampaignState(state).kind).toBe('success');
+    if (minimum > 0) {
+      const run = state.experiments.runsById[id]!;
+      run.issueCount = minimum - 1;
+      const invalidBand = run.issueCount === 0 ? 'robust' : 'mixed';
+      run.projectedResultBand = invalidBand;
+      run.finalResultBand = invalidBand;
+      state.experiments.preparationById[id]!.band = invalidBand;
+      expect(validateCampaignState(state)).toMatchObject({
+        kind: 'failure',
+        issue: { path: `/experiments/runsById/${id}/issueCount` },
+      });
+    }
+  });
+
+  it('retains limited raw coverage after a missed window even if its issue was stabilized', () => {
+    const state = copyCampaign();
+    const id = 'run:MR-EXP-OXYGEN-LOSS:1';
+    addPiimEvidence(state, 'MR-EXP-OXYGEN-LOSS', 'oxygen');
+    const run = state.experiments.runsById[id]!;
+    run.monitoringResponses = [
+      { windowIndex: 0, response: 'missed', completedPeriod: 2 },
+      { windowIndex: 1, response: 'stabilize', completedPeriod: 3 },
+    ];
+    state.calendar.periodIndex = 3;
+    const raw = state.experiments.rawRecordsById[`raw:${id}`]!;
+    raw.observationCoverage = 'limited';
+    expect(validateCampaignState(state).kind).toBe('success');
+    raw.observationCoverage = 'full';
+    expect(validateCampaignState(state)).toMatchObject({
+      kind: 'failure',
+      issue: { path: `/experiments/rawRecordsById/raw:${id}` },
+    });
+  });
+
+  it('locks and preserves the final band when analysis expiry follows a missed last window', () => {
+    const state = copyCampaign();
+    const id = 'run:MR-EXP-TEST:1';
+    addConfiguredRun(
+      state,
+      configuredRun({
+        stage: 'stopped',
+        startedPeriod: 50,
+        issueCount: 1,
+        projectedResultBand: 'mixed',
+        finalResultBand: 'mixed',
+        variationNamespace: 'experimentVariation',
+        variationTargetId: id,
+        variationDrawIndex: 0,
+        variationBucket: 17,
+        monitoringResponses: [{ windowIndex: 0, response: 'missed', completedPeriod: 52 }],
+      }),
+    );
+    state.calendar.periodIndex = 52;
+    state.world.floorAct = 'reviewPressure';
+    state.experiments.stopLogsById[`stop:${id}`] = {
+      id: `stop:${id}`,
+      runId: id,
+      stoppedPeriod: 52,
+      reasonId: 'MR-REASON-ANALYSIS-DEADLINE',
+    };
+    expect(validateCampaignState(state).kind).toBe('success');
+    const encoded = CampaignStateCodec.serialize(state);
+    expect(encoded.kind).toBe('success');
+    if (encoded.kind === 'success')
+      expect(CampaignStateCodec.parse(encoded.value)).toEqual({ kind: 'success', value: state });
+    state.experiments.runsById[id]!.finalResultBand = null;
+    expect(validateCampaignState(state)).toMatchObject({
+      kind: 'failure',
+      issue: { path: `/experiments/runsById/${id}/finalResultBand` },
+    });
   });
 });

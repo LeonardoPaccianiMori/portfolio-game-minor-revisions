@@ -40,6 +40,9 @@ ideas or measured results that do not exist yet.
 | MR-IMP-OPEN-017 | Step 4 correction         | Resolve the missing initial inventories, global history order, canonical record order, incomplete invariants, experiment bands, and ending-effect facts found by independent review without inventing S06-owned IDs | Resolved | Approved correction packet; S03–S07; MR-IMP-DEC-306; `MR-IF-002 v3`; `MR-IF-003 v1` shape clarification                            |
 | MR-IMP-OPEN-018 | Step 4 prerequisite proof | Store exact typed proof for route and PIIM prerequisites so rules do not infer semantic facts from general-purpose authored IDs; preserve the fixed PIIM target and typed codec-failure boundary                    | Resolved | Leonardo's approved 2026-09-03 correction; S03–S07 and S12–S13; MR-IMP-DEC-307; `MR-IF-002 v4`; superseding work orders            |
 
+| MR-IMP-OPEN-019 | Step 4 toolchain | Installed npm12.0.2 contract | Resolved | MR-IMP-DEC-308; original MR-WO-WP00-009 and MR-CONTRIB-WP00-009 |
+| MR-IMP-OPEN-020 | Later fallback content | Exact start window for the combined range/repair replacement | Open | Details below; does not block Step4 structural state |
+
 ## Issue protocol
 
 1. Add a stable ID before dependent work continues.
@@ -50,12 +53,7 @@ ideas or measured results that do not exist yet.
 4. Do not convert a measured-later result into a guessed value.
 5. Update `status.md` when the active issue group changes.
 
-There is no active issue group. `MR-IMP-OPEN-018` preserves the latest complete
-review and the worker's confirmed representability block. It is resolved by
-Leonardo's approved `MR-IF-002 v4` supersession. Dependent correction work can
-use only the exact superseding work orders. Historical `MR-IMP-OPEN-017` and
-`v3` remain evidence. A later material conflict must receive a new stable issue
-ID before dependent work continues.
+MR-IMP-OPEN-020 is the current open content question; resolve it before dependent fallback content/scheduler work. Issues001–019 preserve their resolved historical decisions. Step4 correction execution is governed by MR-IMP-DEC-309 and development-status.md, not the superseded v4 worker orders.
 
 ## Correction baseline C01–C06
 

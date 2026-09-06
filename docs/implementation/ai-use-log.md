@@ -165,3 +165,5 @@ OpenAI `gpt-5.6-terra`, actual `medium`, read-only `career_evidence_explorer` (`
 Leonardo's contribution: approved C01–C06 and the exact Step4 amendment on 2026-09-06, and set the prospective Astra/high-level versus Sol/Terra/Luna implementation boundary. Diagnostic observation and final Step4 acceptance remain pending.
 
 OpenAI `gpt-5.6-sol`, actual `xhigh`, fresh read-only independent reviewer `step4_final_review`: completed the full450972c..3dcd8af Step4 packet review using the project reviewer contract. No blocker, four required findings, no advisory; exact findings and primary verification are in step4-amendment.md. No edits, user contact, network, further agents, integration or acceptance.
+
+OpenAI `gpt-6-astra`, primary, actual effort `unknown`: implemented the four verified Sol review findings after checkpointb7ed67b, added isolated penalty/coverage/expiry regression tests, reconciled the issue ledger and current status, and completed the affected primary audit/checks. Evidence: corrected submission and step4-amendment.md. No new design rule, dependency, engine, remote, acceptance or implementation subagent.

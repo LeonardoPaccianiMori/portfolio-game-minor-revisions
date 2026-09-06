@@ -1297,6 +1297,16 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
           'invariantViolation',
         );
     }
+    // A later stabilization can remove at most one earlier missed monitoring issue.
+    // Other authored preparation inputs remain the connected resolver's responsibility.
+    let unresolvedMissedIssues = 0;
+    for (const response of run.monitoringResponses) {
+      if (response.response === 'missed') unresolvedMissedIssues += 1;
+      if (response.response === 'stabilize')
+        unresolvedMissedIssues = Math.max(0, unresolvedMissedIssues - 1);
+    }
+    if (run.issueCount < unresolvedMissedIssues)
+      return invariant(`/experiments/runsById/${id}/issueCount`, 'invariantViolation');
     const stoppedByResponse = run.monitoringResponses.at(-1)?.response === 'stop';
     if ((run.stage === 'stopped' && !startExpired && !analysisExpired) !== stoppedByResponse)
       return invariant(`/experiments/runsById/${id}/stage`, 'invariantViolation');
@@ -1306,10 +1316,10 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
         run.monitoringResponses.length !== windowCount)
     )
       return invariant(`/experiments/runsById/${id}/monitoringResponses`, 'invariantViolation');
-    if (
-      (['readyForAnalysis', 'analysed'].includes(run.stage) && run.finalResultBand === null) ||
-      (['configured', 'running', 'stopped'].includes(run.stage) && run.finalResultBand !== null)
-    )
+    const mustHaveFinalBand =
+      ['readyForAnalysis', 'analysed'].includes(run.stage) ||
+      (analysisExpired && run.monitoringResponses.length === windowCount);
+    if (mustHaveFinalBand !== (run.finalResultBand !== null))
       return invariant(`/experiments/runsById/${id}/finalResultBand`, 'invariantViolation');
     if (
       run.stage !== 'configured' &&
@@ -1345,7 +1355,9 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
     if (
       id !== `raw:${raw.runId}` ||
       run?.stage !== 'analysed' ||
-      raw.finalPreparationBand !== run.finalResultBand
+      raw.finalPreparationBand !== run.finalResultBand ||
+      (run.monitoringResponses.some((response) => response.response === 'missed') &&
+        raw.observationCoverage !== 'limited')
     )
       return invariant(`/experiments/rawRecordsById/${id}`, 'invalidReference');
   }

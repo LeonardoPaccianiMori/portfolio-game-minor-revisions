@@ -876,3 +876,7 @@ The approved baseline is integrated at `450972c`; exact combined-source transpla
 ## 2026-09-06 — Step4 correcting after complete review
 
 Fresh Sol xhigh complete review of3dcd8af found no blocker and four required fixes. Primary verified the missed-issue/coverage and locked-final-band corrections plus issue-ID/status reconciliation. All remain within MR-IMP-DEC-309. Current findings, exact source boundary, actual reviewer use and repair sequence are in step4-amendment.md. Repeat affected checks and fresh focused review before integration; user observation and acceptance remain pending.
+
+## 2026-09-06 — Corrected Step4 submitted for focused fresh review
+
+Primary fixed all four findings from the complete3dcd8af review. The saved-state checks now retain ordered missed penalties, limited coverage after missed observations, and an already locked band on analysis expiry. Issue019 retains the resolved npm history;020 identifies the later fallback question; current resume/version fields agree. Check and verify results and the completed affected primary audit are in step4-amendment.md. A fresh Sol xhigh review of these corrections and dependencies remains required before local integration. Leonardo has not yet tested or accepted Step4.
