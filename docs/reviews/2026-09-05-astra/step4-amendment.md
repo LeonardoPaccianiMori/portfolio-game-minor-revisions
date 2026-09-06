@@ -96,3 +96,34 @@ Affected primary audit is complete: the two changed invariant areas match design
 ## Focused fresh review and final record closure — 2026-09-06
 
 Fresh OpenAI gpt-5.6-sol xhigh `step4_repair_review` reviewed3dcd8af..a0b268f plus the named affected contracts. No blocker; source findings and issue-ID correction closed; no advisory. One required stale record group remained: acceptance-log header, Step4 index and Gate1 next boundary still named the old v4 order. Primary reconciled those exact current summaries with the already reviewed v5/schema2 evidence, preserving dated history. Focused formatting, diff and consistency checks passed; source/test/package contents remain exactlya0b268f. This changes neither authority nor evidence meaning and uses S13's narrow record-only validation rule. All required findings are closed. Local fast-forward integration and main checks are next, followed by Leonardo's diagnostic observation/acceptance.
+
+## Integrated main and Leonardo test packet — 2026-09-06
+
+Local main fast-forward integration:00029e2. Exact runtime/source/tests/package equal revieweda0b268f. Main check and verify both passed:259 unit tests/12 files,90.37% branch and92.17% line coverage,115-module production build,21 browser flows. No merge conflict, changed lockfile, external source import, remote, published change, Career Center update or old-branch rewrite. Originalf7192fa andf2babe9 branches retain their exact heads. All required technical and record findings are closed.
+
+Leonardo test objective: confirm the two safe diagnostic summaries remain readable and correct after reload. No gameplay or code debugging is expected. Open `http://127.0.0.1:5173/?diagnostic=campaign-state`. It should show “Campaign state diagnostic”, Standard and Supported cards, and Validation Passed on both. Expected values:
+
+| Field            | Standard | Supported |
+| ---------------- | -------: | --------: |
+| Revision         |        0 |         0 |
+| Period index     |        0 |         0 |
+| Energy           |        4 |         5 |
+| Evidence         |        3 |         3 |
+| Paper confidence |       45 |        45 |
+| Integrity        |      100 |       100 |
+
+Reload once and confirm the same result. Open `http://127.0.0.1:5173/` to confirm the normal page still shows Minor Revisions, Ready, Startup checks passed, and Game systems are not yet available. Report any mismatch or unreadable text; if all is correct, explicitly accept Step4. Safe stop: close the browser tab. If the page is unavailable, ask Codex to restart the existing local server from main; Leonardo need not debug it. The launch command is `npm run dev` in `/home/lpm/Desktop/minor-revisions`, using the existing exact dependencies and loopback-only Vite configuration. A running process may end between sessions.
+
+No Leonardo observation or acceptance has been supplied at this checkpoint. Next after acceptance: commit the actual decision, then propose the exact Step5 S06 content-envelope/profile/string/validation plan. Only the slice profile may be complete at that step. Gate4A's acceptance must finish first, and Step5 implementation needs its own approval. Resolve MR-IMP-OPEN-020 before dependent fallback content/scheduler work; do not infer its start window.
+
+## Prompt for a fresh Codex session
+
+```text
+Continue Minor Revisions in /home/lpm/Desktop/minor-revisions. Read AGENTS.md and the required bootstrap, then docs/implementation/development-status.md and docs/reviews/2026-09-05-astra/step4-amendment.md. Inspect current Git state; do not restart or repeat completed correction work.
+
+C01–C06 and the exact Step4 amendment are approved. Corrected Step4 is integrated on local main (reviewed codea0b268f; integration00029e2; later record commits may follow). Complete and focused Sol xhigh review findings are closed. Main check/verify passed259 tests and21 browser flows. Original Step4 branches are preserved; do not merge or transplant them again.
+
+First check whether my Step4 diagnostic observation and explicit acceptance are recorded. If not, start the loopback diagnostic and give me its short test packet. Do not infer acceptance. Once I accept, record it locally and prepare the separate detailed Step5 plan: S06 content envelopes, slice/fallback/full profiles, strings and validation. Wait for approval of that plan before implementing Step5.
+
+Use Astra subagents only for high-level work; implementation subagents must use Sol/Terra/Luna under S13. Detailed technical review uses Sol xhigh. Record actual model/effort contributions. Keep all work private and local: no remote, push, assets, deployment or Career Center changes. Preserve MR-IMP-OPEN-020 as the unauthored fallback start-window question until its dependent plan resolves it.
+```

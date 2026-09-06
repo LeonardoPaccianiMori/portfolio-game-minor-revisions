@@ -6,11 +6,11 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 
 ## Current repository state
 
-- Local main: `450972c`; active amendment branch: `work/MR-WP-00-step4-corrected`.
+- Local main: reviewed integration `00029e2`; correction branch remains `work/MR-WP-00-step4-corrected`.
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: none.
-- Implementation code: Steps1–3 accepted; Step4 state foundation and private diagnostic submitted at `3dcd8af`, four independent-review findings corrected; complete and focused review finished. No game transition engine or Three.js scene.
+- Implementation code: Steps1–3 accepted; corrected Step4 state foundation and private diagnostic integrated at `00029e2`, main checks passed; Leonardo testing/acceptance pending. No game transition engine or Three.js scene.
 - Package and build configuration: accepted S01 foundation; unchanged by Steps
   2 and 3.
 - Production assets: none.
@@ -49,21 +49,21 @@ not insert a future or guessed commit identifier into this document.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: fast-forward the reviewed correction through `a0b268f` and final record reconciliation into local main, verify it, and start Leonardo testing. The earlier worker orders are historical submissions, not current execution authority.
+- Next action: complete Leonardo's Step4 diagnostic test and explicit acceptance. Only then prepare the separate Step5 plan; no Step5 implementation is approved. The earlier worker orders are historical submissions, not current execution authority.
 - Prohibited next action: create work outside the approved Step-4 paths or
   start Step 5, Three.js, assets, a remote, or public action.
 
 ## Durable progress summary
 
-| Work group                 | State                                                  | Result                                                                                                                                                                                          |
-| -------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                                                        |
-| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                                                            |
-| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.                                            |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.                                            |
-| Incremental implementation | Steps 1–3 accepted; Step 4 rules correction active     | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; complete/focused review and final record reconciliation are complete; main integration, verification and Leonardo acceptance are next. |
-| Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                                                         |
-| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                                                              |
+| Work group                 | State                                                  | Result                                                                                                                                                                                                          |
+| -------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                                                                        |
+| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                                                                            |
+| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.                                                            |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01.                                                            |
+| Incremental implementation | Steps 1–3 accepted; Step 4 rules correction active     | Primary-owned schema2/v5 amendment under MR-IMP-DEC-309; complete/focused review and record reconciliation passed; integrated main passes259 tests/build/21 browser flows; Leonardo testing/acceptance pending. |
+| Vertical slice             | Step 3 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                                                                         |
+| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                                                                              |
 
 ## Session-resume procedure
 
