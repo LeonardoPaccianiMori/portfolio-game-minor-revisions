@@ -6,7 +6,7 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 
 ## Current repository state
 
-- Local main: reviewed integration `00029e2`; correction branch remains `work/MR-WP-00-step4-corrected`.
+- Accepted source integration: `00029e2`; Step4 acceptance checkpoint `32d6a01`; correction branch remains `work/MR-WP-00-step4-corrected`.
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: none.
@@ -96,3 +96,7 @@ The September Astra correction package is recorded in `../reviews/2026-09-05-ast
 Affected contracts: MR-IF-003 v2 action eligibility/cost, recovery and semantic claim support; MR-IF-005 v2 monitoring/story timing; MR-IF-006 v2 content semantics and slice binding; MR-IF-010 v2 displayed costs. These versions are frozen by MR-IMP-DEC-309; their consumers and later proof obligations remain as listed. MR-IF-002 v5 adds scientificFacts and associationSupport under schema 2; MR-IF-007 v2 defines refusal to guess schema-1 facts and preserves recovery. MR-IF-004 deterministic variation is unchanged. The new content version cannot silently reinterpret old saves. Documentation, arithmetic evidence and runtime proof remain separate. Step 4 is accepted on 2026-09-06; later implementation steps remain unapproved.
 
 Current incremental resume authority remains `development-status.md`. MR-IMP-OPEN-020 records the fallback start-window question for the later connected-content plan; no guessed boundary enters Step 4.
+
+## Step5 candidate preparation checkpoint
+
+Preparation remains approved and active; candidate contract and plan are available under analysis/step-05-content-contract.md and plans/step-05-content-foundation.md. MR-IMP-OPEN-021 records the remaining closure work. The draft is not a frozen successor or code approval. Primary completed the Node24 explicit TypeScript import proof and document readiness audit. The initial independent high-level review is complete and its findings are recorded in candidate section15. Primary added exact candidate view projections and the concrete D3 laser proposal; the focused high-level follow-up and separate science review are complete, with primary corrections and open closure notes recorded in candidate sections15–17. D1 is now explicitly approved; D4 is resolved from existing authority.

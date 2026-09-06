@@ -9,7 +9,7 @@ Step5 adds S06 source content envelopes, slice/fallback/full profiles, English s
 
 The roadmap also retains gates4A,6A and26A; these are attached checks, not extra numbered steps. Some pure transitions are brought forward only when needed for the pressure/tail tests. Asset feasibility is checked before Step27 selection. Steps33–38 keep separate candidate-selection and integration approvals.
 
-## Immediate proposed scope: primary contract preparation within Step5
+## Approved scope: primary contract preparation within Step5
 
 No additional numbered step is added. This preparation makes the implementation order concrete before a worker starts.
 
@@ -59,6 +59,27 @@ No implementation worker is spawned during preparation. All assignments use focu
 
 AGENTS.md explicitly requires source, licence, redistribution, modification, attribution, cost and technical review for external/generated candidates before integration approval. Modified candidates return to Leonardo. Development-roadmap.md's Temporary and final assets section requires candidate comparison, selection or requested modification, approved manifest and a separately approved integration plan. Steps33–38 Substep A never authorizes Substep B. These requirements cover object props, equipment, environment, characters and audio as applicable.
 
-## Decision requested
+## Approval boundary
 
-Approve the bounded Step5 contract-preparation scope above. The resulting exact shared-contract amendment and implementation plan return as one concrete review packet before code begins. This is required because the frozen S06 document currently names condition/effect types without fully specifying their payloads/target registries, and its default-full build failure needs explicit reconciliation with the existing mandatory verify command. It is not a request to reapprove Step4 or change the71-step roadmap.
+Leonardo already approved the bounded Step5 contract-preparation scope above. Do not request that approval again. The resulting exact shared-contract amendment and implementation plan return as one concrete review packet before code begins. This is required because the frozen S06 document currently names condition/effect types without fully specifying their payloads/target registries, and its default-full build failure needs explicit reconciliation with the existing mandatory verify command. It is not a request to reapprove Step4 or change the71-step roadmap.
+
+## Candidate implementation ownership and sequence
+
+This file is a preparation plan with a candidate implementation outline. It is not yet an executable work order. The section14 holds in the companion contract must be closed before the exact code packet is presented for approval.
+
+1. **Primary contract closure:** finish the source decisions, literal ID/key/count manifest, owner/command bindings and recursive view projections. Present exact proposed amendments to S06/MR-IF-006, S01, S02 and S13, plus any necessary design12 additions. Keep frozen authorities unchanged until approval.
+2. **WP01, Sol high, sequential after approval:** own new `src/content/index.ts`, `types.ts`, `source.ts`, `json.ts`, `schemas.ts`, `references.ts`, `profiles.ts`, `semantics.ts`, `views.ts` and `tests/unit/MR-WP-01/content-*.test.ts`. Public entry exports only approved source/build/runtime operations and immutable types. Private file subdivision is candidate; the final work order enumerates paths. No source I/O, commands execution or creative content.
+3. **WP07, primary, after the approved literal manifest:** own `content/manifest.json`, `content/strings.en.json`, the18 S06 data files listed in the contract's source authority, and `content/profiles/{full,fallback,slice}.json`. This conversion stays with the primary because source meanings and closure decisions remain coupled to the approved contract. It may run alongside WP01 only after both share the frozen source shapes. No generated or external assets.
+4. **WP00, primary, after WP01 public boundary:** own `scripts/check-content.ts`, `scripts/test-build-profiles.ts`, `scripts/content-build.ts`, `src/content-package.d.ts`, `vite.config.ts`, `package.json`, `tsconfig.json`, `eslint.config.js`, `playwright.config.ts`, and content startup wiring in `src/bootstrap/{main,application-bootstrap,startup-screen,temporary-adapters}.ts`. Add narrow content-bootstrap/build tests and adjust affected existing foundation, architecture, startup and browser assertions. Shared root wiring stays with one owner; the final work order enumerates exact test files and affected assertions before approval (candidate virtual-module strategy is contract section9). No lockfile/dependency change.
+5. **Primary integration audit, then fresh Sol xhigh review:** verify content closure, safe failures, copies/projections, excluded strings, profile output isolation and all existing Step4 behaviour under explicit slice startup. Run amended check/verify. Resolve defects and perform required focused review before integration.
+6. **Leonardo test and acceptance:** start `npm run dev:slice`; present normal content-ready startup with game systems still unavailable, then the controlled invalid-package test evidence and its exact safe message. No shipped validation bypass. This checks the content foundation, not a playable slice. Step6 remains a separate plan and approval.
+
+Candidate implementation commit boundaries: `Define Step 5 content validation`, `Add approved slice content catalogue`, and `Wire phase-aware content startup`. Exact amendment and work-order commits will be named in the final approval packet. These messages do not authorize code now.
+
+## Gradual testing requirement
+
+`AGENTS.md`, Incremental development and Leonardo review, requires one approved step at a time, technical checks and independent review before user acceptance. `development-roadmap.md`, Purpose, explicitly states: “It replaces a one-shot vertical-slice build with frequent Leonardo reviews.” Steps1–30 assemble and test the slice gradually; Step31 accepts it. Step53 accepts the fallback, and Step70 accepts the full local game. There are71 numbered steps0–70. Gates4A,6A and26A do not add numbered steps or authorize batches.
+
+## Fresh-session continuation prompt
+
+> Continue Minor Revisions in `/home/lpm/Desktop/minor-revisions`. Read AGENTS.md and the current development-status.md, then follow their bootstrap. Step4 is accepted; Step5 contract preparation is already approved. Read plans/step-05-content-foundation.md and analysis/step-05-content-contract.md, including the review, readiness holds and section16 laser-result proposal. D1 is approved: show all three claims, but complete with an honest Careful claim; do not ask again. D4 costs already exist in the design. Continue closing the exact contract and source manifest under that approval; do not request preparation approval again or start code from this draft. Ask me only for concrete game/text choices after preparing the alternatives. Use Astra subagents only for high-level work and Sol/Terra/Luna for implementation under S13. Preserve gradual testing and each step's separate acceptance. No remote, assets, deployment or Career Center changes.

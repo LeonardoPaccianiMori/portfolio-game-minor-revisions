@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 planning next**
+Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 approved contract preparation active**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -900,3 +900,11 @@ Gate 4A is complete. Step 5 requires a separate exact plan and approval; it cove
 ## 2026-09-06 — Step 5 contract preparation approved
 
 Leonardo approved the bounded contract-preparation plan after its scope and approval boundary were presented. Primary may write the two candidate documents and named control records, run document/contract checks and obtain a fresh high-level review. This does not approve a new frozen interface, literal story text, code, configuration, assets or Step 5 acceptance. Base32d6a01; branch work/MR-WP-01-step5-contracts. Exact scope: plans/step-05-content-foundation.md.
+
+### Step5 candidate preparation audit
+
+Primary drafted the candidate contract, implementation ownership and continuation prompt, checked the gradual-testing instruction, and proved explicit TypeScript imports under Node24.20.0 and installed TypeScript6 in temporary files. The source/contract closure holds remain explicit; no production content validation, runtime test or Step5 acceptance is claimed. See candidate section14 and the completed-contribution entries in ai-use-log.md. Fresh high-level gap review follows this audit.
+
+Leonardo approved the recommended early-rehearsal choice (D1) on2026-09-06: show all three claims, with honest Careful-only completion. The future frozen amendment must state this slice-only exception. Fresh high-level draft review found the known readiness hold and R1–R5; primary applied the cited source corrections and recorded remaining work in candidate sections14–15. This does not accept Step5 or approve its code.
+
+Preparation checkpoint: focused high-level follow-up confirmed R1–R5 and found the draft safe to commit with stale-output and checkpoint-ownership closure notes. Primary recorded those limits and the candidate attachment table. Separate science review corrections are applied; D3 is pending Leonardo. Document/syntax/temporary-loader checks are in candidate section17. This is a durable partial preparation checkpoint, not completion of preparation, implementation or Step5 acceptance.
