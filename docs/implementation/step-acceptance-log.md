@@ -899,7 +899,7 @@ Gate 4A is complete. Step 5 requires a separate exact plan and approval; it cove
 
 ## 2026-09-06 — Step 5 contract preparation approved
 
-Leonardo approved the bounded contract-preparation plan after its scope and approval boundary were presented. Primary may write the two candidate documents and named control records, run document/contract checks and obtain a fresh high-level review. This does not approve a new frozen interface, literal story text, code, configuration, assets or Step 5 acceptance. Base32d6a01; branch work/MR-WP-01-step5-contracts. Exact scope: plans/step-05-content-foundation.md.
+Leonardo approved the bounded contract-preparation plan after its scope and approval boundary were presented. Primary may write the two candidate documents and named control records, run document/contract checks and obtain a fresh high-level review. This does not approve a new frozen interface, literal story text, code, configuration, assets or Step 5 acceptance. Base32d6a01; branch work/MR-WP-01-step5-contracts. Historical checkpoint735816b preserves the exact approved plan and scope.
 
 ### Step5 candidate preparation audit
 
