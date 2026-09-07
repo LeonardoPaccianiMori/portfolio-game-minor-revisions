@@ -176,3 +176,11 @@ The primary resolves missing shared rules and proves representative valid and in
 ## Leonardo's 2026-09-06 subagent model boundary
 
 Use gpt-6-astra subagents only for high-level design, architecture, shared-contract analysis or high-level review. Delegated implementation uses gpt-5.6-sol, gpt-5.6-terra or gpt-5.6-luna under the S13 matrix. Do not use an Astra implementation worker. The primary retains its conversation, decision, tracked-correction-write and integration responsibilities. This instruction is prospective and does not reattribute earlier contributions.
+
+## GitHub synchronization approved on 2026-09-07
+
+Leonardo authorized `origin` at `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git` and the initial push of local `main`. After future approved changes pass their required checks and review, the primary agent commits, integrates into `main`, and pushes `main` to `origin` automatically. No repeated push approval is needed within this scope.
+
+Before integration, fetch `origin` and inspect divergence. Use fast-forward integration where possible. Never discard local work, force-push, rewrite published history, or guess a meaningful merge conflict. If push fails, preserve commits and report the cause; do not claim synchronization. Keep worker/review branches local unless separately requested. Subagents cannot use the remote.
+
+This supersedes earlier statements that remote creation and push remain unapproved. Step approvals, independent reviews and player acceptance remain required. Remote synchronization does not authorize a licence, release, deployment, repository visibility change or public portfolio edit.

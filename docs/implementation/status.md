@@ -104,3 +104,7 @@ Preparation remains approved and active; candidate contract and plan are availab
 2026-09-07 continuation remains Step5 preparation only. Candidate sections18–19 are the current proposed result/presentation refinements; the final selected production catalogue and exact frozen amendment remain incomplete. D1 is approved; D3 remains an explicit pending decision.
 
 The2026-09-07 focused high-level review is complete. The required tutorial body/current-binding conflict is recorded under021; input-field and recap-selection advisories received focused primary correction. This remains a draft checkpoint, with no final contract freeze or code readiness.
+
+## 2026-09-07 — Approved GitHub synchronization
+
+Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is still pending. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.

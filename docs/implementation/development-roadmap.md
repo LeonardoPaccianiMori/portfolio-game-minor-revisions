@@ -309,3 +309,7 @@ S13 is the authority for prospective Astra/Sol/Terra/Luna routing and actual-use
 ## 2026-09-06 — Corrected Step 4 and Gate 4A accepted
 
 Leonardo explicitly accepted corrected Step 4 after supplying the expected diagnostic and normal-page screenshots. C01–C06 approval, amended-code checks, complete/focused reviews, local integration, main verification and user acceptance complete Gate 4A. Steps 1–4 are accepted. The next permitted action is the separate exact Step 5 plan for S06 source content envelopes, profiles, strings and validation; no Step 5 implementation is approved. Current authority: development-status.md and the latest step-acceptance-log.md entry. Earlier correction-cycle descriptions above remain historical evidence.
+
+## 2026-09-07 — Approved GitHub synchronization
+
+Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is still pending. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.

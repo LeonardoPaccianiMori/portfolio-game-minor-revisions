@@ -212,3 +212,7 @@ before implementation.
 Current fresh-session prompt is in plans/step-05-content-foundation.md. Use its Step5 preparation boundary rather than historical Step4 worker records.
 
 2026-09-07 continuation: primary prepared candidate sections18–19 for the exact laser-row structure, one slice cost owner, named static checks, missing fixed text and semantic tutorial triggers. Temporary144-row arithmetic passed; no production validator exists. The UI-source scan is complete and primary verified material citations. The fresh high-level review is complete and found this suitable as a draft checkpoint. Primary recorded the required hard-coded tutorial/current-binding conflict and clarified input/recap wording. D3 remains pending; D1 approval persists.
+
+## 2026-09-07 — Approved GitHub synchronization
+
+Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is still pending. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.
