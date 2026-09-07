@@ -100,3 +100,7 @@ Current incremental resume authority remains `development-status.md`. MR-IMP-OPE
 ## Step5 candidate preparation checkpoint
 
 Preparation remains approved and active; candidate contract and plan are available under analysis/step-05-content-contract.md and plans/step-05-content-foundation.md. MR-IMP-OPEN-021 records the remaining closure work. The draft is not a frozen successor or code approval. Primary completed the Node24 explicit TypeScript import proof and document readiness audit. The initial independent high-level review is complete and its findings are recorded in candidate section15. Primary added exact candidate view projections and the concrete D3 laser proposal; the focused high-level follow-up and separate science review are complete, with primary corrections and open closure notes recorded in candidate sections15–17. D1 is now explicitly approved; D4 is resolved from existing authority.
+
+2026-09-07 continuation remains Step5 preparation only. Candidate sections18–19 are the current proposed result/presentation refinements; the final selected production catalogue and exact frozen amendment remain incomplete. D1 is approved; D3 remains an explicit pending decision.
+
+The2026-09-07 focused high-level review is complete. The required tutorial body/current-binding conflict is recorded under021; input-field and recap-selection advisories received focused primary correction. This remains a draft checkpoint, with no final contract freeze or code readiness.

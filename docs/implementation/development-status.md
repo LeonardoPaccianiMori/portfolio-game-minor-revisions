@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-09-06.
+Last updated: 2026-09-07.
 
 ## Current resume point
 
@@ -10,7 +10,7 @@ Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 approve
 
 Leonardo supplied screenshots of both pages and explicitly stated “I accept step 4”. The diagnostic shows the exact expected Standard/Supported values and Passed validation; the normal page shows the expected four lines. Reload behavior was not separately reported. No defect was reported. The screenshots and their machine paths are not copied into the repository.
 
-Current approved work: Step 5 contract preparation, approved on 2026-09-06. Primary owns candidate contract and implementation-plan records on `work/MR-WP-01-step5-contracts`, base `32d6a01`. No Step 5 source, build configuration or content corpus change is approved. Current candidate documents contain proposed schemas, source-gap inventory, phase commands, an executable Node loading proof and implementation ownership. Primary readiness audit identifies explicit remaining contract/source holds in analysis/step-05-content-contract.md section14. The first high-level gap review is complete; primary corrected its identified source/ownership errors. Candidate section16 proposes the laser result mapping; its separate science review is complete and primary applied the two required candidate corrections. Leonardo approved D1 (visible three claims, honest Careful-only completion); D4 costs were already explicit in source. The focused high-level follow-up found this safe as a draft preparation checkpoint; final pre-code closure notes are recorded in candidate section17. D3 is pending Leonardo’s decision. Next: incorporate that decision, then finish the remaining source/contract closure under the existing preparation approval. The draft is not implementation-ready. The resulting exact amendment/implementation packet returns to Leonardo before code begins. See [the plan](plans/step-05-content-foundation.md). MR-IMP-OPEN-020 remains the later fallback-window question.
+Current approved work: Step 5 contract preparation, approved on 2026-09-06. Primary owns candidate contract and implementation-plan records on `work/MR-WP-01-step5-contracts`, base `32d6a01`. No Step 5 source, build configuration or content corpus change is approved. Current candidate documents contain proposed schemas, source-gap inventory, phase commands, an executable Node loading proof and implementation ownership. Primary readiness audit identifies explicit remaining contract/source holds in analysis/step-05-content-contract.md section14. The first high-level gap review is complete; primary corrected its identified source/ownership errors. Candidate section16 proposes the laser result mapping; its separate science review is complete and primary applied the two required candidate corrections. Leonardo approved D1 (visible three claims, honest Careful-only completion); D4 costs were already explicit in source. The focused high-level follow-up found this safe as a draft preparation checkpoint; final pre-code closure notes are recorded in candidate section17. D3 is pending Leonardo’s decision. The latest continuation details are in candidate sections18–19. Next: obtain D3, resolve the three tutorial bodies that hard-code input bindings, and finish the selected source/contract closure under the existing preparation approval. The draft is not implementation-ready. The resulting exact amendment/implementation packet returns to Leonardo before code begins. See [the plan](plans/step-05-content-foundation.md). MR-IMP-OPEN-020 remains the later fallback-window question.
 
 ## Historical pre-correction resume record
 
@@ -210,3 +210,5 @@ entry in `step-acceptance-log.md`, stop and resolve the documentation conflict
 before implementation.
 
 Current fresh-session prompt is in plans/step-05-content-foundation.md. Use its Step5 preparation boundary rather than historical Step4 worker records.
+
+2026-09-07 continuation: primary prepared candidate sections18–19 for the exact laser-row structure, one slice cost owner, named static checks, missing fixed text and semantic tutorial triggers. Temporary144-row arithmetic passed; no production validator exists. The UI-source scan is complete and primary verified material citations. The fresh high-level review is complete and found this suitable as a draft checkpoint. Primary recorded the required hard-coded tutorial/current-binding conflict and clarified input/recap wording. D3 remains pending; D1 approval persists.

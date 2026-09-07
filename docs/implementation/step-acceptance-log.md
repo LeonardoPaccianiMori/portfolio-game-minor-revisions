@@ -908,3 +908,7 @@ Primary drafted the candidate contract, implementation ownership and continuatio
 Leonardo approved the recommended early-rehearsal choice (D1) on2026-09-06: show all three claims, with honest Careful-only completion. The future frozen amendment must state this slice-only exception. Fresh high-level draft review found the known readiness hold and R1–R5; primary applied the cited source corrections and recorded remaining work in candidate sections14–15. This does not accept Step5 or approve its code.
 
 Preparation checkpoint: focused high-level follow-up confirmed R1–R5 and found the draft safe to commit with stale-output and checkpoint-ownership closure notes. Primary recorded those limits and the candidate attachment table. Separate science review corrections are applied; D3 is pending Leonardo. Document/syntax/temporary-loader checks are in candidate section17. This is a durable partial preparation checkpoint, not completion of preparation, implementation or Step5 acceptance.
+
+### 2026-09-07 — Continued Step5 preparation
+
+Leonardo requested continuation. The existing preparation approval remains active; no separate D3 approval was supplied. Primary refined result/input/text contracts, checked144 candidate row keys and verified the UI-source inventory. Fresh high-level review completed with no draft-checkpoint blocker; its required tutorial-binding conflict and two advisory clarifications are recorded and corrected as specified. This is preparation evidence, not Step5 technical or player acceptance.
