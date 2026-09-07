@@ -252,3 +252,7 @@ Leonardo approved the exact reviewed correction package and Step4 amendment scop
 ## 2026-09-07 — GitHub remote and continuing pushes approved
 
 Leonardo supplied `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git` and explicitly requested the initial repository push and future pushes when changes are made. Record it as origin; push reviewed main and set its upstream. This supersedes the prior requirement for a later remote/push approval. The primary will fetch safely, preserve published history and push future approved changes after required checks/review and main integration. No worker branches, force push, visibility changes, licence, release, deployment or portfolio work are included. This is an operational decision; game design and Step5 approval state do not change.
+
+## 2026-09-07 — Sol high implementation handoff approved
+
+Leonardo approved the three proposed repository changes: gpt-5.6-sol/high project defaults, removal of the Astra-only primary restriction, and a precise Step5 resume packet. AGENTS.md and S13 now permit Sol to own the primary responsibilities. Worker model selection stays flexible; detailed implementation review remains separate Sol xhigh, while Astra subagents remain high-level only. Historical model-use evidence is preserved. The handoff retains D1 approval, D4 existing rules and pending D3, gradual tests, asset gates and automatic origin/main pushes. No game rule, Step5 code or final content amendment is approved by this operational change.

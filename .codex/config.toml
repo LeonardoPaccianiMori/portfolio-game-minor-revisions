@@ -1,4 +1,6 @@
-# Project-local settings for controlled Minor Revisions subagent work.
+# Project defaults for Minor Revisions. Explicit session overrides can differ.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
 
 [agents]
 enabled = true

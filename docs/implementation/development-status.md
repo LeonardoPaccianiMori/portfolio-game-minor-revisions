@@ -4,6 +4,8 @@ Last updated: 2026-09-07.
 
 ## Current resume point
 
+Default next-session primary: **gpt-5.6-sol / high**, approved on2026-09-07 and configured in .codex/config.toml. Actual session identity can differ and must be recorded honestly. The current [Step5 plan and continuation prompt](plans/step-05-content-foundation.md#fresh-session-continuation-prompt) separate approved preparation from pending D3 and the unapproved final contract/code packet. No accepted work restarts when the model changes. Automatic reviewed-main pushes to origin remain authorized.
+
 Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps 1–4 are accepted; Leonardo accepted corrected Step 4 on 2026-09-06.
 
 Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 approved contract preparation active**. Local main fast-forwarded to reviewed integration checkpoint `00029e2`. Its source/tests/package exactly match reviewed correction `a0b268f`; complete source transplant `8bd4d97` and original branches remain preserved. Main `npm run check` and `npm run verify` pass259 unit tests,90.37% branch/92.17% line coverage,115-module build and21 browser flows. Complete and focused Sol xhigh review findings are closed, including final mechanical acceptance-summary reconciliation. No remote or dependency upgrade occurred.

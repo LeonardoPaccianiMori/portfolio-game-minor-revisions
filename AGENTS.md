@@ -184,3 +184,11 @@ Leonardo authorized `origin` at `git@github.com:LeonardoPaccianiMori/portfolio-g
 Before integration, fetch `origin` and inspect divergence. Use fast-forward integration where possible. Never discard local work, force-push, rewrite published history, or guess a meaningful merge conflict. If push fails, preserve commits and report the cause; do not claim synchronization. Keep worker/review branches local unless separately requested. Subagents cannot use the remote.
 
 This supersedes earlier statements that remote creation and push remain unapproved. Step approvals, independent reviews and player acceptance remain required. Remote synchronization does not authorize a licence, release, deployment, repository visibility change or public portfolio edit.
+
+## Sol primary handoff approved on 2026-09-07
+
+The default primary agent is now gpt-5.6-sol with high reasoning, selected in .codex/config.toml. This prospectively supersedes S13's earlier Astra-only primary requirement. An explicit user-selected session model can differ; record actual model/effort when available, never infer actual use from project defaults. The primary retains planning, approved tracked writes, user communication, validation, review coordination, integration and push responsibilities.
+
+Keep delegated implementation model selection flexible under S13: Sol for complex assignments, Terra/Luna for suitable bounded work. Keep the implementation-worker model unset. Use a separate Sol xhigh reviewer for detailed implementation review. Astra subagents remain limited to high-level design, architecture or shared-contract review; the primary need not be Astra to request that review. No worker reviews its own changes.
+
+Resume from development-status.md and the current Step5 plan. Step4 is accepted; Step5 contract preparation is approved, but its code and final contract amendment are not. D1 is approved, D4 is resolved from existing source, and D3 remains pending. Model selection does not approve a game decision or a later step. Preserve gradual testing, asset approval and automatic origin/main pushes after required checks and review.
