@@ -912,3 +912,7 @@ Preparation checkpoint: focused high-level follow-up confirmed R1–R5 and found
 ### 2026-09-07 — Continued Step5 preparation
 
 Leonardo requested continuation. The existing preparation approval remains active; no separate D3 approval was supplied. Primary refined result/input/text contracts, checked144 candidate row keys and verified the UI-source inventory. Fresh high-level review completed with no draft-checkpoint blocker; its required tutorial-binding conflict and two advisory clarifications are recorded and corrected as specified. This is preparation evidence, not Step5 technical or player acceptance.
+
+### 2026-09-08 — D3 laser outcomes approved
+
+Leonardo explicitly approved the exact D3 proposal in candidate section16. The approval covers the Strong, Limited and Weak meanings; observation, access and monitoring projections; no laser repatterning association; honest-reading limits; fixed result text; and representative expected vectors. Limited rhythm-only remains unable to complete the Careful rehearsal without a suitable repeat or restart. This closes D3 as an input to the final amendment. It does not approve the other candidate source choices, freeze MR-IF-006 v3, authorize code, complete Step5 preparation, or accept Step5.

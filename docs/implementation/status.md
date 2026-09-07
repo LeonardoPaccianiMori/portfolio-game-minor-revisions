@@ -1,6 +1,6 @@
 # Implementation Specification Status
 
-Last updated: 2026-09-06
+Last updated: 2026-09-08
 
 Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
 
@@ -9,7 +9,7 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 - Accepted source integration: `00029e2`; Step4 acceptance checkpoint `32d6a01`; correction branch remains `work/MR-WP-00-step4-corrected`.
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
-- Remote: none.
+- Remote: approved GitHub origin configured; reviewed main changes push automatically under AGENTS.md.
 - Implementation code: Steps1–3 accepted; corrected Step4 state foundation and private diagnostic integrated at `00029e2`, main checks passed; accepted by Leonardo on 2026-09-06. No game transition engine or Three.js scene.
 - Package and build configuration: accepted S01 foundation; unchanged by Steps
   2 and 3.
@@ -99,9 +99,9 @@ Current incremental resume authority remains `development-status.md`. MR-IMP-OPE
 
 ## Step5 candidate preparation checkpoint
 
-Preparation remains approved and active. The current candidate contract is analysis/step-05-content-contract.md; historical checkpoint735816b preserves the approved preparation plan. MR-IMP-OPEN-021 records the remaining closure work. The draft is not a frozen successor or code approval. Primary completed the Node24 explicit TypeScript import proof and document readiness audit. The initial independent high-level review is complete and its findings are recorded in candidate section15. Primary added exact candidate view projections and the concrete D3 laser proposal; the focused high-level follow-up and separate science review are complete, with primary corrections and open closure notes recorded in candidate sections15–17. D1 is now explicitly approved; D4 is resolved from existing authority.
+Preparation remains approved and active. The current candidate contract is analysis/step-05-content-contract.md; historical checkpoint735816b preserves the approved preparation plan. MR-IMP-OPEN-021 records the remaining closure work. The draft is not a frozen successor or code approval. Primary completed the Node24 explicit TypeScript import proof and document readiness audit. The initial independent high-level review is complete and its findings are recorded in candidate section15. Primary added exact candidate view projections and the D3 laser contract; the focused high-level follow-up and separate science review are complete, with primary corrections and closure notes recorded in candidate sections15–17. D1 and D3 are explicitly approved; D4 is resolved from existing authority.
 
-2026-09-07 continuation remains Step5 preparation only. Candidate sections18–19 are the current proposed result/presentation refinements; the final selected production catalogue and exact frozen amendment remain incomplete. D1 is approved; D3 remains an explicit pending decision.
+2026-09-08 continuation remains Step5 preparation only. Leonardo approved the complete D3 mapping in candidate section16. Candidate sections18–19 remain the current result/presentation refinements; the final selected production catalogue and exact frozen amendment remain incomplete.
 
 The2026-09-07 focused high-level review is complete. The required tutorial body/current-binding conflict is recorded under021; input-field and recap-selection advisories received focused primary correction. This remains a draft checkpoint, with no final contract freeze or code readiness.
 

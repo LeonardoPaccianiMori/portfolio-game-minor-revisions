@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-04
+Last updated: 2026-09-08
 
 ## Purpose and scope
 
@@ -231,3 +231,11 @@ OpenAI, exact actual model and effort `unknown`, read-only `step5_source_manifes
 OpenAI, exact actual model and effort `unknown`, fresh read-only `step5_plan_removal_review`: reviewed the plan-file deletion, five control-record repairs, surviving candidate and historical checkpoint `735816b`. Requested routing `gpt-6-astra` / `xhigh`; exact actual metadata was not exposed. It found no architecture blocker and confirmed that D1, D3, D4 and the implementation-approval boundary remain accurate. It required correction of the AGENTS.md resume route and one stale historical handoff citation, and advised one clearer approval-boundary phrase. Primary applied all three corrections. No edits, network, implementation, user contact, acceptance or further agents.
 
 OpenAI, exact actual model and effort `unknown`, fresh read-only `step5_plan_removal_rereview`: checked the corrected deletion packet. Requested routing `gpt-6-astra` / `xhigh`; exact actual metadata was not exposed. It confirmed that the prior three findings were closed and found no architecture blocker. It found one remaining generic reference to the deleted companion plan. Primary replaced that reference with historical checkpoint `735816b` and retained the requirement for a current final implementation plan. This final repair changes no authority or technical meaning and received focused primary validation under the record-only correction rule. No edits, network, implementation, user contact, acceptance or further agents.
+
+## 2026-09-08 — Step5 D3 approval record
+
+Leonardo explicitly approved the complete D3 laser-result proposal in candidate section16. His decision fixes the Strong, Limited and Weak meanings; observation, access and monitoring limits; absent laser repatterning association; honest-reading compatibility; fixed result text; and representative vectors. Limited rhythm-only remains unable to complete the Careful rehearsal without a suitable repeat or restart.
+
+OpenAI primary, exact model and reasoning effort `unknown`: verified the direct approval against the reviewed D3 proposal and its source boundaries, updated the candidate and current decision/control records, and preserved the separate final-amendment, implementation and Step5-acceptance gates. No production content, code, configuration, dependency, asset, runtime test, Career Center record or public action changed. Evidence: candidate section16, decision log, current status and this containing commit.
+
+OpenAI, actual exact model `unknown`, effort `unknown`, fresh read-only `step5_d3_approval_review`: reviewed the D3 approval record, candidate section16 meaning, remaining approval boundaries, source support, scope and attribution. Requested routing was `gpt-6-astra` / `xhigh`; exact actual metadata was not exposed. It found no blocker or required correction and gave one wording advisory to separate the approved D3 meaning from section18's candidate input fields. Primary applied that clarification. The reviewer made no edits, used no network, ran no runtime tests, contacted no user and spawned no further agent. Evidence: candidate sections16 and18, decision log, open-issue record, acceptance log and this containing commit.
