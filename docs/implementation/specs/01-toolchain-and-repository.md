@@ -141,7 +141,7 @@ provenance and build checks as other assets.
 
 Generated local paths remain inside the repository and are ignored by Git.
 They include `node_modules/`, `dist/`, `coverage/`, `playwright-report/`,
-`test-results/`, `local-artifacts/performance/`, tool caches, logs, and
+`test-results/`, `local-artifacts/`, tool caches, logs, and
 Playwright-managed browser copies. S13 adds `.worktrees/` for primary-created
 isolated local assignment folders after implementation approval. The S11
 local performance path can hold temporary raw profiler exports; neither path
@@ -314,3 +314,7 @@ the interface register and `specification-audit.md`. Earlier candidate-state
 statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
+
+## 2026-09-07 — Local artifact ignore scope
+
+Leonardo approved excluding the complete local-artifacts/ tree. This supersedes the narrower Git ignore entry for local-artifacts/performance/; the existing performance directory remains inside the excluded tree. No tracked source/evidence is removed and no published history is rewritten. Other tool-specific ignore settings remain unchanged.

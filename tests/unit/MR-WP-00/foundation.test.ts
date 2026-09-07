@@ -231,7 +231,7 @@ dist/
 coverage/
 playwright-report/
 test-results/
-local-artifacts/performance/
+local-artifacts/
 .vite/
 .cache/
 .eslintcache

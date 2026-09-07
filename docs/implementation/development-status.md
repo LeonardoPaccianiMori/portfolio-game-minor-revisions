@@ -216,3 +216,5 @@ Current fresh-session prompt is in plans/step-05-content-foundation.md. Use its 
 ## 2026-09-07 — Approved GitHub synchronization
 
 Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is still pending. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.
+
+2026-09-07: Leonardo approved ignoring all local-artifacts/ directories and their contents. The Git ignore entry and matching foundation expectation now use the broader path; S01 records its supersession. No files under that tree were tracked. Step5 preparation and pending D3 are unchanged.
