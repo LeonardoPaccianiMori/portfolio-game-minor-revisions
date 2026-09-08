@@ -932,3 +932,7 @@ Leonardo explicitly approved the complete reviewed packet. MR-IMP-DEC-310 freeze
 The authority commit is `48ddfabfcbd06e9b787f230de37319766b3f9b6f`.
 MR-WO-WP01-004 records it as the exact worker base. The separate authorization
 commit contains the approved order. WP01 submission is next.
+
+MR-WO-WP01-004 is active in its isolated worktree at the exact authority base.
+This status starts only its owned WP01 implementation. WP07 and WP00 remain
+sequential primary work after the verified submission.
