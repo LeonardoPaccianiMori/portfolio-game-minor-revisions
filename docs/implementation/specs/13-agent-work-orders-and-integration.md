@@ -724,3 +724,9 @@ Read-only evidence research and fresh review run sequentially around primary syn
 Leonardo approved gpt-5.6-sol/high as the project primary default. .codex/config.toml selects it; explicit session overrides remain possible. This supersedes only the earlier C06 statement “The primary remains Astra.” Earlier completed Astra contributions retain their original attribution. Configuration does not change the model of an already-running session and is not proof of actual model use.
 
 The primary's responsibilities and the existing work-order, ownership, review, test, integration and acceptance requirements remain unchanged. Implementation-worker model/effort fields remain unset so each approved assignment can choose Sol/Terra/Luna. Detailed implementation review uses a separate Sol xhigh reviewer; Astra is available only for high-level subagent work under Leonardo's existing boundary. The two-subagent limit remains unchanged. GitHub synchronization follows the approved AGENTS.md origin/main rule.
+
+## 2026-09-08 — Approved Step5 execution plan
+
+MR-IMP-DEC-310 approves the exact work-order and ownership sequence in `analysis/step-05-content-contract.md` subsection20.7. The amendment commit is the worker base. The later authorization commit contains `MR-WO-WP01-004`; the worker reads it through `git show` without changing its base. WP01 runs the existing pre-WP00 build plus coverage. The assembled candidate later runs content/profile/slice/verify checks. Its worker commit begins `MR-WP-01`.
+
+The primary assembles a candidate branch in dependency order: authorization, verified WP01 submission, WP07 catalogue, WP00 wiring. It audits that branch before one fresh Sol xhigh detailed review. Main integration and push occur only after no blocker or required finding remains. The exact selection reasons, bases, retained primary work and later evidence owners in the approved packet are mandatory.

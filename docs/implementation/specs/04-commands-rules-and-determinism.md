@@ -744,3 +744,7 @@ Entering the period after a template's last allowed start automatically stops an
 ## Correction C01: required-work recovery eligibility
 
 takeProtectedBreak remains available during a due required work task. It does not bypass a pending crash, active cutscene, or higher-priority open experiment attention; once those settle, a due scene must run before recovery. A required work task by itself is not commandUnavailable for a break. Apply the normal combined deadline warning, one-period cost, profile recovery and five-energy cap. No special zero-time or bonus recovery is added. Test commandUnavailable ordering, unaffordable required work followed by a legal break, and unchanged state for a break blocked by a due scene.
+
+## 2026-09-08 — MR-IF-003 v3 Step5 amendment
+
+MR-IMP-DEC-310 adds `tutorialShown` to `recordContentPresentation`, completes `MR-TASK-LASER-SHAM` on its first successful laser analysis and permits only the exact correlated facility/Gabriel results in the approved packet. Selected slice commands consume their registered action binding; authored attachments do not also apply action cost. The application must verify the resulting save checkpoint before it displays slice completion. Step5 validates these contracts and does not execute their future command algorithms.

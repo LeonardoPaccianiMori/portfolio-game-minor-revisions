@@ -944,3 +944,7 @@ must continue to prove all four choices and the exact ordered ending modules.
 ## Correction C04: earlier evidence
 
 The named Gates 4A, 6A and 26A in `../development-roadmap.md` supplement the integer roadmap. Apply their explicit runtime dependencies and proof limits. The opening evaluation uses periods 0–11, completing after its saved rehearsal; it does not require the loop to fit Week 1. No test-only campaign fixture enters shipped content.
+
+## 2026-09-08 — Step5 validation boundary
+
+MR-IMP-DEC-310 requires Step5 unit cases for all strict envelopes, duplicate JSON members, references, selected semantic facts, text/placeholders/word limits, checked copies and views, profile isolation, the five dormant IDs and safe startup failure. `test:build-profiles` must prove default/full/fallback rejection and successful slice isolation. These are ordinary Step5 tests; Step6 still owns the general S12 fixture schema and manifest. Step14 owns generic migration mechanics. Step52 owns complete fallback package/migration evidence and Step69 owns complete full package/migration evidence. Gate6A and later rules own executed journeys.

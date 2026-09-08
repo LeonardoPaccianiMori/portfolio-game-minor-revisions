@@ -33,14 +33,14 @@ gaps. It does not mean that the domain is finished.
 | `../assets/ASSET_MANIFEST.md`                   | Asset provenance                                             | B10 and S10 documented                                 | No production asset source is selected or verified yet.                                                                    |
 | `implementation/roadmap.md`                     | Technical-specification programme                            | S00–S14, Gate 1, and development governance documented | Step 1 is accepted; later decisions and frozen contracts remain revisable only through approved evidence-led supersession. |
 | `implementation/status.md`                      | Durable current state                                        | Current; Sxx complete                                  | Update in every specification commit.                                                                                      |
-| `implementation/decisions.md`                   | Technical and process decisions                              | Current through Step-4 plan approval                   | Add only approved decisions and preserve supersessions.                                                                    |
-| `implementation/interfaces.md`                  | Shared-interface lifecycle                                   | `MR-IF-002` frozen `v3`; all others frozen `v1`        | Historical `MR-IF-002 v1` and `v2` are superseded through approved evidence-led packets.                                   |
-| `implementation/open-issues.md`                 | Technical clarification ledger                               | `MR-IMP-OPEN-001`–`016` resolved                       | Register any later material issue before dependent work.                                                                   |
+| `implementation/decisions.md`                   | Technical and process decisions                              | Current through approved Step5 plan                    | Add only approved decisions and preserve supersessions.                                                                    |
+| `implementation/interfaces.md`                  | Shared-interface lifecycle                                   | Step5 successors frozen                                | `MR-IF-002 v6`, `003/005/006/010 v3`; preserve all superseded history.                                                     |
+| `implementation/open-issues.md`                 | Technical clarification ledger                               | `001`–`019` and `021` resolved                         | `020` remains the later fallback start-window question.                                                                    |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–3 accepted; Step 4 correcting                  | Run only the active superseding Sol `high` rules correction before the primary diagnostic correction.                      |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step-4 v4 rules correction active                      | Complete only `MR-WO-WP01-003`.                                                                                            |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Step 4 correcting                                      | Preserve the blocked review and approved supersession separately from future correction evidence.                          |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–4 accepted; Step 5 plan approved               | Execute only the approved Step5 order.                                                                                     |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Step5 authority commit in progress                     | Create exact MR-WO-WP01-004 after the authority commit.                                                                    |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Step5 plan approved                                    | Keep implementation, technical review, Leonardo testing and acceptance separate.                                           |
 
 ## Discussion roadmap
 
@@ -485,9 +485,9 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current Gate 1 state: **approved by Leonardo on 2026-09-01; Steps 1–3 are
-accepted; the exact Step-4 plan and `MR-IF-002 v2` creation-input refinement
-were approved on 2026-09-02; Step 5 remains unapproved**.
+Current Gate 1 state: **approved by Leonardo on 2026-09-01; Steps 1–4 are
+accepted; the exact Step5 contracts and implementation plan were approved on
+2026-09-08; Step5 implementation evidence and acceptance remain pending**.
 
 The former one-shot vertical-slice production sequence is superseded by the
 collaborative workflow in `implementation/development-roadmap.md`. After Gate

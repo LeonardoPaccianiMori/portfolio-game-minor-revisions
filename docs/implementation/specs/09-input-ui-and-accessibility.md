@@ -800,3 +800,7 @@ ready for Leonardo's separate approval, and no implementation is authorized.
 ## Correction C02: factual cost and requirement projection
 
 Cost confirmation uses the actual resolved action forecast: initial draft 3 periods/2 energy (major), normal revision 1/1 plus applicable Standard surcharge, PIIM 3/2 (major), slice rehearsal 1/1 plus applicable surcharge. Free configuration shows 0/0. The requirements panel includes associationSupport when applicable and projects reported support without exposing hidden raw/reported mismatches to another character. Existing incomplete/dishonest confirmation rules remain explicit.
+
+## 2026-09-08 — MR-IF-010 v3 tutorial binding amendment
+
+MR-IMP-DEC-310 replaces the three device-specific tutorial bodies with the exact neutral D2 text in `analysis/step-05-content-contract.md` subsection20.1. Content stores ordered `{action,labelKey}` rows only. It cannot store a key, button, device name or current binding. S09 joins each row to `InputView` at display time. The eight exact tutorial action orders and first-semantic-event triggers are frozen in the approved packet. Help replay does not submit a second receipt command.

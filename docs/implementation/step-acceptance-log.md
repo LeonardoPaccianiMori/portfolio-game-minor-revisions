@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 contract preparation complete; amendment approval pending**
+Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 plan approved; implementation pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -924,3 +924,7 @@ Primary prepared candidate section20 under the existing contract-preparation app
 The first fresh complete-candidate review confirmed the 97-item and 213-key counts and found eight shared-contract groups. Primary corrected opening state/event identity, strict milestone and record shapes, recap selection, room/event guards and result routes, static tutorial fields, exact S13 plan data, deferred execution owners and fallback text in section20.
 
 The second fresh review found four closure groups. Primary added the exact five-ID dormant-state exception, queued-event case, experiment text attachment and S13 execution sequence. Focused re-check closed the remaining S03/S06 issue-code distinction and confirmed no blocker or required finding. Primary also corrected current route projections and named later full/fallback evidence owners. Preparation validation passed. The complete candidate now awaits Leonardo's combined amendment and implementation-plan decision. It does not authorize code or record Step5 acceptance.
+
+### 2026-09-08 — Step5 amendment and implementation plan approved
+
+Leonardo explicitly approved the complete reviewed packet. MR-IMP-DEC-310 freezes MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3 and confirms D2/D5/D6/D7 with the earlier D1/D3 and existing D4. The approved execution uses the exact WP01 worker, WP07 primary content and WP00 primary wiring sequence. This is implementation authority. It is not technical review, Leonardo testing or Step5 acceptance.

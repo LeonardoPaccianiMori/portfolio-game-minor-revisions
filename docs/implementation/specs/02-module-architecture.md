@@ -436,3 +436,7 @@ the interface register and `specification-audit.md`. Earlier candidate-state
 statements preserve the interface lifecycle before S14; they are not the
 current state. No executable fixture or measured result exists. Gate 1 is
 ready for Leonardo's separate approval, and no implementation is authorized.
+
+## 2026-09-08 — Step5 content boundary
+
+MR-IMP-DEC-310 adds the `src/content/` public boundary defined in `analysis/step-05-content-contract.md`. It exposes only approved source/build/runtime operations and immutable types. Build tooling validates and filters the catalogue, then supplies one checked package through `virtual:minor-revisions-content`. Browser startup validates that package before application or persistence construction. Failure shows “Game content could not be verified. No saved campaign data was changed.” No raw source I/O enters `src/content/`, and no browser consumer receives development trace fields.

@@ -318,3 +318,7 @@ ready for Leonardo's separate approval, and no implementation is authorized.
 ## 2026-09-07 — Local artifact ignore scope
 
 Leonardo approved excluding the complete local-artifacts/ tree. This supersedes the narrower Git ignore entry for local-artifacts/performance/; the existing performance directory remains inside the excluded tree. No tracked source/evidence is removed and no published history is rewritten. Other tool-specific ignore settings remain unchanged.
+
+## 2026-09-08 — Step5 phase commands
+
+MR-IMP-DEC-310 adds the exact Step5 commands in `analysis/step-05-content-contract.md` subsection20.4. Default `dev` and `build` still select full and reject its incomplete profile. `dev:slice` and `build:slice` explicitly select slice. `content:check` validates the source catalogue. `test:build-profiles` proves incomplete full/fallback rejection and complete slice isolation. The amended `verify` sequence uses the successful slice build and retains lint, formatting, coverage and browser checks. No dependency or lockfile changes.

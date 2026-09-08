@@ -1,6 +1,6 @@
-# Step 5 content contract candidate
+# Step 5 content contract
 
-Date: 2026-09-06. State: candidate, not a frozen interface or implementation permission. Preparation approved by Leonardo. Base: `32d6a01`; preparation branch: `work/MR-WP-01-step5-contracts`. Proposed successors are MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3. Their current frozen versions remain authoritative until this packet's exact amendment is approved. Campaign schema stays2; content envelope schema stays1; content version is1.1.0; compatible earlier content versions initially `[]`.
+Date: 2026-09-06. State: approved and frozen by Leonardo on2026-09-08 under MR-IMP-DEC-310. Preparation base: `32d6a01`; historical preparation branch: `work/MR-WP-01-step5-contracts`. MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3 are frozen for Step5. Campaign schema stays2; content envelope schema stays1; content version is1.1.0; compatible earlier content versions initially `[]`. Sections2–13,16,18–20 are normative, with section20 taking precedence over an earlier conflicting sketch. Earlier proposal/hold/review language remains drafting history.
 
 ## 1. Boundaries and decisions
 

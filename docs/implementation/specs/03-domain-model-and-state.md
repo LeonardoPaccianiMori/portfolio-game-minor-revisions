@@ -751,3 +751,9 @@ Automatic start-window expiry and analysis-deadline expiry use existing StopLog.
 ## Correction C01: missed-window state representation
 
 Stored MonitoringRecord.response adds `missed`; the player command payload still permits only continue, qualityCheck, stabilize and stop. A scheduler missed record has completedPeriod equal to the first entered period after the derived window closes (S+2 for ordinary/oxygen first, S+4 for oxygen second). A real one-period response stores its post-action period with pre-action eligibility as above. The ordered monitoringResponses array contains one record per resolved window, whether answered or missed; a missed record cannot masquerade as a player command or quality check. Final-band/ready-state checks count resolved windows, not only player responses. A stopped configured run has no records. Preserve exactly-once/ordering and the existing issue/coverage consequence for every missed window.
+
+## 2026-09-08 — MR-IF-002 v6 Step5 amendment
+
+MR-IMP-DEC-310 replaces the opening stored event/map/queue identity with `MR-EVT-CLARIFIED`; the scene remains `MR-SCN-CLARIFIED`. Selected tutorial IDs can enter `completedContentIds` through the approved receipt command. Campaign schema remains 2.
+
+The slice uses the exact five-ID dormant-state exception in `analysis/step-05-content-contract.md` subsection20.5. Only `MR-REC-REVIEWER-1`, `MR-REC-REVIEWER-2`, `MR-REC-REVIEWER-3` with null forms and inactive `MR-ROOM-IMAGING-BOOKING`/`MR-ROOM-IMAGING-SERVICE-LIMIT` can lack selected content definitions, only for the slice/evaluationSlice pair. `validateCampaignStateAgainstContent` returns the existing S03 `CheckedResult`; any active or referenced dormant identity fails with `invalidReference`. Full/fallback receive no exception. No schema-1 migration is inferred.

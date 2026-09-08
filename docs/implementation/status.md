@@ -45,12 +45,12 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current issues: `MR-IMP-OPEN-001`–`019` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window. `MR-IMP-OPEN-021` contains the complete reviewed Step5 candidate and awaits Leonardo approval.
+- Current issues: `MR-IMP-OPEN-001`–`019` and `021` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: present the reviewed D2/D5/D6/D7, interface/specification amendment and exact implementation-plan packet to Leonardo for one decision. Step4 and Gate4A are accepted. Step5 code is not approved.
-- Prohibited next action: start Step5 code before the amendment approval, or start Three.js, assets, deployment, release, visibility or public work.
+- Next action: commit the approved Step5 authority, create the exact MR-WO-WP01-004 order from that base, then implement the approved WP01, WP07 and WP00 sequence. Step4 and Gate4A are accepted.
+- Prohibited next action: work outside the approved Step5 paths/order, or start Step6, Three.js, assets, deployment, release, visibility or public work.
 
 ## Durable progress summary
 
@@ -59,8 +59,8 @@ not insert a future or guessed commit identifier into this document.
 | Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                             |
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. `MR-IF-002` is frozen `v5`; `003/005/006/007/010` are `v2`; other interfaces remain `v1`; Gate 1 was approved on 2026-09-01. |
-| Incremental implementation | Steps 1–4 accepted; Step 5 amendment approval next     | Step5 contract preparation, primary audit and independent high-level review are complete. No Step5 code exists or is approved.                       |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. Step5 freezes `MR-IF-002 v6`, `003/005/006/010 v3`; `007` remains `v2`; other interfaces remain `v1`.                        |
+| Incremental implementation | Steps 1–4 accepted; Step 5 implementation authorized   | MR-IMP-DEC-310 freezes the Step5 contracts and exact implementation sequence. No Step5 runtime result exists yet.                                    |
 | Vertical slice             | Step 4 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 
@@ -98,9 +98,9 @@ Current incremental resume authority remains `development-status.md`. MR-IMP-OPE
 
 ## Step5 candidate preparation checkpoint
 
-Preparation is complete. The current candidate contract is analysis/step-05-content-contract.md; historical checkpoint735816b preserves the approved preparation plan. MR-IMP-OPEN-021 now awaits the combined amendment and implementation-plan decision. The candidate is not a frozen successor or code approval. D1 and D3 are explicitly approved; D4 is resolved from existing authority.
+Preparation is complete. Leonardo approved the complete packet on2026-09-08. MR-IMP-DEC-310 and frozen MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3 now govern Step5. D1/D2/D3/D5/D6/D7 are approved; D4 remains existing authority.
 
-The final section20 candidate proposes the selected catalogue, fixed strings, triggers, semantic roles, phase commands and exact work orders. Two complete high-level reviews and focused re-checks are recorded there. All required findings are closed. The primary count, JSON, source, scope, privacy, formatting and diff checks pass. The frozen amendment and code remain unapproved.
+The approved section20 packet defines the selected catalogue, fixed strings, triggers, semantic roles, phase commands and exact work orders. Two complete high-level reviews and focused re-checks are recorded there. All required findings are closed. The primary count, JSON, source, scope, privacy, formatting and diff checks pass. Implementation is authorized; review, runtime evidence and acceptance remain pending.
 
 Section20 resolves the tutorial body/current-binding conflict and the remaining source closure as a candidate. The independent preparation review is complete. No interface is frozen and no code is authorized.
 
