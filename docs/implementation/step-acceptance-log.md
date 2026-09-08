@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 approved contract preparation active**
+Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 contract preparation complete; amendment approval pending**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -916,3 +916,11 @@ Leonardo requested continuation. The existing preparation approval remains activ
 ### 2026-09-08 — D3 laser outcomes approved
 
 Leonardo explicitly approved the exact D3 proposal in candidate section16. The approval covers the Strong, Limited and Weak meanings; observation, access and monitoring projections; no laser repatterning association; honest-reading limits; fixed result text; and representative expected vectors. Limited rhythm-only remains unable to complete the Careful rehearsal without a suitable repeat or restart. This closes D3 as an input to the final amendment. It does not approve the other candidate source choices, freeze MR-IF-006 v3, authorize code, complete Step5 preparation, or accept Step5.
+
+### 2026-09-08 — Step5 final closure candidate prepared
+
+Primary prepared candidate section20 under the existing contract-preparation approval. It supplies the exact unapproved D2/D5/D6/D7 choices, selected item/key counts, source mappings, phase commands and work orders. A bounded source audit found no laser report-response identity and no slice need for report or protected-break actions; primary removed both and verified the five-character/ten-location closure. Primary audit and fresh high-level review remain. This is preparation evidence. It does not freeze an interface, authorize code or accept Step5.
+
+The first fresh complete-candidate review confirmed the 97-item and 213-key counts and found eight shared-contract groups. Primary corrected opening state/event identity, strict milestone and record shapes, recap selection, room/event guards and result routes, static tutorial fields, exact S13 plan data, deferred execution owners and fallback text in section20.
+
+The second fresh review found four closure groups. Primary added the exact five-ID dormant-state exception, queued-event case, experiment text attachment and S13 execution sequence. Focused re-check closed the remaining S03/S06 issue-code distinction and confirmed no blocker or required finding. Primary also corrected current route projections and named later full/fallback evidence owners. Preparation validation passed. The complete candidate now awaits Leonardo's combined amendment and implementation-plan decision. It does not authorize code or record Step5 acceptance.
