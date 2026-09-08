@@ -49,7 +49,7 @@ not insert a future or guessed commit identifier into this document.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: commit the approved Step5 authority, create the exact MR-WO-WP01-004 order from that base, then implement the approved WP01, WP07 and WP00 sequence. Step4 and Gate4A are accepted.
+- Next action: activate MR-WO-WP01-004 at its exact authority base, verify its submission, then implement the approved WP07 and WP00 sequence. Step4 and Gate4A are accepted.
 - Prohibited next action: work outside the approved Step5 paths/order, or start Step6, Three.js, assets, deployment, release, visibility or public work.
 
 ## Durable progress summary

@@ -928,3 +928,7 @@ The second fresh review found four closure groups. Primary added the exact five-
 ### 2026-09-08 — Step5 amendment and implementation plan approved
 
 Leonardo explicitly approved the complete reviewed packet. MR-IMP-DEC-310 freezes MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3 and confirms D2/D5/D6/D7 with the earlier D1/D3 and existing D4. The approved execution uses the exact WP01 worker, WP07 primary content and WP00 primary wiring sequence. This is implementation authority. It is not technical review, Leonardo testing or Step5 acceptance.
+
+The authority commit is `48ddfabfcbd06e9b787f230de37319766b3f9b6f`.
+MR-WO-WP01-004 records it as the exact worker base. The separate authorization
+commit contains the approved order. WP01 submission is next.
