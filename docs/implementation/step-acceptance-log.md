@@ -1052,3 +1052,7 @@ Commit the approved authority amendment. Then activate `MR-WO-WP09-001` from the
 ### 2026-09-09 — First Step 6 work order authorized
 
 The authority commit is `3b538f1ad1955f1e55e3f44e7d6cfe2d5e7e6a37`. `MR-WO-WP09-001` records it as the exact worker base. The separate authorization commit contains the complete approved order. The order is approved but not yet active. No Step 6 code or fixture result exists.
+
+### 2026-09-09 — First Step 6 work order active
+
+`MR-WO-WP09-001` is active in its isolated worktree at the exact authority base. Authorization commit `0d44edbcd3996a92c4708d422675b8d5934d7ad7` contains the order that the worker must read with `git show`. This starts only the five owned WP09 utility paths. `MR-WO-WP00-010` and later orders do not yet exist.

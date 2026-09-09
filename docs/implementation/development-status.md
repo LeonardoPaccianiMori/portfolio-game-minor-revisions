@@ -8,7 +8,7 @@ Default next-session primary: **gpt-5.6-sol / high**, approved on2026-09-07 and 
 
 Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps 1–4 are accepted; Leonardo accepted corrected Step 4 on 2026-09-06.
 
-Current state: **Steps 1–5 accepted; Gate 4A complete; Step 6 implementing; MR-WO-WP09-001 approved**. Authority commit `3b538f1ad1955f1e55e3f44e7d6cfe2d5e7e6a37` is the exact worker base. No Step 6 fixture code or execution evidence exists.
+Current state: **Steps 1–5 accepted; Gate 4A complete; Step 6 implementing; MR-WO-WP09-001 active**. Authority commit `3b538f1ad1955f1e55e3f44e7d6cfe2d5e7e6a37` is the exact worker base. Authorization commit `0d44edbcd3996a92c4708d422675b8d5934d7ad7` contains the approved order. The isolated worktree is active. No Step 6 fixture code or execution evidence exists.
 
 Leonardo supplied screenshots of both pages and explicitly stated “I accept step 4”. The diagnostic shows the exact expected Standard/Supported values and Passed validation; the normal page shows the expected four lines. Reload behavior was not separately reported. No defect was reported. The screenshots and their machine paths are not copied into the repository.
 

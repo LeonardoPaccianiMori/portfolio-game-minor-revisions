@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP09-001
 type: implementation-work-order
-status: approved
+status: active
 work_package: MR-WP-09
 sequence: 1
 created: 2026-09-09
