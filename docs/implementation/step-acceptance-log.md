@@ -1048,3 +1048,7 @@ Pending. The contract and implementation plan are approved. Step 6 still needs i
 ### Known limitations and next boundary
 
 Commit the approved authority amendment. Then activate `MR-WO-WP09-001` from the observed authority base. Later orders remain blocked until each prior submission is verified and integrated. Step 7 remains blocked.
+
+### 2026-09-09 — First Step 6 work order authorized
+
+The authority commit is `3b538f1ad1955f1e55e3f44e7d6cfe2d5e7e6a37`. `MR-WO-WP09-001` records it as the exact worker base. The separate authorization commit contains the complete approved order. The order is approved but not yet active. No Step 6 code or fixture result exists.
