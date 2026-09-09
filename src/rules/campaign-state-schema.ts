@@ -1714,7 +1714,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
   const queueSet = new Set(state.narrative.scheduler.queue);
   if (
     state.narrative.scenesById['MR-SCN-CLARIFIED'] === undefined ||
-    state.narrative.scheduler.eventsById['MR-SCN-CLARIFIED'] === undefined
+    state.narrative.scheduler.eventsById['MR-EVT-CLARIFIED'] === undefined
   )
     return invariant('/narrative/scenesById/MR-SCN-CLARIFIED', 'invalidReference');
   if (queueSet.size !== state.narrative.scheduler.queue.length)
@@ -1726,7 +1726,8 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
     const id = state.narrative.scheduler.activeEventId;
     if (queueSet.has(id) || state.narrative.scheduler.eventsById[id]?.state !== 'active')
       return invariant('/narrative/scheduler/activeEventId', 'invariantViolation');
-    if (state.narrative.scenesById[id]?.state !== 'inProgress')
+    const sceneId = id === 'MR-EVT-CLARIFIED' ? 'MR-SCN-CLARIFIED' : id;
+    if (state.narrative.scenesById[sceneId]?.state !== 'inProgress')
       return invariant('/narrative/scheduler/activeEventId', 'invariantViolation');
   }
   for (const [id, event] of Object.entries(state.narrative.scheduler.eventsById)) {
@@ -1774,7 +1775,8 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
       return invariant(`/narrative/scheduler/eventsById/${id}/state`, 'invariantViolation');
   }
   for (const [id, scene] of Object.entries(state.narrative.scenesById)) {
-    const event = state.narrative.scheduler.eventsById[id];
+    const eventId = id === 'MR-SCN-CLARIFIED' ? 'MR-EVT-CLARIFIED' : id;
+    const event = state.narrative.scheduler.eventsById[eventId];
     if (event === undefined) return invariant(`/narrative/scenesById/${id}`, 'invalidReference');
     const validPair =
       (scene.state === 'locked' && event.state === 'locked') ||
@@ -2203,7 +2205,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
     )
       return invariant('/manuscript', 'invariantViolation');
     const openingScene = state.narrative.scenesById['MR-SCN-CLARIFIED'];
-    const openingEvent = state.narrative.scheduler.eventsById['MR-SCN-CLARIFIED'];
+    const openingEvent = state.narrative.scheduler.eventsById['MR-EVT-CLARIFIED'];
     if (
       Object.keys(state.narrative.scenesById).length !== 1 ||
       openingScene?.state !== 'queued' ||
@@ -2225,7 +2227,7 @@ const checkInvariants = (state: CampaignState): CheckedResult<never> | null => {
       openingEvent?.state !== 'queued' ||
       openingEvent?.firstEligiblePeriod !== 0 ||
       openingEvent?.resolvedPeriod !== null ||
-      !plainDataEqual(state.narrative.scheduler.queue, ['MR-SCN-CLARIFIED']) ||
+      !plainDataEqual(state.narrative.scheduler.queue, ['MR-EVT-CLARIFIED']) ||
       state.narrative.scheduler.activeEventId !== null ||
       state.narrative.scheduler.lastSchedulerRevision !== 0
     )

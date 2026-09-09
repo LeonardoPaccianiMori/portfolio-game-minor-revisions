@@ -132,14 +132,14 @@ const buildInitialState = (input: CampaignCreationInput): CampaignState => ({
     },
     scheduler: {
       eventsById: {
-        'MR-SCN-CLARIFIED': {
-          id: 'MR-SCN-CLARIFIED',
+        'MR-EVT-CLARIFIED': {
+          id: 'MR-EVT-CLARIFIED',
           state: 'queued',
           firstEligiblePeriod: 0,
           resolvedPeriod: null,
         },
       },
-      queue: ['MR-SCN-CLARIFIED'],
+      queue: ['MR-EVT-CLARIFIED'],
       activeEventId: null,
       lastSchedulerRevision: 0,
     },

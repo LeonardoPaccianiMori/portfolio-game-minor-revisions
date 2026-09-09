@@ -5,13 +5,19 @@ import {
   createInitialCampaignState,
   validateCampaignState,
 } from '../../../src/rules';
+import { validateCampaignStateAgainstContent, validateContentPackage } from '../../../src/content';
 import type {
   CampaignState,
   ChangeRecord,
   ExperimentRun,
   ManuscriptRequirementResults,
 } from '../../../src/rules/campaign-state-types';
-import { copyCampaign, initialCampaign, standardInput } from './campaign-test-data';
+import {
+  builtContentFixture,
+  copyCampaign,
+  initialCampaign,
+  standardInput,
+} from './campaign-test-data';
 
 describe('MR-IF-002 v5 campaign creation', () => {
   it('creates the complete fixed Standard starting state', () => {
@@ -131,14 +137,14 @@ describe('MR-IF-002 v5 campaign creation', () => {
         },
         scheduler: {
           eventsById: {
-            'MR-SCN-CLARIFIED': {
-              id: 'MR-SCN-CLARIFIED',
+            'MR-EVT-CLARIFIED': {
+              id: 'MR-EVT-CLARIFIED',
               state: 'queued',
               firstEligiblePeriod: 0,
               resolvedPeriod: null,
             },
           },
-          queue: ['MR-SCN-CLARIFIED'],
+          queue: ['MR-EVT-CLARIFIED'],
           activeEventId: null,
           lastSchedulerRevision: 0,
         },
@@ -865,7 +871,7 @@ const addFinalScene = (
   if (sceneState === 'inProgress') {
     state.narrative.scheduler.activeEventId = 'MR-SCN-0642';
     state.narrative.scheduler.queue = [];
-    state.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'eligible';
+    state.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'eligible';
     state.narrative.scenesById['MR-SCN-CLARIFIED']!.state = 'eligible';
   }
   if (finalPresentationState === 'closingPlayed')
@@ -1638,18 +1644,18 @@ describe('cross-section and permanent-history invariants', () => {
     expect(validateCampaignState(snapshot)).toMatchObject({ kind: 'failure' });
 
     const duplicateQueue = copyCampaign();
-    duplicateQueue.narrative.scheduler.queue.push('MR-SCN-CLARIFIED');
+    duplicateQueue.narrative.scheduler.queue.push('MR-EVT-CLARIFIED');
     expect(validateCampaignState(duplicateQueue)).toMatchObject({ kind: 'failure' });
 
     const wrongQueueState = copyCampaign();
-    wrongQueueState.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'eligible';
+    wrongQueueState.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'eligible';
     expect(validateCampaignState(wrongQueueState)).toMatchObject({ kind: 'failure' });
 
     const active = copyCampaign();
     active.metadata.stateRevision = 1;
     active.narrative.scheduler.queue = [];
-    active.narrative.scheduler.activeEventId = 'MR-SCN-CLARIFIED';
-    active.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'active';
+    active.narrative.scheduler.activeEventId = 'MR-EVT-CLARIFIED';
+    active.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'active';
     active.narrative.scenesById['MR-SCN-CLARIFIED']!.state = 'inProgress';
     active.narrative.scenesById['MR-SCN-CLARIFIED']!.authoredFormId = 'MR-FORM-CLARIFIED';
     expect(validateCampaignState(active).kind).toBe('success');
@@ -1657,16 +1663,16 @@ describe('cross-section and permanent-history invariants', () => {
     expect(validateCampaignState(active)).toMatchObject({ kind: 'failure' });
 
     const lockedWithPeriod = copyCampaign();
-    lockedWithPeriod.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'locked';
+    lockedWithPeriod.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'locked';
     expect(validateCampaignState(lockedWithPeriod)).toMatchObject({ kind: 'failure' });
 
     const terminalWithoutPeriod = copyCampaign();
     terminalWithoutPeriod.narrative.scheduler.queue = [];
-    terminalWithoutPeriod.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'completed';
+    terminalWithoutPeriod.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'completed';
     expect(validateCampaignState(terminalWithoutPeriod)).toMatchObject({ kind: 'failure' });
 
     const futureEligibility = copyCampaign();
-    futureEligibility.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.firstEligiblePeriod = 1;
+    futureEligibility.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.firstEligiblePeriod = 1;
     expect(validateCampaignState(futureEligibility)).toMatchObject({ kind: 'failure' });
   });
 
@@ -2261,20 +2267,20 @@ describe('cross-section and permanent-history invariants', () => {
     cases.push(['Samira evidence without credit', samiraWithoutCredit]);
 
     const activeAlsoQueued = copyCampaign();
-    activeAlsoQueued.narrative.scheduler.activeEventId = 'MR-SCN-CLARIFIED';
-    activeAlsoQueued.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'active';
+    activeAlsoQueued.narrative.scheduler.activeEventId = 'MR-EVT-CLARIFIED';
+    activeAlsoQueued.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'active';
     activeAlsoQueued.narrative.scenesById['MR-SCN-CLARIFIED']!.state = 'inProgress';
     activeAlsoQueued.narrative.scenesById['MR-SCN-CLARIFIED']!.authoredFormId = 'MR-FORM-CLARIFIED';
     cases.push(['active event also queued', activeAlsoQueued]);
 
     const activeWithoutScene = copyCampaign();
     activeWithoutScene.narrative.scheduler.queue = [];
-    activeWithoutScene.narrative.scheduler.activeEventId = 'MR-SCN-CLARIFIED';
-    activeWithoutScene.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.state = 'active';
+    activeWithoutScene.narrative.scheduler.activeEventId = 'MR-EVT-CLARIFIED';
+    activeWithoutScene.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.state = 'active';
     cases.push(['active event without in-progress scene', activeWithoutScene]);
 
     const unresolvedPeriod = copyCampaign();
-    unresolvedPeriod.narrative.scheduler.eventsById['MR-SCN-CLARIFIED']!.resolvedPeriod = 0;
+    unresolvedPeriod.narrative.scheduler.eventsById['MR-EVT-CLARIFIED']!.resolvedPeriod = 0;
     cases.push(['resolved period on queued event', unresolvedPeriod]);
 
     const readWithoutReceipt = copyCampaign();
@@ -3891,6 +3897,87 @@ describe('review corrections for retained monitoring consequences', () => {
     expect(validateCampaignState(state)).toMatchObject({
       kind: 'failure',
       issue: { path: `/experiments/runsById/${id}/finalResultBand` },
+    });
+  });
+});
+
+describe('MR-IF-002 v6 connected content validation', () => {
+  const checkedSlice = () => {
+    const checked = validateContentPackage(builtContentFixture());
+    if (checked.kind === 'invalid') throw new Error('Controlled content fixture failed');
+    return checked.value;
+  };
+  const sliceState = (): CampaignState =>
+    initialCampaign({ ...standardInput, buildProfileId: 'slice' });
+
+  it('accepts only the five exact dormant slice identities and returns a checked copy', () => {
+    const content = checkedSlice();
+    const state = sliceState();
+    const before = structuredClone(state);
+    const result = validateCampaignStateAgainstContent(state, content.metadata, content.rules);
+    expect(result.kind).toBe('success');
+    expect(state).toEqual(before);
+    if (result.kind === 'failure') return;
+    expect(result.value).not.toBe(state);
+    expect(result.value.metadata).not.toBe(state.metadata);
+  });
+
+  it('rejects profile identity mismatch at the exact state path', () => {
+    const content = checkedSlice();
+    const state = sliceState();
+    state.metadata.buildProfileId = 'full';
+    expect(validateCampaignStateAgainstContent(state, content.metadata, content.rules)).toEqual({
+      kind: 'failure',
+      issue: { path: '/metadata/buildProfileId', reason: 'invalidReference' },
+    });
+  });
+
+  it('rejects an activated omitted room at its condition path', () => {
+    const content = checkedSlice();
+    const state = sliceState();
+    state.world.roomStatesById['MR-ROOM-IMAGING-BOOKING']!.condition = 'unresolved';
+    expect(validateCampaignStateAgainstContent(state, content.metadata, content.rules)).toEqual({
+      kind: 'failure',
+      issue: {
+        path: '/world/roomStatesById/MR-ROOM-IMAGING-BOOKING/condition',
+        reason: 'invalidReference',
+      },
+    });
+  });
+
+  it('rejects a non-null omitted reviewer form at its form path', () => {
+    const content = checkedSlice();
+    const state = sliceState();
+    state.manuscript.reviewerReportsById['MR-REC-REVIEWER-1']!.form = 'base';
+    expect(validateCampaignStateAgainstContent(state, content.metadata, content.rules)).toEqual({
+      kind: 'failure',
+      issue: {
+        path: '/manuscript/reviewerReportsById/MR-REC-REVIEWER-1/form',
+        reason: 'invalidReference',
+      },
+    });
+  });
+
+  it('correlates each saved experiment option with its exact nested kind and owner', () => {
+    const content = checkedSlice();
+    const state = sliceState();
+    const run = configuredRun({
+      id: 'run:MR-EXP-LASER-SHAM:1',
+      templateId: 'MR-EXP-LASER-SHAM',
+      goalId: 'MR-EXP-LASER-SHAM-GOAL-REPLICATION',
+      controlId: 'MR-EXP-LASER-SHAM-CONTROL-MATCHED',
+      observationId: 'MR-EXP-LASER-SHAM-OBSERVATION-STRUCTURE',
+      familyChoiceId: 'MR-EXP-LASER-SHAM-FAMILY-BASELINE',
+      equipmentId: 'MR-EXP-LASER-SHAM-EQUIPMENT-READY',
+    });
+    addConfiguredRun(state, run);
+    expect(validateCampaignStateAgainstContent(state, content.metadata, content.rules).kind).toBe(
+      'success',
+    );
+    state.experiments.runsById[run.id]!.goalId = 'MR-EXP-LASER-SHAM-CONTROL-MATCHED';
+    expect(validateCampaignStateAgainstContent(state, content.metadata, content.rules)).toEqual({
+      kind: 'failure',
+      issue: { path: `/experiments/runsById/${run.id}/goalId`, reason: 'invalidReference' },
     });
   });
 });
