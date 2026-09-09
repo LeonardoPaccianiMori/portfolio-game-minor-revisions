@@ -313,3 +313,15 @@ OpenAI, actual exact model and effort `unknown`, read-only `step6_source_scan`: 
 OpenAI, actual exact model and effort `unknown`, fresh read-only Step 6 high-level review: reviewed the initial complete candidate. Requested routing was `gpt-6-astra` / `xhigh`; actual runtime metadata was not exposed. It confirmed the source counts, ownership, four-order activation sequence and approval boundary. It required corrections to the source-packet and evidence shapes, deferred records, pending examples and the preserved `MR-S12-EVL-001` meaning. Primary verified and applied those corrections. The reviewer made no edit, used no mutating tool, contacted no user and spawned no agent.
 
 OpenAI, actual exact model and effort `unknown`, fresh read-only `step6_corrected_review`: reviewed the corrected complete candidate and performed focused re-checks after primary repairs. Requested routing was `gpt-6-astra` / `xhigh`; actual runtime metadata was not exposed. It found and closed the unsupported SEM-17 execution claim, application-controller and per-method pending setup, partial-cleanup call, exact deferred operation and 41-setup records, and non-circular evidence activation sequence. Its final result was PASS with no blocker or required finding. It made no edit, used no mutating tool, contacted no user and spawned no agent.
+
+## 2026-09-09 — Step 6 authority activation
+
+Leonardo explicitly approved the complete reviewed `MR-IF-015 v2` amendment
+and all four exact implementation work orders. OpenAI `gpt-6`, primary, actual
+reasoning effort `unknown`: synchronized clean `main`, verified the approved
+packet against the frozen sources, applied the thirteen approved authority and
+control updates, froze `MR-IF-015 v2`, resolved `MR-IMP-OPEN-022`, and prepared
+the first exact activation pair. No fixture code, execution result, Step 6
+acceptance, runtime source, root content, dependency, lockfile, asset, network,
+deployment, licence, visibility, public, or Career Center change is claimed by
+this authority record.

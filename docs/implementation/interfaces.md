@@ -41,7 +41,7 @@ accepted result remains historical evidence and is not rewritten.
 | MR-IF-012 | Audio bus, cue, and dialogue-sound request                        | S10          | UI, rules effects, world, cutscenes, settings, tests                                                        | Frozen | `v1`; owner: `audio`                                                                                                                                                               | One context; exactly four total buses; exact volume, mute, ambience, spatial-source, cue-priority, music-role, dialogue-palette, caption, unavailable, suspended-context, restoration, and teardown contract; `MR-S10-SCN-001` and `MR-S10-RES-001`; S11 compatibility consumers; S12 executable format; S14 audit                                                                           |
 | MR-IF-013 | Asset and resource ownership lifecycle                            | S10          | Application, world, renderer, UI, cutscenes, audio, bootstrap diagnostics, tests                            | Frozen | `v1`; preparation-order owner: `application`; visual-resource owner: `rendering`; audio-resource owner: `audio`; DOM-presentation owner: `ui`; provenance owner: asset manifest    | Specialist ownership; stable plain records; initial preparation; sharing inside one resource owner; already-loaded background preparation; required and optional failure; cancellation; late result; release; placeholder; provenance; context loss; and teardown; `MR-S10-RND-001`, `MR-S10-SCN-001`, and `MR-S10-RES-001`; S11 resource-budget consumers; S12 executable format; S14 audit |
 | MR-IF-014 | Compatibility, performance, and sanitized diagnostic record       | S11          | Bootstrap, platform, persistence boundary, rendering, input, audio, settings, UI, tests, private evaluation | Frozen | `v1`; compatibility owner: `platform`; graphics-budget owner: `rendering`; diagnostic-conversion owner: bootstrap's private diagnostic adapter; evidence owner: private evaluation | Exact six-capability report, temporary probe lifecycle, three profiles, frame, processor, workload, memory, loading and download budgets, measurement and failure rules, sanitized 2-KiB record, and `MR-S11-CMP-001`, `MR-S11-PERF-001`, `MR-S11-DIA-001`; S12 executable format; S14 audit                                                                                                 |
-| MR-IF-015 | Test fixture and traceability format                              | S12          | Every module, future work package, reviewer, and test suite                                                 | Frozen | `v1`; future owner: `MR-WP-09 Quality and release preparation`                                                                                                                     | Strict fixture envelope, stable manifest, shared-resource rules, closed steps, exact expectations, atomic acceptance rows, two-way requirement/test/interface/content/specification traceability, evidence classification, fixture self-checks, S02–S12 case routes, all seven S13 ownership, graph, work-order, Git, review, contribution, and gate groups, and S14 audit                   |
+| MR-IF-015 | Test fixture and traceability format                              | S12          | Every module, future work package, reviewer, and test suite                                                 | Frozen | `v2`; owner: `MR-WP-09 Quality and release preparation`; `v1` superseded                                                                                                           | Strict fixture envelope, stable manifest, shared-resource rules, closed steps, exact expectations, atomic acceptance rows, two-way requirement/test/interface/content/specification traceability, evidence classification, fixture self-checks, S02–S12 case routes, all seven S13 ownership, graph, work-order, Git, review, contribution, and gate groups, and S14 audit                   |
 
 ## S14 freeze state
 
@@ -121,3 +121,20 @@ MR-IMP-DEC-310 freezes these successors for Step5. The exact shapes, operations,
 | MR-IF-010 | v3               | v2         | Keep ordered static tutorial action/label rows in content and join the current S09 binding only in the UI projection.                                                                                                  | UI owns the joined prompt view; content supplies static rows and input supplies current bindings.                    |
 
 MR-IF-007 v2 and every other interface version remain unchanged. No schema-1 campaign migration is added. This freeze is implementation authority, not runtime or acceptance evidence.
+
+## 2026-09-09 Step 6 freeze and supersession
+
+MR-IMP-DEC-311 supersedes `MR-IF-015 v1` with frozen `v2`. Historical `v1`
+remains evidence of the S12/S14 specification state before Step 6. The exact
+normative v2 contract is sections 4–10 of
+`analysis/step-06-fixture-contract.md`, together with its section 3 baseline
+corrections and sections 11–13 execution boundary.
+
+Version 2 defines strict bytes and JSON decoding, the complete fixture and
+expectation unions, closed registries, exact resources and change operations,
+phase-aware present/reference/deferred routes, the 45-row matrix, 103 executable
+wrappers, 48 reference-only wrappers, 41 deferred setups, and separate expected
+data, executed result, and campaign-journey claims. It uses campaign schema `2`,
+content envelope schema `1`, content version `1.1.0`, and complete profile
+`slice`. It does not create a campaign or content migration. No
+`MR-IF-001`–`MR-IF-014` version changes.

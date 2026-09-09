@@ -1015,11 +1015,11 @@ approval before implementation.
 
 ### Plan and authority
 
-Leonardo approved bounded contract preparation and correction of the reference-trace count from 12 to 13 on 2026-09-09. Preparation can add the candidate contract and plan, update five control records, validate the packet and obtain one fresh Astra xhigh high-level review. It cannot freeze `MR-IF-015 v2`, create fixtures or tests, execute Step 6 evidence, start Step 7 or record Step 6 acceptance.
+Leonardo approved the complete reviewed `MR-IF-015 v2` amendment and all four exact implementation work orders on 2026-09-09. MR-IMP-DEC-311 freezes the interface and authorizes the sequential Step 6 fixture foundation. It does not record implementation evidence, Step 6 acceptance, or Step 7 authority.
 
 ### Leonardo contribution
 
-Leonardo requested Step 6, approved its bounded preparation plan and selected preservation of all 13 existing reference traces.
+Leonardo requested Step 6, approved its bounded preparation plan, selected preservation of all 13 existing reference traces, and approved the final shared-contract amendment and four exact work orders.
 
 ### Agent contribution
 
@@ -1027,7 +1027,7 @@ The primary completed the exact phase-aware fixture, manifest, acceptance-matrix
 
 ### Files and commits
 
-Candidate files are `analysis/step-06-fixture-contract.md` and `plans/step-06-fixture-foundation.md`. The preparation commit is not yet recorded. No implementation file exists.
+Candidate files are `analysis/step-06-fixture-contract.md` and `plans/step-06-fixture-foundation.md`. Preparation commit `d8bad353f9b280b97ca73c222830a53bc6676a1f` contains the reviewed packet. The authority commit and implementation files do not yet exist.
 
 ### Automated and review evidence
 
@@ -1039,12 +1039,12 @@ Not applicable to preparation. The later invisible foundation checkpoint will us
 
 ### Observed result and corrections
 
-The accepted implementation uses campaign schema `2`, content version `1.1.0` and a complete slice. Historical S12 fixture text still uses schema `1`, content `1.0.0` and full. The current trace source contains 13 records while design 7 says 12. Leonardo approved correcting the count to 13; the version/profile correction remains in the candidate amendment.
+The accepted Step 5 implementation uses campaign schema `2`, content version `1.1.0`, and a complete slice. Historical S12 fixture text used schema `1`, content `1.0.0`, and full. Design 7 also said 12 traces while the source contained 13. MR-IMP-DEC-311 now corrects these authority facts. It does not claim a fixture result.
 
 ### Acceptance decision
 
-Pending. Preparation approval is not Step 6 implementation approval or acceptance.
+Pending. The contract and implementation plan are approved. Step 6 still needs implementation, validation, detailed review, Leonardo evidence review, and a separate acceptance decision.
 
 ### Known limitations and next boundary
 
-Present the complete reviewed `MR-IF-015 v2`, authority amendments and four work orders for Leonardo's decision. Step 6 code and Step 7 remain blocked.
+Commit the approved authority amendment. Then activate `MR-WO-WP09-001` from the observed authority base. Later orders remain blocked until each prior submission is verified and integrated. Step 7 remains blocked.

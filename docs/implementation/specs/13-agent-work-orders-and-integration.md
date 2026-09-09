@@ -730,3 +730,42 @@ The primary's responsibilities and the existing work-order, ownership, review, t
 MR-IMP-DEC-310 approves the exact work-order and ownership sequence in `analysis/step-05-content-contract.md` subsection20.7. The amendment commit is the worker base. The later authorization commit contains `MR-WO-WP01-004`; the worker reads it through `git show` without changing its base. WP01 runs the existing pre-WP00 build plus coverage. The assembled candidate later runs content/profile/slice/verify checks. Its worker commit begins `MR-WP-01`.
 
 The primary assembles a candidate branch in dependency order: authorization, verified WP01 submission, WP07 catalogue, WP00 wiring. It audits that branch before one fresh Sol xhigh detailed review. Main integration and push occur only after no blocker or required finding remains. The exact selection reasons, bases, retained primary work and later evidence owners in the approved packet are mandatory.
+
+## 2026-09-09 — Approved Step 6 work-order sequence
+
+MR-IMP-DEC-311 authorizes four non-overlapping and sequential work orders:
+`MR-WO-WP09-001`, `MR-WO-WP00-010`, `MR-WO-WP01-005`, and
+`MR-WO-WP09-002`. One controlled OpenAI `gpt-5.6-sol` worker with `high`
+reasoning performs each order. The primary creates one order only after the
+prior submission is verified and integrated.
+
+Each order uses an activation pair. First, the primary records the observed
+40-character main commit as `base_commit` in the complete order. Second, the
+primary commits that order in its own authorization commit. The worker starts
+from the recorded base and reads the order with
+`git show <authorization-commit>:<work-order-path>`. No order contains its own
+commit hash. No activated field can contain a placeholder or wildcard-owned
+path.
+
+The exact ownership, source packets, branches, worktrees, fixture lists,
+checks, and handoffs are section 12 of
+`../analysis/step-06-fixture-contract.md`. WP09 first owns shared fixture types,
+decoder, schema, loader, and temporary-set self-tests. WP00 then owns the nine
+S02 wrappers, runner, and evidence test. WP01 then owns the 22 S03 wrappers, 49
+S06 wrappers, 48 reference-only S12 wrappers, five resources, source-packet
+mapping, runner, and evidence test. Final WP09 owns the manifest, matrix, 23
+FMT/DOC/EVD wrappers, traceability and document utilities, and four audit
+tests.
+
+Every package runs its focused tests, typecheck, lint, format check, all unit
+tests, and whitespace check. WP01 also runs coverage, content check, and slice
+build. Final WP09 and main run the complete check and verify commands. The
+primary audits each submission and integrates it before the next order exists.
+A fresh separate OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning reviews
+the complete implementation after the primary audit. No required check can be
+skipped or retried automatically.
+
+The primary alone owns order files, control records, integration, final
+evidence, push, and communication with Leonardo. Workers do not change runtime
+source, root content, configuration, dependencies, lockfile, assets, network,
+deployment, licence, visibility, Career Center, or another order's paths.

@@ -20,7 +20,7 @@ narrative authority, or a vote on implementation. Its recommendations do not
 change the design until Leonardo accepts them. The review must be discussed
 before Leonardo considers the separate implementation-readiness approval.
 
-No test result exists yet. This document defines future evidence only.
+Ordinary implementation tests exist for accepted Steps 1–5. Before Step 6, no S12 machine-readable fixture set or S12 evidence summary exists. Historical statements about absent evidence keep their original time boundary.
 
 S12 now fixes the future strict JSON fixture envelope, stable manifest and
 case IDs, atomic acceptance rows, controlled shared resources and actions,
@@ -134,13 +134,14 @@ MR-TEST-EXP-001 must show that:
   demonstrated cause; and
 - no valid path needs a perfect outcome or a crash.
 
-The rules suite must also reproduce the updated paper fixture counts: minimum
-defensible demand of 44 periods and 26 energy before late-work surcharge;
-thorough-honest demand of 56 periods and 30 energy; and maximizing demand of
-79 periods and 46 energy. The optimistic Standard totals are 55, 69, and 100;
-the Supported totals are 51, 65, and 93. It must not claim that the
-thorough-honest fixture fits either profile until a later approved balance
-decision changes the input rules.
+The rules suite must reproduce the approved C01 paper arithmetic. The three
+reference routes have non-break demands of 39, 50, and 69 periods and base
+energy demands of 21, 24, and 36. Their optimistic Standard totals are 48, 60,
+and 85. Their optimistic Supported totals are 45, 57, and 80. These values omit
+surcharges, recovery-cap loss, and room costs. They are reference arithmetic,
+not feasibility proof. The suite must also preserve all thirteen named schedule
+traces. It must not claim that a route fits a profile until the required rule and
+journey evidence exists.
 
 The minimum-defensible fixture must remain achievable in both profiles while
 giving up meaningful optional work. No fixture can require personal misconduct
@@ -545,3 +546,20 @@ The named Gates 4A, 6A and 26A in `implementation/development-roadmap.md` supple
 ## Correction C05: length and play evidence
 
 Retain the 6,000-unique-word vocabulary cap. Also report total authored word tokens and words seen in representative runs, including compulsory text, chosen options, displayed results and ending modules. Repeated words count each time in the latter measures. Report optional-reading volume separately. Before runtime strings exist, catalogue-table counts are provisional and must state which tables/columns were included. Calculate reading-only estimates at 150, 200 and 250 words per minute; none proves game duration. Measure actual private play after mechanics and readable presentation exist. Keep 90/180-minute targets and scene durations as targets, not measured facts or forced reading timers. Do not pad text to reach them.
+
+## 2026-09-09 — Step 6 fixture evidence boundary
+
+MR-IMP-DEC-311 approves the strict phase-aware fixture foundation. Step 6 can
+prove fixture structure and can execute only current public S02, S03, S06, and
+S12 operations. It preserves unavailable game-rule and campaign cases as
+reference-only files or deferred manifest routes. A structurally valid fixture
+is expected test data. It is not proof that a campaign journey occurred.
+
+The current baseline is campaign schema `2`, content envelope schema `1`,
+content version `1.1.0`, and complete profile `slice`. Full and fallback remain
+incomplete and reject builds. Test-only future-profile data cannot enter
+`content/`, `dist/`, or a browser package. Gate 6A retains all thirteen schedule
+traces and twenty-six semantic source cases without claiming unavailable rule
+execution. `MR-S12-EVL-001` keeps its private qualitative-evaluation meaning.
+The new `MR-S12-EVD-001` group validates the evidence-summary structure only.
+The actual evidence document needs its separate post-command audit.

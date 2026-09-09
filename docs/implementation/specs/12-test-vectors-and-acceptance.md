@@ -948,3 +948,54 @@ The named Gates 4A, 6A and 26A in `../development-roadmap.md` supplement the int
 ## 2026-09-08 — Step5 validation boundary
 
 MR-IMP-DEC-310 requires Step5 unit cases for all strict envelopes, duplicate JSON members, references, selected semantic facts, text/placeholders/word limits, checked copies and views, profile isolation, the five dormant IDs and safe startup failure. `test:build-profiles` must prove default/full/fallback rejection and successful slice isolation. These are ordinary Step5 tests; Step6 still owns the general S12 fixture schema and manifest. Step14 owns generic migration mechanics. Step52 owns complete fallback package/migration evidence and Step69 owns complete full package/migration evidence. Gate6A and later rules own executed journeys.
+
+## 2026-09-09 — `MR-IF-015 v2` fixture foundation amendment
+
+MR-IMP-DEC-311 supersedes the earlier v1 fixture format with the exact reviewed
+v2 contract in `../analysis/step-06-fixture-contract.md`. Sections 4–10 of that
+contract are normative for schema, registries, resources, present cases,
+deferred routes, and the acceptance-matrix phase map. Section 3 supplies the
+current schema/profile and evidence corrections. Sections 11–13 supply the
+check-safe activation and proof boundary. Earlier S12 text remains historical
+where it describes the pre-Step-6 candidate.
+
+The current fixed totals are 103 executable fixture wrappers, 48 reference-only
+wrappers, 151 wrappers in total, 41 exact deferred setups, 45 acceptance rows,
+13 unique schedule traces, 26 semantic source cases, 144 laser rows, 97 slice
+items, 213 strings, 23 source content paths, and 10 parseable contract examples.
+`MR-S12-SEM-001-C017` is reference-only and requires future operation
+`MR-OP-S23-VALIDATE-SCIENTIFIC-FACTS`. Current S06 validation does not compare
+saved `scientificFacts` with observation meaning.
+
+All fixture JSON objects are strict. Decoding rejects invalid UTF-8, a byte
+order mark, wrong line endings, a missing or extra final newline, malformed
+JSON, duplicate members including escaped duplicates, unsafe paths, unknown
+fields, and unresolved IDs. Every successful load returns a checked copy. Every
+failed load returns ordered issues and no partial value. `RawSourceFiles`
+conversion preserves exact bytes. Controlled source changes use only registered
+files, paths, operations, and special values. Pending fake calls use one
+invocation queue per method. The partial world-cleanup call remains registered.
+
+The manifest lists every present executable or reference-only file and every
+deferred group, case, and setup route. Reference-only files are schema-checked
+and rejected by the executable loader. Deferred routes have no file or expected
+result. The 45 acceptance rows retain their specification-time evidence state.
+A complete route means that the route exists; it does not mean that the
+condition passed.
+
+`MR-S12-ACC-010` now reads: “Standard and Supported action costs, zero-cost
+configuration, breaks, surcharges, push-through, crash, corrected C01 paper
+arithmetic, and all 13 named trace calculations match their approved values.”
+The C01 paper values are non-break demand `39`, `50`, and `69`; base energy
+`21`, `24`, and `36`; optimistic Standard totals `48`, `60`, and `85`; and
+optimistic Supported totals `45`, `57`, and `80`. They omit surcharges,
+recovery-cap loss, and room costs and do not prove route feasibility.
+
+The baseline uses campaign schema `2`, content envelope schema `1`, content
+version `1.1.0`, and complete profile `slice`. Full and fallback remain
+incomplete. Step 6 does not implement their packages or migrations. It does not
+execute unavailable S04/S05 rules, persistence, world, input, rendering,
+cutscene, audio, performance, release, or campaign-journey operations.
+`MR-S12-EVD-001` validates evidence-summary shape. It does not replace the
+separate audit of the actual Step 6 evidence document. `MR-S12-EVL-001` keeps
+its qualitative evaluation meaning.

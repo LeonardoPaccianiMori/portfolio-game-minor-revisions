@@ -45,24 +45,24 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current issues: `MR-IMP-OPEN-001`–`019` and `021` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window. `MR-IMP-OPEN-022` is the active Step 6 fixture-contract preparation issue.
+- Current issues: `MR-IMP-OPEN-001`–`019` and `021`–`022` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window and does not block Step 6.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: present the complete reviewed Step 6 amendment and four implementation work orders for Leonardo's decision.
-- Prohibited next action: freeze `MR-IF-015 v2` or implement Step 6, Three.js, assets, deployment, release, visibility or public work before the exact reviewed packet is approved.
+- Next action: commit the approved authority amendment, then activate and execute `MR-WO-WP09-001` from its observed base.
+- Prohibited next action: start a later Step 6 order before its dependency is verified and integrated, or start Step 7, Three.js, assets, deployment, release, visibility, or public work.
 
 ## Durable progress summary
 
-| Work group                 | State                                                  | Result                                                                                                                                               |
-| -------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                             |
-| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
-| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
-| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. Step5 freezes `MR-IF-002 v6`, `003/005/006/010 v3`; `007` remains `v2`; other interfaces remain `v1`.                        |
-| Incremental implementation | Steps 1–5 accepted                                     | Reviewed Step 5 code is integrated, main-validated, directly tested, and accepted.                                                                   |
-| Vertical slice             | Step 5 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
-| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
+| Work group                 | State                                                  | Result                                                                                                                                                      |
+| -------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Creative and game design   | Complete for the current baseline                      | B00–B10 and numbered design documents are authoritative.                                                                                                    |
+| Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                        |
+| Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded.        |
+| Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. Step5 freezes `MR-IF-002 v6`, `003/005/006/010 v3`; Step6 freezes `MR-IF-015 v2`; `007` remains `v2`; other interfaces remain `v1`. |
+| Incremental implementation | Steps 1–5 accepted                                     | Reviewed Step 5 code is integrated, main-validated, directly tested, and accepted.                                                                          |
+| Vertical slice             | Step 5 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                                     |
+| Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                          |
 
 ## Session-resume procedure
 
@@ -108,4 +108,4 @@ Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-m
 
 ## 2026-09-09 — Step 6 contract preparation complete
 
-Leonardo approved bounded preparation of the Step 6 fixture contract and corrected the reference-trace count from 12 to 13. The complete reviewed candidate defines phase-aware `MR-IF-015 v2`, 103 executable and 48 reference-only wrappers, 41 exact deferred setups, the 45-row matrix, current S02/S03/S06 evidence, preserved Gate 6A data, unavailable future routes and four exact work orders. Primary checks and the final focused high-level review passed. The packet now awaits Leonardo's combined amendment and implementation-plan decision. Frozen authority and implementation remain unapproved.
+Leonardo approved bounded preparation of the Step 6 fixture contract and corrected the reference-trace count from 12 to 13. The complete reviewed candidate defines phase-aware `MR-IF-015 v2`, 103 executable and 48 reference-only wrappers, 41 exact deferred setups, the 45-row matrix, current S02/S03/S06 evidence, preserved Gate 6A data, unavailable future routes and four exact work orders. Primary checks and the final focused high-level review passed. Leonardo approved the combined amendment and all four implementation work orders. MR-IMP-DEC-311 freezes `MR-IF-015 v2`, resolves MR-IMP-OPEN-022, and authorizes sequential Step 6 implementation. No fixture implementation result or Step 6 acceptance is yet claimed.

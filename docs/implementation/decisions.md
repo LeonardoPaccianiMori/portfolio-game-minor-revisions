@@ -357,3 +357,26 @@ The following original record is copied from the combined submission; it predate
 Leonardo approved the complete reviewed candidate on 2026-09-08. Freeze MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3. The exact normative contract is `analysis/step-05-content-contract.md`: sections2–13,16,18–20, with section20 taking precedence over an earlier conflicting candidate sketch. Confirm D2, D5, D6 and D7. Retain approved D1/D3 and existing D4.
 
 The implementation uses the exact two-commit authority/work-order binding and the WP01, WP07 and WP00 ownership and check sequence in section20.7. The worker uses OpenAI `gpt-5.6-sol` with `high` reasoning. The fresh detailed implementation review uses a separate OpenAI `gpt-5.6-sol` reviewer with `xhigh` reasoning. Review must have no blocker or required finding before main integration. Only the slice can be complete. Full/fallback remain incomplete and reject build. No dependency, lockfile, asset, licence, deployment, visibility, release, Step6 or Career Center change is authorized. Leonardo testing and Step5 acceptance remain separate.
+
+## MR-IMP-DEC-311 — Approved Step 6 fixture foundation
+
+Leonardo approved the complete reviewed `MR-IF-015 v2` amendment and all four
+exact Step 6 implementation work orders on 2026-09-09. Freeze `MR-IF-015 v2`
+and supersede v1 for future fixture work. Preserve all 13 schedule traces,
+campaign schema `2`, content envelope schema `1`, content version `1.1.0`, and
+complete profile `slice`. Keep full and fallback incomplete.
+
+The normative contract is `analysis/step-06-fixture-contract.md`, sections
+3–13. It fixes 103 executable wrappers, 48 reference-only wrappers, 41 deferred
+setups, 45 acceptance rows, closed registries, exact resources, phase routes,
+evidence boundaries, and the four activation pairs. The sequence is
+`MR-WO-WP09-001`, `MR-WO-WP00-010`, `MR-WO-WP01-005`, then
+`MR-WO-WP09-002`, with one controlled OpenAI `gpt-5.6-sol` worker using `high`
+reasoning. A fresh OpenAI `gpt-5.6-sol` reviewer using `xhigh` reasoning reviews
+the complete implementation.
+
+This decision authorizes only the approved Step 6 fixture foundation. It does
+not implement or accept Step 6, execute an unavailable game rule or campaign
+journey, start Step 7, or authorize runtime, content, dependency, lockfile,
+asset, network, deployment, licence, visibility, release, public, or Career
+Center changes.

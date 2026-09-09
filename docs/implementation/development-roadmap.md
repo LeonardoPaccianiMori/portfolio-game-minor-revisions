@@ -286,9 +286,10 @@ The corrected Step 4 and Gate 4A are accepted. Leonardo approved the exact
 Step 5 contracts and implementation plan on 2026-09-08. The reviewed WP01,
 WP07, and WP00 commits are integrated on local `main`. Complete main checks
 passed. Leonardo supplied the expected startup screenshot and explicitly
-accepted Step 5 on 2026-09-09. Prepare the separate exact Step 6 plan next.
-Step 6 implementation, Three.js, game systems, asset research, licence,
-deployment, and public action remain blocked.
+accepted Step 5 on 2026-09-09. Leonardo then approved the reviewed Step 6
+fixture amendment and four sequential work orders. Step 6 implementation is
+authorized within MR-IMP-DEC-311. Three.js, game systems, asset research,
+licence, deployment, public action, and Step 7 remain blocked.
 
 ## Correction gates attached to existing steps
 
