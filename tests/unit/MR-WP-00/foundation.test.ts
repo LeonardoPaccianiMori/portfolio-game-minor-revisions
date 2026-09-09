@@ -95,7 +95,9 @@ describe('MR-WP-00 foundation', () => {
       'setup:browsers':
         'cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium firefox webkit',
       dev: 'vite',
+      'dev:slice': 'vite --mode slice',
       build: 'npm run typecheck && vite build',
+      'build:slice': 'npm run typecheck && vite build --mode slice',
       preview: 'vite preview',
       typecheck: 'tsc --noEmit',
       lint: 'eslint .',
@@ -104,12 +106,21 @@ describe('MR-WP-00 foundation', () => {
       test: 'vitest run',
       'test:coverage': 'vitest run --coverage',
       'test:e2e': 'cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright test',
-      check: 'npm run typecheck && npm run lint && npm run format:check && npm test',
+      'content:check': 'node --experimental-strip-types scripts/check-content.ts',
+      'test:build-profiles':
+        'node --experimental-strip-types --test scripts/test-build-profiles.ts',
+      check:
+        'npm run typecheck && npm run lint && npm run format:check && npm test && npm run content:check',
       verify:
-        'npm run lint && npm run format:check && npm run test:coverage && npm run build && npm run test:e2e',
+        'npm run lint && npm run format:check && npm run test:coverage && npm run content:check && npm run test:build-profiles && npm run build:slice && npm run test:e2e',
     });
     expect(Object.keys(typeScriptConfig).sort()).toEqual(['compilerOptions', 'include']);
-    expect(typeScriptConfig.include).toEqual(['*.ts', 'src/**/*.ts', 'tests/**/*.ts']);
+    expect(typeScriptConfig.include).toEqual([
+      '*.ts',
+      'scripts/**/*.ts',
+      'src/**/*.ts',
+      'tests/**/*.ts',
+    ]);
     expect(typeScriptConfig.compilerOptions).toEqual({
       exactOptionalPropertyTypes: true,
       forceConsistentCasingInFileNames: true,
@@ -128,6 +139,7 @@ describe('MR-WP-00 foundation', () => {
       strict: true,
       target: 'ES2022',
       types: ['node'],
+      allowImportingTsExtensions: true,
       verbatimModuleSyntax: true,
     });
     expect(viteConfig).toContain(`base: './',
@@ -302,7 +314,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['tests/**/*.ts'],
+    files: ['scripts/**/*.ts', 'tests/**/*.ts'],
     languageOptions: {
       globals: globals.node,
     },
@@ -353,7 +365,7 @@ export default defineConfig({
     video: 'off',
   },
   webServer: {
-    command: 'npm run dev',
+    command: 'npm run dev:slice',
     reuseExistingServer: false,
     url: 'http://127.0.0.1:5173',
   },

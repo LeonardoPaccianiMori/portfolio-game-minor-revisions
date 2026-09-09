@@ -1,3 +1,5 @@
+import contentSource from 'virtual:minor-revisions-content';
+
 import {
   bootstrapApplication,
   isCampaignStateDiagnosticLocation,
@@ -10,6 +12,6 @@ if (root instanceof HTMLElement) {
   if (isCampaignStateDiagnosticLocation(window.location.search)) {
     renderCampaignStateDiagnostic(root);
   } else {
-    bootstrapApplication(root);
+    bootstrapApplication(root, contentSource);
   }
 }

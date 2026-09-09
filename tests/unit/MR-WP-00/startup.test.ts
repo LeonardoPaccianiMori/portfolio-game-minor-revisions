@@ -473,6 +473,17 @@ describe('Step-2 StartupScreen', () => {
     ).toBe(overall === 'degraded');
   });
 
+  it('shows the fixed safe content failure without technical details', () => {
+    const harness = screenHarness();
+    harness.screen.showContentInvalid();
+
+    expect(harness.byText('Minor Revisions')).toBeDefined();
+    expect(harness.byText('Content check blocked')?.attributes.get('role')).toBe('alert');
+    expect(
+      harness.byText('Game content could not be verified. No saved campaign data was changed.'),
+    ).toBeDefined();
+  });
+
   it('lists all blocking reasons together and focuses one semantic retry action', () => {
     const retry = vi.fn();
     const harness = screenHarness();

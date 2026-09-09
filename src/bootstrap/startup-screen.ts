@@ -16,6 +16,9 @@ type StartupScreenAdapters = Readonly<{
 
 type StartupDocument = Readonly<Pick<Document, 'createElement'>>;
 
+export const CONTENT_INVALID_MESSAGE =
+  'Game content could not be verified. No saved campaign data was changed.';
+
 const element = <K extends keyof HTMLElementTagNameMap>(
   startupDocument: StartupDocument,
   tag: K,
@@ -62,6 +65,15 @@ export class StartupScreen {
       );
     }
     this.replace(...nodes);
+  }
+
+  public showContentInvalid(): void {
+    const title = element(this.startupDocument, 'h1', 'Minor Revisions');
+    const stage = element(this.startupDocument, 'p', 'Content check blocked');
+    stage.className = 'startup-stage';
+    stage.setAttribute('role', 'alert');
+    const message = element(this.startupDocument, 'p', CONTENT_INVALID_MESSAGE);
+    this.replace(title, stage, message);
   }
 
   public showBlocked(report: CompatibilityReport, retry: () => void): void {

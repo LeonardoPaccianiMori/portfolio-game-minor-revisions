@@ -40,7 +40,10 @@ describe('Step-3 runtime architecture', () => {
       for (const imported of imports(file.source)) {
         const crossModule = imported.match(/^\.\.\/([^/]+)(?:\/(.+))?$/u);
         if (crossModule === null) continue;
-        expect(crossModule[2], `${file.module}/${file.name}: ${imported}`).toBeUndefined();
+        expect(
+          crossModule[2] === undefined || crossModule[2] === 'index.ts',
+          `${file.module}/${file.name}: ${imported}`,
+        ).toBe(true);
         const target = crossModule[1];
         if (target !== undefined) {
           const targets = edges.get(file.module) ?? new Set<string>();
@@ -54,6 +57,7 @@ describe('Step-3 runtime architecture', () => {
     expect([...(edges.get('platform') ?? [])]).toEqual(['application']);
     expect([...(edges.get('bootstrap') ?? [])].sort()).toEqual([
       'application',
+      'content',
       'platform',
       'rules',
     ]);
