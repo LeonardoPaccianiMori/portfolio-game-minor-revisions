@@ -282,13 +282,12 @@ submissions and complete audit passed their checks, but complete independent
 review blocked integration. Leonardo approved `MR-IF-002 v3` and superseding
 `MR-WO-WP01-002` and `MR-WO-WP00-007`. The rules correction runs first; the
 diagnostic correction waits for its verified submission.
-The next complete review found four further required issues. The resumed Sol
-`high` worker proved that `v3` could not represent the exact route and PIIM
-prerequisites and stopped without edits. Leonardo approved frozen
-`MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
-2026-09-03.
-Step 5, Three.js, game systems, asset research, a remote, licence, deployment,
-and public action remain blocked.
+The corrected Step 4 and Gate 4A are accepted. Leonardo approved the exact
+Step 5 contracts and implementation plan on 2026-09-08. The reviewed WP01,
+WP07, and WP00 commits are integrated on local `main`. Complete main checks
+passed. Step 5 now awaits Leonardo's direct content-foundation check and
+explicit acceptance. Step 6, Three.js, game systems, asset research, licence,
+deployment, and public action remain blocked.
 
 ## Correction gates attached to existing steps
 
@@ -313,3 +312,12 @@ Leonardo explicitly accepted corrected Step 4 after supplying the expected diagn
 ## 2026-09-07 — Approved GitHub synchronization
 
 Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is still pending. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.
+
+## 2026-09-09 — Step 5 integrated; Leonardo testing
+
+The reviewed Step 5 implementation is integrated as `3de7304`, `0e606d0`,
+and `094ea1c`. Main check and verify pass 306 unit tests, required coverage,
+five build-profile tests, the 125-module slice build, and 21 browser tests.
+The slice contains 97 items and 213 strings. Full and fallback remain
+incomplete. Leonardo testing and explicit acceptance are next. Step 6 remains
+blocked.

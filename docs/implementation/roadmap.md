@@ -228,21 +228,13 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-S00–S14 are documented, and no S15 is planned. Leonardo approved Gate 1,
-accepted Steps 1 and 2, and approved the exact Step-3 plan on 2026-09-02.
-The controlled `MR-WO-WP00-005` submission and complete primary audit are
-finished. Fresh independent technical review and its narrow current-record
-correction passed. The exact reviewed range is integrated on local `main`, and
-complete main validation passed. Leonardo accepted Step 3 on 2026-09-02 and
-then approved the exact Step-4 plan and evidence-led `MR-IF-002 v2`
-creation-input refinement. Complete review later blocked the first submissions.
-Leonardo approved `MR-IF-002 v3` and the two superseding correction orders.
-`MR-WO-WP01-002` runs first; `MR-WO-WP00-007` waits for its verified
-submission. A later complete review and clean blocked worker attempt proved
-that `v3` lacked typed route and PIIM proof. Leonardo approved frozen
-`MR-IF-002 v4`, active `MR-WO-WP01-003`, and waiting `MR-WO-WP00-008` on
-2026-09-03. Do not create a Three.js scene, game system, content, asset,
-licence, remote, deployment, public-action path, or Step-5 result.
+S00–S14 are documented, and no S15 is planned. Steps 1–4 and Gate 4A are
+accepted. The exact Step 5 contracts and implementation plan were approved on
+2026-09-08. Reviewed Step 5 content validation, source catalogue, build
+profiles, and startup gating are integrated on local `main`, and complete main
+validation passes. Leonardo now performs the direct Step 5 content-foundation
+check and makes a separate acceptance decision. Do not start Step 6, Three.js,
+assets, persistence, licence, deployment, release, visibility, or public work.
 
 ## Correction baseline C01–C06
 

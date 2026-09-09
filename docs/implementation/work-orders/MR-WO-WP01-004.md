@@ -1,11 +1,11 @@
 ---
 id: MR-WO-WP01-004
 type: implementation-work-order
-status: active
+status: integrated
 work_package: MR-WP-01
 sequence: 4
 created: 2026-09-08
-updated: 2026-09-08
+updated: 2026-09-09
 base_commit: 48ddfabfcbd06e9b787f230de37319766b3f9b6f
 provider: OpenAI
 model: gpt-5.6-sol
@@ -177,3 +177,10 @@ Submission is not review, integration, Leonardo testing or acceptance. The
 primary verifies the submitted commit, assembles WP07 and WP00 work, completes
 the primary audit and obtains a fresh Sol xhigh implementation review before
 main integration.
+
+The controlled worker submitted original commit
+`79792f34c36d094099e6540accd61cf7b124bf53`. The primary verified its exact
+21-path scope and integrated the same implementation, with Node 24 import
+compatibility, as `3de7304`. The assembled Step 5 candidate then received the
+required primary audit, complete review, correction, fresh focused review and
+main validation. Leonardo testing and Step 5 acceptance remain separate.

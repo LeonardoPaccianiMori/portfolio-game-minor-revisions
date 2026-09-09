@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 plan approved; implementation pending**
+Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 in Leonardo testing**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -33,13 +33,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    2 | Accepted                | 2026-09-01                       | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02                                    | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                                    | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02                       | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02                                      | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                                        | Four expected lines persisted after repeated reloads.                  |
 |    4 | Accepted                | 2026-09-02; amendment 2026-09-06 | Main 259 unit tests, required coverage, 115-module build, 21 browser flows; complete/focused reviews and record fixes passed                                                                     | Screenshots of both expected pages supplied 2026-09-06 | Leonardo explicitly accepted Step 4 on 2026-09-06                                                   | Reviewed correction a0b268f; integration 00029e2; handover d08ee26; containing acceptance commit | Prepare a separate Step 5 plan; implementation not yet approved.       |
-| 5–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
+|    5 | Leonardo testing        | 2026-09-08                       | 306 unit tests; 91.60% lines; 87.86% branches; five profile builds; 125-module slice build; 21 browser tests; complete and focused reviews passed                                                | Pending                                                | Pending                                                                                             | `3de7304`, `0e606d0`, `094ea1c`; containing record commit                                        | Content foundation only; no playable-game or journey claim.            |
+| 6–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                            | Next boundary                                          |
-| ---------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps1–3 separately accepted; MR-IMP-DEC-309 updates C01–C06 | Step 4 and Gate 4A accepted; separate Step 5 plan next |
+| Gate                               | State    | Leonardo decision | Effect                                                                                                      | Next boundary                                  |
+| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–4 separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Reviewed Step 5 result awaits Leonardo testing |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -936,3 +937,74 @@ commit contains the approved order. WP01 submission is next.
 MR-WO-WP01-004 is active in its isolated worktree at the exact authority base.
 This status starts only its owned WP01 implementation. WP07 and WP00 remain
 sequential primary work after the verified submission.
+
+## Step 05 — S06 content foundation
+
+### Plan and authority
+
+Leonardo approved the reviewed Step 5 contracts and exact WP01, WP07, and
+WP00 implementation sequence on 2026-09-08. MR-IMP-DEC-310 and the frozen
+successor interfaces define the scope. Step 6, assets, persistence, Three.js,
+deployment, release, licence, visibility, and Career Center changes remain
+outside this authority.
+
+### Leonardo contribution
+
+Leonardo selected the D1 and D3 meanings and approved D2, D5, D6, D7, the
+exact source manifest, English text, profile commands, ownership, checks, and
+implementation plan. His direct Step 5 test and acceptance decision are
+pending.
+
+### Agent contribution
+
+The controlled worker implemented WP01 content validation. The primary agent
+verified that submission, converted the approved WP07 catalogue, wired WP00
+profile-aware builds and safe startup, completed the audit, corrected review
+findings, integrated the reviewed commits, and ran complete main validation.
+The matching model records are in `ai-use-log.md`; technical details are in
+`MR-CONTRIB-WP01-004`.
+
+### Files and commits
+
+Authority commit: `48ddfab`. Authorization commit: `5602f41`. Activation
+commit: `9c257ac`. The reviewed main implementation is `3de7304` for WP01,
+`0e606d0` for WP07, and `094ea1c` for WP00.
+
+### Automated and review evidence
+
+Main `npm run check` passed type, lint, format, 306 unit tests, and the exact
+97-item and 213-string content check. Main `npm run verify` passed 91.60
+percent line coverage, 87.86 percent branch coverage, five real Vite profile
+tests, a 125-module slice build, and 21 Chromium, Firefox, and WebKit browser
+tests. Default full build rejection and stale-output removal also passed.
+
+The first complete review found no blocker and required correction of seven
+annotated labels. Its earlier progress finding identified three obsolete
+device-specific tutorial bodies. The primary corrected all ten strings and
+added a built-package regression assertion. The fresh focused review found no
+blocker, required finding, or advisory.
+
+### Leonardo test packet
+
+Pending. Run `npm run dev:slice`. Confirm `Minor Revisions`, `Ready`, `Startup
+checks passed.`, and `Game systems are not yet available.` Then review the
+plain passing result of the controlled invalid-package test. That test proves
+the exact safe message and proves application and persistence startup do not
+run.
+
+### Observed result and corrections
+
+Automated tests show a structurally valid slice catalogue and a checked browser
+package. They do not show a playable game or an executed campaign journey.
+The corrected source uses exact character names, plain location labels, and
+binding-neutral tutorial text.
+
+### Acceptance decision
+
+Pending Leonardo's direct test and explicit Step 5 acceptance.
+
+### Known limitations and next boundary
+
+Full and fallback profiles remain incomplete and cannot build. Game systems
+remain unavailable. Step 6 cannot start until Leonardo accepts Step 5 and
+approves a separate Step 6 plan.

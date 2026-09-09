@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-09-08.
+Last updated: 2026-09-09.
 
 ## Current resume point
 
@@ -8,11 +8,11 @@ Default next-session primary: **gpt-5.6-sol / high**, approved on2026-09-07 and 
 
 Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps 1–4 are accepted; Leonardo accepted corrected Step 4 on 2026-09-06.
 
-Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 implementing; MR-WO-WP01-004 active**. Authority commit `48ddfabfcbd06e9b787f230de37319766b3f9b6f` is the exact worker base. Authorization commit `5602f4135de2d091ef8dcd8ab42daaeee5bbd7d8` contains the order. No Step5 code or runtime evidence exists.
+Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 is in Leonardo testing**. The reviewed implementation is integrated on local `main` as `3de7304`, `0e606d0`, and `094ea1c`. Complete main validation passed. Step 5 acceptance is pending.
 
 Leonardo supplied screenshots of both pages and explicitly stated “I accept step 4”. The diagnostic shows the exact expected Standard/Supported values and Passed validation; the normal page shows the expected four lines. Reload behavior was not separately reported. No defect was reported. The screenshots and their machine paths are not copied into the repository.
 
-The Step5 contract preparation and combined amendment/implementation plan are approved. Historical checkpoint `735816b` preserves the preparation boundary. Approved section20 fixes D2/D5/D6/D7, 97 selected top-level items, 213 selected English keys, 144 laser rows, initial incomplete full/fallback profiles, phase commands and exact implementation plans. D1 and D3 remain approved; D4 remains existing authority. Next: activate and verify MR-WO-WP01-004, then implement WP07 and WP00. Runtime evidence, detailed review, Leonardo testing and acceptance remain pending. MR-IMP-OPEN-020 remains the later fallback-window question.
+The Step5 contract preparation and combined amendment/implementation plan are approved. The implemented slice contains 97 selected top-level items, 213 English strings and 144 laser rows. Full and fallback profiles remain incomplete and reject builds. Primary audit, complete review, correction, fresh focused review and main validation are complete. Next: Leonardo runs `npm run dev:slice`, checks the four expected startup lines, and reviews the controlled invalid-package test result. This is a content-foundation check, not a playable-game claim. MR-IMP-OPEN-020 remains the later fallback-window question.
 
 ## Historical pre-correction resume record
 
