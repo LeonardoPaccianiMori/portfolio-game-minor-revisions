@@ -34,13 +34,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    3 | Accepted                | 2026-09-02                       | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02                                      | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                                        | Four expected lines persisted after repeated reloads.                  |
 |    4 | Accepted                | 2026-09-02; amendment 2026-09-06 | Main 259 unit tests, required coverage, 115-module build, 21 browser flows; complete/focused reviews and record fixes passed                                                                     | Screenshots of both expected pages supplied 2026-09-06 | Leonardo explicitly accepted Step 4 on 2026-09-06                                                   | Reviewed correction a0b268f; integration 00029e2; handover d08ee26; containing acceptance commit | Prepare a separate Step 5 plan; implementation not yet approved.       |
 |    5 | Accepted                | 2026-09-08                       | 306 unit tests; 91.60% lines; 87.86% branches; five profile builds; 125-module slice build; 21 browser tests; complete and focused reviews passed                                                | Passed 2026-09-09                                      | Leonardo explicitly accepted Step 5 on 2026-09-09                                                   | `3de7304`, `0e606d0`, `094ea1c`; containing acceptance commit                                    | Content foundation only; no playable-game or journey claim.            |
-| 6–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
+|    6 | Contract preparation    | Preparation approved 2026-09-09  | Primary source/count/example/scope checks passed; fresh review and focused re-check passed                                                                                                       | Not applicable to preparation                          | Pending exact amendment and implementation-plan decision                                            | Containing preparation commit                                                                    | No fixture implementation or evidence result is approved.              |
+| 7–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                          |
-| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Prepare the separate exact Step 6 plan |
+| Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                       |
+| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Complete the reviewed Step 6 packet |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -1009,3 +1010,41 @@ Leonardo explicitly accepted Step 5 on 2026-09-09.
 Full and fallback profiles remain incomplete and cannot build. Game systems
 remain unavailable. Step 6 needs its separate exact plan and Leonardo's
 approval before implementation.
+
+## Step 06 — S12 fixture and traceability foundation
+
+### Plan and authority
+
+Leonardo approved bounded contract preparation and correction of the reference-trace count from 12 to 13 on 2026-09-09. Preparation can add the candidate contract and plan, update five control records, validate the packet and obtain one fresh Astra xhigh high-level review. It cannot freeze `MR-IF-015 v2`, create fixtures or tests, execute Step 6 evidence, start Step 7 or record Step 6 acceptance.
+
+### Leonardo contribution
+
+Leonardo requested Step 6, approved its bounded preparation plan and selected preservation of all 13 existing reference traces.
+
+### Agent contribution
+
+The primary completed the exact phase-aware fixture, manifest, acceptance-matrix, current evidence and four-work-order contract. A bounded Terra source scan identified current executable S02/S03/S06 behavior, unavailable rule groups and obsolete S12 schema/profile facts. Primary verification corrected SEM-17 to reference-only and fixed the final plan at 103 executable and 48 reference-only wrappers.
+
+### Files and commits
+
+Candidate files are `analysis/step-06-fixture-contract.md` and `plans/step-06-fixture-foundation.md`. The preparation commit is not yet recorded. No implementation file exists.
+
+### Automated and review evidence
+
+Preparation checks passed for 13 traces, 26 semantic source cases, 144 laser rows, 97 slice items, 213 strings, 45 acceptance rows, 103 executable wrappers, 48 reference-only wrappers, 41 exact deferred setups, 23 source paths, ten parseable contract examples and the exact documentation scope. Markdown format and diff checks passed. The final focused high-level review found no blocker or required finding. No Step 6 fixture result exists.
+
+### Leonardo test packet
+
+Not applicable to preparation. The later invisible foundation checkpoint will use a plain-language evidence summary and one controlled invalid fixture.
+
+### Observed result and corrections
+
+The accepted implementation uses campaign schema `2`, content version `1.1.0` and a complete slice. Historical S12 fixture text still uses schema `1`, content `1.0.0` and full. The current trace source contains 13 records while design 7 says 12. Leonardo approved correcting the count to 13; the version/profile correction remains in the candidate amendment.
+
+### Acceptance decision
+
+Pending. Preparation approval is not Step 6 implementation approval or acceptance.
+
+### Known limitations and next boundary
+
+Present the complete reviewed `MR-IF-015 v2`, authority amendments and four work orders for Leonardo's decision. Step 6 code and Step 7 remain blocked.

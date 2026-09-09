@@ -45,12 +45,12 @@ not insert a future or guessed commit identifier into this document.
 - Primary existing input: the complete numbered design baseline, approved
   S00–S14 technical corpus, frozen `MR-IF-001`–`MR-IF-015`, complete
   requirement and acceptance traceability, and the S14 gate packet.
-- Current issues: `MR-IMP-OPEN-001`–`019` and `021` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window.
+- Current issues: `MR-IMP-OPEN-001`–`019` and `021` are resolved. `MR-IMP-OPEN-020` reserves the later fallback start window. `MR-IMP-OPEN-022` is the active Step 6 fixture-contract preparation issue.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: prepare the separate exact Step 6 plan and wait for Leonardo's approval before implementation.
-- Prohibited next action: implement Step 6, Three.js, assets, deployment, release, visibility or public work without the required separate authority.
+- Next action: present the complete reviewed Step 6 amendment and four implementation work orders for Leonardo's decision.
+- Prohibited next action: freeze `MR-IF-015 v2` or implement Step 6, Three.js, assets, deployment, release, visibility or public work before the exact reviewed packet is approved.
 
 ## Durable progress summary
 
@@ -105,3 +105,7 @@ The approved section20 packet defines the selected catalogue, fixed strings, tri
 ## 2026-09-07 — Approved GitHub synchronization
 
 Leonardo authorized origin `git@github.com:LeonardoPaccianiMori/portfolio-game-minor-revisions.git`, an initial main push and automatic pushes of future approved, validated, reviewed and integrated main commits. The destination was empty when inspected. The primary owns fetch/integration/push; work branches remain local. Earlier no-remote restrictions are superseded for this exact destination and operation only. No licence, deployment, release or visibility change is authorized. Step5 remains in preparation; D3 is approved and D2/D5/D6/D7 remain candidate choices. AGENTS.md contains the continuing synchronization rule. The actual push result is verified against origin/main and reported after execution.
+
+## 2026-09-09 — Step 6 contract preparation complete
+
+Leonardo approved bounded preparation of the Step 6 fixture contract and corrected the reference-trace count from 12 to 13. The complete reviewed candidate defines phase-aware `MR-IF-015 v2`, 103 executable and 48 reference-only wrappers, 41 exact deferred setups, the 45-row matrix, current S02/S03/S06 evidence, preserved Gate 6A data, unavailable future routes and four exact work orders. Primary checks and the final focused high-level review passed. The packet now awaits Leonardo's combined amendment and implementation-plan decision. Frozen authority and implementation remain unapproved.

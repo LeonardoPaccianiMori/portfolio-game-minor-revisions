@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 
 ## Purpose and scope
 
@@ -303,3 +303,13 @@ slice server. No code, test, dependency, content, asset, persistence, Three.js,
 Step 6, deployment, release, licence, visibility, or Career Center change was
 made. Leonardo's contribution is the direct visible check and explicit Step 5
 acceptance. The screenshot and machine path are not stored.
+
+## 2026-09-09 — Step 6 contract preparation
+
+OpenAI `gpt-6`, primary, actual reasoning effort `unknown`: completed the approved Step 6 fixture-contract preparation from main `69cef2e`. It defined the strict phase-aware fixture, manifest, registry, source-packet, pending-operation, evidence-summary, deferred-route, acceptance-matrix and four-work-order candidate. Primary verified 13 traces, 26 semantic source cases, 144 laser rows, 97 slice items, 213 strings, 45 acceptance rows, 103 executable wrappers, 48 reference-only wrappers, 41 deferred setups, 23 source paths, ten parseable examples, exact scope, formatting and whitespace. It corrected the initial 104/47 split after source review showed that SEM-17 needs a future connected scientific-fact operation. No fixture implementation, frozen amendment, runtime result, asset, dependency, deployment, public or Career Center change occurred.
+
+OpenAI, actual exact model and effort `unknown`, read-only `step6_source_scan`: completed the bounded current-code and source-evidence scan. Requested routing was `gpt-5.6-terra` / `high`; actual runtime metadata was not exposed. It identified current executable S02/S03/S06 behavior, unavailable rule groups, obsolete S12 schema/profile facts and the 13-trace source correction. It made no edit, used no mutating tool, contacted no user and spawned no agent. Primary verified material citations before writing the candidate.
+
+OpenAI, actual exact model and effort `unknown`, fresh read-only Step 6 high-level review: reviewed the initial complete candidate. Requested routing was `gpt-6-astra` / `xhigh`; actual runtime metadata was not exposed. It confirmed the source counts, ownership, four-order activation sequence and approval boundary. It required corrections to the source-packet and evidence shapes, deferred records, pending examples and the preserved `MR-S12-EVL-001` meaning. Primary verified and applied those corrections. The reviewer made no edit, used no mutating tool, contacted no user and spawned no agent.
+
+OpenAI, actual exact model and effort `unknown`, fresh read-only `step6_corrected_review`: reviewed the corrected complete candidate and performed focused re-checks after primary repairs. Requested routing was `gpt-6-astra` / `xhigh`; actual runtime metadata was not exposed. It found and closed the unsupported SEM-17 execution claim, application-controller and per-method pending setup, partial-cleanup call, exact deferred operation and 41-setup records, and non-circular evidence activation sequence. Its final result was PASS with no blocker or required finding. It made no edit, used no mutating tool, contacted no user and spawned no agent.
