@@ -285,8 +285,9 @@ diagnostic correction waits for its verified submission.
 The corrected Step 4 and Gate 4A are accepted. Leonardo approved the exact
 Step 5 contracts and implementation plan on 2026-09-08. The reviewed WP01,
 WP07, and WP00 commits are integrated on local `main`. Complete main checks
-passed. Step 5 now awaits Leonardo's direct content-foundation check and
-explicit acceptance. Step 6, Three.js, game systems, asset research, licence,
+passed. Leonardo supplied the expected startup screenshot and explicitly
+accepted Step 5 on 2026-09-09. Prepare the separate exact Step 6 plan next.
+Step 6 implementation, Three.js, game systems, asset research, licence,
 deployment, and public action remain blocked.
 
 ## Correction gates attached to existing steps
@@ -321,3 +322,11 @@ five build-profile tests, the 125-module slice build, and 21 browser tests.
 The slice contains 97 items and 213 strings. Full and fallback remain
 incomplete. Leonardo testing and explicit acceptance are next. Step 6 remains
 blocked.
+
+## 2026-09-09 — Step 5 accepted
+
+Leonardo supplied a screenshot with `Minor Revisions`, `Ready`, `Startup
+checks passed.`, and `Game systems are not yet available.` He reported no
+defect and explicitly accepted Step 5. This accepts the reviewed content
+foundation. It does not claim a playable game or an executed campaign journey.
+The next permitted work is preparation of the separate exact Step 6 plan.

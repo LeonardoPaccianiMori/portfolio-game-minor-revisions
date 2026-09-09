@@ -1,7 +1,7 @@
 ---
 id: MR-WO-WP01-004
 type: implementation-work-order
-status: integrated
+status: accepted
 work_package: MR-WP-01
 sequence: 4
 created: 2026-09-08
@@ -183,4 +183,4 @@ The controlled worker submitted original commit
 21-path scope and integrated the same implementation, with Node 24 import
 compatibility, as `3de7304`. The assembled Step 5 candidate then received the
 required primary audit, complete review, correction, fresh focused review and
-main validation. Leonardo testing and Step 5 acceptance remain separate.
+main validation. Leonardo directly tested and accepted Step 5 on 2026-09-09.

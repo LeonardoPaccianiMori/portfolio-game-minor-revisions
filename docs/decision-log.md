@@ -264,3 +264,12 @@ Leonardo approved the exact D3 proposal in `implementation/analysis/step-05-cont
 ## 2026-09-08 — Step5 contracts and implementation plan approved
 
 Leonardo approved the complete reviewed Step5 packet in `implementation/analysis/step-05-content-contract.md`, with section20 taking precedence over earlier conflicting candidate sketches. This confirms D2, D5, D6 and D7; freezes MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3; and approves the exact S01–S06, S09, S12, S13 and design12 amendments and implementation order. Only the slice profile can be complete. Full and fallback remain explicitly incomplete. This authorizes Step5 implementation and its required review. It does not record runtime correctness, Leonardo testing, Step5 acceptance, Step6, assets, licence, deployment, release, visibility or public work.
+
+## 2026-09-09 — Step 5 accepted
+
+Leonardo supplied a screenshot that shows all four expected Step 5 startup
+lines and explicitly accepted Step 5. The accepted result is the reviewed,
+integrated, and main-validated content foundation: strict source validation,
+the complete slice profile, and safe startup gating. It is not a playable-game
+or executed-campaign-journey claim. Step 6 needs a separate exact plan and
+approval. Full and fallback profiles remain incomplete.

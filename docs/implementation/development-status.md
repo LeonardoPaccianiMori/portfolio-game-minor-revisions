@@ -8,11 +8,11 @@ Default next-session primary: **gpt-5.6-sol / high**, approved on2026-09-07 and 
 
 Leonardo approved C01–C06 and the exact primary-owned Step4 amendment on2026-09-06. MR-IMP-DEC-309 freezes the corrected baseline; the reviewed source patch is preserved in [the approved packet](../reviews/2026-09-05-astra/baseline-candidate.md). Steps 1–4 are accepted; Leonardo accepted corrected Step 4 on 2026-09-06.
 
-Current state: **Step 4 accepted on 2026-09-06; Gate 4A complete; Step 5 is in Leonardo testing**. The reviewed implementation is integrated on local `main` as `3de7304`, `0e606d0`, and `094ea1c`. Complete main validation passed. Step 5 acceptance is pending.
+Current state: **Steps 1–5 accepted; Gate 4A complete**. Leonardo supplied a screenshot with all four expected Step 5 startup lines and explicitly accepted Step 5 on 2026-09-09. The reviewed implementation is integrated as `3de7304`, `0e606d0`, and `094ea1c`. Complete main validation passed.
 
 Leonardo supplied screenshots of both pages and explicitly stated “I accept step 4”. The diagnostic shows the exact expected Standard/Supported values and Passed validation; the normal page shows the expected four lines. Reload behavior was not separately reported. No defect was reported. The screenshots and their machine paths are not copied into the repository.
 
-The Step5 contract preparation and combined amendment/implementation plan are approved. The implemented slice contains 97 selected top-level items, 213 English strings and 144 laser rows. Full and fallback profiles remain incomplete and reject builds. Primary audit, complete review, correction, fresh focused review and main validation are complete. Next: Leonardo runs `npm run dev:slice`, checks the four expected startup lines, and reviews the controlled invalid-package test result. This is a content-foundation check, not a playable-game claim. MR-IMP-OPEN-020 remains the later fallback-window question.
+The accepted Step 5 content foundation contains 97 selected top-level items, 213 English strings and 144 laser rows. Full and fallback profiles remain incomplete and reject builds. Primary audit, complete review, correction, fresh focused review, main validation, direct Leonardo testing and acceptance are complete. Next: prepare the separate exact Step 6 plan and wait for approval before implementation. Step 5 does not prove a playable game or an executed campaign journey. MR-IMP-OPEN-020 remains the later fallback-window question.
 
 ## Historical pre-correction resume record
 

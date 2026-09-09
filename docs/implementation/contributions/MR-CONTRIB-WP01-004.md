@@ -1,7 +1,7 @@
 ---
 id: MR-CONTRIB-WP01-004
 type: implementation-contribution
-status: integrated
+status: accepted
 work_order: MR-WO-WP01-004
 work_package: MR-WP-01
 created: 2026-09-09
@@ -88,4 +88,5 @@ changes remain outside this contribution.
 ## Leonardo decision
 
 Leonardo approved the exact Step 5 contract and implementation plan on
-2026-09-08. Direct Step 5 testing and acceptance are pending.
+2026-09-08. He supplied a screenshot with the four expected startup lines and
+explicitly accepted Step 5 on 2026-09-09.

@@ -228,13 +228,11 @@ keys. This prevents drift between two prose sources.
 
 ## Current next action
 
-S00–S14 are documented, and no S15 is planned. Steps 1–4 and Gate 4A are
-accepted. The exact Step 5 contracts and implementation plan were approved on
-2026-09-08. Reviewed Step 5 content validation, source catalogue, build
-profiles, and startup gating are integrated on local `main`, and complete main
-validation passes. Leonardo now performs the direct Step 5 content-foundation
-check and makes a separate acceptance decision. Do not start Step 6, Three.js,
-assets, persistence, licence, deployment, release, visibility, or public work.
+S00–S14 are documented, and no S15 is planned. Steps 1–5 and Gate 4A are
+accepted. Leonardo accepted the reviewed, integrated, and main-validated Step
+5 content foundation on 2026-09-09. Prepare the separate exact Step 6 plan
+next. Do not implement Step 6, Three.js, assets, persistence, licence,
+deployment, release, visibility, or public work without separate authority.
 
 ## Correction baseline C01–C06
 

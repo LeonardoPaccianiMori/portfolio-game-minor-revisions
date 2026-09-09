@@ -7,11 +7,11 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 ## Current repository state
 
 - Accepted Step 4 source integration: `00029e2`; Step 4 acceptance checkpoint `32d6a01`.
-- Reviewed Step 5 integration: `3de7304`, `0e606d0`, and `094ea1c`; Leonardo testing and acceptance are pending.
+- Accepted Step 5 integration: `3de7304`, `0e606d0`, and `094ea1c`; Leonardo accepted the result on 2026-09-09.
 - Last completed design baseline before this specification programme:
   `ce9cd52` (`Resolve Minor Revisions documentation review`).
 - Remote: approved GitHub origin configured; reviewed main changes push automatically under AGENTS.md.
-- Implementation code: Steps 1–4 accepted. Step 5 content validation, catalogue, profiles, and startup gate are reviewed, integrated, and main-validated. No game transition engine or Three.js scene exists.
+- Implementation code: Steps 1–5 accepted. Step 5 content validation, catalogue, profiles, and startup gate are reviewed, integrated, main-validated, and accepted. No game transition engine or Three.js scene exists.
 - Package and build configuration: Step 5 adds explicit slice commands. Default full and fallback builds reject their incomplete profiles.
 - Production assets: none.
 - Public licence file: none.
@@ -29,8 +29,8 @@ not insert a future or guessed commit identifier into this document.
 | Gate                                   | State                  | Blocking condition                                                                     |
 | -------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------- |
 | Gate 1 — technical baseline            | Approved on 2026-09-01 | Gate 1 alone authorizes no code; Step 1 required its own separate plan and acceptance. |
-| Incremental implementation start       | Step 5 testing         | Steps 1–4 are accepted; reviewed Step 5 integration awaits Leonardo's direct check.    |
-| Vertical-slice acceptance              | Blocked                | Steps 5–30 remain unaccepted and Step 31 cannot run.                                   |
+| Incremental implementation start       | Step 5 accepted        | Leonardo accepted the reviewed, integrated, and main-validated result on 2026-09-09.   |
+| Vertical-slice acceptance              | Blocked                | Steps 6–30 remain unaccepted and Step 31 cannot run.                                   |
 | Fallback acceptance                    | Blocked                | Steps 32–52 do not exist and Step 53 cannot run.                                       |
 | Full local-game acceptance             | Blocked                | Steps 54–69 do not exist and Step 70 cannot run.                                       |
 | Remote synchronization                 | Approved and active    | Reviewed main commits push to the configured origin; no force-push is authorized.      |
@@ -49,8 +49,8 @@ not insert a future or guessed commit identifier into this document.
 - Incremental resume record: `development-status.md`.
 - Incremental sequence: `development-roadmap.md`, Steps 0–70.
 - Subagent governance: Astra only for high-level delegated work; Sol/Terra/Luna for implementation; Sol xhigh for detailed review; at most two subagents and focused source packets. The primary owns the approved correction writes.
-- Next action: Leonardo tests `npm run dev:slice` and reviews the controlled invalid-package result before a separate Step 5 acceptance decision.
-- Prohibited next action: start Step 6, Three.js, assets, deployment, release, visibility or public work before Step 5 acceptance and a separate approved plan.
+- Next action: prepare the separate exact Step 6 plan and wait for Leonardo's approval before implementation.
+- Prohibited next action: implement Step 6, Three.js, assets, deployment, release, visibility or public work without the required separate authority.
 
 ## Durable progress summary
 
@@ -60,8 +60,8 @@ not insert a future or guessed commit identifier into this document.
 | Independent design review  | Complete for the current baseline                      | R00–R07 are resolved and documented.                                                                                                                 |
 | Specification governance   | Documented                                             | Authority, gates, blocks, decision classes, interface lifecycle, issue protocol, explicit model routing, and controlled subagent roles are recorded. |
 | Technical specification    | Documented and accepted as the implementation baseline | S00–S14 are documented. Step5 freezes `MR-IF-002 v6`, `003/005/006/010 v3`; `007` remains `v2`; other interfaces remain `v1`.                        |
-| Incremental implementation | Steps 1–4 accepted; Step 5 in Leonardo testing         | Reviewed Step 5 code is integrated. Main check and verify pass; acceptance remains a separate Leonardo decision.                                     |
-| Vertical slice             | Step 4 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
+| Incremental implementation | Steps 1–5 accepted                                     | Reviewed Step 5 code is integrated, main-validated, directly tested, and accepted.                                                                   |
+| Vertical slice             | Step 5 accepted                                        | Steps 1–30 assemble it and Step 31 accepts it; no game system or Three.js scene exists.                                                              |
 | Fallback and full game     | Not authorized                                         | Step 53 accepts the fallback; Step 70 accepts the full local game.                                                                                   |
 
 ## Session-resume procedure
@@ -100,7 +100,7 @@ Current incremental resume authority remains `development-status.md`. MR-IMP-OPE
 
 Preparation is complete. Leonardo approved the complete packet on2026-09-08. MR-IMP-DEC-310 and frozen MR-IF-002 v6, MR-IF-003 v3, MR-IF-005 v3, MR-IF-006 v3 and MR-IF-010 v3 now govern Step5. D1/D2/D3/D5/D6/D7 are approved; D4 remains existing authority.
 
-The approved section20 packet defines the selected catalogue, fixed strings, triggers, semantic roles, phase commands and exact work orders. Step 5 implementation and correction are now reviewed, integrated, and main-validated. The slice profile is complete. Full and fallback remain incomplete. Leonardo testing and acceptance remain pending.
+The approved section20 packet defines the selected catalogue, fixed strings, triggers, semantic roles, phase commands and exact work orders. Step 5 implementation and correction are reviewed, integrated, main-validated, directly tested, and accepted. The slice profile is complete. Full and fallback remain incomplete.
 
 ## 2026-09-07 — Approved GitHub synchronization
 

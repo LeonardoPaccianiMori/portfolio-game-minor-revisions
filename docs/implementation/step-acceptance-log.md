@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–4 accepted; Gate 4A complete; Step 5 in Leonardo testing**
+Status: **Steps 1–5 accepted; Gate 4A complete**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -33,14 +33,14 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    2 | Accepted                | 2026-09-01                       | Integrated main: 91 tests, 92.30% branches, 96.48% lines, build, 15 browser flows, audit, review, and record reconciliation passed                                                               | Accepted 2026-09-02                                    | Leonardo explicitly accepted Step 2 on 2026-09-02                                                   | Containing acceptance commit plus `41adfbb` through `4475844`                                    | No separate defect or screen-observation report supplied.              |
 |    3 | Accepted                | 2026-09-02                       | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02                                      | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                                        | Four expected lines persisted after repeated reloads.                  |
 |    4 | Accepted                | 2026-09-02; amendment 2026-09-06 | Main 259 unit tests, required coverage, 115-module build, 21 browser flows; complete/focused reviews and record fixes passed                                                                     | Screenshots of both expected pages supplied 2026-09-06 | Leonardo explicitly accepted Step 4 on 2026-09-06                                                   | Reviewed correction a0b268f; integration 00029e2; handover d08ee26; containing acceptance commit | Prepare a separate Step 5 plan; implementation not yet approved.       |
-|    5 | Leonardo testing        | 2026-09-08                       | 306 unit tests; 91.60% lines; 87.86% branches; five profile builds; 125-module slice build; 21 browser tests; complete and focused reviews passed                                                | Pending                                                | Pending                                                                                             | `3de7304`, `0e606d0`, `094ea1c`; containing record commit                                        | Content foundation only; no playable-game or journey claim.            |
+|    5 | Accepted                | 2026-09-08                       | 306 unit tests; 91.60% lines; 87.86% branches; five profile builds; 125-module slice build; 21 browser tests; complete and focused reviews passed                                                | Passed 2026-09-09                                      | Leonardo explicitly accepted Step 5 on 2026-09-09                                                   | `3de7304`, `0e606d0`, `094ea1c`; containing acceptance commit                                    | Content foundation only; no playable-game or journey claim.            |
 | 6–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                                      | Next boundary                                  |
-| ---------------------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–4 separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Reviewed Step 5 result awaits Leonardo testing |
+| Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                          |
+| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Prepare the separate exact Step 6 plan |
 
 ## Step 01 — S01 package baseline and basic local start page
 
@@ -952,8 +952,8 @@ outside this authority.
 
 Leonardo selected the D1 and D3 meanings and approved D2, D5, D6, D7, the
 exact source manifest, English text, profile commands, ownership, checks, and
-implementation plan. His direct Step 5 test and acceptance decision are
-pending.
+implementation plan. On 2026-09-09, he supplied a screenshot with all four
+expected startup lines and explicitly accepted Step 5.
 
 ### Agent contribution
 
@@ -986,25 +986,26 @@ blocker, required finding, or advisory.
 
 ### Leonardo test packet
 
-Pending. Run `npm run dev:slice`. Confirm `Minor Revisions`, `Ready`, `Startup
-checks passed.`, and `Game systems are not yet available.` Then review the
-plain passing result of the controlled invalid-package test. That test proves
-the exact safe message and proves application and persistence startup do not
-run.
+Complete. Leonardo opened the slice page and supplied a screenshot that shows
+`Minor Revisions`, `Ready`, `Startup checks passed.`, and `Game systems are not
+yet available.` No defect was reported. The raw screenshot and machine path
+are not stored. The primary also supplied the plain passing result of the
+controlled invalid-package test.
 
 ### Observed result and corrections
 
-Automated tests show a structurally valid slice catalogue and a checked browser
-package. They do not show a playable game or an executed campaign journey.
-The corrected source uses exact character names, plain location labels, and
-binding-neutral tutorial text.
+The visible result matches all four expected lines. Automated tests show a
+structurally valid slice catalogue and a checked browser package. They do not
+show a playable game or an executed campaign journey. The corrected source
+uses exact character names, plain location labels, and binding-neutral
+tutorial text.
 
 ### Acceptance decision
 
-Pending Leonardo's direct test and explicit Step 5 acceptance.
+Leonardo explicitly accepted Step 5 on 2026-09-09.
 
 ### Known limitations and next boundary
 
 Full and fallback profiles remain incomplete and cannot build. Game systems
-remain unavailable. Step 6 cannot start until Leonardo accepts Step 5 and
-approves a separate Step 6 plan.
+remain unavailable. Step 6 needs its separate exact plan and Leonardo's
+approval before implementation.
