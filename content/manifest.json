@@ -1,0 +1,33 @@
+{
+  "packageId": "minor-revisions-content",
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "language": "en",
+  "dataFiles": [
+    "content/data/characters.json",
+    "content/data/locations.json",
+    "content/data/actions.json",
+    "content/data/experiments.json",
+    "content/data/tasks.json",
+    "content/data/room-states.json",
+    "content/data/events.json",
+    "content/data/scenes.json",
+    "content/data/messages.json",
+    "content/data/notifications.json",
+    "content/data/records.json",
+    "content/data/endings.json",
+    "content/data/citations.json",
+    "content/data/environmental-items.json",
+    "content/data/contextual-lines.json",
+    "content/data/tutorials.json",
+    "content/data/interface.json",
+    "content/data/audio.json"
+  ],
+  "stringsFile": "content/strings.en.json",
+  "profileFiles": [
+    "content/profiles/full.json",
+    "content/profiles/fallback.json",
+    "content/profiles/slice.json"
+  ],
+  "compatibleEarlierVersions": []
+}

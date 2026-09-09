@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "family": "tasks",
+  "items": [
+    {
+      "id": "MR-SLICE-CLAIM-REHEARSAL",
+      "type": "sliceRehearsal",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "labelKey": "ui.slice.rehearsal",
+      "command": "commitInitialManuscript",
+      "actionId": "MR-ACT-SLICE-CLAIM-REHEARSAL",
+      "allowedClaimIds": [
+        "MR-UI-SLICE-REHEARSAL-CLAIM-CAREFUL",
+        "MR-UI-SLICE-REHEARSAL-CLAIM-INFLATED",
+        "MR-UI-SLICE-REHEARSAL-CLAIM-STRONG"
+      ],
+      "experimentId": "MR-EXP-LASER-SHAM",
+      "completionId": "MR-UI-SLICE-COMPLETE",
+      "activeRequestId": null,
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TASK-LASER-SHAM",
+      "type": "experimentMilestone",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "labelKey": "task.laserSham",
+      "command": "analyseExperiment",
+      "experiment": {
+        "family": "experiments",
+        "id": "MR-EXP-LASER-SHAM"
+      },
+      "completion": {
+        "kind": "firstSuccessfulAnalysis",
+        "record": {
+          "family": "records",
+          "id": "MR-REC-LASER-SHAM"
+        }
+      },
+      "resultRefs": [
+        {
+          "family": "records",
+          "id": "MR-REC-LASER-SHAM"
+        }
+      ],
+      "activeRequestId": null,
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}

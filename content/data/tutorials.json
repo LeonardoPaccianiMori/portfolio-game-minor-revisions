@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "family": "tutorials",
+  "items": [
+    {
+      "id": "MR-TUT-001",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "freeMovementReady"
+      },
+      "headingKey": "tutorial.heading.moveLook",
+      "bodyKey": "tutorial.move",
+      "acknowledgement": "dismissible",
+      "inputActions": ["move", "look"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-002",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "interactionTargetReady"
+      },
+      "headingKey": "tutorial.heading.interact",
+      "bodyKey": "tutorial.interact",
+      "acknowledgement": "dismissible",
+      "inputActions": ["primaryAction"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-003",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "focusedViewOpened"
+      },
+      "headingKey": "tutorial.heading.focusedViews",
+      "bodyKey": "tutorial.station",
+      "acknowledgement": "dismissible",
+      "inputActions": ["primaryAction", "backPause", "uiNavigate"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-004",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "actionCostShown"
+      },
+      "headingKey": "tutorial.heading.costs",
+      "bodyKey": "tutorial.cost",
+      "acknowledgement": "dismissible",
+      "inputActions": ["primaryAction", "backPause"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-005",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "sampleConfigured"
+      },
+      "headingKey": "tutorial.heading.focusedViews",
+      "bodyKey": "tutorial.sample",
+      "acknowledgement": "dismissible",
+      "inputActions": ["primaryAction"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-006",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "monitoringWindowAvailable"
+      },
+      "headingKey": "tutorial.heading.costs",
+      "bodyKey": "tutorial.monitor",
+      "acknowledgement": "dismissible",
+      "inputActions": ["primaryAction"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-007",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "researchStatusAvailable"
+      },
+      "headingKey": "tutorial.heading.researchStatus",
+      "bodyKey": "tutorial.status",
+      "acknowledgement": "dismissible",
+      "inputActions": ["researchStatus"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-TUT-008",
+      "type": "tutorial",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "trigger": {
+        "kind": "firstSemanticEvent",
+        "event": "safeSaveAvailable"
+      },
+      "headingKey": "tutorial.heading.localSaving",
+      "bodyKey": "tutorial.save",
+      "acknowledgement": "dismissible",
+      "inputActions": ["backPause", "primaryAction"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}

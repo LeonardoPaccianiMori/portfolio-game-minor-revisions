@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "family": "interface",
+  "items": [
+    {
+      "id": "MR-CAVEAT-ASSOCIATION",
+      "type": "scienceDefinition",
+      "kind": "caveat",
+      "meaning": "association",
+      "labelKey": "science.caveatAssociation",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CAVEAT-CONDITION",
+      "type": "scienceDefinition",
+      "kind": "caveat",
+      "meaning": "condition",
+      "labelKey": "science.caveatCondition",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CAVEAT-PROCESS",
+      "type": "scienceDefinition",
+      "kind": "caveat",
+      "meaning": "process",
+      "labelKey": "science.caveatProcess",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CONTROL-LIMITED",
+      "type": "scienceDefinition",
+      "kind": "control",
+      "meaning": "limited",
+      "labelKey": "science.controlLimited",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CONTROL-MATCHED",
+      "type": "scienceDefinition",
+      "kind": "control",
+      "meaning": "matched",
+      "labelKey": "science.controlMatched",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-READING-NO-RECOVERY",
+      "type": "scienceDefinition",
+      "kind": "reading",
+      "meaning": "noRecovery",
+      "labelKey": "science.readingNoRecovery",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-READING-RECOVERY",
+      "type": "scienceDefinition",
+      "kind": "reading",
+      "meaning": "recovery",
+      "labelKey": "science.readingRecovery",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-READING-UNRESOLVED",
+      "type": "scienceDefinition",
+      "kind": "reading",
+      "meaning": "unresolved",
+      "labelKey": "science.readingUnresolved",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-REPATTERNING-UNOBSERVED",
+      "type": "scienceDefinition",
+      "kind": "repatterning",
+      "meaning": "unobserved",
+      "labelKey": "science.repatterningUnobserved",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-RHYTHM-NONE",
+      "type": "scienceDefinition",
+      "kind": "rhythm",
+      "meaning": "none",
+      "labelKey": "science.rhythmNone",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-RHYTHM-RECOVERY",
+      "type": "scienceDefinition",
+      "kind": "rhythm",
+      "meaning": "recovery",
+      "labelKey": "science.rhythmRecovery",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-RHYTHM-UNOBSERVED",
+      "type": "scienceDefinition",
+      "kind": "rhythm",
+      "meaning": "unobserved",
+      "labelKey": "science.rhythmUnobserved",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-STRUCTURE-PARTIAL",
+      "type": "scienceDefinition",
+      "kind": "structure",
+      "meaning": "partial",
+      "labelKey": "science.structurePartial",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-STRUCTURE-RECOVERY",
+      "type": "scienceDefinition",
+      "kind": "structure",
+      "meaning": "recovery",
+      "labelKey": "science.structureRecovery",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-STRUCTURE-UNOBSERVED",
+      "type": "scienceDefinition",
+      "kind": "structure",
+      "meaning": "unobserved",
+      "labelKey": "science.structureUnobserved",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-ACTION-WARNING",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "confirmation",
+      "textKeys": ["ui.action.warning"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-CONTENT-INVALID",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "contentInvalid",
+      "textKeys": ["ui.content.invalid"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-CUE-ATTENTION",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "availabilityCue",
+      "textKeys": ["ui.cue.experimentAttention"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-CUE-OPTIONAL",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "availabilityCue",
+      "textKeys": ["ui.cue.optionalConversation"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-MENU-CONTINUE",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "menuContinue",
+      "textKeys": ["ui.menu.continue"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-MENU-NEW",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "menuNewGame",
+      "textKeys": ["ui.menu.newGame"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-MENU-SAVEQUIT",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "menuSaveQuit",
+      "textKeys": ["ui.menu.saveQuit"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-REPLACE-SAVE",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "replaceSave",
+      "textKeys": ["ui.confirm.replaceSave"],
+      "confirmation": "required",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SAVE-FAILURE",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "saveFailure",
+      "textKeys": ["ui.save.failure"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SAVE-RECOVERY",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "saveRecovery",
+      "textKeys": ["ui.save.recovery"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SAVE-RESET",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "saveReset",
+      "textKeys": ["ui.save.reset"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SAVE-SUCCESS",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "saveSuccess",
+      "textKeys": ["ui.save.success"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SLICE-COMPLETE",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "sliceComplete",
+      "textKeys": ["ui.slice.complete", "ui.slice.rehearsalReason"],
+      "confirmation": "none",
+      "dynamicFields": [],
+      "definitions": [],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-UI-SLICE-REHEARSAL",
+      "type": "interface",
+      "availability": {
+        "window": null,
+        "when": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "blocking": {
+          "allOf": [],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "expiry": "permanent",
+        "repeat": "once"
+      },
+      "purpose": "sliceRehearsal",
+      "textKeys": [
+        "experiment.analysis.caveat",
+        "experiment.analysis.reading",
+        "experiment.band.compromised",
+        "experiment.band.mixed",
+        "experiment.band.robust",
+        "experiment.quality.inconclusive",
+        "experiment.quality.repeat",
+        "experiment.quality.suspicious",
+        "experiment.quality.usable",
+        "experiment.stop.confirm",
+        "experiment.stop.expiry",
+        "manuscript.claim.careful",
+        "manuscript.claim.inflated",
+        "manuscript.claim.strong",
+        "manuscript.lane.caveat",
+        "manuscript.lane.claim",
+        "manuscript.lane.control",
+        "manuscript.lane.figure",
+        "manuscript.requirement.associationSupport",
+        "manuscript.requirement.careful",
+        "manuscript.requirement.causalSupport",
+        "manuscript.requirement.caveat",
+        "manuscript.requirement.conflict",
+        "manuscript.requirement.distinctExperimentFigures",
+        "manuscript.requirement.inflated",
+        "manuscript.requirement.matchedControl",
+        "manuscript.requirement.met",
+        "manuscript.requirement.missing",
+        "manuscript.requirement.relevantControl",
+        "manuscript.requirement.rhythmCoverage",
+        "manuscript.requirement.strong",
+        "manuscript.requirement.structureCoverage",
+        "manuscript.requirement.supportedFigure",
+        "manuscript.requirement.unsupported",
+        "manuscript.requirements.missing",
+        "manuscript.requirements.title",
+        "ui.slice.rehearsal",
+        "ui.slice.rehearsalConfirm",
+        "ui.slice.rehearsalForecast"
+      ],
+      "confirmation": "required",
+      "dynamicFields": [],
+      "definitions": [
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-CLAIM-CAREFUL",
+          "kind": "claim",
+          "value": "careful",
+          "labelKey": "manuscript.claim.careful"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-CLAIM-STRONG",
+          "kind": "claim",
+          "value": "strong",
+          "labelKey": "manuscript.claim.strong"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-CLAIM-INFLATED",
+          "kind": "claim",
+          "value": "inflated",
+          "labelKey": "manuscript.claim.inflated"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-SUPPORTED-FIGURE",
+          "kind": "requirement",
+          "value": "supportedFigure",
+          "labelKey": "manuscript.requirement.supportedFigure"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-RELEVANT-CONTROL",
+          "kind": "requirement",
+          "value": "relevantControl",
+          "labelKey": "manuscript.requirement.relevantControl"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-DISTINCT-FIGURES",
+          "kind": "requirement",
+          "value": "distinctExperimentFigures",
+          "labelKey": "manuscript.requirement.distinctExperimentFigures"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-STRUCTURE-COVERAGE",
+          "kind": "requirement",
+          "value": "structureCoverage",
+          "labelKey": "manuscript.requirement.structureCoverage"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-RHYTHM-COVERAGE",
+          "kind": "requirement",
+          "value": "rhythmCoverage",
+          "labelKey": "manuscript.requirement.rhythmCoverage"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-MATCHED-CONTROL",
+          "kind": "requirement",
+          "value": "matchedControl",
+          "labelKey": "manuscript.requirement.matchedControl"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-CAVEAT",
+          "kind": "requirement",
+          "value": "caveat",
+          "labelKey": "manuscript.requirement.caveat"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-ASSOCIATION-SUPPORT",
+          "kind": "requirement",
+          "value": "associationSupport",
+          "labelKey": "manuscript.requirement.associationSupport"
+        },
+        {
+          "id": "MR-UI-SLICE-REHEARSAL-REQ-CAUSAL-SUPPORT",
+          "kind": "requirement",
+          "value": "causalSupport",
+          "labelKey": "manuscript.requirement.causalSupport"
+        }
+      ],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}

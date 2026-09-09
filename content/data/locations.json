@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "family": "locations",
+  "items": [
+    {
+      "id": "MR-LOC-BREAK-ROOM",
+      "type": "location",
+      "nameKey": "location.breakRoom.name",
+      "roomType": "breakRoom",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-BREAK-ROOM",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-CORRIDOR",
+      "type": "location",
+      "nameKey": "location.corridor.name",
+      "roomType": "corridor",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-CORRIDOR",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-EXIT-VESTIBULE",
+      "type": "location",
+      "nameKey": "location.exitVestibule.name",
+      "roomType": "exitVestibule",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-EXIT-VESTIBULE",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-FACILITY",
+      "type": "location",
+      "nameKey": "location.facility.name",
+      "roomType": "facility",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-FACILITY",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-IMAGING",
+      "type": "location",
+      "nameKey": "location.imaging.name",
+      "roomType": "imaging",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-IMAGING",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-MAIN-LAB",
+      "type": "location",
+      "nameKey": "location.mainLab.name",
+      "roomType": "mainLab",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-MAIN-LAB",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-PI-OFFICE",
+      "type": "location",
+      "nameKey": "location.piOffice.name",
+      "roomType": "piOffice",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-PI-OFFICE",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-SHARED-DESKS",
+      "type": "location",
+      "nameKey": "location.sharedDesks.name",
+      "roomType": "sharedDesks",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-SHARED-DESKS",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-SOUTH-CORRIDOR",
+      "type": "location",
+      "nameKey": "location.southCorridor.name",
+      "roomType": "southCorridor",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-SOUTH-CORRIDOR",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-LOC-TISSUE-CULTURE",
+      "type": "location",
+      "nameKey": "location.tissueCulture.name",
+      "roomType": "tissueCulture",
+      "cueRoles": [],
+      "mappingKey": "MR-LOC-TISSUE-CULTURE",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}

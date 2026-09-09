@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "family": "actions",
+  "items": [
+    {
+      "id": "MR-ACT-ANALYSE",
+      "type": "action",
+      "labelKey": "action.analyse.label",
+      "workClass": "focused",
+      "periodCost": 1,
+      "baseEnergyCost": 1,
+      "command": "analyseExperiment",
+      "forecastKey": "forecast.analyse",
+      "reasonKeys": [
+        "reason.energy.work",
+        "reason.evidence.limited",
+        "reason.evidence.result",
+        "reason.time.action"
+      ],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-MONITOR-QUALITY",
+      "type": "action",
+      "labelKey": "action.monitorQuality.label",
+      "workClass": "focused",
+      "periodCost": 1,
+      "baseEnergyCost": 1,
+      "command": "respondToMonitoring",
+      "forecastKey": "forecast.monitorQuality",
+      "reasonKeys": [
+        "reason.band.monitor",
+        "reason.band.stabilized",
+        "reason.energy.work",
+        "reason.time.action"
+      ],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-MONITOR-ROUTINE",
+      "type": "action",
+      "labelKey": "action.monitorRoutine.label",
+      "workClass": "light",
+      "periodCost": 1,
+      "baseEnergyCost": 0,
+      "command": "respondToMonitoring",
+      "forecastKey": "forecast.monitorRoutine",
+      "reasonKeys": ["reason.band.monitor", "reason.time.action"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-RELATIONSHIP",
+      "type": "action",
+      "labelKey": "action.relationship.label",
+      "workClass": "light",
+      "periodCost": 1,
+      "baseEnergyCost": 0,
+      "command": "chooseSceneOption",
+      "forecastKey": "forecast.relationship",
+      "reasonKeys": [
+        "reason.room.limited",
+        "reason.room.ready",
+        "reason.time.action",
+        "reason.trust.pressure",
+        "reason.trust.respect"
+      ],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-ROOM-WAIT",
+      "type": "action",
+      "labelKey": "action.roomWait.label",
+      "workClass": "light",
+      "periodCost": 1,
+      "baseEnergyCost": 0,
+      "command": "resolveRoomState",
+      "forecastKey": "forecast.roomWait",
+      "reasonKeys": ["reason.room.ready", "reason.time.action"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-SAMPLE-CONFIGURE",
+      "type": "action",
+      "labelKey": "action.sampleConfigure.label",
+      "workClass": "light",
+      "periodCost": 0,
+      "baseEnergyCost": 0,
+      "command": "configureExperiment",
+      "forecastKey": "forecast.sampleConfigure",
+      "reasonKeys": ["reason.band.choice", "reason.band.equipment", "reason.band.sample"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-SLICE-CLAIM-REHEARSAL",
+      "type": "action",
+      "labelKey": "ui.slice.rehearsal",
+      "workClass": "focused",
+      "periodCost": 1,
+      "baseEnergyCost": 1,
+      "command": "commitInitialManuscript",
+      "forecastKey": "ui.slice.rehearsalForecast",
+      "reasonKeys": ["reason.energy.work", "reason.paper.commit", "reason.time.action"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-ACT-START-FOCUSED",
+      "type": "action",
+      "labelKey": "action.startFocused.label",
+      "workClass": "focused",
+      "periodCost": 1,
+      "baseEnergyCost": 1,
+      "command": "startExperiment",
+      "forecastKey": "forecast.startFocused",
+      "reasonKeys": ["reason.energy.work", "reason.time.action"],
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}

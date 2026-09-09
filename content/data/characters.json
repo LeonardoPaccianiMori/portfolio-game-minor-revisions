@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "family": "characters",
+  "items": [
+    {
+      "id": "MR-CHR-CAMILA",
+      "type": "character",
+      "nameKey": "character.camila.name",
+      "roleKey": "character.camila.role",
+      "presence": "remote",
+      "speakerId": "MR-CHR-CAMILA",
+      "relationshipId": "MR-CHR-CAMILA",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CHR-ELENA",
+      "type": "character",
+      "nameKey": "character.elena.name",
+      "roleKey": "character.elena.role",
+      "presence": "physical",
+      "speakerId": "MR-CHR-ELENA",
+      "relationshipId": "MR-CHR-ELENA",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CHR-GABRIEL",
+      "type": "character",
+      "nameKey": "character.gabriel.name",
+      "roleKey": "character.gabriel.role",
+      "presence": "physical",
+      "speakerId": "MR-CHR-GABRIEL",
+      "relationshipId": "MR-CHR-GABRIEL",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CHR-HAORAN",
+      "type": "character",
+      "nameKey": "character.haoran.name",
+      "roleKey": "character.haoran.role",
+      "presence": "physical",
+      "speakerId": "MR-CHR-HAORAN",
+      "relationshipId": "MR-CHR-HAORAN",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    },
+    {
+      "id": "MR-CHR-SAMIRA",
+      "type": "character",
+      "nameKey": "character.samira.name",
+      "roleKey": "character.samira.role",
+      "presence": "physical",
+      "speakerId": "MR-CHR-SAMIRA",
+      "relationshipId": "MR-CHR-SAMIRA",
+      "trace": {
+        "requirementIds": ["MR-REQ-CONTENT-001"],
+        "testIds": ["MR-TEST-CONT-001"]
+      }
+    }
+  ]
+}
