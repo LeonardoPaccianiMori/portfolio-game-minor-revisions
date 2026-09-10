@@ -138,7 +138,7 @@ removal work where a worker adds no speed and would split design authority.
   `work/opencode-migration`.
 - Commits: `87719f3` opencode configuration and agent roles; `4246450`
   governance rewrite; `3bac3fc` restart records; `35e25a9` scaffold removal.
-  The review-correction commit is recorded in the acceptance log.
+  The review-correction commit is `219d77a`.
 - Checks: `npm run check` exit 0; `npm run build` exit 0; `opencode models
 opencode-go` exit 0; `npm run dev` served the placeholder page; `npm test`
   exit 1 with no test files, as documented; `git status` clean.

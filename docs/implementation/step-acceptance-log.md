@@ -66,10 +66,12 @@ development pathway.
   `docs/implementation/step-records/`.
 - Independent review (2026-09-10): no blocker; seven required record-only
   corrections and eight advisory notes, applied with focused primary
-  validation. The review used a fresh-context session at
-  `opencode-go/deepseek-v4.1-flash`. The separately assigned different-family
-  reviewer (`opencode-go/grok-4.6`, `xhigh`) did not complete; that governance
-  gap remains open for Leonardo's decision.
+  validation and recorded as commit `219d77a`. The review used a fresh-context
+  session at `opencode-go/deepseek-v4.1-flash`. The separately assigned
+  different-family reviewer (`opencode-go/grok-4.6`, `xhigh`) did not complete;
+  that governance gap remains open for Leonardo's decision.
+- Migration commits on `work/opencode-migration`: `87719f3`, `4246450`,
+  `3bac3fc`, `35e25a9`, and correction `219d77a`.
 
 ## Step 01 — S01 package baseline and basic local start page
 
