@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "small_model": "opencode-go/qwen3.8-flash",
+  "default_agent": "build",
+  "share": "disabled",
+  "formatter": false,
+  "permission": {
+    "webfetch": "ask",
+    "websearch": "ask"
+  },
+  "agent": {
+    "plan": {
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "variant": "max"
+    },
+    "build": {
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "variant": "max"
+    },
+    "explore": {
+      "model": "opencode-go/qwen3.8-flash",
+      "variant": "medium"
+    }
+  }
+}
