@@ -350,6 +350,23 @@ mechanical worker), recorded in the decision log. It then documented the
 replacement development pathway R1–R63 in `development-roadmap.md` and
 reconciled the control records, without starting any step.
 
+Three independent read-only creative reviews of the B00–B10 design documents
+completed on 2026-09-10 from a focused document packet, without reading prior
+reviews, editing files, or using the network:
+
+- `mr-design-reviewer`, configured `opencode-go/glm-5.3` at variant `max`;
+  actual runtime model metadata not exposed. Reviewed identity, systems and
+  narrative coherence, and publishability.
+- `mr-worker-light`, configured `opencode-go/qwen3.8-flash` at variant
+  `medium`; actual runtime model metadata not exposed. Reviewed
+  moment-to-moment fun, loop repetition, and pacing.
+- `general` (built-in subagent), exact runtime model not exposed. Reviewed
+  story, characters, and humor.
+
+Their findings are advisory only. They change no numbered document, frozen
+interface, approved decision, or step. A summary is recorded in the session
+report for Leonardo's decision.
+
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, fresh-context review session,
 actual reasoning variant `unknown`: performed the migration review from the
 read-only packet in a separate opencode process. It found no blocker, seven
