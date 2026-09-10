@@ -39,9 +39,9 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 
 ## Gate decisions
 
-| Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                       |
-| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Complete the reviewed Step 6 packet |
+| Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                               |
+| ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Approve the replacement development pathway |
 
 ## 2026-09-10 — Development restart and opencode migration
 
@@ -64,6 +64,12 @@ development pathway.
 - No development step is authorized until Leonardo approves the replacement
   pathway and its first exact plan. Every future step is recorded in
   `docs/implementation/step-records/`.
+- Independent review (2026-09-10): no blocker; seven required record-only
+  corrections and eight advisory notes, applied with focused primary
+  validation. The review used a fresh-context session at
+  `opencode-go/deepseek-v4.1-flash`. The separately assigned different-family
+  reviewer (`opencode-go/grok-4.6`, `xhigh`) did not complete; that governance
+  gap remains open for Leonardo's decision.
 
 ## Step 01 — S01 package baseline and basic local start page
 

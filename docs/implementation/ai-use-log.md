@@ -330,3 +330,27 @@ the first exact activation pair. No fixture code, execution result, Step 6
 acceptance, runtime source, root content, dependency, lockfile, asset, network,
 deployment, licence, visibility, public, or Career Center change is claimed by
 this authority record.
+
+## 2026-09-10 — OpenCode migration and development restart
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: completed the approved opencode migration and
+development restart. It created `opencode.json` and the five subagent roles plus
+three workflow commands, rewrote `AGENTS.md` and S13, updated the implementation
+contract, README, design index, decision log, glossary, and testing and
+production wording, restarted the durable records, preserved the abandoned
+Step 6 worktree change as a local patch, removed `.codex/`, `src/`, `tests/`,
+`content/`, and `scripts/`, and trimmed the toolchain. It ran `npm run check`,
+`npm run build`, `opencode models opencode-go`, and a local `npm run dev` check;
+all passed. Evidence: branch `work/opencode-migration`, commits `87719f3`,
+`4246450`, `3bac3fc`, and `35e25a9`, and `MR-SR-000`.
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, fresh-context review session,
+actual reasoning variant `unknown`: performed the migration review from the
+read-only packet in a separate opencode process. It found no blocker, seven
+required record-only corrections, and eight advisory notes. The primary applied
+the corrections with focused validation. This fresh-context review used the same
+model family as the primary. The separately assigned different-family reviewer
+(`mr-design-reviewer`, `opencode-go/grok-4.6`, `xhigh`) did not complete, and
+that governance gap is recorded in `MR-SR-000` for Leonardo's decision. No
+failed, interrupted, or unused run is recorded here.

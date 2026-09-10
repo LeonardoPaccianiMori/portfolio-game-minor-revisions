@@ -315,6 +315,7 @@ provenance, and Leonardo-approval requirements are unchanged.
 The migration added the opencode configuration, rewrote `AGENTS.md` and S13,
 updated the implementation contract, README, design index, glossary, and
 testing and production wording, and restarted the durable records while
-preserving the legacy history in place and in Git. Independent review,
-Leonardo's restart confirmation, and the exact commit identifiers are recorded
-in the step record and acceptance log.
+preserving the legacy history in place where kept and in Git for the rewritten
+control files. Independent review findings and the exact commit identifiers are
+recorded in the step record and acceptance log; Leonardo's restart confirmation
+remains pending.

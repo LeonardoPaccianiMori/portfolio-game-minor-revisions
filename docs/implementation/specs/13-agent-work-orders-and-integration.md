@@ -160,16 +160,17 @@ The project configuration has one primary and five focused subagents:
 
 The default provider is OpenCode Go. The approved selection is:
 
-| Assignment class                                                              | Exact selection                          |
-| ----------------------------------------------------------------------------- | ---------------------------------------- |
-| Primary session (plan and build)                                              | `opencode-go/deepseek-v4.1-flash`, `max` |
-| Difficult or connected implementation, integration repair, and debugging      | `opencode-go/qwen3.8-max`, `xhigh`       |
-| Routine bounded implementation, tests, tools, or UI                           | `opencode-go/qwen3.8-max`, `xhigh`       |
-| Mechanical transformation, inventory, fixture conversion, or repeatable check | `opencode-go/gpt-5.6-luna`, `medium`     |
-| Final independent implementation review                                       | `opencode-go/kimi-k3`, `max`             |
-| Independent high-level design or material-governance review                   | `opencode-go/grok-4.6`, `xhigh`          |
-| Asset, licence, provenance, or bounded evidence research                      | `opencode-go/glm-5.3`, `high`            |
-| Cheap bounded document or code exploration (built-in `explore` override)      | `opencode-go/qwen3.8-flash`, `medium`    |
+| Assignment class                                                              | Exact selection                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Primary session (plan and build)                                              | `opencode-go/deepseek-v4.1-flash`, `max`              |
+| Difficult or connected implementation, integration repair, and debugging      | `opencode-go/qwen3.8-max`, `xhigh`                    |
+| Routine bounded implementation, tests, tools, or UI                           | `opencode-go/qwen3.8-max`, `xhigh`                    |
+| Mechanical transformation, inventory, fixture conversion, or repeatable check | `opencode-go/gpt-5.6-luna`, `medium`                  |
+| Final independent implementation review                                       | `opencode-go/kimi-k3`, `max`                          |
+| Independent high-level design or material-governance review                   | `opencode-go/grok-4.6`, `xhigh`                       |
+| Asset, licence, provenance, or bounded evidence research                      | `opencode-go/glm-5.3`, `high`                         |
+| Cheap bounded document or code exploration (built-in `explore` override)      | `opencode-go/qwen3.8-flash`, `medium`                 |
+| Small automatic tasks such as session titles and summaries (`small_model`)    | `opencode-go/qwen3.8-flash`, provider default variant |
 
 The model, variant, and assignment date are recorded in the step record. If the
 selected model or variant is unavailable, no silent substitute is allowed. The
@@ -475,6 +476,8 @@ S13 is documented only when:
 Leonardo approved the opencode workflow and the removal of the unfinished game
 scaffold. The previous Codex work-order, contribution, worktree, and
 Sol/Terra/Luna routing contracts are superseded. Their files remain as legacy
-history. This specification, `opencode.json`, and `.opencode/agent/` are the
-current authority for future assignments. The development pathway is being
-re-planned as a separate approved task before any new step starts.
+history. The pre-restart text of this specification is preserved in Git at
+commit `3e53eb5ba68e29070327fbdd76fe31b0de67a2f5`. This specification,
+`opencode.json`, and `.opencode/agent/` are the current authority for future
+assignments. The development pathway is being re-planned as a separate approved
+task before any new step starts.

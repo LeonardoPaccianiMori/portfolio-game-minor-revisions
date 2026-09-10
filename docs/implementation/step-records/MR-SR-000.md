@@ -1,7 +1,7 @@
 ---
 id: MR-SR-000
 type: development-step-record
-status: active
+status: reviewed
 step: RESTART-0
 created: 2026-09-10
 updated: 2026-09-10
@@ -42,8 +42,8 @@ specifications. The old records are preserved as history.
 - `docs/implementation/specs/13-agent-work-orders-and-integration.md`
 - `docs/implementation/step-records/`
 - `index.html`, `package.json`, `vite.config.ts`, `playwright.config.ts`
-- removed paths: `.codex/`, `src/`, `tests/`, `content/`, `scripts/`, generated
-  output, and retired worktree checkouts
+- removed paths: `.codex/`, `src/`, `tests/`, `content/`, `scripts/`, previous
+  build output, and retired worktree checkouts
 
 ## Prohibited paths
 
@@ -134,18 +134,53 @@ removal work where a worker adds no speed and would split design authority.
 
 ## Execution record
 
-To be completed with exact commit identifiers during the migration.
+- Base: `3e53eb5ba68e29070327fbdd76fe31b0de67a2f5`; branch
+  `work/opencode-migration`.
+- Commits: `87719f3` opencode configuration and agent roles; `4246450`
+  governance rewrite; `3bac3fc` restart records; `35e25a9` scaffold removal.
+  The review-correction commit is recorded in the acceptance log.
+- Checks: `npm run check` exit 0; `npm run build` exit 0; `opencode models
+opencode-go` exit 0; `npm run dev` served the placeholder page; `npm test`
+  exit 1 with no test files, as documented; `git status` clean.
+- Preservation: 755-line Step 6 patch and README under
+  `local-artifacts/legacy-step6/`; branch `work/MR-WP-09-step6-fixture-utilities`
+  at `89cfbcf838f8b5ba43910696e757c4e5f51d4e7c`.
 
 ## Independent review
 
-To be completed after the primary pre-review audit.
+Reviewed on 2026-09-10 at base `3e53eb5` and head `35e25a9` by a fresh-context
+opencode run using the build agent `opencode-go/deepseek-v4.1-flash` with a
+read-only packet. The assigned different-family reviewer (`mr-design-reviewer`,
+`opencode-go/grok-4.6`, `xhigh`) could not complete: its delegated launch was
+rejected at a permission prompt in the first attempt, and the standalone
+different-family run was aborted by Leonardo.
+
+Result: no blocker. Seven required record-only corrections (stale control-record
+wording and incomplete step evidence) and eight advisory notes. The required
+corrections were applied and received focused primary validation, not a repeat
+full review, because they change no authority, evidence meaning, or
+mechanically unverifiable technical claim.
+
+Governance note: the different-model-family requirement is not yet satisfied.
+Leonardo should either accept this fresh-context review or request the
+different-family pass before final acceptance.
 
 ## Corrections
 
-None yet.
+Applied from the independent review: seven required record-only corrections to
+`docs/decision-log.md`, `docs/00-design-index.md`, and
+`docs/implementation/step-acceptance-log.md`; advisory wording fixes to
+`docs/implementation/development-status.md` and this record; and a `small_model`
+row plus a history pointer in S13.
+
+Deliberately not changed: the frozen `MR-REQ-TEST-001` text in
+`docs/15-implementation-contract.md`, the `MR-IF-015` wording in
+`docs/implementation/interfaces.md`, and the stale `src`/`tests`/`scripts` path
+references in `tsconfig.json` and `eslint.config.js`. These are registered here
+and will be reconciled by the first restart step that restores those paths.
+Focused primary validation of the corrections passed.
 
 ## Leonardo decision
 
-Pending. Leonardo approved the plan on 2026-09-10 and requested
-`default_agent` set to `build`. Restart confirmation is requested after
-integration.
+Plan approved 2026-09-10 with `default_agent` set to `build`. Restart
+confirmation pending.
