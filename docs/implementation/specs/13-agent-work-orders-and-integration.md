@@ -165,15 +165,17 @@ The default provider is OpenCode Go. The approved selection is:
 | Primary session (plan and build)                                              | `opencode-go/deepseek-v4.1-flash`, `max`              |
 | Difficult or connected implementation, integration repair, and debugging      | `opencode-go/qwen3.8-max`, `xhigh`                    |
 | Routine bounded implementation, tests, tools, or UI                           | `opencode-go/qwen3.8-max`, `xhigh`                    |
-| Mechanical transformation, inventory, fixture conversion, or repeatable check | `opencode-go/gpt-5.6-luna`, `medium`                  |
-| Final independent implementation review                                       | `opencode-go/kimi-k3`, `max`                          |
-| Independent high-level design or material-governance review                   | `opencode-go/grok-4.6`, `xhigh`                       |
+| Mechanical transformation, inventory, fixture conversion, or repeatable check | `opencode-go/qwen3.8-flash`, `medium`                 |
+| Final independent implementation review                                       | `opencode-go/glm-5.3`, `max`                          |
+| Independent high-level design or material-governance review                   | `opencode-go/glm-5.3`, `max`                          |
 | Asset, licence, provenance, or bounded evidence research                      | `opencode-go/glm-5.3`, `high`                         |
 | Cheap bounded document or code exploration (built-in `explore` override)      | `opencode-go/qwen3.8-flash`, `medium`                 |
 | Small automatic tasks such as session titles and summaries (`small_model`)    | `opencode-go/qwen3.8-flash`, provider default variant |
 
-The model, variant, and assignment date are recorded in the step record. If the
-selected model or variant is unavailable, no silent substitute is allowed. The
+All selections above are open-weight model families. A closed-weight model
+requires a new approved plan and a recorded supersession. The model, variant,
+and assignment date are recorded in the step record. If the selected model or
+variant is unavailable, no silent substitute is allowed. The
 primary records the block and asks Leonardo when the plan must change. Effort
 labels never authorize delegation: the opencode configuration sets
 `task: deny` for every subagent, and the default `subagent_depth` prevents

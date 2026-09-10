@@ -319,3 +319,18 @@ preserving the legacy history in place where kept and in Git for the rewritten
 control files. Independent review findings and the exact commit identifiers are
 recorded in the step record and acceptance log; Leonardo's restart confirmation
 remains pending.
+
+## 2026-09-10 — Open-weights model matrix
+
+Leonardo requires open-weight models and rejected the closed-weight
+selections. The detailed and high-level reviewers move from
+`opencode-go/grok-4.6` to `opencode-go/glm-5.3` at `max`, and the mechanical
+worker moves from `opencode-go/gpt-5.6-luna` to `opencode-go/qwen3.8-flash` at
+`medium`. The main session (`deepseek-v4.1-flash`), the connected worker
+(`qwen3.8-max`), the researcher (`glm-5.3`), the exploration override
+(`qwen3.8-flash`), and the small model (`qwen3.8-flash`) already use
+open-weight families. Closed-weight model families such as OpenAI GPT and xAI
+Grok are not used; `kimi-k3` was already dropped for cost and speed. The
+reviewer remains a different family from the main session and the workers.
+Reintroducing a closed-weight model requires a new approved plan and a recorded
+supersession.

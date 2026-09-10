@@ -179,9 +179,11 @@ The default provider is OpenCode Go. The exact agent, model, and reasoning
 variant matrix is authoritative in
 `docs/implementation/specs/13-agent-work-orders-and-integration.md`. The main
 session uses `opencode-go/deepseek-v4.1-flash` at variant `max`; the
-`default_agent` is `build`. Subagents use only the exact selections in the
-matrix, and actual completed use is recorded. This boundary can change only
-through a new approved plan and a recorded supersession.
+`default_agent` is `build`. Selected models are open-weight families; using a
+closed-weight model requires a new approved plan and a recorded supersession.
+Subagents use only the exact selections in the matrix, and actual completed use
+is recorded. This boundary can change only through a new approved plan and a
+recorded supersession.
 
 ## GitHub synchronization approved on 2026-09-07
 

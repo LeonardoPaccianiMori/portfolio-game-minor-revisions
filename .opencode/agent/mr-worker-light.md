@@ -5,7 +5,7 @@ description: >-
   inventories, formatting, or repetitive checks after the primary agent assigns
   exclusive paths. Cannot commit, delegate, change branches, or use the network.
 mode: subagent
-model: opencode-go/gpt-5.6-luna
+model: opencode-go/qwen3.8-flash
 variant: medium
 permission:
   edit: allow

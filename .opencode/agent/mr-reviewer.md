@@ -5,7 +5,7 @@ description: >-
   primary pre-review audit, before integration. Cannot edit, delegate, or use
   the network.
 mode: subagent
-model: opencode-go/kimi-k3
+model: opencode-go/glm-5.3
 variant: max
 permission:
   edit: deny

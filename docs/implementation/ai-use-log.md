@@ -343,7 +343,10 @@ Step 6 worktree change as a local patch, removed `.codex/`, `src/`, `tests/`,
 `content/`, and `scripts/`, and trimmed the toolchain. It ran `npm run check`,
 `npm run build`, `opencode models opencode-go`, and a local `npm run dev` check;
 all passed. Evidence: branch `work/opencode-migration`, commits `87719f3`,
-`4246450`, `3bac3fc`, and `35e25a9`, and `MR-SR-000`.
+`4246450`, `3bac3fc`, and `35e25a9`, and `MR-SR-000`. In the same session it
+also replaced the closed-weight GPT and Grok selections with open-weight models
+at Leonardo's request (`glm-5.3` for both reviewers, `qwen3.8-flash` for the
+mechanical worker), recorded in the decision log.
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, fresh-context review session,
 actual reasoning variant `unknown`: performed the migration review from the
