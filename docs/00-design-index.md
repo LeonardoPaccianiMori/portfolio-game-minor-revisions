@@ -1,6 +1,6 @@
 # Design Index and Readiness Gate
 
-Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
+Status: **Development restarted on 2026-09-10 under opencode. B00–B10, R00–R07, S00–S14, and the frozen interfaces remain authoritative; legacy implementation records are historical. The development pathway is being re-planned and needs Leonardo's approval.**
 
 This index is the completeness contract for _Minor Revisions_. `Seeded` means
 the document contains all decisions confirmed as of 2026-08-26 plus explicit
@@ -38,9 +38,10 @@ gaps. It does not mean that the domain is finished.
 | `implementation/open-issues.md`                 | Technical clarification ledger                               | `001`–`019` and `021` resolved                         | `020` remains the later fallback start-window question.                                                                    |
 | `implementation/specification-audit.md`         | S14 audit and gate packet                                    | Documented with governance amendment audit             | Gate 1 approved on 2026-09-01; it authorizes no code.                                                                      |
 | `implementation/ai-use-log.md`                  | Private, project-only AI model and contribution provenance   | Current                                                | Future primary sessions and completed subagent contributions record actual model and reasoning evidence.                   |
-| `implementation/development-roadmap.md`         | Incremental implementation sequence                          | Steps 1–5 accepted                                     | Prepare the separate exact Step 6 plan.                                                                                    |
-| `implementation/development-status.md`          | Durable implementation resume point                          | Step 5 accepted                                        | Do not implement Step 6 before its plan is approved.                                                                       |
-| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1–5 accepted                                     | Keep Step 6 planning and implementation separate.                                                                          |
+| `implementation/development-roadmap.md`         | Incremental implementation sequence (legacy preserved)       | Restart 2026-09-10; re-plan pending                    | Prepare the new pathway as a separate approved task.                                                                       |
+| `implementation/development-status.md`          | Durable implementation resume point                          | Restarted 2026-09-10                                   | Read before every session; no game step is authorized.                                                                     |
+| `implementation/step-acceptance-log.md`         | Leonardo and agent evidence index                            | Steps 1–5 accepted (legacy); Step 6 abandoned          | Record each new accepted step here.                                                                                        |
+| `implementation/step-records/`                  | Merged step plan, execution, review, and acceptance records  | Empty; contract documented in S13                      | One record per approved step before work starts.                                                                           |
 
 ## Discussion roadmap
 
@@ -71,18 +72,18 @@ status, and the next place to resume.
 - Technical-specification blocks: **S00–S14 documented; no S15 is planned**.
 - Last documented technical block: **S14 — Consistency audit and gate packet**.
 - Durable implementation resume point: `implementation/development-status.md`.
-- Active issue group: `MR-IMP-OPEN-020` remains the later fallback start-window question; `001`–`019` and `021` are resolved.
+- Active issue group: `MR-IMP-OPEN-020` remains the later fallback start-window question; `001`–`019` and `021`–`022` are resolved.
 - Gate 1, technical baseline: **approved by Leonardo on 2026-09-01**.
-- Subagent governance: **documented**; future plans must use explicit model
-  routing and focused delegation records.
+- Subagent governance: **opencode workflow documented in S13**; future plans
+  must use the exact agent, model, variant, and focused delegation records.
 - AI-use provenance: **current and project-specific**; B00–B10, R00–R07,
   S01–S14, and Step-0 model history belongs only to _Minor Revisions_.
-- Incremental implementation start: **Steps 1–5 accepted**.
-- Vertical-slice acceptance: **blocked**; Steps 6–30 remain unaccepted.
-- Fallback acceptance: **blocked**; Steps 32–52 do not exist.
-- Full local-game acceptance: **blocked**; Steps 54–69 do not exist.
-- Step 5 authority is limited to its exact approved content-foundation scope.
-  No Three.js scene, game system, production asset, deployment configuration,
+- Incremental implementation: **restarted on 2026-09-10**. Steps 1–5 remain
+  accepted historical evidence; Step 6 was abandoned before code delivery.
+- Development pathway: **being re-planned**; no new step is authorized.
+- Vertical slice, fallback, and full-game acceptance: **blocked**; the
+  replacement pathway and its steps do not exist yet.
+- No Three.js scene, game system, production asset, deployment configuration,
   release, or public licence is authorized.
 
 ### B00 — Vision, audience, success, and boundaries
@@ -483,15 +484,16 @@ the latest complete specification and all of the following are true:
 - `docs/15-implementation-contract.md` maps agent-owned work packages to
   requirements and validation.
 
-Current Gate 1 state: **approved by Leonardo on 2026-09-01; Steps 1–5 are
-accepted; Step 6 requires a separate exact plan and approval**.
+Current Gate 1 state: **approved by Leonardo on 2026-09-01. Steps 1–5 remain
+accepted historical evidence; development restarted on 2026-09-10; the
+replacement pathway needs Leonardo's approval before any step starts**.
 
 The former one-shot vertical-slice production sequence is superseded by the
-collaborative workflow in `implementation/development-roadmap.md`. After Gate
-1, Leonardo approves only one exact step plan at a time. Steps 1–30 build the
-slice, Step 31 accepts it, Step 53 accepts the fallback, and Step 70 accepts the
-complete local game. Each step includes technical checks, a Leonardo test or
-result review, corrections, durable attribution, and explicit acceptance.
+collaborative workflow. After the restart, the old Steps 1–70 are legacy
+history; the replacement pathway will renumber and re-sequence them, and
+Leonardo approves only one exact step plan at a time. Each new step includes
+technical checks, a Leonardo test or result review, corrections, durable
+attribution, and explicit acceptance.
 Public actions remain separate.
 
 ## Correction baseline C01–C06

@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
+Status: **Restarted on 2026-09-10 under opencode. S01–S12 and the frozen interfaces remain authoritative. Earlier B/R/S lifecycle records, work orders, and contributions are historical. The development pathway is being re-planned, and every future step needs its own approved plan.**
 
 ## Authorization gate
 
@@ -48,7 +48,7 @@ packet needs Leonardo's explicit approval before any dependent work starts.
 
 After approval, the primary agent updates every affected authoritative source,
 marks the prior decision or interface `superseded`, preserves the reason and
-date, updates traceability and required tests, and creates a revised work order
+date, updates traceability and required tests, and creates a revised step record
 when implementation is needed. An accepted step is never rewritten: a later
 revision governs future work only.
 
@@ -90,7 +90,7 @@ The paths below are planned future paths. They are not created by this
 document. A worker owns the listed paths only for its package. Shared design
 documents, content interfaces, and integration files require explicit
 coordination. S13 is authoritative for exact path ownership, dependency waves,
-work-order state, review, validation, integration, and recovery.
+step-record state, review, validation, integration, and recovery.
 
 | Work package                             | Owned planned paths and responsibility                                                                                                                                          | Depends on                                                                  | Required evidence                                                                                                                   |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,44 +112,39 @@ only after Step 53 and an approved Step-54 plan. MR-WP-09 can prepare only the
 checks named by an authorized step; it cannot publish, create a remote, or
 deploy.
 
-## Worker-assignment contract
+## Assignment and step-record contract
 
-One implementation work order belongs to one approved incremental step. A
-step can use more than one non-overlapping work order only when its approved
-plan names each owner and integration order. A work order cannot claim the
-authority of a complete phase merely because its work package appears in a
-later milestone.
+One step record belongs to one approved incremental step. A step can use more
+than one non-overlapping assignment only when its approved plan names each
+owner and integration order. An assignment cannot claim the authority of a
+complete phase merely because its work package appears in a later milestone.
 
-Every future worker assignment is stored under
-`docs/implementation/work-orders/` with the exact S13 lifecycle and must
-state:
-
-- the objective and owned paths;
-- the exact requirements, content IDs, dependencies, and acceptance criteria;
-- the model and reasoning effort selected for the task;
-- allowed inputs, prohibited scope, and unresolved decisions;
-- the required tests, evidence, and documentation update;
-- asset, privacy, accessibility, and performance limits; and
-- the integration contact and expected handoff.
+Every future assignment is recorded in a step record under
+`docs/implementation/step-records/` with the exact S13 contract. The record
+states the objective and owned paths; the exact requirements, content IDs,
+dependencies, and acceptance criteria; the selected model, variant, and
+reasoning level; allowed inputs, prohibited scope, and unresolved decisions;
+the required tests, evidence, and documentation update; asset, privacy,
+accessibility, and performance limits; and the expected handoff.
 
 Workers are not alone in the repository. They must preserve and accommodate
 other work, never revert unrelated changes, avoid overlapping edits, report a
 conflict instead of guessing, and update their work to fit compatible changes.
-They cannot make a design decision, publish a change, contact Leonardo, or
-modify a remote.
+They cannot make a design decision, publish a change, contact Leonardo, commit,
+or modify a remote.
 
-Each completed package must have a private contribution record with the date,
-requirements, model, reasoning effort, instructions, owned files, output,
+Each completed assignment is recorded in the same step record with the date,
+requirements, actual model and variant, instructions, owned files, output,
 tests, review result, Leonardo's corrections, and final commit.
 
 ## Branch, review, and integration rules
 
-Until a remote exists, main remains the local integration branch. The primary
-agent creates a short-lived `work/MR-WP-xx-topic` branch and matching ignored
-`.worktrees/MR-WP-xx-topic/` folder from the exact work-order commit. A worker
-makes atomic commits that name its work package and does not bundle unrelated
-formatting. The primary agent alone copies reviewed commits to `main` in
-dependency order.
+Local `main` remains the integration branch, and `origin` is approved at the
+exact 2026-09-07 destination. The primary agent commits the approved plan
+checkpoint, creates one short-lived `work/<topic>` branch, assigns exactly one
+worker, audits the complete diff, and commits it on the branch. Workers never
+commit. The primary integrates with `git merge --ff-only` when possible and
+runs the applicable verification on `main`.
 
 Before integration, the primary integration agent must use the independent
 review and must:
@@ -161,11 +156,10 @@ review and must:
 5. record any known limitation; and
 6. confirm that no unapproved creative or technical scope entered the change.
 
-Parallel work is allowed only for non-overlapping owned paths with frozen
-interfaces. Shared rules, content schemas, and integration files have one
-named owner at a time. Runtime imports must follow S02; browser adapters cannot
-call one another. No worker force-pushes, rewrites history, creates a remote,
-or pushes a remote.
+Assignments run one at a time with frozen interfaces. Shared rules, content
+schemas, and integration files have one named owner at a time. Runtime imports
+must follow S02; browser adapters cannot call one another. No worker commits,
+changes branches, rewrites history, creates a remote, or pushes a remote.
 
 ## Requirement-level definition of done
 
@@ -183,7 +177,7 @@ A requirement or work package is done only when:
 5. it has no unsupported science, generated text, hidden telemetry, or
    unverified asset;
 6. it meets the applicable performance and download boundary;
-7. its documentation, traceability, and contribution record are current; and
+7. its documentation, traceability, and step record are current; and
 8. Leonardo reviews and accepts the integrated result.
 
 Code running once, a green screenshot, a successful build, or agent
@@ -262,3 +256,12 @@ observed base, authorization commit, branch, worktree, owned paths, checks, and
 integration gate. No order can change runtime source, root content,
 configuration, dependencies, lockfile, assets, network, deployment, licence,
 visibility, or Career Center.
+
+## 2026-09-10 — Restart under opencode
+
+Leonardo approved the opencode migration, the removal of the unfinished game
+scaffold, and a future re-planning of the development pathway. Steps 1–5 remain
+accepted historical evidence; Step 6 was abandoned before code delivery.
+Work orders and contribution records are legacy history. S13 and
+`docs/implementation/step-records/` define future assignments. No game step is
+authorized before the new pathway and its first exact plan are approved.

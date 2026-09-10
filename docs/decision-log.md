@@ -273,3 +273,48 @@ integrated, and main-validated content foundation: strict source validation,
 the complete slice profile, and safe startup gating. It is not a playable-game
 or executed-campaign-journey claim. Step 6 needs a separate exact plan and
 approval. Full and fallback profiles remain incomplete.
+
+## 2026-09-10 — OpenCode migration approved
+
+Leonardo approved migrating the repository from the Codex workflow to opencode:
+project configuration in `opencode.json`, focused subagent roles under
+`.opencode/agent/`, repeatable prompts under `.opencode/command/`, and a new
+model matrix on OpenCode Go. The main session uses
+`opencode-go/deepseek-v4.1-flash` at variant `max` with `default_agent`
+`build`. Connected implementation uses `opencode-go/qwen3.8-max` at `xhigh`,
+mechanical work uses `opencode-go/gpt-5.6-luna` at `medium`, detailed
+independent review uses `opencode-go/kimi-k3` at `max`, high-level governance
+review uses `opencode-go/grok-4.6` at `xhigh`, and research uses
+`opencode-go/glm-5.3` at `high`. This supersedes the Codex agent files and the
+Astra/Sol/Terra/Luna routing. Earlier contributions retain their historical
+attribution.
+
+## 2026-09-10 — Development restart approved
+
+Leonardo approved scrapping the unfinished implementation and starting
+development over while keeping the high-level design documents, the S01–S12
+technical specifications, the frozen interfaces, and the historical records.
+The reviewed toolchain configuration is preserved; game source, tests, content,
+scripts, and the `.codex/` tooling are removed. Steps 1–5 remain accepted
+historical evidence; Step 6 is abandoned before code delivery, and its one
+uncommitted worktree change is preserved as a local patch. The development
+pathway will be re-planned as a separate approved task with new step
+identifiers; no development step is authorized until then.
+
+## 2026-09-10 — Governance simplification approved
+
+Leonardo approved replacing the separate work-order and contribution records
+with one merged step record per step under
+`docs/implementation/step-records/`, primary-owned commits on one short-lived
+branch per step, one worker at a time, no worktrees, and fresh independent
+review from a different model family. The review, acceptance, privacy,
+provenance, and Leonardo-approval requirements are unchanged.
+
+## 2026-09-10 — Restart implementation recorded
+
+The migration added the opencode configuration, rewrote `AGENTS.md` and S13,
+updated the implementation contract, README, design index, glossary, and
+testing and production wording, and restarted the durable records while
+preserving the legacy history in place and in Git. Independent review,
+Leonardo's restart confirmation, and the exact commit identifiers are recorded
+in the step record and acceptance log.

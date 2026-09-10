@@ -57,9 +57,9 @@ fixtures, raw reports, durable private summaries, and Leonardo's play reviews
 remain separate. No phase can mark an unrun case as passed or change an
 expected result to hide an implementation failure.
 
-S13 now fixes ten future work packages, dependency waves, stored work orders,
-isolated local branches and worktrees, independent review, primary-agent
-integration, and contribution records. One approved step can use only the
+S13 now fixes ten future work packages, dependency waves, stored step records,
+independent review, primary-agent integration, and one short-lived branch per
+step. One approved step can use only the
 paths and checks named in that step plan. Step 31 slice acceptance is required
 before Step 32. Step 53 fallback acceptance is required before Step 54. Step
 70 full local-game acceptance is required before release-candidate work.
@@ -152,7 +152,7 @@ automatically cancel it.
 
 Leonardo remains responsible for creative direction, requirements, review,
 private testing, approval, and final decisions. Future agents can implement
-bounded work packages only after authorization. Their contribution records
+bounded work packages only after authorization. Their step records
 must state the date, model, reasoning effort, requirements, owned files,
 instructions, output, tests, review, Leonardo's corrections, and final commit.
 
@@ -183,7 +183,7 @@ its own verified licence and attribution. Do not add a public licence file,
 remote, deployment configuration, or release date in this phase.
 
 After a future public release, Leonardo plans a 90-day private critical-fix
-period. It covers clear critical defects found by Leonardo or Codex. It is not
+period. It covers clear critical defects found by Leonardo or the coding agent. It is not
 a public support promise, analytics programme, or ongoing maintenance
 commitment. After 90 days, Leonardo can choose maintenance, archival status,
 or a new plan.

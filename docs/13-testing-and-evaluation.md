@@ -4,12 +4,12 @@ Status: **C01–C06 approved on 2026-09-06; current authority is the correction 
 
 ## Evaluation boundary
 
-Testing is private to Leonardo and Codex. This is a personal creative project,
+Testing is private to Leonardo and the coding agent. This is a personal creative project,
 not a research study or commercial product test. Do not recruit external
 players, collect participant data, use consent forms, run surveys, or require
 external science or narrative review.
 
-Leonardo is the only human play evaluator. Codex provides automated tests,
+Leonardo is the only human play evaluator. The coding agent provides automated tests,
 private technical checks, content checks, and documented review. The approved
 [`independent LLM design review`](reviews/independent-design-review-protocol.md)
 is outside B10 testing. Claude Opus 5 completed the review on 2026-08-28 against
@@ -372,7 +372,7 @@ profile, viewport, and measurement tool. It records:
 
 Direct current stable Chrome, Edge, and Firefox evidence uses the reference
 computer. Detailed processor, graphics, and memory evidence uses Chrome.
-Codex may run automated Chromium, Firefox, and WebKit checks. Leonardo will not
+The coding agent may run automated Chromium, Firefox, and WebKit checks. Leonardo will not
 perform a manual Safari check. Do not state that Safari is supported without
 direct Safari evidence. Raw local profiler exports remain ignored and
 unpublished; the tracked summary follows the S11 privacy contract.
@@ -409,7 +409,7 @@ Its private completion check requires:
 
 1. all applicable automated checks pass;
 2. Leonardo completes one Standard-profile run from opening to safe resume;
-3. Codex verifies a limited or missed-monitoring fixture as well as the
+3. The coding agent verifies a limited or missed-monitoring fixture as well as the
    routine path;
 4. the opening objective, action costs, evidence views, queue choice, claim
    choice, and save behaviour are understandable in the approved content;
@@ -427,7 +427,7 @@ session time, monitoring visits with no decision, confirmations per minute,
 contextual lines displayed, and environmental lines read. These are private
 development measurements, not telemetry. Do not set an arbitrary numeric pass
 limit before prototype evidence exists. Before the first run, Leonardo and
-Codex record the qualitative questions that the measurements will answer:
+the coding agent record the qualitative questions that the measurements will answer:
 
 - Does travel create a short decision pause, or does it dominate useful play?
 - Does every required monitoring visit reveal a decision, changed state, or
@@ -445,7 +445,7 @@ one useful.
 
 ## MR-TEST-VISION-001
 
-This private test has two parts. First, a fresh Codex context receives only the
+This private test has two parts. First, a fresh agent context receives only the
 actual build-specific player-facing strings and representative captures of the
 current objective, the three evidence views, Research Status, and the relevant
 choice screens. It receives no numbered design document, review report, hidden
@@ -486,7 +486,7 @@ private quality gate and `MR-TEST-VISION-001` with its exact cut line. Leonardo
 checks
 its complete campaign, one constrained evidence path, one weakened path, one
 available career route, one no-route result, and an ending-card Archive result.
-Codex runs the full automated matrix and private technical review.
+The coding agent runs the full automated matrix and private technical review.
 
 The order is exact. Step 31 slice acceptance is required before Step 32. Step
 53 fallback acceptance is required before Step 54. Step 70 full local-game

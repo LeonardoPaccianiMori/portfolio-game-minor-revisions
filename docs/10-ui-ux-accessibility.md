@@ -291,7 +291,7 @@ replacement confirmation, Save and Quit, local-data clear confirmation,
 Archive headings, and glance-display priority. MR-TEST-A11Y-001 must verify the
 150 percent scale, 1280 by 720 view, keyboard and controller core actions,
 captions, reduced motion, contrast, and glance-display and Interaction Assist
-rules. These checks are private to Leonardo and Codex.
+rules. These checks are private to Leonardo and the coding agent.
 
 S12 must also encode the nine S09 fixture groups from `MR-S09-INP-001` through
 `MR-S09-JRN-001`. They cover exact device conversion, input and focus modes,
