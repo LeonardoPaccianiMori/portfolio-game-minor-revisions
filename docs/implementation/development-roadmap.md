@@ -1,8 +1,22 @@
 # Incremental Development Roadmap
 
-Status: **C01–C06 approved on 2026-09-06; current authority is the correction sections below and the interface register. Earlier B/R/S lifecycle records are historical. Runtime evidence remains step-specific.**
+Status: **Restarted on 2026-09-10 under opencode. The Steps 0–70 list below is legacy history. The replacement pathway needs Leonardo's approval before any step starts.**
 
-Last updated: 2026-09-02
+Last updated: 2026-09-10.
+
+## 2026-09-10 — Development restart
+
+Leonardo approved scrapping the unfinished implementation and starting over
+while keeping the high-level design documents, the S01–S12 technical
+specifications, the frozen interfaces, and the historical records. The old
+Steps 0–70 below are legacy history; they are not the current pathway. Step 6
+was abandoned before code delivery.
+
+The replacement pathway will be prepared as a separate approved task with new,
+non-colliding step identifiers and the opencode step-record workflow. No
+development step starts before Leonardo approves that pathway and the first
+exact step plan. The milestone gates (slice, fallback, and full local game)
+remain the intended acceptance boundaries.
 
 ## Purpose
 

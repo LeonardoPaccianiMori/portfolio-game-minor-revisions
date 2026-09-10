@@ -1,5 +1,23 @@
 # Development Status
 
+Last updated: 2026-09-10.
+
+## Restart resume record
+
+Status: **Development restarted on 2026-09-10 under opencode. Steps 1–5 remain accepted historical evidence; Step 6 was abandoned before code delivery. The reviewed toolchain configuration is preserved; game source, tests, content, scripts, and the Codex tooling were removed. The development pathway is being re-planned and no new step is authorized.**
+
+- Pre-restart authority: `3e53eb5ba68e29070327fbdd76fe31b0de67a2f5` on `main`, equal to `origin/main`.
+- Migration branch: `work/opencode-migration` (local; integrated only after checks and review).
+- Active plan: the opencode migration and restart approved by Leonardo on 2026-09-10; see the migration step record and the decision log.
+- Current state: migration implemented; technical checks and independent review are required before Leonardo's restart confirmation.
+- Next permitted action: Leonardo's restart confirmation — opencode loads the project configuration, the configured subagents are available, and `npm run dev` shows the placeholder page. No game step may start before the replacement pathway is approved.
+- Legacy plan state: Steps 1–5 accepted; Step 6 abandoned before code delivery. `MR-WO-WP09-001` is abandoned; its one uncommitted worktree change is preserved at `local-artifacts/legacy-step6/uncommitted-step6.patch` with a manual path, and its branch `work/MR-WP-09-step6-fixture-utilities` at `89cfbcf838f8b5ba43910696e757c4e5f51d4e7c` remains local.
+- Preserved specification baseline: S01–S12, the frozen `MR-IF-*` interfaces, `MR-IMP-OPEN-020` (fallback start-window question remains open), and all review records.
+- Removed from the working tree: `src/`, `tests/`, `content/`, `scripts/`, `.codex/`, and generated output. Git history retains them.
+- Toolchain state: dependency pins and generic configuration preserved. `npm run lint`, `npm run format:check`, `npm run typecheck`, `npm run dev`, and `npm run build` work. `npm test` and `npm run test:e2e` intentionally report no test files until the first restart step restores the tested foundation.
+
+## Legacy pre-restart resume record
+
 Last updated: 2026-09-09.
 
 ## Current resume point

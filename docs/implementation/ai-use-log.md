@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-09
+Last updated: 2026-09-10
 
 ## Purpose and scope
 
@@ -22,22 +22,27 @@ conversation, hidden reasoning, credentials, personal data, or machine paths.
 
 ## Recording rule
 
-For future _Minor Revisions_ work, add one entry for every primary Codex
+For future _Minor Revisions_ work, add one entry for every primary opencode
 session that completes project work and one entry for every completed subagent
 contribution. Each entry must state:
 
 - the date or date range;
-- provider, exact model, and actual reasoning effort;
+- provider, exact model, and actual reasoning effort or variant;
 - role and completed work;
 - project phase or step; and
 - durable supporting evidence, such as a work order, contribution record,
   review record, accepted commit, or named control document.
 
-Record the actual session values. If the exact model or reasoning effort is
-genuinely unavailable, write `unknown`; do not infer it from a configuration
-default. If a model changes during one session, create separate entries for
-the work completed by each model. Do not add failed, interrupted, abandoned,
-considered, or unused runs.
+Record the actual session values. If the exact model or reasoning effort or
+variant is genuinely unavailable, write `unknown`; do not infer it from a
+configuration default. If a model changes during one session, create separate
+entries for the work completed by each model. Do not add failed, interrupted,
+abandoned, considered, or unused runs.
+
+From 2026-09-10 the provider is OpenCode Go unless an approved plan changes it,
+and the agent, model, and variant are recorded per the S13 matrix. Every
+historical entry above remains evidence of the Codex period and is not
+re-attributed.
 
 The older primary-agent history below is grouped by phase because exact
 historical session boundaries were not recorded. That grouping exception does

@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Steps 1–5 accepted; Gate 4A complete**
+Status: **Restarted 2026-09-10; Steps 1–5 accepted as legacy history; Step 6 abandoned; the replacement pathway is pending approval**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -34,7 +34,7 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 |    3 | Accepted                | 2026-09-02                       | Reviewed integration on main passed 111 tests, required coverage, 16-module build, 15 browser flows, and complete scope and production checks                                                    | Passed 2026-09-02                                      | Leonardo explicitly accepted Step 3 on 2026-09-02                                                   | Containing acceptance commit plus `d2a63f5` and `d26ffe1`                                        | Four expected lines persisted after repeated reloads.                  |
 |    4 | Accepted                | 2026-09-02; amendment 2026-09-06 | Main 259 unit tests, required coverage, 115-module build, 21 browser flows; complete/focused reviews and record fixes passed                                                                     | Screenshots of both expected pages supplied 2026-09-06 | Leonardo explicitly accepted Step 4 on 2026-09-06                                                   | Reviewed correction a0b268f; integration 00029e2; handover d08ee26; containing acceptance commit | Prepare a separate Step 5 plan; implementation not yet approved.       |
 |    5 | Accepted                | 2026-09-08                       | 306 unit tests; 91.60% lines; 87.86% branches; five profile builds; 125-module slice build; 21 browser tests; complete and focused reviews passed                                                | Passed 2026-09-09                                      | Leonardo explicitly accepted Step 5 on 2026-09-09                                                   | `3de7304`, `0e606d0`, `094ea1c`; containing acceptance commit                                    | Content foundation only; no playable-game or journey claim.            |
-|    6 | Contract preparation    | Preparation approved 2026-09-09  | Primary source/count/example/scope checks passed; fresh review and focused re-check passed                                                                                                       | Not applicable to preparation                          | Pending exact amendment and implementation-plan decision                                            | Containing preparation commit                                                                    | No fixture implementation or evidence result is approved.              |
+|    6 | Abandoned               | Preparation approved 2026-09-09  | Contract preparation checks passed; no implementation began. The one uncommitted worktree change is preserved as a local patch.                                                                  | Not applicable                                         | Superseded by the 2026-09-10 development restart                                                    | None integrated                                                                                  | Abandoned before code delivery; see the restart record below.          |
 | 7–70 | Not started             | —                                | —                                                                                                                                                                                                | —                                                      | —                                                                                                   | —                                                                                                | Each step needs a separate approved plan and accepted dependency.      |
 
 ## Gate decisions
@@ -42,6 +42,28 @@ Revisions_ and does not replace Leonardo's approval or acceptance evidence.
 | Gate                               | State    | Leonardo decision | Effect                                                                                                          | Next boundary                       |
 | ---------------------------------- | -------- | ----------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | Gate 1 — frozen technical baseline | Approved | 2026-09-01        | Accepts the frozen S01–S14 baseline; Steps 1–5 are separately accepted; MR-IMP-DEC-310 updates Step 5 contracts | Complete the reviewed Step 6 packet |
+
+## 2026-09-10 — Development restart and opencode migration
+
+Leonardo approved the migration from the Codex workflow to opencode, the
+removal of the unfinished game scaffold, and a future re-planning of the
+development pathway.
+
+- Steps 1–5 remain accepted historical evidence with their original dates.
+- Step 6 (`MR-WO-WP09-001`) is abandoned before code delivery. Its one
+  uncommitted worktree change is preserved at
+  `local-artifacts/legacy-step6/uncommitted-step6.patch`; branch
+  `work/MR-WP-09-step6-fixture-utilities` at
+  `89cfbcf838f8b5ba43910696e757c4e5f51d4e7c` remains local.
+- Local `main` and `origin/main` were equal at
+  `3e53eb5ba68e29070327fbdd76fe31b0de67a2f5` before the migration.
+- The reviewed toolchain configuration is preserved; game source, tests,
+  content, scripts, and the Codex tooling were removed.
+- Legacy work orders, contributions, plans, and status records remain in the
+  repository as historical evidence.
+- No development step is authorized until Leonardo approves the replacement
+  pathway and its first exact plan. Every future step is recorded in
+  `docs/implementation/step-records/`.
 
 ## Step 01 — S01 package baseline and basic local start page
 
