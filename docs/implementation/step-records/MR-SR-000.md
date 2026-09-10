@@ -1,7 +1,7 @@
 ---
 id: MR-SR-000
 type: development-step-record
-status: reviewed
+status: integrated
 step: RESTART-0
 created: 2026-09-10
 updated: 2026-09-10
@@ -145,6 +145,7 @@ opencode-go` exit 0; `npm run dev` served the placeholder page; `npm test`
 - Preservation: 755-line Step 6 patch and README under
   `local-artifacts/legacy-step6/`; branch `work/MR-WP-09-step6-fixture-utilities`
   at `89cfbcf838f8b5ba43910696e757c4e5f51d4e7c`.
+- Integrated on local `main` and pushed to `origin/main` as `39ffbb3`.
 
 ## Independent review
 
