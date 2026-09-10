@@ -334,3 +334,14 @@ Grok are not used; `kimi-k3` was already dropped for cost and speed. The
 reviewer remains a different family from the main session and the workers.
 Reintroducing a closed-weight model requires a new approved plan and a recorded
 supersession.
+
+## 2026-09-10 — Replacement development pathway documented
+
+Leonardo asked for the repository to be ready to start development without
+starting it. The replacement pathway R1–R63 is now documented in
+`docs/implementation/development-roadmap.md`. It reuses the legacy step content
+with new identifiers, folds asset research and integration into one step per
+asset category, removes the separate fixture step, and keeps the slice (R30),
+fallback (R50), and full local-game (R63) acceptance gates. The legacy Steps
+0–70 are preserved in the same file as an appendix. No step is authorized; the
+next permitted action is the exact R1 plan and Leonardo's explicit approval.

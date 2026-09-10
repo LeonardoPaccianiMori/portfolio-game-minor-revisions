@@ -1,6 +1,6 @@
 # Implementation Contract
 
-Status: **Restarted on 2026-09-10 under opencode. S01–S12 and the frozen interfaces remain authoritative. Earlier B/R/S lifecycle records, work orders, and contributions are historical. The development pathway is being re-planned, and every future step needs its own approved plan.**
+Status: **Restarted on 2026-09-10 under opencode. S01–S12 and the frozen interfaces remain authoritative. Earlier B/R/S lifecycle records, work orders, and contributions are historical. The replacement pathway R1–R63 is documented, and every future step needs its own approved plan.**
 
 ## Authorization gate
 
@@ -260,8 +260,8 @@ visibility, or Career Center.
 ## 2026-09-10 — Restart under opencode
 
 Leonardo approved the opencode migration, the removal of the unfinished game
-scaffold, and a future re-planning of the development pathway. Steps 1–5 remain
+scaffold, and the replacement development pathway R1–R63. Steps 1–5 remain
 accepted historical evidence; Step 6 was abandoned before code delivery.
 Work orders and contribution records are legacy history. S13 and
 `docs/implementation/step-records/` define future assignments. No game step is
-authorized before the new pathway and its first exact plan are approved.
+authorized before its own exact plan is approved.

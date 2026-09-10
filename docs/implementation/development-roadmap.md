@@ -1,24 +1,161 @@
 # Incremental Development Roadmap
 
-Status: **Restarted on 2026-09-10 under opencode. The Steps 0–70 list below is legacy history. The replacement pathway needs Leonardo's approval before any step starts.**
+Status: **Replacement pathway R1–R63 documented 2026-09-10. No step is authorized until Leonardo approves its own exact plan. The legacy Steps 0–70 are preserved below as history.**
 
 Last updated: 2026-09-10.
 
-## 2026-09-10 — Development restart
-
-Leonardo approved scrapping the unfinished implementation and starting over
-while keeping the high-level design documents, the S01–S12 technical
-specifications, the frozen interfaces, and the historical records. The old
-Steps 0–70 below are legacy history; they are not the current pathway. Step 6
-was abandoned before code delivery.
-
-The replacement pathway will be prepared as a separate approved task with new,
-non-colliding step identifiers and the opencode step-record workflow. No
-development step starts before Leonardo approves that pathway and the first
-exact step plan. The milestone gates (slice, fallback, and full local game)
-remain the intended acceptance boundaries.
-
 ## Purpose
+
+This roadmap divides local development of the complete _Minor Revisions_ game
+into R1–R63 after the 2026-09-10 restart. It reuses the approved legacy step
+content, gives it new non-colliding identifiers, folds asset selection and
+integration into one bounded step per asset category, and removes the separate
+governance-only fixture step. It does not change the game design or the frozen
+`MR-IF-001`–`MR-IF-015` interfaces.
+
+The final target remains the complete approximately three-hour game. R63 means
+that the complete game works locally and Leonardo has accepted it. Licence
+creation, a remote beyond the existing `origin`, release, deployment, and
+portfolio work remain outside this roadmap.
+
+## Authority and change rule
+
+The authority order remains the order in `roadmap.md`. This file controls only
+the order and size of implementation increments. The opencode assignment,
+review, and record rules are in
+`specs/13-agent-work-orders-and-integration.md`.
+
+- A step cannot start from this roadmap alone.
+- Before each step, the primary agent gives Leonardo the exact implementation
+  plan with purpose, owned files, requirements, tests, local run method,
+  Leonardo test, known exclusions, proposed commit message, and a delegation
+  table (task, role, owned paths, dependencies, model, variant, selection
+  reason, focused source packet, and parallel or sequential order).
+- Leonardo must explicitly approve that one plan. Approval of one step does
+  not approve a later step.
+- A later step waits for every stated dependency and Leonardo's acceptance of
+  the prior checkpoint.
+- Test evidence can reveal a repair or a missing intermediate step. The primary
+  agent explains the proposed roadmap change and receives Leonardo's approval
+  before changing this list or implementing new work.
+- A step that proves too large may be split, and two adjacent small steps may
+  be merged, only through the same approval.
+- Any earlier decision remains revisable through evidence, impact review,
+  Leonardo's approval, authoritative-record updates, and explicit
+  supersession. An accepted step remains historical evidence.
+
+## Standard step cycle
+
+Every R1–R63 step follows the S13 cycle: approved exact plan, plan checkpoint,
+implementation by the primary or one bounded worker, automated and browser
+checks, one primary pre-review audit, one fresh independent review from a
+different model family, corrections, integration on local `main`, applicable
+full verification, Leonardo's direct test when player-visible, and his explicit
+acceptance. Record-only and mechanical-formatting corrections use the narrower
+S13 cadence.
+
+The Gates 4A, 6A, and 26A described in the legacy appendix below belonged to the
+legacy sequence. Their applicable runtime and evaluation obligations are
+re-homed inside the relevant R-steps and are re-planned at each step's own
+plan.
+
+## Definite step list
+
+The `Depends on` column gives the minimum accepted predecessor.
+
+| Step | Deliverable and Leonardo checkpoint                                                                                                                                                                                             | Depends on |
+| ---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------: |
+|   R1 | Restore the exact local foundation: package baseline, strict TypeScript, lint/format, test runners, and the start page. Leonardo confirms the local page opens and identifies the game without an error.                        |          — |
+|   R2 | Add compatibility checks, startup diagnostics, loading state, and safe error screens. Leonardo checks one normal start and controlled failure messages.                                                                         |         R1 |
+|   R3 | Add the application structure, lifecycle, request queue, and clean shutdown with temporary adapters. Leonardo reviews the visible startup result; checks prove module boundaries.                                               |         R2 |
+|   R4 | Add the initial campaign state and command/result foundation, with its own fixtures and traceability. Leonardo checks a private diagnostic view that shows controlled state changes without exposing raw save data.             |         R3 |
+|   R5 | Add source content envelopes, slice/fallback/full profiles, strings, and validation, with its own fixtures. Leonardo checks understandable validation results; only the slice profile may be complete.                          |         R4 |
+|   R6 | Render the first temporary Three.js room with no external asset. Leonardo checks that the scene loads and remains stable.                                                                                                       |         R5 |
+|   R7 | Add temporary lighting, materials, science display, resize handling, and graphics presets. Leonardo compares the visible presets and checks that information is not colour-only.                                                |         R6 |
+|   R8 | Build the exact floor with temporary geometry, openings, collision surfaces, room labels, and recovery anchors. Leonardo reviews the floor from fixed inspection points.                                                        |         R7 |
+|   R9 | Add first-person keyboard, mouse, and controller movement plus camera rules. Leonardo tests movement, comfort, collision, and safe recovery.                                                                                    |         R8 |
+|  R10 | Add interaction targeting, highlight, prompts, reach, obstruction, and environmental inspection. Leonardo tests correct and incorrect targets.                                                                                  |         R9 |
+|  R11 | Add focused-station entry, camera transition, station actions, cancellation, and restoration. Leonardo tests that control always returns safely.                                                                                |        R10 |
+|  R12 | Add IndexedDB creation, settings storage, automatic saving, Continue, backup rotation, and confirmed New Game replacement. Leonardo closes and resumes a controlled local campaign.                                             |        R11 |
+|  R13 | Add recovery, repair, migration offers, stale-tab protection, Archive support, and Clear Saved Data. Leonardo tests safe controlled recovery cases with supplied instructions.                                                  |        R12 |
+|  R14 | Add the main menu, pause, controls, remapping, settings, and safe campaign exit. Leonardo tests navigation with keyboard, mouse, and the available controller path.                                                             |        R13 |
+|  R15 | Add the first complete accessibility and responsive-layout foundation: scale, contrast, reduced motion, captions, focus, Interaction Assist, and unsupported-size blocking. Leonardo tests his preferred settings and recovery. |        R14 |
+|  R16 | Add New Game, protagonist name up to 64 visible characters, pronouns, opening setup, and onboarding. Leonardo tests valid and rejected identity input and the opening flow.                                                     |        R15 |
+|  R17 | Add the 64-period semester, energy, pressure, Research Status, action costs, warnings, and break action. Leonardo tests visible cause and effect without internal numeric knowledge.                                            |        R16 |
+|  R18 | Add crossed-period processing, safe points, scheduler queue, crash handling, and Week-16 boundary rules. Leonardo checks a short controlled time-transition scenario.                                                           |        R17 |
+|  R19 | Add messages, notifications, notices, room events, reminders, expiry, and duplicate prevention. Leonardo checks that information arrives once and at a safe time.                                                               |        R18 |
+|  R20 | Add experiment selection, sample grouping, preparation, checks, action costs, and temporary station feedback. Leonardo tests the Choose and Prepare stages.                                                                     |        R19 |
+|  R21 | Add incubation, asynchronous timing, monitoring windows, intervention, missed monitoring, and equipment or sample state. Leonardo tests Incubate and Monitor trade-offs.                                                        |        R20 |
+|  R22 | Add analysis, biological variation, evidence quality, caveats, repetition, abandonment, and record creation. Leonardo completes the full temporary experiment loop and checks causal feedback.                                  |        R21 |
+|  R23 | Add the manuscript board, claims, figures, requirements, revision history, integrity warnings, and immutable commits. Leonardo tests a contradictory revision request.                                                          |        R22 |
+|  R24 | Add text-led dialogue, choices, relationship trust, concerns, support results, and consequences with temporary presentation. Leonardo checks clarity and tone in a short conversation sequence.                                 |        R23 |
+|  R25 | Add the cutscene timeline, checkpoints, skip rules, captions, restoration, and synthetic temporary audio. Leonardo tests complete, skipped, interrupted, and resumed scenes.                                                    |        R24 |
+|  R26 | Research representative visual and audio candidates, verify rights, and build no asset. Leonardo approves the benchmark selection and any permitted modifications.                                                              |        R25 |
+|  R27 | Integrate the approved benchmark assets in one representative slice area and add the slice science presentation. Leonardo approves the style direction or requests rework.                                                      |        R26 |
+|  R28 | Add the complete approved early-weeks slice tutorial, dialogue, narrative, manuscript rehearsal, experiment, messages, and completion content. Leonardo reviews its words, humour, clarity, and pacing.                         |        R27 |
+|  R29 | Connect the complete slice journey and verify save, recovery, accessibility, supported browsers, performance method, and privacy. Leonardo completes a guided pre-slice check.                                                  |        R28 |
+|  R30 | Run Leonardo's 20–30-minute private slice review, correct blockers and approved-scope defects, and record explicit slice acceptance.                                                                                            |        R29 |
+|  R31 | Add the five-act campaign shell, phase transitions, content slots, and complete local traversal without final prose. Leonardo checks the campaign map and transition clarity.                                                   |        R30 |
+|  R32 | Research, approve, and integrate the modular environment asset set. Leonardo reviews the integrated environment.                                                                                                                |        R31 |
+|  R33 | Research, approve, and integrate the laboratory equipment and prop families. Leonardo reviews the integrated equipment and props.                                                                                               |        R32 |
+|  R34 | Research, create, approve, and integrate the organoid, trace, imaging, and science-effect assets. Leonardo checks legibility, tone, motion, and fiction safety.                                                                 |        R33 |
+|  R35 | Research, create, approve, and integrate the character concepts, models, silhouettes, and shared animation set. Leonardo reviews the integrated characters.                                                                     |        R34 |
+|  R36 | Research, approve, and integrate the final fonts, icons, interface templates, contrast values, and institutional graphic language. Leonardo reviews the integrated interface.                                                   |        R35 |
+|  R37 | Research, create, approve, and integrate the room ambience, interface cues, six music roles, and five non-lexical dialogue palettes. Leonardo reviews the complete audio direction.                                             |        R36 |
+|  R38 | Complete and tune the fallback laser/sham experiment template with final presentation and content. Leonardo tests its identity and decisions.                                                                                   |        R37 |
+|  R39 | Complete and tune the fallback combined damage-range/repair experiment template. Leonardo tests its wider-condition and interpretation decisions.                                                                               |        R38 |
+|  R40 | Complete and tune the fallback batch experiment template. Leonardo tests its replication and evidence trade-offs.                                                                                                               |        R39 |
+|  R41 | Complete and tune the fallback oxygen-deprivation experiment template. Leonardo tests its distinct risk and monitoring pattern.                                                                                                 |        R40 |
+|  R42 | Complete manuscript progression, the PI confidence and integrity model, PIIM cards, and response consequences. Leonardo tests a controlled manuscript arc.                                                                      |        R41 |
+|  R43 | Complete preprint, submission, rejection, peer-review forms, reviewer demands, messages, and safe narrative ordering. Leonardo tests a controlled publication sequence.                                                         |        R42 |
+|  R44 | Complete academic and industry route readiness, the irreversible final choice, paper states, relationship consequences, and the modular ending resolver. Leonardo tests representative ending vectors.                          |        R43 |
+|  R45 | Author and integrate fallback Acts 1–2 with final-safe prose and content validation. Leonardo plays and approves both acts.                                                                                                     |        R44 |
+|  R46 | Author and integrate fallback Acts 3–4, including the manuscript contradiction and submission rejection pacing. Leonardo plays and approves both acts.                                                                          |        R45 |
+|  R47 | Author and integrate fallback Act 5, epilogues, Archive, Departures, Institutional Citations, and replay return. Leonardo tests representative conclusions.                                                                     |        R46 |
+|  R48 | Complete fallback character schedules, room states, lighting periods, environmental accretion, and the declining institute roster. Leonardo checks continuity and navigation throughout the acts.                               |        R47 |
+|  R49 | Complete fallback balance, repetition, accessibility, save/recovery, direct-browser, performance, memory, loading, asset, licence, and privacy checks. Leonardo reviews the complete fallback evidence packet.                  |        R48 |
+|  R50 | Run Leonardo's approximately 90-minute private fallback review, correct blockers and approved-scope defects, and record explicit fallback acceptance.                                                                           |        R49 |
+|  R51 | Expand and accept full content for Weeks 1–4 while preserving the accepted opening and fallback boundaries.                                                                                                                     |        R50 |
+|  R52 | Expand and accept full content for Weeks 5–8, including the separate full-game damage-range and repair-state templates.                                                                                                         |        R51 |
+|  R53 | Expand and accept full content for Weeks 9–12, including the cardiotoxic-drug template and its commercial and integrity pressure.                                                                                               |        R52 |
+|  R54 | Expand and accept full content for Weeks 13–16 and the complete late-gate order.                                                                                                                                                |        R53 |
+|  R55 | Complete and accept Haoran's optional scenes, support, concerns, credit effects, and ending afterbeats.                                                                                                                         |        R54 |
+|  R56 | Complete and accept Samira's optional scenes, support, concerns, rivalry or alliance effects, and ending afterbeats.                                                                                                            |        R55 |
+|  R57 | Complete and accept Gabriel's optional scenes, facility support, institutional memory, boundaries, and ending afterbeats.                                                                                                       |        R56 |
+|  R58 | Complete and accept Camila's messages, remote call, offer, route effects, portrait presentation, and ending afterbeats.                                                                                                         |        R57 |
+|  R59 | Complete and accept Elena's remaining interactions plus editor, reviewer, administrator, committee, and collaborator remote roles.                                                                                              |        R58 |
+|  R60 | Complete replay variation, deterministic selection, repetition control, all route combinations, all 29 ending modules, and the Archive. Leonardo tests a representative matrix.                                                 |        R59 |
+|  R61 | Complete final visual polish, remaining approved assets, animation, lighting, effects, provenance, attribution, and credits. Leonardo performs the final visual review.                                                         |        R60 |
+|  R62 | Complete final audio, mix, captions, accessibility, browser, performance, memory, loading, long-session, diagnostic, privacy, content, and technical quality work. Leonardo reviews the final evidence packet.                  |        R61 |
+|  R63 | Run the complete private approximately three-hour playthrough and clean-context comprehension review, correct all blockers and approved-scope defects, and record Leonardo's final local-game acceptance.                       |        R62 |
+
+## Milestone gates
+
+| Milestone                  | Required accepted step | What it permits after a new step plan                      |
+| -------------------------- | ---------------------: | ---------------------------------------------------------- |
+| First local runtime        |                     R1 | R2                                                         |
+| Core loop proof            |                    R25 | Benchmark asset research in R26                            |
+| Vertical-slice acceptance  |                    R30 | R31; it does not authorize the fallback as one batch       |
+| Fallback acceptance        |                    R50 | R51; it does not authorize the full game as one batch      |
+| Full local-game acceptance |                    R63 | A later release-candidate or public-action discussion only |
+
+## Current position
+
+The repository was restarted on 2026-09-10. The replacement pathway R1–R63 is
+documented, and no step is authorized. The next permitted action is the exact
+R1 plan, presented by the primary agent for Leonardo's explicit approval. The
+migration restart confirmation and the migration review record remain in the
+step record and acceptance log.
+
+---
+
+# Appendix — Legacy pathway (Steps 0–70, superseded 2026-09-10)
+
+> The content below is historical. It is preserved for provenance and for the
+> Gate 4A, 6A, and 26A references in the specifications. It is not the current
+> pathway.
+
+## Original purpose
 
 This roadmap divides local development of the complete _Minor Revisions_ game
 into 70 small implementation and evaluation steps after Step 0. It replaces a

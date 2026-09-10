@@ -1,6 +1,6 @@
 # Development Step Acceptance Log
 
-Status: **Restarted 2026-09-10; Steps 1–5 accepted as legacy history; Step 6 abandoned; the replacement pathway is pending approval**
+Status: **Restarted 2026-09-10; Steps 1–5 accepted as legacy history; Step 6 abandoned; the replacement pathway R1–R63 is documented and no step is authorized**
 
 This is the durable index of Leonardo's step decisions and the evidence that
 supports them. It contains concise summaries, not raw private conversations,
@@ -61,9 +61,9 @@ development pathway.
   content, scripts, and the Codex tooling were removed.
 - Legacy work orders, contributions, plans, and status records remain in the
   repository as historical evidence.
-- No development step is authorized until Leonardo approves the replacement
-  pathway and its first exact plan. Every future step is recorded in
-  `docs/implementation/step-records/`.
+- No development step is authorized until its own exact plan is approved. The
+  replacement pathway R1–R63 is documented in `development-roadmap.md`. Every
+  future step is recorded in `docs/implementation/step-records/`.
 - Independent review (2026-09-10): no blocker; seven required record-only
   corrections and eight advisory notes, applied with focused primary
   validation and recorded as commit `219d77a`. The review used a fresh-context

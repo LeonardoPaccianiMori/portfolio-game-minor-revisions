@@ -481,5 +481,6 @@ Sol/Terra/Luna routing contracts are superseded. Their files remain as legacy
 history. The pre-restart text of this specification is preserved in Git at
 commit `3e53eb5ba68e29070327fbdd76fe31b0de67a2f5`. This specification,
 `opencode.json`, and `.opencode/agent/` are the current authority for future
-assignments. The development pathway is being re-planned as a separate approved
-task before any new step starts.
+assignments. The replacement development pathway R1–R63 is documented in
+`../development-roadmap.md`; no new step starts before its own exact plan is
+approved.

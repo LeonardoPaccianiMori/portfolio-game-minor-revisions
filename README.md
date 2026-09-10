@@ -21,9 +21,9 @@ current resume point and the exact next action, and the
 [acceptance log](docs/implementation/step-acceptance-log.md) for historical
 approvals and tests. The [AI-use log](docs/implementation/ai-use-log.md)
 records actual contributions. The
-[development roadmap](docs/implementation/development-roadmap.md) preserves the
-legacy path; its replacement is being prepared and needs Leonardo's explicit
-approval before any development step starts.
+[development roadmap](docs/implementation/development-roadmap.md) defines the
+replacement pathway R1–R63; the legacy path is preserved in its appendix, and
+every step still needs Leonardo's explicit plan approval before it starts.
 
 The numbered design documents define game meaning; the files under
 `docs/implementation/specs/` define approved technical contracts. The

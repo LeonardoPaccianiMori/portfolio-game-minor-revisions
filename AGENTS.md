@@ -7,9 +7,9 @@ These rules apply to the entire repository.
 Read `docs/implementation/development-status.md` for the current resume record,
 approved work, and the exact next action. Development restarted on 2026-09-10
 under opencode. Legacy accepted steps remain historical evidence; the
-development pathway is being re-planned and no game code exists. Every step
-needs its exact plan and Leonardo's explicit approval before implementation;
-approval never carries forward.
+replacement pathway R1–R63 is documented in development-roadmap.md and no game
+code exists. Every step needs its exact plan and Leonardo's explicit approval
+before implementation; approval never carries forward.
 
 ## Leonardo context and communication
 
@@ -212,6 +212,6 @@ Leonardo approved the migration from the Codex workflow to opencode and the
 removal of the unfinished game scaffold. Steps 1–5 remain accepted historical
 evidence; Step 6 was abandoned before code delivery. Legacy work orders,
 contributions, plans, and status records remain in the repository as history.
-The development pathway will be re-planned as a separate approved task before
-any new step starts. The previous Codex-specific model sections are superseded
+The replacement pathway R1–R63 is documented in `development-roadmap.md`; no
+new step starts before its own exact plan is approved. The previous Codex-specific model sections are superseded
 and their history is preserved in the decision log and repository history.
