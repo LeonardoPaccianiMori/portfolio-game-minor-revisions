@@ -142,6 +142,31 @@ and are not decisions until the synthesis is approved.
     _Superliminal_ (unique identity), _1984_ and _Sostiene Pereira_ (living
     inside a dystopian authority).
 
+### Block A1 decisions so far (Leonardo, 2026-09-10)
+
+- Inspirations corrected: _The Stanley Parable_, _Superliminal_, and
+  _Mini Metro_ (minimalist visual style). _1984_ and _Sostiene Pereira_ are
+  removed.
+- Title: keep _Minor Revisions_. _The Last Author_ is recorded as a candidate
+  to re-evaluate later.
+- Meta layer: diegetic institutional voice, with occasional surprising meta
+  moments. Confirmed.
+- Form: compact 3D department plus a desk/interface layer. Confirmed.
+- Audience: comprehension required for non-academics; insider recognition
+  rewarded. Confirmed.
+- Failure: early ejection or quitting is a real, warned ending. Confirmed.
+- Money: one recurring pay and rent pressure event. Confirmed.
+- Cast: the PI plus two colleagues, written deeply. Confirmed.
+- Replay: three or four meaningfully different sacrifice paths. Confirmed.
+- Scientific field: a complete change is confirmed. Soil microbiome or deep
+  biosphere remains open, with a primary-agent recommendation awaiting
+  Leonardo's choice.
+- Content darkness: open, with a three-level primary-agent recommendation
+  awaiting Leonardo's choice.
+
+Block A1 is complete when the scientific field and the darkness level are
+chosen. `01-vision.md` is written after that.
+
 ## Session 0 questions
 
 1. In one sentence, what is the game? If that is hard, describe the single
