@@ -1,7 +1,8 @@
 # Minor Revisions
 
-_Minor Revisions_ is being redesigned from scratch (v2). No game design is
-approved yet and no game code exists.
+_Minor Revisions_ is being redesigned from scratch (v2). The concept and vision
+are approved; the core loop and later design blocks are in progress. No game
+code exists.
 
 The working process, current block, and resume point are in
 [docs/design/00-process.md](docs/design/00-process.md). Approved decisions are

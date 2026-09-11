@@ -44,3 +44,9 @@ commit, rewrote `README.md` and `AGENTS.md` for v2, replaced the development
 commands with the design-session command, and opened Phase A Block A1. It made
 no game design decision and wrote no game code. Evidence: the v2 restart
 commit and `docs/design/00-process.md`.
+
+In the same session it completed Block A1 with Leonardo, obtaining and
+recording his decisions on concept, thesis, tone, audience, length, form,
+failure, resources, cast, scientific field, darkness, and replay, and wrote
+`docs/design/01-vision.md`. Evidence: `docs/design/01-vision.md`, `D-005` in
+the v2 decision log, and the Block A1 commit.

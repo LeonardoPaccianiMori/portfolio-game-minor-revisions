@@ -46,8 +46,8 @@ the current block, its questions, and the exact next action are recorded here.
 
 | #   | Block                                | Document                       | Status        |
 | --- | ------------------------------------ | ------------------------------ | ------------- |
-| A1  | Concept and experience promise       | `01-vision.md`                 | In discussion |
-| A2  | Core loop and survival system        | `02-core-loop.md`              | Not started   |
+| A1  | Concept and experience promise       | `01-vision.md`                 | Documented    |
+| A2  | Core loop and survival system        | `02-core-loop.md`              | In discussion |
 | A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Not started   |
 | A4  | Narrative and structure              | `04-narrative.md`              | Not started   |
 | A5  | Characters and voice                 | `05-characters.md`             | Not started   |
@@ -108,12 +108,34 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A1
+## Current task — Phase A, Block A2
 
-Block A1 (concept and experience promise) is in discussion. Leonardo answered
-Session 0 on 2026-09-10. A synthesis is being prepared; nothing is approved and
-no block document exists yet. The raw answers below are Leonardo's own words
-and are not decisions until the synthesis is approved.
+Block A1 is documented in `docs/design/01-vision.md` (approved 2026-09-10).
+Block A2 (core loop and survival system) is in discussion. No synthesis has
+been approved for A2. The Session 0 answers and Block A1 decision notes further
+down record how A1 was reached.
+
+### A2 questions
+
+1. Turn shape: one week per turn, twelve turns, three actions each, or a
+   different rhythm?
+2. Main screen: a desk board showing requests, manuscript, and resources, with
+   the 3D department used for atmosphere and selected scenes?
+3. Experiments: abstract assignments of two to four steps rather than a
+   detailed simulation?
+4. Moving standard: a visible publication-requirements meter that the PI edits
+   with add, reframe, and revert, with evidence marked current or stale?
+5. Complicity actions: inflate a claim, drop a replicate, take credit, flatter
+   the PI, dump work; each buys survival and costs integrity, relationships, or
+   both?
+6. Resources and failure: time, energy, and standing visible; integrity hidden
+   with visible symptoms; relationships persistent; a recurring pay-and-rent
+   event; zero energy causes a crash, not death; standing below the line causes
+   a warned ejection?
+7. The review set piece: five to eight minutes, absurd and partly arbitrary
+   reviewer reports that the player can learn to game?
+8. The reveal: the goalpost is designed to move; how openly should the game
+   admit this while staying legible and warned?
 
 ### Session 0 raw answers (Leonardo, unapproved)
 
