@@ -49,8 +49,8 @@ the current block, its questions, and the exact next action are recorded here.
 | A1  | Concept and experience promise       | `01-vision.md`                 | Documented    |
 | A2  | Core loop and survival system        | `02-core-loop.md`              | Documented    |
 | A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Documented    |
-| A4  | Narrative and structure              | `04-narrative.md`              | In discussion |
-| A5  | Characters and voice                 | `05-characters.md`             | Not started   |
+| A4  | Narrative and structure              | `04-narrative.md`              | Documented    |
+| A5  | Characters and voice                 | `05-characters.md`             | In discussion |
 | A6  | World and presentation               | `06-world-and-presentation.md` | Not started   |
 | A7  | Content and evaluation               | `07-content-and-evaluation.md` | Not started   |
 | A8  | Technical constraints and production | `08-production-constraints.md` | Not started   |
@@ -111,16 +111,33 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A3
+## Current task — Phase A, Block A5
 
-Block A1 is documented in `docs/design/01-vision.md` (approved 2026-09-10).
-Block A2 is documented in `docs/design/02-core-loop.md`; its core decisions and
-details are approved. Block A3 is documented in
-`docs/design/03-pressure-and-failure.md`. Block A4 (narrative and structure) is
-in discussion; its questions are below. The earlier block questions and session
-records further down are preserved as history.
+Blocks A1–A4 are documented in `docs/design/`. Block A5 (characters and voice)
+is in discussion; its questions are below. The earlier block questions and
+session records further down are preserved as history.
 
-### A4 questions
+### A5 questions
+
+1. PI name, gender, and pronouns. Proposal: Dr. Helena Voss, she/her,
+   mid-career and under renewal pressure.
+2. The PI's comic register: funding-language optimism that hardens, with one
+   humanising scene.
+3. The PhD student. Proposal: Dario Ferreira, he/him, meticulous and anxious;
+   the player can protect or exploit his work.
+4. The departing postdoc. Proposal: Mara Lindqvist, she/her, deadpan, leaving
+   for industry; the player's mirror.
+5. Distinct comic mechanisms: the PI speaks in funding prose, the student in
+   anxious precision, the postdoc in deadpan survival humour.
+6. The player character: a fixed authored protagonist, or a chosen name and
+   pronouns with a lightly authored voice? Proposal: chosen name and pronouns.
+7. Reactions to complicity: immediate, delayed, or discovered at the end?
+   Proposal: the student reacts immediately, the postdoc notices late, and the
+   PI uses it.
+8. The reviewer chorus: keep reviewers inside the review set piece rather than
+   as full characters? Proposal: yes.
+
+### A4 questions (answered and documented)
 
 1. Story spine: the PI's project and the paper's core claim?
 2. The contract clock: why twelve weeks, and what deadline drives it?
