@@ -110,9 +110,37 @@ The `/design-session` command starts this protocol.
 
 ## Current task — Phase A, Block A1
 
-Block A1 (concept and experience promise) is in discussion. The Session 0
-questions below are the starting point. No synthesis has been presented and no
-document exists yet.
+Block A1 (concept and experience promise) is in discussion. Leonardo answered
+Session 0 on 2026-09-10. A synthesis is being prepared; nothing is approved and
+no block document exists yet. The raw answers below are Leonardo's own words
+and are not decisions until the synthesis is approved.
+
+### Session 0 raw answers (Leonardo, unapproved)
+
+1. A personal artistic outlet and a portfolio project for directing LLM agents.
+   A survival game inside academia: fun but a harsh critique, with absurdist
+   tones like _The Stanley Parable_, without recreating that game.
+2. The game argues that academia rests on toxic, exploitative labour of junior
+   figures, almost a pyramid scheme: you climb one step or you are out. It
+   laughs at this while still criticising what is rotten.
+3. The laugh is recognition: "haha, I was exploited that way too". People who
+   tried an academic career and left are the most likely to enjoy it.
+4. The intended feeling: "haha, this is terrible and it is exactly what I went
+   through".
+5. The pressure: ridiculous hours for meagre pay, constant burnout, and the
+   moment of publication revealing that the hard work is glossed over or judged
+   very superficially by reviewers.
+6. The PI makes increasingly absurd paper requests; experiments cost time and
+   energy; the PI demands more, changes their mind, ignores input, and forces
+   restarts that loop back to the beginning. Leonardo asked for help turning
+   this into a clear game system, and for a more fitting name if one exists.
+7. Boundaries are unresolved beyond "never bland or boring".
+8. Non-negotiable: the critique of academia and the sarcastic, caustic,
+   absurdist tone. Everything else can change or be given up.
+9. One run: 60 minutes maximum. Cutscenes are dropped.
+10. Inspirations: _The Stanley Parable_ (meta-game, sophisticated humour),
+    _Superliminal_ (unique identity), _1984_ and _Sostiene Pereira_ (living
+    inside a dystopian authority).
 
 ## Session 0 questions
 
