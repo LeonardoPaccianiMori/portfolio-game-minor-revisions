@@ -47,8 +47,8 @@ the current block, its questions, and the exact next action are recorded here.
 | #   | Block                                | Document                       | Status        |
 | --- | ------------------------------------ | ------------------------------ | ------------- |
 | A1  | Concept and experience promise       | `01-vision.md`                 | Documented    |
-| A2  | Core loop and survival system        | `02-core-loop.md`              | In discussion |
-| A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Not started   |
+| A2  | Core loop and survival system        | `02-core-loop.md`              | Documented    |
+| A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | In discussion |
 | A4  | Narrative and structure              | `04-narrative.md`              | Not started   |
 | A5  | Characters and voice                 | `05-characters.md`             | Not started   |
 | A6  | World and presentation               | `06-world-and-presentation.md` | Not started   |
@@ -102,20 +102,40 @@ The `/design-session` command starts this protocol.
 - `docs/design/decision-log.md` — approved v2 decisions
 - `docs/design/01-vision.md` and later block documents — written on approval
 - `docs/ai-use-log.md` — actual primary and subagent model use
+- `docs/costs.md` — token and estimated cost ledger, with `/cost-snapshot`
 - `AGENTS.md` — the agent contract
 - `README.md` — project front page
 - `opencode.json`, `.opencode/agent/`, `.opencode/command/` — workflow
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A2
+## Current task — Phase A, Block A3
 
 Block A1 is documented in `docs/design/01-vision.md` (approved 2026-09-10).
-Block A2 (core loop and survival system) is in discussion. No synthesis has
-been approved for A2. The Session 0 answers and Block A1 decision notes further
-down record how A1 was reached.
+Block A2 is documented in `docs/design/02-core-loop.md`; its eight core
+decisions are approved and its detailed numbers and worked examples are marked
+as proposals to confirm. Block A3 (pressure, resources, and failure) is in
+discussion; its questions are below. The A2 questions and the earlier session
+records further down are preserved as history.
 
-### A2 questions
+### A3 questions
+
+1. Action costs: each action trades a week and energy in different amounts; is
+   that the right shape?
+2. Energy: five segments, and a crash at zero costs the next week and leaves a
+   consequence?
+3. Standing (up-or-out): publication progress, PI favour, and colleague
+   goodwill raise it; failed demands and complaints lower it; ejection comes
+   with two turns of warning?
+4. Integrity: hidden, with clear feedback after each complicity action, and
+   consequences in the endings?
+5. Relationships: permanent rupture is possible; no soft undo?
+6. Money: one recurring rent event that forces a choice (ask the PI for an
+   advance, take a side job, borrow from a colleague)?
+7. Quitting: always available with confirmation and its own ending?
+8. Escalation: the institution raises costs and staleness as the acts progress?
+
+### A2 questions (answered and documented)
 
 1. Turn shape: one week per turn, twelve turns, three actions each, or a
    different rhythm?

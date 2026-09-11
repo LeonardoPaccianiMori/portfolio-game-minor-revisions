@@ -1,0 +1,58 @@
+# Development Cost Ledger (v2)
+
+Status: **current**
+
+Last updated: 2026-09-11.
+
+## Purpose
+
+Track tokens and estimated cost of developing _Minor Revisions_ under opencode,
+starting from the v2 restart. The numbers come from opencode's own session
+data.
+
+## How to read the numbers
+
+Run these in the repository root:
+
+- Totals: `opencode stats --project ""` (the empty project argument selects the
+  current project).
+- Per-model: `opencode stats --project "" --models`.
+- Per-session detail:
+  `opencode db --format tsv "SELECT datetime(time_created/1000,'unixepoch') AS created, substr(id,1,12) AS session, title, model, agent, round(cost,4) AS usd, tokens_input, tokens_output, tokens_cache_read, tokens_cache_write, tokens_reasoning FROM session WHERE directory = '$PWD' ORDER BY time_created"`
+
+Record a milestone snapshot with the `/cost-snapshot` command.
+
+The dollar figures are opencode's estimates using the model catalog prices. If
+they ever disagree with OpenCode Go billing, billing is the authority.
+
+## What is not covered
+
+- The v1 development (Codex, GPT-5.6, and the Claude Opus reviews) has no token
+  or cost data in this repository. The v1 AI-use log was preserved in Git at
+  `c438b7f30059c47cc80d19363a92833d1ae002b3`; it excluded cost data by design,
+  except where the separate Opus review metadata recorded it. Your provider
+  dashboards remain the only possible source for that period.
+- Aborted, failed, or interrupted model runs still cost money and are included
+  on purpose.
+
+## Baseline snapshot — 2026-09-11 (v2 restart, Block A1, Block A2)
+
+- Sessions: 8
+- Estimated cost: **$1.99**
+- Input: 3.5M tokens; output: 113.1K; cache read: 36.4M; cache write: 116.0K
+
+| Model               | Messages | Estimated cost |
+| ------------------- | -------- | -------------- |
+| deepseek-v4.1-flash | 179      | $0.8119        |
+| grok-4.6            | 16       | $0.8285        |
+| glm-5.3             | 9        | $0.3165        |
+| qwen3.8-flash       | 10       | $0.0346        |
+
+Note: the grok-4.6 figure is mostly one aborted review run. Aborted runs are
+real spend and stay in the ledger.
+
+## Ledger
+
+| Snapshot   | Milestone                    | Sessions |  Cost | Δ cost | Input | Output | Cache read | Cache write | Commit  |
+| ---------- | ---------------------------- | -------: | ----: | -----: | ----: | -----: | ---------: | ----------: | ------- |
+| 2026-09-11 | v2 restart; Blocks A1 and A2 |        8 | $1.99 |      — |  3.5M | 113.1K |      36.4M |      116.0K | 3706120 |

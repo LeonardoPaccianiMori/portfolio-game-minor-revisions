@@ -28,7 +28,8 @@ and one entry for every completed subagent contribution. Each entry states:
 
 Record actual values. If the exact model or reasoning variant is genuinely
 unavailable, write `unknown`; do not infer it from a configuration default. Do
-not record failed, interrupted, considered, or abandoned runs. Do not store
+not record failed, interrupted, considered, or abandoned runs. Token and dollar
+totals are tracked separately in `docs/costs.md`. Do not store
 credentials, personal data, raw conversation, hidden reasoning, or machine
 paths.
 
@@ -50,3 +51,8 @@ recording his decisions on concept, thesis, tone, audience, length, form,
 failure, resources, cast, scientific field, darkness, and replay, and wrote
 `docs/design/01-vision.md`. Evidence: `docs/design/01-vision.md`, `D-005` in
 the v2 decision log, and the Block A1 commit.
+
+In the same session it recorded the asset-sourcing policy (`D-006`), set up the
+token and cost ledger with the `/cost-snapshot` command (`D-008`,
+`docs/costs.md`), and documented Block A2 in `docs/design/02-core-loop.md`
+(`D-007`).
