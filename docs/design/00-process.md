@@ -1,0 +1,164 @@
+# Minor Revisions — v2 Design Restart and Working Process
+
+Status: **Active — v2 design in progress; no implementation is authorized.**
+
+Last updated: 2026-09-10.
+
+## Why this file exists
+
+This is the durable anchor for the v2 restart. Read it first in any new session,
+before any other document. If a session is lost, compacted, or resumed later,
+the current block, its questions, and the exact next action are recorded here.
+
+## Restart declaration
+
+- On 2026-09-10 Leonardo approved a full restart of the game and its
+  documentation (v2).
+- Every document that existed before the restart was removed from the working
+  tree in the restart commit. It is preserved only in Git history at the
+  pre-restart head `c438b7f30059c47cc80d19363a92833d1ae002b3` (the v1 archive).
+- v1 material may be consulted as inspiration. It has no authority, is not an
+  approved v2 decision, and must not be copied into v2 without fresh
+  discussion and Leonardo's approval.
+- No game code exists. The v1 development pathway (R1–R63) is void.
+- Kept from before the restart: the opencode workflow and configuration, the
+  local toolchain, the repository discipline (approval, provenance, review,
+  acceptance), and Leonardo's standing GitHub synchronization authorization.
+
+## How we work
+
+- One block at a time.
+- Ask small groups of related questions and preserve every unresolved answer.
+- Before writing any document, present a synthesis separating **Confirmed**,
+  **Proposed**, and **Open** decisions.
+- A block document is written only after Leonardo's explicit approval of that
+  synthesis.
+- Update this file and `docs/design/decision-log.md` in the same commit as the
+  block document.
+- Do not silently resolve contradictions. Record them and ask.
+- v1 is never quoted as authority. It may be cited as inspiration and must be
+  labelled as such.
+- Nothing is implemented before Phase A and Phase B are approved.
+
+## Phases
+
+### Phase A — Clean-slate design (current)
+
+| #   | Block                                | Document                       | Status        |
+| --- | ------------------------------------ | ------------------------------ | ------------- |
+| A1  | Concept and experience promise       | `01-vision.md`                 | In discussion |
+| A2  | Core loop and survival system        | `02-core-loop.md`              | Not started   |
+| A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Not started   |
+| A4  | Narrative and structure              | `04-narrative.md`              | Not started   |
+| A5  | Characters and voice                 | `05-characters.md`             | Not started   |
+| A6  | World and presentation               | `06-world-and-presentation.md` | Not started   |
+| A7  | Content and evaluation               | `07-content-and-evaluation.md` | Not started   |
+| A8  | Technical constraints and production | `08-production-constraints.md` | Not started   |
+
+A later block may reopen an earlier one when it changes that block's premises.
+That reopening is recorded in the decision log.
+
+### Phase B — Technical specification (fresh)
+
+Written after Phase A. It will define the stack, architecture, data, interfaces,
+testing, persistence, world runtime, interface, audio, performance, and
+acceptance. Nothing from v1 is inherited by default; the same choices may be
+re-approved on their merits.
+
+### Phase C — Development pathway (fresh)
+
+A new multi-phase pathway with small, reviewable steps, one approved plan at a
+time. It is written only after Phases A and B are approved.
+
+## Session protocol
+
+1. Read this file, `docs/design/decision-log.md`,
+   `docs/ai-use-log.md`, and the current block document.
+2. Confirm the current block and its status.
+3. Work one block. Ask focused questions in small groups.
+4. Summarize the answers and mark contradictions or gaps.
+5. Present the block synthesis: Confirmed, Proposed, Open.
+6. On Leonardo's explicit approval, write the block document and update this
+   file and the decision log.
+7. Commit and push under the standing GitHub authorization.
+
+The `/design-session` command starts this protocol.
+
+## Decision rules
+
+- Every decision is `confirmed`, `proposed`, or `open`.
+- Nothing becomes confirmed until Leonardo approves it explicitly.
+- Every choice that affects implementation is written before code depends on it.
+- Measured facts need an approved method, target, and response rule. Do not
+  invent a result before execution.
+- Superseded decisions stay visible with a reason, date, and explicit
+  `superseded` status.
+- Preserve a universal fictional world. Do not reproduce real people,
+  institutions, or Leonardo's experiences literally.
+
+## File map (v2)
+
+- `docs/design/00-process.md` — this file, the durable process anchor
+- `docs/design/decision-log.md` — approved v2 decisions
+- `docs/design/01-vision.md` and later block documents — written on approval
+- `docs/ai-use-log.md` — actual primary and subagent model use
+- `AGENTS.md` — the agent contract
+- `README.md` — project front page
+- `opencode.json`, `.opencode/agent/`, `.opencode/command/` — workflow
+  configuration
+- v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
+
+## Current task — Phase A, Block A1
+
+Block A1 (concept and experience promise) is in discussion. The Session 0
+questions below are the starting point. No synthesis has been presented and no
+document exists yet.
+
+## Session 0 questions
+
+1. In one sentence, what is the game? If that is hard, describe the single
+   moment you most want a player to experience.
+2. What should the player feel at the beginning, the middle, and the end?
+3. What is the central recurring tension or impossible choice?
+4. What does the player actually spend their time doing, and how does that
+   create pressure?
+5. Finish this sentence: "The game argues that ______."
+6. What must never happen, and what would make you say "that's not it"?
+7. How long is one run, and how much replay do you want?
+8. What should the ending leave behind: relief, anger, sadness, resolve, or
+   ambiguity?
+9. Name two or three works and what exactly you envy in each.
+10. What is non-negotiable, and what are you willing to give up?
+
+## Carry-over observations from the v1 reviews (inspiration, not decisions)
+
+The three independent reviews of the v1 documents, recorded in the v1 AI-use
+log, found these recurring risks. They are prompts for Phase A and may be
+rejected:
+
+- The core loop repeated the same five stages across the experiment templates,
+  with differences mostly at the label level.
+- Roughly fifteen minutes of authored mandatory scenes supported a three-hour
+  target; most story arrived through records and repeated systems.
+- The comedy used one dominant register across narration, dialogue, notices,
+  and collectibles; the likely reaction was wry recognition rather than
+  laughter.
+- Characters were schematic: one pressure, one quirk, one scene each.
+- Hidden numeric states conflicted with the promise of fair, legible rules.
+- A balance audit found the intended honest play style over budget in both
+  pressure profiles, and a "Thin" evidence tier was unreachable.
+- One human evaluator, with external playtesting disallowed, limited what
+  could be learned about fun, comprehension, and humour before release.
+- The v1 identity worth re-examining was the pairing of a claim/integrity
+  system with institutional surrealism, and the manuscript as a moral object.
+
+## Open items carried into Block A1 (prompts, not decisions)
+
+- Target run length, including whether short and dense with high replay beats
+  a longer campaign.
+- Presentation and perspective: first-person 3D, a 3D/hybrid with
+  decision-focused interaction, or a 2D or 2.5D form.
+- Number of principal characters and depth per character.
+- Number of authored experiments and how much routine is abstracted.
+- Whether limited private playtesting is allowed.
+- Content word budget and how much of it is dialogue versus system text.
