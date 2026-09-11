@@ -81,6 +81,9 @@ fast-forward integration where possible. Never discard local work, force-push,
 rewrite published history, or guess a meaningful merge conflict. Subagents
 cannot use the remote.
 
+Every milestone commit — an approved design block, a phase completion, or an
+accepted development step — includes a cost snapshot row in `docs/costs.md`.
+
 ## Assets, privacy, and provenance
 
 - Network access is off by default. One exact use may be authorized by an

@@ -55,4 +55,6 @@ the v2 decision log, and the Block A1 commit.
 In the same session it recorded the asset-sourcing policy (`D-006`), set up the
 token and cost ledger with the `/cost-snapshot` command (`D-008`,
 `docs/costs.md`), and documented Block A2 in `docs/design/02-core-loop.md`
-(`D-007`).
+(`D-007`). It then confirmed the A2 details, documented Block A3 in
+`docs/design/03-pressure-and-failure.md` (`D-010`), made milestone cost
+snapshots part of every milestone commit (`D-011`), and opened Block A4.

@@ -53,6 +53,7 @@ real spend and stay in the ledger.
 
 ## Ledger
 
-| Snapshot   | Milestone                    | Sessions |  Cost | Δ cost | Input | Output | Cache read | Cache write | Commit  |
-| ---------- | ---------------------------- | -------: | ----: | -----: | ----: | -----: | ---------: | ----------: | ------- |
-| 2026-09-11 | v2 restart; Blocks A1 and A2 |        8 | $1.99 |      — |  3.5M | 113.1K |      36.4M |      116.0K | 3706120 |
+| Snapshot   | Milestone                     | Sessions |  Cost | Δ cost | Input | Output | Cache read | Cache write | Commit  |
+| ---------- | ----------------------------- | -------: | ----: | -----: | ----: | -----: | ---------: | ----------: | ------- |
+| 2026-09-11 | v2 restart; Blocks A1 and A2  |        8 | $1.99 |      — |  3.5M | 113.1K |      36.4M |      116.0K | 3706120 |
+| 2026-09-11 | Block A3; milestone cost rule |        8 | $2.02 | +$0.03 |  3.5M | 122.2K |      40.2M |      116.0K | abcce99 |

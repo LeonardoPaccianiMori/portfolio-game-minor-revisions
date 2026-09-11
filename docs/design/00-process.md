@@ -48,8 +48,8 @@ the current block, its questions, and the exact next action are recorded here.
 | --- | ------------------------------------ | ------------------------------ | ------------- |
 | A1  | Concept and experience promise       | `01-vision.md`                 | Documented    |
 | A2  | Core loop and survival system        | `02-core-loop.md`              | Documented    |
-| A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | In discussion |
-| A4  | Narrative and structure              | `04-narrative.md`              | Not started   |
+| A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Documented    |
+| A4  | Narrative and structure              | `04-narrative.md`              | In discussion |
 | A5  | Characters and voice                 | `05-characters.md`             | Not started   |
 | A6  | World and presentation               | `06-world-and-presentation.md` | Not started   |
 | A7  | Content and evaluation               | `07-content-and-evaluation.md` | Not started   |
@@ -78,9 +78,11 @@ time. It is written only after Phases A and B are approved.
 3. Work one block. Ask focused questions in small groups.
 4. Summarize the answers and mark contradictions or gaps.
 5. Present the block synthesis: Confirmed, Proposed, Open.
-6. On Leonardo's explicit approval, write the block document and update this
-   file and the decision log.
-7. Commit and push under the standing GitHub authorization.
+6. On Leonardo's explicit approval, write the block document, update this file
+   and the decision log, and append the milestone cost snapshot to
+   `docs/costs.md`.
+7. Commit and push under the standing GitHub authorization. Every milestone
+   commit includes its cost snapshot.
 
 The `/design-session` command starts this protocol.
 
@@ -112,13 +114,26 @@ The `/design-session` command starts this protocol.
 ## Current task — Phase A, Block A3
 
 Block A1 is documented in `docs/design/01-vision.md` (approved 2026-09-10).
-Block A2 is documented in `docs/design/02-core-loop.md`; its eight core
-decisions are approved and its detailed numbers and worked examples are marked
-as proposals to confirm. Block A3 (pressure, resources, and failure) is in
-discussion; its questions are below. The A2 questions and the earlier session
+Block A2 is documented in `docs/design/02-core-loop.md`; its core decisions and
+details are approved. Block A3 is documented in
+`docs/design/03-pressure-and-failure.md`. Block A4 (narrative and structure) is
+in discussion; its questions are below. The earlier block questions and session
 records further down are preserved as history.
 
-### A3 questions
+### A4 questions
+
+1. Story spine: the PI's project and the paper's core claim?
+2. The contract clock: why twelve weeks, and what deadline drives it?
+3. Act structure: three acts of four turns; what escalates in each?
+4. The PI's arc: does the PI change, harden, or fall?
+5. The two colleagues: who are they, and what arcs do they carry?
+6. Fixed events: which anchors (funding review, conference, rent, the review)
+   hold the acts in place?
+7. Endings: which three or four paths, and what determines each?
+8. Tone curve: how does the comedy thin across the acts?
+9. Meta moments: where does the institution break the fourth wall?
+
+### A3 questions (answered and documented)
 
 1. Action costs: each action trades a week and energy in different amounts; is
    that the right shape?

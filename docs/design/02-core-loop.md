@@ -1,8 +1,8 @@
 # 02 — Core Loop and Survival System
 
-Status: **Documented — the eight core decisions were approved by Leonardo on
-2026-09-10 (Block A2). Detailed numbers and worked examples are marked below as
-proposals for confirmation.**
+Status: **Documented — the eight core decisions and the detailed action list,
+cost shape, and worked example were approved by Leonardo on 2026-09-10
+(Block A2).**
 
 ## Purpose
 
@@ -86,9 +86,9 @@ unfairness stays legible: causes are shown, irreversible choices are warned,
 and the reveal is built as comedy first and something colder afterwards. It is
 never an excuse for random punishment.
 
-## Proposed detail — for confirmation
+## Confirmed detail
 
-These specifics are proposals, not yet approved:
+These specifics are confirmed:
 
 - Action list: work an experiment step; analyse results; write or revise the
   manuscript; meet the PI; help or confront a colleague; rest.
