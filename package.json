@@ -19,8 +19,9 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 playwright test",
-    "check": "npm run typecheck && npm run lint && npm run format:check",
-    "verify": "npm run check"
+    "content:check": "node --experimental-strip-types scripts/check-content.ts",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run content:check",
+    "verify": "npm run lint && npm run format:check && npm test && npm run content:check && npm run build && npm run test:e2e"
   },
   "dependencies": {
     "idb": "8.0.3",
