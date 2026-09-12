@@ -6,11 +6,16 @@
     <title>Minor Revisions</title>
   </head>
   <body>
-    <main id="app">
+    <main id="app" data-state="starting">
       <h1>Minor Revisions</h1>
-      <p>Startup checks passed.</p>
+      <p id="app-status">Starting up…</p>
       <p>Game systems are not yet available.</p>
     </main>
+    <section id="app-error" hidden>
+      <h2>The game could not start</h2>
+      <p id="app-error-message"></p>
+      <button id="app-error-reload" type="button">Reload</button>
+    </section>
     <noscript>
       <p>JavaScript modules are required to run this local page.</p>
     </noscript>
