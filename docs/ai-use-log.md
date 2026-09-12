@@ -35,6 +35,25 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-001 toolchain foundation
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-001 under the
+approved plan. It restored the tested toolchain foundation, added the content
+manifest and validator, the start page, the foundation unit test, and the
+three-browser start-page test; it ran `npm ci`, `npm run check`, `npm run
+build`, `npm run test:e2e`, and `npm run verify`; it applied the review
+corrections, integrated on `main`, and recorded the acceptance. Evidence:
+`docs/development/steps/STEP-001-toolchain-foundation.md`; commits `df7a0ec`,
+`d484112`, `c40f956`, `0d8a201`, `34c7e9b`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: performed the fresh
+independent review of the STEP-001 branch. It found no blocker, one required
+record reconciliation (applied as `D-033`), and three advisories (date
+correction applied; validator gaps carried to STEP-018; acceptance records
+completed). Evidence: the review record in the STEP-001 step record.
+
 ### 2026-09-10 — v2 design restart opened
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
