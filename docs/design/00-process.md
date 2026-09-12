@@ -127,6 +127,8 @@ The `/design-session` command starts this protocol.
   invent a result before execution.
 - Superseded decisions stay visible with a reason, date, and explicit
   `superseded` status.
+- Record dates use the local calendar date of the work, cross-checked against
+  commit timestamps.
 - Preserve a universal fictional world. Do not reproduce real people,
   institutions, or Leonardo's experiences literally.
 

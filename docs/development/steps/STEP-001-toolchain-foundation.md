@@ -1,11 +1,11 @@
 ---
 id: STEP-001
 type: development-step
-status: technical-review
+status: reviewed
 phase: 1
 gate: foundation
-created: 2026-09-10
-updated: 2026-09-10
+created: 2026-09-13
+updated: 2026-09-13
 base_commit: 4cfff5554e1cb73712187223a592c59b45a8c328
 branch: work/step-001-toolchain
 primary_model: opencode-go/deepseek-v4.1-flash
@@ -126,13 +126,33 @@ a worker would add setup overhead without an isolation benefit.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the B1, B2, B10, C1, and C2 specifications, and the
-recorded check results.
+Reviewed on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`),
+a different model family from the primary. The reviewer inspected the step
+record, the B1, B2, B4, B10, C1, and C2 specifications, the complete branch
+diff, and the recorded evidence.
+
+Result: no blocker. One required record-only correction (R-1, applied) and
+three advisory notes (A-1 applied; A-2 carried to STEP-018; A-3 due at
+integration and acceptance). Focused primary validation of the corrections
+passed.
 
 ## Corrections
 
-None yet.
+Record-only corrections applied from the independent review before integration:
+
+- **R-1:** the implementation uses a standalone validator
+  (`scripts/check-content.ts`) run through `content:check` inside `check` and
+  `verify`, exactly as the approved STEP-001 plan specifies. This reconciles
+  B1's "Vitest for content-validation tests" wording and B4's "fails the
+  build" linkage for this step: the validator's full schema form and its
+  build-gate wiring arrive in STEP-018, and completeness enforcement in
+  STEP-023. Recorded as `D-033`.
+- **A-1:** the record dates were corrected to the actual work date,
+  2026-09-13, cross-checked against commit timestamps (see the date
+  convention in `docs/design/00-process.md`).
+- **A-2:** validator limitations carried to STEP-018: free-text placeholder
+  detection, the manifest's validated counts, and a graceful message when the
+  content directory is missing.
 
 ## Leonardo decision
 
