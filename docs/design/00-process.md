@@ -42,7 +42,7 @@ the current block, its questions, and the exact next action are recorded here.
 
 ## Phases
 
-### Phase A — Clean-slate design (current)
+### Phase A — Clean-slate design
 
 | #   | Block                                | Document                       | Status     |
 | --- | ------------------------------------ | ------------------------------ | ---------- |
@@ -60,10 +60,22 @@ That reopening is recorded in the decision log.
 
 ### Phase B — Technical specification (fresh)
 
-Written after Phase A. It will define the stack, architecture, data, interfaces,
-testing, persistence, world runtime, interface, audio, performance, and
-acceptance. Nothing from v1 is inherited by default; the same choices may be
-re-approved on their merits.
+Specifications live in `docs/specs/`. Each block follows the same
+question–synthesis–approval process as Phase A. Nothing from v1 is inherited by
+default; the same choices may be re-approved on their merits.
+
+| #   | Block                                   | Document                            | Status        |
+| --- | --------------------------------------- | ----------------------------------- | ------------- |
+| B1  | Toolchain and repository                | `01-toolchain.md`                   | In discussion |
+| B2  | Architecture and module boundaries      | `02-architecture.md`                | Not started   |
+| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Not started   |
+| B4  | Content and data                        | `04-content-and-data.md`            | Not started   |
+| B5  | Persistence and recovery                | `05-persistence.md`                 | Not started   |
+| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Not started   |
+| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Not started   |
+| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Not started   |
+| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Not started   |
+| B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Not started   |
 
 ### Phase C — Development pathway (fresh)
 
@@ -103,6 +115,7 @@ The `/design-session` command starts this protocol.
 - `docs/design/00-process.md` — this file, the durable process anchor
 - `docs/design/decision-log.md` — approved v2 decisions
 - `docs/design/01-vision.md` and later block documents — written on approval
+- `docs/specs/` — Phase B technical specifications, written on approval
 - `docs/ai-use-log.md` — actual primary and subagent model use
 - `docs/costs.md` — token and estimated cost ledger, with `/cost-snapshot`
 - `AGENTS.md` — the agent contract
@@ -111,14 +124,39 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B structure pending approval
+## Current task — Phase B, Block B1
 
-All eight Phase A blocks are documented in `docs/design/`. The A4 and A5
-revisions (the tenured, unhumanised PI caricature and the fellowship track)
-were implemented and approved on 2026-09-10. Phase A is complete. The next step
-is Leonardo's approval of the proposed Phase B specification structure. No
-specification is written and no development step is authorized. The earlier
-block questions and session records further down are preserved as history.
+Phase A is complete. Leonardo approved the Phase B structure on 2026-09-10, and
+Block B1 (toolchain and repository) is in discussion; its questions are below.
+One Phase A refinement is awaiting approval: the manuscript–fellowship linkage
+proposal. The earlier block questions and session records further down are
+preserved as history.
+
+### Pending refinement — manuscript–fellowship linkage
+
+Proposed and awaiting approval: the manuscript and the fellowship share
+evidence (each result supports one track, or both at an overlap risk), share
+reframes (a PI reframe stales both), and share complicity (taking Dario's data
+or fabricating preliminary data contaminates both). The independence,
+career-plan, and support requirements remain independent administrative work.
+
+### B1 questions
+
+1. Toolchain policy: exact pinned versions, no ranges, everything bundled
+   locally, no runtime CDN or network; package manager npm. Proposal.
+2. Node: the current active LTS, recorded exactly in `.nvmrc` and `package.json`
+   engines; the exact number is chosen at the first development step. Proposal.
+3. Tooling: strict TypeScript, ESLint, Prettier, Vitest for unit and content
+   tests, and Playwright for Chromium, Firefox, and WebKit. Proposal.
+4. Top-level layout: `src/`, `tests/`, `content/`, `scripts/`, and
+   `docs/specs/`, with the module list fixed in B2. Proposal.
+5. Quality commands: `dev`, `build`, `typecheck`, `lint`, `format:check`,
+   `test`, `test:e2e`, plus `check` and `verify` that include content
+   validation. Proposal.
+6. Dependency policy: every dependency reviewed and pinned; no runtime network
+   dependency; a committed lockfile. Proposal.
+7. Assets: no asset enters before research and approval; an
+   `assets/ASSET_MANIFEST.md` records each one. Proposal.
 
 ### A8 questions (answered and documented)
 
