@@ -1,7 +1,7 @@
 ---
 id: STEP-002
 type: development-step
-status: leonardo-testing
+status: accepted
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -173,5 +173,6 @@ Applied before integration from the first independent review:
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation and checks complete; independent
-review, Leonardo testing, and acceptance pending.
+Plan approved 2026-09-13. **Accepted by Leonardo on 2026-09-13** after the
+direct startup test: the page showed _Minor Revisions_, _Startup checks
+passed._, and _Game systems are not yet available._ with no visible error.

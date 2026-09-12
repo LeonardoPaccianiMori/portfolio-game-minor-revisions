@@ -35,6 +35,28 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-002 application shell
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-002 under the
+approved plan. It added the application coordinator, request queue, frame loop,
+platform compatibility, timing and frame scheduler, the safe error screen, and
+the unit and browser tests; it applied the required R-1 correction, integrated
+on `main`, and recorded the acceptance. Evidence:
+`docs/development/steps/STEP-002-application-shell.md`; commits `4ac5ed3`,
+`97a0a04`, `f4a220c`, `0096211`, `8d88ad9`, `8b5cdec`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: first independent
+review of the STEP-002 branch. It found no blocker, one required finding (R-1,
+the startup fault boundary around the frame loop), and six advisory notes.
+
+OpenCode Go `mr-reviewer` subagent, fresh session, configured
+`opencode-go/glm-5.3` at variant `max`, actual runtime model metadata not
+exposed: re-review of the corrected result. It verified R-1 as fully applied
+with no blocker or required finding and recorded two hardening advisories
+(ADV-R2a and ADV-R2b).
+
 ### 2026-09-13 — STEP-001 toolchain foundation
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
