@@ -78,4 +78,6 @@ opened Block B4. It then documented Block B4 in
 `docs/specs/04-content-and-data.md` (`D-023`) and opened Block B5. It then
 documented Block B5 in `docs/specs/05-persistence.md` (`D-024`) and opened
 Block B6. It then documented Block B6 in
-`docs/specs/06-world-and-interaction.md` (`D-025`) and opened Block B7.
+`docs/specs/06-world-and-interaction.md` (`D-025`) and opened Block B7. It then
+documented Block B7 in `docs/specs/07-interface-and-accessibility.md`
+(`D-026`) and opened Block B8.

@@ -72,8 +72,8 @@ default; the same choices may be re-approved on their merits.
 | B4  | Content and data                        | `04-content-and-data.md`            | Documented    |
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Documented    |
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented    |
-| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | In discussion |
-| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Not started   |
+| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Documented    |
+| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | In discussion |
 | B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Not started   |
 | B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Not started   |
 
@@ -124,14 +124,35 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B7
+## Current task — Phase B, Block B8
 
-Phase A is complete and Blocks B1–B6 are documented in `docs/specs/`.
-Block B7 (interface, input, and accessibility) is in discussion; its questions
-are below. The earlier block questions and session records further down are
+Phase A is complete and Blocks B1–B7 are documented in `docs/specs/`.
+Block B8 (rendering, assets, and audio) is in discussion; its questions are
+below. The earlier block questions and session records further down are
 preserved as history.
 
-### B7 questions
+### B8 questions
+
+1. Renderer: Three.js with WebGL2 required, flat stylized materials, simple
+   lighting, one continuous scene, and no heavy post-processing. Proposal.
+2. Presets: low, standard, and high control shadows, draw distance, and
+   effects, with the reference class fixed in B9. Proposal.
+3. Asset pipeline: environment, props, characters, interface, and audio roles
+   under the reuse-modify-create policy, with the manifest and licence checks
+   before integration. Proposal.
+4. Placeholders: temporary geometry and sounds until a real asset is approved;
+   placeholders are labelled and never presented as final. Proposal.
+5. Resource ownership: world owns visual resources, audio owns audio
+   resources, with shared loading and disposal rules. Proposal.
+6. Audio: an ambience bed per space, cue classes for interface and pressure,
+   the cold synth motif, no voice acting, and captions for non-speech cues.
+   Proposal.
+7. Characters: stylized silhouette-first presentation with a small shared
+   animation set and text-led dialogue. Proposal.
+8. Visual language: a restrained palette with one pressure accent, and
+   act-based lighting changes that support the tone curve. Proposal.
+
+### B7 questions (answered and documented)
 
 1. Desk board: the two-track board (paper and fellowship), requests, and
    resources in the minimalist diagrammatic style, navigable by mouse,
