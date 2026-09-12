@@ -85,4 +85,5 @@ documented Block B7 in `docs/specs/07-interface-and-accessibility.md`
 documented Block B9 in `docs/specs/09-performance-and-browsers.md` (`D-028`)
 and opened Block B10, the final Phase B block. It then documented Block B10 in
 `docs/specs/10-testing-and-workflow.md` (`D-029`), completing Phase B, and
-proposed the Phase C structure.
+proposed the Phase C structure. Leonardo approved the Phase C structure
+(`D-030`), and Block C1 was opened.

@@ -77,17 +77,17 @@ default; the same choices may be re-approved on their merits.
 | B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Documented |
 | B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Documented |
 
-### Phase C — Development pathway (proposed)
+### Phase C — Development pathway (approved)
 
-| #   | Block                                 | Document                    | Status   |
-| --- | ------------------------------------- | --------------------------- | -------- |
-| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Proposed |
-| C2  | The ordered development step list     | `12-development-steps.md`   | Proposed |
+| #   | Block                                 | Document                    | Status        |
+| --- | ------------------------------------- | --------------------------- | ------------- |
+| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | In discussion |
+| C2  | The ordered development step list     | `12-development-steps.md`   | Proposed      |
 
-Proposed and awaiting Leonardo's approval. C1 fixes the phase model, milestone
-gates, and the step-record format; C2 writes the ordered steps. No development
-step is authorized until Phase C is approved and the first step plan is
-approved.
+Leonardo approved the Phase C structure on 2026-09-10. C1 fixes the phase
+model, gates, and step-record format; C2 writes the ordered steps. No
+development step is authorized until Phase C is approved and the first step
+plan is approved.
 
 ## Session protocol
 
@@ -131,13 +131,33 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase C structure pending approval
+## Current task — Phase C, Block C1
 
-Phases A and B are complete. All ten Phase B specifications are documented in
-`docs/specs/`. The proposed Phase C structure is awaiting Leonardo's approval:
-C1 defines the pathway model, milestone gates, and step format; C2 contains the
-ordered development step list. No development step is authorized. The earlier
-block questions and session records further down are preserved as history.
+Phases A and B are complete, and Leonardo approved the Phase C structure on
+2026-09-10. Block C1 (pathway model, gates, and step format) is in discussion;
+its questions are below. No development step is authorized. The earlier block
+questions and session records further down are preserved as history.
+
+### C1 questions
+
+1. Seven development phases: foundation; core rules and the week loop; world
+   and interaction; content; presentation and assets; integration and polish;
+   final acceptance. Proposal.
+2. Five gates: first playable, slice (Act I, 15–20 minutes), content complete,
+   feature complete, and final acceptance. Proposal.
+3. Step size: one reviewable deliverable, ideally one working session; merging
+   or splitting requires approval. Proposal.
+4. Step records live under `docs/development/steps/` as
+   `STEP-<three digits>-<slug>.md`, with frontmatter and the B10 sections.
+   Proposal.
+5. Step numbering is sequential and never reused; legacy v1 records stay in
+   Git history. Proposal.
+6. Dependencies: a step starts only after its accepted predecessors and its own
+   approved exact plan. Proposal.
+7. Review cadence: primary audit plus one fresh independent review; record-only
+   corrections use focused validation. Proposal.
+8. Every milestone step includes its cost snapshot, and the process file is
+   updated in the same commit. Proposal.
 
 ### B10 questions (answered and documented)
 
