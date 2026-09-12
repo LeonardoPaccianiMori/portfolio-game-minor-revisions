@@ -60,4 +60,5 @@ token and cost ledger with the `/cost-snapshot` command (`D-008`,
 snapshots part of every milestone commit (`D-011`), opened Block A4, and then
 documented Block A4 in `docs/design/04-narrative.md` (`D-012`) and opened
 Block A5. It then documented Block A5 in `docs/design/05-characters.md`
-(`D-013`) and opened Block A6.
+(`D-013`) and opened Block A6. It documented Block A6 in
+`docs/design/06-world-and-presentation.md` (`D-014`) and opened Block A7.

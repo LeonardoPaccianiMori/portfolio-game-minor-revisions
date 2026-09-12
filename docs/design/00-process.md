@@ -51,8 +51,8 @@ the current block, its questions, and the exact next action are recorded here.
 | A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Documented    |
 | A4  | Narrative and structure              | `04-narrative.md`              | Documented    |
 | A5  | Characters and voice                 | `05-characters.md`             | Documented    |
-| A6  | World and presentation               | `06-world-and-presentation.md` | In discussion |
-| A7  | Content and evaluation               | `07-content-and-evaluation.md` | Not started   |
+| A6  | World and presentation               | `06-world-and-presentation.md` | Documented    |
+| A7  | Content and evaluation               | `07-content-and-evaluation.md` | In discussion |
 | A8  | Technical constraints and production | `08-production-constraints.md` | Not started   |
 
 A later block may reopen an earlier one when it changes that block's premises.
@@ -111,13 +111,34 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A6
+## Current task — Phase A, Block A7
 
-Blocks A1–A5 are documented in `docs/design/`. Block A6 (world and
-presentation) is in discussion; its questions are below. The earlier block
+Blocks A1–A6 are documented in `docs/design/`. Block A7 (content and
+evaluation) is in discussion; its questions are below. The earlier block
 questions and session records further down are preserved as history.
 
-### A6 questions
+### A7 questions
+
+1. Word budget: 8,000–12,000 unique English words, mostly dialogue and scene
+   text, up from the v1 limit of 6,000. Proposal.
+2. Authored scenes: about ten fixed scenes across the three acts, with the rest
+   of the story delivered through systemic and interactive text. Proposal.
+3. Content types: in-engine scenes, messages and emails, notices and forms,
+   desk text, reviewer reports, and the four endings plus the personnel file.
+   Proposal.
+4. Content data: stable IDs and authored data files validated at build, with no
+   generated dialogue at runtime (details in Phase B). Proposal.
+5. Language: English only, plain comprehension with insider recognition
+   rewarded. Proposal.
+6. Evaluation: private self-testing by Leonardo plus agent-run comprehension
+   probes. Should limited informal playtesting with trusted people be allowed,
+   with no data collection and no research framing? Proposal: yes.
+7. Humour and comprehension: per-act joke-density checks and a clean-context
+   probe, measured rather than assumed. Proposal.
+8. Content safety: fictional and non-actionable science, the Level 2 darkness
+   boundary, and a start-screen content note. State it in the document.
+
+### A6 questions (answered and documented)
 
 1. University and department names. Proposal: Ashgrove University, Department
    of Terrestrial Ecology (fictional; rename freely).

@@ -59,3 +59,4 @@ real spend and stay in the ledger.
 | 2026-09-11 | Block A3; milestone cost rule |        8 | $2.02 | +$0.03 |  3.5M | 122.2K |      40.2M |      116.0K | abcce99 |
 | 2026-09-11 | Block A4; Block A5 opened     |        8 | $2.11 | +$0.09 |  4.0M | 126.0K |      43.1M |      116.0K | 30156e9 |
 | 2026-09-11 | Block A5; Block A6 opened     |        8 | $2.20 | +$0.09 |  4.5M | 128.8K |      45.1M |      116.0K | 2462fab |
+| 2026-09-11 | Block A6; Block A7 opened     |        8 | $2.21 | +$0.01 |  4.5M | 131.9K |      47.6M |      116.0K | 9b86ec7 |
