@@ -1,7 +1,7 @@
 ---
 id: STEP-001
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 1
 gate: foundation
 created: 2026-09-10
@@ -111,11 +111,24 @@ a worker would add setup overhead without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `4cfff5554e1cb73712187223a592c59b45a8c328`.
+- Branch: `work/step-001-toolchain`.
+- Implementation commit: `d484112641eef3aca4466deb7ccd3eb763166c0d`
+  (`Restore tested toolchain foundation`).
+- `npm ci`: passed; 158 packages; 0 vulnerabilities.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 6 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one JavaScript chunk.
+- `npm run test:e2e`: 3 passed (Chromium, Firefox, WebKit), no external request.
+- `npm run dev`: used by the Playwright web server; the page loaded with the
+  ready marker.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the B1, B2, B10, C1, and C2 specifications, and the
+recorded check results.
 
 ## Corrections
 
@@ -123,4 +136,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-10. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-10. Implementation and checks complete; independent
+review, Leonardo testing, and acceptance pending.
