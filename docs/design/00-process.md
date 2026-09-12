@@ -50,8 +50,8 @@ the current block, its questions, and the exact next action are recorded here.
 | A2  | Core loop and survival system        | `02-core-loop.md`              | Documented    |
 | A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Documented    |
 | A4  | Narrative and structure              | `04-narrative.md`              | Documented    |
-| A5  | Characters and voice                 | `05-characters.md`             | In discussion |
-| A6  | World and presentation               | `06-world-and-presentation.md` | Not started   |
+| A5  | Characters and voice                 | `05-characters.md`             | Documented    |
+| A6  | World and presentation               | `06-world-and-presentation.md` | In discussion |
 | A7  | Content and evaluation               | `07-content-and-evaluation.md` | Not started   |
 | A8  | Technical constraints and production | `08-production-constraints.md` | Not started   |
 
@@ -111,13 +111,38 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A5
+## Current task — Phase A, Block A6
 
-Blocks A1–A4 are documented in `docs/design/`. Block A5 (characters and voice)
-is in discussion; its questions are below. The earlier block questions and
-session records further down are preserved as history.
+Blocks A1–A5 are documented in `docs/design/`. Block A6 (world and
+presentation) is in discussion; its questions are below. The earlier block
+questions and session records further down are preserved as history.
 
-### A5 questions
+### A6 questions
+
+1. University and department names. Proposal: Ashgrove University, Department
+   of Terrestrial Ecology (fictional; rename freely).
+2. Floor plan: one compact floor with a desk hub, a soil lab, a grow room, the
+   PI's office, a shared corridor, and a break room. Proposal.
+3. Station visits: experiments need a short station visit; analysis and writing
+   happen at the desk; the PI and colleagues live in their rooms. Proposal.
+4. Visual language: minimalist and diagrammatic like Mini Metro — clean shapes,
+   flat colours, a restrained palette, and one pressure accent colour.
+   Proposal.
+5. Camera and movement: comfortable first-person walking with keyboard, mouse,
+   and controller; no head-bob or forced motion. Proposal.
+6. Audio: diegetic room ambience and restrained cues, a cold synth motif for
+   pressure, no voice acting, and captions for non-speech cues. Proposal.
+7. The desk board: a diegetic desk in the office with a clean overlay for
+   claims, evidence, and requirements. Proposal.
+8. Asset plan: environment, props, characters, interface, and audio roles
+   under the reuse-modify-create policy; temporary geometry for the first
+   builds, external assets only after research and approval. Proposal.
+9. Accessibility baseline: scale, contrast, reduced motion, keyboard-only
+   operation, captions, and no colour-only information. Proposal.
+10. Environmental comedy: institutional notices and room states change by act,
+    showing accretion and decline. Proposal.
+
+### A5 questions (answered and documented)
 
 1. PI name, gender, and pronouns. Proposal: Dr. Helena Voss, she/her,
    mid-career and under renewal pressure.
