@@ -71,8 +71,8 @@ default; the same choices may be re-approved on their merits.
 | B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented    |
 | B4  | Content and data                        | `04-content-and-data.md`            | Documented    |
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Documented    |
-| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | In discussion |
-| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Not started   |
+| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented    |
+| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | In discussion |
 | B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Not started   |
 | B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Not started   |
 | B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Not started   |
@@ -124,14 +124,33 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B6
+## Current task — Phase B, Block B7
 
-Phase A is complete and Blocks B1–B5 are documented in `docs/specs/`.
-Block B6 (world, movement, and interaction) is in discussion; its questions are
-below. The earlier block questions and session records further down are
+Phase A is complete and Blocks B1–B6 are documented in `docs/specs/`.
+Block B7 (interface, input, and accessibility) is in discussion; its questions
+are below. The earlier block questions and session records further down are
 preserved as history.
 
-### B6 questions
+### B7 questions
+
+1. Desk board: the two-track board (paper and fellowship), requests, and
+   resources in the minimalist diagrammatic style, navigable by mouse,
+   keyboard, and controller. Proposal.
+2. Action menu: every action states its cost, deadline, and consequences before
+   commitment; irreversible choices require confirmation. Proposal.
+3. Controls: keyboard and mouse plus controller, with remappable actions and no
+   drag-only or precision-motor requirements. Proposal.
+4. Accessibility: scale, contrast, reduced motion, captions for non-speech
+   cues, keyboard-only operation, no colour-only information, and an
+   Interaction Assist mode that eases targeting. Proposal.
+5. Text presentation: readable sizes, speaker names, a start-screen content
+   note, and clear advance and skip for scenes. Proposal.
+6. Settings: audio volumes, captions, motion, scale, and remapping, saved in
+   the settings store. Proposal.
+7. Screen inventory: menus, pause, save and continue, new game, archive, and
+   the personnel file, each with semantic focus management. Proposal.
+
+### B6 questions (answered and documented)
 
 1. Compact floor: the six spaces from A6 in one continuous walkable layout,
    small enough to cross in under a minute; exact metres fixed in the

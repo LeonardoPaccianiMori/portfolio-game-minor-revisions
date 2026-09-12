@@ -77,4 +77,5 @@ then documented Block B3 in `docs/specs/03-state-and-rules.md` (`D-022`) and
 opened Block B4. It then documented Block B4 in
 `docs/specs/04-content-and-data.md` (`D-023`) and opened Block B5. It then
 documented Block B5 in `docs/specs/05-persistence.md` (`D-024`) and opened
-Block B6.
+Block B6. It then documented Block B6 in
+`docs/specs/06-world-and-interaction.md` (`D-025`) and opened Block B7.
