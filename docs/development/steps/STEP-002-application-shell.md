@@ -1,7 +1,7 @@
 ---
 id: STEP-002
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -113,11 +113,24 @@ overhead without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `e41aad110020fcae5a1d79609beddd290eaa4285`.
+- Branch: `work/step-002-application-shell`.
+- Implementation commit: `97a0a0459c0e903ecb92d5986f7d8a905d2141ba`
+  (`Add application shell and safe startup`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 17 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 6 passed (normal start and a controlled WebGL2 failure in
+  Chromium, Firefox, and WebKit), no external request.
+- `npm run dev`: used by the Playwright web server; the normal page reached the
+  ready marker and the failure page showed the safe error screen.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the B2, B9, B10, C1, and C2 specifications, and the
+recorded check results.
 
 ## Corrections
 
@@ -125,4 +138,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo testing, and acceptance pending.
