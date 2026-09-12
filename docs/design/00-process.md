@@ -64,23 +64,30 @@ Specifications live in `docs/specs/`. Each block follows the same
 question–synthesis–approval process as Phase A. Nothing from v1 is inherited by
 default; the same choices may be re-approved on their merits.
 
-| #   | Block                                   | Document                            | Status        |
-| --- | --------------------------------------- | ----------------------------------- | ------------- |
-| B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented    |
-| B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented    |
-| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented    |
-| B4  | Content and data                        | `04-content-and-data.md`            | Documented    |
-| B5  | Persistence and recovery                | `05-persistence.md`                 | Documented    |
-| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented    |
-| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Documented    |
-| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Documented    |
-| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Documented    |
-| B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | In discussion |
+| #   | Block                                   | Document                            | Status     |
+| --- | --------------------------------------- | ----------------------------------- | ---------- |
+| B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented |
+| B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented |
+| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented |
+| B4  | Content and data                        | `04-content-and-data.md`            | Documented |
+| B5  | Persistence and recovery                | `05-persistence.md`                 | Documented |
+| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented |
+| B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Documented |
+| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Documented |
+| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Documented |
+| B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Documented |
 
-### Phase C — Development pathway (fresh)
+### Phase C — Development pathway (proposed)
 
-A new multi-phase pathway with small, reviewable steps, one approved plan at a
-time. It is written only after Phases A and B are approved.
+| #   | Block                                 | Document                    | Status   |
+| --- | ------------------------------------- | --------------------------- | -------- |
+| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Proposed |
+| C2  | The ordered development step list     | `12-development-steps.md`   | Proposed |
+
+Proposed and awaiting Leonardo's approval. C1 fixes the phase model, milestone
+gates, and the step-record format; C2 writes the ordered steps. No development
+step is authorized until Phase C is approved and the first step plan is
+approved.
 
 ## Session protocol
 
@@ -124,14 +131,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B10
+## Current task — Phase C structure pending approval
 
-Phase A is complete and Blocks B1–B9 are documented in `docs/specs/`.
-Block B10 (testing, evaluation, and agent workflow) is the final Phase B block
-and is in discussion; its questions are below. The earlier block questions and
-session records further down are preserved as history.
+Phases A and B are complete. All ten Phase B specifications are documented in
+`docs/specs/`. The proposed Phase C structure is awaiting Leonardo's approval:
+C1 defines the pathway model, milestone gates, and step format; C2 contains the
+ordered development step list. No development step is authorized. The earlier
+block questions and session records further down are preserved as history.
 
-### B10 questions
+### B10 questions (answered and documented)
 
 1. Test layers: unit tests for rules and content, browser tests for world,
    player, interaction, ui, audio, and persistence, content validation, and

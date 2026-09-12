@@ -83,4 +83,6 @@ documented Block B7 in `docs/specs/07-interface-and-accessibility.md`
 (`D-026`) and opened Block B8. It then documented Block B8 in
 `docs/specs/08-rendering-and-audio.md` (`D-027`) and opened Block B9. It then
 documented Block B9 in `docs/specs/09-performance-and-browsers.md` (`D-028`)
-and opened Block B10, the final Phase B block.
+and opened Block B10, the final Phase B block. It then documented Block B10 in
+`docs/specs/10-testing-and-workflow.md` (`D-029`), completing Phase B, and
+proposed the Phase C structure.
