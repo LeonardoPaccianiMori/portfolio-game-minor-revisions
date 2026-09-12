@@ -61,4 +61,6 @@ snapshots part of every milestone commit (`D-011`), opened Block A4, and then
 documented Block A4 in `docs/design/04-narrative.md` (`D-012`) and opened
 Block A5. It then documented Block A5 in `docs/design/05-characters.md`
 (`D-013`) and opened Block A6. It documented Block A6 in
-`docs/design/06-world-and-presentation.md` (`D-014`) and opened Block A7.
+`docs/design/06-world-and-presentation.md` (`D-014`) and opened Block A7. It
+then documented Block A7 in `docs/design/07-content-and-evaluation.md`
+(`D-015`) and opened Block A8, the final design block.

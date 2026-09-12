@@ -52,8 +52,8 @@ the current block, its questions, and the exact next action are recorded here.
 | A4  | Narrative and structure              | `04-narrative.md`              | Documented    |
 | A5  | Characters and voice                 | `05-characters.md`             | Documented    |
 | A6  | World and presentation               | `06-world-and-presentation.md` | Documented    |
-| A7  | Content and evaluation               | `07-content-and-evaluation.md` | In discussion |
-| A8  | Technical constraints and production | `08-production-constraints.md` | Not started   |
+| A7  | Content and evaluation               | `07-content-and-evaluation.md` | Documented    |
+| A8  | Technical constraints and production | `08-production-constraints.md` | In discussion |
 
 A later block may reopen an earlier one when it changes that block's premises.
 That reopening is recorded in the decision log.
@@ -111,13 +111,41 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Block A7
+## Current task — Phase A, Block A8
 
-Blocks A1–A6 are documented in `docs/design/`. Block A7 (content and
-evaluation) is in discussion; its questions are below. The earlier block
-questions and session records further down are preserved as history.
+Blocks A1–A7 are documented in `docs/design/`. Block A8 (technical constraints
+and production) is the final design block and is in discussion; its questions
+are below. The earlier block questions and session records further down are
+preserved as history.
 
-### A7 questions
+### A8 questions
+
+1. Stack: strict TypeScript, Vite, direct Three.js, local bundled dependencies,
+   npm, and a recorded Node LTS, producing a static local build. Proposal.
+2. Architecture: separate rules and content, world and rendering, player and
+   input, interface, audio, persistence, and tests, with deterministic and
+   serializable rules. Proposal.
+3. Persistence: browser-local IndexedDB save, no accounts, no telemetry, and no
+   runtime network. Proposal.
+4. Browsers: current Chrome, Edge, and Firefox desktop; automated Chromium,
+   Firefox, and WebKit checks; Safari best-effort until direct evidence exists.
+   Proposal.
+5. Performance: a named reference machine class, low/standard/high graphics
+   presets, and 60-minute sessions; exact numbers fixed in Phase B. Proposal.
+6. Budget and capacity: keep the EUR 150 ceiling for non-LLM exceptional costs;
+   no hard cap on model spend, but review `docs/costs.md` at every phase gate.
+   Proposal.
+7. Stop rules: if the vertical slice fails the fun, humour, and comprehension
+   checks after one correction cycle, pause and re-scope rather than press on.
+   Proposal.
+8. Development: a fresh multi-phase pathway in Phase C, one approved step at a
+   time, with the opencode agent workflow, independent review, and step records
+   already established. Proposal.
+9. Release boundary: no public release, licence, deployment, or portfolio work
+   until the game passes final acceptance; the existing GitHub remote is the
+   only remote. Proposal.
+
+### A7 questions (answered and documented)
 
 1. Word budget: 8,000–12,000 unique English words, mostly dialogue and scene
    text, up from the v1 limit of 6,000. Proposal.
