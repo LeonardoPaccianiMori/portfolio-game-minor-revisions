@@ -70,3 +70,4 @@ real spend and stay in the ledger.
 | 2026-09-11 | Block B5; Block B6 opened     |        8 | $2.41 | +$0.01 |  5.1M | 164.0K |      73.9M |      116.0K | 9a0f905 |
 | 2026-09-11 | Block B6; Block B7 opened     |        8 | $2.43 | +$0.02 |  5.1M | 166.7K |      76.8M |      116.0K | a75f3fe |
 | 2026-09-11 | Block B7; Block B8 opened     |        8 | $2.44 | +$0.01 |  5.1M | 169.5K |      79.7M |      116.0K | e079f91 |
+| 2026-09-11 | Block B8; Block B9 opened     |        8 | $2.45 | +$0.01 |  5.1M | 172.3K |      82.6M |      116.0K | 5eb8ddd |

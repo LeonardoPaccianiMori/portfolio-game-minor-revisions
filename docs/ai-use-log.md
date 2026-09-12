@@ -80,4 +80,5 @@ documented Block B5 in `docs/specs/05-persistence.md` (`D-024`) and opened
 Block B6. It then documented Block B6 in
 `docs/specs/06-world-and-interaction.md` (`D-025`) and opened Block B7. It then
 documented Block B7 in `docs/specs/07-interface-and-accessibility.md`
-(`D-026`) and opened Block B8.
+(`D-026`) and opened Block B8. It then documented Block B8 in
+`docs/specs/08-rendering-and-audio.md` (`D-027`) and opened Block B9.

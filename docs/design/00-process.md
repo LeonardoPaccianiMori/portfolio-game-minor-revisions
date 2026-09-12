@@ -73,8 +73,8 @@ default; the same choices may be re-approved on their merits.
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Documented    |
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented    |
 | B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Documented    |
-| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | In discussion |
-| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Not started   |
+| B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Documented    |
+| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | In discussion |
 | B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Not started   |
 
 ### Phase C — Development pathway (fresh)
@@ -124,14 +124,34 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B8
+## Current task — Phase B, Block B9
 
-Phase A is complete and Blocks B1–B7 are documented in `docs/specs/`.
-Block B8 (rendering, assets, and audio) is in discussion; its questions are
-below. The earlier block questions and session records further down are
-preserved as history.
+Phase A is complete and Blocks B1–B8 are documented in `docs/specs/`.
+Block B9 (performance, browsers, and diagnostics) is in discussion; its
+questions are below. The earlier block questions and session records further
+down are preserved as history.
 
-### B8 questions
+### B9 questions
+
+1. Reference class: a named modest laptop (for example an Intel i5 with
+   integrated Iris Xe graphics or equivalent), with 60-minute sessions.
+   Proposal.
+2. Budgets: a frame-rate target at the standard preset, a playable low preset,
+   a memory ceiling, a load-time target, and a build-size limit. Proposal.
+3. Measurement: manual profiling on the reference class with recorded
+   evidence; no telemetry. Proposal.
+4. Browsers: current Chrome, Edge, and Firefox desktop; automated Chromium,
+   Firefox, and WebKit checks; Safari best-effort. Proposal.
+5. Compatibility: WebGL2 required, with a compatibility check before a new
+   game and safe failure when unsupported. Proposal.
+6. Diagnostics: a local error screen with sanitized details that the player can
+   copy; no external reporting. Proposal.
+7. Profiles: low, standard, and high with a safe default; changes apply
+   immediately, and no profile grants a gameplay advantage. Proposal.
+8. Long sessions: stable 60-minute sessions with correct resource release and
+   no leaks. Proposal.
+
+### B8 questions (answered and documented)
 
 1. Renderer: Three.js with WebGL2 required, flat stylized materials, simple
    lighting, one continuous scene, and no heavy post-processing. Proposal.
