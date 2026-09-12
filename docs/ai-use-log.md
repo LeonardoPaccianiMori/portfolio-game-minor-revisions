@@ -72,4 +72,6 @@ revision across `04-narrative.md`, `05-characters.md`, `02-core-loop.md`,
 `07-content-and-evaluation.md` (`D-018`), closing Phase A. It then implemented
 the manuscript–fellowship linkage (`D-019`), documented Block B1 in
 `docs/specs/01-toolchain.md` (`D-020`), and opened Block B2. It then documented
-Block B2 in `docs/specs/02-architecture.md` (`D-021`) and opened Block B3.
+Block B2 in `docs/specs/02-architecture.md` (`D-021`) and opened Block B3. It
+then documented Block B3 in `docs/specs/03-state-and-rules.md` (`D-022`) and
+opened Block B4.

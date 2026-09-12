@@ -68,8 +68,8 @@ default; the same choices may be re-approved on their merits.
 | --- | --------------------------------------- | ----------------------------------- | ------------- |
 | B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented    |
 | B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented    |
-| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | In discussion |
-| B4  | Content and data                        | `04-content-and-data.md`            | Not started   |
+| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented    |
+| B4  | Content and data                        | `04-content-and-data.md`            | In discussion |
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Not started   |
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Not started   |
 | B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Not started   |
@@ -124,14 +124,31 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B3
+## Current task — Phase B, Block B4
 
-Phase A is complete and Blocks B1–B2 are documented in `docs/specs/`.
-Block B3 (state, commands, and determinism) is in discussion; its questions are
-below. The earlier block questions and session records further down are
-preserved as history.
+Phase A is complete and Blocks B1–B3 are documented in `docs/specs/`.
+Block B4 (content and data) is in discussion; its questions are below. The
+earlier block questions and session records further down are preserved as
+history.
 
-### B3 questions
+### B4 questions
+
+1. Content layout: `content/` with data files for the paper, the fellowship,
+   events, scenes, messages, notices, endings, and strings. Proposal.
+2. Stable IDs: dotted namespaces, for example `paper.claim.mechanism`,
+   `fellowship.impact.q1`, `event.rent.1`, and `scene.pi-office.3`. Proposal.
+3. Schemas: strict build-time validation; invalid or incomplete content fails
+   the build. Proposal.
+4. Text: one English strings file keyed by ID, with no dialogue generated at
+   runtime. Proposal.
+5. Shared evidence: one evidence set with per-track assignment and an overlap
+   flag; fellowship feasibility and impact read the current framing. Proposal.
+6. Authored events: conditions and effects in data, deterministic, and
+   evaluated in a fixed order. Proposal.
+7. Content safety and completeness: no actionable science, and
+   development-only incomplete markers that can never ship. Proposal.
+
+### B3 questions (answered and documented)
 
 1. Campaign state as one serializable object holding the week, energy, standing,
    integrity, relationships, the paper track, the fellowship track, event flags,
