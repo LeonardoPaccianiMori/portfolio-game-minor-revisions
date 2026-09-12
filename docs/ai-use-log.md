@@ -63,4 +63,7 @@ Block A5. It then documented Block A5 in `docs/design/05-characters.md`
 (`D-013`) and opened Block A6. It documented Block A6 in
 `docs/design/06-world-and-presentation.md` (`D-014`) and opened Block A7. It
 then documented Block A7 in `docs/design/07-content-and-evaluation.md`
-(`D-015`) and opened Block A8, the final design block.
+(`D-015`) and opened Block A8, the final design block. It documented Block A8
+in `docs/design/08-production-constraints.md` (`D-016`) and reopened Blocks A4
+and A5 for the PI caricature and fellowship proposal (`D-017`), with the
+implementation synthesis awaiting approval.

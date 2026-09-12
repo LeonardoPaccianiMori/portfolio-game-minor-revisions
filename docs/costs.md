@@ -61,3 +61,4 @@ real spend and stay in the ledger.
 | 2026-09-11 | Block A5; Block A6 opened     |        8 | $2.20 | +$0.09 |  4.5M | 128.8K |      45.1M |      116.0K | 2462fab |
 | 2026-09-11 | Block A6; Block A7 opened     |        8 | $2.21 | +$0.01 |  4.5M | 131.9K |      47.6M |      116.0K | 9b86ec7 |
 | 2026-09-11 | Block A7; Block A8 opened     |        8 | $2.22 | +$0.01 |  4.5M | 135.0K |      50.2M |      116.0K | aeffc1e |
+| 2026-09-11 | Block A8; A4 and A5 reopened  |        8 | $2.23 | +$0.01 |  4.5M | 138.0K |      52.8M |      116.0K | 928f5e2 |
