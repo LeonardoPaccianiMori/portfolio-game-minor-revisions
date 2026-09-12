@@ -147,14 +147,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-001 accepted; STEP-002 plan pending approval
+## Current task — STEP-002 integrated; Leonardo testing
 
-STEP-001 (toolchain and repository foundation) is accepted by Leonardo on
-2026-09-13 after his direct start-page test. The next permitted action is the
-exact STEP-002 plan (application shell), presented for Leonardo's approval.
-STEP-002 is not authorized until that approval. The previous step record is
-`docs/development/steps/STEP-001-toolchain-foundation.md`. The earlier block
-questions and session records further down are preserved as history.
+STEP-001 is accepted. STEP-002 (application shell) is implemented,
+independently reviewed with no blocker, corrected, re-reviewed clean,
+integrated on `main`, and fully verified. The current step record is
+`docs/development/steps/STEP-002-application-shell.md`. The next permitted
+action is Leonardo's direct test of the startup page, followed by explicit
+acceptance. STEP-003 is not authorized. The earlier block questions and session
+records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

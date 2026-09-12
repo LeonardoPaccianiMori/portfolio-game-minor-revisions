@@ -1,7 +1,7 @@
 ---
 id: STEP-002
 type: development-step
-status: technical-review
+status: leonardo-testing
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -125,6 +125,8 @@ overhead without an isolation benefit.
 - `npm run dev`: used by the Playwright web server; the normal page reached the
   ready marker and the failure page showed the safe error screen.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `8d88ad9` by fast-forward, and `npm run verify`
+  passed on `main`.
 
 ## Independent review
 
