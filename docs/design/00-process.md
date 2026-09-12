@@ -67,8 +67,8 @@ default; the same choices may be re-approved on their merits.
 | #   | Block                                   | Document                            | Status        |
 | --- | --------------------------------------- | ----------------------------------- | ------------- |
 | B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented    |
-| B2  | Architecture and module boundaries      | `02-architecture.md`                | In discussion |
-| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Not started   |
+| B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented    |
+| B3  | State, commands, and determinism        | `03-state-and-rules.md`             | In discussion |
 | B4  | Content and data                        | `04-content-and-data.md`            | Not started   |
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Not started   |
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Not started   |
@@ -124,15 +124,36 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B2
+## Current task — Phase B, Block B3
 
-Phase A is complete and Block B1 is documented in `docs/specs/01-toolchain.md`.
-Block B2 (architecture and module boundaries) is in discussion; its questions
-are below. The manuscript–fellowship linkage was approved and implemented in
-Blocks A2–A4. The earlier block questions and session records further down are
+Phase A is complete and Blocks B1–B2 are documented in `docs/specs/`.
+Block B3 (state, commands, and determinism) is in discussion; its questions are
+below. The earlier block questions and session records further down are
 preserved as history.
 
-### B2 questions
+### B3 questions
+
+1. Campaign state as one serializable object holding the week, energy, standing,
+   integrity, relationships, the paper track, the fellowship track, event flags,
+   and the seed. Proposal.
+2. Typed, serializable commands such as `performAction`, `assignEvidence`,
+   `answerRequirement`, `meetPI`, `rest`, `comply`, `quit`, and `advanceWeek`.
+   Proposal.
+3. Every command returns either a new state plus presentation effects, or an
+   explicit rejection with a reason. No partial mutation. Proposal.
+4. Determinism: a seeded PRNG, no wall-clock or hidden randomness; the same
+   state plus command plus seed gives the same result. Proposal.
+5. Authored events as data with conditions and effects, evaluated
+   deterministically by the rules. Proposal.
+6. Forecasts: player-facing costs, deadlines, and consequences are stated
+   honestly before commitment; formulas may stay hidden, outcomes may not.
+   Proposal.
+7. State carries a schema version, and content references use stable IDs.
+   Proposal.
+8. Invalid commands are rejected explicitly, never silently ignored, and the
+   interface explains why. Proposal.
+
+### B2 questions (answered and documented)
 
 1. Module list: `application`, `rules`, `content`, `world`, `player`, `input`,
    `interaction`, `ui`, `audio`, `persistence`, and `platform`. Proposal.
