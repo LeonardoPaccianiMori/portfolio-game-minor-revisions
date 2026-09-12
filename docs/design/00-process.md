@@ -69,8 +69,8 @@ default; the same choices may be re-approved on their merits.
 | B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented    |
 | B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented    |
 | B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented    |
-| B4  | Content and data                        | `04-content-and-data.md`            | In discussion |
-| B5  | Persistence and recovery                | `05-persistence.md`                 | Not started   |
+| B4  | Content and data                        | `04-content-and-data.md`            | Documented    |
+| B5  | Persistence and recovery                | `05-persistence.md`                 | In discussion |
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Not started   |
 | B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Not started   |
 | B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Not started   |
@@ -124,14 +124,32 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B4
+## Current task — Phase B, Block B5
 
-Phase A is complete and Blocks B1–B3 are documented in `docs/specs/`.
-Block B4 (content and data) is in discussion; its questions are below. The
-earlier block questions and session records further down are preserved as
+Phase A is complete and Blocks B1–B4 are documented in `docs/specs/`.
+Block B5 (persistence and recovery) is in discussion; its questions are below.
+The earlier block questions and session records further down are preserved as
 history.
 
-### B4 questions
+### B5 questions
+
+1. One local IndexedDB database with stores for the active campaign, the
+   last-known-good backup, settings, the completion archive, and metadata.
+   Proposal.
+2. Save points: autosave at week boundaries and after scene resolution.
+   Closing the game never advances time. Proposal.
+3. One active campaign. New Game requires explicit confirmation and replaces
+   the active save, while the archive keeps completed runs. Proposal.
+4. Recovery: validate every load; on corruption offer the backup; never guess
+   or partially accept a save. Proposal.
+5. Migration: forward-only and versioned; incompatible saves are refused and
+   preserved, never silently reinterpreted. Proposal.
+6. Clear data: an explicit destructive action with confirmation, local only.
+   Proposal.
+7. Privacy and concurrency: no accounts, telemetry, or external sync; stale
+   tabs cannot overwrite a newer save. Proposal.
+
+### B4 questions (answered and documented)
 
 1. Content layout: `content/` with data files for the paper, the fellowship,
    events, scenes, messages, notices, endings, and strings. Proposal.

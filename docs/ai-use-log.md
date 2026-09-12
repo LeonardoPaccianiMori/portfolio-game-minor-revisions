@@ -74,4 +74,5 @@ the manuscript–fellowship linkage (`D-019`), documented Block B1 in
 `docs/specs/01-toolchain.md` (`D-020`), and opened Block B2. It then documented
 Block B2 in `docs/specs/02-architecture.md` (`D-021`) and opened Block B3. It
 then documented Block B3 in `docs/specs/03-state-and-rules.md` (`D-022`) and
-opened Block B4.
+opened Block B4. It then documented Block B4 in
+`docs/specs/04-content-and-data.md` (`D-023`) and opened Block B5.
