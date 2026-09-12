@@ -89,6 +89,8 @@ at five and cannot exceed five. The baseline is tuned in the slice.
   waitlisted (cruel ambiguity), or rejected (the renewal path closes).
 - The outcome is partly arbitrary and partly learnable. It feeds the ending
   matrix but never unlocks a clean win.
+- Shared evidence, shared reframes, and shared complicity link the two
+  documents, while the administrative requirements stay independent.
 
 ## Quitting
 

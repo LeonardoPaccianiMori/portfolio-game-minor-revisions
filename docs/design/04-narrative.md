@@ -24,6 +24,8 @@ meta moments. Character names and voices are chosen in Block A5.
 - The player must also win a fellowship to continue: the call arrives at the
   end of Act I, the proposal is due at the end of Act II, and the panel decides
   early in Act III.
+- The fellowship and the paper share evidence, framing, and consequences; the
+  player cannot maximise both.
 - Twelve weeks, twelve turns. Every week spent is a week not recovered.
 
 ## Act structure

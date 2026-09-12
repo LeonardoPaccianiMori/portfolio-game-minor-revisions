@@ -63,3 +63,4 @@ real spend and stay in the ledger.
 | 2026-09-11 | Block A7; Block A8 opened     |        8 | $2.22 | +$0.01 |  4.5M | 135.0K |      50.2M |      116.0K | aeffc1e |
 | 2026-09-11 | Block A8; A4 and A5 reopened  |        8 | $2.23 | +$0.01 |  4.5M | 138.0K |      52.8M |      116.0K | 928f5e2 |
 | 2026-09-11 | A4-A5 revisions; Phase A done |        8 | $2.34 | +$0.11 |  5.0M | 145.4K |      57.0M |      116.0K | a4e81d8 |
+| 2026-09-11 | Fellowship linkage; Block B1  |        8 | $2.37 | +$0.03 |  5.1M | 152.3K |      62.5M |      116.0K | 20e476e |

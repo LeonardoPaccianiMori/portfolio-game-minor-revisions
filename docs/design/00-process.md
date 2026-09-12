@@ -66,8 +66,8 @@ default; the same choices may be re-approved on their merits.
 
 | #   | Block                                   | Document                            | Status        |
 | --- | --------------------------------------- | ----------------------------------- | ------------- |
-| B1  | Toolchain and repository                | `01-toolchain.md`                   | In discussion |
-| B2  | Architecture and module boundaries      | `02-architecture.md`                | Not started   |
+| B1  | Toolchain and repository                | `01-toolchain.md`                   | Documented    |
+| B2  | Architecture and module boundaries      | `02-architecture.md`                | In discussion |
 | B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Not started   |
 | B4  | Content and data                        | `04-content-and-data.md`            | Not started   |
 | B5  | Persistence and recovery                | `05-persistence.md`                 | Not started   |
@@ -124,41 +124,35 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B1
+## Current task — Phase B, Block B2
 
-Phase A is complete. Leonardo approved the Phase B structure on 2026-09-10, and
-Block B1 (toolchain and repository) is in discussion; its questions are below.
-One Phase A refinement is awaiting approval: the manuscript–fellowship linkage
-proposal. The earlier block questions and session records further down are
+Phase A is complete and Block B1 is documented in `docs/specs/01-toolchain.md`.
+Block B2 (architecture and module boundaries) is in discussion; its questions
+are below. The manuscript–fellowship linkage was approved and implemented in
+Blocks A2–A4. The earlier block questions and session records further down are
 preserved as history.
 
-### Pending refinement — manuscript–fellowship linkage
+### B2 questions
 
-Proposed and awaiting approval: the manuscript and the fellowship share
-evidence (each result supports one track, or both at an overlap risk), share
-reframes (a PI reframe stales both), and share complicity (taking Dario's data
-or fabricating preliminary data contaminates both). The independence,
-career-plan, and support requirements remain independent administrative work.
+1. Module list: `application`, `rules`, `content`, `world`, `player`, `input`,
+   `interaction`, `ui`, `audio`, `persistence`, and `platform`. Proposal.
+2. Import direction: one-way only; rules and content own no browser objects;
+   world owns Three.js; persistence owns IndexedDB; audio owns Web Audio; ui
+   owns the DOM. Proposal.
+3. Lifecycle: one application coordinator, ordered startup and reverse
+   shutdown, a request queue, and a single frame loop. Proposal.
+4. Dependencies: passed in by the caller, no global singletons, so modules are
+   testable in isolation. Proposal.
+5. Rules purity: deterministic, serializable, no I/O; presentation effects
+   returned as plain data. Proposal.
+6. Failure boundary: a safe error screen, sanitized diagnostics, and no
+   telemetry or external reporting. Proposal.
+7. Ownership: one owner per browser object, and no module reaches into another
+   module's browser resources. Proposal.
+8. Testing boundaries: unit tests for rules and content; browser tests for
+   world, player, interaction, ui, audio, and persistence. Proposal.
 
-### B1 questions
-
-1. Toolchain policy: exact pinned versions, no ranges, everything bundled
-   locally, no runtime CDN or network; package manager npm. Proposal.
-2. Node: the current active LTS, recorded exactly in `.nvmrc` and `package.json`
-   engines; the exact number is chosen at the first development step. Proposal.
-3. Tooling: strict TypeScript, ESLint, Prettier, Vitest for unit and content
-   tests, and Playwright for Chromium, Firefox, and WebKit. Proposal.
-4. Top-level layout: `src/`, `tests/`, `content/`, `scripts/`, and
-   `docs/specs/`, with the module list fixed in B2. Proposal.
-5. Quality commands: `dev`, `build`, `typecheck`, `lint`, `format:check`,
-   `test`, `test:e2e`, plus `check` and `verify` that include content
-   validation. Proposal.
-6. Dependency policy: every dependency reviewed and pinned; no runtime network
-   dependency; a committed lockfile. Proposal.
-7. Assets: no asset enters before research and approval; an
-   `assets/ASSET_MANIFEST.md` records each one. Proposal.
-
-### A8 questions (answered and documented)
+### B1 questions (answered and documented)
 
 1. Stack: strict TypeScript, Vite, direct Three.js, local bundled dependencies,
    npm, and a recorded Node LTS, producing a static local build. Proposal.

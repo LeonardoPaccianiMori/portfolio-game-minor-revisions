@@ -67,6 +67,16 @@ not detailed laboratory simulation.
   by leaving it blank (penalty).
 - The manuscript and the fellowship share the same weeks and energy. The player
   cannot maximise both; choosing what to sacrifice is the survival loop.
+- The two tracks are linked:
+  - **Shared evidence:** each result can be assigned to the paper, to the
+    fellowship, or to both. Assigning to both is efficient but raises a hidden
+    overlap risk that either evaluation can catch.
+  - **Shared reframes:** a PI reframe stales the fellowship's impact and
+    feasibility narrative as well as the paper.
+  - **Shared complicity:** taking Dario's data or fabricating preliminary data
+    contaminates both documents if it is discovered.
+  - The independence, career-plan, and support requirements remain independent
+    administrative work.
 
 ## Complicity actions (approved list)
 
