@@ -147,13 +147,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase C complete; STEP-001 plan pending approval
+## Current task — STEP-001 integrated; Leonardo testing
 
-Phases A, B, and C are complete. The 37-step development list is documented in
-`docs/specs/12-development-steps.md`. The next permitted action is the exact
-STEP-001 plan, presented for Leonardo's approval. No development step is
-authorized until that approval. The earlier block questions and session records
-further down are preserved as history.
+Phases A, B, and C are complete. STEP-001 (toolchain and repository
+foundation) is implemented, independently reviewed with no blocker, corrected,
+integrated on `main`, and fully verified. The current step record is
+`docs/development/steps/STEP-001-toolchain-foundation.md`. The next permitted
+action is Leonardo's direct test of the local start page, followed by explicit
+acceptance. STEP-002 is not authorized. The earlier block questions and session
+records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

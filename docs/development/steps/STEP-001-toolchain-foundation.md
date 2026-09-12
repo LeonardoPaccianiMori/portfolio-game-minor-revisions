@@ -1,7 +1,7 @@
 ---
 id: STEP-001
 type: development-step
-status: reviewed
+status: leonardo-testing
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -123,6 +123,8 @@ a worker would add setup overhead without an isolation benefit.
 - `npm run dev`: used by the Playwright web server; the page loaded with the
   ready marker.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `0d8a2017e5fc483ecfad69eeebaacd2a73f55020`
+  by fast-forward, and `npm run verify` passed on `main`.
 
 ## Independent review
 
