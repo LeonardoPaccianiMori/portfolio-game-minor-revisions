@@ -74,8 +74,8 @@ default; the same choices may be re-approved on their merits.
 | B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Documented    |
 | B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Documented    |
 | B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Documented    |
-| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | In discussion |
-| B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Not started   |
+| B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Documented    |
+| B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | In discussion |
 
 ### Phase C — Development pathway (fresh)
 
@@ -124,14 +124,38 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B9
+## Current task — Phase B, Block B10
 
-Phase A is complete and Blocks B1–B8 are documented in `docs/specs/`.
-Block B9 (performance, browsers, and diagnostics) is in discussion; its
-questions are below. The earlier block questions and session records further
-down are preserved as history.
+Phase A is complete and Blocks B1–B9 are documented in `docs/specs/`.
+Block B10 (testing, evaluation, and agent workflow) is the final Phase B block
+and is in discussion; its questions are below. The earlier block questions and
+session records further down are preserved as history.
 
-### B9 questions
+### B10 questions
+
+1. Test layers: unit tests for rules and content, browser tests for world,
+   player, interaction, ui, audio, and persistence, content validation, and
+   manual play. Proposal.
+2. Fixtures and acceptance: stable acceptance rows per requirement, with
+   traceability from design decisions to tests. Proposal.
+3. Evaluation: Leonardo's direct testing is primary; an agent-run
+   comprehension probe supports it; informal testers are optional; per-act
+   joke-density reviews; negative results are recorded. Proposal.
+4. Evidence: every step records its commands, results, and limitations, and no
+   result is invented. Proposal.
+5. Agent workflow: the primary owns plans, tracked writes, records,
+   integration, and push; subagents are read-only or bounded workers; one
+   worker at a time; independent review from a different model family; step
+   records replace work orders and contributions. Proposal.
+6. Step lifecycle: approved plan, step record, implementation, checks, primary
+   audit, independent review, integration, Leonardo test, acceptance, push.
+   Proposal.
+7. Cost snapshots at every milestone, as already agreed in `D-011`. Proposal.
+8. Release boundary and definition of done: no release, licence, deployment,
+   or portfolio work before final acceptance, and the stop rules from A8
+   apply. Proposal.
+
+### B9 questions (answered and documented)
 
 1. Reference class: a named modest laptop (for example an Intel i5 with
    integrated Iris Xe graphics or equivalent), with 60-minute sessions.
