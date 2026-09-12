@@ -70,8 +70,8 @@ default; the same choices may be re-approved on their merits.
 | B2  | Architecture and module boundaries      | `02-architecture.md`                | Documented    |
 | B3  | State, commands, and determinism        | `03-state-and-rules.md`             | Documented    |
 | B4  | Content and data                        | `04-content-and-data.md`            | Documented    |
-| B5  | Persistence and recovery                | `05-persistence.md`                 | In discussion |
-| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | Not started   |
+| B5  | Persistence and recovery                | `05-persistence.md`                 | Documented    |
+| B6  | World, movement, and interaction        | `06-world-and-interaction.md`       | In discussion |
 | B7  | Interface, input, and accessibility     | `07-interface-and-accessibility.md` | Not started   |
 | B8  | Rendering, assets, and audio            | `08-rendering-and-audio.md`         | Not started   |
 | B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Not started   |
@@ -124,14 +124,36 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase B, Block B5
+## Current task — Phase B, Block B6
 
-Phase A is complete and Blocks B1–B4 are documented in `docs/specs/`.
-Block B5 (persistence and recovery) is in discussion; its questions are below.
-The earlier block questions and session records further down are preserved as
-history.
+Phase A is complete and Blocks B1–B5 are documented in `docs/specs/`.
+Block B6 (world, movement, and interaction) is in discussion; its questions are
+below. The earlier block questions and session records further down are
+preserved as history.
 
-### B5 questions
+### B6 questions
+
+1. Compact floor: the six spaces from A6 in one continuous walkable layout,
+   small enough to cross in under a minute; exact metres fixed in the
+   implementation. Proposal.
+2. Movement: comfortable first-person walking with keyboard, mouse, and
+   controller; remappable actions. Proposal.
+3. Collision: static collision shapes only; no physics engine and no fall
+   damage or jumping puzzles. Proposal.
+4. Interaction: one context-sensitive action with raycast targeting, short
+   reach, highlight and prompt, and clear obstruction feedback. Proposal.
+5. Division of play: experiments and stations in 3D; the paper, the fellowship,
+   and resources on the desk board; conversations in the characters' rooms.
+   Proposal.
+6. Room states: authored per-act changes that show accretion and decline, with
+   visible forecasts when a state affects play. Proposal.
+7. No trapping: every space can be exited, and recovery anchors return the
+   player to a safe point. Proposal.
+8. Short scenes: camera holds briefly for authored moments, then control
+   returns automatically; scenes are skip-safe and never force motion.
+   Proposal.
+
+### B5 questions (answered and documented)
 
 1. One local IndexedDB database with stores for the active campaign, the
    last-known-good backup, settings, the completion archive, and metadata.

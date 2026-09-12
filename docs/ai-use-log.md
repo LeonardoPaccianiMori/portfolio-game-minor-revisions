@@ -75,4 +75,6 @@ the manuscript–fellowship linkage (`D-019`), documented Block B1 in
 Block B2 in `docs/specs/02-architecture.md` (`D-021`) and opened Block B3. It
 then documented Block B3 in `docs/specs/03-state-and-rules.md` (`D-022`) and
 opened Block B4. It then documented Block B4 in
-`docs/specs/04-content-and-data.md` (`D-023`) and opened Block B5.
+`docs/specs/04-content-and-data.md` (`D-023`) and opened Block B5. It then
+documented Block B5 in `docs/specs/05-persistence.md` (`D-024`) and opened
+Block B6.
