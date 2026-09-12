@@ -81,8 +81,8 @@ default; the same choices may be re-approved on their merits.
 
 | #   | Block                                 | Document                    | Status        |
 | --- | ------------------------------------- | --------------------------- | ------------- |
-| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | In discussion |
-| C2  | The ordered development step list     | `12-development-steps.md`   | Proposed      |
+| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Documented    |
+| C2  | The ordered development step list     | `12-development-steps.md`   | In discussion |
 
 Leonardo approved the Phase C structure on 2026-09-10. C1 fixes the phase
 model, gates, and step-record format; C2 writes the ordered steps. No
@@ -105,6 +105,20 @@ plan is approved.
 
 The `/design-session` command starts this protocol.
 
+## Resume in a fresh session
+
+1. Open opencode in the repository root.
+2. Read `README.md`, `AGENTS.md`, this file, and
+   `docs/design/decision-log.md`.
+3. The "Current task" section above is the resume point. Read the block or step
+   document it names.
+4. Use `/design-session` for design blocks and the current step record for
+   development steps.
+5. Do not rely on conversation memory. If this file and a block document
+   disagree, stop and resolve the conflict before continuing.
+6. Record completed work in the decision log, the AI-use log, and the cost
+   ledger, then commit and push before ending the session.
+
 ## Decision rules
 
 - Every decision is `confirmed`, `proposed`, or `open`.
@@ -123,6 +137,7 @@ The `/design-session` command starts this protocol.
 - `docs/design/decision-log.md` — approved v2 decisions
 - `docs/design/01-vision.md` and later block documents — written on approval
 - `docs/specs/` — Phase B technical specifications, written on approval
+- `docs/development/steps/` — step records for the development pathway
 - `docs/ai-use-log.md` — actual primary and subagent model use
 - `docs/costs.md` — token and estimated cost ledger, with `/cost-snapshot`
 - `AGENTS.md` — the agent contract
@@ -131,14 +146,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase C, Block C1
+## Current task — Phase C, Block C2
 
-Phases A and B are complete, and Leonardo approved the Phase C structure on
-2026-09-10. Block C1 (pathway model, gates, and step format) is in discussion;
-its questions are below. No development step is authorized. The earlier block
-questions and session records further down are preserved as history.
+Phases A and B are complete, and Block C1 is documented in
+`docs/specs/11-development-pathway.md`. Block C2 (the ordered development step
+list) is in discussion; the list is being prepared for Leonardo's approval. No
+development step is authorized. The earlier block questions and session records
+further down are preserved as history.
 
-### C1 questions
+### C1 questions (answered and documented)
 
 1. Seven development phases: foundation; core rules and the week loop; world
    and interaction; content; presentation and assets; integration and polish;

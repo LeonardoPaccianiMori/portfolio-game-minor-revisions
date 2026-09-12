@@ -86,4 +86,6 @@ documented Block B9 in `docs/specs/09-performance-and-browsers.md` (`D-028`)
 and opened Block B10, the final Phase B block. It then documented Block B10 in
 `docs/specs/10-testing-and-workflow.md` (`D-029`), completing Phase B, and
 proposed the Phase C structure. Leonardo approved the Phase C structure
-(`D-030`), and Block C1 was opened.
+(`D-030`), and Block C1 was opened. It then documented Block C1 in
+`docs/specs/11-development-pathway.md` (`D-031`), added the fresh-session
+resume procedure, and opened Block C2.
