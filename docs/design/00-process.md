@@ -49,8 +49,8 @@ the current block, its questions, and the exact next action are recorded here.
 | A1  | Concept and experience promise       | `01-vision.md`                 | Documented |
 | A2  | Core loop and survival system        | `02-core-loop.md`              | Documented |
 | A3  | Pressure, resources, and failure     | `03-pressure-and-failure.md`   | Documented |
-| A4  | Narrative and structure              | `04-narrative.md`              | Reopened   |
-| A5  | Characters and voice                 | `05-characters.md`             | Reopened   |
+| A4  | Narrative and structure              | `04-narrative.md`              | Documented |
+| A5  | Characters and voice                 | `05-characters.md`             | Documented |
 | A6  | World and presentation               | `06-world-and-presentation.md` | Documented |
 | A7  | Content and evaluation               | `07-content-and-evaluation.md` | Documented |
 | A8  | Technical constraints and production | `08-production-constraints.md` | Documented |
@@ -111,15 +111,14 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase A, Blocks A4 and A5 reopened
+## Current task — Phase B structure pending approval
 
-Blocks A1–A3 and A6–A8 are documented. Leonardo reopened A4 (narrative) and A5
-(characters) on 2026-09-10 for two changes: the PI becomes a tenured,
-unhumanised caricature, and a fellowship-proposal track is added to the game.
-The implementation synthesis is awaiting Leonardo's approval. On approval,
-`04-narrative.md` and `05-characters.md` are revised, the affected blocks (A2,
-A3, A6, and A7) are updated, and Phase A closes. The earlier block questions
-and session records further down are preserved as history.
+All eight Phase A blocks are documented in `docs/design/`. The A4 and A5
+revisions (the tenured, unhumanised PI caricature and the fellowship track)
+were implemented and approved on 2026-09-10. Phase A is complete. The next step
+is Leonardo's approval of the proposed Phase B specification structure. No
+specification is written and no development step is authorized. The earlier
+block questions and session records further down are preserved as history.
 
 ### A8 questions (answered and documented)
 

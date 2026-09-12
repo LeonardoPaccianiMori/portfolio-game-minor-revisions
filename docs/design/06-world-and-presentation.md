@@ -52,8 +52,9 @@ freely.
 
 ## Desk board (approved)
 
-- A diegetic desk in the shared office, with a clean overlay for claims,
-  evidence, and requirements.
+- A diegetic desk in the shared office, with a clean overlay for the claims,
+  evidence, and requirements of two tracks: the manuscript and the fellowship
+  proposal.
 - The board is the main systemic surface; the 3D space provides atmosphere,
   scenes, and station actions.
 

@@ -66,4 +66,7 @@ then documented Block A7 in `docs/design/07-content-and-evaluation.md`
 (`D-015`) and opened Block A8, the final design block. It documented Block A8
 in `docs/design/08-production-constraints.md` (`D-016`) and reopened Blocks A4
 and A5 for the PI caricature and fellowship proposal (`D-017`), with the
-implementation synthesis awaiting approval.
+implementation synthesis awaiting approval. After approval it implemented the
+revision across `04-narrative.md`, `05-characters.md`, `02-core-loop.md`,
+`03-pressure-and-failure.md`, `06-world-and-presentation.md`, and
+`07-content-and-evaluation.md` (`D-018`), closing Phase A.

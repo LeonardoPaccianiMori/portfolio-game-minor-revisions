@@ -10,7 +10,8 @@ how it is stored and validated, and how we will know whether it works.
 ## Volume and shape (approved)
 
 - Word budget: 8,000–12,000 unique English words, mostly dialogue and scene
-  text.
+  text. The fellowship adds form and panel text within this range; if content
+  planning exceeds it, a small amendment is brought for approval.
 - About ten fixed authored scenes across the three acts. The rest of the story
   arrives through systemic and interactive text.
 - One run: 60 minutes maximum. Three or four sacrifice paths invite a second
@@ -22,7 +23,8 @@ how it is stored and validated, and how we will know whether it works.
 - Messages and emails.
 - Notices, forms, and policy text.
 - Desk-board text: claims, evidence, and requirements.
-- Reviewer reports inside the review set piece.
+- Reviewer reports inside the review set piece and the short fellowship panel.
+- Fellowship form text and Voss's feedback.
 - Four endings plus the final personnel file.
 
 ## Content data (approved)

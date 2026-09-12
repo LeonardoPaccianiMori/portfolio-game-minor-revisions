@@ -1,6 +1,7 @@
 # 03 — Pressure, Resources, and Failure
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block A3). The
+Status: **Documented and revised — approved by Leonardo on 2026-09-10
+(Block A3) and revised the same day to add the fellowship. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -26,14 +27,15 @@ what to sacrifice.
 
 Every action costs one week. Energy costs differ by action:
 
-| Action                         | Energy |
-| ------------------------------ | -----: |
-| Work an experiment step        |     −1 |
-| Analyse results                |     −1 |
-| Write or revise the manuscript |     −1 |
-| Meet the PI                    |      0 |
-| Help or confront a colleague   |      0 |
-| Rest                           |     +2 |
+| Action                          | Energy |
+| ------------------------------- | -----: |
+| Work an experiment step         |     −1 |
+| Analyse results                 |     −1 |
+| Write or revise the manuscript  |     −1 |
+| Work on the fellowship proposal |     −1 |
+| Meet the PI                     |      0 |
+| Help or confront a colleague    |      0 |
+| Rest                            |     +2 |
 
 Each turn restores one energy automatically at the week boundary. Energy starts
 at five and cannot exceed five. The baseline is tuned in the slice.
@@ -50,9 +52,10 @@ at five and cannot exceed five. The baseline is tuned in the slice.
 
 ## Standing and ejection
 
-- Standing rises with publication progress, PI favour, and colleague goodwill.
-- Standing falls with failed demands, complaints, absence, and visible
-  shortcuts that are caught.
+- Standing rises with publication progress, fellowship progress, PI favour,
+  and colleague goodwill.
+- Standing falls with failed demands, missed fellowship milestones, complaints,
+  absence, and visible shortcuts that are caught.
 - Ejection arrives with two turns of warning and a stated reason. It is a
   reachable ending, not a surprise.
 - Standing is the literal up-or-out mechanism: the pyramid is the system.
@@ -78,6 +81,15 @@ at five and cannot exceed five. The baseline is tuned in the slice.
   actions), or borrow from a colleague (costs a relationship).
 - The meagre salary is satire, but the pressure it creates is real.
 
+## The fellowship deadline
+
+- The proposal deadline is fixed at the end of Act II. Missing it closes the
+  renewal path and lowers standing; it does not end the run.
+- The panel outcome arrives early in Act III: funded (hollow continuity),
+  waitlisted (cruel ambiguity), or rejected (the renewal path closes).
+- The outcome is partly arbitrary and partly learnable. It feeds the ending
+  matrix but never unlocks a clean win.
+
 ## Quitting
 
 - Quitting is always available, with a confirmation that states the
@@ -95,8 +107,8 @@ at five and cannot exceed five. The baseline is tuned in the slice.
 - Ejection by standing (warned).
 - Burnout after repeated crashes.
 - Quitting.
-- The contract's natural end, where the paper outcome plus the ending
-  resolution decides the epilogue.
+- The contract's natural end, where the paper outcome, fellowship outcome, and
+  the ending resolution decide the epilogue.
 
 ## Open items moved to later blocks
 

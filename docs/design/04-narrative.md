@@ -1,6 +1,6 @@
 # 04 — Narrative and Structure
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block A4).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block A4); revised the same day to make the PI an unrepentant caricature and add the fellowship track.**
 
 ## Purpose
 
@@ -21,23 +21,33 @@ meta moments. Character names and voices are chosen in Block A5.
 - A final three-month postdoc extension.
 - The contract is renewable only if a paper is submitted by the grant
   reporting deadline.
+- The player must also win a fellowship to continue: the call arrives at the
+  end of Act I, the proposal is due at the end of Act II, and the panel decides
+  early in Act III.
 - Twelve weeks, twelve turns. Every week spent is a week not recovered.
 
 ## Act structure
 
 Three acts of four turns:
 
-| Act                  | Turns | What escalates                                                                              |
-| -------------------- | ----- | ------------------------------------------------------------------------------------------- |
-| Act I — The promise  | 1–4   | Onboarding, the PI's enthusiasm, the first reframe; the player learns the loop              |
-| Act II — The grind   | 5–8   | Escalation, competition, the authored data crisis (contamination), the recurring rent event |
-| Act III — The spiral | 9–12  | The spiral, the review, the final choice, and the contract's end                            |
+| Act                  | Turns | What escalates                                                                                          |
+| -------------------- | ----- | ------------------------------------------------------------------------------------------------------- |
+| Act I — The promise  | 1–4   | Onboarding, the PI's enthusiasm, the first reframe, and the fellowship call; the player learns the loop |
+| Act II — The grind   | 5–8   | Escalation, competition, the contamination crisis, the rent event, and the fellowship deadline          |
+| Act III — The spiral | 9–12  | The fellowship panel, the review, the final choice, and the contract's end                              |
 
-## The PI's arc
+## The PI
 
-- The PI is under their own pressure and starts charming, then hardens.
-- They become what the player could become.
-- One scene humanizes them without excusing them.
+- Dr. Helena Voss is tenured, secure, and indifferent. She does not arc,
+  soften, or fall; only her demands escalate.
+- She is a caricature in content but plausible in delivery: monstrous
+  statements in cheerful, procedural language that the institution treats as
+  normal.
+- There is no humanising scene. Instead, a complaint disappears into procedure
+  and Voss is praised for the project's progress, showing where accountability
+  flows.
+- The mirror changes: the player cannot become her. The system protects her and
+  consumes the player.
 
 ## The two colleagues
 
@@ -49,19 +59,24 @@ Three acts of four turns:
 
 ## Fixed events
 
-- Act I: the funding review.
-- Act II: the conference deadline, the rent event, and one authored crisis
-  (contamination).
-- Act III: the journal review and the contract decision.
+- Act I: the funding review, which reveals the fellowship call.
+- Act II: the conference deadline, the contamination crisis, the rent event,
+  and the fellowship proposal deadline.
+- Act III: the fellowship panel, the journal review, and the contract
+  decision.
 
 ## Endings
 
-Four paths, determined by paper state, standing, integrity, and who stayed:
+Four paths, determined by paper state, standing, integrity, fellowship
+outcome, and who stayed:
 
 - Published and hollow.
-- Promoted and complicit.
+- Promoted and complicit: permanence inside the system, in a junior role that
+  reproduces the same demands; Voss's own position is not available.
 - Out with something intact.
 - Ejected or burned out.
+
+The fellowship outcome feeds the renewal routes and never unlocks a clean win.
 
 No ending repairs the system. The structure is fixed here; the epilogue content
 is written in the content blocks.
@@ -80,8 +95,8 @@ Three are allowed:
 
 1. The cheerful onboarding at the start: an induction that narrates the
    player's life as policy.
-2. The review that answers back in the middle: forms and reviewer reports that
-   respond to the manuscript.
+2. The review and fellowship panel that answer back: forms and reviewer
+   reports that respond to the manuscript and the proposal.
 3. The final personnel file that summarizes what the player became.
 
 ## Open items moved to later blocks

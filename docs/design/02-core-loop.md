@@ -1,8 +1,8 @@
 # 02 — Core Loop and Survival System
 
-Status: **Documented — the eight core decisions and the detailed action list,
+Status: **Documented and revised — the core decisions, detailed action list,
 cost shape, and worked example were approved by Leonardo on 2026-09-10
-(Block A2).**
+(Block A2); revised the same day to add the fellowship track.**
 
 ## Purpose
 
@@ -27,8 +27,8 @@ publication.
 
 ## The player's view (approved)
 
-- A desk board: the PI's current request or requests, the manuscript's claims
-  and evidence, and the player's resources.
+- A desk board: the PI's current requests, two tracks — the manuscript and the
+  fellowship proposal — and the player's resources.
 - The compact 3D department provides atmosphere, selected scenes, short
   interactions, and a few station actions. It is not a walking simulator.
 
@@ -49,6 +49,24 @@ not detailed laboratory simulation.
   - **Revert**: a requirement returns to an earlier state and progress is lost.
 - Every piece of evidence is shown as current or stale. The player always sees
   what changed, even when the change is unreasonable.
+
+## The fellowship track (approved revision)
+
+- A second document track runs alongside the manuscript: the fellowship
+  proposal.
+- The call arrives at the end of Act I; the proposal is due at the end of
+  Act II; the panel decides early in Act III.
+- The fellowship has four requirements: impact and innovation, feasibility and
+  preliminary data, independence and career plan, and support and environment.
+- Every requirement asks for something that cannot honestly exist yet: outputs
+  achieved during the fellowship, preliminary data proving the project will
+  work, or independence from the supervisor whose signature is required.
+- The player answers each requirement honestly (weak score), by inflating
+  (integrity cost), by fabricating preliminary data (larger integrity cost and
+  discovery risk), by imitating Voss's language (standing with her, cringe), or
+  by leaving it blank (penalty).
+- The manuscript and the fellowship share the same weeks and energy. The player
+  cannot maximise both; choosing what to sacrifice is the survival loop.
 
 ## Complicity actions (approved list)
 
@@ -75,9 +93,10 @@ both. The endings return to these choices by name.
 ## The review set piece (approved)
 
 At one or two points, a five-to-eight-minute sequence in which absurd, partly
-arbitrary reviewer reports respond to the manuscript. Careful evidence barely
-moves the outcome; learning the reviewers' arbitrary rules does. This is the
-game's centrepiece joke and its sharpest critique.
+arbitrary reviewer reports respond to the manuscript. A short fellowship panel
+of three to four minutes uses the same chorus early in Act III. Careful
+evidence barely moves the outcomes; learning the arbitrary rules does. This is
+the game's centrepiece joke and its sharpest critique.
 
 ## The reveal (approved)
 
@@ -91,7 +110,8 @@ never an excuse for random punishment.
 These specifics are confirmed:
 
 - Action list: work an experiment step; analyse results; write or revise the
-  manuscript; meet the PI; help or confront a colleague; rest.
+  manuscript; work on the fellowship proposal; meet the PI; help or confront a
+  colleague; rest.
 - Each action costs time and energy in different amounts. The exact numbers are
   set in Block A3.
 - PI requests arrive as cards at the start of some turns and through meetings.
