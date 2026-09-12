@@ -135,6 +135,13 @@ A-6 recorded and deferred with owners; A-5 completed at acceptance).
 
 A fresh independent review covers the corrected result before integration.
 
+Re-review on 2026-09-13 by a fresh `mr-reviewer` session (`opencode-go/glm-5.3`,
+variant `max`): R-1 is fully applied, no blocker and no required finding
+remains, and two hardening advisories were recorded for later (ADV-R2a: pin the
+shutdown-on-frame-loop-fault path with a test at the next coordinator touch;
+ADV-R2b: make `StartupOutcome` self-enforcing for a `failed` status with a null
+fault at the restart-semantics work).
+
 ## Corrections
 
 Applied before integration from the first independent review:
@@ -157,6 +164,10 @@ Applied before integration from the first independent review:
     STEP-031 covers it.
   - A-5: acceptance records are completed in the acceptance commit, as in
     STEP-001.
+  - ADV-R2a: the shutdown-on-frame-loop-fault path is not yet pinned by its own
+    test; add one shutdown stage to that test at the next coordinator touch.
+  - ADV-R2b: `StartupOutcome` permits a `failed` status with a null fault;
+    make it self-enforcing at the restart-semantics work (STEP-004 or later).
 
 ## Leonardo decision
 
