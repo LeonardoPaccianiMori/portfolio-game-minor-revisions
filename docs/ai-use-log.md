@@ -88,4 +88,6 @@ and opened Block B10, the final Phase B block. It then documented Block B10 in
 proposed the Phase C structure. Leonardo approved the Phase C structure
 (`D-030`), and Block C1 was opened. It then documented Block C1 in
 `docs/specs/11-development-pathway.md` (`D-031`), added the fresh-session
-resume procedure, and opened Block C2.
+resume procedure, and opened Block C2. It then documented Block C2 in
+`docs/specs/12-development-steps.md` (`D-032`), completing Phase C, and
+prepared the STEP-001 plan for approval.

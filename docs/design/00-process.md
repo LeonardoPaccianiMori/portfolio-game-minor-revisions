@@ -77,17 +77,16 @@ default; the same choices may be re-approved on their merits.
 | B9  | Performance, browsers, and diagnostics  | `09-performance-and-browsers.md`    | Documented |
 | B10 | Testing, evaluation, and agent workflow | `10-testing-and-workflow.md`        | Documented |
 
-### Phase C — Development pathway (approved)
+### Phase C — Development pathway (complete)
 
-| #   | Block                                 | Document                    | Status        |
-| --- | ------------------------------------- | --------------------------- | ------------- |
-| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Documented    |
-| C2  | The ordered development step list     | `12-development-steps.md`   | In discussion |
+| #   | Block                                 | Document                    | Status     |
+| --- | ------------------------------------- | --------------------------- | ---------- |
+| C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Documented |
+| C2  | The ordered development step list     | `12-development-steps.md`   | Documented |
 
-Leonardo approved the Phase C structure on 2026-09-10. C1 fixes the phase
-model, gates, and step-record format; C2 writes the ordered steps. No
-development step is authorized until Phase C is approved and the first step
-plan is approved.
+Phase C is complete. The next permitted action is the exact STEP-001 plan,
+presented for Leonardo's approval. No development step is authorized until
+that plan is approved.
 
 ## Session protocol
 
@@ -146,15 +145,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — Phase C, Block C2
+## Current task — Phase C complete; STEP-001 plan pending approval
 
-Phases A and B are complete, and Block C1 is documented in
-`docs/specs/11-development-pathway.md`. Block C2 (the ordered development step
-list) is in discussion; the list is being prepared for Leonardo's approval. No
-development step is authorized. The earlier block questions and session records
+Phases A, B, and C are complete. The 37-step development list is documented in
+`docs/specs/12-development-steps.md`. The next permitted action is the exact
+STEP-001 plan, presented for Leonardo's approval. No development step is
+authorized until that approval. The earlier block questions and session records
 further down are preserved as history.
 
-### C1 questions (answered and documented)
+### C2 questions (answered and documented)
 
 1. Seven development phases: foundation; core rules and the week loop; world
    and interaction; content; presentation and assets; integration and polish;

@@ -75,3 +75,4 @@ real spend and stay in the ledger.
 | 2026-09-11 | Block B10; Phase B complete   |        8 | $2.47 | +$0.01 |  5.1M | 178.1K |      88.6M |      116.0K | 818e0c1 |
 | 2026-09-11 | Phase C approved; C1 opened   |        8 | $2.49 | +$0.02 |  5.1M | 180.6K |      91.6M |      116.0K | 5aa0c0f |
 | 2026-09-11 | Block C1; Block C2 opened     |        8 | $2.50 | +$0.01 |  5.1M | 183.7K |      94.6M |      116.0K | 558bfc0 |
+| 2026-09-11 | Block C2; Phase C complete    |        8 | $2.53 | +$0.03 |  5.1M | 188.8K |      99.6M |      116.0K | 046b3f1 |
