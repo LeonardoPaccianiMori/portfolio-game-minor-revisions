@@ -67,7 +67,19 @@ export const createApplication = (options: ApplicationOptions): Application => {
         }
       }
 
-      options.frameLoop.start();
+      try {
+        options.frameLoop.start();
+      } catch {
+        await runShutdown();
+        return {
+          status: 'failed',
+          fault: {
+            code: 'startup:frame-loop',
+            message: 'The game could not start.',
+          },
+        };
+      }
+
       running = true;
       return { status: 'ready', fault: null };
     })();
@@ -80,7 +92,12 @@ export const createApplication = (options: ApplicationOptions): Application => {
       return;
     }
 
-    options.frameLoop.stop();
+    try {
+      options.frameLoop.stop();
+    } catch {
+      // Shutdown is best-effort; a failing loop stop must not block cleanup.
+    }
+
     await runShutdown();
     running = false;
   };

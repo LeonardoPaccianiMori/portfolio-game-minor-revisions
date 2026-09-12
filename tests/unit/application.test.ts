@@ -143,6 +143,44 @@ describe('application coordinator', () => {
     expect(runs).toBe(1);
   });
 
+  it('returns a sanitized fault when the frame loop fails to start', async () => {
+    const application = createApplication({
+      startup: [{ name: 'ok', run: () => null }],
+      shutdown: [],
+      frameLoop: {
+        start: () => {
+          throw new Error('raw detail');
+        },
+        stop: () => undefined,
+      },
+    });
+
+    const outcome = await application.start();
+
+    expect(outcome).toEqual({
+      status: 'failed',
+      fault: { code: 'startup:frame-loop', message: 'The game could not start.' },
+    });
+    expect(application.isRunning()).toBe(false);
+  });
+
+  it('tolerates a failing frame loop stop', async () => {
+    const application = createApplication({
+      startup: [{ name: 'ok', run: () => null }],
+      shutdown: [],
+      frameLoop: {
+        start: () => undefined,
+        stop: () => {
+          throw new Error('raw detail');
+        },
+      },
+    });
+
+    await application.start();
+    await expect(application.stop()).resolves.toBeUndefined();
+    expect(application.isRunning()).toBe(false);
+  });
+
   it('keeps shutdown idempotent', async () => {
     let stops = 0;
     const application = createApplication({

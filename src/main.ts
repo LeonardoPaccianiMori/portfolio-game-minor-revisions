@@ -77,4 +77,6 @@ const bootstrap = async (): Promise<void> => {
   }
 };
 
-void bootstrap();
+void bootstrap().catch(() => {
+  showFault('The game could not start.');
+});

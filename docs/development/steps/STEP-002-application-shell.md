@@ -117,8 +117,8 @@ overhead without an isolation benefit.
 - Branch: `work/step-002-application-shell`.
 - Implementation commit: `97a0a0459c0e903ecb92d5986f7d8a905d2141ba`
   (`Add application shell and safe startup`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 17 unit tests, and the
-  content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 17 unit tests before
+  the R-1 correction and 19 after it, and the content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 6 passed (normal start and a controlled WebGL2 failure in
   Chromium, Firefox, and WebKit), no external request.
@@ -128,13 +128,35 @@ overhead without an isolation benefit.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the B2, B9, B10, C1, and C2 specifications, and the
-recorded check results.
+First review on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant
+`max`), a different model family from the primary: no blocker, one required
+correction (R-1, applied), and six advisory notes (A-1, A-2, A-3, A-4, and
+A-6 recorded and deferred with owners; A-5 completed at acceptance).
+
+A fresh independent review covers the corrected result before integration.
 
 ## Corrections
 
-None yet.
+Applied before integration from the first independent review:
+
+- **R-1 (required):** the frame-loop start is now inside the sanitizing fault
+  boundary with the fixed fault `startup:frame-loop`; the loop stop is
+  best-effort; `bootstrap` has a defensive catch that shows the safe error
+  screen; and two unit tests cover a throwing loop start and a throwing loop
+  stop.
+- **Advisories recorded and deferred:**
+  - A-1: the coordinator is single-use; restart semantics are defined when the
+    first restart wiring lands (STEP-004 or later).
+  - A-2: listener exceptions are not yet isolated; the first real frame
+    subscriber (STEP-003) settles the no-throw listener contract.
+  - A-3: queue ownership is not yet wired into the coordinator; it is wired
+    with the first serialized consumer (STEP-003).
+  - A-4: the no-external-request test guard covers HTTP requests only; extend
+    it if a WebSocket-adjacent system appears.
+  - A-6: the error screen does not yet move focus; the accessibility pass at
+    STEP-031 covers it.
+  - A-5: acceptance records are completed in the acceptance commit, as in
+    STEP-001.
 
 ## Leonardo decision
 
