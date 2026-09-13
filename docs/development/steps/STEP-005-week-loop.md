@@ -1,7 +1,7 @@
 ---
 id: STEP-005
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -127,11 +127,21 @@ colleague 0, rest +2. Start 5, +1 each normal week boundary, cap 5.
 
 ## Execution record
 
-Not yet available.
+- Base: `9341b4b7b044ccb3ddf5e758647f0bf49a069479`.
+- Branch: `work/step-005-week-loop`.
+- Implementation commit: `c1f9675b13ee630d524cba1019a0201f944a1452`
+  (`Add week loop and resource spending`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 54 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the A2, A3, B2, B3, B10, C1, and C2 documents, and
+the recorded check results.
 
 ## Corrections
 
@@ -139,4 +149,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
