@@ -145,9 +145,12 @@ slot advances the week exactly as an action does.
 
 ## Independent review
 
-The first review attempt was launched on 2026-09-13 and cancelled before it
-produced a result. A fresh independent review is being run against the same
-implementation.
+A first review attempt was cancelled before it produced a result. The re-run
+completed on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`),
+a different model family from the primary: **no blocker and no required
+finding**. Six advisories were recorded with owners (ADV-1 to ADV-5 are
+test-depth items for the next test-touching cadence; ADV-6 is the stable
+reason codes for PI request failures at STEP-009 planning).
 
 The primary pre-review audit was completed: every changed path is owned
 (including the two recorded extensions), no prohibited path changed, the full
@@ -157,7 +160,20 @@ browser tests).
 
 ## Corrections
 
-None yet.
+No code or document correction was required. Advisories recorded from the
+independent review:
+
+- **ADV-1:** the `meetPI` `no-actions-left` refusal branch has no test; add an
+  assertion at the next test-touching cadence.
+- **ADV-2:** the fellowship `revert` failure guards (unknown id, absent
+  requirement) have no direct test; add them through `applyPiRequest`.
+- **ADV-3:** clamp tests cover standing and integrity but not relationships or
+  the action-slot ceiling.
+- **ADV-4:** permanent complicity flags are asserted only for `inflate-claim`.
+- **ADV-5:** no-mutation assertions and the zero-energy meeting check are
+  incomplete.
+- **ADV-6:** `PiRequestFailure.reason` is a free-form string; stable reason
+  codes are required before STEP-009 surfaces requests to the interface.
 
 ## Leonardo decision
 
