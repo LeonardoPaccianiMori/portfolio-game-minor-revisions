@@ -147,15 +147,17 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-009 accepted; STEP-010 plan pending approval
+## Current task — STEP-010 plan approved; implementation starting
 
-STEP-009 (events and deadlines) is accepted by Leonardo on 2026-09-13 after
-his result review. The next permitted action is the exact STEP-010 plan
-(review and panel set pieces: reviewer chorus, fellowship panel, outcomes),
-presented for Leonardo's approval. STEP-010 is not authorized until that
-approval. The previous step record is
-`docs/development/steps/STEP-009-events.md`. The earlier block questions
-and session records further down are preserved as history.
+STEP-009 (events and deadlines) is accepted. On 2026-09-13 Leonardo approved
+the STEP-010 plan (experiments and evidence flow) and the roadmap amendment
+that inserts it, shifting every later step by one; the review and panel step is
+now STEP-011. Implementation runs on branch `work/step-010-experiments-evidence`
+from base `b9d7f8c`. The current step record is
+`docs/development/steps/STEP-010-experiments-evidence.md`. The next permitted
+action after acceptance is the exact STEP-011 plan, presented for Leonardo's
+approval. The earlier block questions and session records further down are
+preserved as history.
 
 ### C2 questions (answered and documented)
 
