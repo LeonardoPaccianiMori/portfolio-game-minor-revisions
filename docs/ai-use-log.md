@@ -35,6 +35,24 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-009 events and deadlines
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-009 under the
+approved plan. It added the authored event engine and its deterministic
+catalogue (funding review, rent with three choices, contamination, fellowship
+deadline, contract decision), the `pendingEvent` state field and the
+`resolveEvent` command, the dispatcher integration, the B3 state and command
+rows, the A3 rent baselines, and 23 tests; it integrated on `main` and
+recorded the acceptance. Evidence:
+`docs/development/steps/STEP-009-events.md`; commits `959188a`, `b65d5a3`,
+`9b5b603`, `888d82d`, `6da989a`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: completed the
+independent review of STEP-009, found no blocker and no required finding, and
+recorded seven advisories with owners.
+
 ### 2026-09-13 — STEP-008 PI system
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

@@ -84,6 +84,7 @@ real spend and stay in the ledger.
 | 2026-09-13 | STEP-006 accepted             |       16 | $5.25 | +$0.52 |  5.8M | 439.4K |     222.2M |      116.0K | d8e23c9 |
 | 2026-09-13 | STEP-007 accepted             |       18 | $6.06 | +$0.81 |  5.9M | 506.5K |     256.0M |      116.0K | d4e62d9 |
 | 2026-09-13 | STEP-008 accepted             |       20 | $6.76 | +$0.70 |  6.1M | 530.3K |     287.1M |      116.0K | 15ce77d |
+| 2026-09-13 | STEP-009 accepted             |       21 | $7.69 | +$0.93 |  7.2M | 586.7K |     299.5M |      116.0K | 6da989a |
 
 ## Per-model snapshots
 
@@ -120,3 +121,15 @@ $0.8285.
 | glm-5.3             |      226 | 697.5K | 249.8K |       6.6M |           0 |        $3.7894 |
 | grok-4.6            |       16 | 170.4K |  16.9K |     771.8K |           0 |        $0.8285 |
 | qwen3.8-flash       |       10 |     60 |   5.7K |     544.7K |      116.0K |        $0.0346 |
+
+### 2026-09-13 — after STEP-009
+
+| Model               | Messages |  Input | Output | Cache read | Cache write | Estimated cost |
+| ------------------- | -------: | -----: | -----: | ---------: | ----------: | -------------: |
+| deepseek-v4.1-flash |      591 |   6.1M | 873.8K |     290.5M |           0 |        $2.3137 |
+| glm-5.3             |      255 | 898.9K | 284.5K |       7.7M |           0 |        $4.5116 |
+| grok-4.6            |       16 | 170.4K |  16.9K |     771.8K |           0 |        $0.8285 |
+| qwen3.8-flash       |       10 |     60 |   5.7K |     544.7K |      116.0K |        $0.0346 |
+
+The glm-5.3 line grew by $0.7222 with the STEP-009 independent review. No
+worker model was used in this step.

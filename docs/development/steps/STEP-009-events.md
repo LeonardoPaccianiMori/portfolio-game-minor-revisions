@@ -1,7 +1,7 @@
 ---
 id: STEP-009
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -211,6 +211,9 @@ independent review:
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation complete on 2026-09-13; independent
-review returned no blocker and no required finding. Integrated on `main` and
-fully verified; Leonardo's result review is pending.
+Plan approved 2026-09-13. **Accepted by Leonardo on 2026-09-13** after the
+result review: the five anchor events, the pending rent choice, the two
+contract additions (`pendingEvent` and `resolveEvent`), the B3 and A3 updates,
+the recorded evidence (107 unit tests and 12 browser tests; `npm run verify` on
+`main`), and the independent review with no blocker and no required finding
+were reviewed with no visible issue.
