@@ -140,13 +140,36 @@ overhead without an isolation benefit.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the A2, A3, A4, B3, B4, B5, B10, C1, and C2
-documents, and the recorded check results.
+First review on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant
+`max`), a different model family from the primary: no blocker, two required
+findings (R-1 code/contract: the reframe staled every fellowship answer; R-2
+record-only: a test file outside the planned owned paths), and five advisories.
+
+A fresh independent review covers the corrected result before integration.
 
 ## Corrections
 
-None yet.
+Applied before integration from the first independent review:
+
+- **R-1 (required):** the fellowship reframe now stales only the
+  framing-dependent answers (`impact` and `feasibility`); `independence` and
+  `support` answers survive, per A2 and B4. Tests cover both the surviving and
+  the staled cases, including the linkage reframe.
+- **R-2 (required, record-only):** `tests/unit/rules-commands.test.ts` was
+  updated although it was not listed in the planned owned paths. The change was
+  necessary for task 7 (routing `answerRequirement`), and the deviation is
+  recorded here.
+- **ADV-1:** STEP-006 advisories A-1, A-4, and A-5 reached their named touch
+  points; A-1 and A-5 move to the next paper and rules-test touch, and A-4 to
+  the step that introduces gating (STEP-008 or STEP-009).
+- **ADV-2:** the validation strictness gaps (duplicate ids, inconsistent
+  state/answer pairs, deadline upper bound) are recorded for the next model
+  touch or STEP-034.
+- **ADV-3:** test-depth gaps are recorded for the next rules-test touch.
+- **ADV-4:** the B3 fellowship row omits the revision counter; recorded for the
+  next B3 touch.
+- **ADV-5:** the AI-use log's "Last updated" line is stale; corrected in the
+  acceptance commit because the log is a prohibited path in this step.
 
 ## Leonardo decision
 
