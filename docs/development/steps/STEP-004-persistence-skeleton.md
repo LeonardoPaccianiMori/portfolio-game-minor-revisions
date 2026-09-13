@@ -130,6 +130,13 @@ in the correction, A and D to G recorded with owners).
 
 A fresh independent review covers the corrected result before integration.
 
+Re-review on 2026-09-13 by a fresh `mr-reviewer` session (`opencode-go/glm-5.3`,
+variant `max`): R-1, ADV-B, and ADV-C are genuinely, minimally, and completely
+applied; no blocker and no required finding remains. Two documentation
+advisories were recorded for STEP-034 (RE-ADV-1: record the corrupt-record
+lifecycle decision; RE-ADV-2: note that `createPersistence` is the application
+surface and the opener and keys exist for tests).
+
 ## Corrections
 
 Applied before integration from the first independent review:
@@ -156,6 +163,11 @@ Applied before integration from the first independent review:
   policies are deliberate and recorded here.
 - **ADV-G:** the acceptance bookkeeping (cost snapshot, process file, AI-use
   log, decision log) is completed in the acceptance commit, as before.
+- **RE-ADV-1:** STEP-034 records the corrupt-record lifecycle decision: a later
+  valid save overwrites a corrupt campaign while the guarded backup survives.
+- **RE-ADV-2:** STEP-034 records that `createPersistence` is the application
+  surface, while `openCampaignDatabase` and the store keys exist for tests and
+  storage-owning code.
 
 ## Leonardo decision
 
