@@ -1,7 +1,7 @@
 ---
 id: STEP-009
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -151,6 +151,8 @@ behaviour.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Integrated on local `main` at `888d82d` by fast-forward, and `npm run verify`
+  passed on `main`.
 - Deviations: the recorded extension of `tests/unit/rules-week-loop.test.ts`
   was exercised (the two planned tests plus three other week-crossing tests
   made event-aware); the `docs/design/00-process.md` current-task section was
@@ -210,5 +212,5 @@ independent review:
 ## Leonardo decision
 
 Plan approved 2026-09-13. Implementation complete on 2026-09-13; independent
-review returned no blocker and no required finding. Integration and Leonardo's
-result review pending.
+review returned no blocker and no required finding. Integrated on `main` and
+fully verified; Leonardo's result review is pending.
