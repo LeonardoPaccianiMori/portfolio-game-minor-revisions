@@ -1,7 +1,7 @@
 ---
 id: STEP-007
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -128,11 +128,21 @@ overhead without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `22fb8635dd4c0996cc290546478d77d623deb5ea`.
+- Branch: `work/step-007-fellowship`.
+- Implementation commit: `cd165f378b3ccafae96ef7ccc71c3fe16c246fbd`
+  (`Add fellowship track and shared evidence`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 72 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the A2, A3, A4, B3, B4, B5, B10, C1, and C2
+documents, and the recorded check results.
 
 ## Corrections
 
@@ -140,4 +150,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
