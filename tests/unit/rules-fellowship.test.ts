@@ -9,7 +9,11 @@ import {
   FELLOWSHIP_DEADLINE_WEEK,
   validateState,
 } from '../../src/rules/index.ts';
-import type { FellowshipRequirementId, FellowshipState } from '../../src/rules/index.ts';
+import type {
+  CampaignState,
+  FellowshipRequirementId,
+  FellowshipState,
+} from '../../src/rules/index.ts';
 
 describe('fellowship track', () => {
   it('starts empty with a framing label, deadline, and pending outcome', () => {
@@ -97,6 +101,67 @@ describe('fellowship track', () => {
       ok: false,
       reason: 'invalid-command',
       message: 'The answer type is not valid.',
+    });
+  });
+
+  it('applies the work gates to answering', () => {
+    const fellowship = applyFellowshipEdit(createInitialFellowship(), {
+      kind: 'add',
+      requirementId: 'impact',
+    });
+    expect(fellowship.ok).toBe(true);
+    if (!fellowship.ok) {
+      return;
+    }
+
+    const base = { ...createInitialState(1), fellowship: fellowship.fellowship };
+
+    expect(
+      dispatch({ ...base, crashed: true, actionsLeft: 0 } satisfies CampaignState, {
+        type: 'answerRequirement',
+        requirementId: 'impact',
+        answer: 'honest',
+      }),
+    ).toEqual({
+      ok: false,
+      reason: 'week-lost',
+      message: 'This week is lost. End the week to recover.',
+    });
+
+    expect(
+      dispatch({ ...base, actionsLeft: 0 } satisfies CampaignState, {
+        type: 'answerRequirement',
+        requirementId: 'impact',
+        answer: 'honest',
+      }),
+    ).toEqual({
+      ok: false,
+      reason: 'no-actions-left',
+      message: 'No actions remain this week.',
+    });
+
+    expect(
+      dispatch({ ...base, week: 12, actionsLeft: 0 } satisfies CampaignState, {
+        type: 'answerRequirement',
+        requirementId: 'impact',
+        answer: 'honest',
+      }),
+    ).toEqual({
+      ok: false,
+      reason: 'contract-finished',
+      message: 'The contract is finished.',
+    });
+
+    expect(
+      dispatch({ ...base, energy: 0 } satisfies CampaignState, {
+        type: 'answerRequirement',
+        requirementId: 'impact',
+        answer: 'honest',
+      }),
+    ).toEqual({
+      ok: false,
+      reason: 'insufficient-energy',
+      message: 'Not enough energy for this action.',
     });
   });
 

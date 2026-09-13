@@ -135,6 +135,29 @@ describe('experiment assignments', () => {
     });
   });
 
+  it('mints a new assignment when the previous one is finished, and stays free', () => {
+    const state = withFinishedResult('controls');
+    const before = { actionsLeft: state.actionsLeft, energy: state.energy };
+    const result = start(state, 'controls');
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.state.experiments.map((assignment) => assignment.id)).toEqual([
+        'experiment.controls.1',
+        'experiment.controls.2',
+      ]);
+      expect(result.state.experiments[1]).toEqual({
+        id: 'experiment.controls.2',
+        requirementId: 'controls',
+        step: 0,
+        steps: 3,
+        state: 'running',
+      });
+      expect(result.state.actionsLeft).toBe(before.actionsLeft);
+      expect(result.state.energy).toBe(before.energy);
+    }
+  });
+
   it('advances the running assignment and completes it on the last step', () => {
     const started = start(withRequirements(['controls']), 'controls');
     expect(started.ok).toBe(true);
@@ -431,6 +454,38 @@ describe('gating and purity', () => {
     dispatch(state, { type: 'performAction', action: 'write-paper' });
 
     expect(JSON.stringify(state)).toBe(before);
+  });
+
+  it('does not mutate the original state on the new work actions and the answer', () => {
+    const started = start(withRequirements(['controls']), 'controls');
+    expect(started.ok).toBe(true);
+    if (!started.ok) {
+      return;
+    }
+
+    const state = started.state;
+    const before = JSON.stringify(state);
+
+    dispatch(state, { type: 'performAction', action: 'experiment' });
+    dispatch(state, { type: 'performAction', action: 'analyse' });
+
+    const fellowshipState: CampaignState = {
+      ...state,
+      fellowship: {
+        ...state.fellowship,
+        requirements: [{ id: 'impact', state: 'open', answer: null }],
+      },
+    };
+    const fellowshipBefore = JSON.stringify(fellowshipState);
+
+    dispatch(fellowshipState, {
+      type: 'answerRequirement',
+      requirementId: 'impact',
+      answer: 'honest',
+    });
+
+    expect(JSON.stringify(state)).toBe(before);
+    expect(JSON.stringify(fellowshipState)).toBe(fellowshipBefore);
   });
 
   it('is deterministic for the same state and command', () => {

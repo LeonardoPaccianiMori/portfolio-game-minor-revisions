@@ -49,6 +49,28 @@ describe('shared evidence', () => {
     }
   });
 
+  it('attaches a result to the fellowship track without overlap', () => {
+    const state = withFinishedResult(createInitialState(1));
+    const result = assignEvidence(state, {
+      type: 'assignEvidence',
+      evidenceId: 'experiment.controls.1',
+      track: 'fellowship',
+    });
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.state.evidence).toEqual([
+        {
+          id: 'experiment.controls.1',
+          state: 'current',
+          track: 'fellowship',
+          overlap: false,
+        },
+      ]);
+      expect(result.state.experiments[0]?.state).toBe('attached');
+    }
+  });
+
   it('sets the overlap flag when a result is assigned to both tracks', () => {
     const state = withFinishedResult(createInitialState(1));
     const result = assignEvidence(state, {
