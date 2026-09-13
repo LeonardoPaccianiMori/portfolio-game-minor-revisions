@@ -35,6 +35,23 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-003 rules skeleton
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-003 under the
+approved plan. It added the campaign state, validation, serialization, seeded
+PRNG, command and result contracts, and the rejecting dispatcher, with three
+rule test files; it recorded the review advisories, integrated on `main`, and
+recorded the acceptance. Evidence:
+`docs/development/steps/STEP-003-rules-skeleton.md`; commits `2d6ff35`,
+`c93782d`, `702059b`, `37dae6e`, `507353d`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: independent review of
+the STEP-003 branch. It found no blocker and no required finding, and recorded
+four advisories with owners (rest duplication, initial meter values, validation
+bounds, and two test gaps).
+
 ### 2026-09-13 — STEP-002 application shell
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

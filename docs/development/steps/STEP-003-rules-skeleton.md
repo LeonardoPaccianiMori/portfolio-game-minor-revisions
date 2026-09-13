@@ -1,7 +1,7 @@
 ---
 id: STEP-003
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -149,5 +149,7 @@ review:
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation and checks complete; independent
-review, Leonardo result review, and acceptance pending.
+Plan approved 2026-09-13. **Accepted by Leonardo on 2026-09-13** after the
+result review: the state model, seeded random source, command and result
+contracts, rejection example, and the 34-test evidence were reviewed with no
+visible issue.
