@@ -122,13 +122,28 @@ without an isolation benefit.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the B2, B3, B10, C1, and C2 specifications, and the
-recorded check results.
+Reviewed on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`),
+a different model family from the primary: no blocker and no required finding.
+Four advisories were recorded with owners (ADV-1 and ADV-2 with the STEP-005
+plan, ADV-3 before or with STEP-004, ADV-4 at the next rules-touching step).
 
 ## Corrections
 
-None yet.
+No code correction was required. Advisories recorded from the independent
+review:
+
+- **ADV-1:** `rest` appears both in the A2 action list and as the B3 `rest`
+  command. The duplication is faithful to both approved sources, but it must be
+  resolved before STEP-005 gives rest real behaviour: does resting use
+  `performAction { action: 'rest' }`, the `rest` command, or one canonical
+  form? Owner: primary, with the STEP-005 plan and Leonardo's decision.
+- **ADV-2:** the initial standing, integrity, and relationship values are
+  unrecorded tuning choices; record them as proposed baseline values with the
+  STEP-005 plan.
+- **ADV-3:** bound `seed` and `rngState` to `[0, 4294967295]`, and decide the
+  extra-key strictness deliberately, before or with STEP-004.
+- **ADV-4:** add a PRNG resume test and validation edge-case tests (null and
+  missing fields) at the next rules-touching step.
 
 ## Leonardo decision
 
