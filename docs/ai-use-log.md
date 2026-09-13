@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-10.
+Last updated: 2026-09-13.
 
 ## Purpose and scope
 
@@ -34,6 +34,29 @@ credentials, personal data, raw conversation, hidden reasoning, or machine
 paths.
 
 ## Completed history
+
+### 2026-09-13 — STEP-007 fellowship track
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-007 under the
+approved plan. It lifted evidence to a shared top-level set with track and
+overlap, added the fellowship model, `answerRequirement`, the shared reframe,
+the B3 state-table update, and the new tests; it applied the required R-1
+correction, integrated on `main`, and recorded the acceptance. Evidence:
+`docs/development/steps/STEP-007-fellowship.md`; commits `f62117a`, `cd165f3`,
+`ca9aba0`, `7b54042`, `a56f1ed`, `e27f4ba`, `d4e62d9`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: first independent
+review of the STEP-007 branch. It found no blocker, two required findings (the
+reframe staled every fellowship answer, contradicting A2 and B4; and a test
+file outside the planned owned paths), and five advisories.
+
+OpenCode Go `mr-reviewer` subagent, fresh session, configured
+`opencode-go/glm-5.3` at variant `max`, actual runtime model metadata not
+exposed: re-review of the corrected result. It verified both corrections with
+no blocker or required finding, and recorded three advisories for integration
+and the next rules-test touch.
 
 ### 2026-09-13 — STEP-006 paper track
 

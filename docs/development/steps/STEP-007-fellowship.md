@@ -1,7 +1,7 @@
 ---
 id: STEP-007
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -190,5 +190,9 @@ Applied before integration from the first independent review:
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation and checks complete; independent
-review, Leonardo result review, and acceptance pending.
+Plan approved 2026-09-13. **Accepted by Leonardo on 2026-09-13** after the
+result review: the linked worked example (two tracks, answered requirements,
+shared evidence with overlap, reframe staling the paper, the framing-dependent
+fellowship answers, and the evidence while administrative answers survive),
+the corrections, and the 72-test and 12-browser-test evidence were reviewed
+with no visible issue.

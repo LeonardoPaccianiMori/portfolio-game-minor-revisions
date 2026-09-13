@@ -147,15 +147,14 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-007 integrated; Leonardo result review
+## Current task — STEP-007 accepted; STEP-008 plan pending approval
 
-STEP-006 is accepted. STEP-007 (fellowship track and linkage) is implemented,
-independently reviewed with two required corrections, corrected, re-reviewed
-clean, integrated on `main`, and fully verified. The current step record is
-`docs/development/steps/STEP-007-fellowship.md`. This step is invisible, so the
-next permitted action is Leonardo's short result review instead of direct play,
-followed by explicit acceptance. STEP-008 is not authorized. The earlier block
-questions and session records further down are preserved as history.
+STEP-007 (fellowship track and linkage) is accepted by Leonardo on 2026-09-13
+after his result review. The next permitted action is the exact STEP-008 plan
+(PI system), presented for Leonardo's approval. STEP-008 is not authorized
+until that approval. The previous step record is
+`docs/development/steps/STEP-007-fellowship.md`. The earlier block questions
+and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
