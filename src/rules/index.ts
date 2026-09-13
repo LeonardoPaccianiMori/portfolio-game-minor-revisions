@@ -47,11 +47,39 @@ export type {
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
 export {
-  PAPER_EVIDENCE_STATES,
+  EVIDENCE_STATES,
+  assignEvidence,
+  staleCurrentEvidence,
+  validateEvidenceList,
+} from './evidence.ts';
+export type { Evidence, EvidenceState } from './evidence.ts';
+export {
+  FELLOWSHIP_DEADLINE_WEEK,
+  FELLOWSHIP_OUTCOMES,
+  FELLOWSHIP_REQUIREMENT_IDS,
+  FELLOWSHIP_REQUIREMENT_STATES,
+  answerRequirement,
+  applyFellowshipEdit,
+  createInitialFellowship,
+  validateFellowship,
+} from './fellowship.ts';
+export type {
+  FellowshipEdit,
+  FellowshipEditFailure,
+  FellowshipEditOk,
+  FellowshipEditOutcome,
+  FellowshipOutcome,
+  FellowshipRequirement,
+  FellowshipRequirementId,
+  FellowshipRequirementState,
+  FellowshipState,
+} from './fellowship.ts';
+export { applyReframe } from './manuscript.ts';
+export type { ReframeFailure, ReframeOk, ReframeOutcome } from './manuscript.ts';
+export {
   PAPER_REQUIREMENT_IDS,
   PAPER_REQUIREMENT_STATES,
   applyPaperEdit,
-  assignEvidence,
   createInitialPaper,
   validatePaper,
 } from './paper.ts';
@@ -60,8 +88,6 @@ export type {
   PaperEditFailure,
   PaperEditOk,
   PaperEditOutcome,
-  PaperEvidence,
-  PaperEvidenceState,
   PaperRequirement,
   PaperRequirementId,
   PaperRequirementState,

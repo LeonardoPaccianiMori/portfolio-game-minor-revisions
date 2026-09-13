@@ -1,3 +1,7 @@
+import { validateEvidenceList } from './evidence.ts';
+import type { Evidence } from './evidence.ts';
+import { createInitialFellowship, validateFellowship } from './fellowship.ts';
+import type { FellowshipState } from './fellowship.ts';
 import { createInitialPaper, validatePaper } from './paper.ts';
 import type { PaperState } from './paper.ts';
 
@@ -28,6 +32,8 @@ export interface CampaignState {
   readonly integrity: number;
   readonly relationships: Readonly<Record<RelationshipId, number>>;
   readonly paper: PaperState;
+  readonly fellowship: FellowshipState;
+  readonly evidence: readonly Evidence[];
   readonly history: readonly string[];
   readonly flags: Readonly<Record<string, boolean>>;
 }
@@ -65,6 +71,8 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'integrity',
   'relationships',
   'paper',
+  'fellowship',
+  'evidence',
   'history',
   'flags',
 ]);
@@ -88,6 +96,8 @@ export const createInitialState = (seed: number): CampaignState => {
       mara: 50,
     },
     paper: createInitialPaper(),
+    fellowship: createInitialFellowship(),
+    evidence: [],
     history: [],
     flags: {},
   };
@@ -173,6 +183,8 @@ export const validateState = (value: unknown): StateValidation => {
   }
 
   issues.push(...validatePaper(value['paper']));
+  issues.push(...validateFellowship(value['fellowship']));
+  issues.push(...validateEvidenceList(value['evidence']));
 
   if (issues.length > 0) {
     return { ok: false, issues };

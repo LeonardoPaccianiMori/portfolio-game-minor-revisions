@@ -4,21 +4,22 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3).**
 
 ## Campaign state (approved shape)
 
-| Field           | Meaning                                                  |
-| --------------- | -------------------------------------------------------- |
-| `version`       | Schema version                                           |
-| `seed`          | Saved campaign seed                                      |
-| `week`          | Current week, 1–12                                       |
-| `actionsLeft`   | Actions remaining in the current week                    |
-| `crashed`       | Whether the current week is lost to a crash              |
-| `energy`        | Energy segments, 0–5                                     |
-| `standing`      | Up-or-out meter                                          |
-| `integrity`     | Hidden complicity measure                                |
-| `relationships` | Trust for Voss, Dario, and Mara                          |
-| `paper`         | Paper track: claims, evidence, requirements, and framing |
-| `fellowship`    | Fellowship track: requirements, answers, and deadline    |
-| `history`       | Per-run record used by endings and narration             |
-| `flags`         | Authored event flags                                     |
+| Field           | Meaning                                                                 |
+| --------------- | ----------------------------------------------------------------------- |
+| `version`       | Schema version                                                          |
+| `seed`          | Saved campaign seed                                                     |
+| `week`          | Current week, 1–12                                                      |
+| `actionsLeft`   | Actions remaining in the current week                                   |
+| `crashed`       | Whether the current week is lost to a crash                             |
+| `energy`        | Energy segments, 0–5                                                    |
+| `standing`      | Up-or-out meter                                                         |
+| `integrity`     | Hidden complicity measure                                               |
+| `relationships` | Trust for Voss, Dario, and Mara                                         |
+| `paper`         | Paper track: framing, revision, and requirements                        |
+| `fellowship`    | Fellowship track: framing, requirements, answers, deadline, and outcome |
+| `evidence`      | Shared evidence set with track assignment and overlap flag              |
+| `history`       | Per-run record used by endings and narration                            |
+| `flags`         | Authored event flags                                                    |
 
 The state is one serializable object. It contains no functions, class
 instances, or browser handles.
