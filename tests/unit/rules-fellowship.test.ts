@@ -97,13 +97,14 @@ describe('fellowship track', () => {
     });
   });
 
-  it('reframes the fellowship and makes answered requirements stale', () => {
+  it('reframes the fellowship and stales only framing-dependent answers', () => {
     const fellowship: FellowshipState = {
       framing: 'initial',
       revision: 0,
       requirements: [
         { id: 'impact', state: 'answered', answer: 'inflate' },
-        { id: 'support', state: 'open', answer: null },
+        { id: 'support', state: 'answered', answer: 'honest' },
+        { id: 'feasibility', state: 'open', answer: null },
       ],
       deadlineWeek: 8,
       outcome: 'pending',
@@ -120,7 +121,8 @@ describe('fellowship track', () => {
       expect(result.fellowship.revision).toBe(1);
       expect(result.fellowship.requirements).toEqual([
         { id: 'impact', state: 'stale', answer: 'inflate' },
-        { id: 'support', state: 'open', answer: null },
+        { id: 'support', state: 'answered', answer: 'honest' },
+        { id: 'feasibility', state: 'open', answer: null },
       ]);
     }
   });
@@ -138,6 +140,7 @@ describe('fellowship track', () => {
         revision: 0,
         requirements: [
           { id: 'impact' as const, state: 'answered' as const, answer: 'honest' as const },
+          { id: 'support' as const, state: 'answered' as const, answer: 'honest' as const },
         ],
         deadlineWeek: 8,
         outcome: 'pending' as const,
@@ -161,6 +164,7 @@ describe('fellowship track', () => {
       expect(result.state.fellowship.framing).toBe('community relevance');
       expect(result.state.fellowship.requirements).toEqual([
         { id: 'impact', state: 'stale', answer: 'honest' },
+        { id: 'support', state: 'answered', answer: 'honest' },
       ]);
       expect(result.state.evidence[0]?.state).toBe('stale');
     }

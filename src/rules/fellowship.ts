@@ -24,6 +24,11 @@ export type FellowshipOutcome = (typeof FELLOWSHIP_OUTCOMES)[number];
 
 export const FELLOWSHIP_DEADLINE_WEEK = 8;
 
+export const FELLOWSHIP_FRAMING_DEPENDENT_IDS: readonly FellowshipRequirementId[] = [
+  'impact',
+  'feasibility',
+];
+
 export interface FellowshipRequirement {
   readonly id: FellowshipRequirementId;
   readonly state: FellowshipRequirementState;
@@ -162,7 +167,8 @@ export const applyFellowshipEdit = (
       framing,
       revision: fellowship.revision + 1,
       requirements: fellowship.requirements.map((requirement) =>
-        requirement.state === 'answered'
+        requirement.state === 'answered' &&
+        FELLOWSHIP_FRAMING_DEPENDENT_IDS.includes(requirement.id)
           ? { ...requirement, state: 'stale' as const }
           : requirement,
       ),
