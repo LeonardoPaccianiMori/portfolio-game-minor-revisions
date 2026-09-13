@@ -147,14 +147,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-005 accepted; STEP-006 plan pending approval
+## Current task — STEP-006 integrated; Leonardo result review
 
-STEP-005 (week loop and resources) is accepted by Leonardo on 2026-09-13 after
-his result review. The next permitted action is the exact STEP-006 plan (paper
-track), presented for Leonardo's approval. STEP-006 is not authorized until
-that approval. The previous step record is
-`docs/development/steps/STEP-005-week-loop.md`. The earlier block questions and
-session records further down are preserved as history.
+STEP-005 is accepted. STEP-006 (paper track) is implemented, independently
+reviewed with no blocker or required finding, integrated on `main`, and fully
+verified. The current step record is
+`docs/development/steps/STEP-006-paper-track.md`. This step is invisible, so the
+next permitted action is Leonardo's short result review instead of direct play,
+followed by explicit acceptance. STEP-007 is not authorized. The earlier block
+questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
