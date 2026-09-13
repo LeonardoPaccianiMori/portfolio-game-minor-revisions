@@ -58,6 +58,12 @@ export interface MeetPiCommand {
   readonly type: 'meetPI';
 }
 
+export interface ResolveEventCommand {
+  readonly type: 'resolveEvent';
+  readonly eventId: string;
+  readonly choiceId: string;
+}
+
 export interface QuitCommand {
   readonly type: 'quit';
 }
@@ -72,6 +78,7 @@ export type Command =
   | AnswerRequirementCommand
   | ComplyCommand
   | MeetPiCommand
+  | ResolveEventCommand
   | QuitCommand
   | AdvanceWeekCommand;
 
@@ -84,7 +91,9 @@ export type CommandRejectionReason =
   | 'week-lost'
   | 'contract-finished'
   | 'duplicate-evidence'
-  | 'unknown-requirement';
+  | 'unknown-requirement'
+  | 'no-pending-event'
+  | 'unknown-choice';
 
 export interface PresentationEffect {
   readonly kind: string;

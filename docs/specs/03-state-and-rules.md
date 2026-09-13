@@ -1,6 +1,7 @@
 # B3 — State, Commands, and Determinism
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
+2026-09-13 with the pending-event field and the resolve command (STEP-009).**
 
 ## Campaign state (approved shape)
 
@@ -18,6 +19,7 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3).**
 | `paper`         | Paper track: framing, revision, and requirements                        |
 | `fellowship`    | Fellowship track: framing, requirements, answers, deadline, and outcome |
 | `evidence`      | Shared evidence set with track assignment and overlap flag              |
+| `pendingEvent`  | Authored event awaiting a player choice, or `null`                      |
 | `history`       | Per-run record used by endings and narration                            |
 | `flags`         | Authored event flags                                                    |
 
@@ -33,6 +35,7 @@ instances, or browser handles.
 | `answerRequirement { requirementId, answer }` | Answer a fellowship requirement honestly, inflate, fabricate, imitate, or leave blank |
 | `comply { action }`                           | Take one of the five complicity actions                                               |
 | `meetPI`                                      | Enter the PI meeting flow                                                             |
+| `resolveEvent { eventId, choiceId }`          | Resolve the pending authored event with one of its authored choices                   |
 | `quit`                                        | Confirm and end the run                                                               |
 | `advanceWeek`                                 | End the week early, or consume a lost week; reset slots and restore energy            |
 

@@ -34,6 +34,20 @@ describe('command dispatch', () => {
     }
   });
 
+  it('routes an event resolution to the event rules', () => {
+    const result = dispatch(createInitialState(1), {
+      type: 'resolveEvent',
+      eventId: 'rent',
+      choiceId: 'borrow',
+    });
+
+    expect(result).toEqual({
+      ok: false,
+      reason: 'no-pending-event',
+      message: 'That event is not waiting for a choice.',
+    });
+  });
+
   it('rejects an invalid state before reading the command', () => {
     const invalidState = { ...createInitialState(1), version: 42 };
 

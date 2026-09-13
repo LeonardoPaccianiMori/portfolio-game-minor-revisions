@@ -15,6 +15,7 @@ export {
 } from './campaign-state.ts';
 export type {
   CampaignState,
+  PendingEvent,
   RelationshipId,
   StateValidation,
   StateValidationFailure,
@@ -44,8 +45,25 @@ export type {
   PerformActionCommand,
   PresentationEffect,
   QuitCommand,
+  ResolveEventCommand,
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
+export {
+  CONTAMINATION_STANDING_LOSS,
+  EVENT_CATALOGUE,
+  FELLOWSHIP_MISSED_STANDING_LOSS,
+  RENT_ADVANCE_STANDING_LOSS,
+  RENT_BORROW_RELATIONSHIP_LOSS,
+  evaluateEvents,
+  resolveEvent,
+} from './events.ts';
+export type {
+  AuthoredEvent,
+  EventChoice,
+  EventCondition,
+  EventEffect,
+  EventOutcome,
+} from './events.ts';
 export {
   EVIDENCE_STATES,
   assignEvidence,

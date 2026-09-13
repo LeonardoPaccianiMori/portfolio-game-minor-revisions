@@ -2,7 +2,7 @@
 
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
 (Block A3), revised the same day to add the fellowship, and revised
-2026-09-13 with the complicity baseline. The
+2026-09-13 with the complicity and rent-event baselines. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -104,6 +104,8 @@ baselines.
 - A recurring rent-and-pay event forces one choice per act: ask the PI for an
   advance (costs standing or creates an obligation), take a side job (costs
   actions), or borrow from a colleague (costs a relationship).
+- Baselines for the slice: the advance costs 5 standing, the side job costs one
+  action slot, and the loan costs 10 Mara trust.
 - The meagre salary is satire, but the pressure it creates is real.
 
 ## The fellowship deadline

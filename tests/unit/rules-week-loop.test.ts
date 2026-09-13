@@ -1,7 +1,20 @@
 import { describe, expect, it } from 'vitest';
 
-import { CRASH_STANDING_LOSS, createInitialState, dispatch } from '../../src/rules/index.ts';
-import type { Command } from '../../src/rules/index.ts';
+import {
+  CRASH_STANDING_LOSS,
+  EVENT_CATALOGUE,
+  createInitialState,
+  dispatch,
+} from '../../src/rules/index.ts';
+import type { CampaignState, Command } from '../../src/rules/index.ts';
+
+const withoutEvents = (state: CampaignState): CampaignState => ({
+  ...state,
+  flags: {
+    ...state.flags,
+    ...Object.fromEntries(EVENT_CATALOGUE.map((event) => [`event.${event.id}`, true])),
+  },
+});
 
 describe('week loop', () => {
   it('spends energy and a slot on an action', () => {
@@ -24,7 +37,7 @@ describe('week loop', () => {
   });
 
   it('advances the week automatically after the third action', () => {
-    let state = createInitialState(1);
+    let state = withoutEvents(createInitialState(1));
 
     for (let index = 0; index < 3; index += 1) {
       const result = dispatch(state, { type: 'performAction', action: 'experiment' });
@@ -63,7 +76,7 @@ describe('week loop', () => {
   });
 
   it('crashes at zero energy and loses the next week', () => {
-    const state = { ...createInitialState(1), energy: 1 };
+    const state = { ...withoutEvents(createInitialState(1)), energy: 1 };
     const result = dispatch(state, { type: 'performAction', action: 'experiment' });
 
     expect(result.ok).toBe(true);
@@ -89,7 +102,7 @@ describe('week loop', () => {
 
   it('recovers after the lost week without energy recovery', () => {
     const state = {
-      ...createInitialState(1),
+      ...withoutEvents(createInitialState(1)),
       energy: 0,
       crashed: true,
       week: 2,
@@ -109,7 +122,7 @@ describe('week loop', () => {
   });
 
   it('ends a normal week early with recovery', () => {
-    const state = createInitialState(1);
+    const state = withoutEvents(createInitialState(1));
     const result = dispatch(state, { type: 'advanceWeek' });
 
     expect(result.ok).toBe(true);
@@ -122,7 +135,7 @@ describe('week loop', () => {
   });
 
   it('closes week 12 and refuses to advance beyond it', () => {
-    const state = { ...createInitialState(1), week: 12 };
+    const state = { ...withoutEvents(createInitialState(1)), week: 12 };
     const closed = dispatch(state, { type: 'advanceWeek' });
 
     expect(closed.ok).toBe(true);

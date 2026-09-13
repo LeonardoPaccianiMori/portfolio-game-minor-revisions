@@ -20,6 +20,11 @@ export type RelationshipId = 'voss' | 'dario' | 'mara';
 
 export const RELATIONSHIP_IDS: readonly RelationshipId[] = ['voss', 'dario', 'mara'];
 
+export interface PendingEvent {
+  readonly id: string;
+  readonly choices: readonly string[];
+}
+
 export interface CampaignState {
   readonly version: number;
   readonly seed: number;
@@ -34,6 +39,7 @@ export interface CampaignState {
   readonly paper: PaperState;
   readonly fellowship: FellowshipState;
   readonly evidence: readonly Evidence[];
+  readonly pendingEvent: PendingEvent | null;
   readonly history: readonly string[];
   readonly flags: Readonly<Record<string, boolean>>;
 }
@@ -73,6 +79,7 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'paper',
   'fellowship',
   'evidence',
+  'pendingEvent',
   'history',
   'flags',
 ]);
@@ -98,6 +105,7 @@ export const createInitialState = (seed: number): CampaignState => {
     paper: createInitialPaper(),
     fellowship: createInitialFellowship(),
     evidence: [],
+    pendingEvent: null,
     history: [],
     flags: {},
   };
@@ -175,6 +183,24 @@ export const validateState = (value: unknown): StateValidation => {
   const history = value['history'];
   if (!Array.isArray(history) || !history.every((entry) => typeof entry === 'string')) {
     issues.push('history must be a list of strings');
+  }
+
+  const pendingEvent = value['pendingEvent'];
+  if (pendingEvent !== null) {
+    if (
+      !isRecord(pendingEvent) ||
+      typeof pendingEvent['id'] !== 'string' ||
+      pendingEvent['id'].trim().length === 0
+    ) {
+      issues.push('pendingEvent.id must be a non-empty string');
+    } else if (
+      !Array.isArray(pendingEvent['choices']) ||
+      !pendingEvent['choices'].every(
+        (choice) => typeof choice === 'string' && choice.trim().length > 0,
+      )
+    ) {
+      issues.push('pendingEvent.choices must be a list of non-empty strings');
+    }
   }
 
   const flags = value['flags'];

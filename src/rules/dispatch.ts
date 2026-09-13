@@ -2,12 +2,49 @@ import { validateState } from './campaign-state.ts';
 import type { CampaignState } from './campaign-state.ts';
 import type { Command, CommandResult } from './commands.ts';
 import { assignEvidence } from './evidence.ts';
+import { evaluateEvents, resolveEvent } from './events.ts';
 import { answerRequirement } from './fellowship.ts';
 import { comply, meetPI } from './pi.ts';
 import { advanceWeek, performAction } from './week-loop.ts';
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
+
+const routeCommand = (state: CampaignState, command: Command): CommandResult => {
+  if (command.type === 'performAction') {
+    return performAction(state, command);
+  }
+
+  if (command.type === 'assignEvidence') {
+    return assignEvidence(state, command);
+  }
+
+  if (command.type === 'answerRequirement') {
+    return answerRequirement(state, command);
+  }
+
+  if (command.type === 'meetPI') {
+    return meetPI(state);
+  }
+
+  if (command.type === 'comply') {
+    return comply(state, command);
+  }
+
+  if (command.type === 'resolveEvent') {
+    return resolveEvent(state, command);
+  }
+
+  if (command.type === 'advanceWeek') {
+    return advanceWeek(state);
+  }
+
+  return {
+    ok: false,
+    reason: 'not-implemented',
+    message: `The ${command.type} rules are not implemented yet.`,
+  };
+};
 
 export const dispatch = (state: CampaignState, command: Command): CommandResult => {
   const stateValidation = validateState(state);
@@ -27,33 +64,16 @@ export const dispatch = (state: CampaignState, command: Command): CommandResult 
     };
   }
 
-  if (command.type === 'performAction') {
-    return performAction(stateValidation.state, command);
+  const result = routeCommand(stateValidation.state, command);
+  if (!result.ok) {
+    return result;
   }
 
-  if (command.type === 'assignEvidence') {
-    return assignEvidence(stateValidation.state, command);
-  }
-
-  if (command.type === 'answerRequirement') {
-    return answerRequirement(stateValidation.state, command);
-  }
-
-  if (command.type === 'meetPI') {
-    return meetPI(stateValidation.state);
-  }
-
-  if (command.type === 'comply') {
-    return comply(stateValidation.state, command);
-  }
-
-  if (command.type === 'advanceWeek') {
-    return advanceWeek(stateValidation.state);
-  }
+  const events = evaluateEvents(result.state);
 
   return {
-    ok: false,
-    reason: 'not-implemented',
-    message: `The ${command.type} rules are not implemented yet.`,
+    ok: true,
+    state: events.state,
+    effects: [...result.effects, ...events.effects],
   };
 };
