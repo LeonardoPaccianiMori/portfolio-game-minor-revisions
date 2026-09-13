@@ -35,6 +35,23 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-005 week loop and resources
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-005 under the
+approved plan. It added the week-slot economy, the energy baseline, automatic
+week advancement, rest as a normal action, the crash and lost week, the
+contract-end rejection, the three approved reconciliations in A3 and B3, and
+the week-loop tests; it integrated on `main` and recorded the acceptance.
+Evidence: `docs/development/steps/STEP-005-week-loop.md`; commits `5c0f4b1`,
+`c1f9675`, `0bb4904`, `f7cdbb2`, `f4a5a27`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: independent review of
+the STEP-005 branch. It found no blocker and no required finding, and recorded
+three advisories with owners (B3 wording, week-12 terminal corners for
+STEP-011, and state-version migration ownership for B5 and STEP-034).
+
 ### 2026-09-13 — STEP-004 persistence skeleton
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

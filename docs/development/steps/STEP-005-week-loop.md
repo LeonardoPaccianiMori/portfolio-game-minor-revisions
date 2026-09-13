@@ -1,7 +1,7 @@
 ---
 id: STEP-005
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -165,5 +165,7 @@ independent review:
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation and checks complete; independent
-review, Leonardo result review, and acceptance pending.
+Plan approved 2026-09-13. **Accepted by Leonardo on 2026-09-13** after the
+result review: the worked week, the crash and lost-week behaviour, the
+contract-end rejection, and the 54-test and 12-browser-test evidence were
+reviewed with no visible issue.
