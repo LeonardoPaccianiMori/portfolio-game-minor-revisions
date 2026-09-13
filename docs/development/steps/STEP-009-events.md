@@ -1,0 +1,155 @@
+---
+id: STEP-009
+type: development-step
+status: plan-approved
+phase: 2
+gate: foundation
+created: 2026-09-13
+updated: 2026-09-13
+base_commit: e2bbb10cdfebc20ec3e035931fe7dde5f304e45b
+branch: work/step-009-events
+primary_model: opencode-go/deepseek-v4.1-flash
+primary_variant: max
+---
+
+# STEP-009 — Events and deadlines
+
+## Objective
+
+Introduce the authored event engine and the five anchor events that structure
+the acts: the funding review, the rent, the contamination crisis, the
+fellowship deadline, and the contract decision.
+
+## Plain-language effect
+
+The world now pushes back on its own schedule, whether or not the player is
+ready.
+
+## Owned paths
+
+- `src/rules/events.ts` (engine, effect registry, and catalogue)
+- `src/rules/campaign-state.ts` (the pending-event field and validation)
+- `src/rules/commands.ts` (the resolve command and reason codes)
+- `src/rules/dispatch.ts`, `src/rules/index.ts`
+- `tests/unit/rules-events.test.ts`, `tests/unit/rules-commands.test.ts`
+- `tests/unit/rules-week-loop.test.ts` (extension: the two week-advance tests
+  become event-aware; required because events now fire at the week boundary)
+- `docs/specs/03-state-and-rules.md` (the pending-event state row and the
+  resolve command row)
+- `docs/design/03-pressure-and-failure.md` (the rent-choice baselines)
+
+## Prohibited paths
+
+- `docs/**` except the step record, the B3 rows, and the A3 rent baselines;
+  `AGENTS.md`, `README.md`, `opencode.json`, `.opencode/**`
+- Message-delivery interface or notices screen; review or panel outcomes;
+  endings or contract epilogue; interface; persistence changes; assets; and
+  any release, licence, or deployment action
+
+## Allowed sources
+
+- `docs/design/02-core-loop.md`, `docs/design/03-pressure-and-failure.md`,
+  `docs/design/04-narrative.md`, `docs/design/07-content-and-evaluation.md`
+- `docs/specs/03-state-and-rules.md`, `docs/specs/04-content-and-data.md`,
+  `docs/specs/10-testing-and-workflow.md`,
+  `docs/specs/11-development-pathway.md`,
+  `docs/specs/12-development-steps.md`
+- `AGENTS.md`, `docs/design/00-process.md`
+
+## Authority and traceability
+
+- A2 (requests arrive as cards and through meetings); A3 (the recurring rent
+  choice and its costs); A4 (the five fixed events and the act timeline); B4
+  (authored events as data with conditions and effects, deterministic, fixed
+  order); B3 (state, commands, atomic results).
+- STEP-009 of the C2 ordered step list; phase 2.
+- Carried advisory: STEP-008 ADV-6 (stable reason codes).
+
+## Accepted dependencies
+
+- STEP-008 accepted by Leonardo on 2026-09-13.
+- The STEP-009 plan, the two contract additions, and the baselines approved on
+  2026-09-13.
+
+## Plan
+
+The primary implements this step. One fresh independent review by
+`mr-reviewer` (`opencode-go/glm-5.3`, `max`), a different model family from
+the primary (`opencode-go/deepseek-v4.1-flash`, `max`). No worker is used: the
+event engine is tightly coupled to A4, B3, and B4, so a worker would add setup
+overhead without an isolation benefit.
+
+The one additional owned path beyond the approved plan text is
+`tests/unit/rules-week-loop.test.ts`, required because the two week-advance
+tests now cross into the funding-review week and must assert event-aware
+behaviour.
+
+## Tasks
+
+1. Event engine: events as data with a stable ID, a week, an optional closed
+   condition, and effect or choice descriptors; evaluate the catalogue in fixed
+   order after every successful command; fire each event once, tracked by
+   `event.<id>` flags; deterministic and idempotent.
+2. Effect registry: PI request, standing, integrity, relationship, energy,
+   action slots, stale evidence, flag, message ID, and the fellowship
+   deadline outcome. All state changes are pure and clamped.
+3. Pending-event state and the `resolveEvent { eventId, choiceId }` command.
+4. The five anchor events with the approved baselines: funding review at week
+   2; rent at week 5 with its three choices; contamination at week 6;
+   fellowship deadline at week 8 (submitted or missed, standing −10); contract
+   decision at week 12 once the slots are spent.
+5. Dispatcher integration: evaluate events after a successful command and
+   combine the effects; rejections never trigger events.
+6. Record the pending-event and resolve-command rows in B3 and the rent
+   baselines in A3.
+7. Unit tests for determinism, one-time firing, fixed order, conditions,
+   pending choices, each anchor event, the deadline outcomes, the contract
+   decision, no-mutation, and the event-aware week-loop tests.
+8. Run every required check.
+
+## Non-goals
+
+- No message-delivery interface or notices screen.
+- No review or panel outcomes (STEP-010), no endings or epilogue (STEP-011).
+- No interface, persistence changes, or assets.
+
+## Events and baselines (approved; tunable in the slice)
+
+| Event               | Week | Effect                                                                             |
+| ------------------- | ---: | ---------------------------------------------------------------------------------- |
+| Funding review      |    2 | adds the four fellowship requirements and a message ID                             |
+| Rent                |    5 | pending choice: advance (standing −5), side job (one slot lost), borrow (Mara −10) |
+| Contamination       |    6 | current evidence goes stale, standing −5, a message ID                             |
+| Fellowship deadline |    8 | submitted if all four answers exist; otherwise missed and standing −10             |
+| Contract decision   |   12 | contract-closed flag once the week's slots are spent                               |
+
+## Required checks and evidence
+
+- `npm run check`
+- `npm run build`
+- `npm run test:e2e`
+- `git diff --check` and a clean `git status`
+
+## Safety and quality boundaries
+
+- The engine is pure and deterministic; no I/O, no clock, no unseeded
+  randomness.
+- Atomic results: rejections leave the state untouched.
+- Player-facing text follows the A7 science-language rule.
+- No credentials, personal data, or machine paths in tracked files.
+
+## Execution record
+
+Not yet available.
+
+## Independent review
+
+Not yet available.
+
+## Corrections
+
+None yet.
+
+## Leonardo decision
+
+Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
