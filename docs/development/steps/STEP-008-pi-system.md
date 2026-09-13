@@ -145,9 +145,15 @@ slot advances the week exactly as an action does.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the A2, A3, B3, B4, B10, C1, and C2 documents, and
-the recorded check results.
+The first review attempt was launched on 2026-09-13 and cancelled before it
+produced a result. A fresh independent review is being run against the same
+implementation.
+
+The primary pre-review audit was completed: every changed path is owned
+(including the two recorded extensions), no prohibited path changed, the full
+diff was reviewed, the A3 baseline matches the implementation, hygiene is
+clean, and the recorded check results are current (84 unit tests, build, 12
+browser tests).
 
 ## Corrections
 
