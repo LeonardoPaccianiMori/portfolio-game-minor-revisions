@@ -1,7 +1,7 @@
 ---
 id: STEP-006
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -115,11 +115,21 @@ overhead without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `98c5ec0357c2d784abf992a817a7c77ecef48eb7`.
+- Branch: `work/step-006-paper-track`.
+- Implementation commit: `400b47e4b7d1b9df5d17e4a388e409e2cc5d915b`
+  (`Add paper track with requirements and evidence`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 62 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the A2, A4, A7, B3, B4, B5, B10, C1, and C2
+documents, and the recorded check results.
 
 ## Corrections
 
@@ -127,4 +137,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
