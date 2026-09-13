@@ -147,12 +147,16 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-008 accepted; STEP-009 plan pending approval
+## Current task — STEP-009 implementation complete; independent review pending
 
-STEP-008 (PI system) is accepted by Leonardo on 2026-09-13 after his result
-review. The next permitted action is the exact STEP-009 plan (events and
-deadlines), presented for Leonardo's approval. STEP-009 is not authorized
-until that approval. The previous step record is
+STEP-009 (events and deadlines) was authorized by Leonardo on 2026-09-13 and
+implemented on branch `work/step-009-events` from base
+`e2bbb10cdfebc20ec3e035931fe7dde5f304e45b`. `npm run check`, `npm run build`,
+and `npm run test:e2e` passed; the evidence is recorded in
+`docs/development/steps/STEP-009-events.md`. The next permitted action is the
+primary pre-review audit, then one fresh independent review by `mr-reviewer`
+(`opencode-go/glm-5.3`, `max`) before integration and Leonardo's result
+review. The previous step record is
 `docs/development/steps/STEP-008-pi-system.md`. The earlier block questions
 and session records further down are preserved as history.
 

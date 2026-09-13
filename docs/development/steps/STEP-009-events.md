@@ -1,7 +1,7 @@
 ---
 id: STEP-009
 type: development-step
-status: plan-approved
+status: implemented
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -140,7 +140,28 @@ behaviour.
 
 ## Execution record
 
-Not yet available.
+- Base: `e2bbb10cdfebc20ec3e035931fe7dde5f304e45b`.
+- Branch: `work/step-009-events`.
+- Plan checkpoint: `959188a` (`Approve STEP-009 events plan`), including this
+  record.
+- Implementation commit: `b65d5a3665ecef704e88de24e9807b28795e7c8a`
+  (`Add authored events and resolve command`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 107 unit tests (23
+  new), and the content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the recorded extension of `tests/unit/rules-week-loop.test.ts`
+  was exercised (the two planned tests plus three other week-crossing tests
+  made event-aware); the `docs/design/00-process.md` current-task section is
+  updated in the evidence commit as standard milestone practice. No other
+  deviation.
+- Limitations: the rent choices and the other events emit message IDs but no
+  interface renders them yet; events later in the catalogue still evaluate in
+  the same pass while the rent choice waits, and the choice resolves through
+  `resolveEvent`; a PI request inside an event that cannot apply is skipped
+  silently so the rest of the event still fires; the browser tests do not
+  exercise events yet because no interface consumes them.
 
 ## Independent review
 
@@ -152,4 +173,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation complete on 2026-09-13; independent
+review and Leonardo's result review pending.
