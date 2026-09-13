@@ -1,7 +1,7 @@
 ---
 id: STEP-010
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -193,6 +193,8 @@ plan`), including this record and the roadmap amendment.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the branch head.
 - Corrections commit: `1c475cc` (`Add STEP-010 review correction tests`).
+- Integrated on local `main` at `ab5e296` by fast-forward, and `npm run verify`
+  passed on `main`.
 - Deviations: the assignment state shape (`ExperimentAssignment` and
   `ExperimentState`) lives in `campaign-state.ts` with the other state shapes,
   while `experiments.ts` owns the step counts and the start, advance, and
