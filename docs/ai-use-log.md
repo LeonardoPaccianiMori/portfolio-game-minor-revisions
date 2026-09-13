@@ -35,6 +35,23 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-006 paper track
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-006 under the
+approved plan. It added the paper model, the requirement meter, evidence
+attachment, the add/reframe/revert edits, paper validation in the state, the
+B5 development-save decision, and the paper tests; it integrated on `main` and
+recorded the acceptance. Evidence:
+`docs/development/steps/STEP-006-paper-track.md`; commits `1fd46cf`,
+`400b47e`, `6d7617b`, `9afb6df`, `d8e23c9`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: independent review of
+the STEP-006 branch. It found no blocker and no required finding, and recorded
+six advisories with owners, including the evidence-set location decision for
+STEP-007.
+
 ### 2026-09-13 — Science-language rule
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
