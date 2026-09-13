@@ -2,7 +2,7 @@
 
 Status: **current**
 
-Last updated: 2026-09-11.
+Last updated: 2026-09-13.
 
 ## Purpose
 
@@ -82,3 +82,21 @@ real spend and stay in the ledger.
 | 2026-09-13 | STEP-004 accepted             |       14 | $4.29 | +$0.60 |  5.5M | 362.4K |     174.0M |      116.0K | b012d36 |
 | 2026-09-13 | STEP-005 accepted             |       15 | $4.73 | +$0.44 |  5.6M | 402.1K |     197.9M |      116.0K | f4a5a27 |
 | 2026-09-13 | STEP-006 accepted             |       16 | $5.25 | +$0.52 |  5.8M | 439.4K |     222.2M |      116.0K | d8e23c9 |
+
+## Per-model snapshots
+
+Cumulative per-model totals, captured with each milestone snapshot. The
+per-model delta between two snapshots is the difference between their rows.
+
+### 2026-09-13 — after STEP-006
+
+| Model               | Messages |  Input | Output | Cache read | Cache write | Estimated cost |
+| ------------------- | -------: | -----: | -----: | ---------: | ----------: | -------------: |
+| deepseek-v4.1-flash |      459 |   5.1M | 745.2K |     220.1M |           0 |        $1.8777 |
+| glm-5.3             |      149 | 478.7K | 176.6K |       4.2M |           0 |        $2.5304 |
+| grok-4.6            |       16 | 170.4K |  16.9K |     771.8K |           0 |        $0.8285 |
+| qwen3.8-flash       |       10 |     60 |   5.7K |     544.7K |      116.0K |        $0.0346 |
+
+The reviewers (glm-5.3) are currently the largest cost line, larger than the
+main session (deepseek-v4.1-flash), and the aborted grok run accounts for
+$0.8285.

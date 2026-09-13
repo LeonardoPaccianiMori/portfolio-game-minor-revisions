@@ -12,6 +12,9 @@ Append a cost snapshot to `docs/costs.md`.
 3. Add a dated row to the Ledger table with the cumulative cost, the delta from
    the previous snapshot, the current milestone, and the current commit.
    Use only real values; never estimate or invent.
-4. Note any abort, failure, or unusual spend in the row or a short note below
+4. Append a cumulative per-model table under "Per-model snapshots" with the
+   same milestone, listing each model's messages, input, output, cache read,
+   cache write, and estimated cost, so per-model deltas can be derived.
+5. Note any abort, failure, or unusual spend in the row or a short note below
    the table.
-5. Commit and push the record-only change.
+6. Commit and push the record-only change.
