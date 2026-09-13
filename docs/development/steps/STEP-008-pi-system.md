@@ -1,7 +1,7 @@
 ---
 id: STEP-008
 type: development-step
-status: technical-review
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -142,6 +142,8 @@ slot advances the week exactly as an action does.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `2ccd750` by fast-forward, and `npm run verify`
+  passed on `main`.
 
 ## Independent review
 
