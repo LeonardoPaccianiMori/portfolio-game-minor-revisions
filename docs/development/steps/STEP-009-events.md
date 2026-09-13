@@ -153,9 +153,10 @@ behaviour.
 - `git diff --check` and `git status`: clean at the implementation head.
 - Deviations: the recorded extension of `tests/unit/rules-week-loop.test.ts`
   was exercised (the two planned tests plus three other week-crossing tests
-  made event-aware); the `docs/design/00-process.md` current-task section is
-  updated in the evidence commit as standard milestone practice. No other
-  deviation.
+  made event-aware); the `docs/design/00-process.md` current-task section was
+  updated early, in the evidence commit, as a one-off resume-pointer update —
+  the cost snapshot and the next current-task update remain due in the
+  acceptance commit (C1). No other deviation.
 - Limitations: the rent choices and the other events emit message IDs but no
   interface renders them yet; events later in the catalogue still evaluate in
   the same pass while the rent choice waits, and the choice resolves through
@@ -165,13 +166,49 @@ behaviour.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`), a
+different model family from the primary: **no blocker and no required
+finding**. The reviewer re-ran the claimed checks independently (typecheck,
+107 unit tests, 12 browser tests), reviewed the full diff, and verified the
+owned paths, the approved baselines, the B3/B5 state-and-versioning decision,
+determinism and purity, and the record's accuracy. Seven advisories were
+recorded.
 
 ## Corrections
 
-None yet.
+No code or document correction was required. Advisories recorded from the
+independent review:
+
+- **ADV-1:** the deviation note described the early
+  `docs/design/00-process.md` update as standard practice; corrected in this
+  record to state it was a one-off early resume-pointer update, with the cost
+  snapshot and the next current-task update still due in the acceptance commit
+  (C1).
+- **ADV-2:** A3 says the rent event "forces one choice per act", but no
+  command is refused while a choice is pending. Raise with Leonardo at
+  STEP-015 planning whether enforcement is rules-level (reject other commands
+  while pending) or interface-level (a modal).
+- **ADV-3:** re-anchor ADV-6 (stable PI request reason codes) to before
+  STEP-015, or STEP-010 if it surfaces request outcomes; once stable codes
+  exist, record event skip reasons so silently skipped PI requests become
+  auditable.
+- **ADV-4:** test gaps for a later test-touching cadence: rejected commands
+  trigger no events; combined command-plus-event effects at dispatch level;
+  the `resolveEvent` success path through `dispatch`; and the undocumented
+  week-12 crash path that satisfies `weekSlotsSpent`.
+- **ADV-5:** the seven message IDs emitted by the catalogue have no content
+  yet; STEP-018's validator owns dangling references and C2 steps 18–20 own
+  the content.
+- **ADV-6:** confirm with Leonardo at STEP-010/011 planning: the week-2
+  funding review against A2's "end of Act I" wording, and whether a `blank`
+  fellowship answer counting as answered at the deadline is intended.
+- **ADV-7:** minor hygiene for an opportunistic touch: `pendingEvent`
+  validation accepts empty choices, unknown event ids, and extra keys; the
+  deadline week is duplicated as the literal `8` in the catalogue instead of
+  `FELLOWSHIP_DEADLINE_WEEK`.
 
 ## Leonardo decision
 
 Plan approved 2026-09-13. Implementation complete on 2026-09-13; independent
-review and Leonardo's result review pending.
+review returned no blocker and no required finding. Integration and Leonardo's
+result review pending.
