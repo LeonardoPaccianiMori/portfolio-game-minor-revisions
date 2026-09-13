@@ -3,11 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { createInitialState, dispatch } from '../../src/rules/index.ts';
 import type { Command } from '../../src/rules/index.ts';
 
-const UNIMPLEMENTED_COMMANDS: readonly Command[] = [
-  { type: 'comply', action: 'take-credit' },
-  { type: 'meetPI' },
-  { type: 'quit' },
-];
+const UNIMPLEMENTED_COMMANDS: readonly Command[] = [{ type: 'quit' }];
 
 describe('command dispatch', () => {
   it('rejects every not-yet-implemented command without mutating the state', () => {

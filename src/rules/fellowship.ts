@@ -57,7 +57,8 @@ export type FellowshipEditOutcome = FellowshipEditOk | FellowshipEditFailure;
 
 export type FellowshipEdit =
   | { readonly kind: 'add'; readonly requirementId: FellowshipRequirementId }
-  | { readonly kind: 'reframe'; readonly framing: string };
+  | { readonly kind: 'reframe'; readonly framing: string }
+  | { readonly kind: 'revert'; readonly requirementId: FellowshipRequirementId };
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -151,6 +152,28 @@ export const applyFellowshipEdit = (
           ...fellowship.requirements,
           { id: edit.requirementId, state: 'open', answer: null },
         ],
+      },
+    };
+  }
+
+  if (edit.kind === 'revert') {
+    if (!FELLOWSHIP_REQUIREMENT_IDS.includes(edit.requirementId)) {
+      return { ok: false, reason: `unknown requirement: ${edit.requirementId}` };
+    }
+
+    if (!fellowship.requirements.some((requirement) => requirement.id === edit.requirementId)) {
+      return { ok: false, reason: `unknown requirement: ${edit.requirementId}` };
+    }
+
+    return {
+      ok: true,
+      fellowship: {
+        ...fellowship,
+        requirements: fellowship.requirements.map((requirement) =>
+          requirement.id === edit.requirementId
+            ? { ...requirement, state: 'open' as const, answer: null }
+            : requirement,
+        ),
       },
     };
   }

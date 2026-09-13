@@ -77,6 +77,8 @@ export type {
 } from './fellowship.ts';
 export { applyReframe } from './manuscript.ts';
 export type { ReframeFailure, ReframeOk, ReframeOutcome } from './manuscript.ts';
+export { COMPLICITY_EFFECTS, applyPiRequest, comply, meetPI } from './pi.ts';
+export type { PiRequest, PiRequestFailure, PiRequestOk, PiRequestOutcome } from './pi.ts';
 export {
   PAPER_REQUIREMENT_IDS,
   PAPER_REQUIREMENT_STATES,
@@ -101,4 +103,6 @@ export {
   CRASH_STANDING_LOSS,
   advanceWeek,
   performAction,
+  spendActionSlot,
 } from './week-loop.ts';
+export type { SlotSpend } from './week-loop.ts';

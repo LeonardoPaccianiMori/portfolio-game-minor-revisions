@@ -35,6 +35,25 @@ const advanceNormalWeek = (state: CampaignState): CampaignState => ({
   history: [...state.history, `week:${state.week + 1}`],
 });
 
+export interface SlotSpend {
+  readonly state: CampaignState;
+  readonly advanced: boolean;
+}
+
+export const spendActionSlot = (state: CampaignState, historyEntry: string): SlotSpend => {
+  const next: CampaignState = {
+    ...state,
+    actionsLeft: state.actionsLeft - 1,
+    history: [...state.history, historyEntry],
+  };
+
+  if (next.actionsLeft === 0 && state.week < WEEK_MAX) {
+    return { state: advanceNormalWeek(next), advanced: true };
+  }
+
+  return { state: next, advanced: false };
+};
+
 export const performAction = (
   state: CampaignState,
   command: PerformActionCommand,
@@ -84,19 +103,12 @@ export const performAction = (
     };
   }
 
-  let next: CampaignState = {
-    ...state,
-    energy,
-    actionsLeft: state.actionsLeft - 1,
-    history,
-  };
-
-  if (next.actionsLeft === 0 && state.week < WEEK_MAX) {
-    next = advanceNormalWeek(next);
-    effects.push({ kind: 'week-advanced', payload: { week: next.week } });
+  const spent = spendActionSlot({ ...state, energy }, `action:${command.action}`);
+  if (spent.advanced) {
+    effects.push({ kind: 'week-advanced', payload: { week: spent.state.week } });
   }
 
-  return { ok: true, state: next, effects };
+  return { ok: true, state: spent.state, effects };
 };
 
 export const advanceWeek = (state: CampaignState): CommandResult => {

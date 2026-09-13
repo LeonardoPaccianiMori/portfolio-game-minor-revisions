@@ -3,6 +3,7 @@ import type { CampaignState } from './campaign-state.ts';
 import type { Command, CommandResult } from './commands.ts';
 import { assignEvidence } from './evidence.ts';
 import { answerRequirement } from './fellowship.ts';
+import { comply, meetPI } from './pi.ts';
 import { advanceWeek, performAction } from './week-loop.ts';
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
@@ -36,6 +37,14 @@ export const dispatch = (state: CampaignState, command: Command): CommandResult 
 
   if (command.type === 'answerRequirement') {
     return answerRequirement(stateValidation.state, command);
+  }
+
+  if (command.type === 'meetPI') {
+    return meetPI(stateValidation.state);
+  }
+
+  if (command.type === 'comply') {
+    return comply(stateValidation.state, command);
   }
 
   if (command.type === 'advanceWeek') {

@@ -1,7 +1,8 @@
 # 03 — Pressure, Resources, and Failure
 
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
-(Block A3) and revised the same day to add the fellowship. The
+(Block A3), revised the same day to add the fellowship, and revised
+2026-09-13 with the complicity baseline. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -72,6 +73,25 @@ at five and cannot exceed five. The baseline is tuned in the slice.
   without moralising.
 - Integrity is hidden as a number but visible as consequence: dialogue,
   available options, and endings change.
+
+## Complicity baseline (approved 2026-09-13)
+
+Each complicity action costs integrity and may change standing or a
+relationship; two actions restore one action slot. Complicity does not spend an
+action slot and is refused only when no decision is possible. The baseline
+values for the slice:
+
+| Action           | Standing | Integrity | Slots | Relationships |
+| ---------------- | -------: | --------: | ----: | ------------- |
+| Inflate a claim  |      +10 |       −15 |     — | —             |
+| Drop a replicate |        — |       −10 |    +1 | —             |
+| Take credit      |      +10 |       −10 |     — | Dario −20     |
+| Flatter the PI   |        — |        −5 |     — | Voss +10      |
+| Dump work        |        — |       −10 |    +1 | Mara −15      |
+
+Meters clamp at their bounds, and each action sets a permanent flag and a
+history entry so the endings can return to it by name. These are tunable slice
+baselines.
 
 ## Relationships
 
