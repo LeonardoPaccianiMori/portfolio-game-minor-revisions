@@ -1,3 +1,4 @@
+import { WEEK_MAX } from './campaign-state.ts';
 import type { CampaignState } from './campaign-state.ts';
 import { EVIDENCE_TRACKS } from './commands.ts';
 import type {
@@ -65,6 +66,25 @@ export const staleCurrentEvidence = (evidence: readonly Evidence[]): readonly Ev
     entry.state === 'current' ? { ...entry, state: 'stale' as const } : entry,
   );
 
+export const refreshOldestStaleEvidence = (state: CampaignState): CommandResult => {
+  const stale = state.evidence.find((entry) => entry.state === 'stale');
+
+  if (stale === undefined) {
+    return rejection('nothing-to-analyse', 'There is no stale evidence to analyse.');
+  }
+
+  return {
+    ok: true,
+    state: {
+      ...state,
+      evidence: state.evidence.map((entry) =>
+        entry === stale ? { ...entry, state: 'current' as const } : entry,
+      ),
+    },
+    effects: [{ kind: 'evidence-refreshed', payload: { evidenceId: stale.id } }],
+  };
+};
+
 export const assignEvidence = (
   state: CampaignState,
   command: AssignEvidenceCommand,
@@ -78,7 +98,25 @@ export const assignEvidence = (
     return rejection('invalid-command', 'The evidence track is not valid.');
   }
 
-  if (state.evidence.some((entry) => entry.id === evidenceId)) {
+  if (state.crashed) {
+    return rejection('week-lost', 'This week is lost. End the week to recover.');
+  }
+
+  if (state.week >= WEEK_MAX && state.actionsLeft <= 0) {
+    return rejection('contract-finished', 'The contract is finished.');
+  }
+
+  const assignment = state.experiments.find((entry) => entry.id === evidenceId);
+
+  if (assignment === undefined) {
+    return rejection('unknown-result', 'That result is not available.');
+  }
+
+  if (assignment.state === 'running' || assignment.state === 'paused') {
+    return rejection('result-not-ready', 'That result is still in progress.');
+  }
+
+  if (assignment.state === 'attached' || state.evidence.some((entry) => entry.id === evidenceId)) {
     return rejection('duplicate-evidence', 'This evidence is already attached.');
   }
 
@@ -94,6 +132,9 @@ export const assignEvidence = (
     ok: true,
     state: {
       ...state,
+      experiments: state.experiments.map((entry) =>
+        entry.id === evidenceId ? { ...entry, state: 'attached' as const } : entry,
+      ),
       evidence: [
         ...state.evidence,
         { id: evidenceId, state: 'current', track: command.track, overlap },

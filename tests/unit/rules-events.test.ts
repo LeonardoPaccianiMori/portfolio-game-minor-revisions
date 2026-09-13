@@ -98,8 +98,11 @@ describe('authored events', () => {
 
     expect(result.fired).toEqual([
       'funding-review',
+      'requests-first',
+      'requests-method',
       'rent',
       'contamination',
+      'requests-impact',
       'fellowship-deadline',
       'contract-decision',
     ]);
@@ -157,6 +160,71 @@ describe('authored events', () => {
 
     expect(second.state).toEqual(first.state);
     expect(second.fired).toEqual(first.fired);
+  });
+});
+
+describe('PI request beats', () => {
+  it('adds the first paper requests in week 3', () => {
+    const result = evaluateEvents({ ...createInitialState(1), week: 3 });
+
+    expect(result.fired).toEqual(['funding-review', 'requests-first']);
+    expect(result.state.paper.requirements).toEqual([
+      { id: 'controls', state: 'open' },
+      { id: 'replicates', state: 'open' },
+    ]);
+  });
+
+  it('adds the method request in week 4', () => {
+    const result = evaluateEvents({ ...createInitialState(1), week: 4 });
+
+    expect(result.fired).toEqual(['funding-review', 'requests-first', 'requests-method']);
+    expect(result.state.paper.requirements.map((requirement) => requirement.id)).toEqual([
+      'controls',
+      'replicates',
+      'mechanism',
+    ]);
+  });
+
+  it('reframes and adds the final requests in week 7', () => {
+    const state: CampaignState = {
+      ...createInitialState(1),
+      week: 7,
+      flags: {
+        'event.funding-review': true,
+        'event.requests-first': true,
+        'event.requests-method': true,
+        'event.rent': true,
+        'event.contamination': true,
+      },
+      paper: {
+        framing: 'initial',
+        revision: 0,
+        requirements: [{ id: 'controls', state: 'satisfied' }],
+      },
+      evidence: [
+        {
+          id: 'experiment.controls.1',
+          state: 'current',
+          track: 'paper',
+          overlap: false,
+        },
+      ],
+    };
+
+    const result = evaluateEvents(state);
+
+    expect(result.fired).toEqual(['requests-impact']);
+    expect(result.state.paper.framing).toBe('agricultural impact');
+    expect(result.state.paper.requirements).toEqual([
+      { id: 'controls', state: 'stale' },
+      { id: 'impact', state: 'open' },
+      { id: 'presentation', state: 'open' },
+    ]);
+    expect(result.state.evidence[0]?.state).toBe('stale');
+    expect(result.effects).toContainEqual({
+      kind: 'reframe',
+      payload: { framing: 'agricultural impact' },
+    });
   });
 });
 

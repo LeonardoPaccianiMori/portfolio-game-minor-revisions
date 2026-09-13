@@ -5,8 +5,8 @@ import type {
   CommandRejectionReason,
   CommandResult,
   FellowshipAnswerType,
-  PresentationEffect,
 } from './commands.ts';
+import { spendWorkAction } from './week-loop.ts';
 
 export const FELLOWSHIP_REQUIREMENT_IDS = [
   'impact',
@@ -213,26 +213,33 @@ export const answerRequirement = (
     return rejection('unknown-requirement', 'Unknown fellowship requirement.');
   }
 
-  const effects: PresentationEffect[] = [
-    {
-      kind: 'requirement-answered',
-      payload: { requirementId: command.requirementId, answer: command.answer },
+  const answered: CampaignState = {
+    ...state,
+    fellowship: {
+      ...state.fellowship,
+      requirements: state.fellowship.requirements.map((requirement) =>
+        requirement.id === command.requirementId
+          ? { ...requirement, state: 'answered' as const, answer: command.answer }
+          : requirement,
+      ),
     },
-  ];
+  };
+
+  const spent = spendWorkAction(answered, 'write-fellowship', `answer:${command.requirementId}`);
+
+  if (!spent.ok) {
+    return spent;
+  }
 
   return {
     ok: true,
-    state: {
-      ...state,
-      fellowship: {
-        ...state.fellowship,
-        requirements: state.fellowship.requirements.map((requirement) =>
-          requirement.id === command.requirementId
-            ? { ...requirement, state: 'answered' as const, answer: command.answer }
-            : requirement,
-        ),
+    state: spent.state,
+    effects: [
+      {
+        kind: 'requirement-answered',
+        payload: { requirementId: command.requirementId, answer: command.answer },
       },
-    },
-    effects,
+      ...spent.effects,
+    ],
   };
 };

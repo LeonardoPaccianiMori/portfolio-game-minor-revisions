@@ -3,6 +3,7 @@ export {
   CAMPAIGN_STATE_VERSION,
   ENERGY_MAX,
   ENERGY_MIN,
+  EXPERIMENT_STATES,
   METER_MAX,
   METER_MIN,
   RELATIONSHIP_IDS,
@@ -15,6 +16,8 @@ export {
 } from './campaign-state.ts';
 export type {
   CampaignState,
+  ExperimentAssignment,
+  ExperimentState,
   PendingEvent,
   RelationshipId,
   StateValidation,
@@ -46,6 +49,7 @@ export type {
   PresentationEffect,
   QuitCommand,
   ResolveEventCommand,
+  StartExperimentCommand,
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
 export {
@@ -67,10 +71,17 @@ export type {
 export {
   EVIDENCE_STATES,
   assignEvidence,
+  refreshOldestStaleEvidence,
   staleCurrentEvidence,
   validateEvidenceList,
 } from './evidence.ts';
 export type { Evidence, EvidenceState } from './evidence.ts';
+export {
+  EXPERIMENT_STEP_COUNTS,
+  advanceExperiment,
+  startExperiment,
+  writeUpRequirement,
+} from './experiments.ts';
 export {
   FELLOWSHIP_DEADLINE_WEEK,
   FELLOWSHIP_FRAMING_DEPENDENT_IDS,

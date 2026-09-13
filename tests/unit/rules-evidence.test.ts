@@ -7,14 +7,31 @@ import {
   validateEvidenceList,
   validateState,
 } from '../../src/rules/index.ts';
-import type { Command } from '../../src/rules/index.ts';
+import type { CampaignState, Command, PaperRequirementId } from '../../src/rules/index.ts';
+
+const withFinishedResult = (
+  state: CampaignState,
+  requirementId: PaperRequirementId = 'controls',
+): CampaignState => ({
+  ...state,
+  paper: { ...state.paper, requirements: [{ id: requirementId, state: 'open' }] },
+  experiments: [
+    {
+      id: `experiment.${requirementId}.1`,
+      requirementId,
+      step: 3,
+      steps: 3,
+      state: 'done',
+    },
+  ],
+});
 
 describe('shared evidence', () => {
   it('attaches current evidence with a track and no overlap', () => {
-    const state = createInitialState(1);
+    const state = withFinishedResult(createInitialState(1));
     const result = dispatch(state, {
       type: 'assignEvidence',
-      evidenceId: 'paper.evidence.sequence.1',
+      evidenceId: 'experiment.controls.1',
       track: 'paper',
     });
 
@@ -22,20 +39,21 @@ describe('shared evidence', () => {
     if (result.ok) {
       expect(result.state.evidence).toEqual([
         {
-          id: 'paper.evidence.sequence.1',
+          id: 'experiment.controls.1',
           state: 'current',
           track: 'paper',
           overlap: false,
         },
       ]);
+      expect(result.state.experiments[0]?.state).toBe('attached');
     }
   });
 
   it('sets the overlap flag when a result is assigned to both tracks', () => {
-    const state = createInitialState(1);
+    const state = withFinishedResult(createInitialState(1));
     const result = assignEvidence(state, {
       type: 'assignEvidence',
-      evidenceId: 'paper.evidence.sequence.1',
+      evidenceId: 'experiment.controls.1',
       track: 'both',
     });
 
@@ -45,7 +63,7 @@ describe('shared evidence', () => {
       expect(result.effects[0]).toEqual({
         kind: 'evidence-assigned',
         payload: {
-          evidenceId: 'paper.evidence.sequence.1',
+          evidenceId: 'experiment.controls.1',
           track: 'both',
           overlap: true,
         },
@@ -54,10 +72,10 @@ describe('shared evidence', () => {
   });
 
   it('refuses a duplicate identifier across tracks without mutating the state', () => {
-    const state = createInitialState(1);
+    const state = withFinishedResult(createInitialState(1));
     const first = assignEvidence(state, {
       type: 'assignEvidence',
-      evidenceId: 'paper.evidence.sequence.1',
+      evidenceId: 'experiment.controls.1',
       track: 'paper',
     });
 
@@ -69,7 +87,7 @@ describe('shared evidence', () => {
     const before = JSON.stringify(first.state);
     const duplicate = assignEvidence(first.state, {
       type: 'assignEvidence',
-      evidenceId: 'paper.evidence.sequence.1',
+      evidenceId: 'experiment.controls.1',
       track: 'fellowship',
     });
 

@@ -8,6 +8,7 @@ import type {
 } from './commands.ts';
 import { staleCurrentEvidence } from './evidence.ts';
 import { FELLOWSHIP_REQUIREMENT_IDS } from './fellowship.ts';
+import { applyReframe } from './manuscript.ts';
 import { applyPiRequest } from './pi.ts';
 import type { PiRequest } from './pi.ts';
 
@@ -35,6 +36,7 @@ export type EventEffect =
   | { readonly kind: 'energy'; readonly delta: number }
   | { readonly kind: 'actionSlots'; readonly delta: number }
   | { readonly kind: 'staleEvidence' }
+  | { readonly kind: 'reframe'; readonly framing: string }
   | { readonly kind: 'flag'; readonly flag: string; readonly value: boolean }
   | { readonly kind: 'message'; readonly messageId: string }
   | { readonly kind: 'fellowshipDeadline' };
@@ -75,6 +77,23 @@ export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
         request: { kind: 'add-fellowship', requirementId: 'support' },
       },
       { kind: 'message', messageId: 'message.funding-review' },
+    ],
+  },
+  {
+    id: 'requests-first',
+    week: 3,
+    effects: [
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'controls' } },
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'replicates' } },
+      { kind: 'message', messageId: 'message.requests-first' },
+    ],
+  },
+  {
+    id: 'requests-method',
+    week: 4,
+    effects: [
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'mechanism' } },
+      { kind: 'message', messageId: 'message.requests-method' },
     ],
   },
   {
@@ -122,6 +141,16 @@ export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
     ],
   },
   {
+    id: 'requests-impact',
+    week: 7,
+    effects: [
+      { kind: 'reframe', framing: 'agricultural impact' },
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'impact' } },
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'presentation' } },
+      { kind: 'message', messageId: 'message.requests-impact' },
+    ],
+  },
+  {
     id: 'fellowship-deadline',
     week: 8,
     effects: [
@@ -166,6 +195,16 @@ const applyEventEffect = (
       state: { ...state, evidence: staleCurrentEvidence(state.evidence) },
       effects: [],
     };
+  }
+
+  if (effect.kind === 'reframe') {
+    const result = applyReframe(state, effect.framing);
+    return result.ok
+      ? {
+          state: result.state,
+          effects: [{ kind: 'reframe', payload: { framing: effect.framing } }],
+        }
+      : { state, effects: [] };
   }
 
   if (effect.kind === 'fellowshipDeadline') {

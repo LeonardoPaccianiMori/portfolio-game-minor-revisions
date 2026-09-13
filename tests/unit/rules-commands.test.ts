@@ -25,11 +25,11 @@ describe('command dispatch', () => {
 
   it('routes an implemented command', () => {
     const state = createInitialState(3);
-    const result = dispatch(state, { type: 'performAction', action: 'experiment' });
+    const result = dispatch(state, { type: 'performAction', action: 'rest' });
 
     expect(result.ok).toBe(true);
     if (result.ok) {
-      expect(result.state.energy).toBe(4);
+      expect(result.state.energy).toBe(5);
       expect(result.state.actionsLeft).toBe(2);
     }
   });

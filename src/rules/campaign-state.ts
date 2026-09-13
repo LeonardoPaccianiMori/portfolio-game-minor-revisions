@@ -2,8 +2,8 @@ import { validateEvidenceList } from './evidence.ts';
 import type { Evidence } from './evidence.ts';
 import { createInitialFellowship, validateFellowship } from './fellowship.ts';
 import type { FellowshipState } from './fellowship.ts';
-import { createInitialPaper, validatePaper } from './paper.ts';
-import type { PaperState } from './paper.ts';
+import { PAPER_REQUIREMENT_IDS, createInitialPaper, validatePaper } from './paper.ts';
+import type { PaperRequirementId, PaperState } from './paper.ts';
 
 export const CAMPAIGN_STATE_VERSION = 1;
 
@@ -25,6 +25,17 @@ export interface PendingEvent {
   readonly choices: readonly string[];
 }
 
+export const EXPERIMENT_STATES = ['running', 'paused', 'done', 'attached'] as const;
+export type ExperimentState = (typeof EXPERIMENT_STATES)[number];
+
+export interface ExperimentAssignment {
+  readonly id: string;
+  readonly requirementId: PaperRequirementId;
+  readonly step: number;
+  readonly steps: number;
+  readonly state: ExperimentState;
+}
+
 export interface CampaignState {
   readonly version: number;
   readonly seed: number;
@@ -39,6 +50,7 @@ export interface CampaignState {
   readonly paper: PaperState;
   readonly fellowship: FellowshipState;
   readonly evidence: readonly Evidence[];
+  readonly experiments: readonly ExperimentAssignment[];
   readonly pendingEvent: PendingEvent | null;
   readonly history: readonly string[];
   readonly flags: Readonly<Record<string, boolean>>;
@@ -65,6 +77,51 @@ const isInteger = (value: unknown): value is number =>
 const isMeter = (value: unknown): value is number =>
   isInteger(value) && value >= METER_MIN && value <= METER_MAX;
 
+const validateExperiments = (value: unknown): readonly string[] => {
+  if (!Array.isArray(value)) {
+    return ['experiments must be a list'];
+  }
+
+  const issues: string[] = [];
+  const seen = new Set<string>();
+
+  value.forEach((entry, index) => {
+    if (!isRecord(entry)) {
+      issues.push(`experiments[${index}] must be an object`);
+      return;
+    }
+
+    const id = entry['id'];
+    if (typeof id !== 'string' || id.trim().length === 0) {
+      issues.push(`experiments[${index}].id must be a non-empty string`);
+    } else if (seen.has(id)) {
+      issues.push(`experiments[${index}].id is duplicated`);
+    } else {
+      seen.add(id);
+    }
+
+    if (!PAPER_REQUIREMENT_IDS.includes(entry['requirementId'] as PaperRequirementId)) {
+      issues.push(`experiments[${index}].requirementId is unknown`);
+    }
+
+    const steps = entry['steps'];
+    if (!isInteger(steps) || steps < 2 || steps > 4) {
+      issues.push(`experiments[${index}].steps is out of range`);
+    }
+
+    const step = entry['step'];
+    if (!isInteger(step) || step < 0 || (isInteger(steps) && step > steps)) {
+      issues.push(`experiments[${index}].step is out of range`);
+    }
+
+    if (!EXPERIMENT_STATES.includes(entry['state'] as ExperimentState)) {
+      issues.push(`experiments[${index}].state is unknown`);
+    }
+  });
+
+  return issues;
+};
+
 const STATE_KEYS: ReadonlySet<string> = new Set([
   'version',
   'seed',
@@ -79,6 +136,7 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'paper',
   'fellowship',
   'evidence',
+  'experiments',
   'pendingEvent',
   'history',
   'flags',
@@ -105,6 +163,7 @@ export const createInitialState = (seed: number): CampaignState => {
     paper: createInitialPaper(),
     fellowship: createInitialFellowship(),
     evidence: [],
+    experiments: [],
     pendingEvent: null,
     history: [],
     flags: {},
@@ -211,6 +270,7 @@ export const validateState = (value: unknown): StateValidation => {
   issues.push(...validatePaper(value['paper']));
   issues.push(...validateFellowship(value['fellowship']));
   issues.push(...validateEvidenceList(value['evidence']));
+  issues.push(...validateExperiments(value['experiments']));
 
   if (issues.length > 0) {
     return { ok: false, issues };

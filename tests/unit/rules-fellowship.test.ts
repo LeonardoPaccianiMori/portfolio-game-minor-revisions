@@ -70,6 +70,9 @@ describe('fellowship track', () => {
       expect(answered.state.fellowship.requirements).toEqual([
         { id: 'impact', state: 'answered', answer: 'inflate' },
       ]);
+      expect(answered.state.actionsLeft).toBe(2);
+      expect(answered.state.energy).toBe(4);
+      expect(answered.state.history).toEqual(['answer:impact']);
     }
 
     expect(

@@ -2,7 +2,8 @@
 
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
 (Block A3), revised the same day to add the fellowship, and revised
-2026-09-13 with the complicity and rent-event baselines. The
+2026-09-13 with the complicity and rent-event baselines and the fellowship
+answer work. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -42,7 +43,9 @@ by action:
 | Rest                            |     +2 |
 
 Each turn restores one energy automatically at the week boundary. Energy starts
-at five and cannot exceed five. The baseline is tuned in the slice.
+at five and cannot exceed five. The baseline is tuned in the slice. Answering
+one fellowship requirement is proposal work: it spends one action slot and one
+energy, like writing.
 
 ## Energy and the crash
 

@@ -1,7 +1,8 @@
 # B3 — State, Commands, and Determinism
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
-2026-09-13 with the pending-event field and the resolve command (STEP-009).**
+2026-09-13 with the pending-event field and the resolve command (STEP-009) and
+with experiment assignments and the result-based evidence flow (STEP-010).**
 
 ## Campaign state (approved shape)
 
@@ -19,6 +20,7 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
 | `paper`         | Paper track: framing, revision, and requirements                        |
 | `fellowship`    | Fellowship track: framing, requirements, answers, deadline, and outcome |
 | `evidence`      | Shared evidence set with track assignment and overlap flag              |
+| `experiments`   | Experiment assignments with their requirement, step, and state          |
 | `pendingEvent`  | Authored event awaiting a player choice, or `null`                      |
 | `history`       | Per-run record used by endings and narration                            |
 | `flags`         | Authored event flags                                                    |
@@ -28,16 +30,17 @@ instances, or browser handles.
 
 ## Commands (approved)
 
-| Command                                       | Effect                                                                                |
-| --------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `performAction { action }`                    | Spend one of the week's three action slots and its energy on one action               |
-| `assignEvidence { evidenceId, track }`        | Assign a result to the paper, the fellowship, or both                                 |
-| `answerRequirement { requirementId, answer }` | Answer a fellowship requirement honestly, inflate, fabricate, imitate, or leave blank |
-| `comply { action }`                           | Take one of the five complicity actions                                               |
-| `meetPI`                                      | Enter the PI meeting flow                                                             |
-| `resolveEvent { eventId, choiceId }`          | Resolve the pending authored event with one of its authored choices                   |
-| `quit`                                        | Confirm and end the run                                                               |
-| `advanceWeek`                                 | End the week early, or consume a lost week; reset slots and restore energy            |
+| Command                                       | Effect                                                                                                                                                                         |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `performAction { action }`                    | Spend one of the week's three action slots and its energy on one action; experiments advance, analysis refreshes the oldest stale result, and write-up satisfies a requirement |
+| `startExperiment { requirementId }`           | Start or resume an experiment assignment for a paper requirement in the meter                                                                                                  |
+| `assignEvidence { evidenceId, track }`        | Attach a completed experiment result to the paper, the fellowship, or both                                                                                                     |
+| `answerRequirement { requirementId, answer }` | Answer a fellowship requirement honestly, inflate, fabricate, imitate, or leave blank; this is proposal work and spends one slot and one energy                                |
+| `comply { action }`                           | Take one of the five complicity actions                                                                                                                                        |
+| `meetPI`                                      | Enter the PI meeting flow                                                                                                                                                      |
+| `resolveEvent { eventId, choiceId }`          | Resolve the pending authored event with one of its authored choices                                                                                                            |
+| `quit`                                        | Confirm and end the run                                                                                                                                                        |
+| `advanceWeek`                                 | End the week early, or consume a lost week; reset slots and restore energy                                                                                                     |
 
 Commands are plain data and are validated before execution. Resting is
 `performAction { action: 'rest' }`; there is no separate rest command.

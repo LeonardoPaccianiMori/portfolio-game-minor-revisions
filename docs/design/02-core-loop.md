@@ -2,7 +2,8 @@
 
 Status: **Documented and revised — the core decisions, detailed action list,
 cost shape, and worked example were approved by Leonardo on 2026-09-10
-(Block A2); revised the same day to add the fellowship track.**
+(Block A2); revised the same day to add the fellowship track, and revised
+2026-09-13 with the concrete experiment model and its slice baselines.**
 
 ## Purpose
 
@@ -38,6 +39,21 @@ Experiments are small assignments of two to four steps (for example: prepare,
 culture, sequence, analyse). Assignments can be started, advanced, paused, and
 repeated. The drama is scheduling, interpretation, and what the PI demands next,
 not detailed laboratory simulation.
+
+The slice baseline makes this concrete:
+
+- Each paper requirement has one assignment: controls and replicates three
+  steps, mechanism four, and impact and presentation two.
+- One assignment runs at a time. Starting another pauses the current one, and
+  an unfinished assignment resumes where it stopped.
+- Completing an assignment produces a result. The player attaches it to the
+  paper, the fellowship, or both; attaching to both carries the overlap risk.
+- Writing up the manuscript turns attached, current results into meter
+  progress: one action satisfies the oldest requirement that has fresh data.
+  Analysis refreshes one stale result, so a reframe or the contamination crisis
+  costs real time.
+- The PI adds the paper requirements in weeks 3, 4, and 7, and the week-7
+  reframe stales progress and evidence.
 
 ## The moving standard (approved)
 

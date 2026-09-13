@@ -1,4 +1,5 @@
 import type { CampaignState } from './campaign-state.ts';
+import type { PaperRequirementId } from './paper.ts';
 
 export const ACTION_IDS = [
   'experiment',
@@ -64,6 +65,11 @@ export interface ResolveEventCommand {
   readonly choiceId: string;
 }
 
+export interface StartExperimentCommand {
+  readonly type: 'startExperiment';
+  readonly requirementId: PaperRequirementId;
+}
+
 export interface QuitCommand {
   readonly type: 'quit';
 }
@@ -79,6 +85,7 @@ export type Command =
   | ComplyCommand
   | MeetPiCommand
   | ResolveEventCommand
+  | StartExperimentCommand
   | QuitCommand
   | AdvanceWeekCommand;
 
@@ -93,7 +100,12 @@ export type CommandRejectionReason =
   | 'duplicate-evidence'
   | 'unknown-requirement'
   | 'no-pending-event'
-  | 'unknown-choice';
+  | 'unknown-choice'
+  | 'no-running-experiment'
+  | 'nothing-to-analyse'
+  | 'nothing-to-write-up'
+  | 'unknown-result'
+  | 'result-not-ready';
 
 export interface PresentationEffect {
   readonly kind: string;

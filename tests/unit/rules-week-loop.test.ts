@@ -16,9 +16,24 @@ const withoutEvents = (state: CampaignState): CampaignState => ({
   },
 });
 
+const withRunningExperiment = (state: CampaignState): CampaignState => ({
+  ...state,
+  paper: { ...state.paper, requirements: [{ id: 'controls', state: 'open' }] },
+  experiments: [
+    {
+      id: 'experiment.controls.1',
+      requirementId: 'controls',
+      step: 0,
+      steps: 3,
+      state: 'running',
+    },
+  ],
+});
+
 describe('week loop', () => {
   it('spends energy and a slot on an action', () => {
-    const result = dispatch(createInitialState(1), {
+    const state = withRunningExperiment(createInitialState(1));
+    const result = dispatch(state, {
       type: 'performAction',
       action: 'experiment',
     });
@@ -37,7 +52,7 @@ describe('week loop', () => {
   });
 
   it('advances the week automatically after the third action', () => {
-    let state = withoutEvents(createInitialState(1));
+    let state = withRunningExperiment(withoutEvents(createInitialState(1)));
 
     for (let index = 0; index < 3; index += 1) {
       const result = dispatch(state, { type: 'performAction', action: 'experiment' });
@@ -76,7 +91,10 @@ describe('week loop', () => {
   });
 
   it('crashes at zero energy and loses the next week', () => {
-    const state = { ...withoutEvents(createInitialState(1)), energy: 1 };
+    const state = withRunningExperiment({
+      ...withoutEvents(createInitialState(1)),
+      energy: 1,
+    });
     const result = dispatch(state, { type: 'performAction', action: 'experiment' });
 
     expect(result.ok).toBe(true);

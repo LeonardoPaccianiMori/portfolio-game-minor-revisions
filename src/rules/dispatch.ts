@@ -3,6 +3,7 @@ import type { CampaignState } from './campaign-state.ts';
 import type { Command, CommandResult } from './commands.ts';
 import { assignEvidence } from './evidence.ts';
 import { evaluateEvents, resolveEvent } from './events.ts';
+import { startExperiment } from './experiments.ts';
 import { answerRequirement } from './fellowship.ts';
 import { comply, meetPI } from './pi.ts';
 import { advanceWeek, performAction } from './week-loop.ts';
@@ -33,6 +34,10 @@ const routeCommand = (state: CampaignState, command: Command): CommandResult => 
 
   if (command.type === 'resolveEvent') {
     return resolveEvent(state, command);
+  }
+
+  if (command.type === 'startExperiment') {
+    return startExperiment(state, command);
   }
 
   if (command.type === 'advanceWeek') {
