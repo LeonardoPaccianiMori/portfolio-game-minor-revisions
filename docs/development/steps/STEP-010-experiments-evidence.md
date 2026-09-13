@@ -1,7 +1,7 @@
 ---
 id: STEP-010
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -272,7 +272,9 @@ Advisories recorded from the re-review:
 ## Leonardo decision
 
 Plan approved 2026-09-13, including the roadmap amendment and the baselines.
-Implementation complete on 2026-09-13; the independent review returned no
-blocker and two required corrections, which were applied and passed a fresh
-re-review with no blocker and no required finding. Integration and Leonardo's
-result review pending.
+**Accepted by Leonardo on 2026-09-13** after the result review: the experiment
+loop (start, advance, pause/resume, attach, write-up, analysis), the fellowship
+answer cost, Voss's three paper request beats and the week-7 reframe, the
+recorded evidence (128 unit tests and 12 browser tests; `npm run verify` on
+`main`), and the review with two corrected findings and a clean re-review were
+reviewed with no visible issue.

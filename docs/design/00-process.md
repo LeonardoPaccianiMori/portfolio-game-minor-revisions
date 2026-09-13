@@ -147,19 +147,19 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-010 integrated; Leonardo result review
+## Current task — STEP-010 accepted; STEP-011 plan pending approval
 
-STEP-009 is accepted. STEP-010 (experiments and evidence flow) is implemented,
-independently reviewed, corrected, re-reviewed with no blocker or required
-finding, integrated on `main`, and fully verified. The current step record is
-`docs/development/steps/STEP-010-experiments-evidence.md`. Like the previous
-rules steps, it is invisible, so the next permitted action is Leonardo's short
-result review instead of direct play, followed by explicit acceptance. The
-review and panel step is now STEP-011 and is not authorized until its own plan
-is approved; the carried STEP-009 ADV-6 (week-2 funding-review timing and the
-blank-answer deadline question) is due for Leonardo's confirmation in that
-plan. The earlier block questions and session records further down are
-preserved as history.
+STEP-010 (experiments and evidence flow) is accepted by Leonardo on
+2026-09-13 after his result review, including the roadmap amendment that
+inserted it and shifted every later step by one. The next permitted action is
+the exact STEP-011 plan (review and panel set pieces: reviewer chorus,
+fellowship panel, outcomes), presented for Leonardo's approval; it must also
+put the carried STEP-009 ADV-6 questions to Leonardo (the week-2 funding
+review against A2's "end of Act I" wording, and whether a blank answer counts
+as answered at the deadline). STEP-011 is not authorized until that approval.
+The previous step record is
+`docs/development/steps/STEP-010-experiments-evidence.md`. The earlier block
+questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

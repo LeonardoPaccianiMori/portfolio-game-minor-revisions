@@ -35,6 +35,25 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-010 experiments and evidence flow
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-010 under the
+approved plan, including the roadmap amendment that inserted it. It added the
+experiment assignments and baselines, the `startExperiment` command, the
+result-based evidence flow (attach, write-up, analyse), the fellowship answer
+cost, the four request and reframe beats, the B3/A2/A3 rows, and 21 tests; it
+applied the review corrections, integrated on `main`, and recorded the
+acceptance. Evidence:
+`docs/development/steps/STEP-010-experiments-evidence.md`; commits `c2c925c`,
+`4dae519`, `18813ec`, `1c475cc`, `dcbbcf6`, `ab5e296`, `bdea888`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: completed the
+independent review of STEP-010 (no blocker, two required findings) and the
+fresh re-review after the corrections (no blocker, no required finding), and
+recorded seven advisories with owners.
+
 ### 2026-09-13 — STEP-009 events and deadlines
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
