@@ -127,13 +127,35 @@ overhead without an isolation benefit.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the A2, A4, A7, B3, B4, B5, B10, C1, and C2
-documents, and the recorded check results.
+Reviewed on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`),
+a different model family from the primary: no blocker and no required finding.
+Six advisories were recorded with owners (A-1 at the next paper-model touch,
+A-2 with the STEP-007 plan, A-3 with the STEP-008 plan, A-4 with the next
+evidence-flow step, A-5 at the next rules-test touch, A-6 with STEP-018 and
+the STEP-015 labels).
 
 ## Corrections
 
-None yet.
+No code or document correction was required. Advisories recorded from the
+independent review:
+
+- **A-1:** `validatePaper` does not reject duplicate ids or unexpected nested
+  keys; in-game paths cannot create duplicates, but the stricter posture is
+  recorded for the next paper-model touch.
+- **A-2:** the shared evidence set currently lives under `paper.evidence`;
+  STEP-007 must decide explicitly whether to lift it to a top-level field.
+- **A-3:** `applyPaperEdit` failures are free-form strings and reverting an
+  already-open requirement succeeds silently; STEP-008 maps them to stable
+  reason codes and decides the revert-on-open case.
+- **A-4:** `assignEvidence` has no crashed, lost-week, or contract-finished
+  gating; the precondition decision is recorded for the next evidence-flow
+  step.
+- **A-5:** test-depth gaps (no-mutation only for `add`, a state missing
+  `paper`, and `validatePaper` per-entry branches) are recorded for the next
+  rules-test touch.
+- **A-6:** the slug-to-content-ID mapping and the plain-language meter labels
+  (for example "repeats" for "replicates") are recorded for STEP-018 and the
+  STEP-015 labels.
 
 ## Leonardo decision
 
