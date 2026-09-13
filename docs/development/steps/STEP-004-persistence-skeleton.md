@@ -1,7 +1,7 @@
 ---
 id: STEP-004
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -109,11 +109,23 @@ without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `1c7b9df9b9501db26bc8fa54424b712c5d12ad92`.
+- Branch: `work/step-004-persistence`.
+- Implementation commit: `fad8e36ec16e32f51ca305dadf5baa966927bf21`
+  (`Add local persistence skeleton`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 42 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 9 passed (start page, controlled startup failure, and the
+  real IndexedDB persistence round-trip, backup, settings, and clear in
+  Chromium, Firefox, and WebKit).
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the B2, B3, B5, B10, C1, and C2 specifications, and
+the recorded check results.
 
 ## Corrections
 
@@ -121,4 +133,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
