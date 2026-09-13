@@ -147,15 +147,14 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-008 integrated; Leonardo result review
+## Current task — STEP-008 accepted; STEP-009 plan pending approval
 
-STEP-007 is accepted. STEP-008 (PI system) is implemented, independently
-reviewed with no blocker or required finding, integrated on `main`, and fully
-verified. The current step record is
-`docs/development/steps/STEP-008-pi-system.md`. This step is invisible, so the
-next permitted action is Leonardo's short result review instead of direct play,
-followed by explicit acceptance. STEP-009 is not authorized. The earlier block
-questions and session records further down are preserved as history.
+STEP-008 (PI system) is accepted by Leonardo on 2026-09-13 after his result
+review. The next permitted action is the exact STEP-009 plan (events and
+deadlines), presented for Leonardo's approval. STEP-009 is not authorized
+until that approval. The previous step record is
+`docs/development/steps/STEP-008-pi-system.md`. The earlier block questions
+and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

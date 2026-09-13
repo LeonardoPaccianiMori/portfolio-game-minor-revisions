@@ -35,6 +35,23 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-008 PI system
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-008 under the
+approved plan. It added PI request application, the meeting action, the five
+complicity actions with the approved baselines and permanent flags, the shared
+action-slot spend, the fellowship revert edit, the A3 baseline table, and the
+PI tests; it integrated on `main` and recorded the acceptance. Evidence:
+`docs/development/steps/STEP-008-pi-system.md`; commits `67ffe3d`, `8fa5770`,
+`81a0f77`, `13477bb`, `2ccd750`, `15ce77d`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: the completed
+independent review (a first attempt was cancelled before producing a result)
+found no blocker and no required finding, and recorded six advisories with
+owners.
+
 ### 2026-09-13 — STEP-007 fellowship track
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
