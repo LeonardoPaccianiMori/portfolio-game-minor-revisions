@@ -147,16 +147,16 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-004 integrated; Leonardo result review
+## Current task — STEP-004 accepted; STEP-005 plan pending approval
 
-STEP-003 is accepted. STEP-004 (persistence skeleton) is implemented,
-independently reviewed with no blocker, corrected, re-reviewed clean,
-integrated on `main`, and fully verified. The current step record is
-`docs/development/steps/STEP-004-persistence-skeleton.md`. This step is
-invisible, so the next permitted action is Leonardo's short result review
-instead of direct play, followed by explicit acceptance. STEP-005 is not
-authorized. The earlier block questions and session records further down are
-preserved as history.
+STEP-004 (persistence skeleton) is accepted by Leonardo on 2026-09-13 after his
+result review. The next permitted action is the exact STEP-005 plan (week loop
+and resources), presented for Leonardo's approval, including the carried
+reconciliations for the `rest` duplication, the action-versus-week wording, and
+the initial meter values. STEP-005 is not authorized until that approval. The
+previous step record is
+`docs/development/steps/STEP-004-persistence-skeleton.md`. The earlier block
+questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

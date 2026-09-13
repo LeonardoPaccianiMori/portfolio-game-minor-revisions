@@ -35,6 +35,29 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — STEP-004 persistence skeleton
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-004 under the
+approved plan. It added the local database, the validating campaign store with
+guarded backup rotation, whole-record load outcomes, settings, clear-all-data,
+the carried state-validation bounds, and the unit and browser tests; it applied
+the required R-1 correction, integrated on `main`, and recorded the acceptance.
+Evidence: `docs/development/steps/STEP-004-persistence-skeleton.md`; commits
+`797d418`, `fad8e36`, `b359848`, `6ff1743`, `c7861db`, `b012d36`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/glm-5.3` at
+variant `max`, actual runtime model metadata not exposed: first independent
+review of the STEP-004 branch. It found no blocker, one required finding (R-1,
+missing invalid-handling coverage), and seven advisories; the correction fixed
+R-1, ADV-B, and ADV-C.
+
+OpenCode Go `mr-reviewer` subagent, fresh session, configured
+`opencode-go/glm-5.3` at variant `max`, actual runtime model metadata not
+exposed: re-review of the corrected result. It verified R-1, ADV-B, and ADV-C
+as fully applied with no blocker or required finding, and recorded two
+documentation advisories for STEP-034.
+
 ### 2026-09-13 — STEP-003 rules skeleton
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
