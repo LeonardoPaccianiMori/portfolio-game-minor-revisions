@@ -1,6 +1,7 @@
 # 07 — Content and Evaluation
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block A7).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block A7); revised
+2026-09-13 with the science-language rule.**
 
 ## Purpose
 
@@ -38,6 +39,19 @@ how it is stored and validated, and how we will know whether it works.
 - English only.
 - Plain comprehension is required. Insider recognition is rewarded, but it is
   never necessary.
+
+## Science language (approved 2026-09-13)
+
+- Required player-facing science text must be understandable to an
+  STEM-trained non-specialist: a physicist, chemist, or engineer follows the
+  objective, the result, and the choice without domain knowledge.
+- Define any specialised term on first use, in one plain sentence.
+- When precision and comprehension conflict, the required explanation chooses
+  comprehension; optional records may add technical nuance.
+- Requirement, evidence, and result names prefer plain words ("controls",
+  "repeats", "mechanism") over unglossed jargon.
+- Simplification never reverses a result, presents fiction as current science,
+  implies a real treatment, or exposes an actionable protocol.
 
 ## Evaluation (approved, with a caveat)
 

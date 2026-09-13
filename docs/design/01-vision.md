@@ -1,6 +1,7 @@
 # 01 — Vision and Experience Promise
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block A1).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block A1); revised
+2026-09-13 to state the cross-discipline audience.**
 
 ## Working title
 
@@ -33,9 +34,9 @@ recognition: "this is terrible, and it is exactly what I went through."
 ## Audience
 
 The primary audience is people who tried an academic career and left, who will
-recognise their experience in the game. Non-academic players must still
-understand everything required; insider knowledge rewards recognition but is
-never necessary.
+recognise their experience in the game. Non-academic players, including
+academics from other disciplines, must still understand everything required;
+insider knowledge rewards recognition but is never necessary.
 
 ## Tone and comedy
 

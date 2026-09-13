@@ -35,6 +35,14 @@ paths.
 
 ## Completed history
 
+### 2026-09-13 — Science-language rule
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: added the approved science-language rule to
+`docs/design/07-content-and-evaluation.md` and extended the audience line in
+`docs/design/01-vision.md` to include academics from other disciplines, with
+`D-039` in the decision log. No code or game rule changed.
+
 ### 2026-09-13 — STEP-005 week loop and resources
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
