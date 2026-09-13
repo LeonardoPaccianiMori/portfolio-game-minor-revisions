@@ -1,7 +1,7 @@
 ---
 id: STEP-008
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -133,11 +133,21 @@ slot advances the week exactly as an action does.
 
 ## Execution record
 
-Not yet available.
+- Base: `38ad52006190d4df07b91f2f539b6bab10f0f0d5`.
+- Branch: `work/step-008-pi-system`.
+- Implementation commit: `8fa57701e9a536f00eacadfbcdaa377674f8bcd1`
+  (`Add PI requests, meetings, and complicity`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 84 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the A2, A3, B3, B4, B10, C1, and C2 documents, and
+the recorded check results.
 
 ## Corrections
 
@@ -145,4 +155,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
