@@ -1,6 +1,7 @@
 # B5 — Persistence and Recovery
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block B5).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block B5); revised
+2026-09-13 with the development-save decision.**
 
 ## Database (approved)
 
@@ -43,6 +44,12 @@ No other browser storage is used for game data, and nothing leaves the machine.
 - Forward-only, versioned migrations.
 - An incompatible or unknown save is refused and preserved.
 - A content version change cannot silently reinterpret old facts.
+
+## Development saves (approved 2026-09-13)
+
+While the schema is incomplete, the state version stays 1 and saves are
+development-only: an outdated shape is refused safely, not migrated. Versioned
+migrations begin at the first release candidate and are owned by STEP-034.
 
 ## Clear data (approved)
 

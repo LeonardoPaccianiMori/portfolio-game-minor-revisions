@@ -46,6 +46,27 @@ export type {
   QuitCommand,
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
+export {
+  PAPER_EVIDENCE_STATES,
+  PAPER_REQUIREMENT_IDS,
+  PAPER_REQUIREMENT_STATES,
+  applyPaperEdit,
+  assignEvidence,
+  createInitialPaper,
+  validatePaper,
+} from './paper.ts';
+export type {
+  PaperEdit,
+  PaperEditFailure,
+  PaperEditOk,
+  PaperEditOutcome,
+  PaperEvidence,
+  PaperEvidenceState,
+  PaperRequirement,
+  PaperRequirementId,
+  PaperRequirementState,
+  PaperState,
+} from './paper.ts';
 export { createPrng } from './prng.ts';
 export type { Prng } from './prng.ts';
 export {

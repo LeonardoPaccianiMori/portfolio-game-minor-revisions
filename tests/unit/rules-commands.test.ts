@@ -4,7 +4,6 @@ import { createInitialState, dispatch } from '../../src/rules/index.ts';
 import type { Command } from '../../src/rules/index.ts';
 
 const UNIMPLEMENTED_COMMANDS: readonly Command[] = [
-  { type: 'assignEvidence', evidenceId: 'paper.evidence.sequence.1', track: 'both' },
   { type: 'answerRequirement', requirementId: 'fellowship.requirement.impact', answer: 'inflate' },
   { type: 'comply', action: 'take-credit' },
   { type: 'meetPI' },

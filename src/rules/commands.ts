@@ -82,7 +82,8 @@ export type CommandRejectionReason =
   | 'no-actions-left'
   | 'insufficient-energy'
   | 'week-lost'
-  | 'contract-finished';
+  | 'contract-finished'
+  | 'duplicate-evidence';
 
 export interface PresentationEffect {
   readonly kind: string;

@@ -1,3 +1,6 @@
+import { createInitialPaper, validatePaper } from './paper.ts';
+import type { PaperState } from './paper.ts';
+
 export const CAMPAIGN_STATE_VERSION = 1;
 
 export const ENERGY_MIN = 0;
@@ -24,6 +27,7 @@ export interface CampaignState {
   readonly standing: number;
   readonly integrity: number;
   readonly relationships: Readonly<Record<RelationshipId, number>>;
+  readonly paper: PaperState;
   readonly history: readonly string[];
   readonly flags: Readonly<Record<string, boolean>>;
 }
@@ -60,6 +64,7 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'standing',
   'integrity',
   'relationships',
+  'paper',
   'history',
   'flags',
 ]);
@@ -82,6 +87,7 @@ export const createInitialState = (seed: number): CampaignState => {
       dario: 50,
       mara: 50,
     },
+    paper: createInitialPaper(),
     history: [],
     flags: {},
   };
@@ -165,6 +171,8 @@ export const validateState = (value: unknown): StateValidation => {
   if (!isRecord(flags) || !Object.values(flags).every((flag) => typeof flag === 'boolean')) {
     issues.push('flags must be a record of booleans');
   }
+
+  issues.push(...validatePaper(value['paper']));
 
   if (issues.length > 0) {
     return { ok: false, issues };
