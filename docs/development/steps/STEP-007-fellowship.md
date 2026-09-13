@@ -147,6 +147,13 @@ record-only: a test file outside the planned owned paths), and five advisories.
 
 A fresh independent review covers the corrected result before integration.
 
+Re-review on 2026-09-13 by a fresh `mr-reviewer` session (`opencode-go/glm-5.3`,
+variant `max`): R-1 and R-2 are genuinely and completely applied; no blocker
+and no required finding remains. Three low-severity advisories were recorded
+(RE-ADV-1: the check evidence is refreshed at integration; RE-ADV-2: two
+narrow test-depth cases fold into ADV-3; RE-ADV-3: the STEP-007 log entries
+and the log date fix belong to the acceptance commit).
+
 ## Corrections
 
 Applied before integration from the first independent review:
@@ -170,6 +177,13 @@ Applied before integration from the first independent review:
   next B3 touch.
 - **ADV-5:** the AI-use log's "Last updated" line is stale; corrected in the
   acceptance commit because the log is a prohibited path in this step.
+- **RE-ADV-1:** the execution record's check evidence is refreshed with the
+  integration verification on `main`.
+- **RE-ADV-2:** two narrow test-depth cases (answered feasibility staling,
+  answered independence surviving) fold into ADV-3 at the next rules-test
+  touch.
+- **RE-ADV-3:** the acceptance commit adds the STEP-007 AI-use entries and
+  fixes the log date.
 
 ## Leonardo decision
 
