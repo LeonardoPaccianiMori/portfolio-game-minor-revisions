@@ -1,7 +1,15 @@
 export { createCampaignStore } from './campaign-store.ts';
 export type { CampaignLoadOutcome, CampaignStore } from './campaign-store.ts';
 export { clearAllData } from './clear.ts';
-export { DATABASE_NAME, DATABASE_VERSION, STORE_NAMES, openCampaignDatabase } from './database.ts';
+export {
+  BACKUP_KEY,
+  CAMPAIGN_KEY,
+  DATABASE_NAME,
+  DATABASE_VERSION,
+  SETTINGS_KEY,
+  STORE_NAMES,
+  openCampaignDatabase,
+} from './database.ts';
 export type { CampaignDatabase, StoreName } from './database.ts';
 export { createPersistence } from './persistence.ts';
 export type { Persistence } from './persistence.ts';

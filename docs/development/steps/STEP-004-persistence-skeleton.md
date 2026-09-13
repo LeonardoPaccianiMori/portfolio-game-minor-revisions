@@ -116,20 +116,46 @@ without an isolation benefit.
 - `npm run check`: passed; typecheck, ESLint, Prettier, 42 unit tests, and the
   content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
-- `npm run test:e2e`: 9 passed (start page, controlled startup failure, and the
-  real IndexedDB persistence round-trip, backup, settings, and clear in
-  Chromium, Firefox, and WebKit).
+- `npm run test:e2e`: 9 passed before the R-1 correction and 12 after it
+  (start page, controlled startup failure, the persistence round-trip, backup,
+  settings, clear, and invalid-data handling) in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the B2, B3, B5, B10, C1, and C2 specifications, and
-the recorded check results.
+First review on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant
+`max`), a different model family from the primary: no blocker, one required
+correction (R-1, applied), and seven advisories (ADV-A to ADV-G; B and C fixed
+in the correction, A and D to G recorded with owners).
+
+A fresh independent review covers the corrected result before integration.
 
 ## Corrections
 
-None yet.
+Applied before integration from the first independent review:
+
+- **R-1 (required):** the browser test now plants a corrupt campaign record and
+  asserts that `load()` returns `invalid` with issues, that `save()` refuses an
+  invalid state, and that the corrupt record never replaces the backup. The
+  invalid branch and the save-refusal path are now covered.
+- **ADV-B:** `save()` validates the current record before rotating it into the
+  backup, so corrupt data cannot displace the last known good state.
+- **ADV-C:** the raw IndexedDB handle was removed from the public `Persistence`
+  interface, keeping one-owner discipline.
+- **ADV-A:** the STEP-003 ADV-4 tests (PRNG resume and missing-field edge
+  cases) move explicitly to STEP-005; this step's rules touch was limited to
+  the carried ADV-3 validation bounds.
+- **ADV-D:** recorded decisions: the campaign is stored as a plain state object
+  through IndexedDB structured clone, not a JSON string; the save spans
+  separate transactions, so rotation is not atomic; atomicity belongs to
+  STEP-034.
+- **ADV-E:** ownership of the `meta` store contents (schema version, content
+  version, save timestamps) is assigned to STEP-034.
+- **ADV-F:** settings intentionally tolerate unknown keys for forward
+  compatibility, while the versioned campaign state stays strict. The two
+  policies are deliberate and recorded here.
+- **ADV-G:** the acceptance bookkeeping (cost snapshot, process file, AI-use
+  log, decision log) is completed in the acceptance commit, as before.
 
 ## Leonardo decision
 

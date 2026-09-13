@@ -37,7 +37,7 @@ export const createCampaignStore = (database: IDBPDatabase<CampaignDatabase>): C
     }
 
     const current = await database.get('campaign', CAMPAIGN_KEY);
-    if (current !== undefined) {
+    if (current !== undefined && validateState(current).ok) {
       await database.put('backup', current, BACKUP_KEY);
     }
 
