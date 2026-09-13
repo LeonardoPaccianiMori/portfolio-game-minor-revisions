@@ -1,7 +1,7 @@
 ---
 id: STEP-010
 type: development-step
-status: plan-approved
+status: implemented
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -177,7 +177,27 @@ hold it.
 
 ## Execution record
 
-Not yet available.
+- Base: `b9d7f8c6bb58ae0cf3942252d486de5fbaa5c13f`.
+- Branch: `work/step-010-experiments-evidence`.
+- Plan checkpoint: `c2c925c` (`Approve STEP-010 experiments and evidence
+plan`), including this record and the roadmap amendment.
+- Implementation commit: `4dae5198e60b36c7951a89a1e4aeb776d1c22f69`
+  (`Add experiments and evidence flow`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 124 unit tests (17
+  new), and the content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the assignment state shape (`ExperimentAssignment` and
+  `ExperimentState`) lives in `campaign-state.ts` with the other state shapes,
+  while `experiments.ts` owns the step counts and the start, advance, and
+  write-up rules; the shared work-spend helper lives in `week-loop.ts`. No
+  path outside the approved list changed.
+- Limitations: no interface consumes the new commands yet, so the browser
+  tests do not exercise the loop; the slice baselines are not yet balanced by
+  a full run, which the first-playable and slice gates own; the new message
+  ids have no content until the content phase; events now number eight, and a
+  full-run exercise of the week-7 reframe awaits the first playable.
 
 ## Independent review
 
@@ -190,4 +210,5 @@ None yet.
 ## Leonardo decision
 
 Plan approved 2026-09-13, including the roadmap amendment and the baselines.
-Implementation, testing, and acceptance pending.
+Implementation complete on 2026-09-13; independent review and Leonardo's
+result review pending.

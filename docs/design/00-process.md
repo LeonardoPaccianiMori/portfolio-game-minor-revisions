@@ -147,16 +147,17 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-010 plan approved; implementation starting
+## Current task — STEP-010 implementation complete; independent review pending
 
-STEP-009 (events and deadlines) is accepted. On 2026-09-13 Leonardo approved
-the STEP-010 plan (experiments and evidence flow) and the roadmap amendment
-that inserts it, shifting every later step by one; the review and panel step is
-now STEP-011. Implementation runs on branch `work/step-010-experiments-evidence`
-from base `b9d7f8c`. The current step record is
-`docs/development/steps/STEP-010-experiments-evidence.md`. The next permitted
-action after acceptance is the exact STEP-011 plan, presented for Leonardo's
-approval. The earlier block questions and session records further down are
+On 2026-09-13 Leonardo approved the STEP-010 plan (experiments and evidence
+flow) and the roadmap amendment that inserts it, shifting every later step by
+one; the review and panel step is now STEP-011. STEP-010 is implemented on
+branch `work/step-010-experiments-evidence` from base `b9d7f8c`, and
+`npm run check`, `npm run build`, and `npm run test:e2e` passed. The current
+step record is `docs/development/steps/STEP-010-experiments-evidence.md`. The
+next permitted action is the primary pre-review audit, then one fresh
+independent review by `mr-reviewer` before integration and Leonardo's result
+review. The earlier block questions and session records further down are
 preserved as history.
 
 ### C2 questions (answered and documented)
