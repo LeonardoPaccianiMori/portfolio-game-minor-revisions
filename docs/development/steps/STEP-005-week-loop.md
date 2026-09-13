@@ -139,13 +139,27 @@ colleague 0, rest +2. Start 5, +1 each normal week boundary, cap 5.
 
 ## Independent review
 
-Pending. The focused reviewer packet is the step record, the base and head
-commits, the complete diff, the A2, A3, B2, B3, B10, C1, and C2 documents, and
-the recorded check results.
+Reviewed on 2026-09-13 by `mr-reviewer` (`opencode-go/glm-5.3`, variant `max`),
+a different model family from the primary: no blocker and no required finding.
+Three advisories were recorded with owners (A-1 at the next B3 doc touch,
+A-2 as an input to STEP-011, A-3 as a B5 and STEP-034 ownership note).
 
 ## Corrections
 
-None yet.
+No code or document correction was required. Advisories recorded from the
+independent review:
+
+- **A-1:** B3's `advanceWeek` row can read as restoring energy in both
+  branches; the lost-week branch does not recover. Tighten the wording at the
+  next B3 doc touch.
+- **A-2:** week-12 terminal corners: a week-12 crash leaves the lost-week
+  message while `advanceWeek` refuses with `contract-finished`, and exhausting
+  week 12 through actions does not write the `contract:closed` history marker.
+  Recorded as an input to the STEP-011 ending-resolver plan.
+- **A-3:** the state version stays 1 while the shape gained `crashed`, so
+  pre-STEP-005 saves now fail validation safely. The version and migration
+  ownership decision is recorded for B5 and STEP-034 before any real save can
+  outlive a schema change.
 
 ## Leonardo decision
 
