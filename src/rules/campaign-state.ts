@@ -7,6 +7,7 @@ export const WEEK_MIN = 1;
 export const WEEK_MAX = 12;
 export const METER_MIN = 0;
 export const METER_MAX = 100;
+export const UINT32_MAX = 4294967295;
 
 export type RelationshipId = 'voss' | 'dario' | 'mara';
 
@@ -47,6 +48,20 @@ const isInteger = (value: unknown): value is number =>
 const isMeter = (value: unknown): value is number =>
   isInteger(value) && value >= METER_MIN && value <= METER_MAX;
 
+const STATE_KEYS: ReadonlySet<string> = new Set([
+  'version',
+  'seed',
+  'rngState',
+  'week',
+  'actionsLeft',
+  'energy',
+  'standing',
+  'integrity',
+  'relationships',
+  'history',
+  'flags',
+]);
+
 export const createInitialState = (seed: number): CampaignState => {
   const normalizedSeed = seed >>> 0;
 
@@ -76,14 +91,20 @@ export const validateState = (value: unknown): StateValidation => {
 
   const issues: string[] = [];
 
+  for (const key of Object.keys(value)) {
+    if (!STATE_KEYS.has(key)) {
+      issues.push(`unexpected state field: ${key}`);
+    }
+  }
+
   if (value['version'] !== CAMPAIGN_STATE_VERSION) {
     issues.push('state version is unknown');
   }
 
   for (const field of ['seed', 'rngState'] as const) {
     const candidate = value[field];
-    if (!isInteger(candidate) || candidate < 0) {
-      issues.push(`${field} must be a non-negative integer`);
+    if (!isInteger(candidate) || candidate < 0 || candidate > UINT32_MAX) {
+      issues.push(`${field} must be an unsigned 32-bit integer`);
     }
   }
 
@@ -118,6 +139,12 @@ export const validateState = (value: unknown): StateValidation => {
     for (const id of RELATIONSHIP_IDS) {
       if (!isMeter(relationships[id])) {
         issues.push(`relationships.${id} is out of range`);
+      }
+    }
+
+    for (const key of Object.keys(relationships)) {
+      if (!RELATIONSHIP_IDS.includes(key as RelationshipId)) {
+        issues.push(`unexpected relationship: ${key}`);
       }
     }
   }
