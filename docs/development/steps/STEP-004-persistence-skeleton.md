@@ -1,7 +1,7 @@
 ---
 id: STEP-004
 type: development-step
-status: technical-review
+status: leonardo-review
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -120,6 +120,8 @@ without an isolation benefit.
   (start page, controlled startup failure, the persistence round-trip, backup,
   settings, clear, and invalid-data handling) in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `c7861db` by fast-forward, and `npm run verify`
+  passed on `main`.
 
 ## Independent review
 
