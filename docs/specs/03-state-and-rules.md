@@ -10,6 +10,7 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3).**
 | `seed`          | Saved campaign seed                                      |
 | `week`          | Current week, 1–12                                       |
 | `actionsLeft`   | Actions remaining in the current week                    |
+| `crashed`       | Whether the current week is lost to a crash              |
 | `energy`        | Energy segments, 0–5                                     |
 | `standing`      | Up-or-out meter                                          |
 | `integrity`     | Hidden complicity measure                                |
@@ -26,16 +27,16 @@ instances, or browser handles.
 
 | Command                                       | Effect                                                                                |
 | --------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `performAction { action }`                    | Spend a week and energy on one action                                                 |
+| `performAction { action }`                    | Spend one of the week's three action slots and its energy on one action               |
 | `assignEvidence { evidenceId, track }`        | Assign a result to the paper, the fellowship, or both                                 |
 | `answerRequirement { requirementId, answer }` | Answer a fellowship requirement honestly, inflate, fabricate, imitate, or leave blank |
 | `comply { action }`                           | Take one of the five complicity actions                                               |
 | `meetPI`                                      | Enter the PI meeting flow                                                             |
-| `rest`                                        | Spend the week restoring energy                                                       |
 | `quit`                                        | Confirm and end the run                                                               |
-| `advanceWeek`                                 | Close the week: restore energy, tick deadlines, evaluate events                       |
+| `advanceWeek`                                 | End the week early, or consume a lost week; reset slots and restore energy            |
 
-Commands are plain data and are validated before execution.
+Commands are plain data and are validated before execution. Resting is
+`performAction { action: 'rest' }`; there is no separate rest command.
 
 ## Results (approved)
 

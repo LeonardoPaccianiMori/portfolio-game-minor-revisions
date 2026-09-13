@@ -56,4 +56,15 @@ describe('seeded PRNG', () => {
     expect(prng.state()).not.toBe(before);
     expect(Number.isInteger(prng.state())).toBe(true);
   });
+
+  it('resumes from its serialized state', () => {
+    const first = createPrng(21);
+    first.next();
+    first.next();
+
+    const resumed = createPrng(first.state());
+
+    expect(resumed.next()).toBe(first.next());
+    expect(resumed.state()).toBe(first.state());
+  });
 });

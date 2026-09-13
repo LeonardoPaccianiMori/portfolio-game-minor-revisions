@@ -64,4 +64,18 @@ describe('campaign state', () => {
 
     expect(result.ok).toBe(false);
   });
+
+  it('rejects null and missing fields', () => {
+    expect(validateState(null).ok).toBe(false);
+
+    const missing = { ...createInitialState(1) } as Record<string, unknown>;
+    delete missing['energy'];
+
+    const result = validateState(missing);
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.issues).toContain('energy is out of range');
+    }
+  });
 });

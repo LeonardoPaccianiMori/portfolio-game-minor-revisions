@@ -16,16 +16,19 @@ what to sacrifice.
 
 | Resource      | Visibility                  | Behaviour                                                      |
 | ------------- | --------------------------- | -------------------------------------------------------------- |
-| Time (weeks)  | Visible                     | Twelve turns; every action costs one week                      |
+| Time (weeks)  | Visible                     | Twelve turns, each with three action slots                     |
 | Energy        | Visible, five segments      | Spent by actions; restored by rest and weekends; crash at zero |
 | Standing      | Visible                     | Up-or-out meter; ejection with warning                         |
 | Integrity     | Hidden, with clear feedback | Changed by complicity actions; drives endings                  |
 | Relationships | Visible as trust            | Permanent rupture possible                                     |
 | Money         | Event-driven                | Recurring rent pressure forces a choice                        |
 
+Starting baseline: energy 5, standing 50, integrity 100, and each relationship 50. These are the approved slice baseline and may be tuned by evidence.
+
 ## Action costs (approved shape; baseline numbers proposed)
 
-Every action costs one week. Energy costs differ by action:
+Every action consumes one of the week's three action slots. Energy costs differ
+by action:
 
 | Action                          | Energy |
 | ------------------------------- | -----: |
@@ -45,6 +48,8 @@ at five and cannot exceed five. The baseline is tuned in the slice.
 - Five segments, shown plainly.
 - At zero, the player crashes: the next week is lost, and one consequence
   triggers — evidence goes stale, standing falls, or a relationship strains.
+- The baseline consequence is a standing loss of 10 until the evidence and
+  relationship variants arrive at STEP-006 and STEP-008.
 - A crash is not death and does not end the run by itself, but a second crash
   in the same act can end it as a burnout ending.
 - The game never hides an approaching crash: the player sees the energy level

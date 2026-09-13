@@ -58,10 +58,6 @@ export interface MeetPiCommand {
   readonly type: 'meetPI';
 }
 
-export interface RestCommand {
-  readonly type: 'rest';
-}
-
 export interface QuitCommand {
   readonly type: 'quit';
 }
@@ -76,11 +72,17 @@ export type Command =
   | AnswerRequirementCommand
   | ComplyCommand
   | MeetPiCommand
-  | RestCommand
   | QuitCommand
   | AdvanceWeekCommand;
 
-export type CommandRejectionReason = 'not-implemented' | 'invalid-state' | 'invalid-command';
+export type CommandRejectionReason =
+  | 'not-implemented'
+  | 'invalid-state'
+  | 'invalid-command'
+  | 'no-actions-left'
+  | 'insufficient-energy'
+  | 'week-lost'
+  | 'contract-finished';
 
 export interface PresentationEffect {
   readonly kind: string;

@@ -19,6 +19,7 @@ export interface CampaignState {
   readonly rngState: number;
   readonly week: number;
   readonly actionsLeft: number;
+  readonly crashed: boolean;
   readonly energy: number;
   readonly standing: number;
   readonly integrity: number;
@@ -54,6 +55,7 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'rngState',
   'week',
   'actionsLeft',
+  'crashed',
   'energy',
   'standing',
   'integrity',
@@ -71,6 +73,7 @@ export const createInitialState = (seed: number): CampaignState => {
     rngState: normalizedSeed,
     week: WEEK_MIN,
     actionsLeft: ACTIONS_PER_WEEK,
+    crashed: false,
     energy: ENERGY_MAX,
     standing: 50,
     integrity: METER_MAX,
@@ -118,6 +121,10 @@ export const validateState = (value: unknown): StateValidation => {
     value['actionsLeft'] > ACTIONS_PER_WEEK
   ) {
     issues.push('actionsLeft is out of range');
+  }
+
+  if (typeof value['crashed'] !== 'boolean') {
+    issues.push('crashed must be a boolean');
   }
 
   if (!isInteger(value['energy']) || value['energy'] < ENERGY_MIN || value['energy'] > ENERGY_MAX) {

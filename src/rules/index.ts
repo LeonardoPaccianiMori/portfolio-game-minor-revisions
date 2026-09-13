@@ -44,8 +44,13 @@ export type {
   PerformActionCommand,
   PresentationEffect,
   QuitCommand,
-  RestCommand,
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
 export { createPrng } from './prng.ts';
 export type { Prng } from './prng.ts';
+export {
+  ACTION_ENERGY_COSTS,
+  CRASH_STANDING_LOSS,
+  advanceWeek,
+  performAction,
+} from './week-loop.ts';
