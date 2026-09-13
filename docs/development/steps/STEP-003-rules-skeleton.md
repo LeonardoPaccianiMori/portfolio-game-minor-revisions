@@ -1,7 +1,7 @@
 ---
 id: STEP-003
 type: development-step
-status: technical-review
+status: leonardo-review
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -119,6 +119,8 @@ without an isolation benefit.
 - `npm run test:e2e`: 6 passed in Chromium, Firefox, and WebKit with no
   external request.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `37dae6e` by fast-forward, and `npm run verify`
+  passed on `main`.
 
 ## Independent review
 
