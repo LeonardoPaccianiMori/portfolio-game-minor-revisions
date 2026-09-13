@@ -214,6 +214,13 @@ the approved plan and baselines, owned paths, purity and atomicity, the event
 flags and fixed order, the persistence decision, and the record. Five
 advisories were recorded.
 
+A fresh re-review by the same configured reviewer completed the same day after
+the corrections: **no blocker and no required finding**. It re-ran the checks
+at the corrections head (128 unit tests, 12 browser tests), verified every
+R-1 test and the R-2 record fix against the source records, and confirmed that
+the corrections touched only owned test files and the step record. It added
+two advisories (ADV-R1 and ADV-R2).
+
 ## Corrections
 
 - **R-1 (required):** three plan-promised test areas were missing: a
@@ -251,9 +258,19 @@ Advisories recorded from the independent review:
   fellowship side of the week-7 reframe, more `validateExperiments` branches,
   and a dispatch-level multi-week playthrough (awaiting the first playable).
 
+Advisories recorded from the re-review:
+
+- **ADV-R1:** the R-2 carry line quotes STEP-009 ADV-3's "before STEP-015"
+  anchor, but under the roadmap amendment the desk-board step that surfaces
+  request outcomes is now STEP-016 (old 015). The quote is historical; the
+  next record or plan touch should note the renumbered anchor.
+- **ADV-R2:** `assignEvidence`'s freeness (no slot or energy spend) is only
+  structural; add a direct assertion at the next test-touching cadence.
+
 ## Leonardo decision
 
 Plan approved 2026-09-13, including the roadmap amendment and the baselines.
-Implementation complete on 2026-09-13; independent review returned no blocker
-and two required corrections, now applied and awaiting re-review. Leonardo's
+Implementation complete on 2026-09-13; the independent review returned no
+blocker and two required corrections, which were applied and passed a fresh
+re-review with no blocker and no required finding. Integration and Leonardo's
 result review pending.
