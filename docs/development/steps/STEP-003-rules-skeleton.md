@@ -1,7 +1,7 @@
 ---
 id: STEP-003
 type: development-step
-status: plan-approved
+status: technical-review
 phase: 1
 gate: foundation
 created: 2026-09-13
@@ -109,11 +109,22 @@ without an isolation benefit.
 
 ## Execution record
 
-Not yet available.
+- Base: `5f8f3f72913185f75dfaf1392d25f623a97273f4`.
+- Branch: `work/step-003-rules-skeleton`.
+- Implementation commit: `c93782de6d355ad66ea702a9b8a931de2a5b5fd3`
+  (`Add deterministic rules skeleton`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 34 unit tests, and the
+  content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 6 passed in Chromium, Firefox, and WebKit with no
+  external request.
+- `git diff --check` and `git status`: clean at the branch head.
 
 ## Independent review
 
-Not yet available.
+Pending. The focused reviewer packet is the step record, the base and head
+commits, the complete diff, the B2, B3, B10, C1, and C2 specifications, and the
+recorded check results.
 
 ## Corrections
 
@@ -121,4 +132,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved 2026-09-13. Implementation, testing, and acceptance pending.
+Plan approved 2026-09-13. Implementation and checks complete; independent
+review, Leonardo result review, and acceptance pending.
