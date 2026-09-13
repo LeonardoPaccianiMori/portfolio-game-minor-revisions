@@ -1,7 +1,7 @@
 ---
 id: STEP-007
 type: development-step
-status: technical-review
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -137,6 +137,9 @@ overhead without an isolation benefit.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the branch head.
+- Integrated on local `main` at `e27f4ba` by fast-forward, and `npm run verify`
+  passed on `main` (72 unit tests, build, 12 browser tests), refreshing the
+  post-correction evidence.
 
 ## Independent review
 
