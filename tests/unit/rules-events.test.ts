@@ -35,32 +35,33 @@ describe('authored events', () => {
     expect(result.state.pendingEvent).toBeNull();
   });
 
-  it('fires the funding review when the week advances to week 2', () => {
+  it('fires the funding review when the week advances to week 4', () => {
     let state = createInitialState(1);
 
     for (let index = 0; index < 3; index += 1) {
-      const result = dispatch(state, { type: 'performAction', action: 'rest' });
+      const result = dispatch(state, { type: 'advanceWeek' });
       expect(result.ok).toBe(true);
       if (result.ok) {
         state = result.state;
       }
     }
 
-    expect(state.week).toBe(2);
+    expect(state.week).toBe(4);
     expect(state.fellowship.requirements.map((requirement) => requirement.id)).toEqual([
       'impact',
       'feasibility',
       'independence',
       'support',
     ]);
+    expect(state.flags['event.requests-first']).toBe(true);
     expect(state.flags['event.funding-review']).toBe(true);
     expect(state.pendingEvent).toBeNull();
   });
 
   it('fires each event once and never repeats it', () => {
-    const first = evaluateEvents({ ...createInitialState(1), week: 2 });
+    const first = evaluateEvents({ ...createInitialState(1), week: 4 });
 
-    expect(first.fired).toEqual(['funding-review']);
+    expect(first.fired).toContain('funding-review');
     expect(first.state.flags['event.funding-review']).toBe(true);
 
     const second = evaluateEvents(first.state);
@@ -72,7 +73,7 @@ describe('authored events', () => {
   it('keeps adding the funding review requirements when one already exists', () => {
     const state: CampaignState = {
       ...createInitialState(1),
-      week: 2,
+      week: 4,
       fellowship: {
         ...createInitialState(1).fellowship,
         requirements: [{ id: 'impact', state: 'open', answer: null }],
@@ -84,7 +85,7 @@ describe('authored events', () => {
 
     expect(ids).toEqual(['impact', 'feasibility', 'independence', 'support']);
     expect(result.state.history).not.toContain('pi:add:fellowship:impact');
-    expect(result.fired).toEqual(['funding-review']);
+    expect(result.fired).toContain('funding-review');
   });
 
   it('fires the catalogue in fixed order', () => {
@@ -97,17 +98,21 @@ describe('authored events', () => {
     const result = evaluateEvents(state);
 
     expect(result.fired).toEqual([
-      'funding-review',
       'requests-first',
+      'funding-review',
       'requests-method',
       'rent',
       'contamination',
       'requests-impact',
       'fellowship-deadline',
+      'fellowship-panel',
       'contract-decision',
+      'journal-review',
     ]);
     expect(result.state.flags['contract.closed']).toBe(true);
     expect(result.state.flags['event.fellowship.missed']).toBe(true);
+    expect(result.state.flags['panel.rejected']).toBe(true);
+    expect(result.state.paper.outcome).toBe('not-submitted');
   });
 
   it('leaves the contract open until the final week is spent', () => {
@@ -167,22 +172,23 @@ describe('PI request beats', () => {
   it('adds the first paper requests in week 3', () => {
     const result = evaluateEvents({ ...createInitialState(1), week: 3 });
 
-    expect(result.fired).toEqual(['funding-review', 'requests-first']);
+    expect(result.fired).toEqual(['requests-first']);
     expect(result.state.paper.requirements).toEqual([
       { id: 'controls', state: 'open' },
       { id: 'replicates', state: 'open' },
     ]);
   });
 
-  it('adds the method request in week 4', () => {
+  it('adds the funding review and the method request in week 4', () => {
     const result = evaluateEvents({ ...createInitialState(1), week: 4 });
 
-    expect(result.fired).toEqual(['funding-review', 'requests-first', 'requests-method']);
+    expect(result.fired).toEqual(['requests-first', 'funding-review', 'requests-method']);
     expect(result.state.paper.requirements.map((requirement) => requirement.id)).toEqual([
       'controls',
       'replicates',
       'mechanism',
     ]);
+    expect(result.state.flags['event.funding-review']).toBe(true);
   });
 
   it('reframes and adds the final requests in week 7', () => {
@@ -200,6 +206,7 @@ describe('PI request beats', () => {
         framing: 'initial',
         revision: 0,
         requirements: [{ id: 'controls', state: 'satisfied' }],
+        outcome: 'pending',
       },
       evidence: [
         {

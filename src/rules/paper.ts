@@ -10,6 +10,16 @@ export type PaperRequirementId = (typeof PAPER_REQUIREMENT_IDS)[number];
 export const PAPER_REQUIREMENT_STATES = ['open', 'satisfied', 'stale'] as const;
 export type PaperRequirementState = (typeof PAPER_REQUIREMENT_STATES)[number];
 
+export const PAPER_OUTCOMES = [
+  'pending',
+  'accept',
+  'minor-revision',
+  'major-revision',
+  'reject',
+  'not-submitted',
+] as const;
+export type PaperOutcome = (typeof PAPER_OUTCOMES)[number];
+
 export interface PaperRequirement {
   readonly id: PaperRequirementId;
   readonly state: PaperRequirementState;
@@ -19,6 +29,7 @@ export interface PaperState {
   readonly framing: string;
   readonly revision: number;
   readonly requirements: readonly PaperRequirement[];
+  readonly outcome: PaperOutcome;
 }
 
 export interface PaperEditOk {
@@ -48,6 +59,7 @@ export const createInitialPaper = (): PaperState => ({
   framing: 'initial',
   revision: 0,
   requirements: [],
+  outcome: 'pending',
 });
 
 export const validatePaper = (value: unknown): readonly string[] => {
@@ -63,6 +75,10 @@ export const validatePaper = (value: unknown): readonly string[] => {
 
   if (!isInteger(value['revision']) || value['revision'] < 0) {
     issues.push('paper.revision is out of range');
+  }
+
+  if (!PAPER_OUTCOMES.includes(value['outcome'] as PaperOutcome)) {
+    issues.push('paper.outcome is unknown');
   }
 
   const requirements = value['requirements'];

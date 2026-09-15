@@ -58,6 +58,7 @@ describe('PI requests', () => {
         framing: 'initial',
         revision: 0,
         requirements: [{ id: 'controls', state: 'satisfied' }],
+        outcome: 'pending',
       },
       fellowship: {
         framing: 'initial',
@@ -102,6 +103,7 @@ describe('PI requests', () => {
         framing: 'initial',
         revision: 1,
         requirements: [{ id: 'controls', state: 'stale' }],
+        outcome: 'pending',
       }),
       { kind: 'revert-paper', requirementId: 'controls' },
     );

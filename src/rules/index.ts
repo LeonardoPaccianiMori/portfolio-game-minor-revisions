@@ -109,6 +109,7 @@ export type { ReframeFailure, ReframeOk, ReframeOutcome } from './manuscript.ts'
 export { COMPLICITY_EFFECTS, applyPiRequest, comply, meetPI } from './pi.ts';
 export type { PiRequest, PiRequestFailure, PiRequestOk, PiRequestOutcome } from './pi.ts';
 export {
+  PAPER_OUTCOMES,
   PAPER_REQUIREMENT_IDS,
   PAPER_REQUIREMENT_STATES,
   applyPaperEdit,
@@ -120,11 +121,23 @@ export type {
   PaperEditFailure,
   PaperEditOk,
   PaperEditOutcome,
+  PaperOutcome,
   PaperRequirement,
   PaperRequirementId,
   PaperRequirementState,
   PaperState,
 } from './paper.ts';
+export {
+  REVIEWER_IDS,
+  REVIEW_RECOMMENDATIONS,
+  decideVerdict,
+  downgradeVerdict,
+  recommendReview,
+  resolvePanel,
+  resolveReview,
+  scorePanelAnswers,
+} from './outcomes.ts';
+export type { OutcomeResolution, ReviewRecommendation, ReviewerId } from './outcomes.ts';
 export { createPrng } from './prng.ts';
 export type { Prng } from './prng.ts';
 export {

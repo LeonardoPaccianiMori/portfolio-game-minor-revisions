@@ -202,6 +202,7 @@ describe('fellowship track', () => {
         framing: 'initial',
         revision: 0,
         requirements: [{ id: 'controls' as const, state: 'satisfied' as const }],
+        outcome: 'pending' as const,
       },
       fellowship: {
         framing: 'initial',

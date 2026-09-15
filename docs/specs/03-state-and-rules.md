@@ -1,8 +1,9 @@
 # B3 — State, Commands, and Determinism
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
-2026-09-13 with the pending-event field and the resolve command (STEP-009) and
-with experiment assignments and the result-based evidence flow (STEP-010).**
+2026-09-13 with the pending-event field and the resolve command (STEP-009),
+with experiment assignments and the result-based evidence flow (STEP-010), and
+with the paper outcome and review and panel resolution (STEP-011).**
 
 ## Campaign state (approved shape)
 
@@ -17,7 +18,7 @@ with experiment assignments and the result-based evidence flow (STEP-010).**
 | `standing`      | Up-or-out meter                                                         |
 | `integrity`     | Hidden complicity measure                                               |
 | `relationships` | Trust for Voss, Dario, and Mara                                         |
-| `paper`         | Paper track: framing, revision, and requirements                        |
+| `paper`         | Paper track: framing, revision, requirements, and outcome               |
 | `fellowship`    | Fellowship track: framing, requirements, answers, deadline, and outcome |
 | `evidence`      | Shared evidence set with track assignment and overlap flag              |
 | `experiments`   | Experiment assignments with their requirement, step, and state          |

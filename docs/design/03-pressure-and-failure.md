@@ -2,8 +2,8 @@
 
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
 (Block A3), revised the same day to add the fellowship, and revised
-2026-09-13 with the complicity and rent-event baselines and the fellowship
-answer work. The
+2026-09-13 with the complicity and rent-event baselines, the fellowship
+answer work, and the panel and review outcome baselines. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -119,8 +119,20 @@ baselines.
   waitlisted (cruel ambiguity), or rejected (the renewal path closes).
 - The outcome is partly arbitrary and partly learnable. It feeds the ending
   matrix but never unlocks a clean win.
+- Panel baselines for the slice: funded at 12 or more, waitlisted at 8 or more,
+  otherwise rejected; standing +10, 0, or −5. A rejection closes renewal.
 - Shared evidence, shared reframes, and shared complicity link the two
   documents, while the administrative requirements stay independent.
+
+## The review and its outcomes
+
+- The paper is submitted when its meter is fully satisfied; if it is not, the
+  review is a desk rejection and renewal closes without a reading.
+- Verdict baselines for the slice: accept +10 standing, minor revision +5,
+  major revision 0, reject −5.
+- Discovery drops the review verdict one rank and costs 10 integrity; it also
+  forces the panel to reject. Fabricated answers, both-track results, and
+  taking Dario's credit are the risk items, and being caught is permanent.
 
 ## Quitting
 

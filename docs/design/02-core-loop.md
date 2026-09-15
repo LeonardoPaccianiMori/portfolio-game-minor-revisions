@@ -3,7 +3,8 @@
 Status: **Documented and revised — the core decisions, detailed action list,
 cost shape, and worked example were approved by Leonardo on 2026-09-10
 (Block A2); revised the same day to add the fellowship track, and revised
-2026-09-13 with the concrete experiment model and its slice baselines.**
+2026-09-13 with the concrete experiment model, its slice baselines, and the
+review and panel meta-rules.**
 
 ## Purpose
 
@@ -123,6 +124,25 @@ arbitrary reviewer reports respond to the manuscript. A short fellowship panel
 of three to four minutes uses the same chorus early in Act III. Careful
 evidence barely moves the outcomes; learning the arbitrary rules does. This is
 the game's centrepiece joke and its sharpest critique.
+
+The slice baseline makes the rules concrete:
+
+- The fellowship panel reads the four answers: honesty is weak, confidence
+  pays, fabrication pays most, blanks earn nothing, and a stale answer scores
+  one less. A run-seeded mood shifts the total.
+- The paper is submitted when every requirement in its meter is satisfied;
+  otherwise the review is a desk rejection.
+- Three reviewer archetypes carry the learnable preferences: the methods
+  pedant rewards controls, replicates, and current evidence but dislikes
+  repeated reframes; the significance maximalist rewards impact, presentation,
+  and every reframe; the profile reviewer rewards Voss's trust and visible
+  confidence but punishes discovery.
+- Each reviewer adds a run-seeded quirk and recommends accept, minor revision,
+  major revision, or reject. The majority decides, and when all three differ
+  the harshest recommendation wins.
+- Shared complicity can be caught by either evaluation: fabricated answers,
+  both-track results, and taking Dario's credit are the risks, each with its
+  cost.
 
 ## The reveal (approved)
 

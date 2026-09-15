@@ -15,6 +15,7 @@ describe('paper track', () => {
     expect(paper.framing).toBe('initial');
     expect(paper.revision).toBe(0);
     expect(paper.requirements).toEqual([]);
+    expect(paper.outcome).toBe('pending');
   });
 
   it('adds requirements and refuses duplicates or unknown ids', () => {
@@ -50,6 +51,7 @@ describe('paper track', () => {
         { id: 'controls', state: 'satisfied' },
         { id: 'impact', state: 'open' },
       ],
+      outcome: 'pending',
     };
 
     const result = applyPaperEdit(paper, {
@@ -75,6 +77,7 @@ describe('paper track', () => {
       framing: 'initial',
       revision: 1,
       requirements: [{ id: 'controls', state: 'stale' }],
+      outcome: 'pending',
     };
 
     const result = applyPaperEdit(paper, {
@@ -88,6 +91,18 @@ describe('paper track', () => {
     }
 
     expect(applyPaperEdit(paper, { kind: 'revert', requirementId: 'mechanism' }).ok).toBe(false);
+  });
+
+  it('validates the paper outcome inside the campaign state', () => {
+    const state = createInitialState(1);
+    const invalid = { ...state, paper: { ...state.paper, outcome: 'revise' } };
+
+    const result = validateState(invalid);
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.issues).toContain('paper.outcome is unknown');
+    }
   });
 
   it('does not mutate the original paper', () => {

@@ -9,6 +9,7 @@ import type {
 import { staleCurrentEvidence } from './evidence.ts';
 import { FELLOWSHIP_REQUIREMENT_IDS } from './fellowship.ts';
 import { applyReframe } from './manuscript.ts';
+import { resolvePanel, resolveReview } from './outcomes.ts';
 import { applyPiRequest } from './pi.ts';
 import type { PiRequest } from './pi.ts';
 
@@ -39,7 +40,9 @@ export type EventEffect =
   | { readonly kind: 'reframe'; readonly framing: string }
   | { readonly kind: 'flag'; readonly flag: string; readonly value: boolean }
   | { readonly kind: 'message'; readonly messageId: string }
-  | { readonly kind: 'fellowshipDeadline' };
+  | { readonly kind: 'fellowshipDeadline' }
+  | { readonly kind: 'panelOutcome' }
+  | { readonly kind: 'journalReview' };
 
 export interface AuthoredEvent {
   readonly id: string;
@@ -57,8 +60,17 @@ export interface EventOutcome {
 
 export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
   {
+    id: 'requests-first',
+    week: 3,
+    effects: [
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'controls' } },
+      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'replicates' } },
+      { kind: 'message', messageId: 'message.requests-first' },
+    ],
+  },
+  {
     id: 'funding-review',
-    week: 2,
+    week: 4,
     effects: [
       {
         kind: 'piRequest',
@@ -77,15 +89,6 @@ export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
         request: { kind: 'add-fellowship', requirementId: 'support' },
       },
       { kind: 'message', messageId: 'message.funding-review' },
-    ],
-  },
-  {
-    id: 'requests-first',
-    week: 3,
-    effects: [
-      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'controls' } },
-      { kind: 'piRequest', request: { kind: 'add-paper', requirementId: 'replicates' } },
-      { kind: 'message', messageId: 'message.requests-first' },
     ],
   },
   {
@@ -159,6 +162,11 @@ export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
     ],
   },
   {
+    id: 'fellowship-panel',
+    week: 9,
+    effects: [{ kind: 'panelOutcome' }],
+  },
+  {
     id: 'contract-decision',
     week: 12,
     condition: { kind: 'weekSlotsSpent' },
@@ -166,6 +174,12 @@ export const EVENT_CATALOGUE: readonly AuthoredEvent[] = [
       { kind: 'flag', flag: 'contract.closed', value: true },
       { kind: 'message', messageId: 'message.contract.closed' },
     ],
+  },
+  {
+    id: 'journal-review',
+    week: 12,
+    condition: { kind: 'weekSlotsSpent' },
+    effects: [{ kind: 'journalReview' }],
   },
 ];
 
@@ -232,6 +246,16 @@ const applyEventEffect = (
       },
       effects: [{ kind: 'fellowship-missed', payload: {} }],
     };
+  }
+
+  if (effect.kind === 'panelOutcome') {
+    const result = resolvePanel(state);
+    return { state: result.state, effects: result.effects };
+  }
+
+  if (effect.kind === 'journalReview') {
+    const result = resolveReview(state);
+    return { state: result.state, effects: result.effects };
   }
 
   if (effect.kind === 'message') {
