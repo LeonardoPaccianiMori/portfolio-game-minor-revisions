@@ -216,18 +216,24 @@ rules stay free of the clock.
   this record.
 - Implementation commit: `05ca9f2ec8fe0e0316d643372eb33445c4954445`
   (`Add the ending resolver and archive`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 180 unit tests (25
-  new), and the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 184 unit tests (29
+  new after the corrections), and the content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
-- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit, including
-  the archive save, list, remove, and clear-data round trip.
+- `npm run test:e2e`: 15 passed in Chromium, Firefox, and WebKit, including
+  the archive round trip, the newest-first ordering with the timestamp tie
+  break, the invalid-archive report, and the clear-data behaviour.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Corrections commit: `2d81d17` (`Apply STEP-012 review corrections`).
+- Scope note: the wide diff from `03624e8` also contains two inherited
+  commits made outside this step (`9828e41` and `894c5ee`, the D-047 worker
+  model change recorded in the decision log); this step's own changes are
+  `d5848a4` onward, and no path outside the approved list changed within
+  them.
 - Deviations: the ending ids, causes, and resolution shape live in
   `campaign-state.ts` with the other state shapes, while `endings.ts` owns the
   resolution rules; this avoids a runtime cycle from the state module into
   the resolver. The archive store validates every entry it reads and writes
-  and cross-checks the entry against its personnel file. No path outside the
-  approved list changed.
+  and reports invalid stored entries instead of hiding them.
 - Limitations: no interface reads the resolution or the archive yet; ending
   and personnel-file text has no content until the content phase; the
   baselines are not balanced by a full run, which the first-playable and
@@ -235,15 +241,50 @@ rules stay free of the clock.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-15 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: one blocker and seven
+required findings, all corrected in this step. The reviewer re-ran the claimed
+checks independently (typecheck, 180 unit tests at the time, 12 browser
+tests), verified the owned paths, the baselines, purity and determinism, the
+absence of clock reads, and the record, and confirmed the 25-new-test claim.
+One advisory was recorded (the newest-first tie break needed a test).
 
 ## Corrections
 
-None yet.
+- **B1 (blocker):** `quit` was followed by event evaluation, so a week-12
+  quit could fire the journal review and the contract event and leave the
+  personnel file inconsistent. Fixed in `2d81d17`: `dispatch` now returns a
+  resolved command immediately without evaluating events, and `evaluateEvents`
+  refuses to fire once the run has resolved. A regression test covers the
+  week-12 quit.
+- **R-1 (required):** the run-finished gate ran after command-shape
+  validation; it now precedes it, so even malformed commands on a resolved
+  run receive `run-finished`.
+- **R-2 (required):** the validators accepted impossible resolutions. The
+  state validation now requires the resolving week to match the current week
+  and pins `quit` to the intact ending and `ejection`/`burnout` to the
+  ejected ending; the personnel-file validation carries the same cause-ending
+  rules.
+- **R-3 (required):** the archive list silently dropped invalid entries. It
+  now returns an explicit ok-or-invalid outcome with the issues, and a
+  browser test covers a corrupted stored entry.
+- **R-4 (required):** the personnel-file validation now rejects unexpected
+  fields and relationship keys, enforces the fixed order of the stayed,
+  complicity, and discovery lists, and requires strictly increasing crash
+  weeks.
+- **R-5 (required):** the missing coverage was added: a dispatcher-level
+  second crash, the burnout-over-ejection-over-contract precedence, a
+  malformed command on a resolved run, the invalid archive read, and the
+  timestamp tie break.
+- **R-6 (required):** the record now distinguishes the inherited commits from
+  this step's own changes (scope note above).
+- **R-7 (required):** the STEP-012 primary and reviewer entries were added to
+  `docs/ai-use-log.md`.
 
 ## Leonardo decision
 
 The quit-ending and archive decisions were made on 2026-09-15. Plan approved
 by Leonardo on 2026-09-15 after he reviewed the written draft. Implementation
-complete on 2026-09-15; independent review and Leonardo's result review
-pending.
+complete on 2026-09-15; the independent review returned one blocker and seven
+required corrections, now applied and awaiting re-review. Leonardo's result
+review pending.
