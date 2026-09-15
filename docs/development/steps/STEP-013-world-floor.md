@@ -1,7 +1,7 @@
 ---
 id: STEP-013
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-09-15
@@ -181,7 +181,33 @@ so later furniture or layout changes cannot silently seal a corner.
 
 ## Execution record
 
-Not yet available.
+- Base: `979f62c6389023556286416cfeae7377392cbbeb`.
+- Branch: `work/step-013-world-floor`.
+- Plan checkpoint: `7851623` (`Approve STEP-013 world floor plan`), including
+  this record.
+- Implementation commit: `b97019598da92edb68f57678c10e8e0f48ba2a1a`
+  (`Add the world floor, collision, and recovery anchors`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 198 unit tests (13
+  new), and the content check.
+- `npm run build`: passed; the single application bundle is 525.25 kB (132.0
+  kB gzip), well inside the 25 MB budget.
+- `npm run test:e2e`: 21 passed in Chromium, Firefox, and WebKit, including
+  the world rendering after startup and the module build, render, recovery,
+  resize, and double-dispose checks.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the south rooms adjoin the corridor at z −0.2 (the baseline
+  table's −2.2 would have left a void between the corridor and the wall), so
+  every wall sits on a single 0.2 m band. The plant rows were shortened to
+  x 1.2–7.2 after the no-trapping proof caught the original rows sealing the
+  aisles; the proof did its job. `index.html` gained the world container and
+  minimal full-screen styling for the canvas. With Leonardo's authorization
+  on 2026-09-15, `@types/three@0.185.4` was added as an exact-pinned dev
+  dependency because Three.js ships no type declarations.
+- Limitations: the overview camera and the geometry are labelled
+  placeholders; movement, input, and interaction do not exist yet, so the
+  world is only testable through rendering and the pure collision queries;
+  the Three.js bundle crosses Vite's 500 kB advisory, which the performance
+  step owns and which stays far inside the B9 size budget.
 
 ## Independent review
 
@@ -194,4 +220,5 @@ None yet.
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
-Implementation, testing, and acceptance pending.
+Implementation complete on 2026-09-15; independent review and Leonardo's
+result review pending.

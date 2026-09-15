@@ -147,15 +147,19 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-012 accepted; STEP-013 plan pending approval
+## Current task — STEP-013 implementation complete; independent review pending
 
-STEP-012 (the ending resolver) is accepted by Leonardo on 2026-09-15 after
-his result review, completing the core rules phase. The next plan is STEP-013
-(the world floor: six spaces, static collision, no trapping, and recovery
-anchors), which is not authorized until Leonardo approves its exact plan.
-The previous step record is
-`docs/development/steps/STEP-012-endings.md`. The earlier block questions and
-session records further down are preserved as history.
+STEP-012 is accepted. Leonardo approved the STEP-013 plan (the world floor:
+six spaces, static collision, no trapping, recovery anchors) on 2026-09-15
+after reviewing the written draft. STEP-013 is implemented on branch
+`work/step-013-world-floor` from base `979f62c`, and `npm run check`,
+`npm run build`, and `npm run test:e2e` passed. The current step record is
+`docs/development/steps/STEP-013-world-floor.md`. The next permitted action
+is the primary pre-review audit, then one fresh independent review by
+`mr-reviewer` before integration and Leonardo's result review. Movement and
+the first-person camera are STEP-014 and are not authorized until their own
+plan is approved. The earlier block questions and session records further
+down are preserved as history.
 
 ### C2 questions (answered and documented)
 
