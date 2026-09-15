@@ -1,5 +1,10 @@
 export { createArchiveStore } from './archive-store.ts';
-export type { ArchiveStore } from './archive-store.ts';
+export type {
+  ArchiveListInvalid,
+  ArchiveListOk,
+  ArchiveListOutcome,
+  ArchiveStore,
+} from './archive-store.ts';
 export { validateArchivedRun } from './archive.ts';
 export type {
   ArchiveValidation,

@@ -66,6 +66,15 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
       week: 4,
       personnelFile: { ...personnelFile, seed: 124 },
     });
+    await persistence.archive.save({
+      runId: 'run-c',
+      archivedAt: 2000,
+      seed: 125,
+      ending: 'ending.intact' as const,
+      cause: 'quit' as const,
+      week: 4,
+      personnelFile: { ...personnelFile, seed: 125 },
+    });
     const archived = await persistence.archive.list();
     await persistence.archive.remove('run-a');
     const afterRemove = await persistence.archive.list();
@@ -84,11 +93,14 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
       backupStatus: backup.status,
       backupWeek: backup.status === 'loaded' ? backup.state.week : null,
       settings,
-      archived: archived.map((entry) => entry.runId),
-      afterRemove: afterRemove.map((entry) => entry.runId),
+      archived: archived.status === 'ok' ? archived.entries.map((entry) => entry.runId) : [],
+      afterRemove:
+        afterRemove.status === 'ok' ? afterRemove.entries.map((entry) => entry.runId) : [],
+      archiveAfterClearStatus: archiveAfterClear.status,
       afterClearStatus: afterClear.status,
       settingsAfterClear,
-      archiveAfterClearCount: archiveAfterClear.length,
+      archiveAfterClearCount:
+        archiveAfterClear.status === 'ok' ? archiveAfterClear.entries.length : -1,
     };
   });
 
@@ -110,8 +122,9 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
     scale: 1,
     volume: 1,
   });
-  expect(result.archived).toEqual(['run-a', 'run-b']);
-  expect(result.afterRemove).toEqual(['run-b']);
+  expect(result.archived).toEqual(['run-a', 'run-c', 'run-b']);
+  expect(result.afterRemove).toEqual(['run-c', 'run-b']);
+  expect(result.archiveAfterClearStatus).toBe('ok');
   expect(result.archiveAfterClearCount).toBe(0);
 });
 
@@ -165,4 +178,40 @@ test('invalid stored data is refused and never replaces the backup', async ({ pa
   expect(result.saveRejected).toBe(true);
   expect(result.backupStatus).toBe('loaded');
   expect(result.backupSeed).toBe(9);
+});
+
+test('invalid archive data is reported and preserved until cleared', async ({ page }) => {
+  await page.goto('/');
+
+  const result = await page.evaluate(async () => {
+    const persistenceModulePath = '/src/persistence/index.ts';
+
+    const persistenceModule = (await import(
+      persistenceModulePath
+    )) as typeof import('../../src/persistence/index.ts');
+
+    const database = await persistenceModule.openCampaignDatabase();
+    await database.put('archive', { runId: 'broken' }, 'broken');
+    database.close();
+
+    const persistence = await persistenceModule.createPersistence();
+    const listed = await persistence.archive.list();
+    await persistence.clearAllData();
+    const afterClear = await persistence.archive.list();
+    persistence.close();
+
+    return {
+      status: listed.status,
+      issueCount: listed.status === 'invalid' ? listed.issues.length : 0,
+      firstIssue: listed.status === 'invalid' ? listed.issues[0] : null,
+      afterClearStatus: afterClear.status,
+      afterClearCount: afterClear.status === 'ok' ? afterClear.entries.length : -1,
+    };
+  });
+
+  expect(result.status).toBe('invalid');
+  expect(result.issueCount).toBeGreaterThan(0);
+  expect(result.firstIssue).toContain('broken:');
+  expect(result.afterClearStatus).toBe('ok');
+  expect(result.afterClearCount).toBe(0);
 });

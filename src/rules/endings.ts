@@ -253,6 +253,12 @@ export const validatePersonnelFile = (value: unknown): readonly string[] => {
         issues.push(`personnel file relationships.${id} is out of range`);
       }
     }
+
+    for (const key of Object.keys(relationships)) {
+      if (!(['voss', 'dario', 'mara'] as const).includes(key as RelationshipId)) {
+        issues.push(`unexpected personnel file relationship: ${key}`);
+      }
+    }
   }
 
   const lists: readonly (readonly [string, readonly string[]])[] = [
@@ -269,22 +275,67 @@ export const validatePersonnelFile = (value: unknown): readonly string[] => {
       new Set(entries).size !== entries.length
     ) {
       issues.push(`personnel file ${key} must be a list of known values without repeats`);
+      continue;
+    }
+
+    const ordered = allowed.filter((entry) => entries.includes(entry));
+    if (!ordered.every((entry, index) => entry === entries[index])) {
+      issues.push(`personnel file ${key} must use the fixed order`);
     }
   }
 
   const crashes = value['crashes'];
   if (
     !Array.isArray(crashes) ||
-    !crashes.every((week) => isInteger(week) && week >= 1 && week <= 12) ||
-    new Set(crashes).size !== crashes.length
+    !crashes.every(
+      (week, index) =>
+        isInteger(week) && week >= 1 && week <= 12 && (index === 0 || week > crashes[index - 1]),
+    )
   ) {
-    issues.push('personnel file crashes must be a list of week numbers without repeats');
+    issues.push('personnel file crashes must be increasing week numbers without repeats');
   }
 
   if (typeof value['quit'] !== 'boolean') {
     issues.push('personnel file quit must be a boolean');
   } else if (value['quit'] !== (value['cause'] === 'quit')) {
     issues.push('personnel file quit must match the cause');
+  }
+
+  if (RUN_ENDED_CAUSES.includes(value['cause'] as RunEndedCause)) {
+    const ending = value['ending'];
+    const consistent =
+      value['cause'] === 'quit'
+        ? ending === 'ending.intact'
+        : value['cause'] === 'ejection' || value['cause'] === 'burnout'
+          ? ending === 'ending.ejected'
+          : ENDING_IDS.includes(ending as EndingId);
+
+    if (!consistent) {
+      issues.push('personnel file ending must match the cause');
+    }
+  }
+
+  const allowedKeys = new Set([
+    'ending',
+    'cause',
+    'week',
+    'seed',
+    'paperOutcome',
+    'fellowshipOutcome',
+    'standing',
+    'integrity',
+    'relationships',
+    'stayed',
+    'complicity',
+    'discoveries',
+    'crashes',
+    'quit',
+  ]);
+
+  for (const key of Object.keys(value)) {
+    if (!allowedKeys.has(key)) {
+      issues.push(`unexpected personnel file field: ${key}`);
+    }
   }
 
   return issues;

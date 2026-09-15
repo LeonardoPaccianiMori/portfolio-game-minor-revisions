@@ -330,6 +330,19 @@ export const validateState = (value: unknown): StateValidation => {
 
       if (resolvedWeek === null) {
         issues.push('resolution.week is required once the run ends');
+      } else if (resolvedWeek !== value['week']) {
+        issues.push('resolution.week must match the current week');
+      }
+
+      const expectedEnding =
+        cause === 'quit'
+          ? 'ending.intact'
+          : cause === 'ejection' || cause === 'burnout'
+            ? 'ending.ejected'
+            : null;
+
+      if (expectedEnding !== null && ending !== expectedEnding) {
+        issues.push(`resolution.ending must be ${expectedEnding} for this cause`);
       }
     }
   }

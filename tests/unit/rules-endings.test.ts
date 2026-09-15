@@ -164,6 +164,61 @@ describe('burnout', () => {
       expect(result.state.resolution.cause).toBe('none');
     }
   });
+
+  it('ends the run on a second crash in the same act through the dispatcher', () => {
+    const state: CampaignState = {
+      ...createInitialState(1),
+      week: 3,
+      energy: 1,
+      crashWeeks: [1],
+      paper: { ...createInitialState(1).paper, requirements: [{ id: 'controls', state: 'open' }] },
+      experiments: [
+        {
+          id: 'experiment.controls.1',
+          requirementId: 'controls',
+          step: 0,
+          steps: 3,
+          state: 'running',
+        },
+      ],
+    };
+    const result = dispatch(state, { type: 'performAction', action: 'experiment' });
+
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.state.crashWeeks).toEqual([1, 3]);
+      expect(result.state.resolution).toEqual({
+        cause: 'burnout',
+        ending: 'ending.ejected',
+        week: 4,
+      });
+    }
+  });
+
+  it('orders burnout before ejection and the contract', () => {
+    const state: CampaignState = {
+      ...createInitialState(1),
+      week: 6,
+      standing: 10,
+      standingWarningWeek: 4,
+      crashWeeks: [5, 6],
+      paper: { ...createInitialState(1).paper, outcome: 'accept' },
+    };
+
+    expect(evaluateRunState(state).state.resolution.cause).toBe('burnout');
+  });
+
+  it('orders ejection before the contract', () => {
+    const state: CampaignState = {
+      ...createInitialState(1),
+      week: 6,
+      standing: 10,
+      standingWarningWeek: 4,
+      paper: { ...createInitialState(1).paper, outcome: 'accept' },
+    };
+
+    expect(evaluateRunState(state).state.resolution.cause).toBe('ejection');
+  });
 });
 
 describe('quitting', () => {
@@ -204,6 +259,28 @@ describe('quitting', () => {
       reason: 'run-finished',
       message: 'The run has ended.',
     });
+  });
+
+  it('quits immediately without firing pending events', () => {
+    const state: CampaignState = { ...createInitialState(3), week: 12, actionsLeft: 1 };
+    const result = dispatch(state, { type: 'quit' });
+
+    expect(result.ok).toBe(true);
+    if (!result.ok) {
+      return;
+    }
+
+    expect(result.state.resolution.cause).toBe('quit');
+    expect(result.state.paper.outcome).toBe('pending');
+    expect(result.state.flags['event.journal-review']).toBeUndefined();
+    expect(result.state.flags['event.contract-decision']).toBeUndefined();
+
+    const fileEffect = result.effects.find((effect) => effect.kind === 'personnel-file');
+    const file = fileEffect?.payload as unknown as PersonnelFile;
+
+    expect(file.paperOutcome).toBe('pending');
+    expect(file.quit).toBe(true);
+    expect(file.ending).toBe('ending.intact');
   });
 });
 
@@ -373,8 +450,33 @@ describe('the personnel file', () => {
     ).toBe(true);
     expect(
       validatePersonnelFile({ ...file, crashes: [1, 1] }).includes(
-        'personnel file crashes must be a list of week numbers without repeats',
+        'personnel file crashes must be increasing week numbers without repeats',
       ),
+    ).toBe(true);
+    expect(
+      validatePersonnelFile({ ...file, extra: 1 }).includes(
+        'unexpected personnel file field: extra',
+      ),
+    ).toBe(true);
+    expect(
+      validatePersonnelFile({
+        ...file,
+        relationships: { ...file.relationships, ada: 50 },
+      }).includes('unexpected personnel file relationship: ada'),
+    ).toBe(true);
+    expect(
+      validatePersonnelFile({
+        ...file,
+        cause: 'quit',
+        quit: true,
+        ending: 'ending.hollow',
+      }).includes('personnel file ending must match the cause'),
+    ).toBe(true);
+    expect(
+      validatePersonnelFile({
+        ...file,
+        complicity: ['dump-work', 'inflate-claim'],
+      }).includes('personnel file complicity must use the fixed order'),
     ).toBe(true);
   });
 });
@@ -414,6 +516,15 @@ describe('run state gating and purity', () => {
     });
     const repeatedCrash = validateState({ ...base, crashWeeks: [2, 2] });
     const badWarning = validateState({ ...base, standingWarningWeek: 13 });
+    const wrongEnding = validateState({
+      ...base,
+      resolution: { cause: 'quit', ending: 'ending.ejected', week: 1 },
+    });
+    const futureWeek = validateState({
+      ...base,
+      week: 5,
+      resolution: { cause: 'quit', ending: 'ending.intact', week: 6 },
+    });
 
     expect(badCause.ok).toBe(false);
     if (!badCause.ok) {
@@ -434,6 +545,16 @@ describe('run state gating and purity', () => {
     expect(badWarning.ok).toBe(false);
     if (!badWarning.ok) {
       expect(badWarning.issues).toContain('standingWarningWeek is out of range');
+    }
+    expect(wrongEnding.ok).toBe(false);
+    if (!wrongEnding.ok) {
+      expect(wrongEnding.issues).toContain(
+        'resolution.ending must be ending.intact for this cause',
+      );
+    }
+    expect(futureWeek.ok).toBe(false);
+    if (!futureWeek.ok) {
+      expect(futureWeek.issues).toContain('resolution.week must match the current week');
     }
   });
 });

@@ -328,6 +328,10 @@ export const evaluateEvents = (
   state: CampaignState,
   catalogue: readonly AuthoredEvent[] = EVENT_CATALOGUE,
 ): EventOutcome => {
+  if (state.resolution.cause !== 'none') {
+    return { state, effects: [], fired: [] };
+  }
+
   let next = state;
   const effects: PresentationEffect[] = [];
   const fired: string[] = [];

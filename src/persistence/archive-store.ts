@@ -1,12 +1,24 @@
 import type { IDBPDatabase } from 'idb';
 
 import { validateArchivedRun } from './archive.ts';
-import type { ArchiveValidationOk, ArchivedRun } from './archive.ts';
+import type { ArchivedRun } from './archive.ts';
 import type { CampaignDatabase } from './database.ts';
+
+export interface ArchiveListOk {
+  readonly status: 'ok';
+  readonly entries: readonly ArchivedRun[];
+}
+
+export interface ArchiveListInvalid {
+  readonly status: 'invalid';
+  readonly issues: readonly string[];
+}
+
+export type ArchiveListOutcome = ArchiveListOk | ArchiveListInvalid;
 
 export interface ArchiveStore {
   save(entry: ArchivedRun): Promise<void>;
-  list(): Promise<readonly ArchivedRun[]>;
+  list(): Promise<ArchiveListOutcome>;
   remove(runId: string): Promise<void>;
 }
 
@@ -33,12 +45,29 @@ export const createArchiveStore = (database: IDBPDatabase<CampaignDatabase>): Ar
   },
   async list() {
     const values = await database.getAll('archive');
+    const entries: ArchivedRun[] = [];
+    const issues: string[] = [];
 
-    return values
-      .map((value) => validateArchivedRun(value))
-      .filter((validation): validation is ArchiveValidationOk => validation.ok)
-      .map((validation) => validation.entry)
-      .sort(byNewest);
+    for (const value of values) {
+      const validation = validateArchivedRun(value);
+
+      if (validation.ok) {
+        entries.push(validation.entry);
+      } else {
+        const runId =
+          typeof value === 'object' && value !== null && 'runId' in value
+            ? String(value.runId)
+            : 'unknown';
+
+        issues.push(...validation.issues.map((issue) => `${runId}: ${issue}`));
+      }
+    }
+
+    if (issues.length > 0) {
+      return { status: 'invalid', issues };
+    }
+
+    return { status: 'ok', entries: entries.sort(byNewest) };
   },
   async remove(runId) {
     await database.delete('archive', runId);

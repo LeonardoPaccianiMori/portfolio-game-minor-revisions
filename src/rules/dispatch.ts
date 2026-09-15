@@ -66,14 +66,6 @@ export const dispatch = (state: CampaignState, command: Command): CommandResult 
     };
   }
 
-  if (!isRecord(command) || typeof command.type !== 'string') {
-    return {
-      ok: false,
-      reason: 'invalid-command',
-      message: 'The command is not valid.',
-    };
-  }
-
   if (stateValidation.state.resolution.cause !== 'none') {
     return {
       ok: false,
@@ -82,8 +74,20 @@ export const dispatch = (state: CampaignState, command: Command): CommandResult 
     };
   }
 
+  if (!isRecord(command) || typeof command.type !== 'string') {
+    return {
+      ok: false,
+      reason: 'invalid-command',
+      message: 'The command is not valid.',
+    };
+  }
+
   const result = routeCommand(stateValidation.state, command);
   if (!result.ok) {
+    return result;
+  }
+
+  if (result.state.resolution.cause !== 'none') {
     return result;
   }
 

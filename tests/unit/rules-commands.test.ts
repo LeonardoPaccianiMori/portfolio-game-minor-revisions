@@ -52,6 +52,12 @@ describe('command dispatch', () => {
       });
     }
 
+    expect(dispatch(after, {} as unknown as Command)).toEqual({
+      ok: false,
+      reason: 'run-finished',
+      message: 'The run has ended.',
+    });
+
     expect(JSON.stringify(after)).toBe(before);
   });
 
