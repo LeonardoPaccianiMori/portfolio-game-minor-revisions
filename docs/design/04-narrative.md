@@ -1,6 +1,6 @@
 # 04 — Narrative and Structure
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block A4); revised the same day to make the PI an unrepentant caricature and add the fellowship track.**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block A4); revised the same day to make the PI an unrepentant caricature and add the fellowship track, and revised 2026-09-15 with the ending decision baseline.**
 
 ## Purpose
 
@@ -79,6 +79,16 @@ outcome, and who stayed:
 - Ejected or burned out.
 
 The fellowship outcome feeds the renewal routes and never unlocks a clean win.
+
+The slice baseline makes the decision concrete. Two derived facts decide the
+contract-end ending: **success** (the renewal is open, or the paper is
+accepted or in minor revision) and **kept** (integrity is 60 or more and at
+least one colleague, Dario or Mara, is at 40 trust or more). Success without
+keeping yourself is Promoted and complicit; success while keeping yourself is
+Published and hollow; leaving without success but with yourself intact is Out
+with something intact; and the rest is Ejected or burned out. An ejection or
+burnout ends the run as Ejected or burned out, and quitting always resolves to
+Out with something intact.
 
 No ending repairs the system. The structure is fixed here; the epilogue content
 is written in the content blocks.

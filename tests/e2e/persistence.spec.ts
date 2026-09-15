@@ -31,9 +31,49 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
     });
     const settings = await persistence.settings.load();
 
+    const personnelFile = {
+      ending: 'ending.intact' as const,
+      cause: 'quit' as const,
+      week: 4,
+      seed: 123,
+      paperOutcome: 'pending' as const,
+      fellowshipOutcome: 'pending' as const,
+      standing: 50,
+      integrity: 100,
+      relationships: { voss: 50, dario: 50, mara: 50 },
+      stayed: ['dario', 'mara'] as const,
+      complicity: [],
+      discoveries: [],
+      crashes: [],
+      quit: true,
+    };
+
+    await persistence.archive.save({
+      runId: 'run-a',
+      archivedAt: 2000,
+      seed: 123,
+      ending: 'ending.intact' as const,
+      cause: 'quit' as const,
+      week: 4,
+      personnelFile,
+    });
+    await persistence.archive.save({
+      runId: 'run-b',
+      archivedAt: 1000,
+      seed: 124,
+      ending: 'ending.intact' as const,
+      cause: 'quit' as const,
+      week: 4,
+      personnelFile: { ...personnelFile, seed: 124 },
+    });
+    const archived = await persistence.archive.list();
+    await persistence.archive.remove('run-a');
+    const afterRemove = await persistence.archive.list();
+
     await persistence.clearAllData();
     const afterClear = await persistence.campaigns.load();
     const settingsAfterClear = await persistence.settings.load();
+    const archiveAfterClear = await persistence.archive.list();
 
     persistence.close();
 
@@ -44,8 +84,11 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
       backupStatus: backup.status,
       backupWeek: backup.status === 'loaded' ? backup.state.week : null,
       settings,
+      archived: archived.map((entry) => entry.runId),
+      afterRemove: afterRemove.map((entry) => entry.runId),
       afterClearStatus: afterClear.status,
       settingsAfterClear,
+      archiveAfterClearCount: archiveAfterClear.length,
     };
   });
 
@@ -67,6 +110,9 @@ test('persistence saves, loads, backs up, and clears locally', async ({ page }) 
     scale: 1,
     volume: 1,
   });
+  expect(result.archived).toEqual(['run-a', 'run-b']);
+  expect(result.afterRemove).toEqual(['run-b']);
+  expect(result.archiveAfterClearCount).toBe(0);
 });
 
 test('invalid stored data is refused and never replaces the backup', async ({ page }) => {

@@ -1,6 +1,7 @@
 import { validateState } from './campaign-state.ts';
 import type { CampaignState } from './campaign-state.ts';
 import type { Command, CommandResult } from './commands.ts';
+import { evaluateRunState, quitRun } from './endings.ts';
 import { assignEvidence } from './evidence.ts';
 import { evaluateEvents, resolveEvent } from './events.ts';
 import { startExperiment } from './experiments.ts';
@@ -40,6 +41,10 @@ const routeCommand = (state: CampaignState, command: Command): CommandResult => 
     return startExperiment(state, command);
   }
 
+  if (command.type === 'quit') {
+    return quitRun(state);
+  }
+
   if (command.type === 'advanceWeek') {
     return advanceWeek(state);
   }
@@ -47,7 +52,7 @@ const routeCommand = (state: CampaignState, command: Command): CommandResult => 
   return {
     ok: false,
     reason: 'not-implemented',
-    message: `The ${command.type} rules are not implemented yet.`,
+    message: 'The command is not implemented yet.',
   };
 };
 
@@ -69,16 +74,25 @@ export const dispatch = (state: CampaignState, command: Command): CommandResult 
     };
   }
 
+  if (stateValidation.state.resolution.cause !== 'none') {
+    return {
+      ok: false,
+      reason: 'run-finished',
+      message: 'The run has ended.',
+    };
+  }
+
   const result = routeCommand(stateValidation.state, command);
   if (!result.ok) {
     return result;
   }
 
   const events = evaluateEvents(result.state);
+  const run = evaluateRunState(events.state);
 
   return {
     ok: true,
-    state: events.state,
-    effects: [...result.effects, ...events.effects],
+    state: run.state,
+    effects: [...result.effects, ...events.effects, ...run.effects],
   };
 };

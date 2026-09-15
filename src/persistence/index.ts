@@ -1,3 +1,12 @@
+export { createArchiveStore } from './archive-store.ts';
+export type { ArchiveStore } from './archive-store.ts';
+export { validateArchivedRun } from './archive.ts';
+export type {
+  ArchiveValidation,
+  ArchiveValidationFailure,
+  ArchiveValidationOk,
+  ArchivedRun,
+} from './archive.ts';
 export { createCampaignStore } from './campaign-store.ts';
 export type { CampaignLoadOutcome, CampaignStore } from './campaign-store.ts';
 export { clearAllData } from './clear.ts';

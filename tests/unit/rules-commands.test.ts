@@ -3,24 +3,56 @@ import { describe, expect, it } from 'vitest';
 import { createInitialState, dispatch } from '../../src/rules/index.ts';
 import type { Command } from '../../src/rules/index.ts';
 
-const UNIMPLEMENTED_COMMANDS: readonly Command[] = [{ type: 'quit' }];
-
 describe('command dispatch', () => {
-  it('rejects every not-yet-implemented command without mutating the state', () => {
+  it('routes a quit to the ending resolver', () => {
     const state = createInitialState(3);
     const before = JSON.stringify(state);
 
-    for (const command of UNIMPLEMENTED_COMMANDS) {
-      const result = dispatch(state, command);
+    const result = dispatch(state, { type: 'quit' });
 
-      expect(result.ok).toBe(false);
-      if (!result.ok) {
-        expect(result.reason).toBe('not-implemented');
-        expect(result.message).toContain(command.type);
-      }
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.state.resolution).toEqual({
+        cause: 'quit',
+        ending: 'ending.intact',
+        week: 1,
+      });
+      expect(result.state.history).toEqual(['quit', 'ending:ending.intact']);
+      expect(result.effects.map((effect) => effect.kind)).toEqual([
+        'run-ended',
+        'personnel-file',
+        'message',
+      ]);
     }
 
     expect(JSON.stringify(state)).toBe(before);
+  });
+
+  it('refuses every command once the run has ended', () => {
+    const quit = dispatch(createInitialState(3), { type: 'quit' });
+    expect(quit.ok).toBe(true);
+    if (!quit.ok) {
+      return;
+    }
+
+    const after = quit.state;
+    const before = JSON.stringify(after);
+    const blocked: readonly Command[] = [
+      { type: 'quit' },
+      { type: 'advanceWeek' },
+      { type: 'meetPI' },
+      { type: 'performAction', action: 'rest' },
+    ];
+
+    for (const command of blocked) {
+      expect(dispatch(after, command)).toEqual({
+        ok: false,
+        reason: 'run-finished',
+        message: 'The run has ended.',
+      });
+    }
+
+    expect(JSON.stringify(after)).toBe(before);
   });
 
   it('routes an implemented command', () => {

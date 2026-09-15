@@ -1,12 +1,15 @@
 export {
   ACTIONS_PER_WEEK,
   CAMPAIGN_STATE_VERSION,
+  ENDING_IDS,
   ENERGY_MAX,
   ENERGY_MIN,
   EXPERIMENT_STATES,
   METER_MAX,
   METER_MIN,
   RELATIONSHIP_IDS,
+  RUN_END_CAUSES,
+  RUN_ENDED_CAUSES,
   WEEK_MAX,
   WEEK_MIN,
   createInitialState,
@@ -16,10 +19,14 @@ export {
 } from './campaign-state.ts';
 export type {
   CampaignState,
+  EndingId,
   ExperimentAssignment,
   ExperimentState,
   PendingEvent,
   RelationshipId,
+  RunEndCause,
+  RunEndedCause,
+  RunResolution,
   StateValidation,
   StateValidationFailure,
   StateValidationOk,
@@ -52,6 +59,24 @@ export type {
   StartExperimentCommand,
 } from './commands.ts';
 export { dispatch } from './dispatch.ts';
+export {
+  COLLEAGUE_IDS,
+  DISCOVERY_KINDS,
+  EJECTION_WARNING_STANDING,
+  EJECTION_WARNING_TURNS,
+  KEPT_INTEGRITY,
+  STAYED_TRUST,
+  buildPersonnelFile,
+  computeKept,
+  computeStayed,
+  computeSuccess,
+  evaluateRunState,
+  quitRun,
+  resolveContractEnding,
+  resolveEnding,
+  validatePersonnelFile,
+} from './endings.ts';
+export type { ColleagueId, DiscoveryKind, PersonnelFile } from './endings.ts';
 export {
   CONTAMINATION_STANDING_LOSS,
   EVENT_CATALOGUE,

@@ -36,6 +36,26 @@ export interface ExperimentAssignment {
   readonly state: ExperimentState;
 }
 
+export const RUN_ENDED_CAUSES = ['contract', 'ejection', 'burnout', 'quit'] as const;
+export type RunEndedCause = (typeof RUN_ENDED_CAUSES)[number];
+
+export const RUN_END_CAUSES = ['none', ...RUN_ENDED_CAUSES] as const;
+export type RunEndCause = (typeof RUN_END_CAUSES)[number];
+
+export const ENDING_IDS = [
+  'ending.hollow',
+  'ending.complicit',
+  'ending.intact',
+  'ending.ejected',
+] as const;
+export type EndingId = (typeof ENDING_IDS)[number];
+
+export interface RunResolution {
+  readonly cause: RunEndCause;
+  readonly ending: EndingId | null;
+  readonly week: number | null;
+}
+
 export interface CampaignState {
   readonly version: number;
   readonly seed: number;
@@ -52,6 +72,9 @@ export interface CampaignState {
   readonly evidence: readonly Evidence[];
   readonly experiments: readonly ExperimentAssignment[];
   readonly pendingEvent: PendingEvent | null;
+  readonly resolution: RunResolution;
+  readonly crashWeeks: readonly number[];
+  readonly standingWarningWeek: number | null;
   readonly history: readonly string[];
   readonly flags: Readonly<Record<string, boolean>>;
 }
@@ -138,6 +161,9 @@ const STATE_KEYS: ReadonlySet<string> = new Set([
   'evidence',
   'experiments',
   'pendingEvent',
+  'resolution',
+  'crashWeeks',
+  'standingWarningWeek',
   'history',
   'flags',
 ]);
@@ -165,6 +191,9 @@ export const createInitialState = (seed: number): CampaignState => {
     evidence: [],
     experiments: [],
     pendingEvent: null,
+    resolution: { cause: 'none', ending: null, week: null },
+    crashWeeks: [],
+    standingWarningWeek: null,
     history: [],
     flags: {},
   };
@@ -260,6 +289,69 @@ export const validateState = (value: unknown): StateValidation => {
     ) {
       issues.push('pendingEvent.choices must be a list of non-empty strings');
     }
+  }
+
+  const resolution = value['resolution'];
+  if (!isRecord(resolution)) {
+    issues.push('resolution must be an object');
+  } else {
+    const cause = resolution['cause'];
+    const ending = resolution['ending'];
+    const resolvedWeek = resolution['week'];
+    const knownCause = RUN_END_CAUSES.includes(cause as RunEndCause);
+
+    if (!knownCause) {
+      issues.push('resolution.cause is unknown');
+    }
+
+    if (ending !== null && !ENDING_IDS.includes(ending as EndingId)) {
+      issues.push('resolution.ending is unknown');
+    }
+
+    if (
+      resolvedWeek !== null &&
+      (!isInteger(resolvedWeek) || resolvedWeek < WEEK_MIN || resolvedWeek > WEEK_MAX)
+    ) {
+      issues.push('resolution.week is out of range');
+    }
+
+    if (cause === 'none') {
+      if (ending !== null) {
+        issues.push('resolution.ending must be null before the run ends');
+      }
+
+      if (resolvedWeek !== null) {
+        issues.push('resolution.week must be null before the run ends');
+      }
+    } else if (knownCause) {
+      if (ending === null) {
+        issues.push('resolution.ending is required once the run ends');
+      }
+
+      if (resolvedWeek === null) {
+        issues.push('resolution.week is required once the run ends');
+      }
+    }
+  }
+
+  const crashWeeks = value['crashWeeks'];
+  if (
+    !Array.isArray(crashWeeks) ||
+    !crashWeeks.every((week) => isInteger(week) && week >= WEEK_MIN && week <= WEEK_MAX)
+  ) {
+    issues.push('crashWeeks must be a list of week numbers');
+  } else if (new Set(crashWeeks).size !== crashWeeks.length) {
+    issues.push('crashWeeks must not repeat a week');
+  }
+
+  const standingWarningWeek = value['standingWarningWeek'];
+  if (
+    standingWarningWeek !== null &&
+    (!isInteger(standingWarningWeek) ||
+      standingWarningWeek < WEEK_MIN ||
+      standingWarningWeek > WEEK_MAX)
+  ) {
+    issues.push('standingWarningWeek is out of range');
   }
 
   const flags = value['flags'];

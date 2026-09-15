@@ -105,7 +105,8 @@ export type CommandRejectionReason =
   | 'nothing-to-analyse'
   | 'nothing-to-write-up'
   | 'unknown-result'
-  | 'result-not-ready';
+  | 'result-not-ready'
+  | 'run-finished';
 
 export interface PresentationEffect {
   readonly kind: string;

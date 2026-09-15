@@ -119,6 +119,7 @@ const applyWorkSpend = (
         standing: Math.max(METER_MIN, state.standing - CRASH_STANDING_LOSS),
         week,
         actionsLeft: 0,
+        crashWeeks: [...state.crashWeeks, state.week],
       },
       effects,
     };

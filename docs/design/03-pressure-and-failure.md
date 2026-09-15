@@ -3,7 +3,8 @@
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
 (Block A3), revised the same day to add the fellowship, revised
 2026-09-13 with the complicity, rent-event, and fellowship answer baselines,
-and revised 2026-09-15 with the panel and review outcome baselines. The
+and revised 2026-09-15 with the panel and review outcome baselines, and
+2026-09-15 with the run-end baselines. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 
@@ -148,9 +149,13 @@ baselines.
 
 ## Run-end summary
 
-- Ejection by standing (warned).
-- Burnout after repeated crashes.
-- Quitting.
+- Ejection by standing: the warning starts at standing 20 or below, and the
+  player has two turns to recover; rising above 20 clears the live warning,
+  and reaching the deadline still below it ends the run.
+- Burnout: a second crash inside the same act (weeks 1–4, 5–8, and 9–12) ends
+  the run.
+- Quitting is always available and leads to the leaving ending, never a
+  failure screen.
 - The contract's natural end, where the paper outcome, fellowship outcome, and
   the ending resolution decide the epilogue.
 

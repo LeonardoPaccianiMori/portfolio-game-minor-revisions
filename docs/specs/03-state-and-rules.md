@@ -3,29 +3,33 @@
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
 2026-09-13 with the pending-event field and the resolve command (STEP-009)
 and with experiment assignments and the result-based evidence flow (STEP-010),
-and revised 2026-09-15 with the paper outcome and review and panel resolution
-(STEP-011).**
+revised 2026-09-15 with the paper outcome and review and panel resolution
+(STEP-011), and revised 2026-09-15 with the run resolution, crash weeks, and
+standing warning (STEP-012).**
 
 ## Campaign state (approved shape)
 
-| Field           | Meaning                                                                 |
-| --------------- | ----------------------------------------------------------------------- |
-| `version`       | Schema version                                                          |
-| `seed`          | Saved campaign seed                                                     |
-| `week`          | Current week, 1–12                                                      |
-| `actionsLeft`   | Actions remaining in the current week                                   |
-| `crashed`       | Whether the current week is lost to a crash                             |
-| `energy`        | Energy segments, 0–5                                                    |
-| `standing`      | Up-or-out meter                                                         |
-| `integrity`     | Hidden complicity measure                                               |
-| `relationships` | Trust for Voss, Dario, and Mara                                         |
-| `paper`         | Paper track: framing, revision, requirements, and outcome               |
-| `fellowship`    | Fellowship track: framing, requirements, answers, deadline, and outcome |
-| `evidence`      | Shared evidence set with track assignment and overlap flag              |
-| `experiments`   | Experiment assignments with their requirement, step, and state          |
-| `pendingEvent`  | Authored event awaiting a player choice, or `null`                      |
-| `history`       | Per-run record used by endings and narration                            |
-| `flags`         | Authored event flags                                                    |
+| Field                 | Meaning                                                                 |
+| --------------------- | ----------------------------------------------------------------------- |
+| `version`             | Schema version                                                          |
+| `seed`                | Saved campaign seed                                                     |
+| `week`                | Current week, 1–12                                                      |
+| `actionsLeft`         | Actions remaining in the current week                                   |
+| `crashed`             | Whether the current week is lost to a crash                             |
+| `energy`              | Energy segments, 0–5                                                    |
+| `standing`            | Up-or-out meter                                                         |
+| `integrity`           | Hidden complicity measure                                               |
+| `relationships`       | Trust for Voss, Dario, and Mara                                         |
+| `paper`               | Paper track: framing, revision, requirements, and outcome               |
+| `fellowship`          | Fellowship track: framing, requirements, answers, deadline, and outcome |
+| `evidence`            | Shared evidence set with track assignment and overlap flag              |
+| `experiments`         | Experiment assignments with their requirement, step, and state          |
+| `pendingEvent`        | Authored event awaiting a player choice, or `null`                      |
+| `resolution`          | The run-end cause, the ending, and the resolving week                   |
+| `crashWeeks`          | The weeks in which the player crashed                                   |
+| `standingWarningWeek` | The week the ejection warning started, or `null`                        |
+| `history`             | Per-run record used by endings and narration                            |
+| `flags`               | Authored event flags                                                    |
 
 The state is one serializable object. It contains no functions, class
 instances, or browser handles.
@@ -41,7 +45,7 @@ instances, or browser handles.
 | `comply { action }`                           | Take one of the five complicity actions                                                                                                                                        |
 | `meetPI`                                      | Enter the PI meeting flow                                                                                                                                                      |
 | `resolveEvent { eventId, choiceId }`          | Resolve the pending authored event with one of its authored choices                                                                                                            |
-| `quit`                                        | Confirm and end the run                                                                                                                                                        |
+| `quit`                                        | End the run with the leaving ending; always available until the run has ended                                                                                                  |
 | `advanceWeek`                                 | End the week early, or consume a lost week; reset slots and restore energy                                                                                                     |
 
 Commands are plain data and are validated before execution. Resting is

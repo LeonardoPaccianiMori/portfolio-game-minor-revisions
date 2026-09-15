@@ -1,7 +1,8 @@
 # B5 — Persistence and Recovery
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B5); revised
-2026-09-13 with the development-save decision.**
+2026-09-13 with the development-save decision and 2026-09-15 with the archive
+entry shape.**
 
 ## Database (approved)
 
@@ -16,6 +17,12 @@ One local IndexedDB database, `minor-revisions`, with these stores:
 | `meta`     | Schema version, content version, and save timestamps | `meta`     |
 
 No other browser storage is used for game data, and nothing leaves the machine.
+
+An archived entry holds the caller-supplied run ID and archive timestamp, the
+seed, the ending, the cause, the resolving week, and the personnel file. The
+application layer supplies the ID and timestamp, so the rules never read the
+clock; the store lists entries newest first and validates every entry it reads
+and writes.
 
 ## Save points (approved)
 
