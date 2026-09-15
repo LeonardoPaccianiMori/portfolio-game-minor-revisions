@@ -52,6 +52,13 @@ variant `high`, actual runtime model metadata not exposed: completed the
 independent review of STEP-013, found no blocker and eight required findings,
 all corrected by the primary.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the first
+re-review of STEP-013; confirmed R1, R3, R4, R6, and R8 and reported three
+remaining items (the disproven sliver claim, a failure test that would not
+catch a renderer leak, and stale record wording), all corrected by the
+primary.
+
 ### 2026-09-15 — STEP-012 the ending resolver
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

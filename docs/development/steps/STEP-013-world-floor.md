@@ -187,16 +187,17 @@ so later furniture or layout changes cannot silently seal a corner.
   this record.
 - Implementation commit: `b97019598da92edb68f57678c10e8e0f48ba2a1a`
   (`Add the world floor, collision, and recovery anchors`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 202 unit tests (17
-  new after the corrections), and the content check.
-- `npm run build`: passed; the single application bundle is 525.37 kB (132.0
+- `npm run check`: passed; typecheck, ESLint, Prettier, 201 unit tests (16
+  new after both correction rounds), and the content check.
+- `npm run build`: passed; the single application bundle is 525.39 kB (132.0
   kB gzip), well inside the 25 MB budget.
 - `npm run test:e2e`: 24 passed in Chromium, Firefox, and WebKit, including
   the world rendering after startup, the module build, render, recovery,
   resize, and double-dispose checks, the composed mesh count and six
   recovery anchors, and the failed-start cleanup.
 - `git diff --check` and `git status`: clean at the implementation head.
-- Corrections commit: `38380b8` (`Apply STEP-013 review corrections`).
+- Corrections commits: `38380b8` (`Apply STEP-013 review corrections`) and
+  `7faf23e` (`Strengthen STEP-013 no-trapping proof and failure test`).
 - Deviations: the south rooms adjoin the corridor at z −0.2 (the baseline
   table's −2.2 would have left a void between the corridor and the wall), so
   every wall sits on a single 0.2 m band. Every doorway sits at its room's
@@ -204,10 +205,11 @@ so later furniture or layout changes cannot silently seal a corner.
   at 17.5; the break room ends at 20.4 to align with the corridor, and the
   west lab bench starts at x 11.2 so the wall aisle clears the player radius.
   The plant rows were shortened to x 1.2–7.2 after the no-trapping proof
-  caught the original rows sealing the aisles; the proof did its job. The
-  proof now asserts the start-reachable region across several sampling
-  phases; isolated sub-cell slivers that no player can enter are excluded,
-  and B6's wording records this. `index.html` gained the world container and
+  caught the original rows sealing the aisles, and the west lab bench was
+  moved to x 11.6 so the wall aisle clears the player radius with room for
+  grid sampling; the proof did its job. The proof asserts a single connected
+  region covering every space and every recovery anchor across seven sampling
+  phases. `index.html` gained the world container and
   minimal full-screen styling for the canvas. With Leonardo's authorization
   on 2026-09-15, `@types/three@0.185.4` was added as an exact-pinned dev
   dependency because Three.js ships no type declarations.
@@ -260,9 +262,22 @@ Advisories recorded from the independent review:
 - The tangent case was added with exactly representable values, and
   `WorldStats` now exposes `drawCalls` and `meshCount` with clear semantics.
 
+Second-round corrections after the first re-review:
+
+- **R-2 (remaining):** the re-review disproved the unreachable-sliver claim
+  with a continuous path into the five-cell pocket. The west lab bench was
+  moved to x 11.6, widening the aisle to 1.2 m, and every tested sampling
+  phase now forms one connected region. The proof asserts that strong form
+  directly, and B6 no longer carries the sliver wording.
+- **R-5 (remaining):** the failure browser test now injects a geometry
+  builder (the fakes B2 allows) that throws after the canvas is attached, so
+  it fails unless the transactional cleanup removes the canvas.
+- **R-7 (remaining):** the stale "draft awaiting approval" sentence in the
+  accepted dependencies was corrected.
+
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
 Implementation complete on 2026-09-15; the independent review returned no
-blocker and eight required corrections, now applied and awaiting re-review.
-Leonardo's result review pending.
+blocker and eight required corrections, applied in two rounds and awaiting
+the final re-review. Leonardo's result review pending.
