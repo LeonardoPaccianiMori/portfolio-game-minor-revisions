@@ -103,6 +103,23 @@ const rankOf = (
   return recommendation === undefined ? undefined : RANK[recommendation];
 };
 
+const findSeparatingSeed = (
+  better: (seed: number) => CampaignState,
+  worse: (seed: number) => CampaignState,
+  reviewerId: string,
+): number => {
+  for (let seed = 1; seed <= 80; seed += 1) {
+    const betterRank = rankOf(resolveReview(better(seed)).effects, reviewerId);
+    const worseRank = rankOf(resolveReview(worse(seed)).effects, reviewerId);
+
+    if (betterRank !== undefined && worseRank !== undefined && worseRank === betterRank + 1) {
+      return seed;
+    }
+  }
+
+  throw new Error('no separating seed found');
+};
+
 describe('fellowship panel', () => {
   it('rejects a missed deadline without reading a proposal', () => {
     const state: CampaignState = {
@@ -258,15 +275,22 @@ describe('journal review', () => {
       payload: { outcome, detected: false },
     });
 
-    for (const report of reports) {
+    const expectedRoots: Readonly<Record<string, string>> = {
+      'reviewer.methods': 'review.methods',
+      'reviewer.significance': 'review.significance',
+      'reviewer.profile': 'review.profile',
+    };
+
+    for (const [index, report] of reports.entries()) {
       const reviewerId = String(report.payload['reviewerId']);
-      const shortName = reviewerId.replace('reviewer.', '');
+      const expectedRoot = expectedRoots[reviewerId] ?? '';
       const recommendation = report.payload['recommendation'] as ReviewRecommendation;
       const commentIds = report.payload['commentIds'] as readonly string[];
 
+      expect(reviewerId).toBe(REVIEWER_IDS[index]);
       expect(commentIds).toEqual([
-        `review.${shortName}.${recommendation}.1`,
-        `review.${shortName}.${recommendation}.2`,
+        `${expectedRoot}.${recommendation}.1`,
+        `${expectedRoot}.${recommendation}.2`,
       ]);
 
       for (const commentId of commentIds) {
@@ -414,6 +438,162 @@ describe('journal review', () => {
 
     expect(fullRank).toBeDefined();
     expect(partialRank).toBe((fullRank as number) + 1);
+  });
+
+  it('rewards each profile component separately', () => {
+    const trusted = (seed: number): CampaignState => ({
+      ...submitted(createInitialState(seed)),
+      relationships: { ...createInitialState(seed).relationships, voss: 70 },
+    });
+    const credited = (seed: number): CampaignState => ({
+      ...submitted(createInitialState(seed)),
+      flags: { ...createInitialState(seed).flags, 'complicity.take-credit': true },
+    });
+    const plain = (seed: number): CampaignState => submitted(createInitialState(seed));
+
+    const trustSeed = findSeparatingSeed(trusted, plain, 'reviewer.profile');
+    expect(recommendationOf(resolveReview(trusted(trustSeed)).effects, 'reviewer.profile')).toBe(
+      'minor-revision',
+    );
+    expect(recommendationOf(resolveReview(plain(trustSeed)).effects, 'reviewer.profile')).toBe(
+      'major-revision',
+    );
+
+    const creditSeed = findSeparatingSeed(credited, plain, 'reviewer.profile');
+    expect(recommendationOf(resolveReview(credited(creditSeed)).effects, 'reviewer.profile')).toBe(
+      'minor-revision',
+    );
+    expect(recommendationOf(resolveReview(plain(creditSeed)).effects, 'reviewer.profile')).toBe(
+      'major-revision',
+    );
+  });
+
+  it('rewards each significance component separately', () => {
+    const without = (seed: number, requirementId: 'impact' | 'presentation'): CampaignState => {
+      const state = submitted(createInitialState(seed));
+
+      return {
+        ...state,
+        paper: {
+          ...state.paper,
+          requirements: state.paper.requirements.filter(
+            (requirement) => requirement.id !== requirementId,
+          ),
+        },
+      };
+    };
+
+    const impactSeed = findSeparatingSeed(
+      (seed) => submitted(createInitialState(seed)),
+      (seed) => without(seed, 'impact'),
+      'reviewer.significance',
+    );
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(impactSeed))).effects,
+        'reviewer.significance',
+      ),
+    ).toBe('accept');
+    expect(
+      recommendationOf(
+        resolveReview(without(impactSeed, 'impact')).effects,
+        'reviewer.significance',
+      ),
+    ).toBe('minor-revision');
+
+    const presentationSeed = findSeparatingSeed(
+      (seed) => submitted(createInitialState(seed)),
+      (seed) => without(seed, 'presentation'),
+      'reviewer.significance',
+    );
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(presentationSeed))).effects,
+        'reviewer.significance',
+      ),
+    ).toBe('accept');
+    expect(
+      recommendationOf(
+        resolveReview(without(presentationSeed, 'presentation')).effects,
+        'reviewer.significance',
+      ),
+    ).toBe('minor-revision');
+  });
+
+  it('rewards each methods component separately', () => {
+    const without = (seed: number, requirementId: 'controls' | 'replicates'): CampaignState => {
+      const state = submitted(createInitialState(seed));
+
+      return {
+        ...state,
+        paper: {
+          ...state.paper,
+          requirements: state.paper.requirements.filter(
+            (requirement) => requirement.id !== requirementId,
+          ),
+        },
+      };
+    };
+
+    const controlsSeed = findSeparatingSeed(
+      (seed) => submitted(createInitialState(seed)),
+      (seed) => without(seed, 'controls'),
+      'reviewer.methods',
+    );
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(controlsSeed))).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('accept');
+    expect(
+      recommendationOf(
+        resolveReview(without(controlsSeed, 'controls')).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('minor-revision');
+
+    const replicatesSeed = findSeparatingSeed(
+      (seed) => submitted(createInitialState(seed)),
+      (seed) => without(seed, 'replicates'),
+      'reviewer.methods',
+    );
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(replicatesSeed))).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('accept');
+    expect(
+      recommendationOf(
+        resolveReview(without(replicatesSeed, 'replicates')).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('minor-revision');
+  });
+
+  it('charges the reframe penalty through the methods reviewer', () => {
+    const reframed = (seed: number): CampaignState => {
+      const state = submitted(createInitialState(seed));
+
+      return { ...state, paper: { ...state.paper, revision: 2 } };
+    };
+
+    const seed = findSeparatingSeed(
+      (candidate) => submitted(createInitialState(candidate)),
+      reframed,
+      'reviewer.methods',
+    );
+
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(seed))).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('accept');
+    expect(recommendationOf(resolveReview(reframed(seed)).effects, 'reviewer.methods')).toBe(
+      'minor-revision',
+    );
   });
 
   it('treats an overlap result as a discovery risk on its own', () => {

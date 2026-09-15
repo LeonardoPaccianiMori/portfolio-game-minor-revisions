@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-13.
+Last updated: 2026-09-15.
 
 ## Purpose and scope
 

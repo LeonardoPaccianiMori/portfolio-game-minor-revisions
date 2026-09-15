@@ -2,9 +2,9 @@
 
 Status: **Documented and revised — the core decisions, detailed action list,
 cost shape, and worked example were approved by Leonardo on 2026-09-10
-(Block A2); revised the same day to add the fellowship track, and revised
-2026-09-13 with the concrete experiment model, its slice baselines, and the
-review and panel meta-rules.**
+(Block A2); revised the same day to add the fellowship track, revised
+2026-09-13 with the concrete experiment model and its slice baselines, and
+revised 2026-09-15 with the review and panel meta-rules.**
 
 ## Purpose
 

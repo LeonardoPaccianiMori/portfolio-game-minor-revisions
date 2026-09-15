@@ -1,9 +1,10 @@
 # B3 — State, Commands, and Determinism
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B3); revised
-2026-09-13 with the pending-event field and the resolve command (STEP-009),
-with experiment assignments and the result-based evidence flow (STEP-010), and
-with the paper outcome and review and panel resolution (STEP-011).**
+2026-09-13 with the pending-event field and the resolve command (STEP-009)
+and with experiment assignments and the result-based evidence flow (STEP-010),
+and revised 2026-09-15 with the paper outcome and review and panel resolution
+(STEP-011).**
 
 ## Campaign state (approved shape)
 

@@ -1,9 +1,9 @@
 # 03 — Pressure, Resources, and Failure
 
 Status: **Documented and revised — approved by Leonardo on 2026-09-10
-(Block A3), revised the same day to add the fellowship, and revised
-2026-09-13 with the complicity and rent-event baselines, the fellowship
-answer work, and the panel and review outcome baselines. The
+(Block A3), revised the same day to add the fellowship, revised
+2026-09-13 with the complicity, rent-event, and fellowship answer baselines,
+and revised 2026-09-15 with the panel and review outcome baselines. The
 baseline tuning numbers below are a starting point for the vertical slice and
 may be adjusted by evidence through the approved change process.**
 

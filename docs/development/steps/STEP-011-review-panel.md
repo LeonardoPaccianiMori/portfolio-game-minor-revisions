@@ -87,7 +87,7 @@ journal decides the paper, and careless shortcuts can be caught and cost you.
 
 - STEP-010 accepted by Leonardo on 2026-09-13.
 - The funding-review week and blank-answer decisions above, made by Leonardo
-  on 2026-09-15. The remaining plan awaits his explicit approval.
+  on 2026-09-15. The plan was approved by Leonardo the same day.
 
 ## Plan
 
