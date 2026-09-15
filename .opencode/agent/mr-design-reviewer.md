@@ -5,8 +5,8 @@ description: >-
   governance and cross-system decisions, not for delegated implementation.
   Cannot edit, delegate, or use the network.
 mode: subagent
-model: opencode-go/glm-5.3
-variant: max
+model: opencode-go/gpt-5.6-luna
+variant: high
 permission:
   edit: deny
   task: deny

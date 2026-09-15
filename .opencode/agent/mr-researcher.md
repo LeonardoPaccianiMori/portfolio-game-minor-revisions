@@ -5,8 +5,8 @@ description: >-
   an external or generated asset candidate, or for bounded evidence research.
   Cannot edit, delegate, or download material.
 mode: subagent
-model: opencode-go/glm-5.3
-variant: high
+model: opencode-go/glm-5.3-flash
+variant: medium
 permission:
   edit: deny
   task: deny
