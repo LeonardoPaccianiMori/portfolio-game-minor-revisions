@@ -1,7 +1,7 @@
 ---
 id: STEP-013
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-09-15
@@ -281,6 +281,9 @@ Second-round corrections after the first re-review:
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
-Implementation complete on 2026-09-15; the independent review returned no
-blocker and eight required corrections, applied in two rounds and awaiting
-the final re-review. Leonardo's result review pending.
+**Accepted by Leonardo on 2026-09-15** after the result review: the six-space
+floor, the static collision with its no-trapping proof and recovery anchors,
+the placeholder overview rendering and clean shutdown, the authorized
+`@types/three` addition, the records and evidence (201 unit tests and 24
+browser tests; `npm run verify` on `main`), and the three review rounds with
+every finding corrected were reviewed with no visible issue.

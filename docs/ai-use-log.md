@@ -43,9 +43,10 @@ approved on 2026-09-15. It added the six-space floor plan, the pure collision
 module with the no-trapping proof, the Three.js geometry and world with a
 placeholder overview camera, the startup and shutdown wiring, and 17 tests;
 with Leonardo's authorization it added the exact-pinned `@types/three` dev
-dependency. It applied the review corrections. Integration and acceptance are
-pending. Evidence: `docs/development/steps/STEP-013-world-floor.md`; commits
-`7851623`, `b970195`, `f6f1689`, `38380b8`.
+dependency. It applied the review corrections, integrated on `main`, and
+recorded the acceptance. Evidence:
+`docs/development/steps/STEP-013-world-floor.md`; commits `7851623`,
+`b970195`, `f6f1689`, `38380b8`, `7faf23e`, `b8b6bd5`, `db15dc8`, `b65b96f`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the
