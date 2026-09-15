@@ -44,21 +44,6 @@ const distanceToRegion = (region: readonly Point[], point: Point): number =>
     Number.POSITIVE_INFINITY,
   );
 
-const startRegionOf = (regions: readonly (readonly Point[])[]): readonly Point[] => {
-  let best: readonly Point[] = [];
-  let bestDistance = Number.POSITIVE_INFINITY;
-
-  for (const region of regions) {
-    const distance = distanceToRegion(region, START_ANCHOR);
-    if (distance < bestDistance) {
-      best = region;
-      bestDistance = distance;
-    }
-  }
-
-  return best;
-};
-
 describe('the floor plan', () => {
   it('holds six spaces with one anchor each', () => {
     expect(SPACES).toHaveLength(6);
@@ -186,32 +171,24 @@ describe('static collision', () => {
 });
 
 describe('the no-trapping proof', () => {
-  it('keeps the default sampling in one connected region', () => {
-    expect(computeWalkableRegions()).toHaveLength(1);
-  });
-
-  it('reaches every space and every anchor from the start region', () => {
+  it('keeps the floor in one connected region covering every space and anchor', () => {
     const regions = computeWalkableRegions();
-    const startRegion = startRegionOf(regions);
+    const region = regions[0] ?? [];
 
-    expect(distanceToRegion(startRegion, START_ANCHOR)).toBeLessThanOrEqual(
-      NAVIGATION_STEP * Math.SQRT2,
-    );
+    expect(regions).toHaveLength(1);
 
     for (const space of SPACES) {
-      expect(startRegion.some((point) => insideRect(space, point))).toBe(true);
+      expect(region.some((point) => insideRect(space, point))).toBe(true);
     }
 
     for (const anchor of ANCHORS) {
       expect(isInsideWalkableArea(anchor)).toBe(true);
       expect(collidesAt(anchor, PLAYER_RADIUS, colliders)).toBe(false);
-      expect(distanceToRegion(startRegion, anchor)).toBeLessThanOrEqual(
-        NAVIGATION_STEP * Math.SQRT2,
-      );
+      expect(distanceToRegion(region, anchor)).toBeLessThanOrEqual(NAVIGATION_STEP * Math.SQRT2);
     }
   });
 
-  it('keeps the reachability guarantee under finer and shifted sampling', () => {
+  it('holds the same guarantee under finer and shifted sampling', () => {
     const bounds = envelopeBounds();
     const phases: readonly { step?: number; bounds?: typeof bounds }[] = [
       { step: 0.125 },
@@ -229,25 +206,17 @@ describe('the no-trapping proof', () => {
         ...(phase.bounds !== undefined ? { bounds: phase.bounds } : {}),
       };
       const regions = computeWalkableRegions(options);
-      const step = phase.step ?? NAVIGATION_STEP;
-      const startRegion = startRegionOf(regions);
-      const others = regions.filter((region) => region !== startRegion);
-      const threshold = step * Math.SQRT2;
+      const region = regions[0] ?? [];
+      const threshold = (phase.step ?? NAVIGATION_STEP) * Math.SQRT2;
+
+      expect(regions).toHaveLength(1);
 
       for (const space of SPACES) {
-        expect(startRegion.some((point) => insideRect(space, point))).toBe(true);
+        expect(region.some((point) => insideRect(space, point))).toBe(true);
       }
 
       for (const anchor of ANCHORS) {
-        expect(distanceToRegion(startRegion, anchor)).toBeLessThanOrEqual(threshold);
-      }
-
-      for (const region of others) {
-        expect(region.length).toBeLessThan(20);
-
-        for (const anchor of ANCHORS) {
-          expect(distanceToRegion(region, anchor)).toBeGreaterThan(threshold);
-        }
+        expect(distanceToRegion(region, anchor)).toBeLessThanOrEqual(threshold);
       }
     }
   });

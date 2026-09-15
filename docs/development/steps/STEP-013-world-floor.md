@@ -82,7 +82,7 @@ can be escaped, and where the nearest safe point is.
 ## Accepted dependencies
 
 - STEP-012 accepted by Leonardo on 2026-09-15.
-- This plan is a draft awaiting Leonardo's explicit approval.
+- The plan was approved by Leonardo on 2026-09-15.
 
 ## Plan
 

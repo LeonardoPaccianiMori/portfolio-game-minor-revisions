@@ -21,9 +21,8 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
   corridor through one doorway.
 - Each space has one recovery anchor; the start anchor is in the desk hub.
 - A permanent connectivity test samples the floor on a grid across several
-  phases and proves that the region reachable from the start anchor contains
-  every space and every recovery anchor. Isolated sampling slivers that no
-  player can enter are excluded by construction.
+  phases and proves that the walkable floor forms one connected region that
+  contains every space and every recovery anchor.
 
 ## Movement (approved)
 

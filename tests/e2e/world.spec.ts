@@ -94,19 +94,18 @@ test('a failed world start leaves no canvas behind', async ({ page }) => {
     container.style.height = '120px';
     document.body.appendChild(container);
 
-    const original = container.appendChild.bind(container);
-    container.appendChild = () => {
-      throw new Error('blocked');
-    };
-
     let threw = false;
     try {
-      worldModule.createWorld({ container });
+      worldModule.createWorld({
+        container,
+        buildGeometry: () => {
+          throw new Error('blocked');
+        },
+      });
     } catch {
       threw = true;
     }
 
-    container.appendChild = original;
     const childCount = container.childElementCount;
     container.remove();
 

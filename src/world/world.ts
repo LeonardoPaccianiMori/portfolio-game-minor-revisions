@@ -21,12 +21,14 @@ export interface World {
 
 export interface WorldOptions {
   readonly container: HTMLElement;
+  readonly buildGeometry?: () => BuiltFloor;
 }
 
 const CENTER: Point = { x: 10.3, z: 1.5 };
 
 export const createWorld = (options: WorldOptions): World => {
   const renderer = new THREE.WebGLRenderer({ antialias: false });
+  const buildGeometry = options.buildGeometry ?? buildFloorGeometry;
   let floor: BuiltFloor | null = null;
 
   try {
@@ -54,7 +56,7 @@ export const createWorld = (options: WorldOptions): World => {
     scene.add(ambient);
     scene.add(sun);
 
-    floor = buildFloorGeometry();
+    floor = buildGeometry();
     const built = floor;
     scene.add(built.group);
 

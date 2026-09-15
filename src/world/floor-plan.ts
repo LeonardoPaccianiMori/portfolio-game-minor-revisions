@@ -171,8 +171,8 @@ export const PROPS: readonly PropBox[] = [
   {
     id: 'prop.lab.bench-west',
     spaceId: 'soil-lab',
-    minX: 11.2,
-    maxX: 12.8,
+    minX: 11.6,
+    maxX: 13.2,
     minZ: 4.0,
     maxZ: 9.0,
     height: 0.9,
