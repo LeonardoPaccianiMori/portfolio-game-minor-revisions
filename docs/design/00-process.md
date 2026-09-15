@@ -147,16 +147,16 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-013 implementation complete; independent review pending
+## Current task — STEP-013 integrated; Leonardo result review
 
-STEP-012 is accepted. Leonardo approved the STEP-013 plan (the world floor:
-six spaces, static collision, no trapping, recovery anchors) on 2026-09-15
-after reviewing the written draft. STEP-013 is implemented on branch
-`work/step-013-world-floor` from base `979f62c`, and `npm run check`,
-`npm run build`, and `npm run test:e2e` passed. The current step record is
-`docs/development/steps/STEP-013-world-floor.md`. The next permitted action
-is the primary pre-review audit, then one fresh independent review by
-`mr-reviewer` before integration and Leonardo's result review. Movement and
+STEP-012 is accepted. Leonardo approved the STEP-013 plan (the world floor)
+on 2026-09-15. STEP-013 is implemented, independently reviewed in three
+rounds by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) with all
+required findings corrected, integrated on `main`, and fully verified. The
+current step record is
+`docs/development/steps/STEP-013-world-floor.md`. The world is visible but
+not yet walkable, so the next permitted action is Leonardo's short result
+review instead of direct play, followed by explicit acceptance. Movement and
 the first-person camera are STEP-014 and are not authorized until their own
 plan is approved. The earlier block questions and session records further
 down are preserved as history.

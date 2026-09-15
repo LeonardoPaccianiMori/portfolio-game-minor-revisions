@@ -1,7 +1,7 @@
 ---
 id: STEP-013
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 3
 gate: first-playable
 created: 2026-09-15
@@ -198,13 +198,16 @@ so later furniture or layout changes cannot silently seal a corner.
 - `git diff --check` and `git status`: clean at the implementation head.
 - Corrections commits: `38380b8` (`Apply STEP-013 review corrections`) and
   `7faf23e` (`Strengthen STEP-013 no-trapping proof and failure test`).
+- Integrated on local `main` at `db15dc8` by fast-forward, and `npm run
+verify` passed on `main`.
+- Final verification: no blocker and no required finding; one record-wording
+  advisory (a historical bench coordinate), corrected before integration.
 - Deviations: the south rooms adjoin the corridor at z −0.2 (the baseline
   table's −2.2 would have left a void between the corridor and the wall), so
   every wall sits on a single 0.2 m band. Every doorway sits at its room's
   centre: the soil lab at 15.4, the PI's office at 11.4, and the break room
-  at 17.5; the break room ends at 20.4 to align with the corridor, and the
-  west lab bench starts at x 11.2 so the wall aisle clears the player radius.
-  The plant rows were shortened to x 1.2–7.2 after the no-trapping proof
+  at 17.5; the break room ends at 20.4 to align with the corridor. The plant
+  rows were shortened to x 1.2–7.2 after the no-trapping proof
   caught the original rows sealing the aisles, and the west lab bench was
   moved to x 11.6 so the wall aisle clears the player radius with room for
   grid sampling; the proof did its job. The proof asserts a single connected
