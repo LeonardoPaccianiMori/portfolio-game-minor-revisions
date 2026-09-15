@@ -147,15 +147,14 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-011 accepted; rent-event discussion before the STEP-012 plan
+## Current task — STEP-011 accepted; STEP-012 plan in preparation
 
 STEP-011 (review and panel set pieces) is accepted by Leonardo on 2026-09-15
-after his result review. Leonardo has asked to discuss the rent event from
-STEP-009 before the next plan; that discussion and any agreed design change
-follow the approved change process and are recorded before the STEP-012 plan
-is written. The next plan is STEP-012 (the ending resolver: four endings,
-personnel file, archive), which is not authorized until Leonardo approves its
-exact plan. The previous step record is
+after his result review. Leonardo reviewed the rent event's current behaviour
+on 2026-09-15 and asked for no change; the implementation and its recorded
+advisories stand. The next plan is STEP-012 (the ending resolver: four
+endings, personnel file, archive), which is not authorized until Leonardo
+approves its exact plan. The previous step record is
 `docs/development/steps/STEP-011-review-panel.md`. The earlier block questions
 and session records further down are preserved as history.
 
