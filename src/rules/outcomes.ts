@@ -248,13 +248,14 @@ export const resolveReview = (state: CampaignState): OutcomeResolution => {
 
   const reports = REVIEWER_IDS.map((reviewerId, index) => {
     const recommendation = recommendations[index] ?? 'reject';
+    const commentRoot = reviewerId.replace('reviewer.', 'review.');
 
     return {
       kind: 'review-report',
       payload: {
         reviewerId,
         recommendation,
-        commentIds: [`${reviewerId}.${recommendation}.1`, `${reviewerId}.${recommendation}.2`],
+        commentIds: [`${commentRoot}.${recommendation}.1`, `${commentRoot}.${recommendation}.2`],
       },
     };
   });

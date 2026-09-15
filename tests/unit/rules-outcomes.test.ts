@@ -94,6 +94,15 @@ const recommendationOf = (
   return report?.payload['recommendation'] as ReviewRecommendation | undefined;
 };
 
+const rankOf = (
+  effects: readonly { kind: string; payload: Readonly<Record<string, unknown>> }[],
+  reviewerId: string,
+): number | undefined => {
+  const recommendation = recommendationOf(effects, reviewerId);
+
+  return recommendation === undefined ? undefined : RANK[recommendation];
+};
+
 describe('fellowship panel', () => {
   it('rejects a missed deadline without reading a proposal', () => {
     const state: CampaignState = {
@@ -109,14 +118,10 @@ describe('fellowship panel', () => {
     expect(result.state.flags['panel.rejected']).toBe(true);
     expect(result.state.flags['renewal.closed']).toBe(true);
     expect(result.state.history.at(-1)).toBe('panel:rejected');
-    expect(result.effects).toContainEqual({
-      kind: 'panel-outcome',
-      payload: { outcome: 'rejected', detected: false },
-    });
-    expect(result.effects).toContainEqual({
-      kind: 'message',
-      payload: { messageId: 'message.panel.missed' },
-    });
+    expect(result.effects).toEqual([
+      { kind: 'panel-outcome', payload: { outcome: 'rejected', detected: false } },
+      { kind: 'message', payload: { messageId: 'message.panel.missed' } },
+    ]);
   });
 
   it('rejects blank answers and never funds honest ones', () => {
@@ -149,10 +154,10 @@ describe('fellowship panel', () => {
     expect(result.state.standing).toBe(60);
     expect(result.state.flags['panel.funded']).toBe(true);
     expect(result.state.flags['renewal.closed']).toBeUndefined();
-    expect(result.effects).toContainEqual({
-      kind: 'message',
-      payload: { messageId: 'message.panel.funded' },
-    });
+    expect(result.effects).toEqual([
+      { kind: 'panel-outcome', payload: { outcome: 'funded', detected: false } },
+      { kind: 'message', payload: { messageId: 'message.panel.funded' } },
+    ]);
   });
 
   it('forces a rejection and a discovery cost when fabrication is caught', () => {
@@ -225,11 +230,10 @@ describe('journal review', () => {
     expect(result.state.flags['paper.not-submitted']).toBe(true);
     expect(result.state.flags['renewal.closed']).toBe(true);
     expect(result.state.history.at(-1)).toBe('review:not-submitted');
-    expect(result.effects).toContainEqual({
-      kind: 'review-verdict',
-      payload: { outcome: 'not-submitted', detected: false },
-    });
-    expect(result.effects.some((effect) => effect.kind === 'review-report')).toBe(false);
+    expect(result.effects).toEqual([
+      { kind: 'review-verdict', payload: { outcome: 'not-submitted', detected: false } },
+      { kind: 'message', payload: { messageId: 'message.review.not-submitted' } },
+    ]);
   });
 
   it('emits three reports, a verdict, and the matching standing change', () => {
@@ -255,12 +259,38 @@ describe('journal review', () => {
     });
 
     for (const report of reports) {
+      const reviewerId = String(report.payload['reviewerId']);
+      const shortName = reviewerId.replace('reviewer.', '');
       const recommendation = report.payload['recommendation'] as ReviewRecommendation;
-      expect(report.payload['commentIds']).toEqual([
-        `${String(report.payload['reviewerId'])}.${recommendation}.1`,
-        `${String(report.payload['reviewerId'])}.${recommendation}.2`,
+      const commentIds = report.payload['commentIds'] as readonly string[];
+
+      expect(commentIds).toEqual([
+        `review.${shortName}.${recommendation}.1`,
+        `review.${shortName}.${recommendation}.2`,
       ]);
+
+      for (const commentId of commentIds) {
+        expect(commentId).toMatch(
+          /^review\.(methods|significance|profile)\.(accept|minor-revision|major-revision|reject)\.[12]$/,
+        );
+      }
     }
+
+    expect(result.effects.map((effect) => effect.kind)).toEqual([
+      'review-report',
+      'review-report',
+      'review-report',
+      'review-verdict',
+      'message',
+    ]);
+    expect(result.effects[3]).toEqual({
+      kind: 'review-verdict',
+      payload: { outcome, detected: false },
+    });
+    expect(result.effects[4]).toEqual({
+      kind: 'message',
+      payload: { messageId: `message.review.${outcome}` },
+    });
   });
 
   it('keeps the standing consistent with the outcome across seeds', () => {
@@ -307,39 +337,121 @@ describe('journal review', () => {
   });
 
   it('punishes a panel discovery through the profile reviewer', () => {
-    const clean = submitted();
-    const discovered: CampaignState = {
+    const clean: CampaignState = {
       ...submitted(),
+      relationships: { ...submitted().relationships, voss: 70 },
+      flags: { ...submitted().flags, 'complicity.take-credit': true },
+    };
+    const discovered: CampaignState = {
+      ...clean,
       flags: { ...clean.flags, 'discovery.panel': true },
     };
 
-    const cleanResult = resolveReview(clean);
-    const discoveredResult = resolveReview(discovered);
-    const cleanRecommendation = recommendationOf(cleanResult.effects, 'reviewer.profile');
-    const discoveredRecommendation = recommendationOf(discoveredResult.effects, 'reviewer.profile');
+    const cleanRank = rankOf(resolveReview(clean).effects, 'reviewer.profile');
+    const discoveredRank = rankOf(resolveReview(discovered).effects, 'reviewer.profile');
 
-    expect(cleanRecommendation).toBeDefined();
-    expect(discoveredRecommendation).toBeDefined();
-    expect(RANK[discoveredRecommendation as ReviewRecommendation]).toBeGreaterThanOrEqual(
-      RANK[cleanRecommendation as ReviewRecommendation],
-    );
+    expect(cleanRank).toBeDefined();
+    expect(discoveredRank).toBe((cleanRank as number) + 1);
+  });
+
+  it('rewards confidence and Voss trust through the profile reviewer', () => {
+    const confident: CampaignState = {
+      ...submitted(),
+      relationships: { ...submitted().relationships, voss: 70 },
+      flags: { ...submitted().flags, 'complicity.take-credit': true },
+    };
+
+    const confidentRank = rankOf(resolveReview(confident).effects, 'reviewer.profile');
+    const plainRank = rankOf(resolveReview(submitted()).effects, 'reviewer.profile');
+
+    expect(confidentRank).toBeDefined();
+    expect(plainRank).toBe((confidentRank as number) + 1);
   });
 
   it('punishes stale evidence through the methods reviewer', () => {
-    const clean = submitted();
-    const stale: CampaignState = {
-      ...submitted(),
+    const stale = (seed: number): CampaignState => ({
+      ...submitted(createInitialState(seed)),
       evidence: [{ id: 'experiment.controls.1', state: 'stale', track: 'paper', overlap: false }],
+    });
+    const seed = findSeed(
+      (candidate) =>
+        recommendationOf(
+          resolveReview(submitted(createInitialState(candidate))).effects,
+          'reviewer.methods',
+        ) === 'accept' &&
+        recommendationOf(resolveReview(stale(candidate)).effects, 'reviewer.methods') ===
+          'minor-revision',
+    );
+
+    expect(
+      recommendationOf(
+        resolveReview(submitted(createInitialState(seed))).effects,
+        'reviewer.methods',
+      ),
+    ).toBe('accept');
+    expect(recommendationOf(resolveReview(stale(seed)).effects, 'reviewer.methods')).toBe(
+      'minor-revision',
+    );
+  });
+
+  it('rewards impact and presentation through the significance reviewer', () => {
+    const partial = (seed: number): CampaignState => {
+      const state = submitted(createInitialState(seed));
+
+      return {
+        ...state,
+        paper: {
+          ...state.paper,
+          requirements: state.paper.requirements.filter(
+            (requirement) => requirement.id !== 'impact' && requirement.id !== 'presentation',
+          ),
+        },
+      };
     };
 
-    const cleanResult = resolveReview(clean);
-    const staleResult = resolveReview(stale);
-    const cleanRecommendation = recommendationOf(cleanResult.effects, 'reviewer.methods');
-    const staleRecommendation = recommendationOf(staleResult.effects, 'reviewer.methods');
+    const fullRank = rankOf(resolveReview(submitted()).effects, 'reviewer.significance');
+    const partialRank = rankOf(resolveReview(partial(1)).effects, 'reviewer.significance');
 
-    expect(RANK[staleRecommendation as ReviewRecommendation]).toBeGreaterThanOrEqual(
-      RANK[cleanRecommendation as ReviewRecommendation],
+    expect(fullRank).toBeDefined();
+    expect(partialRank).toBe((fullRank as number) + 1);
+  });
+
+  it('treats an overlap result as a discovery risk on its own', () => {
+    const risky = (seed: number): CampaignState => ({
+      ...submitted(createInitialState(seed)),
+      evidence: [{ id: 'experiment.controls.1', state: 'current', track: 'both', overlap: true }],
+    });
+    const seed = findSeed(
+      (candidate) =>
+        resolveReview(risky(candidate)).effects.find((effect) => effect.kind === 'review-verdict')
+          ?.payload['detected'] === true,
     );
+    const result = resolveReview(risky(seed));
+
+    expect(result.state.flags['discovery.review']).toBe(true);
+    expect(result.state.integrity).toBe(90);
+    expect(
+      resolveReview(submitted(createInitialState(seed))).state.flags['discovery.review'],
+    ).toBeUndefined();
+  });
+
+  it('treats the take-credit flag as a discovery risk on its own', () => {
+    const risky = (seed: number): CampaignState => ({
+      ...submitted(createInitialState(seed)),
+      flags: { ...createInitialState(seed).flags, 'complicity.take-credit': true },
+    });
+    const seed = findSeed(
+      (candidate) =>
+        resolveReview(risky(candidate)).effects.find((effect) => effect.kind === 'review-verdict')
+          ?.payload['detected'] === true,
+    );
+    const result = resolveReview(risky(seed));
+
+    expect(result.state.flags['discovery.review']).toBe(true);
+    expect(result.state.integrity).toBe(90);
+    expect(
+      resolveReview(submitted(createInitialState(seed))).state.flags['discovery.review'],
+    ).toBeUndefined();
   });
 
   it('does not mutate the original state and is deterministic', () => {
