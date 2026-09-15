@@ -1,7 +1,7 @@
 ---
 id: STEP-012
 type: development-step
-status: plan-approved
+status: implemented
 phase: 2
 gate: foundation
 created: 2026-09-15
@@ -210,7 +210,28 @@ rules stay free of the clock.
 
 ## Execution record
 
-Not yet available.
+- Base: `03624e8f6df1d2ba41aae19a8151e6c4a3ef40ea`.
+- Branch: `work/step-012-endings`.
+- Plan checkpoint: `d5848a4` (`Approve STEP-012 endings plan`), including
+  this record.
+- Implementation commit: `05ca9f2ec8fe0e0316d643372eb33445c4954445`
+  (`Add the ending resolver and archive`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 180 unit tests (25
+  new), and the content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit, including
+  the archive save, list, remove, and clear-data round trip.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the ending ids, causes, and resolution shape live in
+  `campaign-state.ts` with the other state shapes, while `endings.ts` owns the
+  resolution rules; this avoids a runtime cycle from the state module into
+  the resolver. The archive store validates every entry it reads and writes
+  and cross-checks the entry against its personnel file. No path outside the
+  approved list changed.
+- Limitations: no interface reads the resolution or the archive yet; ending
+  and personnel-file text has no content until the content phase; the
+  baselines are not balanced by a full run, which the first-playable and
+  slice gates own.
 
 ## Independent review
 
@@ -223,5 +244,6 @@ None yet.
 ## Leonardo decision
 
 The quit-ending and archive decisions were made on 2026-09-15. Plan approved
-by Leonardo on 2026-09-15 after he reviewed the written draft. Implementation,
-testing, and acceptance pending.
+by Leonardo on 2026-09-15 after he reviewed the written draft. Implementation
+complete on 2026-09-15; independent review and Leonardo's result review
+pending.
