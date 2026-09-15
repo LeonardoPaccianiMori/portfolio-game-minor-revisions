@@ -353,8 +353,8 @@ export const validateState = (value: unknown): StateValidation => {
     !crashWeeks.every((week) => isInteger(week) && week >= WEEK_MIN && week <= WEEK_MAX)
   ) {
     issues.push('crashWeeks must be a list of week numbers');
-  } else if (new Set(crashWeeks).size !== crashWeeks.length) {
-    issues.push('crashWeeks must not repeat a week');
+  } else if (!crashWeeks.every((week, index) => index === 0 || week > crashWeeks[index - 1])) {
+    issues.push('crashWeeks must be increasing week numbers without repeats');
   }
 
   const standingWarningWeek = value['standingWarningWeek'];

@@ -1,7 +1,22 @@
 import { describe, expect, it } from 'vitest';
 
-import { validateArchivedRun } from '../../src/persistence/index.ts';
+import { sortArchivedRuns, validateArchivedRun } from '../../src/persistence/index.ts';
+import type { ArchivedRun } from '../../src/persistence/index.ts';
 import { buildPersonnelFile, createInitialState } from '../../src/rules/index.ts';
+
+const validEntry = (runId: string, archivedAt: number): ArchivedRun => ({
+  runId,
+  archivedAt,
+  seed: 21,
+  ending: 'ending.intact',
+  cause: 'quit',
+  week: 4,
+  personnelFile: buildPersonnelFile(createInitialState(21), {
+    cause: 'quit',
+    ending: 'ending.intact',
+    week: 4,
+  }),
+});
 
 const baseRun = (): Record<string, unknown> => ({
   runId: 'run-1',
@@ -23,6 +38,22 @@ const withOverride = (overrides: Record<string, unknown>): unknown => ({
 });
 
 describe('archived runs', () => {
+  it('sorts newest first and breaks timestamp ties by run id', () => {
+    const unsorted = [
+      validEntry('run-c', 1000),
+      validEntry('run-b', 2000),
+      validEntry('run-a', 2000),
+    ];
+
+    expect(sortArchivedRuns(unsorted).map((entry) => entry.runId)).toEqual([
+      'run-a',
+      'run-b',
+      'run-c',
+    ]);
+    expect(unsorted.map((entry) => entry.runId)).toEqual(['run-c', 'run-b', 'run-a']);
+    expect(sortArchivedRuns([])).toEqual([]);
+  });
+
   it('accepts a valid entry', () => {
     const result = validateArchivedRun(baseRun());
 

@@ -196,6 +196,7 @@ test('invalid archive data is reported and preserved until cleared', async ({ pa
 
     const persistence = await persistenceModule.createPersistence();
     const listed = await persistence.archive.list();
+    const listedAgain = await persistence.archive.list();
     await persistence.clearAllData();
     const afterClear = await persistence.archive.list();
     persistence.close();
@@ -204,6 +205,7 @@ test('invalid archive data is reported and preserved until cleared', async ({ pa
       status: listed.status,
       issueCount: listed.status === 'invalid' ? listed.issues.length : 0,
       firstIssue: listed.status === 'invalid' ? listed.issues[0] : null,
+      preservedStatus: listedAgain.status,
       afterClearStatus: afterClear.status,
       afterClearCount: afterClear.status === 'ok' ? afterClear.entries.length : -1,
     };
@@ -212,6 +214,7 @@ test('invalid archive data is reported and preserved until cleared', async ({ pa
   expect(result.status).toBe('invalid');
   expect(result.issueCount).toBeGreaterThan(0);
   expect(result.firstIssue).toContain('broken:');
+  expect(result.preservedStatus).toBe('invalid');
   expect(result.afterClearStatus).toBe('ok');
   expect(result.afterClearCount).toBe(0);
 });

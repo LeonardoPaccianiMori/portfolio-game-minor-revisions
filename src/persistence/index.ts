@@ -1,4 +1,4 @@
-export { createArchiveStore } from './archive-store.ts';
+export { createArchiveStore, sortArchivedRuns } from './archive-store.ts';
 export type {
   ArchiveListInvalid,
   ArchiveListOk,

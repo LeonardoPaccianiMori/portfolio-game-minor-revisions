@@ -34,6 +34,9 @@ const byNewest = (left: ArchivedRun, right: ArchivedRun): number => {
   return left.runId < right.runId ? -1 : 1;
 };
 
+export const sortArchivedRuns = (entries: readonly ArchivedRun[]): readonly ArchivedRun[] =>
+  [...entries].sort(byNewest);
+
 export const createArchiveStore = (database: IDBPDatabase<CampaignDatabase>): ArchiveStore => ({
   async save(entry) {
     const validation = validateArchivedRun(entry);
@@ -67,7 +70,7 @@ export const createArchiveStore = (database: IDBPDatabase<CampaignDatabase>): Ar
       return { status: 'invalid', issues };
     }
 
-    return { status: 'ok', entries: entries.sort(byNewest) };
+    return { status: 'ok', entries: sortArchivedRuns(entries) };
   },
   async remove(runId) {
     await database.delete('archive', runId);

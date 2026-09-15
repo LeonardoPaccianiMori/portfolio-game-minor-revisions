@@ -262,7 +262,7 @@ describe('quitting', () => {
   });
 
   it('quits immediately without firing pending events', () => {
-    const state: CampaignState = { ...createInitialState(3), week: 12, actionsLeft: 1 };
+    const state: CampaignState = { ...createInitialState(3), week: 12, actionsLeft: 0 };
     const result = dispatch(state, { type: 'quit' });
 
     expect(result.ok).toBe(true);
@@ -272,8 +272,10 @@ describe('quitting', () => {
 
     expect(result.state.resolution.cause).toBe('quit');
     expect(result.state.paper.outcome).toBe('pending');
-    expect(result.state.flags['event.journal-review']).toBeUndefined();
-    expect(result.state.flags['event.contract-decision']).toBeUndefined();
+    expect(result.state.fellowship.requirements).toEqual([]);
+    expect(result.state.pendingEvent).toBeNull();
+    expect(Object.keys(result.state.flags).filter((flag) => flag.startsWith('event.'))).toEqual([]);
+    expect(result.effects.filter((effect) => effect.kind === 'personnel-file')).toHaveLength(1);
 
     const fileEffect = result.effects.find((effect) => effect.kind === 'personnel-file');
     const file = fileEffect?.payload as unknown as PersonnelFile;
@@ -454,6 +456,11 @@ describe('the personnel file', () => {
       ),
     ).toBe(true);
     expect(
+      validatePersonnelFile({ ...file, crashes: [3, 1] }).includes(
+        'personnel file crashes must be increasing week numbers without repeats',
+      ),
+    ).toBe(true);
+    expect(
       validatePersonnelFile({ ...file, extra: 1 }).includes(
         'unexpected personnel file field: extra',
       ),
@@ -515,6 +522,7 @@ describe('run state gating and purity', () => {
       resolution: { cause: 'none', ending: 'ending.intact', week: null },
     });
     const repeatedCrash = validateState({ ...base, crashWeeks: [2, 2] });
+    const reversedCrashes = validateState({ ...base, crashWeeks: [3, 1] });
     const badWarning = validateState({ ...base, standingWarningWeek: 13 });
     const wrongEnding = validateState({
       ...base,
@@ -540,7 +548,15 @@ describe('run state gating and purity', () => {
     }
     expect(repeatedCrash.ok).toBe(false);
     if (!repeatedCrash.ok) {
-      expect(repeatedCrash.issues).toContain('crashWeeks must not repeat a week');
+      expect(repeatedCrash.issues).toContain(
+        'crashWeeks must be increasing week numbers without repeats',
+      );
+    }
+    expect(reversedCrashes.ok).toBe(false);
+    if (!reversedCrashes.ok) {
+      expect(reversedCrashes.issues).toContain(
+        'crashWeeks must be increasing week numbers without repeats',
+      );
     }
     expect(badWarning.ok).toBe(false);
     if (!badWarning.ok) {
