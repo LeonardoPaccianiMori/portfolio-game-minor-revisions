@@ -42,10 +42,10 @@ reasoning variant `unknown`: prepared and implemented STEP-011 under the plan
 approved on 2026-09-15. It added the reviewer chorus, the fellowship panel
 and the journal review with their seeded draws and discovery rules, the paper
 outcome field, the funding-review week change, the panel and review events,
-the B3/A2/A3 rows, and 23 tests; it applied the review corrections and the
-record updates. Integration and acceptance are pending. Evidence:
+the B3/A2/A3 rows, and 27 tests; it applied the review corrections and the
+record updates, integrated on `main`, and recorded the acceptance. Evidence:
 `docs/development/steps/STEP-011-review-panel.md`; commits `f860d50`,
-`45d26dd`, `02566f9`, `0c1fd71`.
+`45d26dd`, `02566f9`, `0c1fd71`, `7579a24`, `c393922`, `c734103`, `16e0ae1`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the

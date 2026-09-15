@@ -1,7 +1,7 @@
 ---
 id: STEP-011
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-15
@@ -308,6 +308,9 @@ Re-review corrections (second round, `7579a24`):
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
-Implementation complete on 2026-09-15; the independent review returned no
-blocker and three required corrections, applied in two rounds and awaiting
-the final re-review. Leonardo's result review pending.
+**Accepted by Leonardo on 2026-09-15** after the result review: the panel and
+journal review with their learnable preferences and seeded luck, the discovery
+rules, the paper outcome field, the funding-review move to week 4, the records
+and evidence (155 unit tests and 12 browser tests; `npm run verify` on
+`main`), and the three review rounds with every required finding corrected
+were reviewed with no visible issue.

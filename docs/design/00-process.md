@@ -147,21 +147,17 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-011 integrated; Leonardo result review
+## Current task — STEP-011 accepted; rent-event discussion before the STEP-012 plan
 
-STEP-010 is accepted. Leonardo approved the STEP-011 plan (review and panel
-set pieces) on 2026-09-15, settling the two carried STEP-009 questions (the
-funding review now sits in week 4; a blank answer counts as answered).
-STEP-011 is implemented, independently reviewed in three rounds by
-`mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`, per D-045) with
-all required findings corrected, integrated on `main`, and fully verified.
-The current step record is
-`docs/development/steps/STEP-011-review-panel.md`. Like the previous rules
-steps, it is invisible, so the next permitted action is Leonardo's short
-result review instead of direct play, followed by explicit acceptance. The
-ending resolver is STEP-012 and is not authorized until its own plan is
-approved. The earlier block questions and session records further down are
-preserved as history.
+STEP-011 (review and panel set pieces) is accepted by Leonardo on 2026-09-15
+after his result review. Leonardo has asked to discuss the rent event from
+STEP-009 before the next plan; that discussion and any agreed design change
+follow the approved change process and are recorded before the STEP-012 plan
+is written. The next plan is STEP-012 (the ending resolver: four endings,
+personnel file, archive), which is not authorized until Leonardo approves its
+exact plan. The previous step record is
+`docs/development/steps/STEP-011-review-panel.md`. The earlier block questions
+and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
