@@ -147,21 +147,21 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-011 corrections applied; re-review pending
+## Current task — STEP-011 integrated; Leonardo result review
 
 STEP-010 is accepted. Leonardo approved the STEP-011 plan (review and panel
-set pieces) on 2026-09-15 after reviewing the written draft, settling the two
-carried STEP-009 questions (the funding review now sits in week 4; a blank
-answer counts as answered). STEP-011 is implemented on branch
-`work/step-011-review-panel` from base `a56adf7`; the first independent review
-by `mr-reviewer` (now `opencode-go/gpt-5.6-luna`, variant `high`, per D-045)
-returned no blocker and three required corrections, which are applied with
-`npm run check`, `npm run build`, and `npm run test:e2e` passing. The current
-step record is `docs/development/steps/STEP-011-review-panel.md`. The next
-permitted action is the fresh re-review, then integration and Leonardo's
-result review. The ending resolver is STEP-012 and is not authorized until
-its own plan is approved. The earlier block questions and session records
-further down are preserved as history.
+set pieces) on 2026-09-15, settling the two carried STEP-009 questions (the
+funding review now sits in week 4; a blank answer counts as answered).
+STEP-011 is implemented, independently reviewed in three rounds by
+`mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`, per D-045) with
+all required findings corrected, integrated on `main`, and fully verified.
+The current step record is
+`docs/development/steps/STEP-011-review-panel.md`. Like the previous rules
+steps, it is invisible, so the next permitted action is Leonardo's short
+result review instead of direct play, followed by explicit acceptance. The
+ending resolver is STEP-012 and is not authorized until its own plan is
+approved. The earlier block questions and session records further down are
+preserved as history.
 
 ### C2 questions (answered and documented)
 

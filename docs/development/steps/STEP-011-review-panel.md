@@ -1,7 +1,7 @@
 ---
 id: STEP-011
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-15
@@ -221,6 +221,10 @@ change; tests; docs; checks.
 tests`).
 - Second corrections commit: `7579a24` (`Apply STEP-011 re-review
 corrections`).
+- Follow-up commit: `c393922` (`Record STEP-011 re-reviews and finalize
+tests`).
+- Integrated on local `main` at `c734103` by fast-forward, and `npm run
+verify` passed on `main`.
 - Primary observation (not a committed test): a read-only probe over seeds
   1–48 measured the satirical spread. All-inflate proposals funded 35 times,
   were waitlisted 13 times, and never rejected. A fully careful paper landed
