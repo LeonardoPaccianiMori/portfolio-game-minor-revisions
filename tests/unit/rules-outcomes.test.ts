@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import {
   EVENT_CATALOGUE,
   PAPER_REQUIREMENT_IDS,
-  REVIEWER_IDS,
   createInitialState,
   decideVerdict,
   downgradeVerdict,
@@ -22,6 +21,12 @@ import type {
 } from '../../src/rules/index.ts';
 
 const FELLOWSHIP_IDS = ['impact', 'feasibility', 'independence', 'support'] as const;
+
+const EXPECTED_REVIEWER_IDS = [
+  'reviewer.methods',
+  'reviewer.significance',
+  'reviewer.profile',
+] as const;
 
 const RANK: Readonly<Record<ReviewRecommendation, number>> = {
   accept: 0,
@@ -258,7 +263,9 @@ describe('journal review', () => {
     const reports = result.effects.filter((effect) => effect.kind === 'review-report');
 
     expect(reports).toHaveLength(3);
-    expect(reports.map((report) => report.payload['reviewerId'])).toEqual([...REVIEWER_IDS]);
+    expect(reports.map((report) => report.payload['reviewerId'])).toEqual([
+      ...EXPECTED_REVIEWER_IDS,
+    ]);
 
     const recommendations = reports.map(
       (report) => report.payload['recommendation'] as ReviewRecommendation,
@@ -287,7 +294,7 @@ describe('journal review', () => {
       const recommendation = report.payload['recommendation'] as ReviewRecommendation;
       const commentIds = report.payload['commentIds'] as readonly string[];
 
-      expect(reviewerId).toBe(REVIEWER_IDS[index]);
+      expect(reviewerId).toBe(EXPECTED_REVIEWER_IDS[index]);
       expect(commentIds).toEqual([
         `${expectedRoot}.${recommendation}.1`,
         `${expectedRoot}.${recommendation}.2`,

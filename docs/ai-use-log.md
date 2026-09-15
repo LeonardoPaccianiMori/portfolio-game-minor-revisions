@@ -53,6 +53,18 @@ independent review of STEP-011, found no blocker and three required findings
 (the report comment-ID namespace, the record dates and the missing AI-use
 entry, and the test strength), all corrected by the primary.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the first
+re-review after the first correction round; confirmed the fixes and the
+151-test suite, and reported three remaining required items (test derivation,
+residual dates, and individual reward coverage).
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+second re-review; confirmed the mechanics, the record, and the 155-test
+suite, and reported one remaining required item (the missing re-review
+entries in this log) plus one test-ordering advisory.
+
 ### 2026-09-13 — STEP-010 experiments and evidence flow
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
