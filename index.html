@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minor Revisions</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+
+      #app-world {
+        position: fixed;
+        inset: 0;
+      }
+
+      #app-world[hidden] {
+        display: none;
+      }
+
+      #app-world canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <main id="app" data-state="starting">
@@ -11,6 +33,7 @@
       <p id="app-status">Starting up…</p>
       <p>Game systems are not yet available.</p>
     </main>
+    <div id="app-world" hidden></div>
     <section id="app-error" hidden>
       <h2>The game could not start</h2>
       <p id="app-error-message"></p>

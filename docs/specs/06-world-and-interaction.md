@@ -1,6 +1,7 @@
 # B6 — World, Movement, and Interaction
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
+2026-09-15 with the slice dimensions and recovery-anchor baseline.**
 
 ## Floor (approved)
 
@@ -9,6 +10,19 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6).**
 - The floor is small enough to cross in under a minute. Exact metres are fixed
   in the implementation.
 - One continuous scene; there are no loading rooms.
+
+### Slice dimensions (implementation baseline)
+
+- Wall thickness 0.2 m, wall height 3 m, door width 1.6 m, player radius
+  0.35 m.
+- The corridor runs 20.2 by 3 m. The desk hub and the soil lab (10 by 8 m
+  each) sit north of it; the grow room (8 by 8 m), the PI's office (6 by 8 m),
+  and the break room (5.8 by 8 m) sit south of it. Every room opens onto the
+  corridor through one doorway.
+- Each space has one recovery anchor; the start anchor is in the desk hub.
+- A permanent connectivity test samples the floor on a grid and proves that
+  every walkable spot can reach an anchor and that all six spaces form one
+  connected region.
 
 ## Movement (approved)
 
