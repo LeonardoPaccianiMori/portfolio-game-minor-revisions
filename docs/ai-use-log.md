@@ -42,10 +42,10 @@ reasoning variant `unknown`: prepared and implemented STEP-012 under the plan
 approved on 2026-09-15. It added the run resolution state, the ejection
 warning and burnout and quit triggers, the contract-end decision, the
 personnel file, the run-finished gate, and the archive store with browser
-coverage, and 29 tests; it applied the review corrections. Integration and
+coverage, and 30 tests; it applied the review corrections. Integration and
 acceptance are pending. Evidence:
 `docs/development/steps/STEP-012-endings.md`; commits `d5848a4`, `05ca9f2`,
-`5a94c70`, `2d81d17`.
+`5a94c70`, `2d81d17`, `6de303a`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the
@@ -56,6 +56,13 @@ OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the first
 re-review of STEP-012; confirmed the blocker and required fixes, and reported
 four remaining test-sensitivity items, all corrected by the primary.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the final
+verification of STEP-012; confirmed all findings resolved, the production
+changes regression-free, and the 185-test and 15-browser-test evidence, and
+cleared the step for integration with one record-only correction (the test
+count in this log), now applied.
 
 ### 2026-09-15 — Worker-model replacement (D-047)
 
