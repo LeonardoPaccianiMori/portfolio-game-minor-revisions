@@ -147,19 +147,20 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-010 accepted; STEP-011 plan pending approval
+## Current task — STEP-011 implementation complete; independent review pending
 
-STEP-010 (experiments and evidence flow) is accepted by Leonardo on
-2026-09-13 after his result review, including the roadmap amendment that
-inserted it and shifted every later step by one. The next permitted action is
-the exact STEP-011 plan (review and panel set pieces: reviewer chorus,
-fellowship panel, outcomes), presented for Leonardo's approval; it must also
-put the carried STEP-009 ADV-6 questions to Leonardo (the week-2 funding
-review against A2's "end of Act I" wording, and whether a blank answer counts
-as answered at the deadline). STEP-011 is not authorized until that approval.
-The previous step record is
-`docs/development/steps/STEP-010-experiments-evidence.md`. The earlier block
-questions and session records further down are preserved as history.
+STEP-010 is accepted. Leonardo approved the STEP-011 plan (review and panel
+set pieces) on 2026-09-13 after reviewing the written draft, settling the two
+carried STEP-009 questions (the funding review now sits in week 4; a blank
+answer counts as answered). STEP-011 is implemented on branch
+`work/step-011-review-panel` from base `a56adf7`, and `npm run check`,
+`npm run build`, and `npm run test:e2e` passed. The current step record is
+`docs/development/steps/STEP-011-review-panel.md`. The next permitted action
+is the primary pre-review audit, then one fresh independent review by
+`mr-reviewer` before integration and Leonardo's result review. The ending
+resolver is STEP-012 and is not authorized until its own plan is approved.
+The earlier block questions and session records further down are preserved as
+history.
 
 ### C2 questions (answered and documented)
 

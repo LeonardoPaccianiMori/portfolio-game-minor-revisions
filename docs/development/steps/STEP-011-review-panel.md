@@ -1,7 +1,7 @@
 ---
 id: STEP-011
 type: development-step
-status: plan-approved
+status: implemented
 phase: 2
 gate: foundation
 created: 2026-09-13
@@ -206,7 +206,30 @@ change; tests; docs; checks.
 
 ## Execution record
 
-Not yet available.
+- Base: `a56adf766727ab64eda55dec6ec1796af2ec064c`.
+- Branch: `work/step-011-review-panel`.
+- Plan checkpoint: `f860d50` (`Approve STEP-011 review and panel plan`),
+  including this record.
+- Implementation commit: `45d26ddaa2daa6430e0b6ea3dbb25bd59510056b`
+  (`Add review and panel outcomes`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 147 unit tests (19
+  new), and the content check.
+- `npm run build`: passed; `dist/index.html` and one bundled module.
+- `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Primary observation (not a committed test): a read-only probe over seeds
+  1–48 measured the satirical spread. All-inflate proposals funded 35 times,
+  were waitlisted 13 times, and never rejected. A fully careful paper landed
+  on accept 23 times, minor revision 8, and major revision 17. One stale
+  result shifted that to 8 accept, 16 minor, and 24 major. The baselines
+  behave as intended and remain slice-tunable.
+- Deviations: none outside the owned paths. The paper outcome field required
+  the recorded updates to four existing test suites, and the funding-review
+  week change updated its events test as planned.
+- Limitations: no interface reads the outcomes yet, so the browser tests do
+  not exercise them; report and message ids have no content until the content
+  phase; the baselines are not balanced by a full run, which the slice gate
+  owns; the probe above is not part of the committed suite.
 
 ## Independent review
 
@@ -218,7 +241,6 @@ None yet.
 
 ## Leonardo decision
 
-The carried STEP-009 questions were settled by Leonardo on 2026-09-13 (week 4
-for the funding review; blank answers count as answered). Plan approved by
-Leonardo on 2026-09-13 after he reviewed the written draft. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-09-13 after he reviewed the written draft.
+Implementation complete on 2026-09-13; independent review and Leonardo's
+result review pending.
