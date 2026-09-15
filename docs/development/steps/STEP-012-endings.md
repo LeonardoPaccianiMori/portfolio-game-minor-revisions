@@ -1,7 +1,7 @@
 ---
 id: STEP-012
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 2
 gate: foundation
 created: 2026-09-15
@@ -260,6 +260,12 @@ duplicates, the tie-break test could not distinguish the comparator from key
 order, and invalid-archive preservation was not verified before clearing).
 All four were corrected in `6de303a`; no production regression was found.
 
+The final verification completed the same day: all findings were resolved, the
+production changes were regression-free, and the 185 unit tests and 15 browser
+tests passed. It cleared the step for integration with one record-only
+correction (the test count in `docs/ai-use-log.md`), which was applied before
+integration.
+
 ## Corrections
 
 - **B1 (blocker):** `quit` was followed by event evaluation, so a week-12
@@ -303,7 +309,9 @@ All four were corrected in `6de303a`; no production regression was found.
 ## Leonardo decision
 
 The quit-ending and archive decisions were made on 2026-09-15. Plan approved
-by Leonardo on 2026-09-15 after he reviewed the written draft. Implementation
-complete on 2026-09-15; the independent review returned one blocker and seven
-required corrections, applied in two rounds and awaiting the final re-review.
-Leonardo's result review pending.
+by Leonardo on 2026-09-15 after he reviewed the written draft. **Accepted by
+Leonardo on 2026-09-15** after the result review: the run-end triggers, the
+four-ending decision table, the personnel file, the archive store, the
+run-finished gate, the records and evidence (185 unit tests and 15 browser
+tests; `npm run verify` on `main`), and the three review rounds with every
+finding corrected were reviewed with no visible issue.

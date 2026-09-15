@@ -42,10 +42,10 @@ reasoning variant `unknown`: prepared and implemented STEP-012 under the plan
 approved on 2026-09-15. It added the run resolution state, the ejection
 warning and burnout and quit triggers, the contract-end decision, the
 personnel file, the run-finished gate, and the archive store with browser
-coverage, and 30 tests; it applied the review corrections. Integration and
-acceptance are pending. Evidence:
+coverage, and 30 tests; it applied the review corrections and the record
+updates, integrated on `main`, and recorded the acceptance. Evidence:
 `docs/development/steps/STEP-012-endings.md`; commits `d5848a4`, `05ca9f2`,
-`5a94c70`, `2d81d17`, `6de303a`.
+`5a94c70`, `2d81d17`, `6de303a`, `f3d9a8e`, `3a34203`, `7a37d77`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the
