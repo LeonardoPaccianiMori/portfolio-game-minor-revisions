@@ -1,7 +1,7 @@
 ---
 id: STEP-012
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 2
 gate: foundation
 created: 2026-09-15
@@ -227,6 +227,8 @@ rules stay free of the clock.
 - Corrections commit: `2d81d17` (`Apply STEP-012 review corrections`).
 - Second corrections commit: `6de303a` (`Strengthen STEP-012 regression
 tests`).
+- Integrated on local `main` at `3a34203` by fast-forward, and `npm run
+verify` passed on `main`.
 - Scope note: the wide diff from `03624e8` also contains two inherited
   commits made outside this step (`9828e41` and `894c5ee`, the D-047 worker
   model change recorded in the decision log); this step's own changes are

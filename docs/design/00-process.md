@@ -147,20 +147,21 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-012 implementation complete; independent review pending
+## Current task — STEP-012 integrated; Leonardo result review
 
 STEP-011 is accepted. Leonardo approved the STEP-012 plan (the ending
-resolver: four endings, personnel file, archive) on 2026-09-15 after
-reviewing the written draft, deciding that quitting resolves to the intact
-ending and that the archive store is implemented now. STEP-012 is implemented
-on branch `work/step-012-endings` from base `03624e8`, and `npm run check`,
-`npm run build`, and `npm run test:e2e` passed. The current step record is
-`docs/development/steps/STEP-012-endings.md`. The next permitted action is
-the primary pre-review audit, then one fresh independent review by
-`mr-reviewer` before integration and Leonardo's result review. This completes
-the core rules phase; the world and interaction phase begins at STEP-013 and
-is not authorized until its own plan is approved. The earlier block questions
-and session records further down are preserved as history.
+resolver: four endings, personnel file, archive) on 2026-09-15, deciding that
+quitting resolves to the intact ending and that the archive store is
+implemented now. STEP-012 is implemented, independently reviewed in three
+rounds by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) with one
+blocker and all required findings corrected, integrated on `main`, and fully
+verified. The current step record is
+`docs/development/steps/STEP-012-endings.md`. Like the previous rules steps,
+it is invisible, so the next permitted action is Leonardo's short result
+review instead of direct play, followed by explicit acceptance. This
+completes the core rules phase; the world and interaction phase (STEP-013
+onward) is not authorized until its own plan is approved. The earlier block
+questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
