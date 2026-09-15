@@ -1,0 +1,224 @@
+---
+id: STEP-011
+type: development-step
+status: plan-approved
+phase: 2
+gate: foundation
+created: 2026-09-13
+updated: 2026-09-13
+base_commit: a56adf766727ab64eda55dec6ec1796af2ec064c
+branch: work/step-011-review-panel
+primary_model: opencode-go/deepseek-v4.1-flash
+primary_variant: max
+---
+
+# STEP-011 — Review and panel set pieces
+
+## Objective
+
+Resolve the two centrepiece payoffs: the fellowship panel early in Act III and
+the journal review at the contract's end, with the reviewer chorus, the
+learnable meta-rules, the partly arbitrary outcomes, and the discovery of
+shared complicity. The outcomes become the inputs the ending resolver needs.
+
+## Plain-language effect
+
+The institution now answers back. The panel decides the fellowship, the
+journal decides the paper, and careless shortcuts can be caught and cost you.
+
+## Resolved carried questions (Leonardo, 2026-09-13)
+
+- The funding review moves from week 2 to **week 4**, matching A2's "the call
+  arrives at the end of Act I"; the fellowship deadline stays week 8 and the
+  panel sits in week 9.
+- A **blank** fellowship answer still counts as answered at the deadline and
+  scores zero at the panel; it meets the deadline without earning credit.
+
+## Owned paths
+
+- `src/rules/outcomes.ts` (new: reviewer chorus data, panel resolution, review
+  verdicts, discovery)
+- `src/rules/paper.ts` (the paper outcome values and field)
+- `src/rules/campaign-state.ts` (paper outcome validation)
+- `src/rules/events.ts` (the funding-review week change, the panel and review
+  events, and the two outcome effect kinds)
+- `src/rules/index.ts`
+- `tests/unit/rules-outcomes.test.ts` (new),
+  `tests/unit/rules-events.test.ts`, `tests/unit/rules-paper.test.ts`,
+  `tests/unit/rules-pi.test.ts`, `tests/unit/rules-fellowship.test.ts`
+  (paper literals gain the outcome field)
+- `docs/specs/03-state-and-rules.md` (paper outcome row),
+  `docs/design/02-core-loop.md` (the review and panel meta-rules),
+  `docs/design/03-pressure-and-failure.md` (the outcome and discovery
+  baselines), `docs/design/00-process.md` (resume point)
+
+## Prohibited paths
+
+- `docs/**` except the listed files and the step record; `AGENTS.md`,
+  `README.md`, `opencode.json`, `.opencode/**`
+- Endings, personnel file, archive, ejection, burnout, and quitting resolution
+  (STEP-012); interface; written text; persistence changes; assets; any
+  release, licence, or deployment action
+
+## Allowed sources
+
+- `docs/design/02-core-loop.md`, `docs/design/03-pressure-and-failure.md`,
+  `docs/design/04-narrative.md`, `docs/design/05-characters.md`
+- `docs/specs/03-state-and-rules.md`, `docs/specs/04-content-and-data.md`,
+  `docs/specs/05-persistence.md`, `docs/specs/10-testing-and-workflow.md`,
+  `docs/specs/11-development-pathway.md`,
+  `docs/specs/12-development-steps.md`
+- `AGENTS.md`, `docs/design/00-process.md`
+
+## Authority and traceability
+
+- A2 (the review and panel set pieces, the learnable arbitrary rules); A3 (the
+  panel outcomes, renewal, discovery, integrity); A4 (Act III's panel and
+  review and the ending determinants); A5 (reviewers as archetypes); B3
+  (determinism, the seeded PRNG, atomic results); B4 (stable IDs, reports as
+  content).
+- STEP-011 of the amended C2 list; phase 2.
+- Carried advisories: STEP-008 ADV-6 (stable PI request reason codes, to be
+  re-anchored to the desk-board step, now STEP-016), STEP-009 ADV-1 (no
+  message interface yet), STEP-009 ADV-6 (resolved above), STEP-010 ADV-1
+  (module cycles; not touched here).
+
+## Accepted dependencies
+
+- STEP-010 accepted by Leonardo on 2026-09-13.
+- The funding-review week and blank-answer decisions above, made by Leonardo
+  on 2026-09-13. The remaining plan awaits his explicit approval.
+
+## Plan
+
+The primary implements this step. One fresh independent review by
+`mr-reviewer` (`opencode-go/glm-5.3`, `max`), a different model family from
+the primary, plus a fresh re-review if code corrections are required. No
+worker is used; the logic is tightly coupled to the state, events, and
+existing tracks.
+
+Implementation order: the paper outcome field and values; the outcomes module
+(chorus, scoring, discovery); the event wiring and the funding-review week
+change; tests; docs; checks.
+
+## Tasks
+
+1. Paper outcome: `PAPER_OUTCOMES` (`pending`, `accept`, `minor-revision`,
+   `major-revision`, `reject`, `not-submitted`), a required `outcome` field on
+   the paper state, initial value `pending`, validation, and the B3 row.
+2. The reviewer chorus data: three stable archetypes with the learnable
+   preferences below, plus their comment ID families.
+3. The fellowship panel (`resolvePanel`): missed-deadline rejection; the
+   answer scores; the seeded mood; funded, waitlisted, or rejected; the
+   standing changes; the flags; renewal closing on rejection; the messages.
+4. The journal review (`resolveReview`): submission test; the three reviewer
+   scores and recommendations; the majority and harshest-verdict rule; the
+   standing changes; the flags; the messages; the per-reviewer reports.
+5. Discovery: the shared risk rule and its panel and review consequences for
+   fabricated answers, both-track results, and taking Dario's credit.
+6. Seeded draws: one documented draw order per outcome, using the state's
+   `rngState` and writing the final value back; idempotent through the event
+   flags.
+7. Events: move the funding review to week 4; add `fellowship-panel` at week 9
+   and `journal-review` at week 12 under the spent-week condition, in fixed
+   catalogue order after `contract-decision`; add the `panelOutcome` and
+   `journalReview` effect kinds.
+8. Tests: panel branches, review branches, the chorus scoring, the seeded
+   determinism, discovery, flags and standing, messages and reports, no
+   mutation, one-time firing, the moved week, and the updated paper literals
+   in the existing suites.
+9. Record the A2 meta-rules, the A3 baselines, and the B3 row.
+10. Run every required check.
+
+## Panel baseline (approved; tunable in the slice)
+
+- Answer scores: honest 2, inflate 3, fabricate 4, imitate 2, blank 0; a
+  stale answer scores one less, floor 0. Sum the four requirements (0–16).
+- Seeded panel mood: −1, 0, or +1. Total 0–17.
+- Funded at 12 or more; waitlisted at 8 or more; otherwise rejected.
+- Standing: funded +10, waitlisted 0, rejected −5.
+- Flags `panel.funded`, `panel.waitlisted`, or `panel.rejected`; messages
+  `message.panel.funded`, `.waitlisted`, `.rejected`, `.missed`.
+- Renewal closes on rejected (and already on the missed deadline).
+
+## Review baseline (approved; tunable in the slice)
+
+- Submitted when the meter holds at least one requirement and every one is
+  satisfied; otherwise the outcome is `not-submitted`, standing −10, flag
+  `paper.not-submitted`, and renewal closes.
+- Reviewer preferences, before the quirk:
+  - `reviewer.methods`: +1 per satisfied controls and replicates, +1 with no
+    stale evidence, −1 when the paper revision exceeds one.
+  - `reviewer.significance`: +1 per satisfied impact and presentation, +1 when
+    the paper has been reframed at least once.
+  - `reviewer.profile`: +1 with Voss trust at 60 or more, +1 with the
+    take-credit flag, −2 when a discovery flag exists.
+- Each reviewer adds a seeded quirk of −1, 0, or +1. Recommendation: accept at
+  3 or more; minor at 1 or more; major at −1 or more; otherwise reject.
+- Verdict: the majority of the three; when all three differ, the harshest
+  recommendation wins.
+- Standing: accept +10, minor revision +5, major revision 0, reject −5.
+- Every report carries the reviewer ID, its recommendation, and two stable
+  comment IDs (`review.<reviewer>.<recommendation>.1` and `.2`); the verdict
+  is emitted with the outcome and whether discovery fired.
+
+## Discovery baseline (approved; tunable in the slice)
+
+- Risk items: each fabricated fellowship answer, each both-track result, and
+  the take-credit flag.
+- Panel: one seeded roll with `nextInt(4) < min(risk, 3)`; caught means
+  rejected, integrity −10, flag `discovery.panel`, message
+  `message.discovery.panel`.
+- Review: one seeded roll over overlap results plus take-credit; caught drops
+  the verdict one rank (accept→minor, minor→major, major→reject, reject
+  stays), costs integrity −10, sets flag `discovery.review`, and emits
+  `message.discovery.review`.
+
+## Draw order (deterministic)
+
+- Panel: mood, then the discovery roll.
+- Review: the methods quirk, the significance quirk, the profile quirk, then
+  the discovery roll.
+- The final `rngState` is part of the returned state; the once-per-event flags
+  make repeated evaluation harmless.
+
+## Non-goals
+
+- No endings, personnel file, archive, ejection, burnout, or quitting
+  resolution (STEP-012).
+- No interface, written content, persistence changes, or assets.
+
+## Required checks and evidence
+
+- `npm run check`
+- `npm run build`
+- `npm run test:e2e`
+- `git diff --check` and a clean `git status`
+
+## Safety and quality boundaries
+
+- Pure and deterministic apart from the documented seeded draws; no I/O and
+  no clock.
+- Atomic results: rejections leave the state untouched; stable reason codes.
+- Reviews judge documents, never the player as a person; no real people or
+  institutions are depicted.
+- No credentials, personal data, or machine paths in tracked files.
+
+## Execution record
+
+Not yet available.
+
+## Independent review
+
+Not yet available.
+
+## Corrections
+
+None yet.
+
+## Leonardo decision
+
+The carried STEP-009 questions were settled by Leonardo on 2026-09-13 (week 4
+for the funding review; blank answers count as answered). Plan approved by
+Leonardo on 2026-09-13 after he reviewed the written draft. Implementation,
+testing, and acceptance pending.
