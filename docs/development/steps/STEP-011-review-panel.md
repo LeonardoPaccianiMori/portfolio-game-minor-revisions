@@ -229,7 +229,10 @@ corrections`).
   behave as intended and remain slice-tunable.
 - Deviations: none outside the owned paths. The paper outcome field required
   the recorded updates to four existing test suites, and the funding-review
-  week change updated its events test as planned.
+  week change updated its events test as planned. The plan was approved with
+  the reviewer configured as `opencode-go/glm-5.3` at variant `max`; D-045
+  switched the review agents to `opencode-go/gpt-5.6-luna` at variant `high`
+  mid-step, and every review above ran on Luna.
 - Limitations: no interface reads the outcomes yet, so the browser tests do
   not exercise them; report and message ids have no content until the content
   phase; the baselines are not balanced by a full run, which the slice gate
@@ -253,6 +256,14 @@ residual 2026-09-13 dates in the other documents and the record, and the
 individual profile and significance reward components not covered
 separately). All three were corrected in `7579a24`; no regressions or scope
 changes were found in either re-review.
+
+A second re-review then confirmed the mechanics, the record, and the 155-test
+suite, and found one remaining required item (the missing re-review entries
+in `docs/ai-use-log.md`) plus a test-ordering advisory; both were fixed in
+`c393922`. The final verification cleared the step: **no blocker and no
+required finding**. It recorded one advisory: the plan text names the
+original `glm-5.3` reviewer configuration while the actual reviews ran on
+`gpt-5.6-luna` per D-045; the execution record now states this explicitly.
 
 ## Corrections
 

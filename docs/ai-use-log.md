@@ -65,6 +65,12 @@ second re-review; confirmed the mechanics, the record, and the 155-test
 suite, and reported one remaining required item (the missing re-review
 entries in this log) plus one test-ordering advisory.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+final verification after the follow-up; confirmed all recorded required
+findings resolved, the log entries accurate, and the 155-test suite and
+checks passing, and cleared the step for integration.
+
 ### 2026-09-13 — STEP-010 experiments and evidence flow
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
