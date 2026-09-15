@@ -35,6 +35,16 @@ paths.
 
 ## Completed history
 
+### 2026-09-15 — Worker-model replacement (D-047)
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: checked every configured agent model against the
+provider-level model blacklist, found `mr-worker` on the blacklisted
+`qwen3.8-max`, and proposed `qwen3.8-flash` at `xhigh`. After Leonardo's
+approval it changed the agent configuration and recorded D-047 in the decision
+log. No subagent was used. Evidence: commit `9828e41`;
+`docs/design/decision-log.md`; `.opencode/agent/mr-worker.md`.
+
 ### 2026-09-15 — STEP-011 review and panel set pieces
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
