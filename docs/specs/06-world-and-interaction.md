@@ -20,9 +20,10 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
   and the break room (5.8 by 8 m) sit south of it. Every room opens onto the
   corridor through one doorway.
 - Each space has one recovery anchor; the start anchor is in the desk hub.
-- A permanent connectivity test samples the floor on a grid and proves that
-  every walkable spot can reach an anchor and that all six spaces form one
-  connected region.
+- A permanent connectivity test samples the floor on a grid across several
+  phases and proves that the region reachable from the start anchor contains
+  every space and every recovery anchor. Isolated sampling slivers that no
+  player can enter are excluded by construction.
 
 ## Movement (approved)
 

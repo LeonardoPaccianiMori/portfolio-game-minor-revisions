@@ -187,19 +187,27 @@ so later furniture or layout changes cannot silently seal a corner.
   this record.
 - Implementation commit: `b97019598da92edb68f57678c10e8e0f48ba2a1a`
   (`Add the world floor, collision, and recovery anchors`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 198 unit tests (13
-  new), and the content check.
-- `npm run build`: passed; the single application bundle is 525.25 kB (132.0
+- `npm run check`: passed; typecheck, ESLint, Prettier, 202 unit tests (17
+  new after the corrections), and the content check.
+- `npm run build`: passed; the single application bundle is 525.37 kB (132.0
   kB gzip), well inside the 25 MB budget.
-- `npm run test:e2e`: 21 passed in Chromium, Firefox, and WebKit, including
-  the world rendering after startup and the module build, render, recovery,
-  resize, and double-dispose checks.
+- `npm run test:e2e`: 24 passed in Chromium, Firefox, and WebKit, including
+  the world rendering after startup, the module build, render, recovery,
+  resize, and double-dispose checks, the composed mesh count and six
+  recovery anchors, and the failed-start cleanup.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Corrections commit: `38380b8` (`Apply STEP-013 review corrections`).
 - Deviations: the south rooms adjoin the corridor at z −0.2 (the baseline
   table's −2.2 would have left a void between the corridor and the wall), so
-  every wall sits on a single 0.2 m band. The plant rows were shortened to
-  x 1.2–7.2 after the no-trapping proof caught the original rows sealing the
-  aisles; the proof did its job. `index.html` gained the world container and
+  every wall sits on a single 0.2 m band. Every doorway sits at its room's
+  centre: the soil lab at 15.4, the PI's office at 11.4, and the break room
+  at 17.5; the break room ends at 20.4 to align with the corridor, and the
+  west lab bench starts at x 11.2 so the wall aisle clears the player radius.
+  The plant rows were shortened to x 1.2–7.2 after the no-trapping proof
+  caught the original rows sealing the aisles; the proof did its job. The
+  proof now asserts the start-reachable region across several sampling
+  phases; isolated sub-cell slivers that no player can enter are excluded,
+  and B6's wording records this. `index.html` gained the world container and
   minimal full-screen styling for the canvas. With Leonardo's authorization
   on 2026-09-15, `@types/three@0.185.4` was added as an exact-pinned dev
   dependency because Three.js ships no type declarations.
@@ -211,14 +219,50 @@ so later furniture or layout changes cannot silently seal a corner.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-15 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and eight
+required findings**, all corrected in this step. The reviewer re-ran the
+claimed checks independently (typecheck, 198 unit tests at the time, 21
+browser tests), verified the owned paths, purity, disposal, layout, and the
+record, and confirmed the 13-new-test and bundle-size claims. One advisory
+was recorded (the boundary tangent case).
 
 ## Corrections
 
-None yet.
+- **R-1 (required):** the start anchor was aliased to the desk-hub recovery
+  anchor. `START_ANCHOR` is now a distinct `anchor.start` inside the desk
+  hub, separate from the six recovery anchors.
+- **R-2 (required):** the no-trapping proof did not prove anchor
+  reachability. It now selects the region reachable from the start anchor,
+  asserts every space and every recovery anchor is within a grid step of it
+  across seven sampling phases, and documents that isolated unreachable
+  slivers are excluded; B6 records the refined guarantee.
+- **R-3 (required):** movement resolution could tunnel through walls on a
+  long step. It now advances in bounded substeps (`MAX_MOVEMENT_STEP` 0.2)
+  and returns exact targets when an axis is never blocked, with tunneling and
+  corner regression tests.
+- **R-4 (required):** the browser world acceptance was weak. It now asserts
+  the composed mesh count, six recovery anchors, and the nearest recovery
+  anchor from the start point.
+- **R-5 (required):** a partially failed world start could leak the renderer
+  and canvas. `createWorld` is now transactional and disposes the renderer,
+  the canvas, and any built geometry on failure, with a browser test that
+  forces an append failure and checks the container is left empty.
+- **R-6 (required):** the layout deviations are now fully recorded (door
+  centres at room centres, the break room's 20.4 edge, and the west bench
+  spacing).
+- **R-7 (required):** the stale "awaiting approval" sentence was corrected.
+- **R-8 (required):** the STEP-013 primary and reviewer entries were added to
+  `docs/ai-use-log.md`.
+
+Advisories recorded from the independent review:
+
+- The tangent case was added with exactly representable values, and
+  `WorldStats` now exposes `drawCalls` and `meshCount` with clear semantics.
 
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
-Implementation complete on 2026-09-15; independent review and Leonardo's
-result review pending.
+Implementation complete on 2026-09-15; the independent review returned no
+blocker and eight required corrections, now applied and awaiting re-review.
+Leonardo's result review pending.
