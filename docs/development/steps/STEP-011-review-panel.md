@@ -212,13 +212,15 @@ change; tests; docs; checks.
   including this record.
 - Implementation commit: `45d26ddaa2daa6430e0b6ea3dbb25bd59510056b`
   (`Add review and panel outcomes`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 151 unit tests (23
-  new after the corrections), and the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 155 unit tests (27
+  new after both correction rounds), and the content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the implementation head.
 - Corrections commit: `0c1fd71` (`Correct STEP-011 comment IDs and strengthen
 tests`).
+- Second corrections commit: `7579a24` (`Apply STEP-011 re-review
+corrections`).
 - Primary observation (not a committed test): a read-only probe over seeds
   1–48 measured the satirical spread. All-inflate proposals funded 35 times,
   were waitlisted 13 times, and never rejected. A fully careful paper landed
@@ -244,6 +246,14 @@ the seeded draw order, the event wiring, and the record, and confirmed the
 19-new-test claim and the probe description. One advisory was recorded (stale
 process text, corrected as record cleanup).
 
+A fresh re-review by the same configured reviewer completed the same day after
+the first correction round: no blocker, and three required findings remained
+(the comment-ID test still derived its expectation from the implementation,
+residual 2026-09-13 dates in the other documents and the record, and the
+individual profile and significance reward components not covered
+separately). All three were corrected in `7579a24`; no regressions or scope
+changes were found in either re-review.
+
 ## Corrections
 
 - **R-1 (required):** the emitted report comment IDs lacked the approved
@@ -268,9 +278,21 @@ Advisories recorded from the independent review:
 - The process file header and one Phase C paragraph were stale; corrected as
   record cleanup with the other dates.
 
+Re-review corrections (second round, `7579a24`):
+
+- **R-1 (remaining):** the comment-ID test now derives the expected roots from
+  a fixed contract map and asserts the reviewer order, so it no longer mirrors
+  the implementation.
+- **R-2 (remaining):** the `docs/ai-use-log.md` header, the revision lines in
+  the three touched design and spec documents, and the step record's stale
+  "remaining plan awaits approval" sentence now carry the correct dates.
+- **R-3 (remaining):** each profile, significance, and methods reward
+  component now has its own separating-seed test, and the reframe penalty has
+  a dedicated test, so removing any single component fails the suite.
+
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
 Implementation complete on 2026-09-15; the independent review returned no
-blocker and three required corrections, now applied and awaiting re-review.
-Leonardo's result review pending.
+blocker and three required corrections, applied in two rounds and awaiting
+the final re-review. Leonardo's result review pending.
