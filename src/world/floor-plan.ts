@@ -3,6 +3,7 @@ export const WALL_HEIGHT = 3;
 export const DOOR_WIDTH = 1.6;
 export const PLAYER_RADIUS = 0.35;
 export const NAVIGATION_STEP = 0.25;
+export const MAX_MOVEMENT_STEP = 0.2;
 
 export interface Point {
   readonly x: number;
@@ -83,8 +84,8 @@ export const DOORWAYS: readonly Doorway[] = [
     id: 'door.soil-lab',
     spaceId: 'soil-lab',
     side: 'north',
-    minX: 15.2 - DOOR_HALF_WIDTH,
-    maxX: 15.2 + DOOR_HALF_WIDTH,
+    minX: 15.4 - DOOR_HALF_WIDTH,
+    maxX: 15.4 + DOOR_HALF_WIDTH,
     minZ: 2.9,
     maxZ: 3.3,
   },
@@ -101,8 +102,8 @@ export const DOORWAYS: readonly Doorway[] = [
     id: 'door.pi-office',
     spaceId: 'pi-office',
     side: 'south',
-    minX: 11.2 - DOOR_HALF_WIDTH,
-    maxX: 11.2 + DOOR_HALF_WIDTH,
+    minX: 11.4 - DOOR_HALF_WIDTH,
+    maxX: 11.4 + DOOR_HALF_WIDTH,
     minZ: -0.3,
     maxZ: 0.1,
   },
@@ -110,21 +111,29 @@ export const DOORWAYS: readonly Doorway[] = [
     id: 'door.break-room',
     spaceId: 'break-room',
     side: 'south',
-    minX: 17.4 - DOOR_HALF_WIDTH,
-    maxX: 17.4 + DOOR_HALF_WIDTH,
+    minX: 17.5 - DOOR_HALF_WIDTH,
+    maxX: 17.5 + DOOR_HALF_WIDTH,
     minZ: -0.3,
     maxZ: 0.1,
   },
 ];
 
-export const START_ANCHOR_ID = 'anchor.desk-hub';
+export const START_ANCHOR_ID = 'anchor.start';
+
+export const START_ANCHOR: Anchor = {
+  id: START_ANCHOR_ID,
+  spaceId: 'desk-hub',
+  label: 'Start',
+  x: 5.2,
+  z: 9.8,
+};
 
 export const ANCHORS: readonly Anchor[] = [
   { id: 'anchor.desk-hub', spaceId: 'desk-hub', label: 'Desk hub', x: 5.2, z: 8.6 },
-  { id: 'anchor.soil-lab', spaceId: 'soil-lab', label: 'Soil lab', x: 15.2, z: 8.0 },
+  { id: 'anchor.soil-lab', spaceId: 'soil-lab', label: 'Soil lab', x: 15.4, z: 8.0 },
   { id: 'anchor.grow-room', spaceId: 'grow-room', label: 'Grow room', x: 4.2, z: -4.3 },
-  { id: 'anchor.pi-office', spaceId: 'pi-office', label: "PI's office", x: 11.2, z: -5.2 },
-  { id: 'anchor.break-room', spaceId: 'break-room', label: 'Break room', x: 17.4, z: -3.4 },
+  { id: 'anchor.pi-office', spaceId: 'pi-office', label: "PI's office", x: 11.4, z: -5.2 },
+  { id: 'anchor.break-room', spaceId: 'break-room', label: 'Break room', x: 17.5, z: -3.4 },
   { id: 'anchor.corridor', spaceId: 'corridor', label: 'Corridor', x: 10.3, z: 1.5 },
 ];
 
@@ -162,8 +171,8 @@ export const PROPS: readonly PropBox[] = [
   {
     id: 'prop.lab.bench-west',
     spaceId: 'soil-lab',
-    minX: 11.0,
-    maxX: 12.6,
+    minX: 11.2,
+    maxX: 12.8,
     minZ: 4.0,
     maxZ: 9.0,
     height: 0.9,
@@ -260,12 +269,12 @@ export const WALL_COLLIDERS: readonly BoxCollider[] = [
   { id: 'wall.grow-pi', minX: 8.2, maxX: 8.4, minZ: -8.2, maxZ: -0.2 },
   { id: 'wall.pi-break', minX: 14.4, maxX: 14.6, minZ: -8.2, maxZ: -0.2 },
   { id: 'wall.corridor-north-a', minX: 0, maxX: 4.4, minZ: 3.0, maxZ: 3.2 },
-  { id: 'wall.corridor-north-b', minX: 6.0, maxX: 14.4, minZ: 3.0, maxZ: 3.2 },
-  { id: 'wall.corridor-north-c', minX: 16.0, maxX: 20.4, minZ: 3.0, maxZ: 3.2 },
+  { id: 'wall.corridor-north-b', minX: 6.0, maxX: 14.6, minZ: 3.0, maxZ: 3.2 },
+  { id: 'wall.corridor-north-c', minX: 16.2, maxX: 20.4, minZ: 3.0, maxZ: 3.2 },
   { id: 'wall.corridor-south-a', minX: 0, maxX: 3.4, minZ: -0.2, maxZ: 0 },
-  { id: 'wall.corridor-south-b', minX: 5.0, maxX: 10.4, minZ: -0.2, maxZ: 0 },
-  { id: 'wall.corridor-south-c', minX: 12.0, maxX: 16.6, minZ: -0.2, maxZ: 0 },
-  { id: 'wall.corridor-south-d', minX: 18.2, maxX: 20.4, minZ: -0.2, maxZ: 0 },
+  { id: 'wall.corridor-south-b', minX: 5.0, maxX: 10.6, minZ: -0.2, maxZ: 0 },
+  { id: 'wall.corridor-south-c', minX: 12.2, maxX: 16.7, minZ: -0.2, maxZ: 0 },
+  { id: 'wall.corridor-south-d', minX: 18.3, maxX: 20.4, minZ: -0.2, maxZ: 0 },
 ];
 
 export const buildColliders = (): readonly BoxCollider[] => [

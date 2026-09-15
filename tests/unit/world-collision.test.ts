@@ -3,9 +3,12 @@ import { describe, expect, it } from 'vitest';
 import {
   ANCHORS,
   DOORWAYS,
+  NAVIGATION_STEP,
   PLAYER_RADIUS,
   PROPS,
   SPACES,
+  START_ANCHOR,
+  START_ANCHOR_ID,
   buildColliders,
   isInsideWalkableArea,
 } from '../../src/world/floor-plan.ts';
@@ -35,6 +38,27 @@ const containsRect = (
   inner.minZ >= outer.minZ &&
   inner.maxZ <= outer.maxZ;
 
+const distanceToRegion = (region: readonly Point[], point: Point): number =>
+  region.reduce(
+    (best, candidate) => Math.min(best, Math.hypot(candidate.x - point.x, candidate.z - point.z)),
+    Number.POSITIVE_INFINITY,
+  );
+
+const startRegionOf = (regions: readonly (readonly Point[])[]): readonly Point[] => {
+  let best: readonly Point[] = [];
+  let bestDistance = Number.POSITIVE_INFINITY;
+
+  for (const region of regions) {
+    const distance = distanceToRegion(region, START_ANCHOR);
+    if (distance < bestDistance) {
+      best = region;
+      bestDistance = distance;
+    }
+  }
+
+  return best;
+};
+
 describe('the floor plan', () => {
   it('holds six spaces with one anchor each', () => {
     expect(SPACES).toHaveLength(6);
@@ -44,6 +68,20 @@ describe('the floor plan', () => {
     for (const space of SPACES) {
       expect(ANCHORS.filter((anchor) => anchor.spaceId === space.id)).toHaveLength(1);
     }
+  });
+
+  it('separates the start anchor from the recovery anchors', () => {
+    expect(START_ANCHOR.id).toBe(START_ANCHOR_ID);
+    expect(START_ANCHOR.spaceId).toBe('desk-hub');
+    expect(ANCHORS.some((anchor) => anchor.id === START_ANCHOR_ID)).toBe(false);
+
+    const hub = SPACES.find((space) => space.id === 'desk-hub');
+    expect(hub).toBeDefined();
+    if (hub !== undefined) {
+      expect(insideRect(hub, START_ANCHOR)).toBe(true);
+    }
+
+    expect(collidesAt(START_ANCHOR, PLAYER_RADIUS, colliders)).toBe(false);
   });
 
   it('keeps every anchor and prop inside its space and clear of collisions', () => {
@@ -118,6 +156,28 @@ describe('static collision', () => {
     expect(result).toEqual({ x: 2, z: 2 });
   });
 
+  it('does not tunnel through a wall on a long step', () => {
+    const wall: BoxCollider = { id: 'test.wall', minX: 5, maxX: 6, minZ: 0, maxZ: 10 };
+    const result = resolveMovement({ x: 4.6, z: 1 }, { x: 6.5, z: 1 }, PLAYER_RADIUS, [wall]);
+
+    expect(result).toEqual({ x: 4.6, z: 1 });
+  });
+
+  it('slides around a wall corner on a long diagonal step', () => {
+    const wall: BoxCollider = { id: 'test.wall', minX: 5, maxX: 6, minZ: 0, maxZ: 10 };
+    const result = resolveMovement({ x: 4.6, z: 8 }, { x: 7, z: 12 }, PLAYER_RADIUS, [wall]);
+
+    expect(result.z).toBe(12);
+    expect(result.x).toBeGreaterThan(5);
+  });
+
+  it('treats a tangent contact as a collision', () => {
+    const box: BoxCollider = { id: 'test.box', minX: 0, maxX: 1, minZ: 0, maxZ: 1 };
+
+    expect(circleIntersectsBox({ x: 1.5, z: 0.5 }, 0.5, box)).toBe(true);
+    expect(circleIntersectsBox({ x: 1.51, z: 0.5 }, 0.5, box)).toBe(false);
+  });
+
   it('finds the nearest recovery anchor', () => {
     expect(nearestAnchor({ x: 4.0, z: -4.0 }).id).toBe('anchor.grow-room');
     expect(nearestAnchor({ x: 5.0, z: 9.0 }).id).toBe('anchor.desk-hub');
@@ -126,23 +186,69 @@ describe('static collision', () => {
 });
 
 describe('the no-trapping proof', () => {
-  it('keeps every walkable spot in one connected region', () => {
-    const regions = computeWalkableRegions();
-
-    expect(regions).toHaveLength(1);
+  it('keeps the default sampling in one connected region', () => {
+    expect(computeWalkableRegions()).toHaveLength(1);
   });
 
-  it('covers every space and every anchor in that region', () => {
+  it('reaches every space and every anchor from the start region', () => {
     const regions = computeWalkableRegions();
-    const region = regions[0] ?? [];
+    const startRegion = startRegionOf(regions);
+
+    expect(distanceToRegion(startRegion, START_ANCHOR)).toBeLessThanOrEqual(
+      NAVIGATION_STEP * Math.SQRT2,
+    );
 
     for (const space of SPACES) {
-      expect(region.some((point) => insideRect(space, point))).toBe(true);
+      expect(startRegion.some((point) => insideRect(space, point))).toBe(true);
     }
 
     for (const anchor of ANCHORS) {
       expect(isInsideWalkableArea(anchor)).toBe(true);
       expect(collidesAt(anchor, PLAYER_RADIUS, colliders)).toBe(false);
+      expect(distanceToRegion(startRegion, anchor)).toBeLessThanOrEqual(
+        NAVIGATION_STEP * Math.SQRT2,
+      );
+    }
+  });
+
+  it('keeps the reachability guarantee under finer and shifted sampling', () => {
+    const bounds = envelopeBounds();
+    const phases: readonly { step?: number; bounds?: typeof bounds }[] = [
+      { step: 0.125 },
+      { step: 0.15 },
+      { step: 0.2 },
+      { step: 0.5 },
+      { bounds: { ...bounds, minX: bounds.minX + 0.0625, minZ: bounds.minZ + 0.0625 } },
+      { bounds: { ...bounds, minX: bounds.minX + 0.125, minZ: bounds.minZ + 0.125 } },
+      { bounds: { ...bounds, minX: bounds.minX + 0.2, minZ: bounds.minZ + 0.2 } },
+    ];
+
+    for (const phase of phases) {
+      const options = {
+        ...(phase.step !== undefined ? { step: phase.step } : {}),
+        ...(phase.bounds !== undefined ? { bounds: phase.bounds } : {}),
+      };
+      const regions = computeWalkableRegions(options);
+      const step = phase.step ?? NAVIGATION_STEP;
+      const startRegion = startRegionOf(regions);
+      const others = regions.filter((region) => region !== startRegion);
+      const threshold = step * Math.SQRT2;
+
+      for (const space of SPACES) {
+        expect(startRegion.some((point) => insideRect(space, point))).toBe(true);
+      }
+
+      for (const anchor of ANCHORS) {
+        expect(distanceToRegion(startRegion, anchor)).toBeLessThanOrEqual(threshold);
+      }
+
+      for (const region of others) {
+        expect(region.length).toBeLessThan(20);
+
+        for (const anchor of ANCHORS) {
+          expect(distanceToRegion(region, anchor)).toBeGreaterThan(threshold);
+        }
+      }
     }
   });
 
@@ -150,10 +256,5 @@ describe('the no-trapping proof', () => {
     expect(collidesAt({ x: 4.2, z: -5.3 }, PLAYER_RADIUS, colliders)).toBe(true);
     expect(collidesAt({ x: 5.2, z: 6.5 }, PLAYER_RADIUS, colliders)).toBe(true);
     expect(isInsideWalkableArea({ x: -0.5, z: 0 })).toBe(false);
-  });
-
-  it('stays connected at a finer sampling step', () => {
-    expect(computeWalkableRegions({ step: 0.2 })).toHaveLength(1);
-    expect(computeWalkableRegions({ step: 0.5 })).toHaveLength(1);
   });
 });

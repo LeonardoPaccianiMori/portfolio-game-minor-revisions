@@ -1,5 +1,6 @@
 import {
   ANCHORS,
+  MAX_MOVEMENT_STEP,
   NAVIGATION_STEP,
   PLAYER_RADIUS,
   SPACES,
@@ -28,20 +29,36 @@ export const resolveMovement = (
   to: Point,
   radius: number,
   colliders: readonly BoxCollider[],
+  maxStep: number = MAX_MOVEMENT_STEP,
 ): Point => {
+  const totalX = to.x - from.x;
+  const totalZ = to.z - from.z;
+  const distance = Math.hypot(totalX, totalZ);
+  const steps = Math.max(1, Math.ceil(distance / maxStep));
+  const stepX = totalX / steps;
+  const stepZ = totalZ / steps;
   let x = from.x;
-  const candidateX: Point = { x: to.x, z: from.z };
-  if (!collidesAt(candidateX, radius, colliders)) {
-    x = to.x;
-  }
-
   let z = from.z;
-  const candidateZ: Point = { x, z: to.z };
-  if (!collidesAt(candidateZ, radius, colliders)) {
-    z = to.z;
+  let blockedX = false;
+  let blockedZ = false;
+
+  for (let index = 0; index < steps; index += 1) {
+    const candidateX: Point = { x: x + stepX, z };
+    if (collidesAt(candidateX, radius, colliders)) {
+      blockedX = true;
+    } else {
+      x = candidateX.x;
+    }
+
+    const candidateZ: Point = { x, z: z + stepZ };
+    if (collidesAt(candidateZ, radius, colliders)) {
+      blockedZ = true;
+    } else {
+      z = candidateZ.z;
+    }
   }
 
-  return { x, z };
+  return { x: blockedX ? x : to.x, z: blockedZ ? z : to.z };
 };
 
 const distanceSquared = (left: Point, right: Point): number => {
