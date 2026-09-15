@@ -1,8 +1,8 @@
 # Minor Revisions — v2 Design Restart and Working Process
 
-Status: **Active — v2 design in progress; no implementation is authorized.**
+Status: **Active — development in progress under approved step plans.**
 
-Last updated: 2026-09-10.
+Last updated: 2026-09-15.
 
 ## Why this file exists
 
@@ -20,7 +20,8 @@ the current block, its questions, and the exact next action are recorded here.
 - v1 material may be consulted as inspiration. It has no authority, is not an
   approved v2 decision, and must not be copied into v2 without fresh
   discussion and Leonardo's approval.
-- No game code exists. The v1 development pathway (R1–R63) is void.
+- At the restart, no game code existed. The v1 development pathway (R1–R63)
+  is void.
 - Kept from before the restart: the opencode workflow and configuration, the
   local toolchain, the repository discipline (approval, provenance, review,
   acceptance), and Leonardo's standing GitHub synchronization authorization.
@@ -84,9 +85,8 @@ default; the same choices may be re-approved on their merits.
 | C1  | Pathway model, gates, and step format | `11-development-pathway.md` | Documented |
 | C2  | The ordered development step list     | `12-development-steps.md`   | Documented |
 
-Phase C is complete. The next permitted action is the exact STEP-001 plan,
-presented for Leonardo's approval. No development step is authorized until
-that plan is approved.
+Phase C is complete, and its ordered steps progress under their own approved
+plans. See the current task section above for the resume point.
 
 ## Session protocol
 
@@ -147,20 +147,21 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-011 implementation complete; independent review pending
+## Current task — STEP-011 corrections applied; re-review pending
 
 STEP-010 is accepted. Leonardo approved the STEP-011 plan (review and panel
-set pieces) on 2026-09-13 after reviewing the written draft, settling the two
+set pieces) on 2026-09-15 after reviewing the written draft, settling the two
 carried STEP-009 questions (the funding review now sits in week 4; a blank
 answer counts as answered). STEP-011 is implemented on branch
-`work/step-011-review-panel` from base `a56adf7`, and `npm run check`,
-`npm run build`, and `npm run test:e2e` passed. The current step record is
-`docs/development/steps/STEP-011-review-panel.md`. The next permitted action
-is the primary pre-review audit, then one fresh independent review by
-`mr-reviewer` before integration and Leonardo's result review. The ending
-resolver is STEP-012 and is not authorized until its own plan is approved.
-The earlier block questions and session records further down are preserved as
-history.
+`work/step-011-review-panel` from base `a56adf7`; the first independent review
+by `mr-reviewer` (now `opencode-go/gpt-5.6-luna`, variant `high`, per D-045)
+returned no blocker and three required corrections, which are applied with
+`npm run check`, `npm run build`, and `npm run test:e2e` passing. The current
+step record is `docs/development/steps/STEP-011-review-panel.md`. The next
+permitted action is the fresh re-review, then integration and Leonardo's
+result review. The ending resolver is STEP-012 and is not authorized until
+its own plan is approved. The earlier block questions and session records
+further down are preserved as history.
 
 ### C2 questions (answered and documented)
 

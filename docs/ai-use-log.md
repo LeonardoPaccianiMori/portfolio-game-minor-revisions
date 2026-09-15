@@ -35,6 +35,24 @@ paths.
 
 ## Completed history
 
+### 2026-09-15 — STEP-011 review and panel set pieces
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-011 under the plan
+approved on 2026-09-15. It added the reviewer chorus, the fellowship panel
+and the journal review with their seeded draws and discovery rules, the paper
+outcome field, the funding-review week change, the panel and review events,
+the B3/A2/A3 rows, and 23 tests; it applied the review corrections and the
+record updates. Integration and acceptance are pending. Evidence:
+`docs/development/steps/STEP-011-review-panel.md`; commits `f860d50`,
+`45d26dd`, `02566f9`, `0c1fd71`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-011, found no blocker and three required findings
+(the report comment-ID namespace, the record dates and the missing AI-use
+entry, and the test strength), all corrected by the primary.
+
 ### 2026-09-13 — STEP-010 experiments and evidence flow
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

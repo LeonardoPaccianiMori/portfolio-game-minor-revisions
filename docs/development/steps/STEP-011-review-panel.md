@@ -4,8 +4,8 @@ type: development-step
 status: implemented
 phase: 2
 gate: foundation
-created: 2026-09-13
-updated: 2026-09-13
+created: 2026-09-15
+updated: 2026-09-15
 base_commit: a56adf766727ab64eda55dec6ec1796af2ec064c
 branch: work/step-011-review-panel
 primary_model: opencode-go/deepseek-v4.1-flash
@@ -26,7 +26,7 @@ shared complicity. The outcomes become the inputs the ending resolver needs.
 The institution now answers back. The panel decides the fellowship, the
 journal decides the paper, and careless shortcuts can be caught and cost you.
 
-## Resolved carried questions (Leonardo, 2026-09-13)
+## Resolved carried questions (Leonardo, 2026-09-15)
 
 - The funding review moves from week 2 to **week 4**, matching A2's "the call
   arrives at the end of Act I"; the fellowship deadline stays week 8 and the
@@ -87,7 +87,7 @@ journal decides the paper, and careless shortcuts can be caught and cost you.
 
 - STEP-010 accepted by Leonardo on 2026-09-13.
 - The funding-review week and blank-answer decisions above, made by Leonardo
-  on 2026-09-13. The remaining plan awaits his explicit approval.
+  on 2026-09-15. The remaining plan awaits his explicit approval.
 
 ## Plan
 
@@ -212,11 +212,13 @@ change; tests; docs; checks.
   including this record.
 - Implementation commit: `45d26ddaa2daa6430e0b6ea3dbb25bd59510056b`
   (`Add review and panel outcomes`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 147 unit tests (19
-  new), and the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 151 unit tests (23
+  new after the corrections), and the content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 12 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Corrections commit: `0c1fd71` (`Correct STEP-011 comment IDs and strengthen
+tests`).
 - Primary observation (not a committed test): a read-only probe over seeds
   1–48 measured the satirical spread. All-inflate proposals funded 35 times,
   were waitlisted 13 times, and never rejected. A fully careful paper landed
@@ -233,14 +235,42 @@ change; tests; docs; checks.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-15 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and three
+required findings**, all corrected in this step. The reviewer re-ran the
+claimed checks independently (typecheck, 147 unit tests at the time, 12
+browser tests), verified the owned paths, the baselines, purity and atomicity,
+the seeded draw order, the event wiring, and the record, and confirmed the
+19-new-test claim and the probe description. One advisory was recorded (stale
+process text, corrected as record cleanup).
 
 ## Corrections
 
-None yet.
+- **R-1 (required):** the emitted report comment IDs lacked the approved
+  `review.` namespace (`reviewer.methods.accept.1` instead of
+  `review.methods.accept.1`), and the test reproduced the implementation.
+  Fixed in `0c1fd71`; the test now asserts the exact approved IDs plus the
+  full ID shape.
+- **R-2 (required):** the record dated the plan and implementation 2026-09-13,
+  but the commits are dated 2026-09-15, and the required STEP-011 entries were
+  missing from `docs/ai-use-log.md`. Dates corrected throughout the record,
+  and the primary-session and reviewer entries added.
+- **R-3 (required):** the profile-discovery and stale-methods tests used `>=`
+  comparisons that would pass if the penalties were removed, and the reviewer
+  preference branches and the separate discovery-risk items were weakly
+  covered. The tests now use exact rank-shift and threshold-crossing
+  assertions, cover the profile reward and significance branches, cover the
+  overlap-only and take-credit-only risks, and assert the exact event effect
+  arrays for the main branches.
+
+Advisories recorded from the independent review:
+
+- The process file header and one Phase C paragraph were stale; corrected as
+  record cleanup with the other dates.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-13 after he reviewed the written draft.
-Implementation complete on 2026-09-13; independent review and Leonardo's
-result review pending.
+Plan approved by Leonardo on 2026-09-15 after he reviewed the written draft.
+Implementation complete on 2026-09-15; the independent review returned no
+blocker and three required corrections, now applied and awaiting re-review.
+Leonardo's result review pending.
