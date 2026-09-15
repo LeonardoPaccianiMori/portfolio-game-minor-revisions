@@ -59,6 +59,13 @@ remaining items (the disproven sliver claim, a failure test that would not
 catch a renderer leak, and stale record wording), all corrected by the
 primary.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the final
+verification of STEP-013; independently re-probed the connectivity phases,
+confirmed the failure-test sensitivity and all eight findings resolved, and
+cleared the step for integration with one record-wording advisory, now
+applied.
+
 ### 2026-09-15 — STEP-012 the ending resolver
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
