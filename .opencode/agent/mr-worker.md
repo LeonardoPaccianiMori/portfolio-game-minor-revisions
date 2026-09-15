@@ -5,7 +5,7 @@ description: >-
   source packet, and the exact step record. Cannot commit, delegate, change
   branches, or use the network.
 mode: subagent
-model: opencode-go/qwen3.8-max
+model: opencode-go/qwen3.8-flash
 variant: xhigh
 permission:
   edit: allow
