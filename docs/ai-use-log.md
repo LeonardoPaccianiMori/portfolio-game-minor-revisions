@@ -52,6 +52,11 @@ variant `high`, actual runtime model metadata not exposed: completed the
 independent review of STEP-012, found one blocker and seven required
 findings, all corrected by the primary.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the first
+re-review of STEP-012; confirmed the blocker and required fixes, and reported
+four remaining test-sensitivity items, all corrected by the primary.
+
 ### 2026-09-15 — Worker-model replacement (D-047)
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

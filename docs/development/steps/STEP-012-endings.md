@@ -216,14 +216,17 @@ rules stay free of the clock.
   this record.
 - Implementation commit: `05ca9f2ec8fe0e0316d643372eb33445c4954445`
   (`Add the ending resolver and archive`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 184 unit tests (29
-  new after the corrections), and the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 185 unit tests (30
+  new after both correction rounds), and the content check.
 - `npm run build`: passed; `dist/index.html` and one bundled module.
 - `npm run test:e2e`: 15 passed in Chromium, Firefox, and WebKit, including
   the archive round trip, the newest-first ordering with the timestamp tie
-  break, the invalid-archive report, and the clear-data behaviour.
+  break, the invalid-archive report and preservation, and the clear-data
+  behaviour.
 - `git diff --check` and `git status`: clean at the implementation head.
 - Corrections commit: `2d81d17` (`Apply STEP-012 review corrections`).
+- Second corrections commit: `6de303a` (`Strengthen STEP-012 regression
+tests`).
 - Scope note: the wide diff from `03624e8` also contains two inherited
   commits made outside this step (`9828e41` and `894c5ee`, the D-047 worker
   model change recorded in the decision log); this step's own changes are
@@ -247,7 +250,13 @@ required findings, all corrected in this step. The reviewer re-ran the claimed
 checks independently (typecheck, 180 unit tests at the time, 12 browser
 tests), verified the owned paths, the baselines, purity and determinism, the
 absence of clock reads, and the record, and confirmed the 25-new-test claim.
-One advisory was recorded (the newest-first tie break needed a test).
+A fresh re-review by the same configured reviewer completed the same day after
+the first correction round: the production blocker and all required fixes were
+confirmed, and four test-sensitivity items remained (the week-12 quit test did
+not actually exercise the pre-fix path, the crash-order test only covered
+duplicates, the tie-break test could not distinguish the comparator from key
+order, and invalid-archive preservation was not verified before clearing).
+All four were corrected in `6de303a`; no production regression was found.
 
 ## Corrections
 
@@ -280,11 +289,19 @@ One advisory was recorded (the newest-first tie break needed a test).
   this step's own changes (scope note above).
 - **R-7 (required):** the STEP-012 primary and reviewer entries were added to
   `docs/ai-use-log.md`.
+- **Re-review (required, `6de303a`):** the first-round tests were made
+  regression-sensitive: the week-12 quit test now uses no remaining action
+  slots so the pre-fix behaviour would fail it and it asserts a single
+  personnel-file effect and no event flags; the crash-order checks cover an
+  out-of-order list; the timestamp tie break has a direct comparator unit
+  test; and the invalid-archive browser test confirms the entry is preserved
+  before clearing. The state crash-weeks validation now requires increasing
+  weeks.
 
 ## Leonardo decision
 
 The quit-ending and archive decisions were made on 2026-09-15. Plan approved
 by Leonardo on 2026-09-15 after he reviewed the written draft. Implementation
 complete on 2026-09-15; the independent review returned one blocker and seven
-required corrections, now applied and awaiting re-review. Leonardo's result
-review pending.
+required corrections, applied in two rounds and awaiting the final re-review.
+Leonardo's result review pending.
