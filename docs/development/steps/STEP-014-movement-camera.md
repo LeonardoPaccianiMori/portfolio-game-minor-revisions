@@ -1,7 +1,7 @@
 ---
 id: STEP-014
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 3
 gate: first-playable
 created: 2026-09-29
@@ -177,6 +177,8 @@ worker is used.
   Node for tests; in the browser, keyboard, mouse, and blur bind to `window`
   and pointer-lock changes bind to `document`, where the browser fires them
   (the pre-review follow-up above).
+- Integrated on local `main` at `89d9726` by fast-forward, and `npm run
+verify` passed on `main`.
 - Limitations: remapping is implemented in code but not yet exposed in a
   settings screen or persisted; there is no pause menu, interaction, or desk
   board yet; gamepad behaviour is unit-tested with fakes because headless
