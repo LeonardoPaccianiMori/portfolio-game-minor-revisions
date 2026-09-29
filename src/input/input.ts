@@ -115,6 +115,7 @@ export interface GamepadSourceLike {
 export interface InputOptions {
   readonly canvas: CanvasLike;
   readonly events?: EventTargetLike;
+  readonly lockEvents?: EventTargetLike;
   readonly pointerLock?: PointerLockLike;
   readonly gamepads?: GamepadSourceLike;
 }
@@ -136,6 +137,9 @@ const noopTarget: EventTargetLike = {
 
 const defaultEvents = (): EventTargetLike => (typeof window === 'undefined' ? noopTarget : window);
 
+const defaultLockEvents = (): EventTargetLike =>
+  typeof document === 'undefined' ? noopTarget : document;
+
 const defaultPointerLock = (): PointerLockLike =>
   typeof document === 'undefined' ? { pointerLockElement: null } : document;
 
@@ -144,6 +148,7 @@ const defaultGamepads = (): GamepadSourceLike =>
 
 export const createInput = (options: InputOptions): Input => {
   const events = options.events ?? defaultEvents();
+  const lockEvents = options.lockEvents ?? defaultLockEvents();
   const pointerLock = options.pointerLock ?? defaultPointerLock();
   const gamepads = options.gamepads ?? defaultGamepads();
   const pressedKeys = new Set<string>();
@@ -196,7 +201,7 @@ export const createInput = (options: InputOptions): Input => {
   events.addEventListener('keyup', onKeyUp);
   events.addEventListener('mousemove', onMouseMove);
   events.addEventListener('blur', onBlur);
-  events.addEventListener('pointerlockchange', onPointerLockChange);
+  lockEvents.addEventListener('pointerlockchange', onPointerLockChange);
   options.canvas.addEventListener('click', onClick);
 
   const readGamepad = (): GamepadLike | null => {
@@ -236,7 +241,7 @@ export const createInput = (options: InputOptions): Input => {
       events.removeEventListener('keyup', onKeyUp);
       events.removeEventListener('mousemove', onMouseMove);
       events.removeEventListener('blur', onBlur);
-      events.removeEventListener('pointerlockchange', onPointerLockChange);
+      lockEvents.removeEventListener('pointerlockchange', onPointerLockChange);
       options.canvas.removeEventListener('click', onClick);
       pressedKeys.clear();
     },

@@ -244,10 +244,12 @@ describe('the input device', () => {
   it('accumulates mouse movement only while pointer-locked and resets it per sample', () => {
     const canvas = createFakeCanvas();
     const events = createFakeTarget();
+    const lockEvents = createFakeTarget();
     const pointerLock = { pointerLockElement: null as Element | null };
     const input = createInput({
       canvas: canvas.canvas,
       events: events.target,
+      lockEvents: lockEvents.target,
       pointerLock,
     });
 
@@ -265,7 +267,7 @@ describe('the input device', () => {
 
     events.dispatch('mousemove', mouseEvent(4, 4));
     pointerLock.pointerLockElement = null;
-    events.dispatch('pointerlockchange', new Event('pointerlockchange'));
+    lockEvents.dispatch('pointerlockchange', new Event('pointerlockchange'));
     expect(input.sample().mouseDeltaX).toBe(0);
 
     input.dispose();
@@ -336,13 +338,20 @@ describe('the input device', () => {
   it('removes every listener it added', () => {
     const canvas = createFakeCanvas();
     const events = createFakeTarget();
-    const input = createInput({ canvas: canvas.canvas, events: events.target });
+    const lockEvents = createFakeTarget();
+    const input = createInput({
+      canvas: canvas.canvas,
+      events: events.target,
+      lockEvents: lockEvents.target,
+    });
 
     input.dispose();
 
     expect([...events.removed].sort()).toEqual([...events.added].sort());
+    expect([...lockEvents.removed].sort()).toEqual([...lockEvents.added].sort());
     expect([...canvas.removed].sort()).toEqual([...canvas.added].sort());
-    expect(events.removed).toHaveLength(5);
+    expect(events.removed).toHaveLength(4);
+    expect(lockEvents.removed).toEqual(['pointerlockchange']);
     expect(canvas.removed).toEqual(['click']);
   });
 });
