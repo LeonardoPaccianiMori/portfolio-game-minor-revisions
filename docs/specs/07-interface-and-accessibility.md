@@ -1,6 +1,7 @@
 # B7 — Interface, Input, and Accessibility
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
+2026-09-15 with the default movement bindings.**
 
 ## Desk board (approved)
 
@@ -24,6 +25,16 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7).**
 - Keyboard and mouse, plus controller.
 - Actions are remappable.
 - No drag-only or precision-motor requirements, and no timed inputs.
+
+### Default bindings (implementation)
+
+- W/A/S/D move; the arrow keys turn and pitch so the game is fully playable
+  without a mouse.
+- Clicking the canvas captures the pointer for mouse look; Escape releases it.
+- A standard controller moves with the left stick and looks with the right
+  stick, with a 0.15 dead zone.
+- The mapping is a rebindable table in code; the settings screen and saving
+  rebinds arrive with the settings work.
 
 ## Accessibility (approved)
 

@@ -1,7 +1,11 @@
 import { createApplication, createFrameLoop } from './application/index.ts';
 import type { ApplicationFault } from './application/index.ts';
+import { createInput } from './input/index.ts';
+import type { Input } from './input/index.ts';
+import { START_YAW, createPlayer } from './player/index.ts';
+import type { Player } from './player/index.ts';
 import { createFrameScheduler, createTimingSource, detectCompatibility } from './platform/index.ts';
-import { createWorld } from './world/index.ts';
+import { START_ANCHOR, buildColliders, createWorld } from './world/index.ts';
 import type { World } from './world/index.ts';
 
 const appElement = document.querySelector<HTMLElement>('#app');
@@ -12,6 +16,8 @@ const reloadButton = document.querySelector<HTMLButtonElement>('#app-error-reloa
 const worldContainer = document.querySelector<HTMLElement>('#app-world');
 
 let world: World | null = null;
+let input: Input | null = null;
+let player: Player | null = null;
 
 const showReady = (): void => {
   if (appElement !== null) {
@@ -48,15 +54,20 @@ const showFault = (message: string): void => {
   }
 };
 
+const startupFault = (stage: string): ApplicationFault => ({
+  code: `startup:${stage}`,
+  message: 'The game could not start.',
+});
+
 const startWorld = (): ApplicationFault | null => {
   if (worldContainer === null) {
-    return { code: 'startup:world', message: 'The game could not start.' };
+    return startupFault('world');
   }
 
   try {
     world = createWorld({ container: worldContainer });
   } catch {
-    return { code: 'startup:world', message: 'The game could not start.' };
+    return startupFault('world');
   }
 
   return null;
@@ -65,6 +76,35 @@ const startWorld = (): ApplicationFault | null => {
 const stopWorld = (): void => {
   world?.dispose();
   world = null;
+};
+
+const stopControls = (): void => {
+  input?.dispose();
+  input = null;
+  player = null;
+};
+
+const startControls = (): ApplicationFault | null => {
+  if (world === null) {
+    return startupFault('controls');
+  }
+
+  try {
+    input = createInput({ canvas: world.canvas });
+    player = createPlayer({
+      environment: {
+        start: { x: START_ANCHOR.x, z: START_ANCHOR.z, yaw: START_YAW },
+        colliders: buildColliders(),
+      },
+    });
+    world.setCameraPose(player.pose());
+  } catch {
+    stopControls();
+
+    return startupFault('controls');
+  }
+
+  return null;
 };
 
 reloadButton?.addEventListener('click', () => {
@@ -81,8 +121,14 @@ const bootstrap = async (): Promise<void> => {
     timing: createTimingSource(),
   });
 
-  frameLoop.subscribe(() => {
-    world?.render();
+  frameLoop.subscribe((deltaMs) => {
+    if (world === null || input === null || player === null) {
+      return;
+    }
+
+    player.update(deltaMs, input.sample());
+    world.setCameraPose(player.pose());
+    world.render();
   });
 
   const application = createApplication({
@@ -106,12 +152,23 @@ const bootstrap = async (): Promise<void> => {
         name: 'world',
         run: startWorld,
       },
+      {
+        name: 'controls',
+        run: startControls,
+      },
     ],
     shutdown: [
       {
         name: 'world',
         run: () => {
           stopWorld();
+          return null;
+        },
+      },
+      {
+        name: 'controls',
+        run: () => {
+          stopControls();
           return null;
         },
       },

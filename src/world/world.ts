@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 
 import { nearestAnchor } from './collision.ts';
+import { CAMERA_HEIGHT, START_ANCHOR } from './floor-plan.ts';
 import type { Anchor, Point } from './floor-plan.ts';
 import { buildFloorGeometry } from './geometry.ts';
 import type { BuiltFloor } from './geometry.ts';
@@ -10,11 +11,20 @@ export interface WorldStats {
   readonly meshCount: number;
 }
 
+export interface CameraPose {
+  readonly x: number;
+  readonly z: number;
+  readonly yaw: number;
+  readonly pitch: number;
+}
+
 export interface World {
   readonly canvas: HTMLCanvasElement;
   render(): void;
   resize(width: number, height: number): void;
   recover(position: Point): Anchor;
+  setCameraPose(pose: CameraPose): void;
+  cameraPose(): CameraPose;
   stats(): WorldStats;
   dispose(): void;
 }
@@ -23,8 +33,6 @@ export interface WorldOptions {
   readonly container: HTMLElement;
   readonly buildGeometry?: () => BuiltFloor;
 }
-
-const CENTER: Point = { x: 10.3, z: 1.5 };
 
 export const createWorld = (options: WorldOptions): World => {
   const renderer = new THREE.WebGLRenderer({ antialias: false });
@@ -47,8 +55,22 @@ export const createWorld = (options: WorldOptions): World => {
     scene.background = new THREE.Color(0xdfe5ea);
 
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 200);
-    camera.position.set(CENTER.x, 24, CENTER.z + 18);
-    camera.lookAt(CENTER.x, 0, CENTER.z);
+    camera.rotation.order = 'YXZ';
+
+    let cameraPose: CameraPose = {
+      x: START_ANCHOR.x,
+      z: START_ANCHOR.z,
+      yaw: 0,
+      pitch: 0,
+    };
+
+    const applyCameraPose = (): void => {
+      camera.position.set(cameraPose.x, CAMERA_HEIGHT, cameraPose.z);
+      camera.rotation.y = cameraPose.yaw;
+      camera.rotation.x = cameraPose.pitch;
+    };
+
+    applyCameraPose();
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.75);
     const sun = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -61,11 +83,6 @@ export const createWorld = (options: WorldOptions): World => {
     scene.add(built.group);
 
     let disposed = false;
-
-    const lookAt = (target: Point): void => {
-      camera.position.set(target.x, 24, target.z + 18);
-      camera.lookAt(target.x, 0, target.z);
-    };
 
     return {
       canvas: renderer.domElement,
@@ -86,10 +103,14 @@ export const createWorld = (options: WorldOptions): World => {
         renderer.setSize(safeWidth, safeHeight);
       },
       recover(position) {
-        const anchor = nearestAnchor(position);
-        lookAt(anchor);
-
-        return anchor;
+        return nearestAnchor(position);
+      },
+      setCameraPose(pose) {
+        cameraPose = { ...pose };
+        applyCameraPose();
+      },
+      cameraPose() {
+        return { ...cameraPose };
       },
       stats() {
         return {

@@ -2,6 +2,7 @@ export const WALL_THICKNESS = 0.2;
 export const WALL_HEIGHT = 3;
 export const DOOR_WIDTH = 1.6;
 export const PLAYER_RADIUS = 0.35;
+export const CAMERA_HEIGHT = 1.6;
 export const NAVIGATION_STEP = 0.25;
 export const MAX_MOVEMENT_STEP = 0.2;
 

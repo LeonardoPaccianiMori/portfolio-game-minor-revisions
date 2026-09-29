@@ -1,7 +1,8 @@
 # B6 — World, Movement, and Interaction
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
-2026-09-15 with the slice dimensions and recovery-anchor baseline.**
+2026-09-15 with the slice dimensions and recovery-anchor baseline and with the
+first-person movement baseline.**
 
 ## Floor (approved)
 
@@ -29,6 +30,17 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
 - Comfortable first-person walking with keyboard, mouse, and controller.
 - Actions are remappable; the mapping is fixed in B7.
 - No head-bob, no forced motion, and no jumping puzzles.
+
+### Slice movement baseline (implementation)
+
+- The camera is the first-person camera at 1.6 m eye height; walking is
+  3.0 m/s, keyboard turning and pitching is 120°/s, gamepad stick turning is
+  150°/s, mouse look is 0.0025 radians per pixel, and the pitch is limited to
+  ±85°. The eye height never bobs.
+- The run starts at the desk-hub start anchor, facing the desk board.
+- Movement resolves through the static collision and cannot tunnel through
+  walls; recovery returns the nearest safe anchor for the future recovery
+  control.
 
 ## Collision (approved)
 
