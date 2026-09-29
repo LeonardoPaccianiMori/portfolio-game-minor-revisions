@@ -2,7 +2,7 @@
 
 Status: **Active — development in progress under approved step plans.**
 
-Last updated: 2026-09-15.
+Last updated: 2026-09-29.
 
 ## Why this file exists
 
@@ -150,7 +150,7 @@ The `/design-session` command starts this protocol.
 ## Current task — STEP-014 implementation complete; independent review pending
 
 STEP-013 is accepted. Leonardo approved the STEP-014 plan (movement and
-camera) on 2026-09-15 as presented. STEP-014 is implemented on branch
+camera) on 2026-09-29 as presented. STEP-014 is implemented on branch
 `work/step-014-movement-camera` from base `0ff9e0a`, and `npm run check`,
 `npm run build`, and `npm run test:e2e` passed. The current step record is
 `docs/development/steps/STEP-014-movement-camera.md`. The next permitted

@@ -4,8 +4,8 @@ type: development-step
 status: implemented
 phase: 3
 gate: first-playable
-created: 2026-09-15
-updated: 2026-09-15
+created: 2026-09-29
+updated: 2026-09-29
 base_commit: 0ff9e0a1ee1d8068cc38fc5ec2ecd436482b87f4
 branch: work/step-014-movement-camera
 primary_model: opencode-go/deepseek-v4.1-flash
@@ -81,7 +81,7 @@ too.
 ## Accepted dependencies
 
 - STEP-013 accepted by Leonardo on 2026-09-15.
-- Plan approved by Leonardo on 2026-09-15 as presented.
+- Plan approved by Leonardo on 2026-09-29 as presented.
 
 ## Plan
 
@@ -184,13 +184,37 @@ worker is used.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-29 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and one
+required finding**, corrected in this step. The reviewer re-ran the claimed
+checks independently (typecheck, 228 unit tests, 27 browser tests), confirmed
+the 27-new-test claim and the bundle size, and verified the module
+boundaries, sign conventions, collision use, camera replacement, composition
+order, and records. Three advisories were recorded.
 
 ## Corrections
 
-None yet.
+- **R-1 (required):** the records dated the STEP-014 plan, implementation,
+  and revisions 2026-09-15 while the commits are dated 2026-09-29. The step
+  record, the process file, and the B6 and B7 revision lines now carry the
+  correct date, and the STEP-014 primary and reviewer entries were added to
+  `docs/ai-use-log.md`.
+
+Advisories recorded from the independent review:
+
+- **A-1:** the browser camera acceptance does not yet assert yaw, pitch, eye
+  height, or the pose-getter copy; add them at the next world or player
+  browser-test pass.
+- **A-2:** input sign and accessibility coverage is partial (gamepad pitch
+  signs, keyboard-only browser interaction, Escape release, and the default
+  document pointer-lock routing); add them at the next input or
+  accessibility test pass.
+- **A-3:** the composition root's input and player failure paths have no
+  direct tests; cover them with the composition-root test work.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-15 as presented. Implementation complete
-on 2026-09-15; independent review and Leonardo's result review pending.
+Plan approved by Leonardo on 2026-09-29 as presented. Implementation complete
+on 2026-09-29; the independent review returned no blocker and one required
+record correction, now applied and awaiting the final verification.
+Leonardo's result review pending.

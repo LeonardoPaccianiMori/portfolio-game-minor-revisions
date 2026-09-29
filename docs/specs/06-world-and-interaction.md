@@ -1,8 +1,8 @@
 # B6 — World, Movement, and Interaction
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
-2026-09-15 with the slice dimensions and recovery-anchor baseline and with the
-first-person movement baseline.**
+2026-09-15 with the slice dimensions and recovery-anchor baseline, and revised
+2026-09-29 with the first-person movement baseline.**
 
 ## Floor (approved)
 

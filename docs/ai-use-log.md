@@ -35,6 +35,25 @@ paths.
 
 ## Completed history
 
+### 2026-09-29 — STEP-014 movement and camera
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-014 under the plan
+approved on 2026-09-29. It added the input module (bindings, device events,
+pointer lock, snapshots), the player module (pose, movement through the
+STEP-013 collision, look, pitch clamp), the first-person world camera, the
+startup and frame wiring, and 27 tests; it routed pointer-lock events to the
+document in the pre-review audit and corrected the record dates after the
+review. Integration and acceptance are pending. Evidence:
+`docs/development/steps/STEP-014-movement-camera.md`; commits `64ac906`,
+`b7f75de`, `9b87b1f`, `c0fb1ed`, `7674d65`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-014, found no blocker and one required record
+finding (the dates), corrected by the primary, and recorded three test-depth
+advisories.
+
 ### 2026-09-15 — STEP-013 the world floor
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

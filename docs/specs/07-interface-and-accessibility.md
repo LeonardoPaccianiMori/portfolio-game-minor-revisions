@@ -1,7 +1,7 @@
 # B7 — Interface, Input, and Accessibility
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
-2026-09-15 with the default movement bindings.**
+2026-09-29 with the default movement bindings.**
 
 ## Desk board (approved)
 
