@@ -156,6 +156,11 @@ worker is used.
   including this record.
 - Implementation commit: `b7f75def6dc161ca3eecd055481834f1eb0607f6`
   (`Add first-person movement, input, and camera`).
+- Follow-up commit: `9b87b1ff794f87cce9c185cc0698ee3b7c8d3342`
+  (`Route pointer-lock events to the document`), found in the pre-review
+  audit: browsers fire `pointerlockchange` on the document, so the input
+  binds keyboard, mouse, and blur to `window` and pointer-lock changes to
+  `document`.
 - `npm run check`: passed; typecheck, ESLint, Prettier, 228 unit tests (27
   new), and the content check.
 - `npm run build`: passed; the single application bundle is 529.65 kB (133.9
@@ -164,11 +169,14 @@ worker is used.
   the player walking into the desk board, turning with the arrow keys,
   rendering, and the existing world and persistence suites.
 - `git diff --check` and `git status`: clean at the implementation head.
-- Deviations: the camera height lives with the world camera rather than the
-  player module, because the player pose carries no height; the input
+- Deviations: the camera height lives with the world camera in
+  `src/world/floor-plan.ts` rather than the player module, because the player
+  pose carries no height, and `src/world/index.ts` re-exports it; those two
+  files are the recorded extension beyond the listed `world.ts`. The input
   module's device defaults are guarded so the pure module constructs under
-  Node for tests. The default event target is `window` with the pointer lock
-  read from `document`, as recorded in B7.
+  Node for tests; in the browser, keyboard, mouse, and blur bind to `window`
+  and pointer-lock changes bind to `document`, where the browser fires them
+  (the pre-review follow-up above).
 - Limitations: remapping is implemented in code but not yet exposed in a
   settings screen or persisted; there is no pause menu, interaction, or desk
   board yet; gamepad behaviour is unit-tested with fakes because headless
