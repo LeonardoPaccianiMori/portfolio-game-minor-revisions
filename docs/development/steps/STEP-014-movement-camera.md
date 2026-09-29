@@ -1,0 +1,166 @@
+---
+id: STEP-014
+type: development-step
+status: plan-approved
+phase: 3
+gate: first-playable
+created: 2026-09-15
+updated: 2026-09-15
+base_commit: 0ff9e0a1ee1d8068cc38fc5ec2ecd436482b87f4
+branch: work/step-014-movement-camera
+primary_model: opencode-go/deepseek-v4.1-flash
+primary_variant: max
+---
+
+# STEP-014 — Movement and camera
+
+## Objective
+
+Make the floor walkable: first-person movement and camera behaviour driven by
+keyboard, mouse, and controller, with a rebindable mapping, collision carried
+over from STEP-013, and no head-bob or forced motion.
+
+## Plain-language effect
+
+You can walk the department in first person. The mouse looks after a click,
+the arrow keys turn for keyboard-only play, and a standard controller works
+too.
+
+## Owned paths
+
+- `src/input/bindings.ts` (new: actions, default bindings, pure rebinding)
+- `src/input/input.ts` (new: device events, pointer lock, the per-frame
+  snapshot)
+- `src/input/index.ts` (new)
+- `src/player/player.ts` (new: the pose, movement, look, and collision use)
+- `src/player/index.ts` (new)
+- `src/world/world.ts` (the first-person camera pose setter and getter; the
+  overview placeholder camera and its recovery move are replaced)
+- `src/main.ts` (input and player startup, the frame order, and shutdown)
+- `tests/unit/input.test.ts` (new), `tests/unit/player.test.ts` (new),
+  `tests/e2e/player.spec.ts` (new), `tests/e2e/world.spec.ts` (only if the
+  camera replacement requires it)
+- `docs/specs/06-world-and-interaction.md` (the movement feel baseline),
+  `docs/specs/07-interface-and-accessibility.md` (the default bindings),
+  `docs/design/00-process.md` (resume point)
+
+## Prohibited paths
+
+- `docs/**` except the listed files and the step record; `AGENTS.md`,
+  `README.md`, `opencode.json`, `.opencode/**`
+- Interaction targeting and prompts (STEP-015); the desk board and screens
+  (STEP-016); the pause menu; remapping UI or persistence; room states;
+  scenes; audio; real assets; migration; any release, licence, or deployment
+  action
+
+## Allowed sources
+
+- `docs/design/02-core-loop.md`, `docs/design/06-world-and-presentation.md`,
+  `docs/design/08-production-constraints.md`
+- `docs/specs/02-architecture.md`, `docs/specs/06-world-and-interaction.md`,
+  `docs/specs/07-interface-and-accessibility.md`,
+  `docs/specs/09-performance-and-browsers.md`,
+  `docs/specs/10-testing-and-workflow.md`,
+  `docs/specs/11-development-pathway.md`,
+  `docs/specs/12-development-steps.md`
+- `AGENTS.md`, `docs/design/00-process.md`
+
+## Authority and traceability
+
+- B6 (comfortable first-person walking with keyboard, mouse, and controller;
+  remappable actions; no head-bob, no forced motion, no jumping puzzles; the
+  no-trapping guarantee), B7 (keyboard-only operation; no drag-only or
+  precision-motor requirements; remapping is a setting), B2 (`input` owns
+  device events; `player` owns movement and camera behaviour with no Three.js
+  objects; `world` owns the camera and scene), A6 (short purposeful visits; no
+  jump scares).
+- STEP-014 of the amended C2 list; phase 3, before the first-playable gate.
+- Carried advisories: STEP-013's placeholder overview camera is replaced
+  here as recorded.
+
+## Accepted dependencies
+
+- STEP-013 accepted by Leonardo on 2026-09-15.
+- Plan approved by Leonardo on 2026-09-15 as presented.
+
+## Plan
+
+The primary implements this step. One fresh independent review by
+`mr-reviewer` (`opencode-go/gpt-5.6-luna`, `high`), a different model family
+from the primary, plus a fresh re-review if code corrections are required. No
+worker is used.
+
+## Tasks
+
+1. The bindings module: the eight actions, the default keyboard mapping, the
+   pure rebinding functions, and an empty default button mapping ready for
+   future pads.
+2. The input module: keyboard, mouse, and gamepad state behind injectable
+   event, pointer-lock, and gamepad sources; a per-frame snapshot with move,
+   turn, and mouse deltas; a pointer-lock request on the canvas; and full
+   disposal of every listener.
+3. The player module: the pose (position, yaw, pitch), movement resolved
+   through the STEP-013 collision with the player radius, look from mouse
+   pixels, keyboard turning, and the dead-zoned gamepad sticks, the pitch
+   clamp, and a position setter for future recovery.
+4. The world camera: a first-person camera at eye height with a pose setter
+   and getter; the placeholder overview camera and its recovery move are
+   removed, and recovery keeps returning the nearest anchor.
+5. The composition root: create the input and the player at startup, drive
+   input, player, camera, and render in that order each frame, and dispose the
+   input in shutdown.
+6. Tests: the pure bindings and snapshot evaluation with fake devices, the
+   player movement, look, clamp, and collision with fake environments, and a
+   browser test that presses keys, walks into the desk, turns, and renders.
+7. Record the movement feel in B6 and the default bindings in B7, then run
+   every required check.
+
+## Movement and input baseline (approved with this plan; tunable in the slice)
+
+- Walking speed 3.0 m/s; keyboard turning and pitching 120°/s; gamepad stick
+  turning 150°/s; mouse sensitivity 0.0025 radians per pixel; pitch limited to
+  ±85°; eye height 1.6 m, constant.
+- Default keyboard bindings: W/A/S/D move, arrow keys turn and pitch, mouse
+  looks after the canvas is clicked, Escape releases the pointer.
+- Standard controller: left stick moves, right stick looks, dead zone 0.15.
+- The start pose is the desk-hub start anchor, facing the desk board.
+
+## Non-goals
+
+- No interaction targeting or prompts (STEP-015).
+- No desk board, screens, or pause menu (STEP-016 onward).
+- No remapping UI or persistence (later settings work); the mapping is
+  rebindable in code.
+- No room states, scenes, audio, real assets, or migration.
+
+## Required checks and evidence
+
+- `npm run check`
+- `npm run build`
+- `npm run test:e2e`
+- `git diff --check` and a clean `git status`
+
+## Safety and quality boundaries
+
+- The player and bindings modules are pure and free of Three.js, the DOM, and
+  the clock; the input module owns every device listener and disposes them.
+- No head-bob, no forced camera motion, and no timed inputs.
+- Accessibility: keyboard-only play is fully supported from this step.
+- No credentials, personal data, or machine paths in tracked files.
+
+## Execution record
+
+Not yet available.
+
+## Independent review
+
+Not yet available.
+
+## Corrections
+
+None yet.
+
+## Leonardo decision
+
+Plan approved by Leonardo on 2026-09-15 as presented. Implementation,
+testing, and acceptance pending.
