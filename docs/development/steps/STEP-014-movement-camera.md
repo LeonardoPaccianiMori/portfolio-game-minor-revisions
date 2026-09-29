@@ -1,7 +1,7 @@
 ---
 id: STEP-014
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-09-15
@@ -150,7 +150,29 @@ worker is used.
 
 ## Execution record
 
-Not yet available.
+- Base: `0ff9e0a1ee1d8068cc38fc5ec2ecd436482b87f4`.
+- Branch: `work/step-014-movement-camera`.
+- Plan checkpoint: `64ac906` (`Approve STEP-014 movement and camera plan`),
+  including this record.
+- Implementation commit: `b7f75def6dc161ca3eecd055481834f1eb0607f6`
+  (`Add first-person movement, input, and camera`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 228 unit tests (27
+  new), and the content check.
+- `npm run build`: passed; the single application bundle is 529.65 kB (133.9
+  kB gzip), inside the 25 MB budget.
+- `npm run test:e2e`: 27 passed in Chromium, Firefox, and WebKit, including
+  the player walking into the desk board, turning with the arrow keys,
+  rendering, and the existing world and persistence suites.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the camera height lives with the world camera rather than the
+  player module, because the player pose carries no height; the input
+  module's device defaults are guarded so the pure module constructs under
+  Node for tests. The default event target is `window` with the pointer lock
+  read from `document`, as recorded in B7.
+- Limitations: remapping is implemented in code but not yet exposed in a
+  settings screen or persisted; there is no pause menu, interaction, or desk
+  board yet; gamepad behaviour is unit-tested with fakes because headless
+  browsers expose no pads.
 
 ## Independent review
 
@@ -162,5 +184,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-15 as presented. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-09-15 as presented. Implementation complete
+on 2026-09-15; independent review and Leonardo's result review pending.
