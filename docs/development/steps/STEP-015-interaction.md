@@ -1,7 +1,7 @@
 ---
 id: STEP-015
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 3
 gate: first-playable
 created: 2026-09-30
@@ -176,6 +176,8 @@ prompt`) and `83559ce` (`Update the player test snapshot`).
 - `git diff --check` and `git status`: clean at the implementation head.
 - Corrections commit: `c8851ee` (`Extract the interaction controller and
 cover its path`).
+- Integrated on local `main` at `10bf019` by fast-forward, and `npm run
+verify` passed on `main`.
 - Deviations: each prop's interaction volume reaches eye height so a level
   gaze still targets low furniture; `src/world/floor-plan.ts` gained plain
   prop labels and `src/world/geometry.ts` gives every prop its own material

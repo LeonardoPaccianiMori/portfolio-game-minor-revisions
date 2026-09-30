@@ -147,17 +147,18 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-015 implementation complete; independent review pending
+## Current task — STEP-015 integrated; Leonardo result review
 
 STEP-014 is accepted. Leonardo approved the STEP-015 plan (interaction) on
-2026-09-30 as presented. STEP-015 is implemented on branch
-`work/step-015-interaction` from base `5298b61`, and `npm run check`,
-`npm run build`, and `npm run test:e2e` passed. The current step record is
-`docs/development/steps/STEP-015-interaction.md`. The next permitted action
-is the primary pre-review audit, then one fresh independent review by
-`mr-reviewer` before integration and Leonardo's result review. The desk board
-is STEP-016 and is not authorized until its own plan is approved. The earlier
-block questions and session records further down are preserved as history.
+2026-09-30 as presented. STEP-015 is implemented, independently reviewed and
+re-reviewed by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) with
+both required findings corrected, integrated on `main`, and fully verified.
+The current step record is
+`docs/development/steps/STEP-015-interaction.md`. The world is now
+interactive, so Leonardo can optionally walk to a station and press E during
+his result review, followed by explicit acceptance. The desk board is STEP-016
+and is not authorized until its own plan is approved. The earlier block
+questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
