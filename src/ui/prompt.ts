@@ -7,6 +7,7 @@ export interface Prompt {
 export const createPrompt = (parent: HTMLElement): Prompt => {
   const element = document.createElement('p');
   element.id = 'interaction-prompt';
+  element.setAttribute('role', 'status');
   element.hidden = true;
   parent.appendChild(element);
 

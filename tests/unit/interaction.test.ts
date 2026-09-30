@@ -134,6 +134,87 @@ describe('targeting', () => {
     expect(result.target?.id).toBe('near');
   });
 
+  it('treats a ray grazing a face as a hit', () => {
+    const custom: readonly Interactable[] = [
+      {
+        id: 'grazed',
+        label: 'Grazed',
+        prompt: 'Grazed',
+        command: null,
+        box: { minX: 0, maxX: 1, minY: 0, maxY: 1, minZ: -1, maxZ: 1 },
+      },
+    ];
+    const colliders = custom.map((interactable) => ({
+      id: interactable.id,
+      minX: interactable.box.minX,
+      maxX: interactable.box.maxX,
+      minZ: interactable.box.minZ,
+      maxZ: interactable.box.maxZ,
+    }));
+    const result = findInteraction({
+      aim: { origin: { x: 1, y: 0.5, z: 2 }, direction: { x: 0, y: 0, z: -1 } },
+      colliders,
+      interactables: custom,
+    });
+
+    expect(result.target?.id).toBe('grazed');
+  });
+
+  it('hits a volume the origin is already inside', () => {
+    const custom: readonly Interactable[] = [
+      {
+        id: 'inside',
+        label: 'Inside',
+        prompt: 'Inside',
+        command: null,
+        box: { minX: -1, maxX: 1, minY: 0, maxY: 2, minZ: -1, maxZ: 1 },
+      },
+    ];
+    const colliders = custom.map((interactable) => ({
+      id: interactable.id,
+      minX: interactable.box.minX,
+      maxX: interactable.box.maxX,
+      minZ: interactable.box.minZ,
+      maxZ: interactable.box.maxZ,
+    }));
+    const result = findInteraction({
+      aim: { origin: { x: 0, y: 1, z: 0 }, direction: { x: 0, y: 0, z: -1 } },
+      colliders,
+      interactables: custom,
+    });
+
+    expect(result.target?.id).toBe('inside');
+    expect(result.distance).toBe(0);
+  });
+
+  it('includes the reach boundary exactly', () => {
+    const custom: readonly Interactable[] = [
+      {
+        id: 'edge',
+        label: 'Edge',
+        prompt: 'Edge',
+        command: null,
+        box: { minX: -0.5, maxX: 0.5, minY: 0, maxY: 1, minZ: -2.5, maxZ: -2 },
+      },
+    ];
+    const colliders = custom.map((interactable) => ({
+      id: interactable.id,
+      minX: interactable.box.minX,
+      maxX: interactable.box.maxX,
+      minZ: interactable.box.minZ,
+      maxZ: interactable.box.maxZ,
+    }));
+    const result = findInteraction({
+      aim: { origin: { x: 0, y: 1, z: 0 }, direction: { x: 0, y: 0, z: -1 } },
+      colliders,
+      interactables: custom,
+      reach: 2,
+    });
+
+    expect(result.target?.id).toBe('edge');
+    expect(result.distance).toBe(2);
+  });
+
   it('treats a target outside the reach as no hit', () => {
     const custom: readonly Interactable[] = [
       {

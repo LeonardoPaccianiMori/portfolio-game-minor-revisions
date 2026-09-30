@@ -1,3 +1,11 @@
+export { BLOCKED_TEXT, INSPECT_TEXT, createInteractionController } from './controller.ts';
+export type {
+  InteractionController,
+  InteractionControllerOptions,
+  InteractionPrompt,
+  InteractionSession,
+  InteractionWorld,
+} from './controller.ts';
 export {
   INTERACTION_REACH,
   aimFromPose,

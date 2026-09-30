@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('the break-room table targets, highlights, and runs its action', async ({ page }) => {
+test('the break-room table runs one action per press through the composition', async ({ page }) => {
   await page.goto('/');
 
   const result = await page.evaluate(async () => {
@@ -39,44 +39,47 @@ test('the break-room table targets, highlights, and runs its action', async ({ p
     const prompt = uiModule.createPrompt(container);
     const interactables = interactionModule.buildInteractables();
     const colliders = worldModule.buildColliders();
-
-    const player = playerModule.createPlayer({
-      environment: {
-        start: { x: 17.5, z: -3.2, yaw: 0 },
-        colliders,
-      },
-    });
-
-    const target = interactionModule.findInteraction({
-      aim: interactionModule.aimFromPose(player.pose()),
-      colliders,
+    const controller = interactionModule.createInteractionController({
+      world,
+      session,
+      prompt,
       interactables,
+      colliders,
     });
-    world.setHighlight(target.target?.id ?? null);
+    const player = playerModule.createPlayer({
+      environment: { start: { x: 17.5, z: -3.2, yaw: 0 }, colliders },
+    });
+
+    const frame = (): void => {
+      const snapshot = input.sample();
+      player.update(100, snapshot);
+      controller.update(player.pose(), snapshot.interact);
+    };
 
     window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyE' }));
-    const snapshot = input.sample();
+    frame();
+    frame();
+    frame();
+    const afterFirstPress = session.state();
+
     window.dispatchEvent(new KeyboardEvent('keyup', { code: 'KeyE' }));
+    frame();
+    window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyE' }));
+    frame();
+    window.dispatchEvent(new KeyboardEvent('keyup', { code: 'KeyE' }));
+    const afterSecondPress = session.state();
 
-    const before = session.state();
-
-    if (snapshot.interact && target.target?.command !== null && target.target !== null) {
-      session.perform(target.target.command);
-    }
-
-    const after = session.state();
-    prompt.setText(target.target?.prompt ?? null);
     world.render();
 
     const outcome = {
-      targetId: target.target?.id ?? null,
-      blocked: target.blocked,
+      targetId: controller.targetId(),
       highlight: world.highlight(),
       promptText: prompt.element.textContent,
       promptHidden: prompt.element.hidden,
-      beforeLeft: before.actionsLeft,
-      afterLeft: after.actionsLeft,
-      history: after.history,
+      promptRole: prompt.element.getAttribute('role'),
+      afterFirstLeft: afterFirstPress.actionsLeft,
+      afterSecondLeft: afterSecondPress.actionsLeft,
+      history: afterSecondPress.history,
       drawCalls: world.stats().drawCalls,
     };
 
@@ -89,12 +92,12 @@ test('the break-room table targets, highlights, and runs its action', async ({ p
   });
 
   expect(result.targetId).toBe('prop.break.table');
-  expect(result.blocked).toBe(false);
   expect(result.highlight).toBe('prop.break.table');
   expect(result.promptText).toBe('Rest');
   expect(result.promptHidden).toBe(false);
-  expect(result.beforeLeft).toBe(3);
-  expect(result.afterLeft).toBe(2);
-  expect(result.history).toEqual(['action:rest']);
+  expect(result.promptRole).toBe('status');
+  expect(result.afterFirstLeft).toBe(2);
+  expect(result.afterSecondLeft).toBe(1);
+  expect(result.history).toEqual(['action:rest', 'action:rest']);
   expect(result.drawCalls).toBeGreaterThan(0);
 });
