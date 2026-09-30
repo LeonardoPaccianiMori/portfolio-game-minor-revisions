@@ -166,13 +166,16 @@ worker is used.
   this record.
 - Implementation commits: `c776908` (`Add interaction, stations, and the
 prompt`) and `83559ce` (`Update the player test snapshot`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 239 unit tests (11
-  new), and the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 250 unit tests (22
+  new after the corrections), and the content check.
 - `npm run build`: passed; the single application bundle is about 530 kB
   inside the 25 MB budget.
 - `npm run test:e2e`: 30 passed in Chromium, Firefox, and WebKit, including
-  the break-room table targeting, highlighting, action spend, and prompt.
+  the controller path that holds the interact key, spends exactly one action
+  per press, and checks the highlight, prompt, and role.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Corrections commit: `c8851ee` (`Extract the interaction controller and
+cover its path`).
 - Deviations: each prop's interaction volume reaches eye height so a level
   gaze still targets low furniture; `src/world/floor-plan.ts` gained plain
   prop labels and `src/world/geometry.ts` gives every prop its own material
@@ -185,13 +188,38 @@ prompt`) and `83559ce` (`Update the player test snapshot`).
 
 ## Independent review
 
-Not yet available.
+Completed 2026-09-30 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and two
+required findings**, corrected in this step. The reviewer re-ran the claimed
+checks independently (typecheck, 239 unit tests at the time), confirmed the
+module boundaries, the station mapping, the slab and blocked behavior, the
+highlighting and disposal, and the recorded extensions. Three advisories were
+recorded.
 
 ## Corrections
 
-None yet.
+- **R-1 (required):** the composition and rising-edge path was untested. The
+  per-frame interaction logic was extracted into
+  `src/interaction/controller.ts` with injectable world, session, and prompt
+  seams; `main.ts` now uses it; unit tests cover the edge, feedback, blocked,
+  inspect, reach, and bench paths with fakes, and the browser test drives the
+  controller with a held interact key and asserts exactly one action per
+  press.
+- **R-2 (required):** the STEP-015 primary and reviewer entries were added to
+  `docs/ai-use-log.md`.
+
+Advisories recorded from the independent review:
+
+- **A-1:** the slab edge cases are now covered directly (grazing face, origin
+  inside, exact reach boundary).
+- **A-2:** rejection-to-prompt behavior is now covered by the controller
+  tests and the browser success path.
+- **A-3:** the prompt carries `role="status"` so changes are announced; the
+  wider accessibility pass still owns live-region review.
 
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-30 as presented. Implementation complete
-on 2026-09-30; independent review and Leonardo's result review pending.
+on 2026-09-30; the independent review returned no blocker and two required
+corrections, now applied and awaiting re-review. Leonardo's result review
+pending.
