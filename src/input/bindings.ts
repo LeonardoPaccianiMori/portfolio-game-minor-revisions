@@ -7,6 +7,7 @@ export const INPUT_ACTIONS = [
   'lookDown',
   'lookLeft',
   'lookRight',
+  'interact',
 ] as const;
 export type InputAction = (typeof INPUT_ACTIONS)[number];
 
@@ -24,11 +25,12 @@ export const DEFAULT_KEY_BINDINGS: Readonly<Record<string, InputAction>> = {
   ArrowDown: 'lookDown',
   ArrowLeft: 'lookLeft',
   ArrowRight: 'lookRight',
+  KeyE: 'interact',
 };
 
 export const DEFAULT_BINDINGS: InputBindings = {
   keys: DEFAULT_KEY_BINDINGS,
-  buttons: {},
+  buttons: { 0: 'interact' },
 };
 
 export const bindKey = (

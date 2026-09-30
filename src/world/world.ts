@@ -25,6 +25,8 @@ export interface World {
   recover(position: Point): Anchor;
   setCameraPose(pose: CameraPose): void;
   cameraPose(): CameraPose;
+  setHighlight(propId: string | null): void;
+  highlight(): string | null;
   stats(): WorldStats;
   dispose(): void;
 }
@@ -83,6 +85,28 @@ export const createWorld = (options: WorldOptions): World => {
     scene.add(built.group);
 
     let disposed = false;
+    let highlighted: string | null = null;
+
+    const applyHighlight = (propId: string | null): void => {
+      if (highlighted !== null) {
+        const previous = built.group.getObjectByName(`placeholder.${highlighted}`);
+        if (
+          previous instanceof THREE.Mesh &&
+          previous.material instanceof THREE.MeshLambertMaterial
+        ) {
+          previous.material.emissive.setHex(0x000000);
+        }
+      }
+
+      highlighted = propId;
+
+      if (propId !== null) {
+        const mesh = built.group.getObjectByName(`placeholder.${propId}`);
+        if (mesh instanceof THREE.Mesh && mesh.material instanceof THREE.MeshLambertMaterial) {
+          mesh.material.emissive.setHex(0x554422);
+        }
+      }
+    };
 
     return {
       canvas: renderer.domElement,
@@ -111,6 +135,14 @@ export const createWorld = (options: WorldOptions): World => {
       },
       cameraPose() {
         return { ...cameraPose };
+      },
+      setHighlight(propId) {
+        if (!disposed) {
+          applyHighlight(propId);
+        }
+      },
+      highlight() {
+        return highlighted;
       },
       stats() {
         return {

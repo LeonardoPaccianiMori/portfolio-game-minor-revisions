@@ -1,10 +1,13 @@
-import { createApplication, createFrameLoop } from './application/index.ts';
-import type { ApplicationFault } from './application/index.ts';
+import { createApplication, createFrameLoop, createGameSession } from './application/index.ts';
+import type { ApplicationFault, GameSession } from './application/index.ts';
 import { createInput } from './input/index.ts';
 import type { Input } from './input/index.ts';
+import { aimFromPose, buildInteractables, findInteraction } from './interaction/index.ts';
 import { START_YAW, createPlayer } from './player/index.ts';
 import type { Player } from './player/index.ts';
 import { createFrameScheduler, createTimingSource, detectCompatibility } from './platform/index.ts';
+import { createPrompt } from './ui/index.ts';
+import type { Prompt } from './ui/index.ts';
 import { START_ANCHOR, buildColliders, createWorld } from './world/index.ts';
 import type { World } from './world/index.ts';
 
@@ -18,6 +21,14 @@ const worldContainer = document.querySelector<HTMLElement>('#app-world');
 let world: World | null = null;
 let input: Input | null = null;
 let player: Player | null = null;
+let session: GameSession | null = null;
+let prompt: Prompt | null = null;
+
+const interactables = buildInteractables();
+const colliders = buildColliders();
+let interactHeld = false;
+let currentTargetId: string | null = null;
+let feedback: string | null = null;
 
 const showReady = (): void => {
   if (appElement !== null) {
@@ -79,13 +90,19 @@ const stopWorld = (): void => {
 };
 
 const stopControls = (): void => {
+  prompt?.dispose();
+  prompt = null;
   input?.dispose();
   input = null;
   player = null;
+  session = null;
+  interactHeld = false;
+  currentTargetId = null;
+  feedback = null;
 };
 
 const startControls = (): ApplicationFault | null => {
-  if (world === null) {
+  if (world === null || worldContainer === null) {
     return startupFault('controls');
   }
 
@@ -97,6 +114,8 @@ const startControls = (): ApplicationFault | null => {
         colliders: buildColliders(),
       },
     });
+    session = createGameSession();
+    prompt = createPrompt(worldContainer);
     world.setCameraPose(player.pose());
   } catch {
     stopControls();
@@ -105,6 +124,45 @@ const startControls = (): ApplicationFault | null => {
   }
 
   return null;
+};
+
+const updateInteraction = (snapshot: ReturnType<Input['sample']>): void => {
+  if (world === null || player === null || session === null || prompt === null) {
+    return;
+  }
+
+  const result = findInteraction({
+    aim: aimFromPose(player.pose()),
+    colliders,
+    interactables,
+  });
+  const targetId = result.target?.id ?? null;
+
+  if (targetId !== currentTargetId) {
+    currentTargetId = targetId;
+    feedback = null;
+  }
+
+  world.setHighlight(targetId);
+
+  const pressed = snapshot.interact && !interactHeld;
+  interactHeld = snapshot.interact;
+
+  if (pressed && result.target !== null) {
+    const command = result.target.command;
+
+    if (command === null) {
+      feedback = 'Nothing to do here yet.';
+    } else {
+      const outcome = session.perform(command);
+      feedback = outcome.ok ? null : outcome.message;
+    }
+  }
+
+  const text =
+    feedback ?? result.target?.prompt ?? (result.blocked ? 'Something is in the way.' : null);
+
+  prompt.setText(text);
 };
 
 reloadButton?.addEventListener('click', () => {
@@ -126,8 +184,10 @@ const bootstrap = async (): Promise<void> => {
       return;
     }
 
-    player.update(deltaMs, input.sample());
+    const snapshot = input.sample();
+    player.update(deltaMs, snapshot);
     world.setCameraPose(player.pose());
+    updateInteraction(snapshot);
     world.render();
   });
 

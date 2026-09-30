@@ -56,6 +56,7 @@ export type PropMaterial = 'wood' | 'metal' | 'soil' | 'paper';
 export interface PropBox extends Rect {
   readonly id: string;
   readonly spaceId: SpaceId;
+  readonly label: string;
   readonly height: number;
   readonly material: PropMaterial;
 }
@@ -141,6 +142,7 @@ export const ANCHORS: readonly Anchor[] = [
 export const PROPS: readonly PropBox[] = [
   {
     id: 'prop.hub.board',
+    label: 'Desk board',
     spaceId: 'desk-hub',
     minX: 3.2,
     maxX: 7.2,
@@ -151,6 +153,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.hub.desk',
+    label: 'Desk',
     spaceId: 'desk-hub',
     minX: 4.2,
     maxX: 6.2,
@@ -161,6 +164,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.lab.bench-north',
+    label: 'Lab bench',
     spaceId: 'soil-lab',
     minX: 11.0,
     maxX: 19.8,
@@ -171,6 +175,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.lab.bench-west',
+    label: 'Side bench',
     spaceId: 'soil-lab',
     minX: 11.6,
     maxX: 13.2,
@@ -181,6 +186,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.lab.machine',
+    label: 'Sequencer',
     spaceId: 'soil-lab',
     minX: 17.0,
     maxX: 19.8,
@@ -191,6 +197,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.grow.row-1',
+    label: 'Plant row',
     spaceId: 'grow-room',
     minX: 1.2,
     maxX: 7.2,
@@ -201,6 +208,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.grow.row-2',
+    label: 'Plant row',
     spaceId: 'grow-room',
     minX: 1.2,
     maxX: 7.2,
@@ -211,6 +219,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.grow.row-3',
+    label: 'Plant row',
     spaceId: 'grow-room',
     minX: 1.2,
     maxX: 7.2,
@@ -221,6 +230,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.pi.desk',
+    label: "PI's desk",
     spaceId: 'pi-office',
     minX: 9.0,
     maxX: 11.5,
@@ -231,6 +241,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.pi.shelf',
+    label: 'Award shelf',
     spaceId: 'pi-office',
     minX: 13.0,
     maxX: 14.2,
@@ -241,6 +252,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.break.table',
+    label: 'Break table',
     spaceId: 'break-room',
     minX: 16.4,
     maxX: 18.8,
@@ -251,6 +263,7 @@ export const PROPS: readonly PropBox[] = [
   },
   {
     id: 'prop.break.counter',
+    label: 'Counter',
     spaceId: 'break-room',
     minX: 14.8,
     maxX: 20.2,

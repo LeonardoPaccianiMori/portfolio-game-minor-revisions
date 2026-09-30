@@ -125,12 +125,13 @@ describe('bindings', () => {
   });
 
   it('binds and unbinds buttons', () => {
-    const rebound = bindButton(DEFAULT_BINDINGS, 0, 'moveForward');
+    const rebound = bindButton(DEFAULT_BINDINGS, 1, 'lookLeft');
 
-    expect(rebound.buttons[0]).toBe('moveForward');
-    expect(DEFAULT_BINDINGS.buttons[0]).toBeUndefined();
-    expect(unbindButton(rebound, 0).buttons[0]).toBeUndefined();
-    expect(rebound.buttons[0]).toBe('moveForward');
+    expect(DEFAULT_BINDINGS.buttons[0]).toBe('interact');
+    expect(rebound.buttons[1]).toBe('lookLeft');
+    expect(DEFAULT_BINDINGS.buttons[1]).toBeUndefined();
+    expect(unbindButton(rebound, 1).buttons[1]).toBeUndefined();
+    expect(rebound.buttons[1]).toBe('lookLeft');
   });
 });
 
@@ -145,6 +146,7 @@ describe('input evaluation', () => {
       stickTurnY: 0,
       mouseDeltaX: 0,
       mouseDeltaY: 0,
+      interact: false,
     });
   });
 
@@ -157,6 +159,13 @@ describe('input evaluation', () => {
       1,
     );
     expect(evaluateInput(DEFAULT_BINDINGS, state({ pressedKeys: keys('ArrowUp') })).turnY).toBe(1);
+    expect(evaluateInput(DEFAULT_BINDINGS, state({ pressedKeys: keys('KeyE') })).interact).toBe(
+      true,
+    );
+    expect(
+      evaluateInput(DEFAULT_BINDINGS, state({ gamepad: gamepad({ buttons: [{ pressed: true }] }) }))
+        .interact,
+    ).toBe(true);
   });
 
   it('cancels opposing keys and ignores unknown keys', () => {

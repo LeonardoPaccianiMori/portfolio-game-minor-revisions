@@ -28,6 +28,7 @@ export interface InputSnapshot {
   readonly stickTurnY: number;
   readonly mouseDeltaX: number;
   readonly mouseDeltaY: number;
+  readonly interact: boolean;
 }
 
 const applyDeadZone = (value: number, deadZone: number): number => {
@@ -92,6 +93,7 @@ export const evaluateInput = (
     stickTurnY: clamp(normalizeZero(-lookY), -1, 1),
     mouseDeltaX: state.mouseDeltaX,
     mouseDeltaY: state.mouseDeltaY,
+    interact: actionPressed(bindings, state, 'interact'),
   };
 };
 

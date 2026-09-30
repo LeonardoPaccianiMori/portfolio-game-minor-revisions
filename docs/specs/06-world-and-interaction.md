@@ -1,8 +1,9 @@
 # B6 — World, Movement, and Interaction
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
-2026-09-15 with the slice dimensions and recovery-anchor baseline, and revised
-2026-09-29 with the first-person movement baseline.**
+2026-09-15 with the slice dimensions and recovery-anchor baseline, revised
+2026-09-29 with the first-person movement baseline, and revised 2026-09-30
+with the interaction and station baseline.**
 
 ## Floor (approved)
 
@@ -52,6 +53,20 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
 - One context-sensitive action with raycast targeting and a short reach.
 - The target highlights and shows a prompt; obstruction gives clear feedback.
 - Nearby objects can be inspected without committing an action.
+
+### Slice interaction baseline (implementation)
+
+- A forward ray from the eye with a 2.5 m reach; the nearest hit wins, and a
+  wall hit before the target reports as blocked. Each prop's interaction
+  volume is its footprint up to eye height, so a level gaze still reaches
+  low furniture.
+- Stations: the soil-lab north bench and the grow-room middle row work an
+  experiment step; the break-room table rests; the PI's office desk meets the
+  PI; the desk-hub desk is inspect-only until the desk board arrives. Every
+  other prop is inspect-only with a plain label.
+- The interact key is E and the controller's primary button; the prompt line
+  sits at the bottom centre and also shows rejection messages. Interaction
+  Assist settings arrive with the accessibility work.
 
 ## Division of play (approved)
 

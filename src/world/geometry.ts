@@ -22,16 +22,25 @@ export const buildFloorGeometry = (): BuiltFloor => {
   const group = new THREE.Group();
   group.name = 'placeholder.floor';
   const geometries: THREE.BufferGeometry[] = [];
-  const materials = new Map<number, THREE.MeshLambertMaterial>();
+  const materials: THREE.MeshLambertMaterial[] = [];
+  const sharedMaterials = new Map<number, THREE.MeshLambertMaterial>();
 
   const materialFor = (color: number): THREE.MeshLambertMaterial => {
-    const cached = materials.get(color);
+    const cached = sharedMaterials.get(color);
     if (cached !== undefined) {
       return cached;
     }
 
     const material = new THREE.MeshLambertMaterial({ color });
-    materials.set(color, material);
+    sharedMaterials.set(color, material);
+    materials.push(material);
+
+    return material;
+  };
+
+  const propMaterial = (color: number): THREE.MeshLambertMaterial => {
+    const material = new THREE.MeshLambertMaterial({ color });
+    materials.push(material);
 
     return material;
   };
@@ -80,7 +89,7 @@ export const buildFloorGeometry = (): BuiltFloor => {
       prop.maxZ - prop.minZ,
     );
     geometries.push(geometry);
-    const mesh = new THREE.Mesh(geometry, materialFor(PROP_COLORS[prop.material]));
+    const mesh = new THREE.Mesh(geometry, propMaterial(PROP_COLORS[prop.material]));
     mesh.position.set((prop.minX + prop.maxX) / 2, prop.height / 2, (prop.minZ + prop.maxZ) / 2);
     mesh.name = `placeholder.${prop.id}`;
     group.add(mesh);
@@ -93,7 +102,7 @@ export const buildFloorGeometry = (): BuiltFloor => {
         geometry.dispose();
       }
 
-      for (const material of materials.values()) {
+      for (const material of materials) {
         material.dispose();
       }
 

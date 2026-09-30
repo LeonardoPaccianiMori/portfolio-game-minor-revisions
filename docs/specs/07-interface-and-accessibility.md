@@ -1,7 +1,8 @@
 # B7 — Interface, Input, and Accessibility
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
-2026-09-29 with the default movement bindings.**
+2026-09-29 with the default movement bindings and 2026-09-30 with the
+interact binding and prompt.**
 
 ## Desk board (approved)
 
@@ -31,8 +32,11 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
 - W/A/S/D move; the arrow keys turn and pitch so the game is fully playable
   without a mouse.
 - Clicking the canvas captures the pointer for mouse look; Escape releases it.
-- A standard controller moves with the left stick and looks with the right
-  stick, with a 0.15 dead zone.
+- E interacts at the current target; a standard controller's primary button
+  interacts and its left and right sticks move and look, with a 0.15 dead
+  zone.
+- The target prompt appears at the bottom centre and carries rejection
+  messages; inspecting never commits.
 - The mapping is a rebindable table in code; the settings screen and saving
   rebinds arrive with the settings work.
 
