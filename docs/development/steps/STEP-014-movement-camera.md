@@ -1,7 +1,7 @@
 ---
 id: STEP-014
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-09-29
@@ -216,7 +216,9 @@ Advisories recorded from the independent review:
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-29 as presented. Implementation complete
-on 2026-09-29; the independent review returned no blocker and one required
-record correction, now applied and awaiting the final verification.
-Leonardo's result review pending.
+Plan approved by Leonardo on 2026-09-29 as presented. **Accepted by Leonardo
+on 2026-09-30** after the result review and his own walk test: he started the
+dev server, walked the floor, looked around, and found the movement,
+collision, and controls working. The records and evidence (228 unit tests and
+27 browser tests; `npm run verify` on `main`) and the review with its one
+corrected record finding were reviewed with no visible issue.

@@ -44,9 +44,10 @@ pointer lock, snapshots), the player module (pose, movement through the
 STEP-013 collision, look, pitch clamp), the first-person world camera, the
 startup and frame wiring, and 27 tests; it routed pointer-lock events to the
 document in the pre-review audit and corrected the record dates after the
-review. Integration and acceptance are pending. Evidence:
-`docs/development/steps/STEP-014-movement-camera.md`; commits `64ac906`,
-`b7f75de`, `9b87b1f`, `c0fb1ed`, `7674d65`.
+review. It integrated on `main`, and Leonardo's walk test passed on
+2026-09-30. Evidence: `docs/development/steps/STEP-014-movement-camera.md`;
+commits `64ac906`, `b7f75de`, `9b87b1f`, `c0fb1ed`, `7674d65`, `89d9726`,
+`30bed0c`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the

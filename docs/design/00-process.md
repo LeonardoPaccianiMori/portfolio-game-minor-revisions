@@ -2,7 +2,7 @@
 
 Status: **Active — development in progress under approved step plans.**
 
-Last updated: 2026-09-29.
+Last updated: 2026-09-30.
 
 ## Why this file exists
 
@@ -147,18 +147,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-014 integrated; Leonardo result review
+## Current task — STEP-014 accepted; STEP-015 plan pending approval
 
-STEP-013 is accepted. Leonardo approved the STEP-014 plan (movement and
-camera) on 2026-09-29 as presented. STEP-014 is implemented, independently
-reviewed by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) with
-the one required record finding corrected, integrated on `main`, and fully
-verified. The current step record is
-`docs/development/steps/STEP-014-movement-camera.md`. The world is now
-walkable, so Leonardo can optionally walk the floor during his result review,
-followed by explicit acceptance. Interaction targeting is STEP-015 and is not
-authorized until its own plan is approved. The earlier block questions and
-session records further down are preserved as history.
+STEP-014 (movement and camera) is accepted by Leonardo on 2026-09-30 after
+his result review and a successful walk test of the floor. The next plan is
+STEP-015 (interaction: targeting, highlight, prompts, and station actions),
+which is not authorized until Leonardo approves its exact plan. The previous
+step record is `docs/development/steps/STEP-014-movement-camera.md`. The
+earlier block questions and session records further down are preserved as
+history.
 
 ### C2 questions (answered and documented)
 
