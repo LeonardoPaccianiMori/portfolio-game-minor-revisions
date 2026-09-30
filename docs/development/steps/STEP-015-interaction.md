@@ -1,7 +1,7 @@
 ---
 id: STEP-015
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-09-30
@@ -160,7 +160,28 @@ worker is used.
 
 ## Execution record
 
-Not yet available.
+- Base: `5298b61e77771710e60144bd4f0dba7b223a83da`.
+- Branch: `work/step-015-interaction`.
+- Plan checkpoint: `f25847c` (`Approve STEP-015 interaction plan`), including
+  this record.
+- Implementation commits: `c776908` (`Add interaction, stations, and the
+prompt`) and `83559ce` (`Update the player test snapshot`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 239 unit tests (11
+  new), and the content check.
+- `npm run build`: passed; the single application bundle is about 530 kB
+  inside the 25 MB budget.
+- `npm run test:e2e`: 30 passed in Chromium, Firefox, and WebKit, including
+  the break-room table targeting, highlighting, action spend, and prompt.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: each prop's interaction volume reaches eye height so a level
+  gaze still targets low furniture; `src/world/floor-plan.ts` gained plain
+  prop labels and `src/world/geometry.ts` gives every prop its own material
+  so a highlight never tints a neighbour (the recorded extension beyond the
+  listed `world.ts`). The session uses a development seed until New Game
+  exists.
+- Limitations: the inspect-only feedback is placeholder text; Interaction
+  Assist settings arrive with the accessibility work; no screen yet shows the
+  campaign state the session holds (the desk board is STEP-016).
 
 ## Independent review
 
@@ -172,5 +193,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-30 as presented. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-09-30 as presented. Implementation complete
+on 2026-09-30; independent review and Leonardo's result review pending.

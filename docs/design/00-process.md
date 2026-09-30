@@ -147,15 +147,17 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-014 accepted; STEP-015 plan pending approval
+## Current task — STEP-015 implementation complete; independent review pending
 
-STEP-014 (movement and camera) is accepted by Leonardo on 2026-09-30 after
-his result review and a successful walk test of the floor. The next plan is
-STEP-015 (interaction: targeting, highlight, prompts, and station actions),
-which is not authorized until Leonardo approves its exact plan. The previous
-step record is `docs/development/steps/STEP-014-movement-camera.md`. The
-earlier block questions and session records further down are preserved as
-history.
+STEP-014 is accepted. Leonardo approved the STEP-015 plan (interaction) on
+2026-09-30 as presented. STEP-015 is implemented on branch
+`work/step-015-interaction` from base `5298b61`, and `npm run check`,
+`npm run build`, and `npm run test:e2e` passed. The current step record is
+`docs/development/steps/STEP-015-interaction.md`. The next permitted action
+is the primary pre-review audit, then one fresh independent review by
+`mr-reviewer` before integration and Leonardo's result review. The desk board
+is STEP-016 and is not authorized until its own plan is approved. The earlier
+block questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
