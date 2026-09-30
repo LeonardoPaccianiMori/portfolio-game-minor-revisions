@@ -168,8 +168,8 @@ worker is used.
 prompt`) and `83559ce` (`Update the player test snapshot`).
 - `npm run check`: passed; typecheck, ESLint, Prettier, 250 unit tests (22
   new after the corrections), and the content check.
-- `npm run build`: passed; the single application bundle is about 530 kB
-  inside the 25 MB budget.
+- `npm run build`: passed; the single application bundle is 563.55 kB
+  (143.1 kB gzip) inside the 25 MB budget.
 - `npm run test:e2e`: 30 passed in Chromium, Firefox, and WebKit, including
   the controller path that holds the interact key, spends exactly one action
   per press, and checks the highlight, prompt, and role.
@@ -217,9 +217,18 @@ Advisories recorded from the independent review:
 - **A-3:** the prompt carries `role="status"` so changes are announced; the
   wider accessibility pass still owns live-region review.
 
+A fresh re-review by the same configured reviewer completed the same day: both
+required findings were confirmed resolved, the checks re-ran (250 unit tests,
+30 browser tests), and the step was cleared as **no blocker and no required
+finding**. Its advisories: the browser test exercises a parallel composition
+rather than the bootstrap instance (a future application smoke test owns the
+real wiring), the recorded bundle figure was reconciled to the measured
+563.55 kB, and the deferred placeholder text, Interaction Assist, live-region
+review, state UI, and desk board stand as recorded.
+
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-09-30 as presented. Implementation complete
 on 2026-09-30; the independent review returned no blocker and two required
-corrections, now applied and awaiting re-review. Leonardo's result review
+corrections, applied and cleared by the re-review. Leonardo's result review
 pending.

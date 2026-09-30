@@ -53,6 +53,13 @@ independent review of STEP-015, found no blocker and two required findings
 (the untested composition and rising-edge path, and the missing AI-use
 entry), both corrected by the primary, and recorded three advisories.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+re-review of STEP-015; confirmed both required findings resolved, re-ran the
+250 unit and 30 browser tests, and cleared the step with three advisories
+(the bootstrap-instance smoke test, the reconciled bundle figure, and the
+deferred items).
+
 ### 2026-09-29 — STEP-014 movement and camera
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
