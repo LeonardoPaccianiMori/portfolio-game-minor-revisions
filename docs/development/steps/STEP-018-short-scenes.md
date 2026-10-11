@@ -190,10 +190,19 @@ resolved, with one new required finding:
   `Math.max(0, NaN)` never reaches the break condition. Corrected by
   normalizing non-finite deltas to zero, plus a regression test.
 
-Advisory recorded: overflow updates can report the same endpoint pose twice
-at phase boundaries; there is no visual effect today, and deduplication is
-deferred with runner hardening, with the primary as owner. A focused
-verification of the R-5 correction is pending.
+Advisory recorded: overflow updates can report the same endpoint pose once
+per active phase boundary with no visual effect today; deduplication is
+deferred with runner hardening, with the primary as owner.
+
+## Final verification
+
+`mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) completed a
+focused verification of the R-5 correction on 2026-10-11: `Number.isFinite`
+covers NaN and both infinities while finite deltas keep their clamping,
+direct timeout probes finished in every phase, the new test genuinely fails
+against the old code, and the record matched the tree. Verdict: R-5 resolved;
+ready for integration. Verified with `npm run verify` on the integrated
+`main` (284 unit tests, 42 browser runs, build inside budget).
 
 ## Corrections
 
@@ -208,5 +217,11 @@ verification of the R-5 correction is pending.
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
-on 2026-10-11; independent review complete with corrections applied; a fresh
-re-review and Leonardo's result review are pending.
+on 2026-10-11; independent review with corrections and a focused final
+verification complete; integrated on `main`.
+
+Leonardo's result review on 2026-10-11: "It works but the movement is rather
+quick. Let's continue." STEP-018 is accepted. The walking-pace remark is
+carried separately: it concerns the STEP-014 speed baseline, not this scene
+step, and a bounded adjustment is being presented for his approval before
+the first-playable gate is recorded.
