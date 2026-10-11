@@ -35,6 +35,25 @@ paths.
 
 ## Completed history
 
+### 2026-10-11 — STEP-016 the desk board
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-016 under the plan
+approved on 2026-10-11. It added the pure board view model, the overlay DOM
+with focus handling, the tested board host, the hub-desk station opening, the
+composition wiring, the A2 and B7 baselines, and 14 tests; it applied the
+review corrections (the host extraction, focus, close paths, and complicity
+feedback). Evidence: `docs/development/steps/STEP-016-desk-board.md`; commits
+`8815274`, `15cc08e`, `004ec9e`, `cb4b925`, `87007be`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-016, found no blocker and eight required findings
+(the out-of-scope test extension, the interact close path, focus loss,
+missing complicity feedback, the integrity wording, the action forecasts, the
+browser acceptance gaps, and the missing AI-use entry), all corrected by the
+primary, and recorded two advisories.
+
 ### 2026-09-30 — STEP-015 interaction
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

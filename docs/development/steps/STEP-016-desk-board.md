@@ -31,13 +31,18 @@ there with mouse, keyboard, or controller.
 
 - `src/ui/board-model.ts` (new: the pure view model from the campaign state)
 - `src/ui/board.ts` (new: the overlay DOM, rendering, focus, and callbacks)
+- `src/ui/board-host.ts` (new, recorded extension: the tested open, close,
+  input, and command host)
 - `src/ui/index.ts` (the board exports)
 - `src/interaction/stations.ts`, `src/interaction/interaction.ts`,
   `src/interaction/controller.ts` (the hub desk opens the board)
 - `src/main.ts` (board lifecycle, the paused world while open, and wiring)
 - `index.html` (the board styling)
 - `tests/unit/board-model.test.ts` (new),
+  `tests/unit/board-host.test.ts` (new, recorded extension),
   `tests/unit/interaction-controller.test.ts` (the board-opening path),
+  `tests/unit/interaction.test.ts` (recorded extension: the `opensBoard`
+  field on the custom test interactables),
   `tests/e2e/board.spec.ts` (new)
 - `docs/design/02-core-loop.md` (the board baseline),
   `docs/specs/07-interface-and-accessibility.md` (the board contents),
@@ -160,14 +165,17 @@ worker is used.
   this record.
 - Implementation commit: `15cc08e4771ab76e92b3e64a2911db18f5823020`
   (`Add the desk board overlay`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 258 unit tests (8
-  new since STEP-015), and the content check.
-- `npm run build`: passed; the single application bundle is 571.19 kB
-  (145.6 kB gzip) inside the 25 MB budget.
+- Follow-up commit: `004ec9efc319c3da1a1b359ec77a90ad6fb1dacc` (`Polish the
+board focus order`), found in the pre-review audit.
+- Corrections commit: `87007bebcc22191e6c74d4a79970f30f4a9a4919` (`Apply
+STEP-016 review corrections`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 264 unit tests (14
+  new after the corrections), and the content check.
+- `npm run build`: passed; the single application bundle is 572.81 kB
+  (146.2 kB gzip) inside the 25 MB budget.
 - `npm run test:e2e`: 36 passed in Chromium, Firefox, and WebKit, including
-  the board opening, reading the resources, resting from the menu, showing
-  the rent card, resolving the borrow choice, and the hub-desk station
-  opening the board.
+  the board reading, resting, rejecting, confirming, navigating, and closing
+  paths, and the hub-desk station opening the board through the host.
 - `git diff --check` and `git status`: clean at the implementation head.
 - Deviations: the action menu omits the bare `write-fellowship` and
   `colleague` actions (carried STEP-011 ADV-3) because they have no effects
@@ -182,13 +190,55 @@ worker is used.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-10-11 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and eight
+required findings**, all corrected in this step. The reviewer re-ran the
+claimed checks independently (typecheck, 258 unit tests, 36 browser tests),
+confirmed the module boundaries, the view-model mapping, the station change,
+and the records, and verified the recorded deviations. Two advisories were
+recorded.
 
 ## Corrections
 
-None yet.
+- **R-1 (required):** the `tests/unit/interaction.test.ts` change was outside
+  the owned list; it is now recorded as an extension (the `opensBoard` field
+  on the custom test interactables), and `board-host` and its suite are also
+  listed.
+- **R-2 (required):** the interact key did not close the board. The board
+  host now closes on an interact press while no control is focused, and
+  activates the focused control otherwise; both paths are unit- and
+  browser-tested.
+- **R-3 (required):** focus was lost on every re-render and on open and
+  close. The board now focuses the first control when opening, restores the
+  focus key across re-renders, and returns focus to the previous element when
+  closing; tested in the browser.
+- **R-4 (required):** successful complicity actions gave no feedback. The
+  board host now shows a plain sentence with the action and its effects on
+  success, and the rejection message otherwise; unit-tested.
+- **R-5 (required):** the B7 baseline said integrity never appears while the
+  complicity forecasts show their deltas. The wording is reconciled: the
+  integrity meter is never shown as a value, while the shortcuts, forecasts,
+  and feedback state the effects in plain words.
+- **R-6 (required):** the Rest forecast read `2 energy` rather than the
+  approved `+2`, and the actions carried no detail. Costs now carry their
+  signs and every action shows a short consequence line; deadlines remain on
+  the fellowship and event cards where they exist.
+- **R-7 (required):** the browser acceptance missed the close paths, the
+  rejection, the confirmation, the focus handling, and the station path with
+  the host. The suite now covers all of them.
+- **R-8 (required):** the STEP-016 primary and reviewer entries were added to
+  `docs/ai-use-log.md`.
+
+Advisories recorded from the independent review:
+
+- **A-1:** controller focus navigation is vertical only; the accessibility
+  pass (STEP-032) owns full focus semantics.
+- **A-2:** the record now cites the follow-up and corrections commits and the
+  final validated head.
 
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
-on 2026-10-11; independent review and Leonardo's result review pending.
+on 2026-10-11; the independent review returned no blocker and eight required
+corrections, now applied and awaiting re-review. Leonardo's result review
+pending.
