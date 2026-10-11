@@ -98,6 +98,46 @@ describe('the scene runner', () => {
     expect(frames.at(-1)).toEqual(from);
   });
 
+  it('consumes the whole delta across every phase in one update', () => {
+    const { frames, runner } = setup();
+    const from = pose({ x: 2, z: 9, yaw: -1, pitch: 0.1 });
+
+    runner.start(scene, from);
+    runner.update(1200);
+
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('completes the default opening timings in one large update', () => {
+    const frames: CameraPose[] = [];
+    const runner = createSceneRunner({ onFrame: (frame) => frames.push(frame) });
+    const opening = SCENES.find((candidate) => candidate.id === OPENING_SCENE_ID);
+    const from = pose({ x: 4, z: -2, yaw: 0.2, pitch: -0.3 });
+
+    if (opening === undefined) {
+      throw new Error('the opening scene is missing');
+    }
+
+    runner.start(opening, from);
+    runner.update(6600);
+
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('eases without linear interpolation', () => {
+    const { frames, runner } = setup();
+    const from = pose({ x: 0, z: 0 });
+
+    runner.start(scene, from);
+    runner.update(25);
+
+    const quarter = frames.at(-1);
+    expect(quarter?.x).toBeCloseTo(10 * 0.15625, 6);
+    expect(quarter?.x).toBeLessThan(2.5);
+  });
+
   it('skips instantly from the ease and the hold', () => {
     const { frames, runner } = setup();
     const from = pose({ x: 1, z: 1, yaw: 0.3, pitch: 0 });
@@ -117,6 +157,59 @@ describe('the scene runner', () => {
 
     expect(runner.isActive()).toBe(false);
     expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('skips from the ease-out phase', () => {
+    const { frames, runner } = setup();
+    const from = pose({ x: 1, z: 1 });
+
+    runner.start(scene, from);
+    runner.update(100);
+    runner.update(1000);
+    runner.update(50);
+    runner.skip();
+
+    expect(runner.isActive()).toBe(false);
+    expect(runner.scene()).toBeNull();
+    expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('handles zero-length eases and zero-length holds in one update', () => {
+    const frames: CameraPose[] = [];
+    const runner = createSceneRunner({
+      onFrame: (frame) => frames.push(frame),
+      easeMs: 0,
+      returnMs: 0,
+    });
+    const zeroHold: SceneDefinition = { ...scene, holdMs: 0 };
+    const from = pose({ x: 3, z: 4 });
+
+    runner.start(scene, from);
+    runner.update(1000);
+
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+
+    runner.start(zeroHold, from);
+    runner.update(50);
+
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('stays quiet after finishing', () => {
+    const { frames, runner } = setup();
+    const from = pose({ x: 1, z: 1 });
+
+    runner.start(scene, from);
+    runner.update(1200);
+    const count = frames.length;
+
+    runner.update(500);
+    runner.skip();
+
+    expect(frames.length).toBe(count);
+    expect(runner.scene()).toBeNull();
   });
 
   it('ignores a skip while idle', () => {

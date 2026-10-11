@@ -109,9 +109,11 @@ baseline.**
 - A scene is data: a stable id, a camera pose, a hold length, and a caption.
   The opening placeholder scene is an establishing look at the department.
 - The runner eases the camera in for 0.8 s, holds for the authored time (5 s
-  in the placeholder), and eases back for 0.8 s; any input skips the scene
-  instantly. The player's own pose is never changed, and control returns
-  exactly where they stood.
+  in the placeholder), and eases back for 0.8 s; the whole authored span
+  completes correctly even when one frame carries all of it. Any input skips
+  the scene instantly: any key, any mouse or gamepad button, locked mouse
+  movement, or gamepad activity. The player's own pose is never changed, and
+  control returns exactly where they stood.
 - While a scene plays, movement, interaction, and board input pause; the
   caption and the skip hint show in the prompt line.
 - Act content steps replace the placeholder and add the authored scenes

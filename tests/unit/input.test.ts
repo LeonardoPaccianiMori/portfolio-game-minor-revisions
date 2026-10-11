@@ -23,6 +23,7 @@ const state = (overrides: Partial<DeviceState> = {}): DeviceState => ({
   mouseDeltaX: 0,
   mouseDeltaY: 0,
   gamepad: null,
+  anyInput: false,
   ...overrides,
 });
 
@@ -147,6 +148,7 @@ describe('input evaluation', () => {
       mouseDeltaX: 0,
       mouseDeltaY: 0,
       interact: false,
+      anyInput: false,
     });
   });
 
@@ -282,6 +284,51 @@ describe('the input device', () => {
     input.dispose();
   });
 
+  it('reports unmapped keys and button presses as any input, once per sample', () => {
+    const canvas = createFakeCanvas();
+    const events = createFakeTarget();
+    const input = createInput({ canvas: canvas.canvas, events: events.target });
+
+    expect(input.sample().anyInput).toBe(false);
+
+    events.dispatch('keydown', keyEvent('KeyQ').event);
+    expect(input.sample().anyInput).toBe(true);
+    expect(input.sample().anyInput).toBe(false);
+
+    events.dispatch('mousedown', {} as unknown as Event);
+    expect(input.sample().anyInput).toBe(true);
+    expect(input.sample().anyInput).toBe(false);
+
+    input.dispose();
+  });
+
+  it('does not treat unlocked mouse movement as input', () => {
+    const canvas = createFakeCanvas();
+    const events = createFakeTarget();
+    const input = createInput({ canvas: canvas.canvas, events: events.target });
+
+    events.dispatch('mousemove', mouseEvent(20, 10));
+
+    expect(input.sample().anyInput).toBe(false);
+
+    input.dispose();
+  });
+
+  it('treats gamepad activity as any input', () => {
+    const canvas = createFakeCanvas();
+    const events = createFakeTarget();
+    let pressed = true;
+    const gamepads = { getGamepads: () => [gamepad({ buttons: [{ pressed }] })] };
+    const input = createInput({ canvas: canvas.canvas, events: events.target, gamepads });
+
+    expect(input.sample().anyInput).toBe(true);
+
+    pressed = false;
+    expect(input.sample().anyInput).toBe(false);
+
+    input.dispose();
+  });
+
   it('requests pointer lock on a canvas click', () => {
     const canvas = createFakeCanvas();
     const events = createFakeTarget();
@@ -359,7 +406,7 @@ describe('the input device', () => {
     expect([...events.removed].sort()).toEqual([...events.added].sort());
     expect([...lockEvents.removed].sort()).toEqual([...lockEvents.added].sort());
     expect([...canvas.removed].sort()).toEqual([...canvas.added].sort());
-    expect(events.removed).toHaveLength(4);
+    expect(events.removed).toHaveLength(5);
     expect(lockEvents.removed).toEqual(['pointerlockchange']);
     expect(canvas.removed).toEqual(['click']);
   });

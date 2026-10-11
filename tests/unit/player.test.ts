@@ -22,6 +22,7 @@ const neutral = (overrides: Partial<InputSnapshot> = {}): InputSnapshot => ({
   mouseDeltaX: 0,
   mouseDeltaY: 0,
   interact: false,
+  anyInput: false,
   ...overrides,
 });
 

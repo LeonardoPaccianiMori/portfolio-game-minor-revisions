@@ -17,6 +17,7 @@ export interface DeviceState {
   readonly mouseDeltaX: number;
   readonly mouseDeltaY: number;
   readonly gamepad: GamepadLike | null;
+  readonly anyInput: boolean;
 }
 
 export interface InputSnapshot {
@@ -29,6 +30,7 @@ export interface InputSnapshot {
   readonly mouseDeltaX: number;
   readonly mouseDeltaY: number;
   readonly interact: boolean;
+  readonly anyInput: boolean;
 }
 
 const applyDeadZone = (value: number, deadZone: number): number => {
@@ -94,6 +96,7 @@ export const evaluateInput = (
     mouseDeltaX: state.mouseDeltaX,
     mouseDeltaY: state.mouseDeltaY,
     interact: actionPressed(bindings, state, 'interact'),
+    anyInput: state.anyInput,
   };
 };
 
@@ -156,6 +159,7 @@ export const createInput = (options: InputOptions): Input => {
   const pressedKeys = new Set<string>();
   let mouseDeltaX = 0;
   let mouseDeltaY = 0;
+  let anyInput = false;
   let currentBindings = DEFAULT_BINDINGS;
 
   const isPointerLocked = (): boolean =>
@@ -163,6 +167,7 @@ export const createInput = (options: InputOptions): Input => {
 
   const onKeyDown = (event: Event): void => {
     const keyboardEvent = event as KeyboardEvent;
+    anyInput = true;
 
     if (currentBindings.keys[keyboardEvent.code] !== undefined) {
       pressedKeys.add(keyboardEvent.code);
@@ -180,8 +185,13 @@ export const createInput = (options: InputOptions): Input => {
     }
 
     const mouseEvent = event as MouseEvent;
+    anyInput = true;
     mouseDeltaX += mouseEvent.movementX;
     mouseDeltaY += mouseEvent.movementY;
+  };
+
+  const onMouseDown = (): void => {
+    anyInput = true;
   };
 
   const onBlur = (): void => {
@@ -202,6 +212,7 @@ export const createInput = (options: InputOptions): Input => {
   events.addEventListener('keydown', onKeyDown);
   events.addEventListener('keyup', onKeyUp);
   events.addEventListener('mousemove', onMouseMove);
+  events.addEventListener('mousedown', onMouseDown);
   events.addEventListener('blur', onBlur);
   lockEvents.addEventListener('pointerlockchange', onPointerLockChange);
   options.canvas.addEventListener('click', onClick);
@@ -214,14 +225,21 @@ export const createInput = (options: InputOptions): Input => {
 
   return {
     sample() {
+      const gamepad = readGamepad();
+      const gamepadActive =
+        gamepad !== null &&
+        (gamepad.buttons.some((button) => button.pressed) ||
+          gamepad.axes.some((axisValue) => Math.abs(axisValue) > GAMEPAD_DEAD_ZONE));
       const snapshot = evaluateInput(currentBindings, {
         pressedKeys,
         mouseDeltaX,
         mouseDeltaY,
-        gamepad: readGamepad(),
+        gamepad,
+        anyInput: anyInput || gamepadActive,
       });
       mouseDeltaX = 0;
       mouseDeltaY = 0;
+      anyInput = false;
 
       return snapshot;
     },
@@ -242,6 +260,7 @@ export const createInput = (options: InputOptions): Input => {
       events.removeEventListener('keydown', onKeyDown);
       events.removeEventListener('keyup', onKeyUp);
       events.removeEventListener('mousemove', onMouseMove);
+      events.removeEventListener('mousedown', onMouseDown);
       events.removeEventListener('blur', onBlur);
       lockEvents.removeEventListener('pointerlockchange', onPointerLockChange);
       options.canvas.removeEventListener('click', onClick);

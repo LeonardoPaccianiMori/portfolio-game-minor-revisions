@@ -35,6 +35,26 @@ paths.
 
 ## Completed history
 
+### 2026-10-11 — STEP-018 short scenes
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-018 under the plan
+approved on 2026-10-11. It added the pure scene data and runner (ease, hold,
+return, instant skip, pose restoration), the composition wiring with the
+opening scene, the B6 and B7 baselines, and 6 tests; after the independent
+review it corrected the delta overflow across phases, made the skip signal
+truly "any input" through the input owner, added the required regression
+tests, and recorded this entry. Evidence:
+`docs/development/steps/STEP-018-short-scenes.md`; commits `3f7ce7e`,
+`8e76518`, `edd08fe`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-018, found no blocker and four required findings
+(the discarded delta on phase boundaries, the non-literal any-input skip, the
+missing runner regressions, and this missing AI-use entry), and recorded one
+advisory requesting a composition-level browser smoke check.
+
 ### 2026-10-11 — STEP-017 room states and act changes
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

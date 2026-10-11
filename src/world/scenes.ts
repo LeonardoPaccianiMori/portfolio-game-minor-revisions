@@ -98,36 +98,68 @@ export const createSceneRunner = (options: SceneRunnerOptions): SceneRunner => {
         return;
       }
 
-      elapsed += Math.max(0, deltaMs);
+      let remaining = Math.max(0, deltaMs);
 
-      if (phase === 'ease-in') {
-        const t = easeMs === 0 ? 1 : clamp01(elapsed / easeMs);
-        options.onFrame(interpolate(fromPose, activeScene.pose, smooth(t)));
+      for (;;) {
+        if (phase === 'ease-in') {
+          if (easeMs === 0) {
+            phase = 'hold';
+            elapsed = 0;
+            continue;
+          }
 
-        if (t >= 1) {
-          phase = 'hold';
-          elapsed = 0;
+          const step = Math.min(remaining, easeMs - elapsed);
+          elapsed += step;
+          remaining -= step;
+          const t = clamp01(elapsed / easeMs);
+          options.onFrame(interpolate(fromPose, activeScene.pose, smooth(t)));
+
+          if (t >= 1) {
+            phase = 'hold';
+            elapsed = 0;
+          }
+        } else if (phase === 'hold') {
+          if (activeScene.holdMs === 0) {
+            phase = 'ease-out';
+            elapsed = 0;
+            continue;
+          }
+
+          const step = Math.min(remaining, activeScene.holdMs - elapsed);
+          elapsed += step;
+          remaining -= step;
+          options.onFrame({ ...activeScene.pose });
+
+          if (elapsed >= activeScene.holdMs) {
+            phase = 'ease-out';
+            elapsed = 0;
+          }
+        } else {
+          if (returnMs === 0) {
+            finish();
+            break;
+          }
+
+          const step = Math.min(remaining, returnMs - elapsed);
+          elapsed += step;
+          remaining -= step;
+          const t = clamp01(elapsed / returnMs);
+          options.onFrame(interpolate(activeScene.pose, fromPose, smooth(t)));
+
+          if (t >= 1) {
+            finish();
+            break;
+          }
         }
 
-        return;
-      }
+        const isZeroPhase =
+          (phase === 'ease-in' && easeMs === 0) ||
+          (phase === 'hold' && activeScene.holdMs === 0) ||
+          (phase === 'ease-out' && returnMs === 0);
 
-      if (phase === 'hold') {
-        options.onFrame({ ...activeScene.pose });
-
-        if (elapsed >= activeScene.holdMs) {
-          phase = 'ease-out';
-          elapsed = 0;
+        if (remaining <= 0 && !isZeroPhase) {
+          break;
         }
-
-        return;
-      }
-
-      const t = returnMs === 0 ? 1 : clamp01(elapsed / returnMs);
-      options.onFrame(interpolate(activeScene.pose, fromPose, smooth(t)));
-
-      if (t >= 1) {
-        finish();
       }
     },
     isActive() {

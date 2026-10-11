@@ -214,18 +214,8 @@ const bootstrap = async (): Promise<void> => {
 
     if (sceneRunner !== null && sceneRunner.isActive()) {
       const active = sceneRunner.scene();
-      const anyInput =
-        snapshot.moveX !== 0 ||
-        snapshot.moveZ !== 0 ||
-        snapshot.turnX !== 0 ||
-        snapshot.turnY !== 0 ||
-        snapshot.stickTurnX !== 0 ||
-        snapshot.stickTurnY !== 0 ||
-        snapshot.mouseDeltaX !== 0 ||
-        snapshot.mouseDeltaY !== 0 ||
-        snapshot.interact;
 
-      if (anyInput) {
+      if (snapshot.anyInput) {
         sceneRunner.skip();
       } else {
         sceneRunner.update(deltaMs);
