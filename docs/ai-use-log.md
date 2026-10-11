@@ -35,6 +35,25 @@ paths.
 
 ## Completed history
 
+### 2026-10-11 — STEP-017 room states and act changes
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: prepared and implemented STEP-017 under the plan
+approved on 2026-10-11. It added the act module (week mapping, three
+palettes, authored prop states), the world act application with the palette
+and transform accessors, the composition wiring, the B6 and B8 baselines,
+and 4 tests; it applied the review corrections (the real mesh-transform
+assertions, idempotence, and post-disposal safety). Evidence:
+`docs/development/steps/STEP-017-room-states.md`; commits `699eeb5`,
+`3913d35`, `830a1ff`, `2e1be90`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-017, found no blocker and two required findings
+(the transform-level test gap behind a scaling-semantics disagreement, and
+the missing follow-up citation and AI-use entry), corrected by the primary,
+and recorded two advisories.
+
 ### 2026-10-11 — STEP-016 the desk board
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

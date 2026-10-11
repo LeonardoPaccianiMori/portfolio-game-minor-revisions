@@ -140,6 +140,10 @@ worker is used.
   this record.
 - Implementation commit: `3913d355bb41e8250e1a549fcd965003e2272d2e`
   (`Add act-based room states`).
+- Follow-up commit: `2e1be903f2a4209fd0a2cbcfa3f2a3a0e2fc58f3` (`Apply act
+changes before the board branch`), a pre-review polish.
+- Corrections commit: `bcbbcc85a0e47648b96a6813b4a2eea83083a0b4` (`Assert the
+act transforms and idempotence`).
 - `npm run check`: passed; typecheck, ESLint, Prettier, 268 unit tests (4
   new), and the content check.
 - `npm run build`: passed; the single application bundle is 574.94 kB
@@ -158,13 +162,39 @@ worker is used.
 
 ## Independent review
 
-Not yet available.
+Completed 2026-10-11 by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant
+`high`), a different model family from the primary: **no blocker and two
+required findings**. The reviewer re-ran the claimed checks independently
+(typecheck, 268 unit tests, 39 browser tests), confirmed the act mapping,
+the prop-state tables, ownership, and disposal, and verified the recorded
+deviations. Two advisories were recorded.
 
 ## Corrections
 
-None yet.
+- **R-1 (required, partly rejected with reasoning):** the reviewer asked for
+  centre-preserving scaling. That reading would make a shrinking plant float
+  above the floor and sink below its base, so the bottom-anchored transform
+  is kept deliberately: `positionY = propHeight * scaleY / 2` places the
+  scaled box's base on the floor. The real weakness behind the finding is
+  accepted and fixed: the browser test now reads the actual mesh transform
+  through `propTransform` (scale and position) instead of the bookkeeping
+  map, asserts idempotent double application, and asserts that an act call
+  after disposal is safe and leaves the act unchanged.
+- **R-2 (required):** the execution record now cites the follow-up and
+  corrections commits and the validated head, and the STEP-017 primary and
+  reviewer entries were added to `docs/ai-use-log.md`.
+
+Advisories recorded from the independent review:
+
+- **A-1:** the composition wiring (startup and frame-loop application) is not
+  browser-tested; an application smoke test owns it in a later step.
+- **A-2:** rendered light colours are asserted through the palette accessor
+  rather than the live three.js resources; the deep render-level assertions
+  are carried with the visual-language work.
 
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
-on 2026-10-11; independent review and Leonardo's result review pending.
+on 2026-10-11; the independent review returned no blocker and two required
+corrections, now applied and awaiting re-review. Leonardo's result review
+pending.
