@@ -140,9 +140,9 @@ worker is used.
   this record.
 - Implementation commit: `8e76518b5d7756a5fe94801fec6e93c75d1ff169`
   (`Add short scenes with skip-safe camera holds`).
-- `npm run check`: passed; typecheck, ESLint, Prettier, 283 unit tests (15
+- `npm run check`: passed; typecheck, ESLint, Prettier, 284 unit tests (16
   new), and the content check.
-- `npm run build`: passed; the single application bundle is 576.94 kB
+- `npm run build`: passed; the single application bundle is 576.97 kB
   (147.6 kB gzip) inside the 25 MB budget.
 - `npm run test:e2e`: 42 passed in Chromium, Firefox, and WebKit, including
   the scene easing, auto-return, instant skip, and render.
@@ -180,12 +180,30 @@ Advisory recorded: the browser test drives the runner directly instead of the
 composition; a composition-level smoke check is deferred to the first-playable
 gate, with the primary as owner.
 
+## Re-review
+
+`mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) re-reviewed the
+corrected state (`304dc5a`) on 2026-10-11: all four required findings were
+resolved, with one new required finding:
+
+- R-5: a non-finite delta would loop the runner forever because
+  `Math.max(0, NaN)` never reaches the break condition. Corrected by
+  normalizing non-finite deltas to zero, plus a regression test.
+
+Advisory recorded: overflow updates can report the same endpoint pose twice
+at phase boundaries; there is no visual effect today, and deduplication is
+deferred with runner hardening, with the primary as owner. A focused
+verification of the R-5 correction is pending.
+
 ## Corrections
 
 - Correction commit: `a6bd80d` applied the R-1 delta-overflow loop with
   zero-phase handling, the R-2 `anyInput` signal through the input owner, and
   the R-3 regression tests; the record, the specs, and the AI-use log were
   updated in the same commit.
+- Correction commit: applied the R-5 non-finite-delta normalization with its
+  regression test, and updated this record; committed with the re-review
+  record.
 
 ## Leonardo decision
 

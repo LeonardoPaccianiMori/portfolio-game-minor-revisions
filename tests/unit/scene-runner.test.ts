@@ -197,6 +197,22 @@ describe('the scene runner', () => {
     expect(frames.at(-1)).toEqual(from);
   });
 
+  it('tolerates non-finite deltas without hanging', () => {
+    const { frames, runner } = setup();
+    const from = pose({ x: 1, z: 1 });
+
+    runner.start(scene, from);
+    runner.update(Number.NaN);
+    runner.update(Number.POSITIVE_INFINITY);
+
+    expect(runner.isActive()).toBe(true);
+
+    runner.update(1200);
+
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+  });
+
   it('stays quiet after finishing', () => {
     const { frames, runner } = setup();
     const from = pose({ x: 1, z: 1 });

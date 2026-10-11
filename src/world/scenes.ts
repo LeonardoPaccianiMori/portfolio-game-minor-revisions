@@ -98,7 +98,7 @@ export const createSceneRunner = (options: SceneRunnerOptions): SceneRunner => {
         return;
       }
 
-      let remaining = Math.max(0, deltaMs);
+      let remaining = Number.isFinite(deltaMs) ? Math.max(0, deltaMs) : 0;
 
       for (;;) {
         if (phase === 'ease-in') {
