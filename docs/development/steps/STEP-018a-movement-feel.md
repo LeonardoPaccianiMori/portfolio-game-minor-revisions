@@ -97,7 +97,7 @@ glide, brisker walk`).
   `src/player/player.ts`.
 - The default-timing runner test now spans 8200 ms; the walking tests read
   the constant unchanged.
-- `npm run check`: passed; typecheck, ESLint, Prettier, 284 unit tests, and
+- `npm run check`: passed; typecheck, ESLint, Prettier, 285 unit tests, and
   the content check.
 - `npm run build`: passed; the bundle is 576.97 kB (147.6 kB gzip) inside
   the 25 MB budget.
@@ -106,11 +106,23 @@ glide, brisker walk`).
 
 ## Independent review
 
-Not yet available.
+`mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) reviewed commits
+`7e1d407..eb8b6de` on 2026-10-11 and found no blocker and two required
+findings:
+
+- R-1: the tests would not catch a regression to the old values (the span
+  test also passes with the old defaults, and the walking tests track the
+  constant). Corrected with an exact-boundary test for the 1.6 s + 5 s +
+  1.6 s span against the real defaults and an exact-value assertion for the
+  walking speed.
+- R-2: the STEP-018a AI-use entries were missing. Corrected.
+
+No advisories were recorded.
 
 ## Corrections
 
-None yet.
+- Correction commit: applied the R-1 exact-value and boundary assertions and
+  added the R-2 AI-use entries, together with this record update.
 
 ## Leonardo decision
 

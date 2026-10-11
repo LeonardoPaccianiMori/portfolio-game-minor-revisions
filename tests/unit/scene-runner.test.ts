@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
-import { OPENING_SCENE_ID, SCENES, createSceneRunner } from '../../src/world/scenes.ts';
+import {
+  OPENING_SCENE_ID,
+  SCENES,
+  SCENE_EASE_MS,
+  SCENE_RETURN_MS,
+  createSceneRunner,
+} from '../../src/world/scenes.ts';
 import type { SceneDefinition } from '../../src/world/scenes.ts';
 import type { CameraPose } from '../../src/world/world.ts';
 
@@ -122,6 +128,41 @@ describe('the scene runner', () => {
     runner.start(opening, from);
     runner.update(8200);
 
+    expect(runner.isActive()).toBe(false);
+    expect(frames.at(-1)).toEqual(from);
+  });
+
+  it('holds the approved default glide timings at the exact boundaries', () => {
+    const frames: CameraPose[] = [];
+    const runner = createSceneRunner({ onFrame: (frame) => frames.push(frame) });
+    const opening = SCENES.find((candidate) => candidate.id === OPENING_SCENE_ID);
+    const from = pose({ x: 0, z: 0 });
+
+    if (opening === undefined) {
+      throw new Error('the opening scene is missing');
+    }
+
+    expect(SCENE_EASE_MS).toBe(1600);
+    expect(SCENE_RETURN_MS).toBe(1600);
+
+    runner.start(opening, from);
+    runner.update(1599);
+
+    const midGlide = frames.at(-1);
+    expect(runner.isActive()).toBe(true);
+    expect(midGlide?.x).toBeGreaterThan(0);
+    expect(midGlide?.x).toBeLessThan(opening.pose.x);
+
+    runner.update(1);
+    expect(frames.at(-1)?.x).toBeCloseTo(opening.pose.x, 8);
+
+    runner.update(5000);
+    expect(runner.isActive()).toBe(true);
+
+    runner.update(1599);
+    expect(runner.isActive()).toBe(true);
+
+    runner.update(1);
     expect(runner.isActive()).toBe(false);
     expect(frames.at(-1)).toEqual(from);
   });

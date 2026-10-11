@@ -35,6 +35,23 @@ paths.
 
 ## Completed history
 
+### 2026-10-11 — STEP-018a movement-feel adjustment
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: implemented the movement-feel adjustment
+approved by Leonardo (scene glide 1.6 s each way, walking 3.5 m/s) under the
+bounded plan, updated the B6 baseline and the timing test, applied the review
+corrections (exact-value boundary assertions for the glide and the walking
+speed), and recorded the entries. Evidence:
+`docs/development/steps/STEP-018a-movement-feel.md`; commits `7e1d407`,
+`2888503`, `eb8b6de`.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+independent review of STEP-018a, found no blocker and two required findings
+(tests that would not catch a regression to the old values, and the missing
+AI-use entries), and no advisories.
+
 ### 2026-10-11 — STEP-018 short scenes
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual

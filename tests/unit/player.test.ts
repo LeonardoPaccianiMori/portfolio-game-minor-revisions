@@ -62,6 +62,8 @@ describe('the player', () => {
   it('walks at the baseline speed in every direction', () => {
     const player = playerWith();
 
+    expect(WALK_SPEED).toBe(3.5);
+
     update(player, 1000, neutral({ moveZ: 1 }));
     expect(player.pose().z).toBeCloseTo(-WALK_SPEED, 8);
 
