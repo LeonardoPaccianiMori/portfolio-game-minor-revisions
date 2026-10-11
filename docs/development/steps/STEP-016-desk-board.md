@@ -1,7 +1,7 @@
 ---
 id: STEP-016
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -177,6 +177,11 @@ STEP-016 review corrections`).
   the board reading, resting, rejecting, confirming, navigating, and closing
   paths, and the hub-desk station opening the board through the host.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Final verification: no blocker and no required finding after three review
+  rounds; one focus-assertion strengthening and one intermediate broken
+  helper fixed in `917e74e`.
+- Integrated on local `main` at `ff5e9d1` by fast-forward, and `npm run
+verify` passed on `main`.
 - Deviations: the action menu omits the bare `write-fellowship` and
   `colleague` actions (carried STEP-011 ADV-3) because they have no effects
   yet; the complicity shortcuts require a second confirming activation; the

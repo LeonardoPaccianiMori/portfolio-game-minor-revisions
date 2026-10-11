@@ -147,17 +147,18 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-016 implementation complete; independent review pending
+## Current task — STEP-016 integrated; Leonardo result review
 
 STEP-015 is accepted. Leonardo approved the STEP-016 plan (the desk board) on
-2026-10-11 as presented. STEP-016 is implemented on branch
-`work/step-016-desk-board` from base `99b5875`, and `npm run check`,
-`npm run build`, and `npm run test:e2e` passed. The current step record is
-`docs/development/steps/STEP-016-desk-board.md`. The next permitted action is
-the primary pre-review audit, then one fresh independent review by
-`mr-reviewer` before integration and Leonardo's result review. Room states are
-STEP-017 and are not authorized until their own plan is approved. The earlier
-block questions and session records further down are preserved as history.
+2026-10-11 as presented. STEP-016 is implemented, independently reviewed and
+re-reviewed by `mr-reviewer` (`opencode-go/gpt-5.6-luna`, variant `high`) with
+all required findings corrected, integrated on `main`, and fully verified.
+The current step record is
+`docs/development/steps/STEP-016-desk-board.md`. The board is fully playable,
+so Leonardo can open it from the desk and try the actions during his result
+review, followed by explicit acceptance. Room states are STEP-017 and are not
+authorized until their own plan is approved. The earlier block questions and
+session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
 
