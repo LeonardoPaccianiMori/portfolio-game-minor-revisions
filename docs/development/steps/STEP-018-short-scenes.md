@@ -1,7 +1,7 @@
 ---
 id: STEP-018
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -134,7 +134,25 @@ worker is used.
 
 ## Execution record
 
-Not yet available.
+- Base: `e1d3c90c4543bd43732517e73250ffe83ea072ac`.
+- Branch: `work/step-018-short-scenes`.
+- Plan checkpoint: `3f7ce7e` (`Approve STEP-018 short scenes plan`), including
+  this record.
+- Implementation commit: `8e76518b5d7756a5fe94801fec6e93c75d1ff169`
+  (`Add short scenes with skip-safe camera holds`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 274 unit tests (6
+  new), and the content check.
+- `npm run build`: passed; the single application bundle is 576.56 kB
+  (147.5 kB gzip) inside the 25 MB budget.
+- `npm run test:e2e`: 42 passed in Chromium, Firefox, and WebKit, including
+  the scene easing, auto-return, instant skip, and render.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the opening scene and its caption are labelled placeholders;
+  the frame loop skips on any movement, look, mouse, or interact input.
+- Limitations: scenes have no audio or authored text yet; no event triggers
+  beyond the opening placeholder; reduced-motion handling arrives with the
+  accessibility step; the browser test drives the runner directly rather
+  than the composition.
 
 ## Independent review
 
@@ -146,5 +164,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-10-11 as presented. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
+on 2026-10-11; independent review and Leonardo's result review pending.

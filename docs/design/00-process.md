@@ -147,15 +147,19 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-017 accepted; STEP-018 plan pending approval
+## Current task — STEP-018 implementation complete; independent review pending
 
-STEP-017 (room states and act changes) is accepted by Leonardo on 2026-10-11
-after his result review. The next plan is STEP-018 (short scenes: camera
-holds, skip-safe, control returns), the last step before the first-playable
-gate, which is not authorized until Leonardo approves its exact plan. The
-previous step record is `docs/development/steps/STEP-017-room-states.md`. The
-earlier block questions and session records further down are preserved as
-history.
+STEP-017 is accepted. Leonardo approved the STEP-018 plan (short scenes) on
+2026-10-11 as presented. STEP-018 is implemented on branch
+`work/step-018-short-scenes` from base `e1d3c90`, and `npm run check`,
+`npm run build`, and `npm run test:e2e` passed. The current step record is
+`docs/development/steps/STEP-018-short-scenes.md`. The next permitted action
+is the primary pre-review audit, then one fresh independent review by
+`mr-reviewer` before integration and Leonardo's result review. STEP-018 is
+the last step before the first-playable gate; after acceptance the gate and
+Leonardo's hands-on check follow, and then the content phase begins at
+STEP-019. The earlier block questions and session records further down are
+preserved as history.
 
 ### C2 questions (answered and documented)
 
