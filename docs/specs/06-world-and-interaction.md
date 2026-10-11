@@ -4,8 +4,9 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
 2026-09-15 with the slice dimensions and recovery-anchor baseline, revised
 2026-09-29 with the first-person movement baseline, revised 2026-09-30
 with the interaction and station baseline, revised 2026-10-11 with the
-act and room-state baseline, and revised 2026-10-11 with the short-scene
-baseline.**
+act and room-state baseline, revised 2026-10-11 with the short-scene
+baseline, and revised 2026-10-11 with the movement-feel adjustment (walking
+3.5 m/s; scene glide 1.6 s each way).**
 
 ## Floor (approved)
 
@@ -37,7 +38,7 @@ baseline.**
 ### Slice movement baseline (implementation)
 
 - The camera is the first-person camera at 1.6 m eye height; walking is
-  3.0 m/s, keyboard turning and pitching is 120°/s, gamepad stick turning is
+  3.5 m/s, keyboard turning and pitching is 120°/s, gamepad stick turning is
   150°/s, mouse look is 0.0025 radians per pixel, and the pitch is limited to
   ±85°. The eye height never bobs.
 - The run starts at the desk-hub start anchor, facing the desk board.
@@ -108,8 +109,8 @@ baseline.**
 
 - A scene is data: a stable id, a camera pose, a hold length, and a caption.
   The opening placeholder scene is an establishing look at the department.
-- The runner eases the camera in for 0.8 s, holds for the authored time (5 s
-  in the placeholder), and eases back for 0.8 s; the whole authored span
+- The runner eases the camera in for 1.6 s, holds for the authored time (5 s
+  in the placeholder), and eases back for 1.6 s; the whole authored span
   completes correctly even when one frame carries all of it. Any input skips
   the scene instantly: any key, any mouse or gamepad button, locked mouse
   movement, or gamepad activity. The player's own pose is never changed, and

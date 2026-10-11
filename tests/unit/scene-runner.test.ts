@@ -120,7 +120,7 @@ describe('the scene runner', () => {
     }
 
     runner.start(opening, from);
-    runner.update(6600);
+    runner.update(8200);
 
     expect(runner.isActive()).toBe(false);
     expect(frames.at(-1)).toEqual(from);

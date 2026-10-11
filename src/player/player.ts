@@ -3,7 +3,7 @@ import { resolveMovement } from '../world/collision.ts';
 import { PLAYER_RADIUS } from '../world/floor-plan.ts';
 import type { BoxCollider } from '../world/floor-plan.ts';
 
-export const WALK_SPEED = 3.0;
+export const WALK_SPEED = 3.5;
 export const KEYBOARD_TURN_SPEED = (120 * Math.PI) / 180;
 export const GAMEPAD_TURN_SPEED = (150 * Math.PI) / 180;
 export const MOUSE_SENSITIVITY = 0.0025;

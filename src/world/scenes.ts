@@ -1,7 +1,7 @@
 import type { CameraPose } from './world.ts';
 
-export const SCENE_EASE_MS = 800;
-export const SCENE_RETURN_MS = 800;
+export const SCENE_EASE_MS = 1600;
+export const SCENE_RETURN_MS = 1600;
 
 export interface SceneDefinition {
   readonly id: string;
