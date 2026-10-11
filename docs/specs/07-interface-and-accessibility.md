@@ -2,7 +2,8 @@
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
 2026-09-29 with the default movement bindings, 2026-09-30 with the interact
-binding and prompt, and 2026-10-11 with the board baseline.**
+binding and prompt, 2026-10-11 with the board baseline, and 2026-10-11 with
+the scene skip hint.**
 
 ## Desk board (approved)
 
@@ -69,6 +70,11 @@ binding and prompt, and 2026-10-11 with the board baseline.**
 - Readable sizes and line lengths, with speaker names shown.
 - The start-screen content note.
 - Clear advance and skip for scenes; text never requires a timed response.
+
+### Slice scene-text baseline (implementation)
+
+- While a scene plays, the prompt line shows its caption and the plain skip
+  hint; any input skips the scene instantly, and nothing is ever required.
 
 ## Settings (approved)
 

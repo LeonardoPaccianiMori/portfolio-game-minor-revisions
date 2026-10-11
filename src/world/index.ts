@@ -44,3 +44,11 @@ export { buildFloorGeometry } from './geometry.ts';
 export type { BuiltFloor } from './geometry.ts';
 export { createWorld } from './world.ts';
 export type { World, WorldOptions, WorldStats } from './world.ts';
+export {
+  OPENING_SCENE_ID,
+  SCENE_EASE_MS,
+  SCENE_RETURN_MS,
+  SCENES,
+  createSceneRunner,
+} from './scenes.ts';
+export type { SceneDefinition, SceneRunner, SceneRunnerOptions } from './scenes.ts';

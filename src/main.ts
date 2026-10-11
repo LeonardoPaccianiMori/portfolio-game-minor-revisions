@@ -9,8 +9,16 @@ import type { Player } from './player/index.ts';
 import { createFrameScheduler, createTimingSource, detectCompatibility } from './platform/index.ts';
 import { createBoard, createBoardHost, createBoardView, createPrompt } from './ui/index.ts';
 import type { Board, BoardHost, Prompt } from './ui/index.ts';
-import { START_ANCHOR, actForWeek, buildColliders, createWorld } from './world/index.ts';
-import type { World } from './world/index.ts';
+import {
+  OPENING_SCENE_ID,
+  SCENES,
+  START_ANCHOR,
+  actForWeek,
+  buildColliders,
+  createSceneRunner,
+  createWorld,
+} from './world/index.ts';
+import type { SceneRunner, World } from './world/index.ts';
 
 const appElement = document.querySelector<HTMLElement>('#app');
 const statusElement = document.querySelector<HTMLParagraphElement>('#app-status');
@@ -27,9 +35,22 @@ let prompt: Prompt | null = null;
 let interaction: InteractionController | null = null;
 let board: Board | null = null;
 let boardHost: BoardHost | null = null;
+let sceneRunner: SceneRunner | null = null;
 
 const interactables = buildInteractables();
 const colliders = buildColliders();
+
+const startOpeningScene = (): void => {
+  if (sceneRunner === null || player === null) {
+    return;
+  }
+
+  const scene = SCENES.find((candidate) => candidate.id === OPENING_SCENE_ID);
+
+  if (scene !== undefined) {
+    sceneRunner.start(scene, player.pose());
+  }
+};
 
 const showReady = (): void => {
   if (appElement !== null) {
@@ -94,6 +115,7 @@ const stopControls = (): void => {
   board?.dispose();
   board = null;
   boardHost = null;
+  sceneRunner = null;
   prompt?.dispose();
   prompt = null;
   input?.dispose();
@@ -145,6 +167,11 @@ const startControls = (): ApplicationFault | null => {
         boardHost?.open();
       },
     });
+    sceneRunner = createSceneRunner({
+      onFrame: (pose) => {
+        world?.setCameraPose(pose);
+      },
+    });
     world.setCameraPose(player.pose());
     world.applyAct(actForWeek(activeSession.state().week));
   } catch {
@@ -183,6 +210,33 @@ const bootstrap = async (): Promise<void> => {
       if (act !== world.act()) {
         world.applyAct(act);
       }
+    }
+
+    if (sceneRunner !== null && sceneRunner.isActive()) {
+      const active = sceneRunner.scene();
+      const anyInput =
+        snapshot.moveX !== 0 ||
+        snapshot.moveZ !== 0 ||
+        snapshot.turnX !== 0 ||
+        snapshot.turnY !== 0 ||
+        snapshot.stickTurnX !== 0 ||
+        snapshot.stickTurnY !== 0 ||
+        snapshot.mouseDeltaX !== 0 ||
+        snapshot.mouseDeltaY !== 0 ||
+        snapshot.interact;
+
+      if (anyInput) {
+        sceneRunner.skip();
+      } else {
+        sceneRunner.update(deltaMs);
+      }
+
+      if (active !== null && prompt !== null) {
+        prompt.setText(`${active.caption} — press any key to skip`);
+      }
+
+      world.render();
+      return;
     }
 
     if (boardHost !== null && boardHost.isOpen()) {
@@ -246,6 +300,7 @@ const bootstrap = async (): Promise<void> => {
 
   if (outcome.status === 'ready') {
     showReady();
+    startOpeningScene();
     return;
   }
 

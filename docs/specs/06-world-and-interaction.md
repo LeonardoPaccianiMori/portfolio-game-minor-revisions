@@ -3,8 +3,9 @@
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
 2026-09-15 with the slice dimensions and recovery-anchor baseline, revised
 2026-09-29 with the first-person movement baseline, revised 2026-09-30
-with the interaction and station baseline, and revised 2026-10-11 with the
-act and room-state baseline.**
+with the interaction and station baseline, revised 2026-10-11 with the
+act and room-state baseline, and revised 2026-10-11 with the short-scene
+baseline.**
 
 ## Floor (approved)
 
@@ -102,6 +103,19 @@ act and room-state baseline.**
 - The camera holds briefly for authored moments, then control returns
   automatically.
 - Scenes are skip-safe and never force motion.
+
+### Slice short-scene baseline (implementation)
+
+- A scene is data: a stable id, a camera pose, a hold length, and a caption.
+  The opening placeholder scene is an establishing look at the department.
+- The runner eases the camera in for 0.8 s, holds for the authored time (5 s
+  in the placeholder), and eases back for 0.8 s; any input skips the scene
+  instantly. The player's own pose is never changed, and control returns
+  exactly where they stood.
+- While a scene plays, movement, interaction, and board input pause; the
+  caption and the skip hint show in the prompt line.
+- Act content steps replace the placeholder and add the authored scenes
+  through the same mechanism.
 
 ## Open items moved to later blocks
 
