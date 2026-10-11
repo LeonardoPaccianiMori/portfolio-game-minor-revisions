@@ -182,9 +182,10 @@ gate, with the primary as owner.
 
 ## Corrections
 
-- Correction commit: applied the R-1 delta-overflow loop with zero-phase
-  handling, the R-2 `anyInput` signal through the input owner, and the R-3
-  regression tests; the record and specs were updated.
+- Correction commit: `a6bd80d` applied the R-1 delta-overflow loop with
+  zero-phase handling, the R-2 `anyInput` signal through the input owner, and
+  the R-3 regression tests; the record, the specs, and the AI-use log were
+  updated in the same commit.
 
 ## Leonardo decision
 
