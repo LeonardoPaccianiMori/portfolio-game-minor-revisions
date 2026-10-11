@@ -43,8 +43,10 @@ approved on 2026-10-11. It added the pure board view model, the overlay DOM
 with focus handling, the tested board host, the hub-desk station opening, the
 composition wiring, the A2 and B7 baselines, and 14 tests; it applied the
 review corrections (the host extraction, focus, close paths, and complicity
-feedback). Evidence: `docs/development/steps/STEP-016-desk-board.md`; commits
-`8815274`, `15cc08e`, `004ec9e`, `cb4b925`, `87007be`.
+feedback), integrated on `main`, and recorded the acceptance. Evidence:
+`docs/development/steps/STEP-016-desk-board.md`; commits `8815274`, `15cc08e`,
+`004ec9e`, `cb4b925`, `87007be`, `1f46d84`, `0c36fc1`, `917e74e`, `ff5e9d1`,
+`0c7a3f6`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the

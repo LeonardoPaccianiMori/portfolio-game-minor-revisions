@@ -1,7 +1,7 @@
 ---
 id: STEP-016
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -252,7 +252,12 @@ Second-round corrections after the first re-review:
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
-on 2026-10-11; the independent review returned no blocker and eight required
-corrections, now applied and awaiting re-review. Leonardo's result review
-pending.
+Plan approved by Leonardo on 2026-10-11 as presented. **Accepted by Leonardo
+on 2026-10-11** after the result review and his own board test: he walked to
+the desk, opened the board, and used it, finding everything working. He also
+asked whether the rough placeholder graphics will improve; the Phase 5
+presentation path (steps 25–31: visual language, assets, environment,
+characters, interface polish, audio, placeholder replacement) was confirmed
+as the planned route. The records and evidence (264 unit tests and 36 browser
+tests; `npm run verify` on `main`) and the three review rounds were reviewed
+with no visible issue.
