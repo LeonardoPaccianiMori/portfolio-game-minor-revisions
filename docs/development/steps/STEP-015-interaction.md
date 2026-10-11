@@ -1,7 +1,7 @@
 ---
 id: STEP-015
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-09-30
@@ -230,7 +230,9 @@ review, state UI, and desk board stand as recorded.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-09-30 as presented. Implementation complete
-on 2026-09-30; the independent review returned no blocker and two required
-corrections, applied and cleared by the re-review. Leonardo's result review
-pending.
+Plan approved by Leonardo on 2026-09-30 as presented. **Accepted by Leonardo
+on 2026-10-11** after the result review and his own test: he walked to the
+stations, targeted them, saw the highlight and prompt, and pressed E with the
+expected behaviour. The records and evidence (250 unit tests and 30 browser
+tests; `npm run verify` on `main`) and the review with its corrected findings
+were reviewed with no visible issue.

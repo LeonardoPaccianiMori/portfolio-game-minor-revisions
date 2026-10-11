@@ -43,9 +43,10 @@ approved on 2026-09-30. It added the station data, the ray targeting and aim
 math, the interaction controller, the prompt line, the in-memory game
 session, the `interact` binding and rising edge, the per-prop world
 materials and highlight, the B6 and B7 baselines, and 22 tests; it applied
-the review corrections (the extracted controller and its coverage). Evidence:
+the review corrections (the extracted controller and its coverage), integrated
+on `main`, and recorded the acceptance. Evidence:
 `docs/development/steps/STEP-015-interaction.md`; commits `f25847c`,
-`c776908`, `83559ce`, `07b6d43`, `c8851ee`.
+`c776908`, `83559ce`, `07b6d43`, `c8851ee`, `7b0f767`, `10bf019`, `d0ecd14`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the

@@ -90,6 +90,7 @@ real spend and stay in the ledger.
 | 2026-09-15 | STEP-012 accepted             |       32 | $10.65 | +$0.44 |  8.0M | 792.4K |     415.4M |      734.7K | 7a37d77 |
 | 2026-09-15 | STEP-013 accepted             |       35 | $11.06 | +$0.41 |  8.1M | 855.0K |     476.8M |      974.9K | b65b96f |
 | 2026-09-30 | STEP-014 accepted             |       36 | $11.59 | +$0.53 | 10.3M | 888.0K |     513.8M |        1.1M | 30bed0c |
+| 2026-10-11 | STEP-015 accepted             |       38 | $11.86 | +$0.27 | 10.3M | 926.4K |     559.8M |        1.2M | d0ecd14 |
 
 ## Per-model snapshots
 
@@ -204,3 +205,16 @@ model was used in this step.
 
 The +$0.53 covers the STEP-014 implementation and review session; the single
 Luna review round cost $0.0587. No worker model was used in this step.
+
+### 2026-10-11 — after STEP-015
+
+| Model               | Messages |  Input | Output | Cache read | Cache write | Estimated cost |
+| ------------------- | -------: | -----: | -----: | ---------: | ----------: | -------------: |
+| deepseek-v4.1-flash |     1147 |   8.9M |   1.5M |     537.1M |           0 |        $3.8312 |
+| glm-5.3             |      343 |   1.3M | 375.4K |      11.6M |           0 |        $6.4701 |
+| gpt-5.6-luna        |      183 |    549 | 185.5K |       9.8M |        1.1M |        $0.6970 |
+| grok-4.6            |       16 | 170.4K |  16.9K |     771.8K |           0 |        $0.8285 |
+| qwen3.8-flash       |       10 |     60 |   5.7K |     544.7K |      116.0K |        $0.0346 |
+
+The +$0.27 covers the STEP-015 implementation and the two Luna review rounds;
+those rounds cost $0.0909 combined. No worker model was used in this step.
