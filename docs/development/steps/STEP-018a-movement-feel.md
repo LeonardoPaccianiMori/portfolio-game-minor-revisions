@@ -1,7 +1,7 @@
 ---
 id: STEP-018a
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -88,6 +88,10 @@ feels slightly brisker. Nothing else about control changes.
 Performed on 2026-10-11 on branch `work/step-018a-movement-feel` from base
 `0217207`:
 
+- Plan checkpoint: `7e1d407` (`Approve STEP-018a movement-feel plan`),
+  including this record.
+- Implementation commit: `2888503` (`Adjust movement feel: slower scene
+glide, brisker walk`).
 - `SCENE_EASE_MS` and `SCENE_RETURN_MS` raised to 1600 ms in
   `src/world/scenes.ts`; `WALK_SPEED` raised to 3.5 in
   `src/player/player.ts`.
@@ -95,7 +99,8 @@ Performed on 2026-10-11 on branch `work/step-018a-movement-feel` from base
   the constant unchanged.
 - `npm run check`: passed; typecheck, ESLint, Prettier, 284 unit tests, and
   the content check.
-- `npm run build`: passed; the bundle stays inside the 25 MB budget.
+- `npm run build`: passed; the bundle is 576.97 kB (147.6 kB gzip) inside
+  the 25 MB budget.
 - `npm run test:e2e`: 42 passed in Chromium, Firefox, and WebKit.
 - `git diff --check` and `git status`: clean at the implementation head.
 
