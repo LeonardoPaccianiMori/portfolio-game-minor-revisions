@@ -2,7 +2,7 @@
 
 Status: **current; private; project-specific**
 
-Last updated: 2026-09-30.
+Last updated: 2026-10-11.
 
 ## Purpose and scope
 
@@ -53,6 +53,12 @@ independent review of STEP-016, found no blocker and eight required findings
 missing complicity feedback, the integrity wording, the action forecasts, the
 browser acceptance gaps, and the missing AI-use entry), all corrected by the
 primary, and recorded two advisories.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+first re-review of STEP-016; confirmed six findings resolved and required
+stronger focus and rejection regression assertions plus this log's metadata
+update, all corrected by the primary.
 
 ### 2026-09-30 — STEP-015 interaction
 

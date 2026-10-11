@@ -15,6 +15,11 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     const container = document.createElement('div');
     document.body.appendChild(container);
 
+    const outside = document.createElement('button');
+    outside.textContent = 'Outside control';
+    document.body.appendChild(outside);
+    outside.focus();
+
     const session = sessionModule.createGameSession();
     const board = uiModule.createBoard(container, {
       onCommand: (command) => {
@@ -41,10 +46,15 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     host.open();
     const initialText = board.element.textContent ?? '';
     const focusedAfterOpen = board.hasFocus();
+    const focusAtOpen = focusText();
 
+    const beforeReject = JSON.stringify(session.state());
     findByText('Work an experiment step')?.click();
-    const afterReject = session.state();
+    const afterReject = JSON.stringify(session.state());
     const rejectFeedback = board.element.querySelector('.board-feedback')?.textContent ?? null;
+
+    host.perform({ type: 'performAction', action: 'analyse' });
+    const focusAfterRender = focusText();
 
     findByText('Rest')?.click();
     const afterRest = session.state();
@@ -69,12 +79,13 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     findByText('Borrow from Mara')?.click();
     const afterRent = session.state();
 
-    const focusBefore = focusText();
+    const focusBeforeNav = focusText();
     host.handleInput(false, 1);
-    const focusAfter = focusText();
+    const focusAfterNav = focusText();
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
     const openAfterEscape = board.isOpen();
+    const focusRestored = document.activeElement === outside;
 
     host.open();
     if (document.activeElement instanceof HTMLElement) {
@@ -89,8 +100,10 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
       showsWeek: initialText.includes('Week 1 of 12'),
       showsEnergy: initialText.includes('Energy: 5 of 5'),
       focusedAfterOpen,
-      afterRejectLeft: afterReject.actionsLeft,
+      stateUnchangedOnReject: beforeReject === afterReject,
       rejectFeedback,
+      focusAtOpen,
+      focusAfterRender,
       afterRestLeft: afterRest.actionsLeft,
       rentText: rentText.includes('The rent is due'),
       beforeConfirm: beforeConfirm ?? null,
@@ -100,12 +113,14 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
       complicityFeedback,
       pendingAfter: afterRent.pendingEvent,
       mara: afterRent.relationships.mara,
-      focusChanged: focusBefore !== focusAfter,
+      focusChanged: focusBeforeNav !== focusAfterNav,
       openAfterEscape,
+      focusRestored,
       openAfterInteract,
     };
 
     board.dispose();
+    outside.remove();
     container.remove();
 
     return outcome;
@@ -114,8 +129,9 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
   expect(result.showsWeek).toBe(true);
   expect(result.showsEnergy).toBe(true);
   expect(result.focusedAfterOpen).toBe(true);
-  expect(result.afterRejectLeft).toBe(3);
+  expect(result.stateUnchangedOnReject).toBe(true);
   expect(result.rejectFeedback).toBe('No experiment is in progress.');
+  expect(result.focusAfterRender).toBe(result.focusAtOpen);
   expect(result.afterRestLeft).toBe(2);
   expect(result.rentText).toBe(true);
   expect(result.beforeConfirm).toBeNull();
@@ -127,6 +143,7 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
   expect(result.mara).toBe(40);
   expect(result.focusChanged).toBe(true);
   expect(result.openAfterEscape).toBe(false);
+  expect(result.focusRestored).toBe(true);
   expect(result.openAfterInteract).toBe(false);
 });
 

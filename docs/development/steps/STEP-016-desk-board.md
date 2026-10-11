@@ -236,6 +236,15 @@ Advisories recorded from the independent review:
 - **A-2:** the record now cites the follow-up and corrections commits and the
   final validated head.
 
+Second-round corrections after the first re-review:
+
+- **R-3 and R-7 (remaining):** the browser test now asserts that a rejected
+  action leaves the state byte-identical, that the focused control survives a
+  re-render, and that focus returns to the previously focused element when
+  the board closes.
+- **R-8 (remaining):** the AI-use log's `Last updated` line now carries the
+  current date alongside the STEP-016 entries.
+
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
