@@ -201,9 +201,9 @@ verification of the R-5 correction is pending.
   zero-phase handling, the R-2 `anyInput` signal through the input owner, and
   the R-3 regression tests; the record, the specs, and the AI-use log were
   updated in the same commit.
-- Correction commit: applied the R-5 non-finite-delta normalization with its
-  regression test, and updated this record; committed with the re-review
-  record.
+- Correction commit: `9626264` applied the R-5 non-finite-delta
+  normalization with its regression test, and recorded this re-review;
+  committed together with the record update.
 
 ## Leonardo decision
 
