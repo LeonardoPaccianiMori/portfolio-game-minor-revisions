@@ -7,10 +7,8 @@ import type { InteractionController } from './interaction/index.ts';
 import { START_YAW, createPlayer } from './player/index.ts';
 import type { Player } from './player/index.ts';
 import { createFrameScheduler, createTimingSource, detectCompatibility } from './platform/index.ts';
-import { createPrompt } from './ui/index.ts';
-import type { Prompt } from './ui/index.ts';
-import { createBoard, createBoardView } from './ui/index.ts';
-import type { Board } from './ui/index.ts';
+import { createBoard, createBoardHost, createBoardView, createPrompt } from './ui/index.ts';
+import type { Board, BoardHost, Prompt } from './ui/index.ts';
 import { START_ANCHOR, buildColliders, createWorld } from './world/index.ts';
 import type { World } from './world/index.ts';
 
@@ -28,34 +26,10 @@ let session: GameSession | null = null;
 let prompt: Prompt | null = null;
 let interaction: InteractionController | null = null;
 let board: Board | null = null;
-let boardOpen = false;
-let boardNavHeld = 0;
-let boardInteractHeld = false;
+let boardHost: BoardHost | null = null;
 
 const interactables = buildInteractables();
 const colliders = buildColliders();
-
-const closeBoard = (): void => {
-  if (board === null) {
-    return;
-  }
-
-  boardOpen = false;
-  board.close();
-};
-
-const openBoard = (): void => {
-  if (board === null || session === null || boardOpen) {
-    return;
-  }
-
-  boardOpen = true;
-  boardNavHeld = 0;
-  boardInteractHeld = true;
-  board.open();
-  board.render(createBoardView(session.state()), null);
-  document.exitPointerLock?.();
-};
 
 const showReady = (): void => {
   if (appElement !== null) {
@@ -119,9 +93,7 @@ const stopWorld = (): void => {
 const stopControls = (): void => {
   board?.dispose();
   board = null;
-  boardOpen = false;
-  boardNavHeld = 0;
-  boardInteractHeld = false;
+  boardHost = null;
   prompt?.dispose();
   prompt = null;
   input?.dispose();
@@ -144,18 +116,24 @@ const startControls = (): ApplicationFault | null => {
         colliders: buildColliders(),
       },
     });
-    session = createGameSession();
+    const activeSession = createGameSession();
+    session = activeSession;
     prompt = createPrompt(worldContainer);
     board = createBoard(worldContainer, {
       onCommand: (command) => {
-        if (session === null || board === null) {
-          return;
-        }
-
-        const outcome = session.perform(command);
-        board.render(createBoardView(session.state()), outcome.ok ? null : outcome.message);
+        boardHost?.perform(command);
       },
-      onClose: closeBoard,
+      onClose: () => {
+        boardHost?.close();
+      },
+    });
+    boardHost = createBoardHost({
+      board,
+      session: activeSession,
+      view: () => createBoardView(activeSession.state()),
+      onOpen: () => {
+        document.exitPointerLock?.();
+      },
     });
     interaction = createInteractionController({
       world,
@@ -163,7 +141,9 @@ const startControls = (): ApplicationFault | null => {
       prompt,
       interactables,
       colliders,
-      openBoard,
+      openBoard: () => {
+        boardHost?.open();
+      },
     });
     world.setCameraPose(player.pose());
   } catch {
@@ -196,23 +176,8 @@ const bootstrap = async (): Promise<void> => {
 
     const snapshot = input.sample();
 
-    if (boardOpen && board !== null) {
-      const verticalInput = snapshot.turnY + snapshot.stickTurnY;
-      const vertical = verticalInput > 0.5 ? 1 : verticalInput < -0.5 ? -1 : 0;
-
-      if (vertical !== 0 && vertical !== boardNavHeld) {
-        board.moveFocus(vertical > 0 ? -1 : 1);
-      }
-
-      boardNavHeld = vertical;
-
-      const pressed = snapshot.interact && !boardInteractHeld;
-      boardInteractHeld = snapshot.interact;
-
-      if (pressed) {
-        board.activate();
-      }
-
+    if (boardHost !== null && boardHost.isOpen()) {
+      boardHost.handleInput(snapshot.interact, snapshot.turnY + snapshot.stickTurnY);
       world.render();
       return;
     }

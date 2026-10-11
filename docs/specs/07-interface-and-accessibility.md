@@ -27,7 +27,9 @@ binding and prompt, and 2026-10-11 with the board baseline.**
   pending event card.
 - Input: mouse and full keyboard focus with a visible focus ring; controller
   focus moves with the stick or arrow input and activates with the primary
-  button. Integrity never appears; no state uses colour alone.
+  button. The integrity meter is never shown as a value; the complicity
+  shortcuts, their forecasts, and their feedback state the effects in plain
+  words. No state uses colour alone.
 
 ## Action menu (approved)
 

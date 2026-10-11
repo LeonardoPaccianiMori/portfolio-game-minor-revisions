@@ -38,6 +38,19 @@ const ACTION_LABELS: Readonly<Record<string, string>> = {
   rest: 'Rest',
 };
 
+const ACTION_DETAILS: Readonly<Record<string, string>> = {
+  experiment: 'Advances the started assignment and spends one energy.',
+  analyse: 'Refreshes the oldest stale result.',
+  'write-paper': 'Satisfies the oldest requirement that has current evidence.',
+  'meet-pi': 'Spends one slot and opens the PI meeting flow.',
+  rest: 'Restores two energy at the cost of one slot.',
+};
+
+const formatEnergy = (cost: number): string => `${cost > 0 ? '+' : ''}${cost}`;
+
+export const complicityLabel = (action: ComplicityAction): string =>
+  COMPLICITY_LABELS[action] ?? action;
+
 const BOARD_ACTIONS = ['experiment', 'analyse', 'write-paper', 'meet-pi', 'rest'] as const;
 
 const COMPLICITY_LABELS: Readonly<Record<ComplicityAction, string>> = {
@@ -115,6 +128,7 @@ export interface BoardActionView {
   readonly id: string;
   readonly label: string;
   readonly cost: string;
+  readonly detail: string;
   readonly command: Command;
 }
 
@@ -264,7 +278,8 @@ export const createBoardView = (state: CampaignState): BoardView => {
     actions: BOARD_ACTIONS.map((action) => ({
       id: action,
       label: ACTION_LABELS[action] ?? action,
-      cost: `${String(ACTION_ENERGY_COSTS[action])} energy, one action slot`,
+      cost: `${formatEnergy(ACTION_ENERGY_COSTS[action])} energy, one action slot`,
+      detail: ACTION_DETAILS[action] ?? '',
       command: { type: 'performAction', action },
     })),
     complicity: COMPLICITY_ACTIONS.map((action) => ({

@@ -43,7 +43,7 @@ describe('the board view model', () => {
       'rest',
     ]);
     expect(view.actions.find((action) => action.id === 'rest')?.cost).toBe(
-      '2 energy, one action slot',
+      '+2 energy, one action slot',
     );
     expect(view.actions.some((action) => action.id === 'write-fellowship')).toBe(false);
     expect(view.actions.some((action) => action.id === 'colleague')).toBe(false);

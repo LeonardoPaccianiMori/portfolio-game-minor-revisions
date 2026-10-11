@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('the desk board opens, reads the state, acts, and resolves the rent', async ({ page }) => {
+test('the desk board reads, acts, rejects, confirms, navigates, and closes', async ({ page }) => {
   await page.goto('/');
 
   const result = await page.evaluate(async () => {
@@ -18,26 +18,33 @@ test('the desk board opens, reads the state, acts, and resolves the rent', async
     const session = sessionModule.createGameSession();
     const board = uiModule.createBoard(container, {
       onCommand: (command) => {
-        const outcome = session.perform(command);
-        board.render(
-          uiModule.createBoardView(session.state()),
-          outcome.ok ? null : outcome.message,
-        );
+        host.perform(command);
       },
       onClose: () => {
-        board.close();
+        host.close();
       },
     });
+    const host = uiModule.createBoardHost({
+      board,
+      session,
+      view: () => uiModule.createBoardView(session.state()),
+    });
 
-    board.open();
-    board.render(uiModule.createBoardView(session.state()), null);
-
-    const initialText = board.element.textContent ?? '';
     const buttons = (): HTMLButtonElement[] => [
       ...board.element.querySelectorAll<HTMLButtonElement>('button'),
     ];
     const findByText = (prefix: string): HTMLButtonElement | undefined =>
       buttons().find((button) => button.textContent?.startsWith(prefix) === true);
+    const focusText = (): string | null =>
+      document.activeElement instanceof HTMLElement ? document.activeElement.textContent : null;
+
+    host.open();
+    const initialText = board.element.textContent ?? '';
+    const focusedAfterOpen = board.hasFocus();
+
+    findByText('Work an experiment step')?.click();
+    const afterReject = session.state();
+    const rejectFeedback = board.element.querySelector('.board-feedback')?.textContent ?? null;
 
     findByText('Rest')?.click();
     const afterRest = session.state();
@@ -46,21 +53,56 @@ test('the desk board opens, reads the state, acts, and resolves the rent', async
       session.perform({ type: 'advanceWeek' });
     }
 
-    board.render(uiModule.createBoardView(session.state()), null);
+    host.refresh();
     const rentText = board.element.textContent ?? '';
+
+    findByText('Inflate a claim')?.click();
+    const beforeConfirm = session.state().flags['complicity.inflate-claim'];
+    const confirmLabel = findByText('Confirm')?.textContent ?? null;
+
+    buttons()
+      .find((button) => button.textContent?.startsWith('Confirm') === true)
+      ?.click();
+    const afterConfirm = session.state();
+    const complicityFeedback = board.element.querySelector('.board-feedback')?.textContent ?? null;
+
     findByText('Borrow from Mara')?.click();
     const afterRent = session.state();
-    const feedback = board.element.querySelector('.board-feedback')?.textContent ?? null;
+
+    const focusBefore = focusText();
+    host.handleInput(false, 1);
+    const focusAfter = focusText();
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+    const openAfterEscape = board.isOpen();
+
+    host.open();
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+
+    host.handleInput(false, 0);
+    host.handleInput(true, 0);
+    const openAfterInteract = board.isOpen();
 
     const outcome = {
       showsWeek: initialText.includes('Week 1 of 12'),
       showsEnergy: initialText.includes('Energy: 5 of 5'),
+      focusedAfterOpen,
+      afterRejectLeft: afterReject.actionsLeft,
+      rejectFeedback,
       afterRestLeft: afterRest.actionsLeft,
       rentText: rentText.includes('The rent is due'),
+      beforeConfirm: beforeConfirm ?? null,
+      confirmLabel,
+      afterConfirmFlag: afterConfirm.flags['complicity.inflate-claim'] ?? null,
+      afterConfirmIntegrity: afterConfirm.integrity,
+      complicityFeedback,
       pendingAfter: afterRent.pendingEvent,
       mara: afterRent.relationships.mara,
-      isOpen: board.isOpen(),
-      feedback,
+      focusChanged: focusBefore !== focusAfter,
+      openAfterEscape,
+      openAfterInteract,
     };
 
     board.dispose();
@@ -71,12 +113,21 @@ test('the desk board opens, reads the state, acts, and resolves the rent', async
 
   expect(result.showsWeek).toBe(true);
   expect(result.showsEnergy).toBe(true);
+  expect(result.focusedAfterOpen).toBe(true);
+  expect(result.afterRejectLeft).toBe(3);
+  expect(result.rejectFeedback).toBe('No experiment is in progress.');
   expect(result.afterRestLeft).toBe(2);
   expect(result.rentText).toBe(true);
+  expect(result.beforeConfirm).toBeNull();
+  expect(result.confirmLabel).toContain('Confirm');
+  expect(result.afterConfirmFlag).toBe(true);
+  expect(result.afterConfirmIntegrity).toBe(85);
+  expect(result.complicityFeedback).toContain('inflate a claim');
   expect(result.pendingAfter).toBeNull();
   expect(result.mara).toBe(40);
-  expect(result.isOpen).toBe(true);
-  expect(result.feedback).toBeNull();
+  expect(result.focusChanged).toBe(true);
+  expect(result.openAfterEscape).toBe(false);
+  expect(result.openAfterInteract).toBe(false);
 });
 
 test('the hub desk opens the board through the interaction path', async ({ page }) => {
@@ -117,15 +168,16 @@ test('the hub desk opens the board through the interaction path', async ({ page 
     const session = sessionModule.createGameSession();
     const board = uiModule.createBoard(container, {
       onCommand: (command) => {
-        const outcome = session.perform(command);
-        board.render(
-          uiModule.createBoardView(session.state()),
-          outcome.ok ? null : outcome.message,
-        );
+        host.perform(command);
       },
       onClose: () => {
-        board.close();
+        host.close();
       },
+    });
+    const host = uiModule.createBoardHost({
+      board,
+      session,
+      view: () => uiModule.createBoardView(session.state()),
     });
     const colliders = worldModule.buildColliders();
     const controller = interactionModule.createInteractionController({
@@ -135,8 +187,7 @@ test('the hub desk opens the board through the interaction path', async ({ page 
       interactables: interactionModule.buildInteractables(),
       colliders,
       openBoard: () => {
-        board.open();
-        board.render(uiModule.createBoardView(session.state()), null);
+        host.open();
       },
     });
     const player = playerModule.createPlayer({
@@ -150,15 +201,26 @@ test('the hub desk opens the board through the interaction path', async ({ page 
 
     const open = board.isOpen();
     const target = controller.targetId();
+    const focused = board.hasFocus();
+
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+
+    host.handleInput(false, 0);
+    host.handleInput(true, 0);
+    const closed = board.isOpen();
 
     board.dispose();
     input.dispose();
     world.dispose();
     container.remove();
 
-    return { open, target };
+    return { open, target, focused, closed };
   });
 
   expect(result.target).toBe('prop.hub.desk');
   expect(result.open).toBe(true);
+  expect(result.focused).toBe(true);
+  expect(result.closed).toBe(false);
 });

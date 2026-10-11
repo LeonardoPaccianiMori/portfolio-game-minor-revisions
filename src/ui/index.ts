@@ -1,5 +1,7 @@
 export { createBoard } from './board.ts';
 export type { Board, BoardCallbacks } from './board.ts';
+export { createBoardHost } from './board-host.ts';
+export type { BoardHost, BoardHostOptions, BoardHostSession } from './board-host.ts';
 export { createBoardView } from './board-model.ts';
 export type {
   BoardActionView,

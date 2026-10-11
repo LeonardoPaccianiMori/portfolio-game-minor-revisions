@@ -11,6 +11,7 @@ export interface Board {
   open(): void;
   close(): void;
   isOpen(): boolean;
+  hasFocus(): boolean;
   render(view: BoardView, feedback: string | null): void;
   moveFocus(step: 1 | -1): void;
   activate(): void;
@@ -46,15 +47,22 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
   let lastView: BoardView | null = null;
   let lastFeedback: string | null = null;
   let pendingConfirm: Command | null = null;
+  let previouslyFocused: HTMLElement | null = null;
+  let pendingFocus = false;
 
   const addButton = (
     container: HTMLElement,
     label: string,
     command: Command,
-    options: { readonly confirm?: boolean; readonly detail?: string } = {},
+    options: {
+      readonly confirm?: boolean;
+      readonly detail?: string;
+      readonly focusKey?: string;
+    } = {},
   ): void => {
     const button = element('button', label, 'board-button');
     button.type = 'button';
+    button.dataset['focusKey'] = options.focusKey ?? JSON.stringify(command);
 
     if (options.detail !== undefined) {
       button.title = options.detail;
@@ -62,11 +70,9 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
 
     button.addEventListener('click', () => {
       if (options.confirm === true && pendingConfirm !== command) {
-        const index = buttons.indexOf(button);
         pendingConfirm = command;
         if (lastView !== null) {
           render(lastView, lastFeedback);
-          buttons[index]?.focus();
         }
 
         return;
@@ -93,6 +99,9 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
   const render = (view: BoardView, feedback: string | null): void => {
     lastView = view;
     lastFeedback = feedback;
+    const active = document.activeElement;
+    const focusKey =
+      active instanceof HTMLButtonElement ? (active.dataset['focusKey'] ?? null) : null;
     buttons = [];
     root.replaceChildren();
 
@@ -100,11 +109,11 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
     header.appendChild(element('h2', 'Desk board'));
     const close = element('button', 'Close (Escape)', 'board-close');
     close.type = 'button';
+    close.dataset['focusKey'] = 'close';
     close.addEventListener('click', () => {
       callbacks.onClose();
     });
     header.appendChild(close);
-    buttons.push(close);
     root.appendChild(header);
 
     if (feedback !== null) {
@@ -141,7 +150,12 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
     const actionList = element('div', undefined, 'board-actions');
 
     for (const action of view.actions) {
-      addButton(actionList, `${action.label} (${action.cost})`, action.command);
+      const row = element('p', undefined, 'board-action-row');
+      addButton(row, `${action.label} (${action.cost})`, action.command, {
+        detail: action.detail,
+      });
+      row.appendChild(element('small', action.detail, 'board-detail'));
+      actionList.appendChild(row);
     }
 
     left.appendChild(actionList);
@@ -239,6 +253,14 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
 
     columns.appendChild(right);
     root.appendChild(columns);
+    buttons.push(close);
+
+    if (pendingFocus) {
+      pendingFocus = false;
+      buttons[0]?.focus();
+    } else if (focusKey !== null) {
+      buttons.find((button) => button.dataset['focusKey'] === focusKey)?.focus();
+    }
   };
 
   const onKeyDown = (event: KeyboardEvent): void => {
@@ -252,14 +274,24 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
   return {
     element: root,
     open() {
+      previouslyFocused =
+        document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      pendingFocus = true;
       root.hidden = false;
     },
     close() {
       root.hidden = true;
       pendingConfirm = null;
+
+      if (previouslyFocused?.isConnected === true) {
+        previouslyFocused.focus();
+      }
     },
     isOpen() {
       return root.hidden === false;
+    },
+    hasFocus() {
+      return root.contains(document.activeElement);
     },
     render,
     moveFocus(step) {
