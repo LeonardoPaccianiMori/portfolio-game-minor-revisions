@@ -177,15 +177,6 @@ const bootstrap = async (): Promise<void> => {
 
     const snapshot = input.sample();
 
-    if (boardHost !== null && boardHost.isOpen()) {
-      boardHost.handleInput(snapshot.interact, snapshot.turnY + snapshot.stickTurnY);
-      world.render();
-      return;
-    }
-
-    player.update(deltaMs, snapshot);
-    world.setCameraPose(player.pose());
-
     if (session !== null) {
       const act = actForWeek(session.state().week);
 
@@ -194,6 +185,14 @@ const bootstrap = async (): Promise<void> => {
       }
     }
 
+    if (boardHost !== null && boardHost.isOpen()) {
+      boardHost.handleInput(snapshot.interact, snapshot.turnY + snapshot.stickTurnY);
+      world.render();
+      return;
+    }
+
+    player.update(deltaMs, snapshot);
+    world.setCameraPose(player.pose());
     interaction?.update(player.pose(), snapshot.interact);
     world.render();
   });
