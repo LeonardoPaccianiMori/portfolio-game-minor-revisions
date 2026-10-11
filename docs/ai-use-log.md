@@ -44,9 +44,11 @@ return, instant skip, pose restoration), the composition wiring with the
 opening scene, the B6 and B7 baselines, and 6 tests; after the independent
 review it corrected the delta overflow across phases, made the skip signal
 truly "any input" through the input owner, added the required regression
-tests, and recorded this entry. Evidence:
-`docs/development/steps/STEP-018-short-scenes.md`; commits `3f7ce7e`,
-`8e76518`, `edd08fe`.
+tests, normalized non-finite deltas, and recorded this entry; it integrated
+on `main`, ran the full verification, and recorded Leonardo's acceptance.
+Evidence: `docs/development/steps/STEP-018-short-scenes.md`; commits
+`3f7ce7e`, `8e76518`, `edd08fe`, `a6bd80d`, `304dc5a`, `9626264`, `9d99141`,
+`9266cc8`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the
@@ -54,6 +56,19 @@ independent review of STEP-018, found no blocker and four required findings
 (the discarded delta on phase boundaries, the non-literal any-input skip, the
 missing runner regressions, and this missing AI-use entry), and recorded one
 advisory requesting a composition-level browser smoke check.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+re-review of STEP-018 at `304dc5a`; confirmed all four required findings
+resolved and found one new required finding (a non-finite delta could hang
+the runner), plus an advisory on duplicate endpoint updates at phase
+boundaries.
+
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed the
+focused verification of the STEP-018 correction; confirmed the non-finite
+delta handling, its regression test, the record's claims, and the full
+check suite, and declared the step ready for integration.
 
 ### 2026-10-11 — STEP-017 room states and act changes
 
