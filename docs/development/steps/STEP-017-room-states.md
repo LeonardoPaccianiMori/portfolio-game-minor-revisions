@@ -1,7 +1,7 @@
 ---
 id: STEP-017
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -134,7 +134,27 @@ worker is used.
 
 ## Execution record
 
-Not yet available.
+- Base: `68b9ff21b1f9d851029cf37a42c5543495cdb8c3`.
+- Branch: `work/step-017-room-states`.
+- Plan checkpoint: `699eeb5` (`Approve STEP-017 room states plan`), including
+  this record.
+- Implementation commit: `3913d355bb41e8250e1a549fcd965003e2272d2e`
+  (`Add act-based room states`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 268 unit tests (4
+  new), and the content check.
+- `npm run build`: passed; the single application bundle is 574.94 kB
+  (146.8 kB gzip) inside the 25 MB budget.
+- `npm run test:e2e`: 39 passed in Chromium, Firefox, and WebKit, including
+  the act palette, act identity, and grow-row scale changing across weeks 5
+  and 9.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the palettes and prop colours are placeholder values (final
+  values arrive with STEP-025); the machine and counter join the authored
+  prop states beyond the planned rows and boards so the bench clutter also
+  shifts. No path outside the approved list changed.
+- Limitations: the main loop applies the act on week changes, but the
+  browser test drives the world directly; no notices text exists yet; no room
+  state affects play, so the B6 forecast rule has no interface yet.
 
 ## Independent review
 
@@ -146,5 +166,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-10-11 as presented. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
+on 2026-10-11; independent review and Leonardo's result review pending.
