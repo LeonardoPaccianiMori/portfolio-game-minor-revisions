@@ -1,7 +1,7 @@
 ---
 id: STEP-017
 type: development-step
-status: implemented
+status: leonardo-review
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -146,12 +146,17 @@ changes before the board branch`), a pre-review polish.
 act transforms and idempotence`).
 - `npm run check`: passed; typecheck, ESLint, Prettier, 268 unit tests (4
   new), and the content check.
-- `npm run build`: passed; the single application bundle is 574.94 kB
-  (146.8 kB gzip) inside the 25 MB budget.
+- `npm run build`: passed; the single application bundle is 575.09 kB
+  (146.9 kB gzip) inside the 25 MB budget.
 - `npm run test:e2e`: 39 passed in Chromium, Firefox, and WebKit, including
   the act palette, act identity, and grow-row scale changing across weeks 5
   and 9.
 - `git diff --check` and `git status`: clean at the implementation head.
+- Final verification: no blocker and no required finding after the re-review;
+  bottom-anchored scaling was upheld with reasoning and the transform
+  assertions strengthened.
+- Integrated on local `main` at `16bc15e` by fast-forward, and `npm run
+verify` passed on `main`.
 - Deviations: the palettes and prop colours are placeholder values (final
   values arrive with STEP-025); the machine and counter join the authored
   prop states beyond the planned rows and boards so the bench clutter also
