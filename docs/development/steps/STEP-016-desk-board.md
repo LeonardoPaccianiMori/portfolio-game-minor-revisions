@@ -1,7 +1,7 @@
 ---
 id: STEP-016
 type: development-step
-status: plan-approved
+status: implemented
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -154,7 +154,31 @@ worker is used.
 
 ## Execution record
 
-Not yet available.
+- Base: `99b58751530d339b271d1ab3a43c6eb014f062f3`.
+- Branch: `work/step-016-desk-board`.
+- Plan checkpoint: `8815274` (`Approve STEP-016 desk board plan`), including
+  this record.
+- Implementation commit: `15cc08e4771ab76e92b3e64a2911db18f5823020`
+  (`Add the desk board overlay`).
+- `npm run check`: passed; typecheck, ESLint, Prettier, 258 unit tests (8
+  new since STEP-015), and the content check.
+- `npm run build`: passed; the single application bundle is 571.19 kB
+  (145.6 kB gzip) inside the 25 MB budget.
+- `npm run test:e2e`: 36 passed in Chromium, Firefox, and WebKit, including
+  the board opening, reading the resources, resting from the menu, showing
+  the rent card, resolving the borrow choice, and the hub-desk station
+  opening the board.
+- `git diff --check` and `git status`: clean at the implementation head.
+- Deviations: the action menu omits the bare `write-fellowship` and
+  `colleague` actions (carried STEP-011 ADV-3) because they have no effects
+  yet; the complicity shortcuts require a second confirming activation; the
+  board maps finished experiments to attach controls so the experiment loop
+  is playable; pending-event choice labels are authored placeholders; the
+  controller focus navigation is vertical only. These are recorded in the
+  A2 and B7 baselines.
+- Limitations: labels are placeholders until the content phase; no save or
+  autosave wiring yet; the panel and review outcomes only appear at weeks 9
+  and 12; there is no pause menu or settings screen.
 
 ## Independent review
 
@@ -166,5 +190,5 @@ None yet.
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-10-11 as presented. Implementation,
-testing, and acceptance pending.
+Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
+on 2026-10-11; independent review and Leonardo's result review pending.
