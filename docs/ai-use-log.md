@@ -44,7 +44,7 @@ bounded plan, updated the B6 baseline and the timing test, applied the review
 corrections (exact-value boundary assertions for the glide and the walking
 speed), and recorded the entries. Evidence:
 `docs/development/steps/STEP-018a-movement-feel.md`; commits `7e1d407`,
-`2888503`, `eb8b6de`.
+`2888503`, `eb8b6de`, `b0de3b0`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the

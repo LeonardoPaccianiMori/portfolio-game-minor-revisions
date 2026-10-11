@@ -35,11 +35,14 @@ feels slightly brisker. Nothing else about control changes.
 - `docs/specs/06-world-and-interaction.md` (the movement and short-scene
   baselines)
 - `docs/development/steps/STEP-018a-movement-feel.md` (this record)
+- The standard record files for review and acceptance, as in every step:
+  `docs/ai-use-log.md`, `docs/design/00-process.md`,
+  `docs/design/decision-log.md`, `docs/costs.md`
 
 ## Prohibited paths
 
-- `docs/**` except the listed files and this record; `AGENTS.md`,
-  `README.md`, `opencode.json`, `.opencode/**`
+- `docs/**` except the listed files, the standard record files above, and
+  this record; `AGENTS.md`, `README.md`, `opencode.json`, `.opencode/**`
 - Any other tuning value; bindings; camera anatomy; content; assets; audio;
   accessibility settings; migration; any release or deployment action
 
@@ -97,8 +100,9 @@ glide, brisker walk`).
   `src/player/player.ts`.
 - The default-timing runner test now spans 8200 ms; the walking tests read
   the constant unchanged.
-- `npm run check`: passed; typecheck, ESLint, Prettier, 285 unit tests, and
-  the content check.
+- `npm run check`: passed; typecheck, ESLint, Prettier, 284 unit tests at the
+  implementation head (285 after the review correction), and the content
+  check.
 - `npm run build`: passed; the bundle is 576.97 kB (147.6 kB gzip) inside
   the 25 MB budget.
 - `npm run test:e2e`: 42 passed in Chromium, Firefox, and WebKit.
@@ -121,8 +125,9 @@ No advisories were recorded.
 
 ## Corrections
 
-- Correction commit: applied the R-1 exact-value and boundary assertions and
-  added the R-2 AI-use entries, together with this record update.
+- Correction commit: `b0de3b0` applied the R-1 exact-value and boundary
+  assertions and added the R-2 primary and reviewer entries to
+  `docs/ai-use-log.md`, together with this record update.
 
 ## Leonardo decision
 
