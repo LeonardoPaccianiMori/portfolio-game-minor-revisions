@@ -46,7 +46,7 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     host.open();
     const initialText = board.element.textContent ?? '';
     const focusedAfterOpen = board.hasFocus();
-    const focusAtOpen = focusText();
+    const focusAtOpen = focusKey();
 
     const beforeReject = JSON.stringify(session.state());
     findByText('Work an experiment step')?.click();
@@ -54,7 +54,7 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     const rejectFeedback = board.element.querySelector('.board-feedback')?.textContent ?? null;
 
     host.perform({ type: 'performAction', action: 'analyse' });
-    const focusAfterRender = focusText();
+    const focusAfterRender = focusKey();
 
     findByText('Rest')?.click();
     const afterRest = session.state();
@@ -79,9 +79,9 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     findByText('Borrow from Mara')?.click();
     const afterRent = session.state();
 
-    const focusBeforeNav = focusText();
+    const focusBeforeNav = focusKey();
     host.handleInput(false, 1);
-    const focusAfterNav = focusText();
+    const focusAfterNav = focusKey();
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
     const openAfterEscape = board.isOpen();
