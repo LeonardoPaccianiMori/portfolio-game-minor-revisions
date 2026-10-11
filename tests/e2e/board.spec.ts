@@ -40,8 +40,10 @@ test('the desk board reads, acts, rejects, confirms, navigates, and closes', asy
     ];
     const findByText = (prefix: string): HTMLButtonElement | undefined =>
       buttons().find((button) => button.textContent?.startsWith(prefix) === true);
-    const focusText = (): string | null =>
-      document.activeElement instanceof HTMLElement ? document.activeElement.textContent : null;
+    const focusKey = (): string | null =>
+      document.activeElement instanceof HTMLElement
+        ? (document.activeElement.dataset['focusKey'] ?? null)
+        : null;
 
     host.open();
     const initialText = board.element.textContent ?? '';
