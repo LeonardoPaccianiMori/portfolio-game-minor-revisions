@@ -9,7 +9,7 @@ import type { Player } from './player/index.ts';
 import { createFrameScheduler, createTimingSource, detectCompatibility } from './platform/index.ts';
 import { createBoard, createBoardHost, createBoardView, createPrompt } from './ui/index.ts';
 import type { Board, BoardHost, Prompt } from './ui/index.ts';
-import { START_ANCHOR, buildColliders, createWorld } from './world/index.ts';
+import { START_ANCHOR, actForWeek, buildColliders, createWorld } from './world/index.ts';
 import type { World } from './world/index.ts';
 
 const appElement = document.querySelector<HTMLElement>('#app');
@@ -146,6 +146,7 @@ const startControls = (): ApplicationFault | null => {
       },
     });
     world.setCameraPose(player.pose());
+    world.applyAct(actForWeek(activeSession.state().week));
   } catch {
     stopControls();
 
@@ -184,6 +185,15 @@ const bootstrap = async (): Promise<void> => {
 
     player.update(deltaMs, snapshot);
     world.setCameraPose(player.pose());
+
+    if (session !== null) {
+      const act = actForWeek(session.state().week);
+
+      if (act !== world.act()) {
+        world.applyAct(act);
+      }
+    }
+
     interaction?.update(player.pose(), snapshot.interact);
     world.render();
   });

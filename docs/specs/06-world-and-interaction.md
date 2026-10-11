@@ -2,8 +2,9 @@
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B6); revised
 2026-09-15 with the slice dimensions and recovery-anchor baseline, revised
-2026-09-29 with the first-person movement baseline, and revised 2026-09-30
-with the interaction and station baseline.**
+2026-09-29 with the first-person movement baseline, revised 2026-09-30
+with the interaction and station baseline, and revised 2026-10-11 with the
+act and room-state baseline.**
 
 ## Floor (approved)
 
@@ -79,6 +80,17 @@ with the interaction and station baseline.**
 - Authored per-act changes show accretion and decline.
 - When a room state affects play, its forecast and effects are visible before
   the player commits to entering.
+
+### Slice room-state baseline (implementation)
+
+- The week implies the act: weeks 1–4 Act I, 5–8 Act II, 9–12 Act III.
+- Each act carries a palette (background, ambient and sun light, and the
+  pressure accent) and authored prop states: the grow rows decline in height
+  and colour across the acts, the desk board yellows, and the bench
+  metalwork dulls. The world applies them when the act changes.
+- These states are presentation-only in the slice; when an Act content step
+  gives a room state a play effect, the B6 forecast rule above applies.
+- Collision is unchanged by the prop states.
 
 ## No trapping (approved)
 

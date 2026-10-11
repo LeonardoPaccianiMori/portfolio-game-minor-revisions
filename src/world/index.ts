@@ -1,3 +1,5 @@
+export { ACTS, ACT_LABELS, ACT_PALETTES, ACT_PROP_STATES, actForWeek } from './act-states.ts';
+export type { ActId, ActPalette, PropState } from './act-states.ts';
 export {
   ANCHORS,
   CAMERA_HEIGHT,

@@ -1,6 +1,7 @@
 # B8 — Rendering, Assets, and Audio
 
-Status: **Documented — approved by Leonardo on 2026-09-10 (Block B8).**
+Status: **Documented — approved by Leonardo on 2026-09-10 (Block B8); revised
+2026-10-11 with the slice act-lighting baseline.**
 
 ## Renderer (approved)
 
@@ -56,6 +57,14 @@ Status: **Documented — approved by Leonardo on 2026-09-10 (Block B8).**
 - Act-based lighting supports the tone curve: warmer in Act I, cooler in
   Act II, and cold with absurd flashes in Act III.
 - Institutional notices and room states change by act.
+
+### Slice act-lighting baseline (implementation)
+
+- Three act palettes with distinct pressure accents: Act I warm and green,
+  Act II cooler, duller, and cluttered, Act III cold and thin. The world
+  applies the background, the ambient and sun colours and intensities, and
+  the authored prop states when the act changes.
+- Final palette values arrive with the visual-language step (STEP-025).
 
 ## Open items moved to later blocks
 
