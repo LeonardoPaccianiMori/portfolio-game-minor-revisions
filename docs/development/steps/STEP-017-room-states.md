@@ -1,7 +1,7 @@
 ---
 id: STEP-017
 type: development-step
-status: leonardo-review
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -199,7 +199,9 @@ Advisories recorded from the independent review:
 
 ## Leonardo decision
 
-Plan approved by Leonardo on 2026-10-11 as presented. Implementation complete
-on 2026-10-11; the independent review returned no blocker and two required
-corrections, now applied and awaiting re-review. Leonardo's result review
-pending.
+Plan approved by Leonardo on 2026-10-11 as presented. **Accepted by Leonardo
+on 2026-10-11** after the result review: the act mapping, the three palettes,
+the authored room states, the world application, the B6 and B8 baselines, the
+records and evidence (268 unit tests and 39 browser tests; `npm run verify`
+on `main`), and the review with its one upheld-with-reasoning scaling
+decision were reviewed with no visible issue.

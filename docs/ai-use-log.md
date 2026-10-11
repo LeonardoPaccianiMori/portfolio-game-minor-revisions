@@ -43,9 +43,10 @@ approved on 2026-10-11. It added the act module (week mapping, three
 palettes, authored prop states), the world act application with the palette
 and transform accessors, the composition wiring, the B6 and B8 baselines,
 and 4 tests; it applied the review corrections (the real mesh-transform
-assertions, idempotence, and post-disposal safety). Evidence:
+assertions, idempotence, and post-disposal safety), integrated on `main`, and
+recorded the acceptance. Evidence:
 `docs/development/steps/STEP-017-room-states.md`; commits `699eeb5`,
-`3913d35`, `830a1ff`, `2e1be90`.
+`3913d35`, `830a1ff`, `2e1be90`, `bcbbcc8`, `16bc15e`, `3214665`, `18ca864`.
 
 OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
 variant `high`, actual runtime model metadata not exposed: completed the
