@@ -22,10 +22,16 @@ test('the acts change the palette and the room states', async ({ page }) => {
     const world = worldModule.createWorld({ container });
     const session = sessionModule.createGameSession();
 
-    const capture = (): { act: string; background: number; row: number } => ({
+    const capture = (): {
+      act: string;
+      background: number;
+      row: number;
+      transform: { scaleY: number; positionY: number };
+    } => ({
       act: world.act(),
       background: world.palette().background,
       row: world.propScale('prop.grow.row-2'),
+      transform: world.propTransform('prop.grow.row-2'),
     });
 
     const act1 = capture();
@@ -44,15 +50,25 @@ test('the acts change the palette and the room states', async ({ page }) => {
     }
 
     world.applyAct(worldModule.actForWeek(session.state().week));
+    world.applyAct(worldModule.actForWeek(session.state().week));
     world.render();
     const act3 = capture();
 
     const drawCalls = world.stats().drawCalls;
 
     world.dispose();
+    let disposedCallSafe = true;
+    try {
+      world.applyAct('act-2');
+    } catch {
+      disposedCallSafe = false;
+    }
+
+    const actAfterDispose = world.act();
+
     container.remove();
 
-    return { act1, act2, act3, drawCalls };
+    return { act1, act2, act3, drawCalls, disposedCallSafe, actAfterDispose };
   });
 
   expect(result.act1.act).toBe('act-1');
@@ -63,5 +79,9 @@ test('the acts change the palette and the room states', async ({ page }) => {
   expect(result.act3.row).toBe(0.55);
   expect(result.act2.background).not.toBe(result.act1.background);
   expect(result.act3.background).not.toBe(result.act2.background);
+  expect(result.act2.transform).toEqual({ scaleY: 0.85, positionY: 0.2125 });
+  expect(result.act3.transform).toEqual({ scaleY: 0.55, positionY: 0.1375 });
   expect(result.drawCalls).toBeGreaterThan(0);
+  expect(result.disposedCallSafe).toBe(true);
+  expect(result.actAfterDispose).toBe('act-3');
 });

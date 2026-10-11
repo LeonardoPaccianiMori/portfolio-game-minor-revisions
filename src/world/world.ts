@@ -33,6 +33,7 @@ export interface World {
   act(): ActId;
   palette(): ActPalette;
   propScale(propId: string): number;
+  propTransform(propId: string): { readonly scaleY: number; readonly positionY: number };
   stats(): WorldStats;
   dispose(): void;
 }
@@ -194,6 +195,13 @@ export const createWorld = (options: WorldOptions): World => {
       },
       propScale(propId) {
         return propScales.get(propId) ?? 1;
+      },
+      propTransform(propId) {
+        const mesh = built.group.getObjectByName(`placeholder.${propId}`);
+
+        return mesh instanceof THREE.Mesh
+          ? { scaleY: mesh.scale.y, positionY: mesh.position.y }
+          : { scaleY: 1, positionY: 0 };
       },
       stats() {
         return {
