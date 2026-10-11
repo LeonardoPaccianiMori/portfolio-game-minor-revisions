@@ -155,7 +155,7 @@ act transforms and idempotence`).
 - Final verification: no blocker and no required finding after the re-review;
   bottom-anchored scaling was upheld with reasoning and the transform
   assertions strengthened.
-- Integrated on local `main` at `16bc15e` by fast-forward, and `npm run
+- Integrated on local `main` at `3214665` by fast-forward, and `npm run
 verify` passed on `main`.
 - Deviations: the palettes and prop colours are placeholder values (final
   values arrive with STEP-025); the machine and counter join the authored
