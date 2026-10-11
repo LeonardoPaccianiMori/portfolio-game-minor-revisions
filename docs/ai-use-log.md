@@ -60,6 +60,14 @@ first re-review of STEP-016; confirmed six findings resolved and required
 stronger focus and rejection regression assertions plus this log's metadata
 update, all corrected by the primary.
 
+OpenCode Go `mr-reviewer` subagent, configured `opencode-go/gpt-5.6-luna` at
+variant `high`, actual runtime model metadata not exposed: completed two
+further focused verifications of STEP-016; the first required the focus
+assertion to compare a stable focus key (corrected, including an intermediate
+broken helper fixed in the following commit), and the final verification
+confirmed every finding resolved, the 264 unit and 36 browser tests passing,
+and cleared the step for integration.
+
 ### 2026-09-30 — STEP-015 interaction
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
