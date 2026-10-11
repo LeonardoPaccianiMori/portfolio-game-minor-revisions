@@ -57,6 +57,7 @@ const controllerFor = (fakes: ReturnType<typeof createFakes>, reach?: number) =>
 
 const breakPose = { x: 17.5, z: -3.2, yaw: 0, pitch: 0 };
 const hubDeskPose = { x: 5.2, z: 7.6, yaw: 0, pitch: 0 };
+const boardPose = { x: 5.2, z: 9.8, yaw: Math.PI, pitch: 0 };
 const corridorPose = { x: 10.3, z: 1.5, yaw: 0, pitch: 0 };
 const benchPose = { x: 15.4, z: 8.5, yaw: Math.PI, pitch: 0 };
 
@@ -133,11 +134,35 @@ describe('the interaction controller', () => {
     const fakes = createFakes();
     const controller = controllerFor(fakes);
 
-    controller.update(hubDeskPose, true);
+    controller.update(boardPose, true);
 
-    expect(controller.targetId()).toBe('prop.hub.desk');
+    expect(controller.targetId()).toBe('prop.hub.board');
     expect(fakes.commands).toEqual([]);
     expect(fakes.prompts.at(-1)).toBe(INSPECT_TEXT);
+  });
+
+  it('opens the desk board at the hub desk', () => {
+    const fakes = createFakes();
+    let opened = 0;
+    const controller = createInteractionController({
+      world: fakes.world,
+      session: fakes.session,
+      prompt: fakes.prompt,
+      interactables,
+      colliders,
+      openBoard: () => {
+        opened += 1;
+      },
+    });
+
+    controller.update(hubDeskPose, false);
+    expect(controller.targetId()).toBe('prop.hub.desk');
+    expect(fakes.prompts.at(-1)).toBe('Open the desk board');
+
+    controller.update(hubDeskPose, true);
+    controller.update(hubDeskPose, true);
+    expect(opened).toBe(1);
+    expect(fakes.commands).toEqual([]);
   });
 
   it('offers no target beyond the given reach', () => {

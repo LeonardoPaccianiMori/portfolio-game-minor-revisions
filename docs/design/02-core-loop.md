@@ -4,7 +4,8 @@ Status: **Documented and revised — the core decisions, detailed action list,
 cost shape, and worked example were approved by Leonardo on 2026-09-10
 (Block A2); revised the same day to add the fellowship track, revised
 2026-09-13 with the concrete experiment model and its slice baselines, and
-revised 2026-09-15 with the review and panel meta-rules.**
+revised 2026-09-15 with the review and panel meta-rules, and revised
+2026-10-11 with the desk board baseline.**
 
 ## Purpose
 
@@ -33,6 +34,21 @@ publication.
   fellowship proposal — and the player's resources.
 - The compact 3D department provides atmosphere, selected scenes, short
   interactions, and a few station actions. It is not a walking simulator.
+
+### Desk board baseline (implementation)
+
+- Interacting with the desk in the shared office opens the board overlay;
+  Escape, the close button, or the interact key closes it. While it is open,
+  movement and station interaction pause and the pointer is released;
+  rendering continues.
+- The board shows the week, the actions left, the energy, the standing, and
+  the colleague trust; the manuscript with its framing, requirement states,
+  and evidence; the fellowship with its requirements, answers, and deadline;
+  the actions with their energy costs; the five complicity shortcuts with
+  their approved effects, each requiring a confirming second activation; and
+  the pending event card with its authored choices and costs.
+- Integrity stays hidden; its feedback arrives as plain text when it changes.
+  All state labels are words, never colour alone.
 
 ## Experiments (approved abstraction)
 

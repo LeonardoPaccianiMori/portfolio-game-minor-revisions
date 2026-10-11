@@ -25,6 +25,7 @@ export interface InteractionControllerOptions {
   readonly interactables: readonly Interactable[];
   readonly colliders: readonly BoxCollider[];
   readonly reach?: number;
+  readonly openBoard?: () => void;
 }
 
 export interface InteractionController {
@@ -65,7 +66,9 @@ export const createInteractionController = (
       if (pressed && result.target !== null) {
         const command = result.target.command;
 
-        if (command === null) {
+        if (result.target.opensBoard) {
+          options.openBoard?.();
+        } else if (command === null) {
           feedback = INSPECT_TEXT;
         } else {
           const outcome = options.session.perform(command);

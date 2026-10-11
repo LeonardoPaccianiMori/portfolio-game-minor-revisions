@@ -1,8 +1,8 @@
 # B7 — Interface, Input, and Accessibility
 
 Status: **Documented — approved by Leonardo on 2026-09-10 (Block B7); revised
-2026-09-29 with the default movement bindings and 2026-09-30 with the
-interact binding and prompt.**
+2026-09-29 with the default movement bindings, 2026-09-30 with the interact
+binding and prompt, and 2026-10-11 with the board baseline.**
 
 ## Desk board (approved)
 
@@ -13,6 +13,21 @@ interact binding and prompt.**
   available in every input mode.
 - Each requirement shows its state (open, answered, or stale), its cost, and
   its deadline.
+
+### Board baseline (implementation)
+
+- Opening: the desk-hub desk station. Closing: Escape, the close button, or
+  the interact key. While open, movement and station interaction pause and
+  the pointer is released; rendering continues.
+- Contents: the week, actions left, energy, standing, and colleague trust;
+  the manuscript with framing, requirement states, start controls, evidence,
+  and finished-result attachment; the fellowship with framing, requirements,
+  answers, and deadline; the action menu with energy costs; the complicity
+  shortcuts with their effects and a confirming second activation; and the
+  pending event card.
+- Input: mouse and full keyboard focus with a visible focus ring; controller
+  focus moves with the stick or arrow input and activates with the primary
+  button. Integrity never appears; no state uses colour alone.
 
 ## Action menu (approved)
 

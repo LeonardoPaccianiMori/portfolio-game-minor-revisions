@@ -108,6 +108,7 @@ describe('targeting', () => {
         label: 'Far',
         prompt: 'Far',
         command: null,
+        opensBoard: false,
         box: { minX: -0.5, maxX: 0.5, minY: 0, maxY: 1, minZ: -4, maxZ: -3.8 },
       },
       {
@@ -115,6 +116,7 @@ describe('targeting', () => {
         label: 'Near',
         prompt: 'Near',
         command: null,
+        opensBoard: false,
         box: { minX: -0.5, maxX: 0.5, minY: 0, maxY: 1, minZ: -2, maxZ: -1.8 },
       },
     ];
@@ -141,6 +143,7 @@ describe('targeting', () => {
         label: 'Grazed',
         prompt: 'Grazed',
         command: null,
+        opensBoard: false,
         box: { minX: 0, maxX: 1, minY: 0, maxY: 1, minZ: -1, maxZ: 1 },
       },
     ];
@@ -167,6 +170,7 @@ describe('targeting', () => {
         label: 'Inside',
         prompt: 'Inside',
         command: null,
+        opensBoard: false,
         box: { minX: -1, maxX: 1, minY: 0, maxY: 2, minZ: -1, maxZ: 1 },
       },
     ];
@@ -194,6 +198,7 @@ describe('targeting', () => {
         label: 'Edge',
         prompt: 'Edge',
         command: null,
+        opensBoard: false,
         box: { minX: -0.5, maxX: 0.5, minY: 0, maxY: 1, minZ: -2.5, maxZ: -2 },
       },
     ];
@@ -222,6 +227,7 @@ describe('targeting', () => {
         label: 'Far',
         prompt: 'Far',
         command: null,
+        opensBoard: false,
         box: { minX: -0.5, maxX: 0.5, minY: 0, maxY: 1, minZ: -4, maxZ: -3.8 },
       },
     ];

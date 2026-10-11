@@ -31,6 +31,7 @@ export interface Interactable {
   readonly label: string;
   readonly prompt: string;
   readonly command: Command | null;
+  readonly opensBoard: boolean;
   readonly box: InteractableBox;
 }
 
@@ -52,6 +53,7 @@ export const buildInteractables = (
       label: prop.label,
       prompt: station?.prompt ?? `Inspect the ${prop.label.toLowerCase()}`,
       command: station?.command ?? null,
+      opensBoard: station?.opensBoard ?? false,
       box: {
         minX: prop.minX,
         maxX: prop.maxX,
