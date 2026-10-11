@@ -62,9 +62,11 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
 
     button.addEventListener('click', () => {
       if (options.confirm === true && pendingConfirm !== command) {
+        const index = buttons.indexOf(button);
         pendingConfirm = command;
         if (lastView !== null) {
           render(lastView, lastFeedback);
+          buttons[index]?.focus();
         }
 
         return;
@@ -102,6 +104,7 @@ export const createBoard = (parent: HTMLElement, callbacks: BoardCallbacks): Boa
       callbacks.onClose();
     });
     header.appendChild(close);
+    buttons.push(close);
     root.appendChild(header);
 
     if (feedback !== null) {
