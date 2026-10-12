@@ -1,7 +1,7 @@
 ---
 id: STEP-018a
 type: development-step
-status: implemented
+status: accepted
 phase: 3
 gate: first-playable
 created: 2026-10-11
@@ -132,5 +132,7 @@ No advisories were recorded.
 ## Leonardo decision
 
 Plan approved by Leonardo on 2026-10-11 through the presented synthesis
-(scene glide 1.6 s each way; walking 3.5 m/s). Implementation, review,
-verification, and acceptance pending.
+(scene glide 1.6 s each way; walking 3.5 m/s). Implementation, review with
+corrections, and a focused final verification completed the same day.
+Leonardo's result review on 2026-10-11: "I accept". STEP-018a is accepted
+and integrated on `main`.
