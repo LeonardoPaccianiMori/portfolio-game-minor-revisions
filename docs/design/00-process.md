@@ -147,18 +147,15 @@ The `/design-session` command starts this protocol.
   configuration
 - v1 archive: Git commit `c438b7f30059c47cc80d19363a92833d1ae002b3`
 
-## Current task — STEP-018 accepted; walking-pace feedback before the gate
+## Current task — first-playable gate
 
-STEP-018 (short scenes) is accepted by Leonardo on 2026-10-11 after his
-opening-scene test ("It works but the movement is rather quick. Let's
-continue."). The scene step itself is complete and integrated. The
-walking-pace remark concerns the STEP-014 speed baseline (`WALK_SPEED`), and
-no change is authorized until Leonardo approves a bounded adjustment
-synthesis; that synthesis is being presented now. After the adjustment is
-approved, implemented, and verified, the first-playable gate is recorded
-(one complete week loop in the 3D department), followed by STEP-019 (content
-schema and validator) in the content phase. The current step record is
-`docs/development/steps/STEP-018-short-scenes.md`. The earlier block
+STEP-018 (short scenes) and STEP-018a (movement-feel adjustment: scene glide
+1.6 s each way, walking 3.5 m/s) are accepted by Leonardo on 2026-10-11 and
+integrated on `main`. The next checkpoint is the first-playable gate: one
+complete week loop in the 3D department. Leonardo performs the hands-on week
+loop; the gate is recorded once he confirms it, and STEP-019 (content schema
+and validator) begins the content phase afterwards. The current step record
+is `docs/development/steps/STEP-018a-movement-feel.md`. The earlier block
 questions and session records further down are preserved as history.
 
 ### C2 questions (answered and documented)
