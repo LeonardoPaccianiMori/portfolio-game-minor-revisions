@@ -65,7 +65,10 @@ The twelve completed independent proposals were:
 Each subagent worked read-only under `mr-design-reviewer` from the same brief
 and was asked for a diagnosis, a pivot, a core loop, story, presentation, scope
 budget, keep/cut/postpone list, first slice, risks, and a pitch. Their complete
-answers remain in the OpenCode session history.
+answers remain in the OpenCode session history. The parallel read-only
+consultation was a one-off comparison explicitly requested by Leonardo; it does
+not change the standing one-worker implementation rule or the independent-review
+cadence.
 
 ### 2026-10-11 — STEP-018a movement-feel adjustment
 
