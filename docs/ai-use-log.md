@@ -35,6 +35,38 @@ paths.
 
 ## Completed history
 
+### 2026-10-26 — Pivot scope consultation (pre-decision)
+
+OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
+reasoning variant `unknown`: read the v2 design and implementation, prepared a
+neutral comparison brief at `local-artifacts/pivot/00-brief.md`, commissioned
+twelve independent read-only design proposals from the same brief across twelve
+model families, and synthesized their convergence and disagreements. No design
+document was written, no game code changed, and no approved v2 decision was
+superseded. Evidence: this entry; the brief; the subagent session records below.
+
+The twelve completed independent proposals were:
+
+| Model family | Exact model and variant                           | Session                          | Working title    |
+| ------------ | ------------------------------------------------- | -------------------------------- | ---------------- |
+| DeepSeek     | `opencode-go/deepseek-v4.1-flash` at `max`        | `ses_e8763dac0ffe7nUYzrtCATpbx9` | Personal Effects |
+| OpenAI       | `opencode-go/gpt-6-luna` at `high`                | `ses_e8763dabeffeBEMIfla1GWpEKY` | Exit Inventory   |
+| Google       | `opencode-go/gemini-4-argon` at `high`            | `ses_e8763dabcffe9LTCbZawJXJkwr` | Notice Period    |
+| Anthropic    | `opencode-go/claude-haiku-5-5` at `high`          | `ses_e8763dab9ffesbT7uO9XlZZ0Ay` | Notice Period    |
+| Moonshot     | `opencode-go/kimi-k3.1-pro` at `high`             | `ses_e8763dab6ffeFt0j6qDnSG5d6U` | Notice Period    |
+| Alibaba      | `opencode-go/qwen3.8-flash` at `xhigh`            | `ses_e8763dab3ffeHYAWjGNjNSmi5X` | The Last Author  |
+| Zhipu        | `opencode-go/glm-5.3-flash` at `max`              | `ses_e8763dab0ffeqJtlLG7kBzvOV6` | Notice Period    |
+| MiniMax      | `opencode-go/minimax-m3.1-flash` at `high`        | `ses_e8763daadffe9grRfppsFdwVCj` | Offboarding      |
+| Xiaomi       | `opencode-go/mimo-v2.6-flash`, no variant exposed | `ses_e8763daabffeLtwp9ZWpHdOMnh` | Last Week        |
+| StepFun      | `opencode-go/step-5-preview` at `high`            | `ses_e8763da94ffe6YESHT2ztHrG73` | Handover         |
+| Meituan      | `opencode-go/longcat-2.0`, no variant exposed     | `ses_e875e9b86ffe41l9SUnZyLdcnf` | The Desk         |
+| Tencent      | `opencode-go/hy3` at `high`                       | `ses_e875e9b83ffezTpgWCjXepjTkZ` | Offboarding      |
+
+Each subagent worked read-only under `mr-design-reviewer` from the same brief
+and was asked for a diagnosis, a pivot, a core loop, story, presentation, scope
+budget, keep/cut/postpone list, first slice, risks, and a pitch. Their complete
+answers remain in the OpenCode session history.
+
 ### 2026-10-11 — STEP-018a movement-feel adjustment
 
 OpenCode Go `opencode-go/deepseek-v4.1-flash`, primary session, actual
